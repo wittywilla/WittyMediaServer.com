@@ -1,0 +1,33 @@
+{
+  "$comment": "The home page's 'no catch' strip and section. 'short' scrolls under the top bar; 'title' and 'text' are the section's cards. Never name another project: say what this one does, and let people compare.",
+  "eyebrow": "The small print",
+  "title": "No catch. We checked.",
+  "intro": "Some media projects keep the catch in the small print. Ours fits on a postcard, and all of it is good news.",
+  "promises": [
+    { "icon": "heart", "short": "Nothing behind a paywall",
+      "title": "Nothing behind a paywall",
+      "text": "Every feature is in the download, for everyone. No premium tier, no feature that unlocks for a fee, and no subscription quietly waiting for launch day." },
+    { "icon": "download", "short": "No waitlist, no “exclusive” beta",
+      "title": "No waitlist, no “exclusive” beta",
+      "text": "It’s an alpha, and anyone can download it today. You don’t need an invite, a sign-up form or a place in a queue to run software on your own computer." },
+    { "icon": "users", "short": "Open source since the first commit",
+      "title": "Open source since the first commit",
+      "text": "The code has been public under Apache-2.0 from day one. Not “open source soon”, not “source available”, and not open only once the hype has worn off.",
+      "link": { "href": "https://github.com/wittywilla/WittyMediaServer", "label": "Read the code" } },
+    { "icon": "list", "short": "Every tool it’s built with, named",
+      "title": "Built in the open, tools included",
+      "text": "Every library and tool the project is made with is listed, with its licence and its authors. Nothing borrowed without saying so.",
+      "link": { "href": "https://github.com/wittywilla/WittyMediaServer/blob/master/THIRD_PARTY_LICENSES.md", "label": "Every third-party licence" } },
+    { "icon": "shield", "short": "Licences and credits, done properly",
+      "title": "Licences and credits, done properly",
+      "text": "Every screenshot shows only openly licensed or public-domain media, and every work in it is credited with its licence. Apparently that’s optional in some places. It isn’t here.",
+      "link": { "href": "/credits/", "label": "Every picture’s credits" } },
+    { "icon": "sparkle", "short": "No borrowed logos, no pretend partners",
+      "title": "No borrowed fame",
+      "text": "No studio logos, no streaming-service artwork, and no hints at partnerships with media giants who’ve never heard of us. Just a media server, made by people who use one." },
+    { "icon": "network", "short": "Remote access free, every feature, forever",
+      "title": "Remote access is free. All of it.",
+      "text": "Watching away from home costs nothing, for every feature, and always will. You won’t need a subscription to watch your own films from someone else’s sofa.",
+      "link": { "href": "/docs/remote/", "label": "Setting up remote access" } }
+  ]
+}
