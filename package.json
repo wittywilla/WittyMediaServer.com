@@ -2,9 +2,9 @@
   "name": "wittymediaserver-site",
   "private": true,
   "version": "1.0.0",
-  "description": "wittymediaserver.com, already built by GitHub Actions from the main branch. The site is in dist/. Don't edit this branch.",
+  "description": "wittymediaserver.com, already built by GitHub Actions from the main branch. Don't edit this branch.",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "node -e \"console.log('Already built: serving dist/')\""
+    "build": "node -e \"console.log('Already built by GitHub Actions: nothing to build.')\""
   }
 }
