@@ -160,7 +160,36 @@ git push -u origin main
 
 Nothing else needs adding on GitHub: the build uses the run's own access to GitHub.
 
-### 3. Turn on Hostinger's Git deployment
+### 3. Add it to Hostinger as a web app (recommended)
+
+The `live` branch is shaped for Hostinger's **web apps**: a `package.json` at the top, and the finished site in `dist/`. Hostinger redeploys by itself each time GitHub publishes, including the four-hourly rebuilds.
+
+1. In hPanel, choose **Websites**, then **Add website**, then **Web app** (Node.js), then **Import Git repository**, and connect GitHub if asked (**Only select repositories**, **WittyMediaServer.com**).
+2. Choose the repository **WittyMediaServer.com**.
+3. Set these, and leave the rest as they are:
+
+   | Setting | Value |
+   |---|---|
+   | Branch | `live` |
+   | Framework preset | Other |
+   | Node.js version | 22 |
+   | Root directory | empty |
+   | Build command | empty (or `npm run build`, which only prints a line) |
+   | Output directory | `dist` |
+   | Entry file | empty |
+   | Environment variables | none |
+
+4. Click **Deploy** and wait for it to finish.
+5. Connect the domain wittymediaserver.com to this web app, if it was made on a temporary address.
+6. Check that **Auto-deploy** is on.
+
+Hostinger writes its own `.htaccess` for web apps, so the site's own one (the not-found page and security headers) may be replaced. Every page still works; a missing page shows Hostinger's not-found page instead of the site's.
+
+**Use either the web app or the Git deployment below, not both.**
+
+### 3b. Or turn on Hostinger's Git deployment
+
+With the web app layout, the site is in `dist/`, so set the deploy directory so that `dist/` ends up as `public_html`, or use the web app above.
 
 1. In hPanel, choose **Websites**, then **Manage site** beside wittymediaserver.com.
 2. **Empty `public_html` first.** Open **File manager**, open `public_html`, keep a copy with **Download** if you like, then delete everything inside it. Hostinger copies the site in over whatever's there.
