@@ -1,86 +1,50 @@
 # Updating the site
 
-Everything you need to keep wittymediaserver.com current. No programming needed: you change a text file or two, run one command, and upload a ZIP.
+Everything you need to keep wittymediaserver.com current. No programming needed, and nothing to build or upload: you change a file on GitHub, and a few minutes later it's on the site.
 
-Once [publishing by itself](#publishing-by-itself) is set up, you don't build or upload at all: you write the article, and GitHub and Hostinger do the rest.
+How it gets there:
 
-- [What updates by itself](#what-updates-by-itself)
-- [Build the site](#build-the-site)
-- [Look at it before uploading](#look-at-it-before-uploading)
-- [Upload it to Hostinger](#upload-it-to-hostinger)
+1. You change something on the `main` branch: an article, a sentence, a screenshot.
+2. GitHub builds the site, runs its checks, and puts the finished site on the `live` branch. A build that fails its checks publishes nothing, so the site stays as it was.
+3. Hostinger sees the new `live` and deploys it to wittymediaserver.com by itself.
+
+GitHub also rebuilds every four hours, so new releases and modules appear without anyone doing anything.
+
+- [Make a change](#make-a-change)
 - [Write a news article](#write-a-news-article)
 - [Change the words on a page](#change-the-words-on-a-page)
 - [Add or change a screenshot](#add-or-change-a-screenshot)
 - [Add a project](#add-a-project)
+- [What updates by itself](#what-updates-by-itself)
+- [Rebuild now, without changing anything](#rebuild-now-without-changing-anything)
+- [Look at a change before it goes live](#look-at-a-change-before-it-goes-live)
 - [When something goes wrong](#when-something-goes-wrong)
-- [Going live the first time](#going-live-the-first-time)
-- [Publishing by itself](#publishing-by-itself)
+- [How it's set up](#how-its-set-up)
 
-## What updates by itself
+## Make a change
 
-Each build fetches these from GitHub, so you only need to build and upload:
+**On github.com,** with nothing to install:
 
-| What | Where it comes from |
-|---|---|
-| Releases, their notes and download files | The GitHub releases of WittyMediaServer, WittyMediaClient, WittyMediaPlayer and WittyReader |
-| What's in each server version | The server's `CHANGELOG.md` |
-| Modules: names, icons, descriptions, versions | The signed catalog in WittyModuleCatalog |
-| Screenshots and their credits | `docs/images/` in each repository, and its `CREDITS.md` |
-| Colours and themes | The server's `themes/` folder |
+- **To change a file:** open https://github.com/wittywilla/wittymediaserver.com, click through to the file, and click the pencil (**Edit this file**). Make the change, click **Commit changes…**, then **Commit changes** in the box that opens.
+- **To add a file:** open the folder it goes in, click **Add file**, then **Create new file**. Type its name, paste what goes in it, and click **Commit changes…**, then **Commit changes**.
 
-The news and module pages also check GitHub when someone opens them, and show a release that's come out since your last upload. Its own page arrives with the next upload.
+**Or in GitHub Desktop,** on the development machine:
 
-## Build the site
+1. Click **Fetch origin** at the top, then **Pull origin** if it appears, so you start from what's on GitHub.
+2. Change the files in `D:\projects\wittymediaserver.com`.
+3. Type a few words in **Summary** at the bottom left, click **Commit to main**, then **Push origin**.
 
-You need [Node.js](https://nodejs.org) 20 or newer, which is already on the development machine.
-
-1. Open a terminal in this folder, `D:\projects\wittymediaserver.com`.
-2. Run:
-
-   ```bash
-   node build.mjs
-   ```
-
-3. It prints what it did, ending with something like *Built 39 pages … and site.zip to upload*. Lines starting with **✗** are problems to fix before uploading; lines starting with **!** are worth a look but don't stop anything.
-
-The finished site is in the `site` folder, and the same thing packed as `site.zip`.
-
-No internet? `node build.mjs --offline` builds from what was fetched last time.
-
-If the GitHub CLI is signed in (`gh auth status`), the build uses it, which lets it ask GitHub more often. Without it, it works too, up to about 60 requests an hour.
-
-## Look at it before uploading
-
-```bash
-node build.mjs --preview
-```
-
-This builds, then shows the site at http://localhost:4173. Press **Ctrl+C** in the terminal to stop it. `node build.mjs --serve` shows the last build without building again.
-
-## Upload it to Hostinger
-
-1. Sign in to Hostinger and open **hPanel**.
-2. Choose **Websites**, then **Dashboard** beside wittymediaserver.com, then **File manager**.
-3. Open the **public_html** folder.
-4. **The first time only:** delete what's in `public_html` (keep a copy if you like, with **Download**).
-5. Click **Upload** (the arrow at the top right), choose **File**, and pick `site.zip` from this folder.
-6. Right-click `site.zip` in the file manager, choose **Extract**, and extract into `public_html` itself (leave the folder name empty, or `.`). Say yes to replacing files.
-7. Delete `site.zip` from `public_html`.
-8. Open https://wittymediaserver.com and check it. A hard refresh (**Ctrl+F5**) makes sure you see the new version.
-
-Why a ZIP rather than dragging the folder in: the site has a hidden file, `.htaccess`, that sets up the not-found page and security settings, and dragging a folder can leave hidden files behind.
-
-Old files can stay: every page is replaced, styles and scripts have new names each time they change, and nothing links to what's left over. To tidy up now and then, delete everything in `public_html` before extracting.
+Either way, the **Actions** tab on GitHub shows the build running. When it has a green tick, Hostinger picks it up, and the change is usually on the site within five minutes. Press **Ctrl+F5** to make sure you're seeing the newest version.
 
 ## Write a news article
 
 1. In `content/news/`, copy `_template.md` to a new file named with the date and a few words, such as `2026-11-10-new-tv-guide.md`. The words after the date become its address: `/news/new-tv-guide/`.
-2. Open it in any text editor, change the lines at the top, delete `draft: true`, and write the article below the second line of dashes. The template explains each line.
-3. Build, look, upload.
+2. Change the lines at the top, delete `draft: true`, and write the article below the second line of dashes. The template explains each line.
+3. Commit it to `main`, as in [Make a change](#make-a-change).
 
 An article about a release links to it both ways: the release's page shows the article, and the article links to the release's notes and downloads.
 
-To take an article down, add `draft: true` back at the top, or delete the file, then build and upload.
+To take an article down, add `draft: true` back at the top, or delete the file, and commit that.
 
 ## Change the words on a page
 
@@ -99,167 +63,138 @@ Screenshots come from each repository's `docs/images/`. To show another one, add
 
 New repositories go in `content/projects.json`, which feeds the projects page. Modules in the catalog appear by themselves. Keep it in step with `docs/REPOSITORIES.md` in the server's repository.
 
+## What updates by itself
+
+Every build fetches these from GitHub, and GitHub builds every four hours, so they need nothing from you:
+
+| What | Where it comes from |
+|---|---|
+| Releases, their notes and download files | The GitHub releases of WittyMediaServer, WittyMediaClient, WittyMediaPlayer and WittyReader |
+| What's in each server version | The server's `CHANGELOG.md` |
+| Modules: names, icons, descriptions, versions | The signed catalog in WittyModuleCatalog |
+| Screenshots and their credits | `docs/images/` in each repository, and its `CREDITS.md` |
+| Colours and themes | The server's `themes/` folder |
+
+The news and module pages also check GitHub when someone opens them, and show a release that's come out since the last build. Its own page arrives with the next build.
+
+## Rebuild now, without changing anything
+
+Say a release just came out and you don't want to wait for the four-hourly build:
+
+1. Open https://github.com/wittywilla/wittymediaserver.com and click the **Actions** tab.
+2. Click **Build and publish** on the left.
+3. Click **Run workflow**, then **Run workflow** again in the box that opens.
+
+## Look at a change before it goes live
+
+Only needed for bigger changes. This builds the site on your computer and shows it there; nothing is uploaded or published.
+
+You need [Node.js](https://nodejs.org) 20 or newer, which is already on the development machine.
+
+1. Open a terminal in the repository's folder, `D:\projects\wittymediaserver.com`.
+2. Run:
+
+   ```bash
+   node build.mjs --preview
+   ```
+
+3. It builds, then shows the site at http://localhost:4173. Press **Ctrl+C** in the terminal to stop it.
+
+The build prints what it did. Lines starting with **✗** are problems to fix before committing, because GitHub's build stops on the same ones. Lines starting with **!** are worth a look but don't stop anything.
+
+- `node build.mjs` builds without showing it. The site lands in the `site` folder, and packed as `site.zip`; you don't need either, as GitHub does the publishing.
+- `node build.mjs --serve` shows the last build again without rebuilding.
+- `node build.mjs --offline` builds from what was fetched last time, with no internet.
+
+If the GitHub CLI is signed in (`gh auth status`), the build uses it, which lets it ask GitHub more often. Without it, it works too, up to about 60 requests an hour.
+
 ## When something goes wrong
+
+**A build failed:** GitHub emails you. Nothing was published, so the site is as it was. To see why, open the **Actions** tab, click the run with the red cross, then the job with the red cross (**build**, **publish** or **ftp**), then the step with the red cross. Its last lines say what went wrong.
 
 | What you see | What to do |
 |---|---|
-| `couldn't reach …, using the saved copy` | GitHub didn't answer. The build used what it fetched last time. Try again later |
-| `✗ … links to /something, which isn't in the site` | A link to a page that doesn't exist. Fix the link in the file the message names |
-| `✗ … names another media server` | The site never names other media servers. Reword it |
-| A page looks old after uploading | Press Ctrl+F5. If it's still old, check that `site.zip` was extracted into `public_html` itself, not a folder inside it |
-| The site shows Hostinger's "not found" page | `.htaccess` is missing: upload the ZIP and extract it, rather than dragging the folder |
-| A new release isn't on the site | Build and upload. Until then, the news page lists it as new on GitHub |
+| `✗ … links to /something, which isn't in the site` | A link to a page that doesn't exist. Fix the link in the file the message names, and commit again |
+| `✗ … names another media server` | The site never names other media servers. Reword it, and commit again |
+| `! couldn't reach …, using the saved copy` | Not a problem on its own: GitHub didn't answer one request, and the build used what it fetched last time |
+| The run failed with `GitHub didn't answer, so the site would be missing releases or modules` | GitHub didn't answer enough of the build's requests, so it stopped rather than publish a site with missing releases. A little later, open the failed run and click **Re-run jobs**, then **Re-run failed jobs** |
+| **publish** fails with `Permission denied` or `403` | On GitHub, open the repository's **Settings**, then **Actions**, then **General**. Under **Workflow permissions**, choose **Read and write permissions**, click **Save**, and re-run |
+| `Nothing changed since the last publish` | Not a problem: the build found nothing new, so nothing was published |
+| The run is green but the site hasn't changed | Press **Ctrl+F5**. Still old? In hPanel, open the web app's **Deployments**: the newest row should be branch `live`, with a commit named "Site built from …". **Redeploy** pulls the latest now. If it's deployed but still old, clear Hostinger's cache: on the site's dashboard, **Advanced**, then **Cache Manager**, then **Purge all** |
+| The home page says **403 Forbidden**, and https://wittymediaserver.com/build.mjs shows code | Hostinger is deploying `main` instead of `live`. See [If Hostinger deployed `main`](#if-hostinger-deployed-main) |
+| A yellow banner on **Actions** says the scheduled workflow was turned off | GitHub pauses timed runs in a repository that hasn't changed for 60 days. Click **Enable workflow**. Writing an article now and then keeps it running |
 
-## Going live the first time
+## How it's set up
 
-The domain currently shows the site made with Hostinger's Website Builder. To serve these files instead:
+You don't need this day to day. It's here for when something needs setting up again.
 
-1. In hPanel, open **Websites** and find wittymediaserver.com.
-2. If it's listed as a Website Builder site, look for the option to switch it to, or connect the domain to, your **hosting plan** (the wording changes from time to time; Hostinger's chat can point to it). Your Business plan includes both.
-3. Once the domain points at the hosting plan, upload the site as above.
-4. Turn on **SSL** for the domain in hPanel if it isn't already, and **Force HTTPS**.
-5. Check the old addresses still work: `/server`, `/client`, `/modules`, `/gallery`, `/news`, `/news/firefox-disc-playback` and `/news/release/WittyMediaServer/v0.6.2-alpha`.
+### On GitHub
 
-Keep the Website Builder site until you're happy with the new one: switching back is the same steps in reverse.
+| Branch | What's on it |
+|---|---|
+| `main` | The site's source: this file, the articles, the words, the code. Everything you change goes here |
+| `live` | The finished site, rebuilt by GitHub from `main`. **Don't edit it**: every build replaces it |
 
-## Publishing by itself
+`.github/workflows/publish.yml` does the building. It runs on every change to `main`, every four hours, and when you click **Run workflow**. Each run also keeps the built site for two weeks, as `site.zip` under **Artifacts** at the bottom of the run's page.
 
-Once this is set up, you write an article and put it on GitHub, and a few minutes later it's on the site. New releases and modules appear by themselves too, because GitHub rebuilds the site every four hours.
+Nothing else needs adding on GitHub: the build uses the run's own access to GitHub. It needs **Read and write permissions** under **Settings**, **Actions**, **General**, **Workflow permissions**, to put the site on `live`.
 
-How it works: each time something changes, GitHub builds the site exactly as `node build.mjs` does, runs the same checks, and stops if any line starts with **✗**. If everything is fine, it puts the finished site on a branch of the repository called `live`, which holds only the site's files. Hostinger watches that branch and copies it into `public_html`. A build that fails publishes nothing, so the site stays as it was.
+### On Hostinger
 
-**Which way to use: Git deployment.** Hostinger fetches the site from GitHub itself, so no password is kept anywhere, and hPanel lists every deployment. Uploading by FTP is there as a fallback, if Git deployment isn't available or stops working. Use one or the other, not both.
+wittymediaserver.com is a **Node.js web app** in hPanel, deploying the `live` branch of **wittywilla/WittyMediaServer.com** from GitHub. Its settings, under **Deployments**, then **Deployment settings**:
 
-Do [Going live the first time](#going-live-the-first-time) first, so the domain shows your hosting plan.
+| Setting | Value |
+|---|---|
+| Framework preset | Other |
+| **Branch** | **`live`** |
+| Node version | 20.x |
+| Root directory | `./` |
+| Build command | `npm run build` (on `live` it only prints a line) |
+| Package manager | npm |
+| Output directory | empty |
+| Entry file | empty |
 
-### 1. Put the site on GitHub
+Why it's this way: Hostinger publishes the whole deployed branch into `public_html`, as it is. So the branch it deploys has to be the finished site, top to bottom, and that's `live`: the site's files, plus the `package.json` Hostinger's Node.js setup asks for. Leave **Output directory** empty: `dist` or any other folder makes the build fail, because there's no such folder. Leave **Entry file** empty: the site is plain files, with no server program to start.
 
-The easiest way is GitHub Desktop, which is on the development machine.
+Don't change files in `public_html` with File Manager. Hostinger replaces everything there on every deployment, so changes go on GitHub instead.
 
-1. Open **GitHub Desktop**. Choose **File**, then **Add local repository**, pick `D:\projects\wittymediaserver.com`, and click **Add repository**.
-2. If the left side lists changed files, type a few words in **Summary** at the bottom left, such as "Ready to publish", and click **Commit to main**.
-3. Click **Publish repository** at the top.
-4. Leave the name as `wittymediaserver.com`. **Untick "Keep this code private"**, so anyone can see the site's source, as with the server. Check the owner is **wittywilla**, then click **Publish repository**.
+### Setting it up again from scratch
 
-Rather use the terminal? Create an empty public repository called `wittymediaserver.com` on github.com (**+** at the top right, then **New repository**, without a README, .gitignore or licence, since this folder has them), then run:
-
-```bash
-git remote add origin https://github.com/wittywilla/wittymediaserver.com.git
-```
-
-```bash
-git push -u origin main
-```
-
-### 2. Watch the first build
-
-1. Open https://github.com/wittywilla/wittymediaserver.com and click the **Actions** tab.
-2. If GitHub asks whether to allow workflows, click the green button to allow them.
-3. **Build and publish** starts by itself after the push. It takes two or three minutes. A green tick means it worked, and the repository now has a branch called `live`.
-4. Click the run to see what it did. The site it built is at the bottom of the page under **Artifacts**, as `site.zip`, the same file as a build on your computer makes. It's kept for two weeks.
-
-Nothing else needs adding on GitHub: the build uses the run's own access to GitHub.
-
-### 3. Add it to Hostinger as a web app (recommended)
-
-What Hostinger does, as its import screen and build log show: it detects this repository as **Other**, offers no output directory or entry file, and publishes **the whole branch** into `public_html`. So the branch it deploys has to be the finished site, top to bottom. That's the `live` branch: the site's files at the top, plus the `package.json` Hostinger's Node.js import asks for. `main` is the source code. If Hostinger is pointed at `main`, its build stops with a message saying so, and the live site stays as it was.
-
-Hostinger redeploys by itself each time GitHub publishes to `live`, including the four-hourly rebuilds.
-
-**Setting it up the first time:**
-
-1. If wittymediaserver.com is already a website on the hosting plan (from Website Builder, or a plain site), Hostinger asks you to remove it first: its Node.js flow makes a fresh slot for the domain.
-2. In hPanel, choose **Websites**, then **Add Website**, then **Node.js web app**.
-3. Under **Import your Git repository**, click **Connect with GitHub** (or **Continue with GitHub**), and in the GitHub window give Hostinger access to **WittyMediaServer.com**.
+1. If wittymediaserver.com is already a website on the hosting plan, delete it first, under **Websites**: Hostinger's Node.js setup makes a fresh place for the domain.
+2. In hPanel, choose **Websites**, then **Add Website**, then **Node.js web app**, and pick the domain wittymediaserver.com.
+3. Under **Import your Git repository**, click **Connect with GitHub** (it says **Continue with GitHub** if it's already connected). In the GitHub window, install Hostinger's app on **wittywilla**, choose **Only select repositories**, pick **WittyMediaServer.com**, and click **Install** (it may say **Install & Authorize**).
 4. Pick **wittywilla/WittyMediaServer.com**.
-5. Hostinger shows what it detected: **Framework** Other, **Branch** main, **Root directory** `./`, **Package manager** npm, **Build command** `npm run build`. Click **Deploy**.
-6. That first build fails on purpose, with a message saying `main` is the source code. That's expected. Go on to the next part to switch it to `live`.
+5. Under **Build configuration**, change **Branch** from `main` to **`live`**. Leave everything else as Hostinger fills it in, with **Output directory** and **Entry file** empty. It should match the table above.
+6. Click **Deploy**, and wait for **Deployment completed**.
+7. Check it: open https://wittymediaserver.com and press **Ctrl+F5**. Then open https://wittymediaserver.com/build.mjs, which should be the site's not-found page, and a few older addresses, which should all still work: `/server`, `/client`, `/modules`, `/gallery`, `/news`, `/news/firefox-disc-playback` and `/news/release/WittyMediaServer/v0.6.2-alpha`.
 
-**Pointing it at `live`** (also the fix, if the site shows **403 Forbidden** and `/dist/` or `/build.mjs` open on the site):
+From then on, Hostinger deploys each new `live` by itself. The web app's dashboard shows **Auto-deployment** while that's on.
+
+### If Hostinger deployed `main`
+
+`main` is the source code, not the site, so its build stops on purpose with a message saying so, and the site stays as it was. (Before that safeguard, building `main` put the source code in `public_html` and the site in `/dist/`, with a **403 Forbidden** home page.) To fix it:
 
 1. In hPanel, open the web app for wittymediaserver.com, then **Deployments**.
 2. Click **Redeploy**, or **Deployment settings**. Both open the deployment settings.
-3. Change **Branch** from `main` to **`live`**. Leave everything else as it is.
-4. Click **Save and redeploy**, and wait for **Deployment completed**.
-5. Open https://wittymediaserver.com and press **Ctrl+F5**. If it still shows the old page, clear Hostinger's cache: on the site's dashboard, **Advanced**, then **Cache Manager**, then **Purge all**.
-
-To check it's right, open https://wittymediaserver.com/build.mjs: it should be a not-found page. If it shows code, Hostinger is still deploying `main`.
-
-**Use either the web app or the Git deployment below, not both.**
-
-### 3b. Or turn on Hostinger's Git deployment
-
-Only if you're not using the web app above. This copies the `live` branch into `public_html` as it is, which works because the site is at the top of the branch.
-
-1. In hPanel, choose **Websites**, then **Manage site** beside wittymediaserver.com.
-2. **Empty `public_html` first.** Open **File manager**, open `public_html`, keep a copy with **Download** if you like, then delete everything inside it. Hostinger copies the site in over whatever's there.
-3. Back on the site's dashboard, in the menu on the left, choose **Advanced**, then **Git**.
-4. Click **Connect with GitHub**. A GitHub window opens to install Hostinger's GitHub app: choose **Only select repositories**, pick **wittymediaserver.com**, and click **Install** (it may say **Install & Authorize**).
-5. Back in hPanel, choose the repository **wittymediaserver.com**. If it isn't listed, click **Refresh repositories**.
-6. **Branch: `live`**. Not `main`: `main` holds the source, and `live` holds the finished site.
-7. **Deploy directory:** leave it as the root, `public_html`.
-8. Click **Deploy** and watch the log until it says it's completed.
-9. Open https://wittymediaserver.com and press **Ctrl+F5**.
-10. Check that **Auto-deployment** is on, next to the repository in hPanel. That's what makes Hostinger copy each new build by itself.
-
-**The webhook:** with the GitHub app, Hostinger sets this up for you. GitHub tells Hostinger about each new build through the app, so the repository's **Settings → Webhooks** page on GitHub stays empty. That's normal.
-
-**If hPanel shows an older form instead**, asking for a repository address, a branch and a directory (with an SSH key):
-
-1. **Repository:** `https://github.com/wittywilla/wittymediaserver.com.git`. Because the repository is public, no SSH key is needed.
-2. **Branch:** `live`.
-3. **Directory:** leave it empty, which means `public_html`. It must be empty for the first deployment.
-4. Click **Create**. In the menu beside the repository in the list, choose **Deploy**.
-5. In the same menu, choose **Auto Deployment** and copy the **webhook URL** it shows.
-6. On GitHub, open the repository's **Settings**, then **Webhooks**, then **Add webhook**. Paste the address into **Payload URL**, leave the rest as it is (**Just the push event**, **Active**), and click **Add webhook**.
-
-### 4. From now on
-
-To publish an article, write it as in [Write a news article](#write-a-news-article), then put it on GitHub:
-
-- **In GitHub Desktop:** type a summary, click **Commit to main**, then **Push origin**.
-- **Or on github.com, without the development machine:** open the repository, open `content/news`, click **Add file**, then **Create new file**. Name it like `2026-11-10-new-tv-guide.md`, paste the article (start from `_template.md`), and click **Commit changes**.
-
-A few minutes later it's on the site. You don't build or upload anything.
-
-To build and publish by hand, without changing anything, such as just after a release: open **Actions**, click **Build and publish** on the left, then **Run workflow**, and **Run workflow** again.
-
-Building on your computer and the ZIP routine still work as before, for looking at changes before they go out, or if the automation isn't set up.
+3. Change **Branch** to **`live`**. Leave everything else as it is.
+4. Click **Save and redeploy**, wait for **Deployment completed**, and check the site as in step 7 above.
 
 ### Uploading by FTP instead
 
-Only if Git deployment isn't available. The upload uses SFTP, which needs SSH access in hPanel (Hostinger includes it on Premium plans and higher).
+**Not while the web app is set up:** Hostinger would replace the upload with its own next deployment. This is only a fallback for if the site is ever a plain website on the hosting plan instead of a web app. The build's **ftp** job uploads the site over SFTP when these secrets exist, and does nothing without them.
 
-1. In hPanel, choose **Manage site** beside wittymediaserver.com, then **SSH Access** (under **Advanced**). Turn SSH access on if it's off, and note the **IP**, **port** and **username** it shows. The password is the same as your main FTP password, unless you set one just for SSH.
+1. In hPanel, open the site's dashboard, then **SSH Access** (under **Advanced**). Turn it on if it's off, and note the **hostname** or **IP**, **port** and **username** it shows. The password is your main FTP password, unless you set one just for SSH.
 2. On GitHub, open the repository's **Settings**, then **Secrets and variables**, then **Actions**. Click **New repository secret** for each of these three:
 
    | Name | Secret |
    |---|---|
-   | `HOSTINGER_FTP_SERVER` | The IP. If the port isn't 65002, write it as `sftp://IP:port`, such as `sftp://123.45.67.89:22` |
+   | `HOSTINGER_FTP_SERVER` | The hostname or IP. If the port isn't 65002, write it as `sftp://address:port`, such as `sftp://123.45.67.89:22` |
    | `HOSTINGER_FTP_USER` | The username, such as `u123456789` |
    | `HOSTINGER_FTP_PASSWORD` | The password |
 
-3. Run the workflow by hand (see above). Its **ftp** job uploads the site to `public_html`.
-4. If that job says it couldn't find the folder, the site's folder has a longer name from where SSH starts. Open the **Variables** tab next to **Secrets**, click **New repository variable**, name it `HOSTINGER_FTP_FOLDER`, and give it the folder, such as `domains/wittymediaserver.com/public_html`. Then run it again.
+3. [Rebuild now](#rebuild-now-without-changing-anything). Its **ftp** job uploads the site to `public_html`.
+4. If that job says it couldn't upload to the folder, the site's folder has a longer name from where SSH starts. Open the **Variables** tab next to **Secrets**, click **New repository variable**, name it `HOSTINGER_FTP_FOLDER`, and give it the folder, such as `domains/wittymediaserver.com/public_html`. Then run it again.
 
-From then on, each build that changes the site uploads it. To stop uploading by FTP, delete the three secrets.
+From then on, each build that changes the site uploads it. To stop, delete the three secrets. If the **ftp** job fails with `Couldn't upload`, check the secrets for typos, and the folder in step 4.
 
-Only if SFTP isn't available at all, write the server as `ftp://IP`. Plain FTP sends the password unencrypted, so avoid it if you can.
-
-### When a run fails
-
-GitHub sends you an email. Nothing is published from a failed run, so the site stays as it was.
-
-1. Open the repository's **Actions** tab and click the run with the red cross.
-2. Click the job with the red cross (**build**, **publish** or **ftp**), then the step with the red cross. Its last lines say what went wrong.
-
-| What you see | What to do |
-|---|---|
-| Lines starting with **✗** in **Build** or **Check** | The same problems as on your computer: see [When something goes wrong](#when-something-goes-wrong). Fix the file it names and push again |
-| `GitHub didn't answer` | Click **Re-run jobs**, then **Re-run failed jobs**, a little later |
-| **publish** fails with `Permission denied` or `403` | Open **Settings**, then **Actions**, then **General**. Under **Workflow permissions**, choose **Read and write permissions**, click **Save**, and re-run |
-| **ftp** fails with `Couldn't upload` | Check the three secrets for typos, and the folder (step 4 of [Uploading by FTP instead](#uploading-by-ftp-instead)) |
-| `Nothing changed since the last publish` | Not a problem: the build found nothing new, so nothing was published |
-| The run is green but the site hasn't changed | In hPanel, open the web app's **Deployments**. The newest row should show branch `live` and a commit named "Site built from …"; click it for its log. If the branch says `main`, see [Pointing it at `live`](#3-add-it-to-hostinger-as-a-web-app-recommended). **Redeploy** pulls the latest build now. Then press **Ctrl+F5** on the site, and if it's still old, **Advanced**, **Cache Manager**, **Purge all**. (Using the Git deployment of 3b instead? Open **Advanced**, then **Git**, and check the branch is `live` and **Auto-deployment** is on.) |
-| The home page says **403 Forbidden**, and `/dist/` or `/build.mjs` open on the site | Hostinger is deploying `main`, or a `live` from before the site moved to its top. Follow [Pointing it at `live`](#3-add-it-to-hostinger-as-a-web-app-recommended) |
-| A yellow banner on **Actions** says the scheduled workflow was turned off | GitHub pauses timed runs in a repository that hasn't changed for 60 days. Click **Enable workflow**. Writing an article now and then keeps it running |
+Only if SFTP isn't available at all, write the server as `ftp://address`. Plain FTP sends the password unencrypted, so avoid it if you can.

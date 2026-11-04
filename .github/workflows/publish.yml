@@ -1,5 +1,5 @@
 # Builds the site and publishes it, so new articles, releases and modules go
-# live by themselves. UPDATING.md, "Publishing by itself", explains the setup.
+# live by themselves. UPDATING.md, "How it's set up", explains the setup.
 #
 #   build    runs node build.mjs and its checks, and keeps site.zip with the run
 #   publish  puts the built site on the "live" branch, which Hostinger deploys

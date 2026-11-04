@@ -8,7 +8,7 @@ It's a folder of plain files, built from this repository and from GitHub by one 
 node build.mjs --preview
 ```
 
-builds the site into `site/` and shows it at http://localhost:4173. **[UPDATING.md](UPDATING.md)** has the whole routine: building, writing news, changing words and uploading to Hostinger.
+builds the site into `site/` and shows it at http://localhost:4173. **[UPDATING.md](UPDATING.md)** has the whole routine: writing news, changing words, and how GitHub and Hostinger publish each change by themselves.
 
 ## What's here
 
