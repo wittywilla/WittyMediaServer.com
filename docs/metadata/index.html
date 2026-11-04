@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Where details come from · WittyMediaServer</title>
+<meta name="description" content="Learn how the server finds titles, plots, posters and ratings for what&#39;s on it, what each source needs and what it&#39;s sent, and what the optional logos and…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/metadata/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Where details come from">
+<meta property="og:description" content="Learn how the server finds titles, plots, posters and ratings for what&#39;s on it, what each source needs and what it&#39;s sent, and what the optional logos and…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/metadata/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/" aria-current="page">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Libraries</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/" aria-current="page">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#libraries">Libraries</a></p>
+      <h1>Where details come from</h1>
+      <p class="lead">Learn how the server finds titles, plots, posters and ratings for what’s on it, what each source needs and what it’s sent, and what the optional logos and streaming listings mean. Most of it works with no account or key.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/METADATA.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#the-order-sources-are-used-in">The order sources are used in</a></li><li><a href="#api-keys">API keys</a></li><li><a href="#nfo-files-and-artwork">NFO files and artwork</a></li><li><a href="#what-is-saved-next-to-your-media">What is saved next to your media</a></li><li><a href="#editing-and-fixing-matches">Editing and fixing matches</a></li><li><a href="#audio-cds">Audio CDs</a></li><li><a href="#custom-agents">Custom agents</a></li><li><a href="#categories-studios-and-browsing">Categories, studios and browsing</a></li><li><a href="#streaming-listings">Streaming listings</a></li><li><a href="#the-logo-service">The logo service</a></li><li><a href="#video-games">Video games</a></li><li><a href="#lyrics-and-artist-information">Lyrics and artist information</a></li><li><a href="#coming-from-another-media-server">Coming from another media server</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>Nearly all of this is set under <strong>Settings → Metadata agents</strong>. If something came out wrong, see <a href="/docs/fixing-metadata/">Fixing wrong details</a>.</p>
+<h2 id="the-order-sources-are-used-in">The order sources are used in<a class="h-anchor" href="#the-order-sources-are-used-in" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Sources are used in this order, and later ones only fill gaps:</p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Source</th><th>Example</th></tr></thead><tbody><tr><td>1</td><td><code>&lt;file&gt;.metadata.json</code> next to the file</td><td><code>{&quot;title&quot;:&quot;My Film&quot;,&quot;year&quot;:2001,&quot;overview&quot;:&quot;…&quot;,&quot;genres&quot;:[&quot;Animation&quot;],&quot;poster&quot;:&quot;https://…&quot;}</code></td></tr><tr><td>2</td><td>NFO file</td><td><code>My Film (2001).nfo</code>, <code>movie.nfo</code>, <code>tvshow.nfo</code>, episode <code>&lt;name&gt;.nfo</code></td></tr><tr><td>3</td><td>Local artwork</td><td><code>poster.jpg</code>, <code>&lt;name&gt;-poster.jpg</code>, <code>folder.jpg</code>, <code>fanart.jpg</code>, <code>season01-poster.jpg</code>, <code>&lt;episode&gt;-thumb.jpg</code></td></tr><tr><td>4</td><td>File and folder names</td><td><code>My Film (2001).mkv</code>, <code>Show - S01E02 - Title.mkv</code>, <code>MY_FILM.ISO</code> (disc label)</td></tr><tr><td>5</td><td>Your <a href="#custom-agents">custom agents</a>, in their order</td><td>Anything your own service knows</td></tr><tr><td>6</td><td>TMDB and TheTVDB, if you added a key</td><td>Overview, genres, rating, network, posters, backdrops, episode titles</td></tr><tr><td>7</td><td>TVmaze, for TV, until you add a TheTVDB key</td><td>Overview, genres, network, status, posters, backdrops, season posters, episode titles and stills</td></tr><tr><td>8</td><td>Wikidata and Wikipedia, for films, until you add a TMDB key</td><td>Year, genres, US rating, runtime, plot summary, no posters</td></tr><tr><td>9</td><td>AniList, for Anime libraries</td><td>Titles in your chosen language, plots, posters, episode numbering</td></tr><tr><td>10</td><td>A generated thumbnail</td><td>A frame 20% into the video</td></tr></tbody></table></div>
+<p>Audio CDs and games have orders of their own: see <a href="#audio-cds">Audio CDs</a> and <a href="#video-games">Video games</a>.</p>
+<p>An <a href="/docs/fixing-metadata/#naming-rules">id in a file or folder’s name</a> wins over any search, and a match you chose or a field you locked is never changed by any of these.</p>
+<p><strong>Content ratings.</strong> TVmaze and Wikidata don’t always have a content rating, which Kids and Guest profiles rely on. Set one under <strong>Edit</strong> on any film or show. A show’s rating covers its episodes.</p>
+<h2 id="api-keys">API keys<a class="h-anchor" href="#api-keys" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>TV shows and films get information without any account or key. Adding a key later upgrades titles the next time they’re scanned or refreshed.</p>
+<div class="table-wrap"><table><thead><tr><th>Source</th><th>Needs</th><th>Good for</th><th>Licence</th></tr></thead><tbody><tr><td><strong>TVmaze</strong></td><td>Nothing</td><td>TV shows</td><td>Data shared under CC BY-SA 4.0</td></tr><tr><td><strong>Wikidata and Wikipedia</strong></td><td>Nothing</td><td>Films and games: facts, ratings, plot summaries</td><td>Wikidata is public domain, Wikipedia text is CC BY-SA 4.0</td></tr><tr><td><strong>AniList</strong></td><td>Nothing. Always on for Anime libraries, which send it anime titles</td><td>Anime</td><td></td></tr><tr><td><strong>MusicBrainz, Cover Art Archive</strong></td><td>Nothing</td><td><a href="#audio-cds">Audio CDs</a></td><td>Album data is CC0</td></tr><tr><td><strong>Radio Browser</strong></td><td>Nothing</td><td><a href="/docs/collections/#internet-radio">Internet radio</a></td><td></td></tr><tr><td><strong>TMDB</strong></td><td>A free key from <a href="https://www.themoviedb.org/settings/api" rel="noopener">themoviedb.org</a></td><td>Posters, plots and ratings for films and TV</td><td>This product uses the TMDB API but is not endorsed or certified by TMDB</td></tr><tr><td><strong>TheTVDB</strong></td><td>A key from <a href="https://thetvdb.com/api-information" rel="noopener">thetvdb.com</a>, and a PIN if your key has one</td><td>Detailed episode information</td><td></td></tr></tbody></table></div>
+<p>To add a key:</p>
+<ol><li>Open <strong>Settings → Metadata agents</strong>, under <strong>Built-in agents</strong>.</li><li>Paste the key, and press <strong>Test</strong> to check it with the service.</li><li>Press <strong>Save</strong>.</li></ol>
+<p>Saved keys are hidden, so paste a key again to test it. TVmaze and Wikidata can be turned off there, and title pages credit their source.</p>
+<h2 id="nfo-files-and-artwork">NFO files and artwork<a class="h-anchor" href="#nfo-files-and-artwork" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The server reads and writes the standard NFO and artwork layout most other media software uses, so you can move a library in or out without re-tagging anything.</p>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/film-page.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: A film&#39;s page, with a plot and poster read from files beside it</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em>Everything here came from files beside the film. <a href="https://durian.blender.org/" rel="noopener">Sintel</a>, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>.</em></p></div>
+<p>An NFO can be up to 1 MB and a <code>.metadata.json</code> up to 256 KB. Anything read from beside your media, yours or anyone else’s, is cleaned to plain text: no HTML, scripts or hidden characters, and pictures only as web addresses or files in that folder. A file that can’t be read is left out, with a warning under <strong>Settings → WittyLog</strong> naming the file and the line.</p>
+<p>More on what’s safe to change, and how it’s checked, is in <a href="/docs/metadata-folder/#files-beside-your-media">Files beside your media</a>.</p>
+<h2 id="what-is-saved-next-to-your-media">What is saved next to your media<a class="h-anchor" href="#what-is-saved-next-to-your-media" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Your metadata is always in the server’s database, and comes along in a <a href="/docs/backup/">backup</a>.</p>
+<p>With <strong>Save information and artwork next to your media</strong> on, which is the default, the server also writes these:</p>
+<div class="table-wrap"><table><thead><tr><th>Media</th><th>Written</th></tr></thead><tbody><tr><td>Film or disc image in its own folder</td><td><code>&lt;name&gt;.nfo</code>, <code>poster.jpg</code>, <code>fanart.jpg</code></td></tr><tr><td>Films sharing a folder, such as a folder of ISOs</td><td><code>&lt;name&gt;.nfo</code>, <code>&lt;name&gt;-poster.jpg</code>, <code>&lt;name&gt;-fanart.jpg</code></td></tr><tr><td><code>VIDEO_TS</code> folder</td><td><code>movie.nfo</code>, <code>poster.jpg</code>, <code>fanart.jpg</code> inside the film’s folder</td></tr><tr><td>TV show</td><td><code>tvshow.nfo</code>, <code>poster.jpg</code>, <code>fanart.jpg</code>, <code>season01-poster.jpg</code> and so on, in the show’s folder</td></tr><tr><td>Episode</td><td><code>&lt;name&gt;.nfo</code>, <code>&lt;name&gt;-thumb.jpg</code></td></tr><tr><td>Game</td><td><code>&lt;name&gt;.nfo</code>, <code>&lt;name&gt;-poster.jpg</code>, <code>&lt;name&gt;-fanart.jpg</code> beside the game</td></tr></tbody></table></div>
+<p>Artwork saved this way is always a real picture from the internet, the image cache or your own disk. A file beside your media or a feed can’t make the server copy another kind of file here, or fetch something from your local network.</p>
+<p>Scans only write for titles that have no NFO yet. Your own NFOs are never touched by a scan. If you edit a title whose NFO you wrote by hand, the original is kept as <code>&lt;name&gt;.nfo.bak</code>. Mount media read-only and turn the option off if you’d prefer the server not to write there.</p>
+<h2 id="editing-and-fixing-matches">Editing and fixing matches<a class="h-anchor" href="#editing-and-fixing-matches" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><a href="/docs/fixing-metadata/">Fixing wrong details</a> covers all of this: the <strong>Edit</strong> dialog, choosing a match, locks, <strong>Fix matches</strong>, renumbering episodes and naming rules. <a href="/docs/metadata-folder/">The metadata folder</a> does the same with plain text files.</p>
+<h2 id="audio-cds">Audio CDs<a class="h-anchor" href="#audio-cds" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>CD images have their own order: the file beside the image (<code>&lt;name&gt;.wittycd.json</code>, saved earlier), then CD-TEXT and the cue sheet, then folder and file names, then <strong>MusicBrainz</strong>, which fills in album and track names and a cover from the <strong>Cover Art Archive</strong> when it has one clear answer. Pictures beside the image always win.</p>
+<p><strong>What is sent.</strong> To look a disc up, the server sends MusicBrainz the disc’s ID and its table of contents, which is the track count and each track’s start. It says nothing about what the music is, what your files are called or who you are. Covers are fetched by the server, so nothing else learns your address. The lookup happens once for each new disc, at most one request a second, and <strong>Use MusicBrainz</strong> under <strong>Settings → Metadata agents</strong> turns it off.</p>
+<p><strong>Several matches.</strong> Pressings of one album share an answer, so any will do. If the matches disagree, or only the track lengths are close, nothing is guessed. The disc keeps its own names, and an administrator sees <strong>Choose from N matches</strong> on the CD player page, where you can pick the right one, change it later, or go back to the disc’s own names.</p>
+<p><strong>Saved beside your files?</strong> Only with saving on: a <code>&lt;name&gt;.wittycd.json</code> with the names and release, and a <code>&lt;name&gt;-poster.jpg</code>. With it off, the names stay in the server’s database.</p>
+<p>Album data comes from <a href="https://musicbrainz.org" rel="noopener">MusicBrainz</a> (CC0), and covers from the <a href="https://coverartarchive.org" rel="noopener">Cover Art Archive</a>. Cover pictures belong to their owners. Both are credited on the player page.</p>
+<h2 id="custom-agents">Custom agents<a class="h-anchor" href="#custom-agents" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A custom agent is a web service of your own that the server asks about titles the built-in agents don’t know: a family archive, a club’s catalogue, a script you wrote.</p>
+<ol><li>Open <strong>Settings → Metadata agents</strong>, under <strong>Custom agents</strong>, and press <strong>Add agent</strong>.</li><li>Fill in the fields below.</li><li>Under <strong>Try it</strong>, type a title and press <strong>Look up</strong>. That changes nothing.</li><li>Press <strong>Add agent</strong> to save it.</li></ol>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>What it is</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>What to call it</td></tr><tr><td><strong>Address</strong></td><td>A web address with <code>{title}</code> in it, and <code>{year}</code> and <code>{type}</code> (<code>movie</code>, <code>video</code> or <code>book</code>) if you want them. For example, <code>https://archive.local/lookup?title={title}&amp;year={year}</code></td></tr><tr><td><strong>API key header</strong></td><td>Optional, sent with every request. For example, <code>Authorization: Bearer abc123</code>. It’s kept on the server</td></tr><tr><td><strong>Use it for</strong></td><td>Movies, DVDs &amp; Blu-rays, Home videos and Books</td></tr></tbody></table></div>
+<p>Agents run in the order listed, before TMDB, TheTVDB, TVmaze and Wikidata, and only fill in what’s still empty. Information inside your files, NFO files and your own edits always win. They’re also searched in <strong>Search and match</strong>, where an agent’s answer can be chosen like any other.</p>
+<p>The agent answers with JSON: one object, a list, or <code>{&quot;results&quot;: [...]}</code>. The first entry is used, and every field is optional:</p>
+<div class="codebox"><pre id="code-1" class="code" data-lang="json"><code>{
+  &quot;id&quot;: &quot;lx-2012&quot;,
+  &quot;title&quot;: &quot;My Film&quot;,
+  &quot;year&quot;: 2012,
+  &quot;overview&quot;: &quot;A lighthouse keeper finds a boat.&quot;,
+  &quot;tagline&quot;: &quot;Some things come back.&quot;,
+  &quot;genres&quot;: [&quot;Drama&quot;, &quot;Mystery&quot;],
+  &quot;rating&quot;: 6.4,
+  &quot;contentRating&quot;: &quot;PG&quot;,
+  &quot;studio&quot;: &quot;Lantern Works&quot;,
+  &quot;runtimeMinutes&quot;: 86,
+  &quot;poster&quot;: &quot;https://archive.local/art/my-film.jpg&quot;,
+  &quot;backdrop&quot;: &quot;https://archive.local/art/my-film-wide.jpg&quot;
+}</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>Answer <code>404</code> when you don’t know a title. Pictures are downloaded when the title is scanned. A picture on the agent’s own server is fetched like the agent, so it may be on your network. Any other picture is fetched from the internet only. Only real pictures (JPEG, PNG, WebP, GIF) are kept.</p>
+<h2 id="categories-studios-and-browsing">Categories, studios and browsing<a class="h-anchor" href="#categories-studios-and-browsing" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A film or TV library opens on <strong>shelves</strong>: categories, collections, studios, networks, recently added, highest rated, and a row for each category. Choosing a sort, a filter or a card turns it into a grid. The address holds the whole state, so any view can be bookmarked.</p>
+<p><strong>Categories</strong> are made from genres, one library at a time, with the art of what’s in them. Different spellings of a genre are put together (<em>Sci-Fi</em> and <em>Science Fiction</em>), and combined ones are split (<em>Action &amp; Adventure</em>). <strong>Categories</strong> on the page lets an administrator rename, hide, reorder and merge them. Only the changes are kept, so new genres appear by themselves, and <strong>Start again</strong> forgets them.</p>
+<p><strong>Collections from film series</strong> appear by themselves. When a source says a film is part of a series, and two or more films in a library share it, they show as a card under <strong>Collections</strong>. The <strong>Collection</strong> field in the Edit dialog changes or clears it. For lists you make yourself, see <a href="/docs/collections/#collections-and-smart-playlists">Collections</a>.</p>
+<p><strong>Studios and networks</strong> come from metadata, every studio a source names. A card opens everything from that studio, across libraries. Kids and Guest profiles see neither the titles they can’t watch, nor a studio or category only those titles are in.</p>
+<p><strong>Filters</strong> let you browse by almost anything: type, category, studio, network, collection, decade, year, age rating, score, picture size (4K, 1080p, 720p, SD), sound (such as <code>AC3 5.1</code>), audio and subtitle language, edition, tags, whether it’s been watched, words in the title, and streaming listings if they’re on. <strong>Save this view</strong> keeps a view for your account, and can pin it to Home.</p>
+<h2 id="streaming-listings">Streaming listings<a class="h-anchor" href="#streaming-listings" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>This shows which of the titles <strong>already on your server</strong> a streaming service currently lists, for someone used to finding things that way. It’s optional, and off until an administrator accepts each statement of what it means.</p>
+<p><strong>Nothing plays from those services, no account with them is used, and there’s no connection with any of them.</strong> Every screen that shows a listing says so, and dates it.</p>
+<p>To turn it on:</p>
+<ol><li>Add a free TMDB key, as in <a href="#api-keys">API keys</a>, and save.</li><li>Open <strong>Settings → Metadata agents</strong>, under <strong>Streaming listings</strong>.</li><li>Read each of the four statements, and tick it. They say that nothing streams from these services, that this project has no connection with them, that listings can be wrong or out of date, and that your server will send TMDB your titles.</li><li>Choose your <strong>Region</strong>, and press <strong>Turn on listings</strong>.</li></ol>
+<p>Titles then show <strong>Also listed on</strong> on their page, and a shelf and filter appear on the library page.</p>
+<div class="table-wrap"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Source</strong></td><td>TMDB’s watch providers, which come from <a href="https://www.justwatch.com" rel="noopener">JustWatch</a>. TMDB’s terms require JustWatch to be credited, which every screen does, and don’t allow commercial use</td></tr><tr><td><strong>Needs</strong></td><td>Your own free TMDB key. Without one it stays off</td></tr><tr><td><strong>Sent</strong></td><td>The TMDB id of each title in your film and TV libraries, or its name and year to find that id, about once every two weeks. No files and nothing about you. A title that can’t be found with near certainty isn’t listed</td></tr><tr><td><strong>What counts</strong></td><td>Included with a subscription, free, or free with adverts. Rentals and purchases aren’t counted</td></tr><tr><td><strong>Region</strong></td><td>Your choice, as listings differ by country. Changing it looks them up for that country</td></tr><tr><td><strong>Kept up to date</strong></td><td>A title you match, rematch or unmatch is looked at again straight away. <strong>Check now</strong> looks at everything again</td></tr><tr><td><strong>Names and logos</strong></td><td>Plain text, unless you’ve agreed to logos too</td></tr></tbody></table></div>
+<p>Turning it off forgets everything it fetched.</p>
+<h2 id="the-logo-service">The logo service<a class="h-anchor" href="#the-logo-service" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>This gives you logos for studios, networks, consoles, game studios and streaming services, in every part of the app. <strong>Nothing is bundled, and nothing is downloaded until an administrator agrees.</strong> Until then, and for anything with no logo, the app shows the name in plain text, and that’s a finished look rather than a gap.</p>
+<h3 id="agreeing-to-logos">Agreeing to logos<a class="h-anchor" href="#agreeing-to-logos" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Open <strong>Settings → Metadata agents</strong>, and find <strong>Logos</strong>. Everywhere a logo can be set, it explains this and links here until you’ve answered. Press <strong>I understand: download logos</strong>, or <strong>No thanks: use plain names</strong>. Here’s what you’re agreeing to:</p>
+<ul><li>Logos aren’t part of this software. They’re downloaded to your server, one at a time, from <a href="https://commons.wikimedia.org/wiki/Commons:Licensing" rel="noopener">Wikimedia Commons</a>.</li><li>Your server tells Wikidata and Wikimedia Commons the name of each studio, network, TV channel or console it finds, and nothing else.</li><li>Only files whose own page says they’re free to reuse are taken.</li><li>Logos are still trademarks of their owners. They’re shown only to name who made something, for your own use on your own server. If you share your server, that’s for you to judge.</li></ul>
+<p>Afterwards, <strong>Download logos</strong> turns it off, <strong>Remove them</strong> also deletes the pictures, and <strong>Show the list</strong> gives where each came from. Everyone signed in can see the same list under <strong>Legal</strong>, along with any channel wearing a picture from its channel list or its owner, which has no licence to state. Logos you uploaded stay. Uploading your own works without agreeing, since nothing is downloaded.</p>
+<h3 id="where-logos-come-from-and-the-terms">Where logos come from, and the terms<a class="h-anchor" href="#where-logos-come-from-and-the-terms" aria-hidden="true" tabindex="-1">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Source</strong></td><td><a href="https://www.wikidata.org" rel="noopener">Wikidata</a> says which file is a company’s logo. The data is CC0. The file itself is on Wikimedia Commons, where each file’s page states its licence</td></tr><tr><td><strong>What’s taken</strong></td><td>Only public domain files and free licences that allow changes and commercial use (<code>CC0</code>, <code>CC BY</code>, <code>CC BY-SA</code>). Anything marked non-free, non-commercial or no-derivatives is skipped</td></tr><tr><td><strong>Credit</strong></td><td>Source, licence and author are kept with each logo and listed under <strong>Show the list</strong>, which is what those licences ask for. The white and dark versions are recoloured, and the list says so</td></tr><tr><td><strong>Sent</strong></td><td>The name, and nothing else, at about one request a second</td></tr><tr><td><strong>TMDB’s logos</strong></td><td>Not used. TMDB’s API terms don’t allow derivatives, and logos have to be recoloured to read on any background</td></tr></tbody></table></div>
+<p>A logo is used without asking only if the name on Wikidata, or one of its other names, is the name in your library or, for a tuner or playlist channel, <a href="/docs/channels/#logos-and-title-art">its name with the quality and country taken off</a>. Anything close but not exact is only offered under <strong>Change</strong>, where a person chooses. See <a href="/docs/fixing-metadata/#logos">Logos</a>.</p>
+<h3 id="what-happens-to-a-picture">What happens to a picture<a class="h-anchor" href="#what-happens-to-a-picture" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>It’s read, limited to 8 MB and 25 megapixels, and written again from its pixels as a plain PNG, so nothing but pixels gets through: no SVG, scripts or metadata. Then two more versions are made, all white and all dark. If a logo has two clear tones, the larger tone is painted and the smaller is cut out, so the letters stay readable. A picture whose background can’t be taken off stays as it is, and gets a plate of its own.</p>
+<p>Pictures are kept in the image cache and served only by this server, so no browser or app contacts the source.</p>
+<h2 id="video-games">Video games<a class="h-anchor" href="#video-games" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Games get their details from their own set of sources, in the background, so a scan of thousands of games never waits on the internet. It works out of the box, and a free key adds more.</p>
+<h3 id="game-sources">Game sources<a class="h-anchor" href="#game-sources" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Choose which are on, and which is believed first, under <strong>Settings → Metadata agents</strong>, in <strong>Video games</strong>. Keys are added there too. The first source with a value for something wins, except for scores, age ratings and pictures, which are collected from all of them.</p>
+<div class="table-wrap"><table><thead><tr><th>Source</th><th>Needs</th><th>Good for</th><th>Sends</th></tr></thead><tbody><tr><td><strong>libretro database</strong></td><td>Nothing</td><td>Recognising your exact files by checksum, dates, makers, genres, players, some age ratings and scores</td><td>Nothing about your games: a list for each console you have is downloaded once, checked monthly, and matched here</td></tr><tr><td><strong>libretro thumbnails</strong></td><td>Nothing</td><td>Box art, title screens, in-game pictures</td><td>Game names, as the database lists them</td></tr><tr><td><strong>Wikidata and Wikipedia</strong></td><td>Nothing</td><td>Summaries, makers, some review scores and age ratings</td><td>Which console, and the names of games it matches</td></tr><tr><td><strong>IGDB</strong></td><td>A free Twitch application’s id and secret</td><td>The fullest source: covers, art, critic and user scores, every age rating board</td><td>Game and console names</td></tr><tr><td><strong>ScreenScraper</strong></td><td>A free account, and a developer id if your copy has none built in</td><td>Recognising files by checksum, with art, scores and age ratings</td><td>Names, console, checksums and sizes</td></tr><tr><td><strong>RAWG</strong></td><td>A free key</td><td>Metacritic and user scores, wide backdrops</td><td>Game and console names</td></tr><tr><td><strong>TheGamesDB</strong></td><td>A free key</td><td>Box art and fan art, some checksums</td><td>Names, console and checksums</td></tr></tbody></table></div>
+<p>Each source’s row under <strong>Settings → Metadata agents</strong> gives its licence and limits.</p>
+<p><strong>Files never leave your server.</strong> Only names, checksums and sizes are looked up, as the table says. Turning a source off stops it being asked. Pictures are fetched by the server and kept in its image cache, so a browser or an app never talks to a source.</p>
+<h3 id="how-a-game-is-matched">How a game is matched<a class="h-anchor" href="#how-a-game-is-matched" aria-hidden="true" tabindex="-1">#</a></h3>
+<ol><li><strong>By checksum.</strong> Archives record their files’ checksums, so only the headers are read and nothing is unpacked. A cartridge file up to 128 MB is read once, with and without a copier’s header. Nothing is read twice unless the file changes.</li><li><strong>By code.</strong> A disc’s product code is read from a few sectors near its start, or from its file name. A cartridge’s code, and the title in its header, count only when the file’s name agrees, because a fan’s hack of a game keeps both.</li><li><strong>By name and console.</strong> Region and dump tags are taken off and kept as details. Punctuation, articles and II or 2 don’t matter, but different numbers always do. A name must be at least 85% alike to be used without asking, and only an exact name or a checksum renames a game. A close match gets its details, but keeps the name on its file.</li><li><strong>By another version in its archive.</strong> In a set, what’s asked about first is the file that would be played. If neither that nor the name is known, a checksum of another version in the archive still gives the game’s details and art.</li></ol>
+<p>A file saved here earlier is only an old answer, which a better one replaces. An NFO a person wrote is theirs, and stays. A game from a gaming PC has no file to read, so it goes by name alone.</p>
+<h3 id="fixing-a-game">Fixing a game<a class="h-anchor" href="#fixing-a-game" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Every game’s page shows administrators how it was matched and how sure that is, with <strong>Fix match</strong> (search every source and pick), <strong>Lock</strong> (leave it alone from now on) and <strong>Look up again</strong>. <strong>It has no match</strong>, in <strong>Fix match</strong>, clears what sources filled in.</p>
+<h3 id="keeping-requests-down">Keeping requests down<a class="h-anchor" href="#keeping-requests-down" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The queue is in the database, so a restart carries on where it stopped. Games are worked on in batches of 50, one console at a time. Each source’s answer is kept, so changing the order of sources asks nobody anything, and adding one only asks that one, for what it can add.</p>
+<div class="table-wrap"><table><thead><tr><th>Source</th><th>How it’s asked</th></tr></thead><tbody><tr><td>libretro database</td><td>One download a console, then no requests at all</td></tr><tr><td>Wikidata</td><td>One request a second at most, in large batches. Backs off when it says it’s busy</td></tr><tr><td>libretro thumbnails</td><td>Only covers and one in-game picture are fetched up front, and others when someone looks</td></tr><tr><td>IGDB</td><td>About three requests a second</td></tr><tr><td>ScreenScraper</td><td>One every 1.2 seconds, up to 18,000 a day</td></tr><tr><td>RAWG</td><td>Up to 18,000 a month. Only for games still missing something</td></tr><tr><td>TheGamesDB</td><td>One a second, for games still missing something, stopping when its monthly allowance runs low</td></tr></tbody></table></div>
+<h3 id="age-ratings-and-kids-profiles">Age ratings and Kids profiles<a class="h-anchor" href="#age-ratings-and-kids-profiles" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>ESRB, PEGI, CERO, USK, ACB, GRAC, ClassInd and ELSPA ratings all become a minimum age. The strictest one a game has is its content rating, written like <code>ESRB T</code>, and that’s what Kids and Guest profiles go by, as for a film. A game above a profile’s limit doesn’t appear at all, and can’t be opened or played. A game with no rating counts as unrated, so it’s hidden from profiles that don’t allow unrated titles: set one with <strong>Edit</strong> on its page. Ratings a source marks as still pending count as no rating.</p>
+<h3 id="whats-kept-and-whats-saved-beside-your-games">What’s kept, and what’s saved beside your games<a class="h-anchor" href="#whats-kept-and-whats-saved-beside-your-games" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Answers go in the server’s database and pictures in its image cache. With saving on, a game gets <code>&lt;name&gt;.nfo</code>, <code>&lt;name&gt;-poster.jpg</code> and <code>&lt;name&gt;-fanart.jpg</code> beside it, and a scan reads them back. With it off, nothing is ever written next to your games. Your own files always win: a picture or NFO beside a game, and anything typed under <strong>Edit</strong>, stays as it is.</p>
+<h2 id="lyrics-and-artist-information">Lyrics and artist information<a class="h-anchor" href="#lyrics-and-artist-information" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Music can also find lyrics, and artists’ biographies and photos, online. Both are off until the owner turns them on, under <strong>Settings → Metadata agents</strong>. What’s sent to whom is set out there and in <a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a>.</p>
+<h2 id="coming-from-another-media-server">Coming from another media server<a class="h-anchor" href="#coming-from-another-media-server" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Software that uses NFO files:</strong> point a library at the same folders. Existing NFOs and artwork are read as they are, including TMDB and TheTVDB ids, so matches are exact.</li><li><strong>Servers that keep metadata in their own database:</strong> local artwork (<code>poster.jpg</code>, <code>fanart.jpg</code>) is still read, and titles match by the usual naming (<code>Movie (Year)</code>, <code>Show/Season 01/Show S01E01</code>). After a scan with saving on, your folders gain NFOs that other NFO-based tools can read too.</li></ul>
+<h2 id="for-developers">For developers<a class="h-anchor" href="#for-developers" aria-hidden="true" tabindex="-1">#</a></h2>
+<h3 id="using-logos-in-the-web-app">Using logos in the web app<a class="h-anchor" href="#using-logos-in-the-web-app" aria-hidden="true" tabindex="-1">#</a></h3>
+<div class="codebox"><pre id="code-2" class="code" data-lang="tsx"><code>import BrandLogo from &#39;../components/BrandLogo&#39;
+
+&lt;BrandLogo kind=&quot;network&quot; name={show.network} /&gt;            // follows the theme
+&lt;BrandLogo kind=&quot;studio&quot; name={it.studio} on=&quot;dark&quot; /&gt;       // on a plate that&#39;s always dark, such as over artwork</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>It renders the logo, or the name in text, on its own. Lookups in the same moment go as one request. On a screen showing logos, also show <code>&lt;LegalNote kind=&quot;logos&quot; /&gt;</code> once. <code>useLogo(kind, name)</code> and <code>lookupLogo(kind, name)</code> give the details, and <code>forgetLogos()</code> drops what’s been remembered after a change.</p>
+<p>Kinds: <code>studio</code>, <code>network</code>, <code>console</code>, <code>gamestudio</code>, <code>platform</code>.</p>
+<p><code>GET /api/games/consoles</code> gives each console a <code>logoName</code>, the name it goes by on Wikidata. On a games screen, use the marks made for this, which are the same size whichever way a console appears. With no logo they’re a short typed label:</p>
+<div class="codebox"><pre id="code-3" class="code" data-lang="tsx"><code>import { ConsoleMark, StudioMark } from &#39;../components/ConsoleMark&#39;
+
+&lt;ConsoleMark console={c} /&gt;                     // sizes: sm, md, lg
+&lt;StudioMark name={it.studio} on=&quot;dark&quot; /&gt;</code></pre><button class="icon-btn copy" type="button" data-copy="#code-3" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h3 id="using-logos-from-the-server">Using logos from the server<a class="h-anchor" href="#using-logos-from-the-server" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>When you find a new console or game studio, call <code>Store.EnsureLogo(ctx, kind, name)</code>. It only adds a row. <code>Logos.Kick()</code> starts looking, and does nothing without the owner’s agreement. The studios of films and networks of shows are added by scans already, and so are the consoles of a games library and the studios of its games.</p>
+<h3 id="logo-routes">Logo routes<a class="h-anchor" href="#logo-routes" aria-hidden="true" tabindex="-1">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Route</th><th>Who</th><th>What it does</th></tr></thead><tbody><tr><td><code>GET /api/logos/status</code></td><td>Signed in</td><td><code>consent</code> (<code>yes</code>, <code>no</code> or empty), <code>source</code>, <code>sourceUrl</code>, and for an administrator <code>counts</code> (<code>pending</code>, <code>found</code>, <code>none</code>, <code>text</code>)</td></tr><tr><td><code>PUT /api/logos/consent</code> <code>{accepted, removeDownloaded}</code></td><td>Admin</td><td>Records the answer. Agreeing starts the downloads. Declining stops them, and removes what was downloaded if asked. Uploaded logos stay</td></tr><tr><td><code>POST /api/logos/lookup</code> <code>{logos: [{kind, name}]}</code></td><td>Signed in</td><td>Up to 200 names at once. Answers each with <code>id</code>, <code>kind</code>, <code>name</code>, <code>status</code>, <code>has</code>, <code>version</code>, <code>opaque</code>, <code>source</code>, <code>sourceUrl</code>, <code>license</code>, <code>licenseUrl</code>, <code>credit</code>. An admin’s lookup adds names nobody has asked about, and anyone else’s only reads, because a looked-up name goes to the internet</td></tr><tr><td><code>GET /api/logos/{id}/image?variant=white&amp;v={version}</code></td><td>Signed in</td><td>The PNG, or 404. <code>variant</code> is <code>white</code>, <code>dark</code> or <code>original</code></td></tr><tr><td><code>GET /api/logos/credits</code></td><td>Signed in</td><td>Every logo with its source, licence and author. An account with limits gets the studios and networks of what it may see</td></tr><tr><td><code>GET /api/logos/{id}/candidates?q=</code></td><td>Admin</td><td>What the source offers, to choose from. 409 without the owner’s agreement</td></tr><tr><td><code>GET /api/logos/preview?src=</code></td><td>Admin</td><td>A candidate’s picture, through this server. Only Wikimedia addresses, and 409 until downloads are agreed to</td></tr><tr><td><code>PUT /api/logos/{id}</code> <code>{sourceId, q}</code> or <code>{status}</code></td><td>Admin</td><td>Use a candidate, or with <code>status</code> <code>text</code> the name alone, or with <code>pending</code> look again</td></tr><tr><td><code>PUT /api/logos/{id}/upload</code> (the picture as the body)</td><td>Admin</td><td>Use your own. PNG, JPEG, WebP or GIF, up to 8 MB</td></tr><tr><td><code>GET /api/brands?library=&amp;kind=studio</code></td><td>Signed in</td><td>The studios or networks (<code>kind=network</code>) of a library, most titles first, counting only what this viewer may see</td></tr></tbody></table></div>
+<p><code>status</code> is <code>pending</code> (not looked for yet), <code>found</code>, <code>none</code> (no source has one) or <code>text</code> (someone chose the name alone).</p>
+<h3 id="the-screenscraper-developer-id">The ScreenScraper developer id<a class="h-anchor" href="#the-screenscraper-developer-id" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>ScreenScraper’s terms identify each program by a developer id, which isn’t in this repository. Without one the source says so and asks for one in Settings, and other sources aren’t affected.</p>
+<p><code>scripts/build-release.sh</code> builds one in when <code>SCREENSCRAPER_DEV_ID</code> and <code>SCREENSCRAPER_DEV_PASSWORD</code> are set, and the release workflow sets those from secrets of the same names. The Docker image isn’t built with them, because build arguments stay readable in an image.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/supported-formats/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Supported formats</strong></a>
+      <a class="card next" href="/docs/fixing-metadata/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Fixing wrong details</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/METADATA.md" rel="noopener">docs/METADATA.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/METADATA.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#the-order-sources-are-used-in">The order sources are used in</a></li><li><a href="#api-keys">API keys</a></li><li><a href="#nfo-files-and-artwork">NFO files and artwork</a></li><li><a href="#what-is-saved-next-to-your-media">What is saved next to your media</a></li><li><a href="#editing-and-fixing-matches">Editing and fixing matches</a></li><li><a href="#audio-cds">Audio CDs</a></li><li><a href="#custom-agents">Custom agents</a></li><li><a href="#categories-studios-and-browsing">Categories, studios and browsing</a></li><li><a href="#streaming-listings">Streaming listings</a></li><li><a href="#the-logo-service">The logo service</a></li><li><a href="#video-games">Video games</a></li><li><a href="#lyrics-and-artist-information">Lyrics and artist information</a></li><li><a href="#coming-from-another-media-server">Coming from another media server</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

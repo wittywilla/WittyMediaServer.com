@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Blu-rays · WittyMediaServer</title>
+<meta name="description" content="Use this guide to add Blu-ray images and folders to your server, play them with their real menus in a browser, and decide about discs with Java menus. The…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/bluray/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Blu-rays">
+<meta property="og:description" content="Use this guide to add Blu-ray images and folders to your server, play them with their real menus in a browser, and decide about discs with Java menus. The…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/bluray/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/" aria-current="page">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Discs</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/" aria-current="page">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#discs">Discs</a></p>
+      <h1>Blu-rays</h1>
+      <p class="lead">Use this guide to add Blu-ray images and folders to your server, play them with their real menus in a browser, and decide about discs with Java menus. The module that does this is <strong>WittyBluray</strong>, an original implementation of the logic a player runs.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/BLURAY.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#adding-discs">Adding discs</a></li><li><a href="#playing-a-disc">Playing a disc</a></li><li><a href="#sound-subtitles-and-chapters">Sound, subtitles and chapters</a></li><li><a href="#3d-4k-and-hdr">3D, 4K and HDR</a></li><li><a href="#bd-j-java-menus">BD-J (Java) menus</a></li><li><a href="#java-and-licensing">Java and licensing</a></li><li><a href="#on-a-small-machine">On a small machine</a></li><li><a href="#diagnosing-a-disc">Diagnosing a disc</a></li><li><a href="#limits">Limits</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<h2 id="adding-discs">Adding discs<a class="h-anchor" href="#adding-discs" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/bluray-item.webp" alt="A Blu-ray&#39;s page" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>A Blu-ray image’s page. <a href="https://archive.org/details/SitaSingsTheBlues_201812" rel="noopener">Sita Sings the Blues</a>, Nina Paley, <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener">CC0</a>.</em></span></figcaption></figure>
+<ol><li>Go to <strong>Settings → Modules</strong> and add <strong>WittyBluray</strong>. WittyDisc, which reads disc images, comes inside it. See <a href="/docs/module-store/">Modules and the store</a>.</li><li>Go to <strong>Settings → Libraries → Add library</strong>, and choose <strong>DVDs, Blu-rays &amp; CDs</strong>. Images of films can also go in a <strong>Movies</strong> library, and images of a series in a <strong>TV shows</strong> library.</li><li>Choose the folder that holds your discs, and press <strong>Add library</strong>.</li></ol>
+<p>It takes <code>.iso</code> and <code>.img</code> images, among those listed in <a href="/docs/supported-formats/">Supported formats</a>, and folders that hold <code>BDMV</code>. AVCHD discs and camcorder cards, and BDAV recordings, are read too.</p>
+<p>A scan recognises a Blu-ray by its structure, not its name, and records its label, the feature’s length, resolution, codec, languages, chapters, and whether it has menus. 3D discs get a “3D” genre. Without WittyBluray, a disc stays listed with nothing known about what’s in it, and playing it offers to add the module. Adding it scans your disc libraries.</p>
+<p><strong>Encrypted discs are refused.</strong> An AACS-encrypted disc is listed with this message, and can’t be played: “This disc is encrypted, so it can’t be played: encrypted media isn’t supported, and nothing here bypasses copy protection.” The check looks at the video itself, not at folder names. BD+ is never run. An unencrypted disc just plays.</p>
+<h2 id="playing-a-disc">Playing a disc<a class="h-anchor" href="#playing-a-disc" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>On a Blu-ray’s page:</p>
+<figure class="doc-fig"><img src="/images/shots/bluray-menu.webp" data-shot="bluray-menu" alt="A Blu-ray playing in a browser" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>A Blu-ray image, in a browser. <a href="https://archive.org/details/SitaSingsTheBlues_201812" rel="noopener">Sita Sings the Blues</a>, Nina Paley, <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener">CC0</a>.</em></span></figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Button</th><th>What happens</th></tr></thead><tbody><tr><td><strong>Insert Blu-ray</strong></td><td>Starts the disc like a player: first-play, studio intros and warnings, then the top menu. Optionally with the tray animation and drive sound</td></tr><tr><td><strong>Play movie</strong>, or <strong>Play from the start</strong> on a series</td><td>Straight into the feature</td></tr><tr><td><strong>Resume from</strong></td><td>Back to where you stopped</td></tr><tr><td><strong>Main menu</strong></td><td>The disc’s top menu, skipping the intros</td></tr></tbody></table></div>
+<p><strong>Disc settings</strong> on the page, for administrators, chooses what’s on the disc, whether inserting it starts with the menu or the feature, and the insert effect. The defaults, the region, parental limits and country are under <strong>Settings → Playback &amp; discs</strong>. Pick the region your discs are from: a disc for another region shows its own message instead of the movie.</p>
+<p><strong>In a menu,</strong> the arrow keys, the on-screen remote, a game controller or a TV remote move between buttons, and <strong>OK</strong> presses one. The disc’s own program then runs, as its authors intended. <strong>Top menu</strong> returns to the top menu from the film.</p>
+<p><strong>Pop-up menus.</strong> When the film carries one, the <strong>Menu</strong> key, or <strong>M</strong>, opens it over the picture while the film keeps playing. The arrows and OK work it, and <strong>Esc</strong> or <strong>Menu</strong> closes it. Discs use these for chapters, sound and subtitle choices with their own artwork.</p>
+<p>Menu buttons make the disc’s own sounds, pages play their transitions, and menus that move on by themselves after a while do so. Keys and the remote work as they do for <a href="/docs/dvd/#the-remote-and-keyboard">DVDs</a>.</p>
+<p>A disc can forbid seeking or skipping at some points, as on a disc player. To ignore that, turn off <strong>Disc restrictions</strong> in the player’s viewing settings.</p>
+<h2 id="sound-subtitles-and-chapters">Sound, subtitles and chapters<a class="h-anchor" href="#sound-subtitles-and-chapters" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Sound:</strong> every track in the feature is listed, with its language and channels: DTS-HD Master Audio, TrueHD, DTS, Dolby Digital, Dolby Digital Plus and PCM. It’s converted for the browser.</li><li><strong>Subtitles:</strong> the disc’s own subtitle pictures, drawn over the video at their exact positions and times, in any of the disc’s languages. Forced ones, which translate on-screen text, show even with subtitles off. <strong>Forced captions</strong> in the viewing settings turns them off.</li><li><strong>Chapters:</strong> the playlist’s chapter marks.</li><li><strong>Angles:</strong> scenes with several angles play the one you choose, with <strong>Angle</strong>.</li></ul>
+<h2 id="3d-4k-and-hdr">3D, 4K and HDR<a class="h-anchor" href="#3d-4k-and-hdr" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>3D discs (MVC)</strong> play their 2D view, because FFmpeg has no decoder for the other. The disc is marked 3D in the library.</li><li><strong>Side-by-side and over-under 3D</strong>, on discs or files made that way: the viewing settings have <strong>3D video</strong>, and <strong>Show 3D as</strong>: one eye in 2D, or red and cyan for paper glasses.</li><li><strong>4K UHD discs</strong> are read like any other. With <strong>Maximum resolution</strong> on <strong>Source</strong>, they’re sent as 1080p, because converting 4K in software is beyond most machines. Choose <strong>2160p (4K)</strong> under <strong>Settings → Playback &amp; discs → Conversion</strong> to send them as 4K. No real UHD disc has been tried.</li><li><strong>HDR</strong> (HDR10, HDR10+ and the HDR10 layer of Dolby Vision) is mapped to an ordinary picture for the browser. An FFmpeg without the <code>zscale</code> and <code>tonemap</code> filters plays it unmapped: watchable, but flat. HDR screens haven’t been checked.</li></ul>
+<h2 id="bd-j-java-menus">BD-J (Java) menus<a class="h-anchor" href="#bd-j-java-menus" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Many commercial Blu-rays write their menus in Java. <strong>This is off until you turn it on.</strong> With it off, or with no Java, these discs play their main feature directly, and chapters, sound and subtitles are still there in the player’s own controls.</p>
+<p>To show those menus:</p>
+<ol><li>Install any Java 8 or newer on the server, with its graphics libraries. <a href="https://adoptium.net" rel="noopener">Eclipse Temurin</a> is a free build of OpenJDK. A stripped-down Java without graphics can’t run them. On Linux, install <code>fontconfig</code> too. In Docker, add both to the image.</li><li>Go to <strong>Settings → Playback &amp; discs</strong> and turn on <strong>Run Blu-ray Java menus (BD-J)</strong>. The page shows which Java it found.</li><li>If it found none, or you want another, name it in the server’s <a href="/docs/config/">config file</a> as <code>javaPath</code>, or with <code>-java</code> or <code>WMS_JAVA</code>, and start the server again. <strong>It can’t be set from the web page</strong>, so that a web account can’t choose what the server runs. A location saved in Settings by an older version is ignored.</li><li>Insert the disc.</li></ol>
+<p>Each viewer’s disc starts its own small Java process, with a 192 MB heap, which ends with the session. The disc’s graphics reach the player as pictures at up to 12 a second, so fast animation looks less smooth than on a hardware player.</p>
+<p><strong>How far this has been tested.</strong> It has run with our own test discs and with open-source sample applications, <strong>not yet on a retail disc</strong>. None of the discs tried so far has Java menus. If an application can’t run, the disc plays its main feature instead.</p>
+<p><strong>Safety.</strong> A BD-J disc contains code. It runs in a sandbox with no network and no access to files outside the disc’s own areas, and a hostile test disc tries to break out every time the tests run. If a disc uses too much memory, too many threads or too much processor time, its Java process is ended and the feature plays. That’s a strong barrier and not a guarantee, so turn this on only for discs you trust, and run the server as an unprivileged user. <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/BLURAY-QUIRKS.md#bd-j" rel="noopener">The sandbox in detail</a>.</p>
+<h2 id="java-and-licensing">Java and licensing<a class="h-anchor" href="#java-and-licensing" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Java isn’t shipped.</strong> The server and the module contain no Java runtime. Whoever runs the server installs one, under that Java’s own licence, and it runs as a separate program.</li><li><strong>The runtime is ours.</strong> <code>runtime.jar</code> is original code under Apache-2.0, with no code from Sun, Oracle or other players. It provides the classes disc applications link against, so that discs can run.</li><li><strong>It isn’t certified.</strong> The runtime hasn’t passed any compatibility test and makes no claim to. It doesn’t call itself Java, and “BD-J” and “Blu-ray” here only describe which discs it plays.</li><li><strong>Copy protection is untouched.</strong> AACS and BD+ are never decrypted or run.</li></ul>
+<h2 id="on-a-small-machine">On a small machine<a class="h-anchor" href="#on-a-small-machine" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li>Only the bytes being played are read. Nothing is copied to disk.</li><li><strong>Settings → Playback &amp; discs → Low-power mode for discs</strong> uses the cheapest deinterlacer and the fastest encoder setting.</li><li>A hardware encoder helps most: see <a href="/docs/transcoding/#hardware-encoders">Live transcoding</a>.</li><li>Subtitle pictures are decoded in two-minute windows as the viewer reaches them, so a 20 GB film is never scanned whole.</li></ul>
+<h2 id="diagnosing-a-disc">Diagnosing a disc<a class="h-anchor" href="#diagnosing-a-disc" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Settings → WittyDiagnoser</strong> checks a disc and makes a report to attach, with nothing copyrighted in it: see <a href="/docs/diagnoser/">WittyDiagnoser</a>.</p>
+<p>When reporting a problem, attach that report, and never the disc image.</p>
+<h2 id="limits">Limits<a class="h-anchor" href="#limits" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/bluray-refused.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: A message saying the disc is encrypted and can&#39;t be played</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em>A copy-protected pressing gets a plain message, and nothing unlocks it. <a href="https://peach.blender.org/" rel="noopener">Big Buck Bunny</a>, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>, from a disc pressed by Imagion AG.</em></p></div>
+<ul><li>AACS-encrypted discs are refused, and BD+ is not run.</li><li>3D discs play in 2D, and 4K discs are sent as 1080p unless you choose 2160p.</li><li>Secondary audio and picture-in-picture are not mixed in.</li><li>BD-J graphics reach the player at up to 12 pictures a second.</li><li>It has been tested on custom-authored discs. Retail discs use more of the format: BD-J, 3D and Ultra HD HDR are written, and have only been tested on synthetic data or not at all.</li><li>On FreeBSD and macOS, the module’s helper program runs without a sandbox. The BD-J limits above are separate from that.</li></ul>
+<h2 id="for-developers">For developers<a class="h-anchor" href="#for-developers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>WittyBluray is a project of its own. Everything the format can do, and what happens with each, is in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/BLURAY-QUIRKS.md" rel="noopener">Blu-ray disc quirks</a>.</p>
+<p><strong>Looking inside a disc.</strong> The server’s old <code>bluray</code> command has gone. The tool now comes from the WittyBluray project, and needs Go 1.26 or newer:</p>
+<div class="codebox"><pre id="code-1" class="code" data-lang="bash"><code>go install github.com/wittywilla/wittybluray/cmd/wittybluray@latest</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="codebox"><pre id="code-2" class="code" data-lang="bash"><code>wittybluray info     MY_DISC.iso          # titles, program, playlists, clips, streams, 3D and HDR flags
+wittybluray playlist MY_DISC.iso 800      # every item, stream and chapter of one playlist
+wittybluray menu     MY_DISC.iso 800      # a playlist&#39;s menu: pages, buttons and every command
+wittybluray walk     MY_DISC.iso          # simulate inserting the disc: the menu&#39;s buttons and commands
+wittybluray walk     MY_DISC.iso 2 5      # then press buttons 2 and 5
+wittybluray render   MY_DISC.iso out/     # the first menu&#39;s pages as PNG files
+wittybluray bdj      MY_DISC.iso 20 a.png down enter  # BD-J titles; with Java, run them for 20 seconds, pressing those keys</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>Their output holds no video or artwork, so it’s safe to attach to a bug report. If a BD-J disc falls back to its feature, <code>bdj</code> usually says why.</p>
+<p><strong>How it works:</strong></p>
+<ol><li>WittyDisc reads the image directly, with no mounting, including the UDF 2.50 metadata partition Blu-rays use.</li><li>The disc’s program is parsed: <code>index.bdmv</code>, <code>MovieObject.bdmv</code>, the playlists and the clip information.</li><li>A virtual machine runs the disc’s commands, with 4096 general and 128 player status registers.</li><li>A navigator follows first play, menus and titles as the commands dictate, including calls, resumes and timers.</li><li>For a menu, it reads the interactive graphics stream and renders the page and each button’s highlight. For a film, it reads the presentation graphics stream for subtitles.</li><li>On the server, <code>internal/bdsession</code> converts each playlist’s video to HLS with FFmpeg from the clip’s byte ranges, and the player puts the button and subtitle layers on top.</li></ol>
+<p>Everything is written from the public Blu-ray structure. The engine runs as a helper program, so it can update without a new server. Refusing encrypted discs stays with the server, on purpose, so a different helper can’t change it.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/dvd/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>DVDs</strong></a>
+      <a class="card next" href="/docs/diagnoser/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>WittyDiagnoser</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/BLURAY.md" rel="noopener">docs/BLURAY.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/BLURAY.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#adding-discs">Adding discs</a></li><li><a href="#playing-a-disc">Playing a disc</a></li><li><a href="#sound-subtitles-and-chapters">Sound, subtitles and chapters</a></li><li><a href="#3d-4k-and-hdr">3D, 4K and HDR</a></li><li><a href="#bd-j-java-menus">BD-J (Java) menus</a></li><li><a href="#java-and-licensing">Java and licensing</a></li><li><a href="#on-a-small-machine">On a small machine</a></li><li><a href="#diagnosing-a-disc">Diagnosing a disc</a></li><li><a href="#limits">Limits</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

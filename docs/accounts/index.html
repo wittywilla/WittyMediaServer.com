@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Accounts and profiles · WittyMediaServer</title>
+<meta name="description" content="This guide helps you add the people who use your server, decide what each may do, and look after passwords and sign-ins. Everyone&#39;s profile is under Settings…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/accounts/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Accounts and profiles">
+<meta property="og:description" content="This guide helps you add the people who use your server, decide what each may do, and look after passwords and sign-ins. Everyone&#39;s profile is under Settings…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/accounts/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/" aria-current="page">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Start here</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/" aria-current="page">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#start">Start here</a></p>
+      <h1>Accounts and profiles</h1>
+      <p class="lead">This guide helps you add the people who use your server, decide what each may do, and look after passwords and sign-ins. Everyone’s profile is under <strong>Settings → Profiles</strong>, and their own sign-ins under <strong>Settings → Sign-in &amp; security</strong>.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/ACCOUNTS.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#who-can-do-what">Who can do what</a></li><li><a href="#add-a-profile">Add a profile</a></li><li><a href="#limits">Limits</a></li><li><a href="#profile-names-and-usernames">Profile names and usernames</a></li><li><a href="#signing-in">Signing in</a></li><li><a href="#passwords">Passwords</a></li><li><a href="#two-factor-sign-in">Two-factor sign-in</a></li><li><a href="#your-devices">Your devices</a></li><li><a href="#signing-in-with-a-code">Signing in with a code</a></li><li><a href="#if-you-forget-your-password">If you forget your password</a></li><li><a href="#setting-up-from-another-device">Setting up from another device</a></li><li><a href="#remove-a-profile">Remove a profile</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<h2 id="who-can-do-what">Who can do what<a class="h-anchor" href="#who-can-do-what" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Every person has their own watch progress, favourites and game saves. There are four kinds of account.</p>
+<h3 id="the-owner-or-administrator">The owner, or administrator<a class="h-anchor" href="#the-owner-or-administrator" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The account made during setup is an administrator, and the app labels it <strong>Administrator</strong>. It has no limits and can change every setting: libraries, modules, Remote Access, backups, reset and everyone’s profiles. You can make other administrators, but each one can do all of this, so keep it to people who need it.</p>
+<p>If you use the server away from home, keep this account for changing settings, and use a second adult account for everyday watching. See <a href="/docs/remote/">Remote access</a>.</p>
+<h3 id="adults">Adults<a class="h-anchor" href="#adults" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>A full account with its own password. An adult can:</p>
+<ul><li>change their own password and names, and turn on two-factor sign-in;</li><li>add and manage Kids profiles, unless the administrator keeps that to themselves, or has set limits on this adult;</li><li>sign in a TV;</li><li>upload to Photos and Vertical videos libraries where uploads are allowed, comment, make collections and photo albums, and make share links.</li></ul>
+<p>An adult can’t open the server’s settings. An administrator can set limits on an adult with <strong>Limits</strong>.</p>
+<h3 id="kids">Kids<a class="h-anchor" href="#kids" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Kids see only titles up to the age you choose, and new Kids profiles start at <em>Kids 7+</em>. Titles with no rating stay hidden, home videos included, until you tick <strong>Also show titles without a rating</strong> under <strong>Limits</strong>. A password or PIN is optional. Without one, they sign in with a tap, on your home network only.</p>
+<p>Kids can like videos, subscribe to creators, keep a watch-later list and choose which of their names shows. They can’t change their own names, password or limits, and they can’t upload, comment, make collections, make share links or sign in a TV. Channels made from your libraries are on to begin with. Tuner and internet TV channels are off.</p>
+<p>Age limits rely on ratings, which come from your files and from outside services, and can be missing or wrong. They’re a help, not a guarantee, so please check what’s suitable. Live TV, podcasts, radio, games and web content may have no rating at all.</p>
+<h3 id="guests">Guests<a class="h-anchor" href="#guests" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>For visitors. A new Guest profile starts at <em>Teens 13+</em>, with no Live TV. A password or PIN is optional, and without one it works with a tap on your home network only. Guests can do what Kids can, except like videos, subscribe or keep a watch-later list. Only an administrator can change a Guest’s limits.</p>
+<h3 id="who-manages-whom">Who manages whom<a class="h-anchor" href="#who-manages-whom" aria-hidden="true" tabindex="-1">#</a></h3>
+<ul><li><strong>Administrators</strong> manage everyone. Nobody can set limits on an administrator.</li><li><strong>Adults</strong> manage Kids profiles, unless <strong>Settings → Profiles → Signing in → Who may manage Kids profiles</strong> is set to <strong>Only the administrator</strong>. An adult with limits of their own can’t, because that would be a way around those limits.</li></ul>
+<h2 id="add-a-profile">Add a profile<a class="h-anchor" href="#add-a-profile" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/settings-users.webp" alt="The Profiles page in Settings" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Settings, Profiles, with made-up names.</em></span></figcaption></figure>
+<ol><li>Go to <strong>Settings → Profiles</strong> and press <strong>Add profile</strong>. An adult sees <strong>Add a Kids profile</strong> when they have none yet.</li><li>Under <strong>Kind of profile</strong>, choose <strong>Adult</strong>, <strong>Kids</strong> or <strong>Guest</strong>. Only an administrator gets this choice.</li><li>Type a <strong>Username</strong>, and a <strong>Profile name</strong> if you want them called something else.</li><li>Type a <strong>Password</strong>, or for Kids and Guests, a <strong>Password or PIN</strong> if you want one.</li><li>For Kids and Guests, choose what they may watch. For an adult, tick <strong>Administrator (can change everything)</strong> only if you mean to, which asks for your own password.</li><li>Press <strong>Add profile</strong>.</li></ol>
+<h2 id="limits">Limits<a class="h-anchor" href="#limits" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press <strong>Limits</strong> beside someone under <strong>Settings → Profiles</strong> to set their age limit, the libraries they can open, genres to hide, titles to always or never allow, and their Live TV. <a href="/docs/libraries/#hiding-things-and-who-sees-what">Hiding things, and who sees what</a> explains each one.</p>
+<div class="table-wrap"><table><thead><tr><th>Age limit</th><th>What it allows</th></tr></thead><tbody><tr><td><strong>Little kids</strong></td><td>G, U, TV-Y, TV-G</td></tr><tr><td><strong>Kids 7+</strong></td><td>Adds TV-Y7</td></tr><tr><td><strong>Older kids 10+</strong></td><td>Adds PG, TV-PG</td></tr><tr><td><strong>Teens 13+</strong></td><td>Adds PG-13, 12A</td></tr><tr><td><strong>Older teens 16+</strong></td><td>Adds TV-14, 15, FSK 16</td></tr><tr><td><strong>Everything</strong></td><td>No age limit</td></tr></tbody></table></div>
+<h2 id="profile-names-and-usernames">Profile names and usernames<a class="h-anchor" href="#profile-names-and-usernames" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Each person has two names.</p>
+<ul><li><strong>Username:</strong> what they sign in with. It has to be theirs alone, and <code>Sam</code> and <code>sam</code> count as the same name. Up to 40 characters.</li><li><strong>Profile name:</strong> what they’re called around the app, such as on the <em>Who’s watching?</em> screen. Anyone can have the same one. Up to 60 characters, and optional. Without one, the username is used.</li></ul>
+<p><strong>To change yours,</strong> go to <strong>Settings → Profiles → Your account</strong> and press <strong>Save names</strong>. Adults and administrators can do this for themselves. <strong>To change someone else’s,</strong> press <strong>Names</strong> beside them, if you manage them. Kids and Guests keep the names they were given.</p>
+<p><strong>To choose which shows,</strong> turn on <strong>Show my username at the top right, not my profile name</strong>. It’s in the same place, and everyone can choose this for themselves, Kids and Guests too.</p>
+<h2 id="signing-in">Signing in<a class="h-anchor" href="#signing-in" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>On your home network, the server shows <em>Who’s watching?</em> with a tile for each profile. Press yours, and enter your password or PIN if it has one. <strong>Sign in with another account</strong> gets you a form for a username and password.</p>
+<p>Away from home, it shows the form, so that strangers can’t see who’s on your server.</p>
+<p>An administrator can change this under <strong>Settings → Profiles → Signing in</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th>Setting</th><th>What it does</th></tr></thead><tbody><tr><td><strong>Sign-in screen</strong></td><td><strong>Profiles</strong> shows the tiles. <strong>Classic</strong> always asks for a name and password</td></tr><tr><td><strong>Show profiles outside your home</strong></td><td>Off by default. Passwords are always required away from home</td></tr><tr><td><strong>Let apps find this server</strong></td><td>Apps on your home network can see this server’s name, version and a random ID. They still need a code or a password to connect</td></tr></tbody></table></div>
+<p><strong>A profile with no password works only at home,</strong> and only with the <strong>Profiles</strong> sign-in screen. With <strong>Classic</strong>, it can’t sign in at all. To use a profile away from home, it needs a password. See <a href="#passwords">Passwords</a>.</p>
+<p><strong>Too many wrong tries</strong> makes the server wait before it will let you try again, and the message says how long.</p>
+<h2 id="passwords">Passwords<a class="h-anchor" href="#passwords" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Adults:</strong> at least 8 characters, and no more than 72 bytes. Change yours under <strong>Settings → Profiles → Your account</strong>: type your <strong>Current password</strong> and <strong>New password</strong>, then press <strong>Change password</strong>. Your other devices are signed out.</li><li><strong>Kids and Guests:</strong> a password or PIN of at least 4 characters. They can’t change their own.</li><li><strong>Someone else’s:</strong> whoever manages them presses <strong>Password</strong> or <strong>Password or PIN</strong> beside them under <strong>Settings → Profiles</strong>. Type it twice and press <strong>Save</strong>. Their old one stops working, they’re signed out on every device, and their two-factor sign-in stays on. For another administrator, it asks for your own password as well, and your code if you use one.</li><li><strong>Back to a tap:</strong> for a Kids or Guest profile, <strong>Remove it</strong> in that same box, or <strong>Remove the password</strong> under <strong>Limits</strong>, puts it back to a tap on your home network.</li></ul>
+<p>Long passwords are worth it if you use the server away from home. See <a href="/docs/remote/">Remote access</a>.</p>
+<p>Passwords can’t be read back, by anyone. The server keeps only a scrambled form of each one, which is why a forgotten one can’t be looked up.</p>
+<h2 id="two-factor-sign-in">Two-factor sign-in<a class="h-anchor" href="#two-factor-sign-in" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Two-factor sign-in also asks for a 6-digit code from an app on your phone, so a stolen password isn’t enough. It’s optional, it’s for adults and administrators, and any authenticator app works.</p>
+<ol><li>Go to <strong>Settings → Sign-in &amp; security → Two-factor sign-in</strong>.</li><li>Type your password and press <strong>Set up</strong>.</li><li>In your authenticator app, add an account and scan the code on the screen, or type the key shown.</li><li>Type the 6 digits it shows, and press <strong>Turn on</strong>. Your other devices are signed out.</li><li><strong>Save your 8 recovery codes somewhere that isn’t your phone,</strong> then press <strong>I saved them</strong>. They won’t be shown again. Each works once in place of a code.</li></ol>
+<p>To turn it off, press <strong>Turn off</strong>, then give your password and a code.</p>
+<p><strong>Lost your phone?</strong> Enter a recovery code when it asks for a code. If those are gone as well:</p>
+<ul><li><strong>For an adult:</strong> an administrator can press <strong>Turn off</strong> beside them at <strong>Settings → Sign-in &amp; security → Other people’s two-factor sign-in</strong>. Do this only if you know it’s really them.</li><li><strong>For an administrator:</strong> it can only be done on the server itself. Stop the server, then run this, using the username:</li></ul>
+<div class="codebox"><pre id="code-1" class="code" data-lang="bash"><code>wittymediaserver reset-2fa -data &lt;your data folder&gt; &lt;username&gt;</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><code>wittymediaserver config path</code> shows your data folder.</p>
+<h2 id="your-devices">Your devices<a class="h-anchor" href="#your-devices" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/settings-security.webp" alt="The Sign-in and security page in Settings" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Settings, Sign-in &amp; security.</em></span></figcaption></figure>
+<p><strong>Settings → Sign-in &amp; security → Your devices</strong> lists everywhere you’re signed in, with when and where it was last used. Press <strong>Sign out</strong> beside one, or <strong>Sign out the others</strong>. If you don’t recognise one, sign it out, then change your password.</p>
+<h2 id="signing-in-with-a-code">Signing in with a code<a class="h-anchor" href="#signing-in-with-a-code" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A TV or an app can be signed in without typing a password on it. An adult or administrator does this from another device: open the menu under your name and choose <strong>Sign in a TV</strong>. There are two ways, depending on what the TV shows.</p>
+<p><strong>Your TV shows a code:</strong></p>
+<ol><li>Type the code under <strong>Your TV shows a code</strong> and press <strong>Continue</strong>.</li><li>The page says which device is asking, and from what address. Continue only if you’re looking at that code on your own TV right now.</li><li>If you manage other profiles, choose one under <strong>Sign it in as</strong>.</li><li>Press <strong>Sign it in</strong>, or <strong>Refuse</strong>.</li></ol>
+<p><strong>Your TV asks for a code:</strong></p>
+<ol><li>Under <strong>Your TV asks for a code</strong>, choose who to sign in as, and press <strong>Get a code</strong>.</li><li>Type the code on the TV. It works once, within 5 minutes.</li></ol>
+<p><strong>Approve a code only if you started it.</strong> Approving signs that device in as the person you chose. If someone sends you a code and asks you to approve it, say no.</p>
+<p>The page also shows this server’s fingerprint. If the app shows one, the two should match. <a href="/docs/apps/#signing-in">Apps and devices</a> has what each app shows. The native apps don’t yet ask for a two-factor code with a password, so an account with two-factor sign-in uses a code there.</p>
+<h2 id="if-you-forget-your-password">If you forget your password<a class="h-anchor" href="#if-you-forget-your-password" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>There’s no reset by email, because the server doesn’t have your email address, and your password can’t be read back.</p>
+<p>Nothing is lost either way below: watch history, game saves, settings and libraries all stay.</p>
+<ul><li><strong>A Kids or Guest profile:</strong> an adult who manages it gives it a new one, as under <a href="#passwords">Passwords</a>.</li><li><strong>An adult:</strong> an administrator gives them a new one the same way.</li><li><strong>An administrator, when there’s another one:</strong> the other administrator does it the same way, which also asks for their own password.</li><li><strong>The only administrator:</strong> do it on the machine the server runs on, as below.</li></ul>
+<h3 id="on-the-server-itself">On the server itself<a class="h-anchor" href="#on-the-server-itself" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>This works for any account, with the server running or stopped. Open a terminal on the machine that runs the server, as the account that runs it, and run:</p>
+<div class="codebox"><pre id="code-2" class="code" data-lang="bash"><code>wittymediaserver reset-password &lt;username&gt;</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>It asks for the new password twice, without showing it. The old one stops working, and that account is signed out on every device.</p>
+<ul><li><strong>Forgotten the username too?</strong> <code>wittymediaserver reset-password --list</code> shows every account.</li><li><strong>Rather not choose one now?</strong> Add <code>--generate</code>. It makes a long random password and shows it once. Sign in with it, then change it.</li><li><strong>In a script?</strong> Add <code>--password-stdin</code> to read it from one line of input. A password can’t be given on the command line, because other programs and your shell’s history could keep it.</li><li><strong>Not the usual data folder?</strong> Add <code>-data &lt;folder&gt;</code>. <code>wittymediaserver config path</code> shows which is in use, and for a service <a href="/docs/config/#folders-the-server-uses">Folders the server uses</a> has its folder.</li><li><strong>Two-factor sign-in stays on.</strong> If your phone and recovery codes are gone too, run <code>wittymediaserver reset-2fa &lt;username&gt;</code> as well.</li><li><strong>”Too many wrong tries”</strong> can still show for a while afterwards. Wait for the time it gives, or restart the server.</li></ul>
+<p><code>wittymediaserver doctor reset-password &lt;username&gt;</code> is the same command, for anyone already in <a href="/docs/repair/">Repair</a>.</p>
+<div class="table-wrap"><table><thead><tr><th>Where the server runs</th><th>How to run it</th></tr></thead><tbody><tr><td>Your own account, on Windows, Mac or Linux</td><td>As written above</td></tr><tr><td>The Windows service</td><td>In a terminal opened with <strong>Run as administrator</strong>, add <code>-data C:\ProgramData\WittyMediaServer</code></td></tr><tr><td>A Linux service</td><td><code>sudo -u wms wittymediaserver reset-password -data /var/lib/wittymediaserver &lt;username&gt;</code>. Plain <code>sudo</code> is refused, because the files it would leave behind would stop the server opening its database</td></tr><tr><td>A FreeBSD service</td><td>The same, with <code>-data /var/db/wittymediaserver</code></td></tr><tr><td>Docker</td><td><code>docker exec -it wittymediaserver wittymediaserver reset-password &lt;username&gt;</code></td></tr></tbody></table></div>
+<p><strong>Why this is safe:</strong> it only works for someone who can already change the server’s own files, who could replace the whole database anyway. The server has no address for it, and <strong>Settings → Repair</strong> doesn’t offer it, so nobody can do it from another device, whatever they know. Each use is written in the server’s log, where <a href="/docs/logging/">WittyLog</a> shows it, with the account’s name and nothing of the password. Anyone who can reach the machine or its data folder can get into every account here, which is why <a href="/docs/config/#folders-the-server-uses">the data folder’s permissions</a> matter, and why backups with accounts in them deserve a password.</p>
+<h3 id="starting-again-instead">Starting again instead<a class="h-anchor" href="#starting-again-instead" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>If you’d rather start from nothing, <code>wittymediaserver reset</code> puts the server back to a new install at its next start. It removes <strong>every account, the list of libraries, watch progress, settings and game saves</strong>. Your media files and what’s saved beside them stay. It keeps a copy unless you add <code>-delete</code>, and <code>wittymediaserver reset -list</code>, <code>-restore &lt;copy&gt;</code> and <code>-cancel</code> work with those. Bringing a copy back, or restoring a backup with its accounts, also brings back the old password. See <a href="/docs/repair/#starting-again-the-reset-page">Starting again</a> and <a href="/docs/backup/">Backup and restore</a>.</p>
+<h2 id="setting-up-from-another-device">Setting up from another device<a class="h-anchor" href="#setting-up-from-another-device" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Until the first account exists, whoever makes it owns the server. On the computer running the server, setup just works. From any other device, your phone included, setup asks for a <strong>setup code</strong>, because someone else on your network could otherwise get there first.</p>
+<p>Find the code in any of these places:</p>
+<ul><li>on the server’s console when it starts, in a line that begins <em>This server has no accounts yet</em>;</li><li>for Docker, with <code>docker logs wittymediaserver</code>;</li><li>for a Linux service, with <code>journalctl -u wittymediaserver</code>;</li><li>in <code>setup-code.txt</code> in the server’s data folder, which is deleted once setup is done.</li></ul>
+<p>It’s kept out of the log files. Wrong codes count, and too many makes you wait.</p>
+<p><strong>If you trust everyone on your network,</strong> you can turn this off for your home network. Set <code>setupFromHome</code> in the config file, or start the server with <code>-setup-from-home</code> or <code>WMS_SETUP_FROM_HOME=1</code>. Anyone on your network could then claim a fresh server, so the code is the safer choice. See <a href="/docs/config/">Config file</a>.</p>
+<p>Restoring a backup during setup from another device asks for the same code.</p>
+<h2 id="remove-a-profile">Remove a profile<a class="h-anchor" href="#remove-a-profile" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press the bin beside someone under <strong>Settings → Profiles</strong>. Their watch history and game saves are deleted too, and this can’t be undone. Removing another administrator also asks for your password. You can’t remove the account you’re signed in to.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/apps/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Apps and devices</strong></a>
+      <a class="card next" href="/docs/troubleshooting/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Troubleshooting</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/ACCOUNTS.md" rel="noopener">docs/ACCOUNTS.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/ACCOUNTS.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#who-can-do-what">Who can do what</a></li><li><a href="#add-a-profile">Add a profile</a></li><li><a href="#limits">Limits</a></li><li><a href="#profile-names-and-usernames">Profile names and usernames</a></li><li><a href="#signing-in">Signing in</a></li><li><a href="#passwords">Passwords</a></li><li><a href="#two-factor-sign-in">Two-factor sign-in</a></li><li><a href="#your-devices">Your devices</a></li><li><a href="#signing-in-with-a-code">Signing in with a code</a></li><li><a href="#if-you-forget-your-password">If you forget your password</a></li><li><a href="#setting-up-from-another-device">Setting up from another device</a></li><li><a href="#remove-a-profile">Remove a profile</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

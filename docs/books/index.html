@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Books, PDFs and comics · WittyMediaServer</title>
+<meta name="description" content="Use this guide to set up a library of books, PDFs, comics and manga, and read them with your place, bookmarks, highlights and notes kept on your server.">
+<link rel="canonical" href="https://wittymediaserver.com/docs/books/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Books, PDFs and comics">
+<meta property="og:description" content="Use this guide to set up a library of books, PDFs, comics and manga, and read them with your place, bookmarks, highlights and notes kept on your server.">
+<meta property="og:url" content="https://wittymediaserver.com/docs/books/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/" aria-current="page">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Watching and listening</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/" aria-current="page">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#watch">Watching and listening</a></p>
+      <h1>Books, PDFs and comics</h1>
+      <p class="lead">Use this guide to set up a library of books, PDFs, comics and manga, and read them with your place, bookmarks, highlights and notes kept on your server.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/BOOKS.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#setting-it-up">Setting it up</a></li><li><a href="#what-it-can-read">What it can read</a></li><li><a href="#copy-protected-and-password-protected-books">Copy-protected and password-protected books</a></li><li><a href="#reading">Reading</a></li><li><a href="#bookmarks-highlights-and-notes">Bookmarks, highlights and notes</a></li><li><a href="#what-goes-online">What goes online</a></li><li><a href="#keys">Keys</a></li><li><a href="#who-can-read-what">Who can read what</a></li><li><a href="#wittyreader">WittyReader</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>The reader runs in a browser and in the desktop WittyMediaClient, which shows the same pages. The Android and Apple apps can’t open these libraries yet. <a href="#wittyreader">WittyReader</a> is a separate app for books kept on your own device.</p>
+<h2 id="setting-it-up">Setting it up<a class="h-anchor" href="#setting-it-up" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/comics.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: A shelf of comics</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em>A shelf of comics. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></p></div>
+<figure class="doc-fig"><img src="/images/shots/books.webp" data-shot="books" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A shelf of books with their covers" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>A shelf of books, covers and text from <a href="https://standardebooks.org/" rel="noopener">Standard Ebooks</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener">CC0</a>.</em></span></figcaption></figure>
+<ol><li>Go to <strong>Settings → Libraries</strong>, or use first-time setup, and choose <strong>Books &amp; comics</strong>.</li><li>Choose your folders. Any layout works.</li></ol>
+<p>If <strong>Books &amp; comics</strong> is listed under <strong>Add a module to use these</strong>, press the button for the reader you want first.</p>
+<h3 id="what-needs-a-module">What needs a module<a class="h-anchor" href="#what-needs-a-module" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Each reader is a module an admin can add or remove in <strong>Settings → Modules</strong>. A book whose reader isn’t on the server says so when you open it, and an admin can add it from there, with no restart.</p>
+<div class="table-wrap"><table><thead><tr><th>Module</th><th>What it reads</th></tr></thead><tbody><tr><td><strong>WittyEbook</strong></td><td>EPUB, and everything converted to EPUB: Kindle, FictionBook, Word and the rest below</td></tr><tr><td><strong>WittyPDF</strong></td><td>PDFs</td></tr><tr><td><strong>WittyComics</strong></td><td>Comics and manga, and DjVu books</td></tr><tr><td><strong>WittyInk</strong></td><td>What the readers share: notes, definitions and handwriting. It comes along with any of them</td></tr></tbody></table></div>
+<h2 id="what-it-can-read">What it can read<a class="h-anchor" href="#what-it-can-read" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/images/shots/reader-comic.webp" data-shot="reader-comic" alt="A comic open in the reader" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>WittyComics. <a href="https://www.peppercarrot.com/" rel="noopener">Pepper&amp;Carrot</a>, David Revoy, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</em></span></figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Kind</th><th>Formats</th><th>How it opens</th></tr></thead><tbody><tr><td>Books</td><td>EPUB, KEPUB</td><td>As they are</td></tr><tr><td>PDFs</td><td>PDF</td><td>As they are</td></tr><tr><td>Comics</td><td>CBZ, CBR, CB7, CBT</td><td>Page by page</td></tr><tr><td>Kindle and Palm</td><td>MOBI, PRC, AZW, AZW3, KF8, PDB</td><td>Converted to EPUB</td></tr><tr><td>Other documents</td><td>FictionBook, DOCX, ODT, DOC, RTF, Markdown, web pages, plain text</td><td>Converted to EPUB</td></tr><tr><td>DjVu</td><td>DJVU, DJV</td><td>Page by page, with the DjVuLibre tools on the server</td></tr></tbody></table></div>
+<p>Conversion happens once on the server, the first time it’s needed. The copy goes in the cache, and your original is left alone. A <code>.doc</code> file gives its text only, without pictures or layout. Web pages have their scripts and outside links removed first.</p>
+<p>DjVu pages need the <code>ddjvu</code> program from DjVuLibre on the server. Without it the book is still listed, and you can download it.</p>
+<p>Every format is in <a href="/docs/supported-formats/#books">Supported formats</a> and <a href="/docs/supported-formats/#comics">comics</a>.</p>
+<h3 id="how-files-are-picked-up">How files are picked up<a class="h-anchor" href="#how-files-are-picked-up" aria-hidden="true" tabindex="-1">#</a></h3>
+<ul><li><strong>Several formats of one book:</strong> files with the same name in a folder count as one book, and the best format is used: CBZ first, then EPUB, then PDF.</li><li><strong>Text files:</strong> plain text, Markdown and web pages under 2 KB are skipped, and so are files named like <code>readme</code>, <code>notes</code> or <code>license</code>.</li><li><strong>Details:</strong> titles, authors, covers and descriptions come from the book itself: EPUB details, <code>ComicInfo.xml</code> in a comic, or the PDF. Otherwise they come from the file name.</li><li><strong>Series:</strong> a name such as <code>Series Name 12 (2023)</code> or <code>Series v03</code> gives the series, number and year. EPUB series details are read too. The <strong>Series</strong> tab groups them.</li><li><strong>Manga:</strong> <code>ComicInfo.xml</code> marked as manga, or a folder with “manga” in its name, opens right to left.</li><li><strong>More details:</strong> a <a href="/docs/metadata/#custom-agents">custom agent</a> can add details for books.</li></ul>
+<h2 id="copy-protected-and-password-protected-books">Copy-protected and password-protected books<a class="h-anchor" href="#copy-protected-and-password-protected-books" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Nothing here removes protection.</p>
+<ul><li><strong>Copy-protected Kindle books</strong> are refused, with the message “this book has copy protection, so it can’t be opened here”.</li><li><strong>Password-protected Word, OpenDocument and zipped FictionBook files</strong> are refused with a message saying the file has a password.</li><li><strong>PDFs with a password</strong> are refused with a message saying so. The reader doesn’t ask for the password. You can download the file and open it in another program.</li><li><strong>Copy-protected EPUB files</strong> are refused when you open them, with the same message as a Kindle book. A locked EPUB stays on your shelf under its title and author, with no cover from inside it, and it can still be downloaded. If there’s another copy with the same name in the same folder, such as a PDF, that copy is used instead. Files whose names end in <code>_lcp.epub</code> are ignored by the scan.</li><li><strong>EPUBs with a password on the file itself</strong> are refused with a message saying so.</li><li><strong>EPUBs whose embedded fonts are scrambled</strong> aren’t protected books, and open as usual. The scrambling only stops a font being copied out for other uses, so the text shows in the reader’s font instead.</li><li><strong>Books too large to convert</strong> are refused: the limit is 256 MB, or 64 MB for text formats.</li></ul>
+<p><strong>Download</strong> on the book’s page gets you the file as it is.</p>
+<h2 id="reading">Reading<a class="h-anchor" href="#reading" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Open a book and press <strong>Read</strong>, <strong>Continue reading</strong> or <strong>Read again</strong>. Esc or the back button closes panels first, then the book.</p>
+<figure class="doc-fig"><img src="/images/shots/reader-epub.webp" data-shot="reader-epub" alt="A book open in the reader" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>WittyEbook. covers and text from <a href="https://standardebooks.org/" rel="noopener">Standard Ebooks</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener">CC0</a>.</em></span></figcaption></figure>
+<p><strong>Your place</strong> is saved for your account, so any device carries on where you stopped. The library shows your progress on each cover. Your layout, text and colour choices are kept on each device.</p>
+<h3 id="books-epub-and-converted-formats">Books (EPUB and converted formats)<a class="h-anchor" href="#books-epub-and-converted-formats" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><strong>Layout,</strong> under <strong>Text and display:</strong> <strong>Auto</strong>, <strong>One page</strong>, <strong>Book view</strong> (two pages side by side) or <strong>Scroll</strong>.</p>
+<p><strong>Getting around:</strong></p>
+<ul><li>Swipe, or use the arrow keys, Space and Page Up or Down. The slider moves through the whole book.</li><li><strong>Contents</strong> lists the chapters. If a book has none, its sections are listed.</li><li>The bottom bar shows how far you are, and the <strong>time left</strong> in the chapter and book, from your own reading speed.</li><li>Footnotes open in a pop-up, so you don’t lose your place.</li><li>A book reopens on the same words after you change the size of the text or the window.</li></ul>
+<p><strong>Text and display:</strong></p>
+<ul><li><strong>Page:</strong> light, sepia, dark or black, with <strong>Brightness</strong> and <strong>Warmth (night light)</strong>.</li><li><strong>Font:</strong> <strong>Publisher’s font</strong>, <strong>Serif</strong>, <strong>Sans-serif</strong>, <strong>Extra readable</strong> or <strong>Monospace</strong>.</li><li><strong>Text size</strong> from 60% to 250%, <strong>Line spacing</strong>, <strong>Margins</strong>, and <strong>Justify and hyphenate</strong>.</li></ul>
+<h3 id="pdfs">PDFs<a class="h-anchor" href="#pdfs" aria-hidden="true" tabindex="-1">#</a></h3>
+<ul><li><strong>Zoom:</strong> <strong>Fit width</strong>, <strong>Fit page</strong>, or 50% to 400%. Ctrl and scroll, or + and −, zoom too.</li><li><strong>Pages across:</strong> <strong>One page</strong> or <strong>Two pages</strong>.</li><li><strong>Page colour:</strong> <strong>As printed</strong>, <strong>Sepia</strong> or <strong>Dark</strong>. Dark shows light text on dark pages, and pictures change colour too.</li><li><strong>Contents:</strong> <strong>Outline</strong>, the document’s own contents, and <strong>Pages</strong>, with thumbnails.</li><li><strong>Search</strong> looks through the whole document.</li><li>Type a number at the bottom to go to that page.</li></ul>
+<p>PDF scripts never run, and XFA forms are off.</p>
+<h3 id="comics-and-manga">Comics and manga<a class="h-anchor" href="#comics-and-manga" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The settings are behind the gear button, and are remembered for each comic on that device.</p>
+<ul><li><strong>Layout:</strong> <strong>Page</strong>, <strong>Spread</strong> (two pages, with the cover alone so pairs line up as printed) or <strong>Scroll</strong>, one long strip.</li><li><strong>Reading direction:</strong> <strong>Left to right</strong> or <strong>Right to left (manga)</strong>.</li><li><strong>Fit:</strong> <strong>Fit height</strong> or <strong>Fit width</strong>.</li><li><strong>Turning pages:</strong> tap the sides or swipe, and tap the middle to show or hide the bars. Arrow keys follow the reading direction. Space and Page Up or Down work too, and Home and End go to the first and last page.</li></ul>
+<p>Highlights, notes, bookmarks and handwriting aren’t part of the comic reader, and comics have no text to search.</p>
+<h2 id="bookmarks-highlights-and-notes">Bookmarks, highlights and notes<a class="h-anchor" href="#bookmarks-highlights-and-notes" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>These work in books and PDFs. They belong to your account on the server, and each person sees only their own.</p>
+<figure class="doc-fig"><img src="/docs/images/reader-pdf.webp" alt="A PDF open in the reader" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>WittyPDF. Earth as Art, NASA, public domain.</em></span></figcaption></figure>
+<p><strong>Bookmarks:</strong> press the bookmark button or <strong>b</strong>.</p>
+<p><strong>Select text</strong> for its toolbar:</p>
+<ul><li>A colour highlights it. Four colours are one press away, more are behind the next button, and any colour can be picked.</li><li><strong>Note</strong> highlights it and adds a note. Press a highlight later to change its colour or note, or to <strong>Remove</strong> it.</li><li><strong>Define</strong> appears for up to three words. See <a href="#what-goes-online">what goes online</a>.</li><li><strong>Copy</strong>, and <strong>Cite</strong>, which copies it with the author, title and place.</li><li><strong>Search</strong> looks for it in the book.</li><li><strong>Read aloud</strong> starts from there.</li></ul>
+<p><strong>Notes &amp; highlights</strong> lists everything, and can show only <strong>Highlights</strong>, <strong>Notes</strong>, <strong>Bookmarks</strong> or <strong>Handwriting</strong>, or filter by text or colour.</p>
+<ul><li><strong>Colours</strong> lets you name what each colour means to you, such as “Question”. The names are kept on that device.</li><li><strong>Export</strong> saves your notes as a Markdown file, grouped by chapter or page. Handwriting isn’t exported: it counts the strokes and they stay in the reader.</li></ul>
+<p><strong>Undo and redo:</strong> Ctrl+Z and Ctrl+Y.</p>
+<h3 id="handwriting">Handwriting<a class="h-anchor" href="#handwriting" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Press the pen button or <strong>p</strong> for pen, pencil, highlighter and eraser. With a pen, you can write on the page at any time. Line width follows pen pressure, and strokes stay with their words in a book, or where you drew them in a PDF. A highlighter line across text in a book becomes a normal highlight.</p>
+<h3 id="read-aloud">Read aloud<a class="h-anchor" href="#read-aloud" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The speaker button reads from where you are, turning pages as it goes. It uses your device’s own voices, so the sound and any online voices depend on your device.</p>
+<h2 id="what-goes-online">What goes online<a class="h-anchor" href="#what-goes-online" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Reading stays on your server, with one exception: <strong>Define</strong>.</p>
+<p>When you press <strong>Define</strong>, your server asks the <a href="https://dictionaryapi.dev" rel="noopener">Free Dictionary API</a> about that word, and nothing else. It’s in English, it’s a third-party service, and you should check a definition before relying on it. Nothing is sent if you don’t press it. The <strong>More on Wiktionary</strong> link opens that site in your browser.</p>
+<h2 id="keys">Keys<a class="h-anchor" href="#keys" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>What it does</th></tr></thead><tbody><tr><td>→ ←</td><td>Next or previous page. In a comic, these follow the reading direction. In a PDF at <strong>Fit width</strong>, use Page Up and Page Down</td></tr><tr><td>Space, Page Down, Page Up</td><td>Next page, or previous with Page Up</td></tr><tr><td>b</td><td>Bookmark (books and PDFs)</td></tr><tr><td>/</td><td>Search (books and PDFs)</td></tr><tr><td>p</td><td>Handwriting tools (books and PDFs)</td></tr><tr><td>e</td><td>Eraser, with the handwriting tools open</td></tr><tr><td>Ctrl+Z, Ctrl+Y</td><td>Undo, redo</td></tr><tr><td>Esc</td><td>Close a panel, then the book</td></tr></tbody></table></div>
+<h2 id="who-can-read-what">Who can read what<a class="h-anchor" href="#who-can-read-what" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Each library can be limited per account, as everywhere. A comic’s <code>AgeRating</code> in <code>ComicInfo.xml</code> sets its rating, and books without a rating are hidden from Kids and Guest profiles unless you allow titles without a rating, under <strong>Settings → Profiles</strong>.</p>
+<h2 id="wittyreader">WittyReader<a class="h-anchor" href="#wittyreader" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/reader-library.webp" alt="WittyReader&#39;s library of books, PDFs and comics" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>WittyReader, with covers and text from <a href="https://standardebooks.org/" rel="noopener">Standard Ebooks</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener">CC0</a>; Earth as Art, NASA, public domain; and <a href="https://www.peppercarrot.com/" rel="noopener">Pepper&amp;Carrot</a>, David Revoy, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</em></span></figcaption></figure>
+<p><strong>WittyReader</strong> is a separate app for reading on your own device, with no server. It’s built from the same readers, so books, PDFs and comics read the same way, with highlights, notes and a pen.</p>
+<ul><li>Books and notes stay in that app on that device. Nothing is uploaded, and it has no account.</li><li><strong>Define</strong> is off there until you turn it on in its settings.</li><li>It opens EPUB, PDF and CBZ files only. The other formats here are converted by the server, so they aren’t available in it.</li><li>It doesn’t connect to your server, so notes and places made in one aren’t in the other. You can export a book’s notes in WittyReader and import them into another copy of WittyReader.</li></ul>
+<p>Its installers for Windows, macOS and Linux are on its own releases page. The Windows installer has been built and tested under Wine, not on real Windows, and the Mac version hasn’t been run yet.</p>
+<h2 id="for-developers">For developers<a class="h-anchor" href="#for-developers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The routes are under Books in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/CLIENT-API.md#every-route" rel="noopener">Client API</a>. How a reader fits into an app is in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/MODULES.md" rel="noopener">Making a module</a>.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/lyrics-karaoke/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Lyrics and karaoke</strong></a>
+      <a class="card next" href="/docs/photos/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Photos</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/BOOKS.md" rel="noopener">docs/BOOKS.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/BOOKS.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#setting-it-up">Setting it up</a></li><li><a href="#what-it-can-read">What it can read</a></li><li><a href="#copy-protected-and-password-protected-books">Copy-protected and password-protected books</a></li><li><a href="#reading">Reading</a></li><li><a href="#bookmarks-highlights-and-notes">Bookmarks, highlights and notes</a></li><li><a href="#what-goes-online">What goes online</a></li><li><a href="#keys">Keys</a></li><li><a href="#who-can-read-what">Who can read what</a></li><li><a href="#wittyreader">WittyReader</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

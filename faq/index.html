@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Questions and answers · WittyMediaServer</title>
+<meta name="description" content="Is it free, what computer it needs, watching away from home, discs and copy protection, updates and privacy: answered from the guides.">
+<link rel="canonical" href="https://wittymediaserver.com/faq/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Questions and answers">
+<meta property="og:description" content="Is it free, what computer it needs, watching away from home, discs and copy protection, updates and privacy: answered from the guides.">
+<meta property="og:url" content="https://wittymediaserver.com/faq/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is WittyMediaServer?","acceptedAnswer":{"@type":"Answer","text":"Self-hosted software that keeps your films, shows, discs, music, books and games on a computer you own, and streams them to every screen in your home. It plays DVDs and Blu-rays with their real menus, in any browser. Install it on the computer that holds your media. Every other screen reaches it through a web browser, with no app needed."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It’s open source under the Apache License 2.0: you can use it, change it and share it, commercially or not, as long as you keep the licence and its NOTICE file. There’s no account to make and nothing to pay for. Free keys for TMDB and TheTVDB add more details, and are optional. A paid relay for reaching your server from away is only an idea: it’s shown greyed out in Settings → Remote Access, and doesn’t exist."}},{"@type":"Question","name":"Is it ready to rely on?","acceptedAnswer":{"@type":"Answer","text":"Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. It stays in alpha until every planned feature is at least partly built. The roadmap shows what’s being finished, what’s still to build, and what hasn’t been tried on real hardware yet."}},{"@type":"Question","name":"How is it different from just sharing folders?","acceptedAnswer":{"@type":"Answer","text":"A shared folder hands each device a file and leaves the rest to it. If that device can’t play the file, you’re stuck, and nothing remembers where you were. WittyMediaServer gives each title a page with its poster and details, remembers where everyone stopped, and converts what a device can’t play while you watch. It adds profiles with their own progress, Kids limits, disc menus in a browser, and channels made from your library. It can still read your media from a shared folder on another computer."}},{"@type":"Question","name":"Who makes it?","acceptedAnswer":{"@type":"Answer","text":"WittyWilla, as a project of one maintainer. It’s built in the open on GitHub, where anyone can read the code, share ideas and report problems."}},{"@type":"Question","name":"What computer do I need?","acceptedAnswer":{"@type":"Answer","text":"One that stays on while you watch: Windows 10 or 11, macOS 11 or newer, Linux, FreeBSD 14 or newer, or a NAS that runs Docker. FFmpeg, which converts video, comes with every download except FreeBSD on arm64, so there’s usually nothing else to install. There’s no minimum specification yet: writing one is on the roadmap. As a rough guide, a Raspberry Pi 4 or 5 converts video up to 720p, and an Intel N100 with Quick Sync up to 1080p. Files your devices play as they are, such as MP4 with H.264 and AAC, cost almost nothing on any machine. Linux gets the most testing. The Windows installer has been tested under Wine, not on real Windows. The FreeBSD package has run in virtual machines, not on real hardware. The Mac installer has never been run."}},{"@type":"Question","name":"Do I install anything on my TV or phone?","acceptedAnswer":{"@type":"Answer","text":"No. Every other screen reaches the server through a web browser, with no app needed. Its pages are tested on desktop browsers. Safari and phone browsers haven’t been checked yet. WittyMediaClient is an optional app for TV boxes, phones, tablets and desktops, and it’s early. Android has been run on emulators only, the Mac app has never been launched, and the iPhone, iPad and Apple TV apps have been written but never built."}},{"@type":"Question","name":"Does it need the internet, or an account?","acceptedAnswer":{"@type":"Answer","text":"No account with anyone. Your accounts live on your own server: setup makes the first one, and you add the rest of your household. It plays at home with no internet at all. The internet is used to add modules, which download signed from the official list; to fetch posters and details, using names taken from your files and folders; and to ask GitHub about updates twice a day. Each can be turned off, and setup lets you carry on without modules and add them later."}},{"@type":"Question","name":"Can I run it in Docker or on a NAS?","acceptedAnswer":{"@type":"Answer","text":"Yes. The image is ghcr.io/wittywilla/wittymediaserver:alpha, with your settings in a volume and your media mounted read-only. The installing guide covers Docker and a NAS step by step. The complete image hasn’t been tried for real yet: see the roadmap."}},{"@type":"Question","name":"Can I watch away from home?","acceptedAnswer":{"@type":"Answer","text":"Yes, once you choose to. Until you turn on Settings → Remote Access and follow its steps, the server refuses every connection from outside your home network, even if your router lets it through. The recommended way is a private network such as Tailscale or NetBird: nothing is opened on your router, so the internet can’t see your server. Forwarding a port isn’t recommended. This is alpha software that hasn’t had an independent security audit, so treat every protection as a help, not a guarantee."}},{"@type":"Question","name":"Which formats does it play?","acceptedAnswer":{"@type":"Answer","text":"Nearly any video, plus music, audiobooks, podcasts, EPUB, PDF, comics and photos. A file’s content decides, not its name. When a device can’t play a file as it is, the server does the least it can: it rewraps it, converts only the sound, or, when nothing simpler would play, converts the picture too. Your files aren’t changed. Which codecs you can use depends on the FFmpeg on your machine."}},{"@type":"Question","name":"Can everyone at home have their own profile?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each profile keeps its own progress, favourites and settings, picked from Who’s watching? Kids profiles show only titles up to the age you choose, and titles with no rating stay hidden until you say otherwise. Age limits rely on ratings, which can be missing or wrong, so they’re a help, not a guarantee."}},{"@type":"Question","name":"Does it come with any films, music or games?","acceptedAnswer":{"@type":"Answer","text":"No media comes with WittyMediaServer. It organises and streams media you already have the right to use. No games, BIOS files or cores come with it, and the project doesn’t link to them."}},{"@type":"Question","name":"Will it play my DVDs and Blu-rays?","acceptedAnswer":{"@type":"Answer","text":"Yes, from disc images such as .iso and .img, and from folders that hold VIDEO_TS or BDMV, with their real menus, in a browser. That’s the WittyDVD and WittyBluray modules, which you add from the store. Many commercial Blu-rays write their menus in Java. Those play their main feature directly unless you install Java on the server and turn their menus on. Retail Blu-rays haven’t been tried yet. To play straight from a drive on a Windows PC, WittyMediaPlayer can, and it can also make a disc image to add to your server."}},{"@type":"Question","name":"What about copy protection?","acceptedAnswer":{"@type":"Answer","text":"Copy-protected media is refused, and nothing here unlocks it. A CSS-scrambled DVD or an AACS-encrypted Blu-ray is listed with a plain message and can’t be played, and BD+ is never run. Encrypted broadcasts and encrypted game files are refused too. No plugin or setting changes that. A disc without copy protection just plays."}},{"@type":"Question","name":"What are modules?","acceptedAnswer":{"@type":"Answer","text":"Modules add what your server can do, such as DVD menus, streamed games or live TV. Most are projects of their own, signed, and added from Settings → Modules while the server keeps running. The server works without any of them. Only administrators add, update or remove them, and removing one leaves your media, history and settings as they are."}},{"@type":"Question","name":"How do updates work?","acceptedAnswer":{"@type":"Answer","text":"Twice a day the server asks GitHub for its list of releases, and puts a dot on Settings when there’s a newer one. Nothing about you or your library is sent, and nothing installs until an administrator presses Update now in Settings → About. Every update is checked against the project’s signing key before it’s installed, and your data folder is never written. Modules have a choice of their own: tell you, install by themselves, or look only when you ask. A release found to be unsafe is withdrawn, and a server running it says so."}},{"@type":"Question","name":"Could an update lose my data?","acceptedAnswer":{"@type":"Answer","text":"It’s alpha software, so it could, and a backup is the answer. Settings → Backup makes one ZIP of your server’s data and details, protected with a password. Your media files are never in it: they stay where they are. Backups haven’t been run on a real Mac or on FreeBSD yet."}},{"@type":"Question","name":"Will it change my files?","acceptedAnswer":{"@type":"Answer","text":"Playing never changes a file, and uninstalling leaves your media where it is. Setup asks whether posters and details are saved beside your files or kept on the server."}},{"@type":"Question","name":"Is my data private?","acceptedAnswer":{"@type":"Answer","text":"There’s no telemetry, no account with the project and no cloud. Your files, watch history, passwords and logs aren’t sent anywhere. What does leave your server is listed in Settings → Legal → Privacy, with what controls each one: mostly names taken from your file and folder names, sent to the details services you keep on, and the update check to GitHub."}},{"@type":"Question","name":"How do I report a security problem?","acceptedAnswer":{"@type":"Answer","text":"Privately, with Report a vulnerability on the project’s GitHub security page, and never in a public issue. Only the newest release gets security fixes."}},{"@type":"Question","name":"Where do I get help, or suggest a feature?","acceptedAnswer":{"@type":"Answer","text":"Ask in GitHub Discussions, and share ideas in its Ideas category. Report a bug as an issue. The help page says what to include."}},{"@type":"Question","name":"Can I help build it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Issues and pull requests are welcome. Discs, games, readers and more are modules with repositories of their own, so you can work on one without the rest. Trying it for real helps too. A real Mac, a TV and its remote, or a retail Blu-ray are among what it hasn’t met yet."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<header class="page-head">
+  <div class="wrap">
+    
+    <p class="eyebrow">Questions</p>
+    <h1>Questions and answers</h1>
+    <p class="lead">23 things people ask before they install it, each answered from the guides, with a link to read more.</p>
+    
+    <div class="btn-row"><a class="btn ghost" href="/support/">Ask something else<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</header>
+<section class="section">
+  <div class="wrap">
+    <nav class="filters faq-topics" aria-label="Topics"><a class="chip" href="#basics">The basics<span class="n">5</span></a><a class="chip" href="#running">Getting it running<span class="n">4</span></a><a class="chip" href="#watching">Watching and listening<span class="n">4</span></a><a class="chip" href="#discs">Discs and copy protection<span class="n">2</span></a><a class="chip" href="#updates">Modules, updates and your files<span class="n">4</span></a><a class="chip" href="#privacy">Privacy and security<span class="n">2</span></a><a class="chip" href="#involved">Help and taking part<span class="n">2</span></a></nav>
+    <section class="faq-group" aria-labelledby="basics">
+      <h2 id="basics">The basics</h2>
+      <div class="faq-list">
+        <details class="qa" id="q-what">
+          <summary>What is WittyMediaServer?</summary>
+          <div class="a">
+            <p>Self-hosted software that keeps your films, shows, discs, music, books and games on a computer you own, and streams them to every screen in your home. It plays DVDs and Blu-rays with their real menus, in any browser.</p><p>Install it on the computer that holds your media. Every other screen reaches it through a web browser, with no app needed.</p>
+            <p class="more"><a href="/server/">The server</a><a href="/docs/getting-started/">Getting started</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-free">
+          <summary>Is it free?</summary>
+          <div class="a">
+            <p>Yes. It’s open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>: you can use it, change it and share it, commercially or not, as long as you keep the licence and its NOTICE file. There’s no account to make and nothing to pay for.</p><p>Free keys for TMDB and TheTVDB add more details, and are optional. A paid relay for reaching your server from away is only an idea: it’s shown greyed out in <strong>Settings → Remote Access</strong>, and doesn’t exist.</p>
+            <p class="more"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/README.md#licence-and-legal" rel="noopener">Licence and legal<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><a href="/docs/remote/#which-way-should-i-choose">Ways in from away</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-ready">
+          <summary>Is it ready to rely on?</summary>
+          <div class="a">
+            <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade.</p><p>It stays in alpha until every planned feature is at least partly built. The roadmap shows what’s being finished, what’s still to build, and what hasn’t been tried on real hardware yet.</p>
+            <p class="more"><a href="/roadmap/">Roadmap</a><a href="/docs/backup/">Backup and restore</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-folders">
+          <summary>How is it different from just sharing folders?</summary>
+          <div class="a">
+            <p>A shared folder hands each device a file and leaves the rest to it. If that device can’t play the file, you’re stuck, and nothing remembers where you were.</p><p>WittyMediaServer gives each title a page with its poster and details, remembers where everyone stopped, and converts what a device can’t play while you watch. It adds profiles with their own progress, Kids limits, disc menus in a browser, and channels made from your library. It can still read your media from a shared folder on another computer.</p>
+            <p class="more"><a href="/server/">What it does</a><a href="/docs/libraries/#network-shares">Network shares</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-who">
+          <summary>Who makes it?</summary>
+          <div class="a">
+            <p>WittyWilla, as a project of one maintainer. It’s built in the open on GitHub, where anyone can read the code, share ideas and report problems.</p>
+            <p class="more"><a href="/support/">Help and taking part</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="faq-group" aria-labelledby="running">
+      <h2 id="running">Getting it running</h2>
+      <div class="faq-list">
+        <details class="qa" id="q-computer">
+          <summary>What computer do I need?</summary>
+          <div class="a">
+            <p>One that stays on while you watch: Windows 10 or 11, macOS 11 or newer, Linux, FreeBSD 14 or newer, or a NAS that runs Docker. FFmpeg, which converts video, comes with every download except FreeBSD on arm64, so there’s usually nothing else to install.</p><p>There’s no minimum specification yet: writing one is on the roadmap. As a rough guide, a Raspberry Pi 4 or 5 converts video up to 720p, and an Intel N100 with Quick Sync up to 1080p. Files your devices play as they are, such as MP4 with H.264 and AAC, cost almost nothing on any machine.</p><p>Linux gets the most testing. The Windows installer has been tested under Wine, not on real Windows. The FreeBSD package has run in virtual machines, not on real hardware. The Mac installer has never been run.</p>
+            <p class="more"><a href="/docs/getting-started/#what-you-need">What you need</a><a href="/docs/transcoding/#which-choice-for-which-machine">Which choice for which machine</a><a href="/download/">Download</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-devices">
+          <summary>Do I install anything on my TV or phone?</summary>
+          <div class="a">
+            <p>No. Every other screen reaches the server through a web browser, with no app needed. Its pages are tested on desktop browsers. Safari and phone browsers haven’t been checked yet.</p><p>WittyMediaClient is an optional app for TV boxes, phones, tablets and desktops, and it’s early. Android has been run on emulators only, the Mac app has never been launched, and the iPhone, iPad and Apple TV apps have been written but never built.</p>
+            <p class="more"><a href="/docs/apps/">Apps and devices</a><a href="/client/">The apps</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-internet">
+          <summary>Does it need the internet, or an account?</summary>
+          <div class="a">
+            <p>No account with anyone. Your accounts live on your own server: setup makes the first one, and you add the rest of your household.</p><p>It plays at home with no internet at all. The internet is used to add modules, which download signed from the official list; to fetch posters and details, using names taken from your files and folders; and to ask GitHub about updates twice a day. Each can be turned off, and setup lets you carry on without modules and add them later.</p>
+            <p class="more"><a href="/docs/getting-started/#what-first-time-setup-asks">What first-time setup asks</a><a href="/privacy/">Privacy</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-docker">
+          <summary>Can I run it in Docker or on a NAS?</summary>
+          <div class="a">
+            <p>Yes. The image is <code>ghcr.io/wittywilla/wittymediaserver:alpha</code>, with your settings in a volume and your media mounted read-only. The installing guide covers Docker and a NAS step by step. The complete image hasn’t been tried for real yet: see the roadmap.</p>
+            <p class="more"><a href="/docs/install/#docker">Docker</a><a href="/docs/install/#a-nas">A NAS</a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="faq-group" aria-labelledby="watching">
+      <h2 id="watching">Watching and listening</h2>
+      <div class="faq-list">
+        <details class="qa" id="q-away">
+          <summary>Can I watch away from home?</summary>
+          <div class="a">
+            <p>Yes, once you choose to. Until you turn on <strong>Settings → Remote Access</strong> and follow its steps, the server refuses every connection from outside your home network, even if your router lets it through.</p><p>The recommended way is a private network such as Tailscale or NetBird: nothing is opened on your router, so the internet can’t see your server. Forwarding a port isn’t recommended. This is alpha software that hasn’t had an independent security audit, so treat every protection as a help, not a guarantee.</p>
+            <p class="more"><a href="/docs/remote/">Remote access</a><a href="/docs/remote/#which-way-should-i-choose">Which way should I choose?</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-formats">
+          <summary>Which formats does it play?</summary>
+          <div class="a">
+            <p>Nearly any video, plus music, audiobooks, podcasts, EPUB, PDF, comics and photos. A file’s content decides, not its name.</p><p>When a device can’t play a file as it is, the server does the least it can: it rewraps it, converts only the sound, or, when nothing simpler would play, converts the picture too. Your files aren’t changed. Which codecs you can use depends on the FFmpeg on your machine.</p>
+            <p class="more"><a href="/docs/supported-formats/">Supported formats</a><a href="/docs/transcoding/">Live transcoding</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-family">
+          <summary>Can everyone at home have their own profile?</summary>
+          <div class="a">
+            <p>Yes. Each profile keeps its own progress, favourites and settings, picked from <em>Who’s watching?</em> Kids profiles show only titles up to the age you choose, and titles with no rating stay hidden until you say otherwise.</p><p>Age limits rely on ratings, which can be missing or wrong, so they’re a help, not a guarantee.</p>
+            <p class="more"><a href="/docs/accounts/">Accounts and profiles</a><a href="/docs/accounts/#kids">Kids profiles</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-media">
+          <summary>Does it come with any films, music or games?</summary>
+          <div class="a">
+            <p>No media comes with WittyMediaServer. It organises and streams media you already have the right to use. No games, BIOS files or cores come with it, and the project doesn’t link to them.</p>
+            <p class="more"><a href="/docs/games/">Games</a><a href="/docs/libraries/">Libraries</a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="faq-group" aria-labelledby="discs">
+      <h2 id="discs">Discs and copy protection</h2>
+      <div class="faq-list">
+        <details class="qa" id="q-discs">
+          <summary>Will it play my DVDs and Blu-rays?</summary>
+          <div class="a">
+            <p>Yes, from disc images such as <code>.iso</code> and <code>.img</code>, and from folders that hold <code>VIDEO_TS</code> or <code>BDMV</code>, with their real menus, in a browser. That’s the WittyDVD and WittyBluray modules, which you add from the store.</p><p>Many commercial Blu-rays write their menus in Java. Those play their main feature directly unless you install Java on the server and turn their menus on. Retail Blu-rays haven’t been tried yet. To play straight from a drive on a Windows PC, WittyMediaPlayer can, and it can also make a disc image to add to your server.</p>
+            <p class="more"><a href="/docs/dvd/">DVDs</a><a href="/docs/bluray/">Blu-rays</a><a href="/player/">WittyMediaPlayer</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-copy-protection">
+          <summary>What about copy protection?</summary>
+          <div class="a">
+            <p>Copy-protected media is refused, and nothing here unlocks it. A CSS-scrambled DVD or an AACS-encrypted Blu-ray is listed with a plain message and can’t be played, and BD+ is never run. Encrypted broadcasts and encrypted game files are refused too. No plugin or setting changes that.</p><p>A disc without copy protection just plays.</p>
+            <p class="more"><a href="/docs/dvd/#adding-dvds">Adding DVDs</a><a href="/docs/bluray/#adding-discs">Adding Blu-rays</a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="faq-group" aria-labelledby="updates">
+      <h2 id="updates">Modules, updates and your files</h2>
+      <div class="faq-list">
+        <details class="qa" id="q-modules">
+          <summary>What are modules?</summary>
+          <div class="a">
+            <p>Modules add what your server can do, such as DVD menus, streamed games or live TV. Most are projects of their own, signed, and added from Settings → Modules while the server keeps running.</p><p>The server works without any of them. Only administrators add, update or remove them, and removing one leaves your media, history and settings as they are.</p>
+            <p class="more"><a href="/modules/">Every module</a><a href="/docs/module-store/">Modules and the store</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-how-updates">
+          <summary>How do updates work?</summary>
+          <div class="a">
+            <p>Twice a day the server asks GitHub for its list of releases, and puts a dot on <strong>Settings</strong> when there’s a newer one. Nothing about you or your library is sent, and nothing installs until an administrator presses <strong>Update now</strong> in <strong>Settings → About</strong>.</p><p>Every update is checked against the project’s signing key before it’s installed, and your data folder is never written. Modules have a choice of their own: tell you, install by themselves, or look only when you ask. A release found to be unsafe is withdrawn, and a server running it says so.</p>
+            <p class="more"><a href="/docs/install/#updating">Updating</a><a href="/docs/module-store/#automatic-updates">Module updates</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-backups">
+          <summary>Could an update lose my data?</summary>
+          <div class="a">
+            <p>It’s alpha software, so it could, and a backup is the answer. <strong>Settings → Backup</strong> makes one ZIP of your server’s data and details, protected with a password. Your media files are never in it: they stay where they are.</p><p>Backups haven’t been run on a real Mac or on FreeBSD yet.</p>
+            <p class="more"><a href="/docs/backup/">Backup and restore</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-files">
+          <summary>Will it change my files?</summary>
+          <div class="a">
+            <p>Playing never changes a file, and uninstalling leaves your media where it is. Setup asks whether posters and details are saved beside your files or kept on the server.</p>
+            <p class="more"><a href="/docs/metadata/#what-is-saved-next-to-your-media">What is saved next to your media</a><a href="/docs/uninstall/">Uninstalling</a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="faq-group" aria-labelledby="privacy">
+      <h2 id="privacy">Privacy and security</h2>
+      <div class="faq-list">
+        <details class="qa" id="q-private">
+          <summary>Is my data private?</summary>
+          <div class="a">
+            <p>There’s no telemetry, no account with the project and no cloud. Your files, watch history, passwords and logs aren’t sent anywhere.</p><p>What does leave your server is listed in <strong>Settings → Legal → Privacy</strong>, with what controls each one: mostly names taken from your file and folder names, sent to the details services you keep on, and the update check to GitHub.</p>
+            <p class="more"><a href="/privacy/">Privacy</a><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/README.md#privacy-and-security" rel="noopener">Privacy and security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-report-security">
+          <summary>How do I report a security problem?</summary>
+          <div class="a">
+            <p>Privately, with <strong>Report a vulnerability</strong> on the project’s GitHub security page, and never in a public issue. Only the newest release gets security fixes.</p>
+            <p class="more"><a href="/support/#security">Security reports</a><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security policy<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="faq-group" aria-labelledby="involved">
+      <h2 id="involved">Help and taking part</h2>
+      <div class="faq-list">
+        <details class="qa" id="q-help">
+          <summary>Where do I get help, or suggest a feature?</summary>
+          <div class="a">
+            <p>Ask in GitHub Discussions, and share ideas in its Ideas category. Report a bug as an issue. The help page says what to include.</p>
+            <p class="more"><a href="/support/">Help and taking part</a><a href="/docs/troubleshooting/">Troubleshooting</a></p>
+          </div>
+        </details>
+        <details class="qa" id="q-contribute">
+          <summary>Can I help build it?</summary>
+          <div class="a">
+            <p>Yes. Issues and pull requests are welcome. Discs, games, readers and more are modules with repositories of their own, so you can work on one without the rest.</p><p>Trying it for real helps too. A real Mac, a TV and its remote, or a retail Blu-ray are among what it hasn’t met yet.</p>
+            <p class="more"><a href="/support/#contribute">Contributing</a><a href="/roadmap/#real-world">What hasn’t met the real world</a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Didn’t find it?</h2>
+      <p>Ask in Discussions, or look through the guides. Everything in them is also inside the app, under Help.</p>
+      <div class="btn-row"><a class="btn primary" href="/support/">Get help<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn" href="/docs/getting-started/">Getting started guide<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

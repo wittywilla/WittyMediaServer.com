@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Music, audiobooks and podcasts · WittyMediaServer</title>
+<meta name="description" content="Use this guide to set up your music, audiobooks and podcasts, and to get the most from the player: the queue, stations, the full-screen player, the…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/music/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Music, audiobooks and podcasts">
+<meta property="og:description" content="Use this guide to set up your music, audiobooks and podcasts, and to get the most from the player: the queue, stations, the full-screen player, the…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/music/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/" aria-current="page">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Watching and listening</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/" aria-current="page">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#watch">Watching and listening</a></p>
+      <h1>Music, audiobooks and podcasts</h1>
+      <p class="lead">Use this guide to set up your music, audiobooks and podcasts, and to get the most from the player: the queue, stations, the full-screen player, the visualizer, sound settings and audio CDs.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/MUSIC.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#setting-up-a-library">Setting up a library</a></li><li><a href="#whats-read-from-your-files">What’s read from your files</a></li><li><a href="#finding-your-music">Finding your music</a></li><li><a href="#playing-and-the-queue">Playing and the queue</a></li><li><a href="#the-full-screen-player">The full-screen player</a></li><li><a href="#lyrics">Lyrics</a></li><li><a href="#visualizer">Visualizer</a></li><li><a href="#sound">Sound</a></li><li><a href="#audiobooks">Audiobooks</a></li><li><a href="#podcasts">Podcasts</a></li><li><a href="#internet-radio">Internet radio</a></li><li><a href="#audio-cds">Audio CDs</a></li><li><a href="#formats">Formats</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>This guide describes the web app, which the desktop WittyMediaClient also shows. The Android and Apple apps can’t play these libraries yet, so use a browser or the desktop app.</p>
+<h2 id="setting-up-a-library">Setting up a library<a class="h-anchor" href="#setting-up-a-library" aria-hidden="true" tabindex="-1">#</a></h2>
+<ol><li>Go to <strong>Settings → Libraries</strong>, or use first-time setup.</li><li>Choose <strong>Music</strong> or <strong>Audiobooks</strong>. If Music is listed under <strong>Add a module to use these</strong>, press <strong>Add WittyCD</strong> first.</li><li>Choose your folders, then add the library.</li></ol>
+<p>Any layout works when your files are tagged. Without tags, the folders are used:</p>
+<div class="codebox"><pre id="code-1" class="code"><code>Music/
+  Some Artist/An Album/01 First Song.mp3      artist, album, track and title
+  Some Artist - An Album/01 First Song.mp3    album folder only, artist from the tags
+Audiobooks/
+  Jane Author/A Short Book/01 Chapter 1.m4b   author, book, chapter
+  Jane Author/Another Book.m4b                one file per book</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h2 id="whats-read-from-your-files">What’s read from your files<a class="h-anchor" href="#whats-read-from-your-files" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>From</th><th>Used for</th></tr></thead><tbody><tr><td>Tags (ID3, Vorbis comments, MP4)</td><td>Title, artist, album, album artist, track and disc number, year, genre, comment</td></tr><tr><td>A picture named <code>cover</code>, <code>folder</code>, <code>front</code>, <code>album</code>, <code>poster</code>, <code>artwork</code> or <code>albumart…</code> in the folder</td><td>The album cover. The largest one wins</td></tr><tr><td>A picture inside the file</td><td>The cover, when the folder has none</td></tr><tr><td>File and folder names</td><td>Title, track number, album and artist, when tags are missing</td></tr><tr><td><code>&lt;song&gt;.lrc</code> or <code>&lt;song&gt;.txt</code> beside a song, and lyrics in its tags</td><td>Its <a href="/docs/lyrics-karaoke/">lyrics</a></td></tr><tr><td><code>replaygain_*</code> or <code>R128_*</code> tags</td><td><a href="#sound">Volume leveling</a>, if you turn it on</td></tr><tr><td><code>artist.jpg</code> (or <code>.jpeg</code>, <code>.png</code>, <code>.webp</code>) in the artist’s or album’s folder</td><td>The artist’s photo</td></tr><tr><td>PDFs and text files in the album’s folder</td><td><strong>Read</strong> in the full-screen player</td></tr><tr><td>M3U, PLS, XSPF and Windows Media playlists</td><td><a href="/docs/collections/#collections-and-smart-playlists">Collections</a> of the songs they name that are in the library</td></tr></tbody></table></div>
+<p>Nothing is written into your music folders.</p>
+<h3 id="artist-biographies-and-photos">Artist biographies and photos<a class="h-anchor" href="#artist-biographies-and-photos" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>An artist’s page can show the opening of their Wikipedia article and its picture. This is off until you agree, in first-time setup or under <strong>Settings → Metadata agents</strong>, in <strong>Lyrics and music information</strong>: turn on <strong>Artist biographies and photos</strong>.</p>
+<p>When it’s on, your server sends Wikipedia an artist’s name when someone views that artist, and nothing else. It’s the article with that name, which may not always be the right person. An <code>artist.jpg</code> in their folder is always used first.</p>
+<h2 id="finding-your-music">Finding your music<a class="h-anchor" href="#finding-your-music" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A music library opens on <strong>Home</strong>: a row of covers to flip through, with what you’ve played most at the front, then <strong>Artists</strong>, <strong>Albums</strong>, <strong>Songs</strong> and <strong>Played lately</strong>. Colours behind them come from the artwork. <strong>Play my music</strong> shuffles up to 500 songs from the library.</p>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/music-artists.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: A page of artists</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em>Artists. Credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></p></div>
+<figure class="doc-fig"><img src="/images/shots/music-albums.webp" data-shot="music-albums" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A wall of album covers" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Albums. Credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<figure class="doc-fig"><img src="/docs/images/music-home.webp" alt="A Music library: album covers you can flip through, and a row of artists" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>A Music library. Albums from CC netlabels, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Tab</th><th>What you can do</th></tr></thead><tbody><tr><td><strong>Albums</strong></td><td>Sort by title, artist, year, recently added or most played, either way round. Filter by genre</td></tr><tr><td><strong>Artists</strong></td><td>Sort by name or most albums, and find one by name</td></tr><tr><td><strong>Songs</strong></td><td>Choose <strong>All songs</strong>, <strong>Liked</strong>, <strong>Most played</strong>, <strong>Played lately</strong> or <strong>Newest</strong>. Search, sort, filter by genre, and press <strong>Play</strong> or <strong>Shuffle</strong></td></tr><tr><td><strong>Playlists</strong></td><td>The same four lists ready to play, and your own playlists</td></tr></tbody></table></div>
+<p><strong>An album’s page</strong> has <strong>Play</strong>, <strong>Shuffle</strong>, <strong>Station</strong>, <strong>Play next</strong>, <strong>Add to queue</strong> and <strong>Like all</strong>. An album on more than one disc is divided by disc. Below the tracks are <strong>Other versions</strong> of it, such as a deluxe or remastered release, and <strong>More by</strong> that artist.</p>
+<p><strong>An artist’s page</strong> has their most played songs, their <strong>Discography</strong> newest first or by title, and <strong>Singles and EPs</strong> apart, meaning anything with fewer than seven tracks.</p>
+<p><strong>Any song’s</strong> menu has <strong>Play next</strong>, <strong>Add to the queue</strong>, <strong>Like</strong>, <strong>Start a station from this</strong>, <strong>Add to a playlist…</strong>, <strong>Go to artist</strong> and <strong>Go to album</strong>.</p>
+<p><strong>Playlists are collections,</strong> so one made here is on the Collections page too, and a smart playlist made there is listed here. See <a href="/docs/collections/#collections-and-smart-playlists">Collections</a>.</p>
+<h2 id="playing-and-the-queue">Playing and the queue<a class="h-anchor" href="#playing-and-the-queue" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The bar floats along the bottom while you browse, and the page leaves room for it. Its arrow collapses it to a small button in the corner. On a phone it shows the art, title, play and next, above the tab bar.</p>
+<figure class="doc-fig"><img src="/docs/images/music-album.webp" alt="An album&#39;s page with its tracks" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>An album’s page. Credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<p><strong>What’s playing comes back after a reload,</strong> stopped where it was, with the queue, shuffle and repeat as they were. It’s kept on that device for each person, for 30 days, and nothing is fetched until you press play. <strong>Stop and close</strong> forgets it.</p>
+<ul><li><strong>Shuffle</strong> really reorders the queue, so what’s shown is what will play.</li><li><strong>Repeat</strong> goes from off, to all, to this song.</li><li>Lock screens, headphone buttons and keyboard media keys control playback, with artwork and a progress bar on the lock screen.</li><li>A video or game takes over the speakers, so it pauses the music.</li></ul>
+<p><strong>The queue</strong> opens from its button in the bar or the full player, or with <strong>Q</strong>. It can change as it plays:</p>
+<ul><li>Drag a row, or use its up, down and remove buttons from a keyboard or remote.</li><li>Press a row to jump to it.</li><li><strong>Save the queue as a playlist</strong> keeps it.</li><li><strong>Clear what’s to come</strong> leaves only the song playing.</li></ul>
+<p><strong>A station</strong> makes a queue from one song using only your library: the same artist, the same genre and songs from about the same time, with some chance mixed in, leaving out anything you’ve disliked. Start one from <strong>Station</strong> on an album or artist, from a song’s menu, or from <strong>More</strong> in the full player. Nothing online is asked. A small library may not have enough to make one, and it says so.</p>
+<h2 id="the-full-screen-player">The full-screen player<a class="h-anchor" href="#the-full-screen-player" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press the artwork or title in the bar, or <strong>Full screen</strong>. <strong>F</strong> then fills the whole screen. It’s the same for music, audiobooks, podcasts and radio, with what doesn’t apply left out.</p>
+<figure class="doc-fig"><img src="/docs/images/music-full.webp" alt="The full-screen player, with a large album cover and controls" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>The full-screen player. <a href="https://archive.org/details/SRS08807" rel="noopener">Collide</a>, Aryll Fae, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</em></span></figcaption></figure>
+<p><strong>Top row:</strong> close, volume, add to a playlist, sleep timer, queue, like, fill the screen, and <strong>More</strong>. <strong>More</strong> has <strong>Sound: equaliser and more</strong>, <strong>Start a station from this song</strong>, <strong>Go to album</strong>, <strong>Go to artist</strong> and <strong>Stop and close</strong>.</p>
+<p><strong>Below the controls:</strong> <strong>Visualizer</strong> and its styles, <strong>Lyrics</strong>, <strong>Karaoke</strong>, <strong>Read</strong> and playback speed.</p>
+<p><strong>Read</strong> shows the words at your own pace, and whatever came with the album: text files open in the panel, and a PDF booklet opens in a new tab. A text file named after one song counts as that song’s lyrics instead.</p>
+<p><strong>The sleep timer</strong> stops playing in 15, 30, 45, 60 or 90 minutes, or <strong>After this song</strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>What it does</th></tr></thead><tbody><tr><td>Esc</td><td>Close the panel, then the player</td></tr><tr><td>Space</td><td>Play or pause</td></tr><tr><td>← →</td><td>Previous or next</td></tr><tr><td>L</td><td>Lyrics</td></tr><tr><td>K</td><td>Karaoke</td></tr><tr><td>Q</td><td>Queue</td></tr><tr><td>V</td><td>Visualizer on or off</td></tr><tr><td>S</td><td>Shuffle</td></tr><tr><td>R</td><td>Repeat</td></tr><tr><td>M</td><td>Mute</td></tr><tr><td>F</td><td>Fill the screen</td></tr><tr><td><code>,</code> <code>.</code></td><td>Back or forward 10 seconds</td></tr><tr><td><code>&lt;</code> <code>&gt;</code></td><td>Slower or faster</td></tr></tbody></table></div>
+<p>Up, Down or OK moves onto the controls, and arrows then move between them, so a remote or a controller reaches everything.</p>
+<h2 id="lyrics">Lyrics<a class="h-anchor" href="#lyrics" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Lyrics follow the music in the full-screen player, and karaoke is one press from there. How they’re found, what goes online and when, and how to add or fix them is in <a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a>.</p>
+<h2 id="visualizer">Visualizer<a class="h-anchor" href="#visualizer" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The visualizer draws moving shapes from the music behind the artwork in the full-screen player. It’s on by default there, and <strong>Visualizer</strong> or <strong>V</strong> turns it off. It’s part of the <strong>WittyVisualizer</strong> module: if its buttons aren’t there, an admin can add it in <strong>Settings → Modules</strong>. <strong>V</strong> also opens it from anywhere the bar is showing.</p>
+<figure class="doc-fig"><img src="/docs/images/music-visualizer-3.webp" alt="A soft green effect filling the screen behind the player" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>A WittyVisualizer effect. <a href="https://archive.org/details/SRS08807" rel="noopener">Collide</a>, Aryll Fae, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</em></span></figcaption></figure>
+<figure class="doc-fig"><img src="/docs/images/music-visualizer-2.webp" alt="A colourful effect filling the screen behind the player" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>A WittyVisualizer effect. <a href="https://archive.org/details/SRS08807" rel="noopener">Collide</a>, Aryll Fae, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</em></span></figcaption></figure>
+<figure class="doc-fig"><img src="/images/shots/music-visualizer.webp" data-shot="music-visualizer" alt="A light show filling the screen behind the player" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>WittyVisualizer. <a href="https://archive.org/details/SRS08807" rel="noopener">Collide</a>, Aryll Fae, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</em></span></figcaption></figure>
+<ul><li><strong>Bars, Waves and Drift</strong> are soft shapes in the artwork’s colour. They don’t flash, so they come with no warning.</li><li><strong>More</strong> has every other effect WittyVisualizer offers. A notice about flashing comes first, once, with the choice of calm mode. Choose <strong>Not now</strong> and it goes back to Bars.</li><li><strong>Effect settings and your own effects…</strong>, at the end of <strong>More</strong>, opens the full view, with its settings.</li><li><strong>Slow</strong> is a slower, gentler pace for whichever one is showing. Devices set to reduce motion start that way.</li><li><strong>It never changes by itself unless you ask.</strong> To have it change, press the shuffle button beside <strong>Slow</strong> and choose how often, from every 15 seconds to every 10 minutes. Then choose <strong>Bars, Waves and Drift</strong> or <strong>Every effect</strong>. Every effect only includes the others once you’ve read the notice, and with <strong>Slow</strong> on it keeps to the gentle ones.</li></ul>
+<p>Your choices are kept with your account, so they follow you between devices.</p>
+<p>If the sound can’t be read, the shapes move slowly on their own and aren’t following the music. This happens when the server is on a different address from the page, and on iPhones and iPads.</p>
+<p>The CD player has its own <strong>Visualizer</strong> button, which shows WittyVisualizer’s effects.</p>
+<h2 id="sound">Sound<a class="h-anchor" href="#sound" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Open <strong>More → Sound: equaliser and more</strong> in the full player. These settings are kept on each device, because speakers differ.</p>
+<ul><li><strong>No gaps</strong> starts the next song right as this one ends, and is on by default. How close it gets depends on the file, as formats like MP3 have a little silence built in at each end.</li><li><strong>Crossfade</strong> runs from 2 to 12 seconds. Songs of the same album aren’t crossed unless you tick <strong>Also within an album</strong>, as they’re often meant to run together.</li><li><strong>ReplayGain</strong> levels the volume using tags in your files: <strong>Each song the same</strong> or <strong>Keep each album’s balance</strong>. Songs without those tags play as they are. Tools such as MusicBrainz Picard can add them.</li><li><strong>Equaliser</strong> has ten bands, presets and an overall level. If boosting makes loud parts crackle, lower the overall level a little.</li></ul>
+<p>No gaps and crossfade work for files sent as they are. Formats converted while playing follow their own rules, and so do CD images.</p>
+<p>These limits are worth knowing:</p>
+<ul><li>On iPhones and iPads, the equaliser and leveling stop when the screen locks, and playing without them keeps going. This hasn’t been run on a real iPhone or iPad yet.</li><li>With a server on a different address from the page, the browser doesn’t allow them at all, and the panel says so.</li></ul>
+<h2 id="audiobooks">Audiobooks<a class="h-anchor" href="#audiobooks" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A library of the kind <strong>Audiobooks</strong> uses the <em>album</em> tag (or the folder) as the book, and the <em>artist</em> (or the parent folder) as the author. Each file is a chapter. Its tabs are <strong>Home</strong>, <strong>Books</strong> and <strong>Authors</strong>.</p>
+<figure class="doc-fig"><img src="/docs/images/audiobook-page.webp" alt="An audiobook with its list of chapters" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>An audiobook’s page. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<figure class="doc-fig"><img src="/docs/images/audiobooks.webp" alt="A shelf of audiobooks" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Audiobooks, public-domain readings credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<ul><li><strong>Your place is saved</strong> every 15 seconds while you listen, for your account, so you can carry on from any device. <strong>Continue listening</strong> on the home page, and <strong>Continue</strong> on a book’s page, take you back.</li><li><strong>Back 15 seconds</strong> and <strong>Forward 30 seconds</strong> replace shuffle and repeat.</li><li><strong>Speed</strong> runs from 0.75× to 3× with the voice pitch kept, up to the fastest speed the server allows. Each kind of listening keeps its own speed on that device, so 1.5× for a book doesn’t carry over to your next album.</li><li><strong>The sleep timer</strong> can also stop <strong>At the end of this chapter</strong>.</li></ul>
+<p>Lyrics, karaoke and online lyrics are for music libraries only.</p>
+<h2 id="podcasts">Podcasts<a class="h-anchor" href="#podcasts" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/podcasts.webp" alt="A page of podcasts" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Podcasts under open licences, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<ol><li>Add a library of the kind <strong>Podcasts</strong>. A folder is optional: it holds episode files you already have, and it’s where downloads are saved.</li><li>Choose <strong>Add, then follow shows</strong>, or <strong>Follow a podcast</strong> on the library’s page later.</li><li>Search the directory by name, or switch to <strong>RSS feed address</strong> and paste the show’s feed. Private and members-only feeds work too.</li></ol>
+<p>Only admins can follow shows or download episodes. Everyone with access to the library can listen.</p>
+<ul><li>New episodes are picked up every 2 hours, or with <strong>Check for new episodes</strong> on the show’s page.</li><li>Episodes play through your server, so your devices never contact the podcast’s host, and seeking works as usual. Old <code>http://</code> feeds work on secure pages.</li><li><strong>Download</strong> keeps one episode in the library’s first folder, as <code>&lt;podcast&gt;/&lt;date&gt; &lt;title&gt;</code>. <strong>Keep downloaded</strong> does it automatically for the newest 1, 3, 5, 10 or 25.</li><li><strong>Unfollow</strong> removes the episodes that weren’t downloaded. Downloaded files stay.</li><li>Episodes marked explicit are rated TV-MA, so Kids and Guest profiles don’t see them.</li></ul>
+<p>Search results come from the free Apple Podcasts directory: what an admin types goes there from your server, and the cover pictures in the results load straight from Apple to that person’s browser.</p>
+<p>For safety, feeds and episodes are only fetched from the internet. The server refuses to connect to itself or to devices on your local network on a feed’s behalf.</p>
+<h2 id="internet-radio">Internet radio<a class="h-anchor" href="#internet-radio" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A library of the kind <strong>Internet radio</strong> needs no folder. Press <strong>Add stations</strong> on its page, then search a free directory, type a stream address, or add a playlist. Stations play in the same bar and full player, without seeking or speed, and a stream that drops is tried again a few times.</p>
+<p>Everything about stations, including what contacts what, is in <a href="/docs/collections/#internet-radio">Collections, radio and Your year</a>.</p>
+<h2 id="audio-cds">Audio CDs<a class="h-anchor" href="#audio-cds" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Images of your audio CDs play in a CD player of their own, in the spirit of the desktop players of the early 2000s: the disc spins behind a window, and a lit display shows the track, index and time beside the list of tracks. This needs the <strong>WittyCD</strong> module.</p>
+<figure class="doc-fig"><img src="/docs/images/cd-player.webp" alt="An audio CD image playing on the CD screen" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>The CD screen. An image authored for testing from Jazz Sampler, Kevin MacLeod, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>.</em></span></figcaption></figure>
+<p><strong>Which library should you use?</strong></p>
+<ul><li><strong>Music,</strong> unless you want your CDs on the same shelf as your films. The image becomes an album, with its tracks in <strong>Songs</strong> and search like any others. Press <strong>Insert disc</strong> on its page to bring up the player.</li><li><strong>DVDs, Blu-rays &amp; CDs,</strong> to keep them on the shelf with your other discs.</li></ul>
+<p><strong>Formats:</strong> <code>.cue</code> with <code>.bin</code>, <code>.wav</code>, <code>.aiff</code> or one <code>.flac</code>; <code>.toc</code>; <code>.ccd</code> with <code>.img</code>; <code>.nrg</code>; <code>.chd</code>; and a bare <code>.iso</code>, <code>.img</code> or <code>.bin</code> that’s really audio, which plays as one long track because nothing says where the others begin. A sheet beside already tagged per-track files, or beside files such as MP3, is left alone, and those stay ordinary songs.</p>
+<h3 id="what-the-player-does">What the player does<a class="h-anchor" href="#what-the-player-does" aria-hidden="true" tabindex="-1">#</a></h3>
+<ul><li><strong>No gaps.</strong> The whole disc goes as one continuous stream, so a live album plays as it was laid out, pregaps included. The display counts down through a pregap.</li><li><strong>Quality.</strong> It sends lossless sound as FLAC or WAV, and moves to compressed AAC if the connection keeps stalling. <strong>About this disc</strong> shows what it’s sending and has <strong>Sound quality</strong>: <strong>Automatic</strong>, <strong>Always lossless</strong> or <strong>Always compressed</strong>. Limits for people away from home apply as usual.</li><li><strong>Your place on the disc</strong> is kept for each person, on every device.</li><li><strong>Repeat, Shuffle and Program.</strong> <strong>Program</strong> lets you choose your own order with the plus buttons. Neighbouring tracks of the disc play with no gap.</li><li><strong>Hidden tracks.</strong> Audio hidden before track 1 is listed as <strong>Hidden track</strong>. Pressing Previous at the start of track 1 finds it too.</li><li><strong>Pre-emphasis,</strong> a treble boost on some early CDs, is corrected, and the display shows <strong>PRE</strong>.</li><li><strong>Index points</strong> have <strong>Index −</strong> and <strong>Index +</strong> when a track has them.</li><li><strong>CD+G pictures</strong> show from a <code>.cdg</code> file beside the image, and <strong>Pictures</strong> turns them off.</li><li><strong>The time display</strong> changes between elapsed, remaining and disc left when you press it.</li><li><strong>The music keeps playing</strong> in the bar along the bottom when you leave the page.</li></ul>
+<p>Lyrics and karaoke aren’t part of the CD player. Tracks can’t have them while a disc is playing.</p>
+<h3 id="names-and-covers">Names and covers<a class="h-anchor" href="#names-and-covers" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>A disc’s own text comes first (CD-TEXT or the sheet), then its folder and file names. Each new disc is also looked up on MusicBrainz, using only its table of contents: see <a href="/docs/metadata/#audio-cds">Metadata</a>. A cover beside the image always wins.</p>
+<p>An admin can press <strong>Find this album</strong> or <strong>Change album</strong>. If several albums match, the disc keeps its own names and offers <strong>Choose from N matches</strong>.</p>
+<h3 id="keys">Keys<a class="h-anchor" href="#keys" aria-hidden="true" tabindex="-1">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>What it does</th></tr></thead><tbody><tr><td>Space or K</td><td>Play or pause</td></tr><tr><td>N, P</td><td>Next or previous track</td></tr><tr><td>J, L</td><td>Back or forward 10 seconds</td></tr><tr><td>S</td><td>Stop</td></tr><tr><td>R</td><td>Repeat</td></tr><tr><td>H</td><td>Shuffle</td></tr><tr><td>V</td><td>Visualizer</td></tr><tr><td>E</td><td>Eject</td></tr></tbody></table></div>
+<p>Remotes and controllers move around the deck as they do everywhere else.</p>
+<h3 id="if-a-disc-is-damaged-or-sounds-wrong">If a disc is damaged or sounds wrong<a class="h-anchor" href="#if-a-disc-is-damaged-or-sounds-wrong" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>A damaged image plays as far as it goes, and says so. To find out what’s wrong with one, use <strong>Settings → WittyDiagnoser</strong>: see <a href="/docs/diagnoser/">WittyDiagnoser</a>.</p>
+<p>Plain CD audio has no copy protection. An image whose audio looks like noise may be damaged, scrambled or copy protected, and the player warns you before playing it. Nothing here unscrambles it, so a clean copy is the way to play it. DTS surround discs are reported the same way, because they’d play as loud noise.</p>
+<h2 id="formats">Formats<a class="h-anchor" href="#formats" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>MP3, AAC and M4A, FLAC, Opus, Ogg Vorbis and WAV go to the browser as they are, with instant seeking and no work for the server. ALAC, WMA, APE, WavPack, AIFF, DSD and others are converted to AAC while playing. MIDI files are played through the server’s own synthesiser. Every format is in <a href="/docs/supported-formats/#music-and-audio">Supported formats</a>.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/playing/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Watching and listening</strong></a>
+      <a class="card next" href="/docs/lyrics-karaoke/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Lyrics and karaoke</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/MUSIC.md" rel="noopener">docs/MUSIC.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/MUSIC.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#setting-up-a-library">Setting up a library</a></li><li><a href="#whats-read-from-your-files">What’s read from your files</a></li><li><a href="#finding-your-music">Finding your music</a></li><li><a href="#playing-and-the-queue">Playing and the queue</a></li><li><a href="#the-full-screen-player">The full-screen player</a></li><li><a href="#lyrics">Lyrics</a></li><li><a href="#visualizer">Visualizer</a></li><li><a href="#sound">Sound</a></li><li><a href="#audiobooks">Audiobooks</a></li><li><a href="#podcasts">Podcasts</a></li><li><a href="#internet-radio">Internet radio</a></li><li><a href="#audio-cds">Audio CDs</a></li><li><a href="#formats">Formats</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

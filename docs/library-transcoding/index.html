@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Library transcoding · WittyMediaServer</title>
+<meta name="description" content="Use this guide to convert the files in a library ahead of time, so they play without the server converting them while someone watches. It&#39;s in Settings →…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/library-transcoding/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Library transcoding">
+<meta property="og:description" content="Use this guide to convert the files in a library ahead of time, so they play without the server converting them while someone watches. It&#39;s in Settings →…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/library-transcoding/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/" aria-current="page">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Running a server</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/" aria-current="page">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#server">Running a server</a></p>
+      <h1>Library transcoding</h1>
+      <p class="lead">Use this guide to convert the files in a library ahead of time, so they play without the server converting them while someone watches. It’s in <strong>Settings → Library transcoding</strong>, for administrators.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/LIBRARY-TRANSCODING.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#the-short-version">The short version</a></li><li><a href="#the-three-presets">The three presets</a></li><li><a href="#what-it-does-to-your-files">What it does to your files</a></li><li><a href="#how-it-affects-people-watching">How it affects people watching</a></li><li><a href="#converting-new-files-by-themselves">Converting new files by themselves</a></li><li><a href="#sound-tracks">Sound tracks</a></li><li><a href="#subtitles">Subtitles</a></li><li><a href="#unusual-files-decision-by-decision">Unusual files, decision by decision</a></li><li><a href="#fixing-things">Fixing things</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>This rewrites your files, so it starts switched off. To convert only while someone is watching, and leave your files alone, see <a href="/docs/transcoding/">Live transcoding</a>. To use a separate Tdarr server, see <a href="/docs/tdarr/">Using Tdarr</a>.</p>
+<h2 id="the-short-version">The short version<a class="h-anchor" href="#the-short-version" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/settings-library-transcoding.webp" alt="The Library transcoding page in Settings" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Settings, Library transcoding.</em></span></figcaption></figure>
+<ol><li>Read the warning at the top of the page, tick <strong>I understand how this affects streaming and my files</strong>, and press <strong>Turn on library transcoding</strong>. Until you do, nothing can be changed.</li><li>Under <strong>Choose a library</strong>, pick one. Then choose the preset that sounds like what you want.</li><li>Under <strong>What happens to the old file?</strong>, leave it on <strong>Keep the original</strong> until you trust your recipe.</li><li>Press <strong>Save changes</strong> in the bar that appears. A run does what’s saved.</li><li>Under <strong>Try it on one file</strong>, choose a film and press <strong>Show what would happen</strong>. Each track is listed with what will become of it.</li><li>Press <strong>Check this library</strong>. That’s a dry run: it looks at every file, changes nothing, and tells you how many files it would change, roughly how much room you’d end up with and how long it would take.</li><li>Press <strong>Start converting</strong>. It shows here and in the activity panel at the top of every page, where you can pause or cancel it.</li></ol>
+<h2 id="the-three-presets">The three presets<a class="h-anchor" href="#the-three-presets" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Preset</th><th>What you get</th><th>The cost</th></tr></thead><tbody><tr><td><strong>Make everything play on any device</strong></td><td>MP4 with H.264 picture and AAC sound, at most 1080p, with no HDR. A stereo track comes first, with surround beside it. Every phone, TV, tablet and browser should play it with no help from the server.</td><td>Heavy for the processor. Files may grow if they were very efficient to begin with.</td></tr><tr><td><strong>Save space</strong></td><td>H.265 picture, usually 30 to 60% smaller. Lossless sound becomes Dolby Digital Plus. HDR stays HDR and every track stays. A file that doesn’t come out at least 10% smaller is left as it was.</td><td>The slowest choice. Older devices may need the server to convert these files while they play.</td></tr><tr><td><strong>Keep the best quality</strong></td><td>Picture and sound aren’t touched. Files are tidied into MKV, with tracks in the order you want, and a stereo track added where there’s only surround.</td><td>Very little: mostly copying.</td></tr></tbody></table></div>
+<p>Under each preset, <strong>What this does</strong> says exactly what it does. <strong>Picture details</strong>, <strong>Sound details</strong> and <strong>Subtitle details</strong> let you change any of it. Changing something makes it your own recipe, and choosing a preset again goes back. Whatever you choose, a file that already matches is left alone, and running the same recipe twice does nothing the second time.</p>
+<p>Save space needs an FFmpeg with H.265 in it. If yours doesn’t have it, the page says so and it uses a stronger H.264 setting, which saves less. HDR files can’t fall back on H.264, so those are left alone.</p>
+<p>The picture format, file type, quality, speed, largest picture and how HDR, Dolby Vision, 10-bit, interlaced, 3D and varying frame rates are treated are all choices under <strong>Picture details</strong>. <a href="#unusual-files-decision-by-decision">Unusual files</a> says what each does.</p>
+<h2 id="what-it-does-to-your-files">What it does to your files<a class="h-anchor" href="#what-it-does-to-your-files" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Nothing is replaced until the new file has been checked. For each file:</p>
+<ol><li>It checks there’s room, keeping free the amount you chose. That’s 10 GB unless you change it.</li><li>It writes the new file into a hidden folder beside the old one, <code>.wittymedia-work</code>, on the same drive.</li><li>It checks the new file: it opens, it’s as long as the old one, the tracks and chapters are all there, and it really does decode at the start, middle and end. If not, the new file is thrown away and the old one is untouched.</li><li>It checks that the old file hasn’t changed meanwhile, that nobody started playing it, and, if you asked for a saving, that there is one.</li><li>Only then does it swap them, doing what you chose for the old file:</li></ol>
+<div class="table-wrap"><table><thead><tr><th>Choice</th><th>What happens to the old file</th><th>Good for</th></tr></thead><tbody><tr><td><strong>Keep the original</strong> (the default)</td><td>Moves to a hidden folder beside it, <code>.wittymedia-originals</code>. <strong>Put the original back</strong> undoes it. <strong>Delete the original</strong> frees the room.</td><td>Being sure</td></tr><tr><td><strong>Replace the original</strong></td><td>Deleted for good, once the new file is in place and the library knows. Choosing this asks for your password.</td><td>When you need the room and you’ve tested your recipe</td></tr><tr><td><strong>Write it beside the original</strong></td><td>Stays where it is, in use. The new file is <code>Film.wms-converted.mp4</code>, which a scan ignores. <strong>Use the copy</strong> puts it into use.</td><td>Comparing them yourself</td></tr></tbody></table></div>
+<p>Kept originals and waiting copies are listed under <strong>Originals and copies</strong> at the bottom of the page.</p>
+<p>The item in your library stays the same item, even if the file goes from <code>.avi</code> to <code>.mp4</code>. What people have watched, ratings, your edits and its match all stay. If the server stops at any moment, it tidies up when it starts again: temporary files are removed, and a swap caught halfway is finished or put back.</p>
+<h3 id="two-more-safety-switches">Two more safety switches<a class="h-anchor" href="#two-more-safety-switches" aria-hidden="true" tabindex="-1">#</a></h3>
+<ul><li><strong>This library is read-only.</strong> Nothing the server does may change this library’s files: no conversions, no saved artwork or details beside them, no uploads and no podcast episodes kept in its folder. Previews and dry runs still work. The setting is kept with the library, in the <code>libraries.read_only</code> column of the database.</li><li><strong>Save next to media off.</strong> If you’ve turned that off in <strong>Settings → Metadata agents</strong> (<code>saveMetadata=0</code>), the server keeps out of your media folders, so conversions stop too. A switch appears for each library, <strong>Allow conversions in this library</strong>. With it on, new video files are written, and still no subtitle files or artwork. <strong>Check this library</strong> and <strong>Show what would happen</strong> work either way.</li></ul>
+<h2 id="how-it-affects-people-watching">How it affects people watching<a class="h-anchor" href="#how-it-affects-people-watching" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Converting competes with watching for the same processor and the same drive. People may see stutters, or a film that takes longer to start, especially if their device needs the server to convert while it plays. These settings are under <strong>How it runs on this server</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th>Setting</th><th>What it does</th><th>Unless you change it</th></tr></thead><tbody><tr><td><strong>Pause while people are streaming</strong></td><td>Holds the conversion still, using no processor, while anyone is playing something or a game. It carries on where it was. A library may take much longer to finish.</td><td>On</td></tr><tr><td><strong>Low priority</strong></td><td>Everything else on the machine gets the processor first.</td><td>On</td></tr><tr><td><strong>Only at certain hours</strong></td><td>Holds still outside the hours you choose, on the server’s clock. They can run past midnight.</td><td>Off</td></tr><tr><td><strong>How much of the processor</strong></td><td>Threads for each file being converted.</td><td>Half of them</td></tr><tr><td><strong>Files at once</strong></td><td>More finishes sooner and leaves less for everything else.</td><td>1</td></tr><tr><td><strong>Use hardware encoders</strong></td><td>Uses the ones ticked under <a href="/docs/transcoding/#hardware-encoders">Live transcoding</a>, for ordinary 8-bit pictures. Far faster, with slightly larger files. HDR and 10-bit pictures always use software, which can be trusted to keep them right.</td><td>On</td></tr><tr><td><strong>Keep this much free on each drive</strong></td><td>A file that wouldn’t fit waits.</td><td>10 GB</td></tr><tr><td><strong>Wait for new files to settle</strong></td><td>For <a href="#converting-new-files-by-themselves">automatic conversion</a>.</td><td>2 minutes</td></tr></tbody></table></div>
+<p><strong>Time a 20-second test</strong> really converts a stretch from the middle of the file you chose, and tells you how fast this machine did it and what the whole film would come to. The figures from <strong>Check this library</strong> are rougher, and say so.</p>
+<p>There’s a cost after conversion too. A file made smaller with H.265 may need converting back while it plays on an older device, which is more work for the server than the file you started with.</p>
+<h2 id="converting-new-files-by-themselves">Converting new files by themselves<a class="h-anchor" href="#converting-new-files-by-themselves" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Each library can have <strong>Convert new files by themselves</strong> turned on. It’s off unless you turn it on, and it needs the recipe saved and library transcoding switched on.</p>
+<ul><li><strong>What counts as new.</strong> Only files a scan finds after you turned it on, and files that change after that. What’s already in the library is left alone: <strong>Start converting</strong> is how to do those.</li><li><strong>When it starts.</strong> After a scan finds something, it waits until each file has stopped changing, 2 minutes unless you change it, so that a file still being copied or downloaded is left to finish. A file that keeps growing for 24 hours waits for the next scan. Then it starts an ordinary conversion of those files.</li><li><strong>Its limits.</strong> All the same ones: the hours, how much of the processor, files at once, low priority and pausing while people are streaming. Outside its hours or while people are watching, it doesn’t start.</li><li><strong>Where to see it.</strong> In the activity panel, first as <strong>New files in</strong> and the library’s name, saying what it’s waiting for, then as <strong>Converting new files in</strong> and the library’s name, with Pause and Cancel. Files with nothing to do leave no trace.</li><li><strong>What it won’t do again.</strong> Each file’s outcome is remembered against its size and date and the recipe. A file that fails, comes out no smaller, already matches or is put back isn’t tried again unless the file or the recipe changes. <strong>A run you cancelled isn’t retried either.</strong> <strong>Try again</strong> in the activity panel, or <strong>Start converting</strong>, still does it when you ask.</li><li><strong>What it does try again.</strong> A file someone was playing and a file that didn’t fit on the drive are looked at after the next scan, because neither says anything against the file. A file that changed while it was being converted is looked at again too. If the server stopped partway, what was left is picked up when it starts again.</li></ul>
+<blockquote><p><strong>It uses the choice you saved for the old file.</strong> If a library is set to <strong>Replace the original</strong>, automatic runs delete originals with nobody watching. The default stays <strong>Keep the original</strong>, and that’s the safer choice until you’ve seen your recipe work.</p></blockquote>
+<h2 id="sound-tracks">Sound tracks<a class="h-anchor" href="#sound-tracks" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Every track is either kept as it is, converted, or removed. <strong>Show what would happen</strong> says which, and why.</p>
+<ul><li><strong>Languages.</strong> Keep them all, or a list, in the order you want. <strong>Also keep the original language</strong> keeps what the film was made in: what the file marks as original, otherwise its default track, otherwise its first.</li><li><strong>Plays first.</strong> The language chosen when a viewer hasn’t said what they want.</li><li><strong>No language.</strong> Keep or remove them, or label them with a language if you know what they are.</li><li><strong>Commentary and audio description</strong> are recognised by the file’s flags and by words in their titles, and can be kept or removed. They go after the plain tracks of their language.</li><li><strong>Stereo beside surround.</strong> A language with only surround gets a stereo AAC track, for phones, headphones and TVs without a sound system. <strong>Put stereo ahead of surround</strong> makes plain devices start with it.</li><li><strong>Most channels.</strong> Wider tracks are converted down to 7.1, 5.1 or stereo.</li><li><strong>Lossless sound</strong> (TrueHD, DTS-HD MA, FLAC, PCM) can stay or be converted.</li><li><strong>Object sound</strong> (Atmos, DTS:X) survives only by staying as it is, so converting says plainly that it will be lost.</li><li><strong>The last track.</strong> A film never ends up silent: if your choices would remove every track, one stays and the preview says so.</li></ul>
+<h2 id="subtitles">Subtitles<a class="h-anchor" href="#subtitles" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Languages.</strong> Keep them all, a list in order, or none.</li><li><strong>Forced</strong> (only the lines in another language). Keep as a track, remove, burn into the picture, or burn in only if they’re stored as pictures and the file type needs it. Burning means converting the picture, and it can’t be turned off afterwards.</li><li><strong>SDH</strong> (with sound descriptions) and <strong>untagged.</strong> Keep or remove.</li><li><strong>Stored as pictures</strong> (Blu-ray PGS, DVD VobSub, DVB). They can’t become text here, which would need character recognition, and an MP4 can’t hold them. So you choose: keep them, with the file staying MKV; save Blu-ray ones as a <code>.sup</code> file beside the video; or remove them. Anything that would be lost is listed in the preview. With <strong>Save next to media</strong> off, nothing is saved beside the video.</li><li><strong>Text</strong> stays as it is, or becomes plain SRT. An MP4 holds only its own kind, so going to MP4 loses ASS styling, and the preview says so. Going to MKV turns MP4 text into SRT.</li><li><strong>Files beside the video</strong> (<code>Film.en.srt</code>) keep working if left where they are, because the name stays the same. They can instead be moved inside the new file.</li></ul>
+<h2 id="unusual-files-decision-by-decision">Unusual files, decision by decision<a class="h-anchor" href="#unusual-files-decision-by-decision" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>The file</th><th>What happens</th></tr></thead><tbody><tr><td>Already matches</td><td>Skipped, whichever recipe it is. Running a recipe again finds nothing to do.</td></tr><tr><td>Several picture streams</td><td>Kept and each converted if needed, or just the main one. The main one is a later stream marked default, otherwise the largest, and it goes first.</td></tr><tr><td>Cover pictures</td><td>Always kept, as they are, in MKV and MP4. An MP4 only holds JPEG and PNG: anything else is listed as lost.</td></tr><tr><td>Chapters and metadata</td><td>Kept. A new file that lost its chapters is thrown away.</td></tr><tr><td>Attached fonts</td><td>Kept in MKV. An MP4 can’t hold them, and the preview says so.</td></tr><tr><td>HDR10, HLG</td><td>Your choice: stay HDR (H.265 or AV1 only, with a software encoder, keeping the mastering information), become an ordinary picture, or leave those files alone.</td></tr><tr><td>HDR10+</td><td>Kept if the picture isn’t converted. Converted, it stays HDR10, and the preview says the scene-by-scene information is lost.</td></tr><tr><td>Dolby Vision</td><td>Kept only if the picture isn’t touched. If it would have to be, your choice: leave the file alone, or convert from its ordinary layer, losing Dolby Vision. Profile 5 has no ordinary layer, so it’s always left alone rather than come out with the wrong colours.</td></tr><tr><td>10-bit</td><td>Stays 10-bit in H.265 and AV1. “Any device” makes it 8-bit.</td></tr><tr><td>Interlaced</td><td>Deinterlaced if it’s being converted and you asked.</td></tr><tr><td>Variable frame rate</td><td>Stays as it is, so sound stays in step. “Any device” makes it constant.</td></tr><tr><td>3D</td><td>Keep both eyes as stored, keep one eye, or leave those files alone. The kind that stores its second eye separately (MVC) can’t survive conversion, so it’s left alone unless you choose one eye.</td></tr><tr><td>Already small</td><td>With Save space, a picture already small for its size is left as it is, since converting it again would lose more than it saves.</td></tr><tr><td>Broken timestamps</td><td>New ones are made. If the file’s stated length is wrong, what’s really in it decides. If it can’t be made right, the old file stays.</td></tr><tr><td>A split film (<code>CD1</code>, <code>part2</code>)</td><td>Its parts stay separate files, are converted together with the same settings, and swap together. If one part fails, none is replaced. If one part fits and another doesn’t, both are converted, so they still join.</td></tr><tr><td>Fails partway</td><td>The temporary file is removed, the old file is untouched, and it’s listed as a problem you can retry.</td></tr><tr><td>Sound-only</td><td>Left alone, since these recipes are about pictures.</td></tr><tr><td>Changed during the job</td><td>The new version is thrown away, and it’s looked at again next time.</td></tr><tr><td>Being played</td><td>Left until the end of the run. If it’s still being played then, it’s left for next time. If someone starts playing it just as the new file is ready, the swap waits for them.</td></tr><tr><td>Disc images and folders</td><td>Not converted: they’d lose their menus. They play as they are.</td></tr><tr><td>Copy-protected or encrypted</td><td>Refused, and never decrypted.</td></tr><tr><td>A link leading out of the library</td><td>Refused. Nothing outside a library’s folders is ever touched.</td></tr></tbody></table></div>
+<h2 id="fixing-things">Fixing things<a class="h-anchor" href="#fixing-things" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>What you see</th><th>What to do</th></tr></thead><tbody><tr><td><strong>Start converting</strong> is greyed out</td><td>The line under it says why: turned off, read-only, unsaved changes, no recipe saved, or Save next to media.</td></tr><tr><td>A file failed</td><td>Its old file is untouched. Open it in the list to see why. <strong>Try again</strong> in the activity panel’s history retries what’s left. <strong>Settings → WittyLog</strong> has FFmpeg’s own words.</td></tr><tr><td>“Not enough room”</td><td>Free some space, delete kept originals, or choose to replace originals.</td></tr><tr><td>It says it’s waiting</td><td>People are watching, or it’s outside its hours. The activity panel says which.</td></tr><tr><td>A folder called <code>.wittymedia-originals</code></td><td>Your originals. Delete them from this page, or by hand once you’re happy. If you delete them by hand, <strong>Put the original back</strong> will say they’ve gone.</td></tr><tr><td>A folder called <code>.wittymedia-work</code></td><td>Temporary files. It removes them when it starts up, and it’s safe to delete if the server isn’t converting anything.</td></tr><tr><td>You want to go back to a file by hand</td><td>Move it out of <code>.wittymedia-originals</code> to where it was, delete the converted one, and scan the library.</td></tr></tbody></table></div>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/transcoding/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Live transcoding</strong></a>
+      <a class="card next" href="/docs/tdarr/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Using Tdarr</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/LIBRARY-TRANSCODING.md" rel="noopener">docs/LIBRARY-TRANSCODING.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/LIBRARY-TRANSCODING.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#the-short-version">The short version</a></li><li><a href="#the-three-presets">The three presets</a></li><li><a href="#what-it-does-to-your-files">What it does to your files</a></li><li><a href="#how-it-affects-people-watching">How it affects people watching</a></li><li><a href="#converting-new-files-by-themselves">Converting new files by themselves</a></li><li><a href="#sound-tracks">Sound tracks</a></li><li><a href="#subtitles">Subtitles</a></li><li><a href="#unusual-files-decision-by-decision">Unusual files, decision by decision</a></li><li><a href="#fixing-things">Fixing things</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

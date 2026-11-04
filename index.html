@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>WittyMediaServer: Your media, right at home</title>
+<meta name="description" content="Your films, shows, discs, music, books and games, on every screen in your home. A self-hosted media server that plays DVDs and Blu-rays with their real menus, in any browser.">
+<link rel="canonical" href="https://wittymediaserver.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="WittyMediaServer: Your media, right at home">
+<meta property="og:description" content="Your films, shows, discs, music, books and games, on every screen in your home. A self-hosted media server that plays DVDs and Blu-rays with their real menus, in any browser.">
+<meta property="og:url" content="https://wittymediaserver.com/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/" aria-current="page">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<a class="ticker" href="#no-catch" aria-label="No catch. We checked. Twice. There will never be a WittyMediaServer Pro. Our own work. The commit history has receipts. Nothing behind a paywall. Shocking, we know. No waitlist. No “exclusive” beta. No velvet rope. Open source since the first commit, not since it got awkward. Every tool it’s built with, named and credited. Licences and credits, actually done. It isn’t hard. No borrowed logos, no imaginary friends in Hollywood. Remote access free, every feature, forever. Read more.">
+  <span class="tk-track" aria-hidden="true"><span class="tk-run"><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7.5-4.5-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.5-7.5 10-7.5 10z"/></svg>There will never be a WittyMediaServer Pro</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Our own work. The commit history has receipts</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Nothing behind a paywall. Shocking, we know</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>No waitlist. No “exclusive” beta. No velvet rope</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Open source since the first commit, not since it got awkward</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Every tool it’s built with, named and credited</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg>Licences and credits, actually done. It isn’t hard</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>No borrowed logos, no imaginary friends in Hollywood</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote access free, every feature, forever</span></span><span class="tk-run"><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7.5-4.5-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.5-7.5 10-7.5 10z"/></svg>There will never be a WittyMediaServer Pro</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Our own work. The commit history has receipts</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Nothing behind a paywall. Shocking, we know</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>No waitlist. No “exclusive” beta. No velvet rope</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Open source since the first commit, not since it got awkward</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Every tool it’s built with, named and credited</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg>Licences and credits, actually done. It isn’t hard</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>No borrowed logos, no imaginary friends in Hollywood</span><span class="tk-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote access free, every feature, forever</span></span></span>
+</a>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Self-hosted · Open source · Yours</p>
+    <h1><span>Your media.</span><span class="accent">Right at home.</span></h1>
+    <p class="lead">Your films, shows, discs, music, books and games, on every screen in your home.</p>
+    <p class="sub">A self-hosted media server that plays DVDs and Blu-rays with their real menus, in any browser.</p>
+    <div class="btn-row">
+      <a class="btn primary large" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a>
+      <a class="btn large" href="/server/">See what it does<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <a class="version" href="/news/windows-installer-update/"><span class="pill">0.6.2-alpha</span>Windows installer upgrades work again<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="dots" aria-label="Runs on"><span>Windows</span><span>macOS</span><span>Linux</span><span>FreeBSD</span><span>Docker</span></div>
+    <div class="stage"><figure class="window">
+  <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer · Home</span></div>
+  <img src="/images/shots/home.webp" data-shot="home" data-themed="default light cinema contrast evergreen midnight oled paper" alt="The home page, with a large picture from a film and a row of libraries" width="1920" height="1080" fetchpriority="high" decoding="async">
+  <figcaption><span>A look inside WittyMediaServer</span><span class="credit"><a href="https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm" rel="noopener">Wing It!</a>, Blender Studio, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span></figcaption>
+</figure></div>
+  </div>
+</section>
+
+<section class="section no-catch" id="no-catch">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="stack">
+        <p class="eyebrow">The small print</p>
+        <h2>No catch. We checked. Twice.</h2>
+        <p>Some media projects hide the catch in the small print, on the pricing page, in paragraph four of a cheerful blog post, or somewhere in a long social media thread. We put ours on the home page. There isn’t one.</p>
+      </div>
+    </div>
+    <ul class="promises">
+      <li class="promise big">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7.5-4.5-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.5-7.5 10-7.5 10z"/></svg></span>
+        <h3>There will never be a WittyMediaServer Pro</h3>
+        <p>No Pro. No Plus. No Premium, Ultimate or Founders’ Edition. Nobody here is quietly switching features off in the free version so a paid one looks better. If the server can do it, you can do it, today and every day after.</p>
+        
+      </li>
+      <li class="promise big">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h3>Our own work, with receipts</h3>
+        <p>Every line of WittyMediaServer’s own code was written for WittyMediaServer, and its whole history is public: every change, with its date, its author and what came before it. When you know how to build something better, you don’t need to borrow anyone’s homework. And when anyone wonders, the answer is a link, not a social media post.</p>
+        <p class="more"><a href="https://github.com/wittywilla/WittyMediaServer/commits/master" rel="noopener">Every change, from the first commit<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>
+      </li>
+      <li class="promise">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+        <h3>Nothing behind a paywall</h3>
+        <p>Every feature is in the download, for everyone. No “unlock this for a small monthly fee”, no greyed-out buttons, and no subscription lurking behind a “coming soon”. Your media, your server, your features. Wild concept.</p>
+        
+      </li>
+      <li class="promise">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span>
+        <h3>No waitlist, no velvet rope</h3>
+        <p>It’s an alpha, and anyone can download it right now. No invite codes, no sign-up form, no queue, and no being made to feel special for the privilege of testing someone’s software for free.</p>
+        
+      </li>
+      <li class="promise">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg></span>
+        <h3>Open since the first commit</h3>
+        <p>Public under Apache-2.0 from day one. Not “open source soon”. Not “source available”. Not “open once we’ve worked out how to charge for it”. All of it, from the first line.</p>
+        <p class="more"><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Read every line<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>
+      </li>
+      <li class="promise">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg></span>
+        <h3>Built in the open, tools included</h3>
+        <p>Every library and tool it’s made with is listed, with its licence and the people who wrote it. Standing on the shoulders of giants is fine. Pretending the shoulders are yours isn’t.</p>
+        <p class="more"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/THIRD_PARTY_LICENSES.md" rel="noopener">Every third-party licence<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>
+      </li>
+      <li class="promise">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg></span>
+        <h3>Licences and credits, actually done</h3>
+        <p>Every screenshot shows only openly licensed or public-domain media, and every work in it is credited with its licence. It turns out a media server can look great without borrowing anyone’s film posters. Who knew.</p>
+        <p class="more"><a href="/credits/">Every picture’s credits<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </li>
+      <li class="promise">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+        <h3>No borrowed fame</h3>
+        <p>No studio logos, no streaming-service artwork, and no winking hints at partnerships with media giants who’ve never heard of us. We aren’t “trusted by” anyone we haven’t met. We spend our evenings writing code, not threads. Just a media server, made by people who use one.</p>
+        
+      </li>
+      <li class="promise big">
+        <span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg></span>
+        <h3>Remote access is free. All of it. Forever.</h3>
+        <p>Watching away from home costs nothing, for every feature, and always will. No subscription to stream your own films to your own phone, no remote add-on, and nothing that works on your Wi-Fi only until you pay. It’s your server. You already paid for the electricity.</p>
+        <p class="more"><a href="/docs/remote/">Setting up remote access<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Everything in one place</p>
+    <h2>One server for everything you keep</h2>
+    <p>Point it at your folders. It finds what’s there, fetches the pictures and details, and keeps your place across every screen. Discs, games, photos, books and TV tuners are modules you add from the server’s store. The server works without any of them.</p>
+  </div>
+  
+</div>
+    <div class="features">
+      <a class="f" href="/server/#films"><h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg>Films and TV</h3><p>Posters, plots and ratings, Continue watching, skip intro and instant seeking. No API key needed.</p></a>
+      <a class="f" href="/server/#discs"><h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>DVDs and Blu-rays</h3><p>Disc images play like a disc player: intros, animated menus, scene selection, extras and the disc’s own subtitles.</p></a>
+      <a class="f" href="/server/#tv"><h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 2l4 4 4-4"/></svg>Live TV and channels</h3><p>Channels made from your library in one press, a guide, tuners, IPTV and recording.</p></a>
+      <a class="f" href="/server/#music"><h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>Music and audiobooks</h3><p>Albums and artists, lyrics and karaoke, radio, podcasts, and books that remember your place.</p></a>
+      <a class="f" href="/server/#books"><h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Books and comics</h3><p>EPUB, PDF, comics and manga, with highlights, notes and a pen.</p></a>
+      <a class="f" href="/server/#photos"><h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Photos and videos</h3><p>A timeline, albums and an offline map, a feed of vertical videos, and creators’ videos by channel.</p></a>
+      <a class="f" href="/server/#games"><h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 8h12a4 4 0 0 1 4 4v1.5a3.5 3.5 0 0 1-6.3 2.1L14.5 14h-5l-1.2 1.6A3.5 3.5 0 0 1 2 13.5V12a4 4 0 0 1 4-4z"/><path d="M7 11v3M5.5 12.5h3"/><circle cx="16" cy="11.5" r=".6"/><circle cx="18" cy="13.5" r=".6"/></svg>Games</h3><p>Your own game files, played in a browser with a gamepad, keyboard or touch.</p></a>
+      <a class="f" href="/server/#everyone"><h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Everyone at home</h3><p>Who’s watching? profiles with their own progress, and Kids profiles that only show titles for their age.</p></a>
+    </div>
+    <div class="notice info mt-8"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><p><strong>New to media servers?</strong> <a href="/start/">Start here</a>: what one is, what you need, your first hour, and the words you’ll see, in plain language.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div class="text">
+        <p class="eyebrow">Discs, done properly</p>
+        <h2>Real DVD and Blu-ray menus, in any browser</h2>
+        <p>Keep your discs as images and play them the way a player would, on a phone, a laptop or the TV.</p>
+        <ul class="ticks">
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Intros, animated menus, scene selection and extras</span></li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>The disc’s own audio tracks, subtitles and angles</span></li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>DVDs, and Blu-rays including 4K and HDR</span></li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Copy-protected discs are refused with a plain message. Nothing unlocks them</span></li>
+        </ul>
+        <div class="btn-row"><a class="btn" href="/server/#discs">More about discs<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+      <figure class="window">
+  <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>Sintel · DVD menu</span></div>
+  <img src="/images/shots/dvd-menu.webp" data-shot="dvd-menu" alt="A DVD’s own menu, playing in a browser" width="1920" height="1080" loading="lazy" decoding="async">
+  <figcaption><span>A DVD’s real menu, in a browser</span><span class="credit"><a href="https://durian.blender.org/" rel="noopener">Sintel</a>, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>, from its original DVD</span></figcaption>
+</figure>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Two parts, one setup</p>
+    <h2>The server, and the apps that reach it</h2>
+    <p>The server holds your library, and any web browser at home can use it. The apps are optional.</p>
+  </div>
+  
+</div>
+    <div class="grid two gap-lg duo">
+      <article class="card">
+        <div class="card-top"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><span class="label">The server</span></div>
+        <h3>WittyMediaServer</h3>
+        <p>Self-hosted software that keeps your films, shows, discs, music, books and games on a computer you own, and streams them to every screen in your home. It plays DVDs and Blu-rays with their real menus, in any browser.</p>
+        <p class="note">Install it on the computer that holds your media. Every other screen reaches it through a web browser, with no app needed.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="/server/">About the server<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn ghost" href="/modules/">Browse modules</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg></span><span class="label">The apps</span></div>
+        <h3>WittyMediaClient</h3>
+        <p>Apps for TV boxes, phones, tablets and desktops that connect to your WittyMediaServer, for the devices where a browser isn’t the right fit.</p>
+        <p class="note">Optional. The server’s whole interface already runs in any web browser.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="/client/">About the apps<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn ghost" href="/download/#client">Get the apps</a>
+        </div>
+      </article>
+    </div>
+    <p class="mt-6 muted">There’s also <a href="/player/">WittyMediaPlayer</a>, for discs and files, and <a href="/reader/">WittyReader</a>, for books, PDFs and comics. Neither needs a server, and neither connects to one: they’re for files on the computer in front of you. <a href="/projects/">See every project</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+  <div class="stack">
+    <p class="eyebrow">Modules</p>
+    <h2>Add only what you need</h2>
+    <p>Modules add what your server can do, such as DVD menus, streamed games or live TV. Most are projects of their own, signed, and added from Settings → Modules while the server keeps running.</p>
+  </div>
+  <a class="more" href="/modules/">Browse all 18 modules<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+    <div class="mod-strip">
+      <a href="/modules/wittybluray/"><img src="/images/modules/wittybluray.png" alt="" width="32" height="32" loading="lazy">WittyBluray</a>
+      <a href="/modules/wittycd/"><img src="/images/modules/wittycd.png" alt="" width="32" height="32" loading="lazy">WittyCD</a>
+      <a href="/modules/wittycomics/"><img src="/images/modules/wittycomics.png" alt="" width="32" height="32" loading="lazy">WittyComics</a>
+      <a href="/modules/wittycouch/"><img src="/images/modules/wittycouch.png" alt="" width="32" height="32" loading="lazy">WittyCouch</a>
+      <a href="/modules/wittycouchhost/"><img src="/images/modules/wittycouchhost.png" alt="" width="32" height="32" loading="lazy">WittyCouch Host</a>
+      <a href="/modules/wittydvd/"><img src="/images/modules/wittydvd.png" alt="" width="32" height="32" loading="lazy">WittyDVD</a>
+      <a href="/modules/wittyebook/"><img src="/images/modules/wittyebook.png" alt="" width="32" height="32" loading="lazy">WittyEbook</a>
+      <a href="/modules/wittyintegratedfilebrowser/"><img src="/images/modules/wittyintegratedfilebrowser.png" alt="" width="32" height="32" loading="lazy">WittyIntegratedFileBrowser</a>
+      <a href="/modules/wittypdf/"><img src="/images/modules/wittypdf.png" alt="" width="32" height="32" loading="lazy">WittyPDF</a>
+      <a href="/modules/wittyphotos/"><img src="/images/modules/wittyphotos.png" alt="" width="32" height="32" loading="lazy">WittyPhotos</a>
+      <a href="/modules/wittyplay/"><img src="/images/modules/wittyplay.png" alt="" width="32" height="32" loading="lazy">WittyPlay</a>
+      <a href="/modules/wittyrigs/"><img src="/images/modules/wittyrigs.png" alt="" width="32" height="32" loading="lazy">WittyRigs</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+  <div class="stack">
+    <p class="eyebrow">Project updates</p>
+    <h2>What’s new</h2>
+    
+  </div>
+  <a class="more" href="/news/">All news and releases<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+    <div class="grid two gap-lg news-cards">
+      <article class="card link">
+  <img src="/images/shots/home.webp" data-shot="home" data-themed="default light cinema contrast evergreen midnight oled paper" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+  <div class="body">
+    <div class="when"><time datetime="2026-11-02">2 November 2026</time><span class="pill mono">0.6.2-alpha</span></div>
+    <h3><a class="cover" href="/news/windows-installer-update/">Windows installer upgrades work again</a></h3>
+    <p>A fix for error 2613 when installing over an earlier version, and every Windows installer now tested that way before it&#39;s published.</p>
+    <span class="go">Read it<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </div>
+</article>
+      <article class="card link">
+  <img src="/images/shots/dvd-menu.webp" data-shot="dvd-menu" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+  <div class="body">
+    <div class="when"><time datetime="2026-11-02">2 November 2026</time><span class="pill mono">0.6.1-alpha</span></div>
+    <h3><a class="cover" href="/news/firefox-disc-playback/">Better disc playback in Firefox</a></h3>
+    <p>DVD and Blu-ray pictures and menu buttons line up again in Firefox, including in the mini player.</p>
+    <span class="go">Read it<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </div>
+</article>
+    </div>
+    <div class="mt-8" data-live-releases="wittywilla/WittyMediaServer wittywilla/WittyMediaClient wittywilla/WittyMediaPlayer wittywilla/WittyReader" data-known="wittywilla/WittyMediaServer@v0.6.2-alpha wittywilla/WittyMediaServer@v0.6.1-alpha wittywilla/WittyMediaClient@v0.2.3 wittywilla/WittyReader@v0.1.1 wittywilla/WittyMediaServer@v0.6.0-alpha wittywilla/WittyMediaServer@v0.5.2-alpha wittywilla/WittyMediaServer@v0.4.0-alpha wittywilla/WittyMediaServer@v0.2.0-alpha" data-built="2026-11-04T17:31:34.926Z" data-list=".feed">
+      <p class="eyebrow plain">From GitHub releases</p>
+      <div class="feed" id="home-feed">
+        <article class="entry" data-tags="release wittymediaserver">
+  <div class="when"><time datetime="2026-11-02">2 Nov 2026</time><span class="pill mono">0.6.2-alpha</span></div>
+  <div><h3><a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a></h3><p>A fix for error 2613 when installing over an earlier version, and every Windows installer now tested that way before it&#39;s published.</p></div>
+  <svg class="i arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</article><article class="entry" data-tags="release wittymediaserver">
+  <div class="when"><time datetime="2026-11-02">2 Nov 2026</time><span class="pill mono">0.6.1-alpha</span></div>
+  <div><h3><a href="/news/release/WittyMediaServer/v0.6.1-alpha/">WittyMediaServer 0.6.1-alpha</a></h3><p>DVD and Blu-ray pictures and menu buttons line up again in Firefox, including in the mini player.</p></div>
+  <svg class="i arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</article><article class="entry" data-tags="release wittymediaclient">
+  <div class="when"><time datetime="2026-11-02">2 Nov 2026</time><span class="pill mono muted">0.2.3</span></div>
+  <div><h3><a href="/news/release/WittyMediaClient/v0.2.3/">WittyMediaClient 0.2.3</a></h3><p>The apps for TVs, phones and computers now have their own project, starting with desktop installers for every system and an Android app for testing.</p></div>
+  <svg class="i arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</article><article class="entry" data-tags="release wittyreader">
+  <div class="when"><time datetime="2026-11-02">2 Nov 2026</time><span class="pill mono muted">0.1.1</span></div>
+  <div><h3><a href="/news/release/WittyReader/v0.1.1/">WittyReader 0.1.1</a></h3><p>Read and annotate books, PDFs and comics with no server and nothing uploaded. Its first release has installers for Windows, macOS and Linux.</p></div>
+  <svg class="i arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</article>
+      </div>
+      <p class="live-note" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head row">
+  <div class="stack">
+    <p class="eyebrow">From the project</p>
+    <h2>A look around</h2>
+    <p>Pictures from a test server filled with openly licensed and public-domain media. No media comes with WittyMediaServer.</p>
+  </div>
+  <a class="more" href="/gallery/">View the gallery<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+    <div class="shots three">
+      <figure class="shot" data-tags="films-and-tv">
+  <a class="zoom" href="/images/shots/movies.webp" aria-label="Show larger: Your film library"><img src="/images/shots/movies.webp" data-shot="movies" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A wall of film posters" width="1920" height="1080" loading="lazy" decoding="async"></a>
+  <figcaption class="cap"><span class="n">01 / Films and TV</span><strong>Your film library</strong><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-movies">each work credited</a></span></figcaption>
+</figure>
+      <figure class="shot" data-tags="films-and-tv">
+  <a class="zoom" href="/images/shots/tv-show-page.webp" aria-label="Show larger: A show’s page"><img src="/images/shots/tv-show-page.webp" data-shot="tv-show-page" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A TV show’s page, with its picture, plot, seasons and episodes" width="1920" height="1080" loading="lazy" decoding="async"></a>
+  <figcaption class="cap"><span class="n">02 / Films and TV</span><strong>A show’s page</strong><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-tv-show-page">each work credited</a></span></figcaption>
+</figure>
+      <figure class="shot" data-tags="discs">
+  <a class="zoom" href="/images/shots/dvd-menu.webp" aria-label="Show larger: A DVD’s real menu, in a browser"><img src="/images/shots/dvd-menu.webp" data-shot="dvd-menu" alt="A DVD’s own menu, playing in a browser" width="1920" height="1080" loading="lazy" decoding="async"></a>
+  <figcaption class="cap"><span class="n">03 / Discs</span><strong>A DVD’s real menu, in a browser</strong><span class="credit"><a href="https://durian.blender.org/" rel="noopener">Sintel</a>, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>, from its original DVD</span></figcaption>
+</figure>
+      <figure class="shot" data-tags="live-tv">
+  <a class="zoom" href="/images/shots/wittytv-guide.webp" aria-label="Show larger: WittyTV: channels made from your library"><img src="/images/shots/wittytv-guide.webp" data-shot="wittytv-guide" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A TV guide with a film playing in the preview" width="1920" height="1080" loading="lazy" decoding="async"></a>
+  <figcaption class="cap"><span class="n">04 / Live TV</span><strong>WittyTV: channels made from your library</strong><span class="credit"><a href="https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm" rel="noopener">Caminandes: Llamigos</a>, Pablo Vazquez, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a></span></figcaption>
+</figure>
+      <figure class="shot" data-tags="music">
+  <a class="zoom" href="/images/shots/music-visualizer.webp" aria-label="Show larger: Music, with WittyVisualizer"><img src="/images/shots/music-visualizer.webp" data-shot="music-visualizer" alt="A light show behind the music player" width="1920" height="1080" loading="lazy" decoding="async"></a>
+  <figcaption class="cap"><span class="n">05 / Music</span><strong>Music, with WittyVisualizer</strong><span class="credit"><a href="https://archive.org/details/SRS08807" rel="noopener">Collide</a>, Aryll Fae, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span></figcaption>
+</figure>
+      <figure class="shot" data-tags="books">
+  <a class="zoom" href="/images/shots/reader-comic.webp" aria-label="Show larger: Comics and manga"><img src="/images/shots/reader-comic.webp" data-shot="reader-comic" alt="A comic open in the reader" width="1920" height="1080" loading="lazy" decoding="async"></a>
+  <figcaption class="cap"><span class="n">06 / Books</span><strong>Comics and manga</strong><span class="credit"><a href="https://www.peppercarrot.com/" rel="noopener">Pepper&amp;Carrot</a>, David Revoy, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span></figcaption>
+</figure>
+    </div>
+    <p class="credits-line">Every work on that server is named, with its licence, in <a href="/credits/">the credits</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Yours</p>
+    <h2>It runs on your computer, for your home</h2>
+    <p>No accounts with anyone, no telemetry and no cloud. You add only media you have the right to use: see the <a href="/legal/">legal notes</a>.</p>
+  </div>
+  
+</div>
+    <div class="grid four">
+      <div class="card"><span class="tile muted"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><h3>Your computer</h3><p>Your library stays on hardware you own. Other screens reach it over your own network.</p></div>
+      <div class="card"><span class="tile muted"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg></span><h3>Nothing reported</h3><p>No telemetry. It goes online for posters and details and to look for updates, and Settings → Legal → Privacy lists every outside service and what turns it off.</p></div>
+      <div class="card"><span class="tile muted"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg></span><h3>Signed modules</h3><p>Every module version is signed, checked before it runs, and removable without touching your media.</p></div>
+      <div class="card"><span class="tile muted"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7.5-4.5-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.5-7.5 10-7.5 10z"/></svg></span><h3>Open source</h3><p>The server is licensed under Apache-2.0, and every project’s source is on GitHub.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Try it on a computer you already have</h2>
+      <p>Install the server, open its page in a browser, and point it at a folder of films. Setup takes a few minutes.</p>
+      <div class="btn-row">
+        <a class="btn primary large" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a>
+        <a class="btn large" href="/start/">New to media servers?<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<dialog class="viewer" id="viewer" aria-label="Picture">
+  <div class="in">
+    <div class="bar"><button type="button" class="icon-btn close" aria-label="Close"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <figure><img src="data:," alt=""></figure>
+    <figcaption aria-live="polite"></figcaption>
+  </div>
+  <button type="button" class="icon-btn nav-btn prev" aria-label="Previous picture"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+  <button type="button" class="icon-btn nav-btn next" aria-label="Next picture"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+</dialog>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WittyMediaServer","applicationCategory":"MultimediaApplication","operatingSystem":"Windows, macOS, Linux, FreeBSD","description":"Your films, shows, discs, music, books and games, on every screen in your home. A self-hosted media server that plays DVDs and Blu-rays with their real menus, in any browser.","url":"https://wittymediaserver.com","license":"https://www.apache.org/licenses/LICENSE-2.0","softwareVersion":"0.6.2-alpha","downloadUrl":"https://wittymediaserver.com/download/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

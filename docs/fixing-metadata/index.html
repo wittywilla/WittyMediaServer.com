@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Fixing wrong details · WittyMediaServer</title>
+<meta name="description" content="Put right a wrong match, title, poster or episode number, on one title or hundreds. Whatever you fix stays fixed, and every change can be undone.">
+<link rel="canonical" href="https://wittymediaserver.com/docs/fixing-metadata/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Fixing wrong details">
+<meta property="og:description" content="Put right a wrong match, title, poster or episode number, on one title or hundreds. Whatever you fix stays fixed, and every change can be undone.">
+<meta property="og:url" content="https://wittymediaserver.com/docs/fixing-metadata/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/" aria-current="page">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Libraries</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/" aria-current="page">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#libraries">Libraries</a></p>
+      <h1>Fixing wrong details</h1>
+      <p class="lead">Put right a wrong match, title, poster or episode number, on one title or hundreds. Whatever you fix stays fixed, and every change can be undone.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/FIXING-METADATA.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#which-tool-to-use">Which tool to use</a></li><li><a href="#the-edit-dialog">The Edit dialog</a></li><li><a href="#choosing-the-right-match">Choosing the right match</a></li><li><a href="#locks-sources-and-revert">Locks, sources and Revert</a></li><li><a href="#artwork">Artwork</a></li><li><a href="#skip-intro">Skip intro</a></li><li><a href="#bonus-features-versions-and-moving">Bonus features, versions and moving</a></li><li><a href="#logos">Logos</a></li><li><a href="#refreshing-a-title">Refreshing a title</a></li><li><a href="#the-fix-matches-page">The Fix matches page</a></li><li><a href="#fixing-episode-numbers">Fixing episode numbers</a></li><li><a href="#editing-several-titles-together">Editing several titles together</a></li><li><a href="#naming-rules">Naming rules</a></li><li><a href="#history-and-undo">History and undo</a></li><li><a href="#from-the-command-line">From the command line</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>All of this is for administrators. To see where details come from in the first place, read <a href="/docs/metadata/">Where details come from</a>.</p>
+<h2 id="which-tool-to-use">Which tool to use<a class="h-anchor" href="#which-tool-to-use" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>You want to</th><th>Use</th></tr></thead><tbody><tr><td>Fix one title: its name, poster, plot or rating</td><td><a href="#the-edit-dialog"><strong>Edit</strong></a> on its page</td></tr><tr><td>Say it’s really a different film or show</td><td><a href="#choosing-the-right-match"><strong>Edit</strong>, then Search and match</a></td></tr><tr><td>Go through everything that looks wrong</td><td><a href="#the-fix-matches-page"><strong>Fix matches</strong></a></td></tr><tr><td>Fix a show whose episodes have the wrong numbers</td><td><a href="#fixing-episode-numbers"><strong>Renumber episodes</strong></a></td></tr><tr><td>Change a genre or tag on many titles at once</td><td><a href="#editing-several-titles-together"><strong>Edit together</strong></a></td></tr><tr><td>Teach the server how a folder is named</td><td><a href="#naming-rules"><strong>Naming rules</strong></a></td></tr><tr><td>Make lots of small fixes in a text editor, or work with the server stopped</td><td><a href="/docs/metadata-folder/">The metadata folder</a></td></tr><tr><td>Fix a game</td><td><strong>Fix match</strong> on its page: see <a href="/docs/metadata/#video-games">Video games</a></td></tr></tbody></table></div>
+<h2 id="the-edit-dialog">The Edit dialog<a class="h-anchor" href="#the-edit-dialog" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press <strong>Edit</strong> on a film, episode or show. One dialog holds everything about it, in sections you can jump between: <strong>Match</strong>, <strong>Details</strong>, <strong>Artwork</strong>, <strong>Skip intro</strong>, <strong>Organise</strong> and <strong>Logos</strong>. <strong>Delete</strong>, <strong>Cancel</strong> and <strong>Save</strong> stay in view however long it runs.</p>
+<p><em>Ctrl+S</em> saves, and <em>Escape</em> closes, asking first if something isn’t saved.</p>
+<p><strong>Details</strong> has the title, sort name, year, director (or who created a show), season and episode, edition, collection, tagline, overview, genres, tags, content rating, score, network, status and studios. Only what fits that kind of title is shown. Typing waits for <strong>Save</strong>. Choosing a match, uploading a picture or moving a title happens at once, and a bar offers <strong>Undo</strong>.</p>
+<p><strong>Delete</strong> takes a title out of its library and leaves its files on disk. It won’t come back on a scan, and can be brought back from <strong>Fix matches</strong>, under <strong>Removed</strong>. Nothing here ever deletes a file.</p>
+<h2 id="choosing-the-right-match">Choosing the right match<a class="h-anchor" href="#choosing-the-right-match" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>In the <strong>Match</strong> section:</p>
+<ol><li>Type a name, or paste an id or address from TMDB, IMDb, TheTVDB, TVmaze, AniList or Wikidata, and press <strong>Search</strong>. For example: <code>tt0000123</code>, <code>tmdb:12</code>, <code>https://www.tvmaze.com/shows/56/a-show</code>.</li><li>Every source that’s on is asked at once, films and shows alike, so a disc of a series can be matched to the series. Each result says how likely it is out of 100, and <strong>Why?</strong> says why in plain words.</li><li>Choose a result. Nothing changes yet. It shows what would change, field by field, with what’s there now beside what’s coming.</li><li>Untick anything you want to keep. Text you typed, a hand-written NFO and pictures beside the file are shown but not ticked, and locked fields can’t be ticked. For a show, it also says how many of your episodes the source knows.</li><li>Press <strong>Use this match</strong>.</li></ol>
+<p>A match you choose <strong>stays</strong>: no scan or refresh changes it, even if the file is replaced by a better copy.</p>
+<p><strong>Remove this match</strong> takes away what the source gave and keeps what you typed. The title is named after its file again, and nothing is looked up for it until you choose one.</p>
+<p><strong>Check for changes</strong> shows what looking it up again would change, and keeps the match it has.</p>
+<h2 id="locks-sources-and-revert">Locks, sources and Revert<a class="h-anchor" href="#locks-sources-and-revert" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Each field says where its value came from:</p>
+<div class="table-wrap"><table><thead><tr><th>It says</th><th>Means</th></tr></thead><tbody><tr><td><strong>You typed this</strong></td><td>You changed it here, or in the <a href="/docs/metadata-folder/">metadata folder</a></td></tr><tr><td><strong>From TMDB</strong>, or another source</td><td>That source gave it</td></tr><tr><td><strong>From an NFO file</strong></td><td>From an NFO beside the file that a person wrote</td></tr><tr><td><strong>Saved earlier</strong></td><td>From an NFO this server wrote</td></tr><tr><td><strong>From beside the file</strong></td><td>A picture or other file next to the media</td></tr><tr><td><strong>From the file name</strong></td><td>Worked out from the name</td></tr><tr><td><strong>A frame from the video</strong></td><td>A picture taken from the video itself</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody><tr><td><strong>Lock</strong></td><td>A locked field stays as it is. No scan, refresh, new match, NFO or file beside it can change it, whether the title is matched or not. Anything you type locks itself</td></tr><tr><td><strong>Lock all</strong>, <strong>Unlock all</strong></td><td>Every field at once</td></tr><tr><td><strong>Revert</strong></td><td>Goes back to what the source said before you typed over it, and unlocks the field</td></tr></tbody></table></div>
+<h2 id="artwork">Artwork<a class="h-anchor" href="#artwork" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press <strong>Artwork</strong> on a title’s page, or go to that section. Poster, backdrop, banner and title logo each have:</p>
+<ul><li><strong>Browse images:</strong> a grid from every source, with a tick on the chosen one. You can also paste a picture’s web address and press <strong>Use it</strong>.</li><li><strong>Upload your own:</strong> JPEG, PNG, WebP or GIF, up to 20 MB. It’s checked to be a real picture.</li><li><strong>Remove</strong>, and <strong>Revert</strong> where there’s something to go back to.</li></ul>
+<p>Pictures from sources are fetched by your server, so no browser or app contacts them. Without a TMDB key, films have only what’s in their folder, because Wikidata has no posters. TV shows get theirs from TVmaze.</p>
+<p>With <strong>Save information and artwork next to your media</strong> on, the chosen poster and backdrop are also copied to the standard names beside the file, and the NFO is rewritten. A hand-written one is kept as <code>.nfo.bak</code>.</p>
+<h2 id="skip-intro">Skip intro<a class="h-anchor" href="#skip-intro" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Under <strong>Where the intro ends</strong>, type a time such as <code>1:05</code>, or press <strong>Pick in player</strong>, play to the moment, and press the button there. Blank means work it out from the file’s chapters. On a show, it covers every episode with no intro of its own. Discs have their own menus, so this isn’t offered for them.</p>
+<p>Save or undo your changes first, because picking a time leaves the dialog.</p>
+<h2 id="bonus-features-versions-and-moving">Bonus features, versions and moving<a class="h-anchor" href="#bonus-features-versions-and-moving" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The <strong>Organise</strong> section:</p>
+<ul><li><strong>It’s a bonus feature</strong> takes a trailer, featurette, deleted scene, interview or short out of the lists, and puts it on the page of the film or show it belongs to. <strong>Make it a title of its own</strong> undoes that.</li><li><strong>This is another version of…</strong> does the same for a second copy of a film, such as a DVD and a 4K file. Its page then offers a choice of version. <strong>Split it off</strong> undoes that.</li><li><strong>Move to</strong>, under <strong>In the wrong library?</strong>, puts a title in another library that holds the same kind of thing. Its files don’t move: the library it was found in leaves it alone from then on, and the new one looks after it. Where it can’t move, it says why.</li></ul>
+<h2 id="logos">Logos<a class="h-anchor" href="#logos" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Anywhere a logo is needed, <strong>Change</strong> opens the same place. Search by name, and choose among what’s found, with its source and licence beside it and a link to its page. Or use <strong>Upload your own</strong>, which a search won’t replace unless you choose one, or <strong>No logo: just the name</strong>. A change applies everywhere that name appears on your server.</p>
+<div class="table-wrap"><table><thead><tr><th>To change the logo of</th><th>Go to</th></tr></thead><tbody><tr><td>A studio or network on a title</td><td><strong>Edit</strong>, then <strong>Logos</strong>, or <strong>Change logo</strong> on its own page</td></tr><tr><td>A channel from your library</td><td>Its editor, under <strong>Logo</strong>. You can also give it another name to go by</td></tr><tr><td>A tuner or playlist channel</td><td><strong>Settings → Channels &amp; tuners</strong>, the tuner, then <strong>Change</strong> beside the channel. See <a href="/docs/channels/#logos-and-title-art">Logos and title art</a></td></tr><tr><td>A console or a game studio</td><td>A game’s page, under <strong>Logos</strong></td></tr><tr><td>Any of these, or a streaming service</td><td><strong>Settings → Metadata agents</strong>, under <strong>Logos</strong>, then <strong>Find or set a logo</strong>. A name nothing has yet can be started from there</td></tr></tbody></table></div>
+<p>Downloading logos needs your agreement first, and these places explain that and link to it. Uploading and choosing none work without it. See <a href="/docs/metadata/#the-logo-service">The logo service</a>.</p>
+<h2 id="refreshing-a-title">Refreshing a title<a class="h-anchor" href="#refreshing-a-title" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Refresh</strong> on a title’s page shows what looking it up again would change, and you choose what to take. <strong>Update it</strong> applies that, and <strong>Undo</strong> is offered straight after. The title keeps its match, and locked fields stay as they are.</p>
+<p>If nothing would change, you can press <strong>Look again anyway</strong>.</p>
+<h2 id="the-fix-matches-page">The Fix matches page<a class="h-anchor" href="#the-fix-matches-page" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Open <strong>Fix matches</strong> from a library’s page, where a count shows how many need a look, or from <strong>Settings → Metadata agents</strong>. It covers film, disc, TV and anime libraries, worst first. It has three tabs: <strong>Review</strong>, <strong>Naming rules</strong> and <strong>History</strong>. Choose a library at the top to narrow it down.</p>
+<figure class="doc-fig"><img src="/docs/images/fix-matches.webp" alt="The Fix matches page" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>The Fix matches page. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<p>Opening it asks nobody anything: how sure each match is comes from what’s stored, comparing the file’s name and year with what it’s matched to.</p>
+<div class="table-wrap"><table><thead><tr><th>Under Review</th><th>What’s there</th></tr></thead><tbody><tr><td><strong>Needs a look</strong></td><td>No match, or one under 70%</td></tr><tr><td><strong>No match</strong>, <strong>Not sure</strong>, <strong>Looks right</strong></td><td>Those on their own</td></tr><tr><td><strong>You chose</strong>, <strong>Left alone</strong></td><td>What you’ve decided, which nothing changes</td></tr><tr><td><strong>Everything</strong></td><td>The whole list</td></tr><tr><td><strong>Removed</strong></td><td>Titles taken out of a library. <strong>Bring it back</strong> returns one</td></tr></tbody></table></div>
+<p><strong>To fix one:</strong></p>
+<ol><li>Choose a title. It finds suggestions, one request per source. If a file’s whole name finds nothing, its first words are dropped and it’s tried again.</li><li>Press <strong>Accept</strong> on the right one, or choose a suggestion to see what would change first. <strong>Search</strong> takes a name, an id or an address.</li><li>If nothing fits, press <strong>It has no match</strong>. If it’s right but scored low, press <strong>It’s right: stop asking</strong>. <strong>Edit details</strong> opens the Edit dialog.</li></ol>
+<p><strong>To go faster:</strong></p>
+<ul><li><strong>Find suggestions for all</strong> does the whole list in the background, gently. <strong>Stop</strong> ends it.</li><li><strong>Choose the 4 that are 90% sure</strong> ticks those at once, and <strong>Accept their best suggestions</strong> accepts them. The number is however many there are.</li></ul>
+<p>A year you typed, or one kept from before, counts when scoring, so an exact name and year comes to 100%. The words beside a score are <strong>Very likely</strong> (90 or more), <strong>Likely</strong> (70 or more), <strong>Not sure</strong> (40 or more) and <strong>Unlikely</strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th></th></tr></thead><tbody><tr><td><code>J</code>, <code>K</code></td><td>Next and last</td></tr><tr><td><code>A</code></td><td>Accept the first suggestion</td></tr><tr><td><code>1</code> to <code>6</code></td><td>Accept that suggestion</td></tr><tr><td><code>N</code></td><td>It has no match</td></tr><tr><td><code>E</code></td><td>Edit details</td></tr><tr><td><code>X</code></td><td>Choose it, for doing several at once</td></tr><tr><td><code>/</code></td><td>Search</td></tr><tr><td><code>U</code></td><td>Undo</td></tr></tbody></table></div>
+<p>The arrow keys and a remote reach everything too. Moving down the list follows along in the panel beside it, and OK on a title goes to its first suggestion.</p>
+<h2 id="fixing-episode-numbers">Fixing episode numbers<a class="h-anchor" href="#fixing-episode-numbers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>When a show’s episodes have the wrong numbers:</p>
+<ol><li>On the Fix matches page, choose the show, and press <strong>Renumber episodes</strong>.</li><li>Each file is shown beside what the source calls that number. <strong>Not listed</strong> means the source doesn’t have that number.</li><li>Change the numbers by hand, or choose a <strong>Season</strong> and use <strong>Move episodes by</strong> with <strong>Move them</strong> or <strong>Move seasons instead</strong>. <strong>Number them in order</strong> counts through them from 1.</li><li>Press <strong>Save</strong>.</li></ol>
+<p>Numbers you change are locked, so a scan keeps them.</p>
+<h2 id="editing-several-titles-together">Editing several titles together<a class="h-anchor" href="#editing-several-titles-together" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>On the Fix matches page, tick some titles, and press <strong>Edit together</strong>. You can add or take away genres and tags, set a year or a content rating, and lock or unlock. Press <strong>Change</strong>, which says how many, and <strong>Undo all of it</strong> is offered straight after.</p>
+<h2 id="naming-rules">Naming rules<a class="h-anchor" href="#naming-rules" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>An id in a file or folder’s name</strong> always wins over a search, and doesn’t appear in the title. The usual forms all work:</p>
+<div class="codebox"><pre id="code-1" class="code"><code>My Film (2001) [tmdbid-123].mkv
+My Film (2001) {imdb-tt0000123}.mkv
+A Show [tvdb-456]
+A Show [tvmaze-78]
+A Show [anilist-90]</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><strong>A folder with a naming of its own</strong> can have rules, under <strong>Fix matches → Naming rules</strong>. Choose a library, and press <strong>Add a rule</strong>. The first rule that fits a file decides.</p>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>What it does</th></tr></thead><tbody><tr><td><strong>How the path reads</strong></td><td>Uses <code>{title}</code>, <code>{year}</code>, <code>{edition}</code>, <code>{tmdb}</code>, <code>{imdb}</code>, <code>{tvdb}</code>, <code>{any}</code>, and <code>*</code> for anything within a folder’s name. For example, <code>Harbour Studio/{year} - {title}</code></td></tr><tr><td><strong>Where to look</strong></td><td><strong>Look everywhere</strong>, one source only, or <strong>Don’t look it up</strong></td></tr><tr><td><strong>Add tags</strong></td><td>Tags for what it fits, separated by commas</td></tr><tr><td><strong>These are bonus features</strong></td><td>Marks what it fits as a trailer, featurette and so on</td></tr><tr><td><strong>On</strong></td><td>Turns the rule off without removing it</td></tr></tbody></table></div>
+<p><strong>Try them</strong> shows what each file would become, without changing anything. Press <strong>Save</strong> to keep them. Rules apply to new and changed files when the library is next scanned.</p>
+<h2 id="history-and-undo">History and undo<a class="h-anchor" href="#history-and-undo" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Every match, edit and renumbering can be undone, right after it, or later under <strong>Fix matches → History</strong>. Press <strong>Undo</strong> beside an entry. Changes made together, such as one apply from the metadata folder, are one entry and go back together.</p>
+<p>The last 5,000 changes are kept, and the page shows the newest 100.</p>
+<h2 id="from-the-command-line">From the command line<a class="h-anchor" href="#from-the-command-line" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Nothing on this page needs a terminal. When the server won’t start, or you’d rather not use the page, these do related work:</p>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>wittymediaserver metadata check</code></td><td>Says what’s wrong with the metadata folder’s files. See <a href="/docs/metadata-folder/#on-the-command-line">On the command line</a></td></tr><tr><td><code>wittymediaserver metadata apply --apply</code></td><td>Applies your edits from that folder</td></tr><tr><td><code>wittymediaserver metadata undo &lt;batch&gt;</code></td><td>Takes one apply back</td></tr><tr><td><code>wittymediaserver doctor --only metadata</code></td><td>Looks for broken matches, missing artwork, duplicates and unreadable NFO files. See <a href="/docs/repair/#what-it-checks-and-fixes">Repair</a></td></tr><tr><td><code>wittymediaserver doctor remap --from &lt;old&gt; --to &lt;new&gt;</code></td><td>Tells the server a library’s folder moved. See <a href="/docs/repair/#moved-a-drive">Moved a drive?</a></td></tr></tbody></table></div>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/metadata/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Where details come from</strong></a>
+      <a class="card next" href="/docs/metadata-folder/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>The metadata folder</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/FIXING-METADATA.md" rel="noopener">docs/FIXING-METADATA.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/FIXING-METADATA.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#which-tool-to-use">Which tool to use</a></li><li><a href="#the-edit-dialog">The Edit dialog</a></li><li><a href="#choosing-the-right-match">Choosing the right match</a></li><li><a href="#locks-sources-and-revert">Locks, sources and Revert</a></li><li><a href="#artwork">Artwork</a></li><li><a href="#skip-intro">Skip intro</a></li><li><a href="#bonus-features-versions-and-moving">Bonus features, versions and moving</a></li><li><a href="#logos">Logos</a></li><li><a href="#refreshing-a-title">Refreshing a title</a></li><li><a href="#the-fix-matches-page">The Fix matches page</a></li><li><a href="#fixing-episode-numbers">Fixing episode numbers</a></li><li><a href="#editing-several-titles-together">Editing several titles together</a></li><li><a href="#naming-rules">Naming rules</a></li><li><a href="#history-and-undo">History and undo</a></li><li><a href="#from-the-command-line">From the command line</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Installing and updating · WittyMediaServer</title>
+<meta name="description" content="Install the server on Windows, macOS, Linux, FreeBSD, a NAS or in a container, keep it up to date, and find out what each program does.">
+<link rel="canonical" href="https://wittymediaserver.com/docs/install/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Installing and updating">
+<meta property="og:description" content="Install the server on Windows, macOS, Linux, FreeBSD, a NAS or in a container, keep it up to date, and find out what each program does.">
+<meta property="og:url" content="https://wittymediaserver.com/docs/install/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/" aria-current="page">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Start here</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/" aria-current="page">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#start">Start here</a></p>
+      <h1>Installing WittyMediaServer</h1>
+      <p class="lead">Install the server on Windows, macOS, Linux, FreeBSD, a NAS or in a container, keep it up to date, and find out what each program does.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-01">1 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/INSTALL.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#which-file-to-download">Which file to download</a></li><li><a href="#what-has-been-tested">What has been tested</a></li><li><a href="#windows">Windows</a></li><li><a href="#macos">macOS</a></li><li><a href="#linux">Linux</a></li><li><a href="#freebsd">FreeBSD</a></li><li><a href="#docker">Docker</a></li><li><a href="#a-nas">A NAS</a></li><li><a href="#what-the-programs-are">What the programs are</a></li><li><a href="#the-tray-app">The tray app</a></li><li><a href="#updating">Updating</a></li><li><a href="#at-home-and-away">At home and away</a></li><li><a href="#behind-a-reverse-proxy">Behind a reverse proxy</a></li><li><a href="#warnings-youll-see">Warnings you’ll see</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>FFmpeg comes with the download, so there’s nothing else to install first, apart from one FreeBSD case noted below. New to all this? <a href="/docs/getting-started/">Getting started</a> walks through it with no command line. To remove it, see <a href="/docs/uninstall/">Uninstalling</a>.</p>
+<h2 id="which-file-to-download">Which file to download<a class="h-anchor" href="#which-file-to-download" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Everything is on the project’s <a href="https://github.com/wittywilla/WittyMediaServer/releases" rel="noopener">Releases page</a>. Most people want the installer. Each file name starts <code>wittymediaserver-&lt;version&gt;-</code>, followed by what’s in the table.</p>
+<p>These files are the server, for the computer that holds your media. <strong>For a phone, a TV or another computer, you don’t install the server.</strong> Open the server’s address in a web browser, or use the app, <a href="https://github.com/wittywilla/WittyMediaClient/releases" rel="noopener">WittyMediaClient</a>, which has its own Releases page. The app is written for Windows, macOS, Linux, FreeBSD, Android, Android TV, iOS, tvOS and Plasma Big Screen, but it’s early: Android has been run on emulators only, and iOS and tvOS have never been built. A web browser is the way to reach everything today. <a href="/docs/apps/">Apps and devices</a> has the state of each device.</p>
+<div class="table-wrap"><table><thead><tr><th>System</th><th>Installer</th><th>Without installing</th></tr></thead><tbody><tr><td>Windows 10 or 11</td><td><code>windows-amd64.msi</code>, <code>windows-arm64.msi</code></td><td><code>windows-amd64.zip</code>, <code>windows-arm64.zip</code></td></tr><tr><td>macOS 11 or later</td><td><code>macos-arm64.pkg</code> (Apple silicon), <code>macos-amd64.pkg</code> (Intel)</td><td><code>darwin-arm64.tar.gz</code>, <code>darwin-amd64.tar.gz</code></td></tr><tr><td>Debian, Ubuntu and relatives</td><td><code>linux-amd64.deb</code>, also <code>arm64</code>, <code>armv7</code>, <code>386</code></td><td><code>linux-amd64.tar.gz</code>, and the same</td></tr><tr><td>Fedora, RHEL and relatives</td><td><code>linux-amd64.rpm</code>, also <code>arm64</code>, <code>armv7</code>, <code>386</code></td><td><code>linux-amd64.tar.gz</code>, and the same</td></tr><tr><td>FreeBSD 14 or later</td><td><code>freebsd-amd64.pkg</code>, <code>freebsd-arm64.pkg</code></td><td><code>freebsd-amd64.tar.gz</code>, <code>freebsd-arm64.tar.gz</code></td></tr></tbody></table></div>
+<p>For containers, the image is <code>ghcr.io/wittywilla/wittymediaserver</code>: see <a href="#docker">Docker</a>.</p>
+<p>Each release also has <code>SHA256SUMS.txt</code>, a list of every file’s checksum, and <code>SHA256SUMS.txt.sig</code>, its signature. The server checks that signature before it installs an update.</p>
+<h2 id="what-has-been-tested">What has been tested<a class="h-anchor" href="#what-has-been-tested" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>System</th><th>How far it has been run</th></tr></thead><tbody><tr><td><strong>Windows</strong></td><td>The <code>.msi</code> has been installed, upgraded and removed under Wine, and its contents inspected. It has not been installed on a real copy of Windows yet. The ARM64 <code>.msi</code> was built once and hasn’t been checked</td></tr><tr><td><strong>macOS</strong></td><td>Never built or run. This has not been run on a real Mac yet</td></tr><tr><td><strong>Linux</strong></td><td>The <code>.deb</code> and <code>.rpm</code> have been installed, upgraded and removed on Debian trixie, Ubuntu 26.04 and Fedora 43, on amd64, in containers with systemd running. The <code>arm64</code>, <code>armv7</code> and <code>386</code> packages haven’t been run</td></tr><tr><td><strong>FreeBSD</strong></td><td>The amd64 package and its service have been installed, upgraded and removed in FreeBSD 14.4 and 15.1 virtual machines. Real hardware and arm64 haven’t been tried, modules have only been built for it, and a film hasn’t been played there</td></tr><tr><td><strong>Docker</strong></td><td>The image’s last stage has been started and answers. The complete image hasn’t been built yet</td></tr></tbody></table></div>
+<h2 id="windows">Windows<a class="h-anchor" href="#windows" aria-hidden="true" tabindex="-1">#</a></h2>
+<ol><li>Open the <code>.msi</code>. If Windows warns about it, see <a href="#warnings-youll-see">Warnings you’ll see</a>.</li><li>Choose who it’s for.</li></ol>
+<div class="table-wrap"><table><thead><tr><th></th><th>Just me</th><th>Everyone on this computer</th></tr></thead><tbody><tr><td>Needs an administrator</td><td>No</td><td>Yes</td></tr><tr><td>Program</td><td><code>%LOCALAPPDATA%\Programs\WittyMediaServer</code></td><td><code>C:\Program Files\WittyMediaServer</code></td></tr><tr><td>Library, accounts and settings</td><td><code>%LOCALAPPDATA%\WittyMediaServer</code></td><td>Each person’s own, or with the service, <code>C:\ProgramData\WittyMediaServer</code></td></tr><tr><td><strong>Update now</strong> in Settings</td><td>Yes</td><td>No: run the new installer</td></tr><tr><td>Can run as a service</td><td>No</td><td>Yes</td></tr></tbody></table></div>
+<ol><li>Choose how it should run. Each of these is optional.<ul><li><strong>Start when I sign in:</strong> the tray app starts by itself. You can turn this off from its icon. If it’s installed for everyone, turn it off in Windows Settings, under Apps, Startup.</li><li><strong>Put a shortcut on the desktop.</strong> There’s always a Start menu entry.</li><li><strong>Add the wittymediaserver command to the command line,</strong> in every new terminal.</li><li><strong>Run as a background service, always on</strong> (for everyone only): it runs even when nobody is signed in, under the limited <code>LOCAL SERVICE</code> account. See below for what it needs.</li><li><strong>Let other devices on my home network connect</strong> (for everyone only): adds a Windows Firewall rule for networks you’ve marked private. It opens nothing to the internet. Installed just for you, Windows asks when the server first starts: choose <strong>Allow</strong>.</li></ul></li><li>Leave <strong>Open WittyMediaServer now</strong> ticked to finish setting up in your browser.</li></ol>
+<p>Running a newer installer over an installed copy updates it in place and keeps your choices. It also takes over from a copy that 0.5.2-alpha or older installed: the old program, boot task and firewall rule go, and your library stays where it is.</p>
+<p><strong>If you chose the service.</strong> Give <code>LOCAL SERVICE</code> permission to read your media folders: open a folder’s <strong>Properties</strong>, then <strong>Security</strong>, <strong>Edit</strong>, <strong>Add</strong>, and type <code>LOCAL SERVICE</code>. It can’t reach a network share by a mapped drive letter, so use <code>\\server\share</code>, on a share that lets it in.</p>
+<p><strong>For admins.</strong> Every choice is a property, and <code>/qn</code> asks nothing. Without a choice of who it’s for, it installs just for the person running it.</p>
+<div class="codebox"><pre id="code-1" class="code" data-lang="powershell"><code>msiexec /i wittymediaserver-&lt;version&gt;-windows-amd64.msi /qn MSIINSTALLPERUSER=1 AUTOSTART=1 DESKTOPSHORTCUT=1 ADDTOPATH=1
+msiexec /i wittymediaserver-&lt;version&gt;-windows-amd64.msi /qn MSIINSTALLPERUSER=&quot;&quot; INSTALLSERVICE=1 ADDFIREWALL=1 AUTOSTART=&quot;&quot; PORT=9797</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="table-wrap"><table><thead><tr><th>Property</th><th>Means</th><th>If you don’t say</th></tr></thead><tbody><tr><td><code>MSIINSTALLPERUSER</code></td><td><code>1</code> for this account, <code>&quot;&quot;</code> for everyone</td><td>This account</td></tr><tr><td><code>AUTOSTART</code></td><td><code>1</code> starts the tray app at sign-in, <code>&quot;&quot;</code> doesn’t</td><td><code>1</code></td></tr><tr><td><code>DESKTOPSHORTCUT</code>, <code>ADDTOPATH</code></td><td><code>1</code> adds it</td><td>Off</td></tr><tr><td><code>INSTALLSERVICE</code>, <code>ADDFIREWALL</code></td><td><code>1</code> adds it, for everyone only</td><td>Off</td></tr><tr><td><code>PORT</code></td><td>The port for the service and the firewall rule</td><td><code>9797</code></td></tr></tbody></table></div>
+<p><strong>Without installing.</strong> Unzip the <code>.zip</code> anywhere and open <code>WittyMediaServer.exe</code>. Add a <a href="/docs/config/#portable-mode"><code>wms.json</code></a> beside it to keep everything in that folder, on a USB drive for instance.</p>
+<h2 id="macos">macOS<a class="h-anchor" href="#macos" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>This has not been run on a real Mac yet.</p>
+<ol><li>Open the <code>.pkg</code>. If the Mac refuses it, see <a href="#warnings-youll-see">Warnings you’ll see</a>.</li><li>Go through the installer. It puts <strong>WittyMediaServer</strong> and <strong>Uninstall WittyMediaServer</strong> in Applications, and the <code>wittymediaserver</code> command in <code>/usr/local/bin</code>.</li><li><strong>Customize</strong> lets you leave out <strong>Run in the background</strong>, which otherwise starts the server when the Mac starts, as the person who installed it, even when nobody is signed in. Without it, the server runs while the app is open.</li></ol>
+<p>Your library, accounts and settings are in <code>~/Library/Application Support/WittyMediaServer</code>.</p>
+<p>Running a newer <code>.pkg</code> updates it in place, and takes over from what the <code>install.sh</code> of 0.5.2-alpha or older put in <code>/opt</code>, keeping its library.</p>
+<p><strong>A limit on a Mac.</strong> A module’s helper program runs in Apple’s own sandbox, which hasn’t been run on a real Mac yet, and Settings, Modules says if it couldn’t be used. So a module from another publisher can’t be chosen on a Mac for now. See <a href="/docs/module-store/#using-someones-fork">Modules</a>.</p>
+<p><strong>Without installing.</strong> Unpack the <code>.tar.gz</code> and open <code>WittyMediaServer.app</code>.</p>
+<h2 id="linux">Linux<a class="h-anchor" href="#linux" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="codebox"><pre id="code-2" class="code" data-lang="bash"><code>sudo apt install ./wittymediaserver-&lt;version&gt;-linux-amd64.deb    # Debian, Ubuntu and relatives
+sudo dnf install ./wittymediaserver-&lt;version&gt;-linux-amd64.rpm    # Fedora, RHEL and relatives</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>That’s all: the service is running. Open <code>http://&lt;this computer&gt;:9797/</code> to finish setting up.</p>
+<p>There’s no package repository to add yet, so <code>apt upgrade</code> and <code>dnf upgrade</code> won’t find new versions. Download each new package and install it the same way: it updates in place. It also takes over from what the <code>install.sh</code> of 0.5.2-alpha or older installed, keeping its data folder, port and account.</p>
+<div class="table-wrap"><table><thead><tr><th>To see or change</th><th>Where</th></tr></thead><tbody><tr><td>Its status and log</td><td><code>systemctl status wittymediaserver</code>, <code>journalctl -u wittymediaserver</code></td></tr><tr><td>Program</td><td><code>/usr/lib/wittymediaserver</code>, with the command at <code>/usr/bin/wittymediaserver</code></td></tr><tr><td>Library, accounts and settings</td><td><code>/var/lib/wittymediaserver</code></td></tr><tr><td>The account it runs as</td><td><code>wms</code>, which needs read permission on your media folders</td></tr><tr><td>The port, data folder or anything else</td><td><code>sudo systemctl edit wittymediaserver</code></td></tr></tbody></table></div>
+<p>For example, to use port 8080, put this in what <code>systemctl edit</code> opens, and save:</p>
+<div class="codebox"><pre id="code-3" class="code" data-lang="ini"><code>[Service]
+Environment=WMS_LISTEN=:8080</code></pre><button class="icon-btn copy" type="button" data-copy="#code-3" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>For a different data folder, set both of these, as the service can only write where it’s told:</p>
+<div class="codebox"><pre id="code-4" class="code" data-lang="ini"><code>[Service]
+Environment=WMS_DATA_DIR=/tank/witty
+ReadWritePaths=/tank/witty</code></pre><button class="icon-btn copy" type="button" data-copy="#code-4" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>A desktop gets <strong>WittyMediaServer</strong> in its app menu. The tray app shows the service, and doesn’t start a second server.</p>
+<p><strong>On another distribution, with systemd.</strong> Unpack the <code>.tar.gz</code>, and:</p>
+<div class="codebox"><pre id="code-5" class="code" data-lang="bash"><code>sudo ./install.sh                      # /opt/wittymediaserver, data in /var/lib/wittymediaserver, port 9797
+sudo ./install.sh --prefix /srv/witty --data /tank/witty --port 8080 --user media</code></pre><button class="icon-btn copy" type="button" data-copy="#code-5" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><strong>Without installing.</strong> Run <code>./WittyMediaServer</code>, or <code>./bin/wittymediaserver serve</code> with no tray icon.</p>
+<p>Run either a service or the tray app on a port, not both by hand. The tray app notices a server already answering, and only shows it.</p>
+<h2 id="freebsd">FreeBSD<a class="h-anchor" href="#freebsd" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>As root:</p>
+<div class="codebox"><pre id="code-6" class="code" data-lang="sh"><code>pkg add wittymediaserver-&lt;version&gt;-freebsd-amd64.pkg
+sysrc wittymediaserver_enable=YES
+service wittymediaserver start</code></pre><button class="icon-btn copy" type="button" data-copy="#code-6" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>Then open <code>http://&lt;this computer&gt;:9797/</code> to finish setting up. As with FreeBSD’s own packages, it doesn’t start until you enable it. If it says FFmpeg is missing, run <code>pkg install ffmpeg</code>. The arm64 package always needs this, as there’s no FFmpeg build of ours for it.</p>
+<div class="table-wrap"><table><thead><tr><th>To see or change</th><th>Where</th></tr></thead><tbody><tr><td>Program</td><td><code>/usr/local/lib/wittymediaserver</code>, with the command at <code>/usr/local/bin/wittymediaserver</code></td></tr><tr><td>Library, accounts and settings</td><td><code>/var/db/wittymediaserver</code>, and the log is <code>wms.log</code> in there</td></tr><tr><td>The account it runs as</td><td><code>wms</code>, which needs read permission on your media folders</td></tr><tr><td>The account, data folder or port</td><td><code>sysrc wittymediaserver_user=media</code>, <code>sysrc wittymediaserver_data=/tank/witty</code>, <code>sysrc wittymediaserver_listen=:8080</code></td></tr><tr><td>A settings file</td><td><code>/usr/local/etc/wittymediaserver/wms.json</code></td></tr></tbody></table></div>
+<p><strong>To update,</strong> run <code>pkg add -f</code> with the newer package, then <code>service wittymediaserver start</code>, as <code>pkg</code> stops it. It also takes over from what <code>install.sh</code> installed, keeping its data folder, port and account. A package made for FreeBSD 14 needs <code>env IGNORE_OSVERSION=yes pkg add &lt;file&gt;</code> on 15, which hasn’t been tried.</p>
+<p><strong>A limit on FreeBSD.</strong> A module’s helper program runs with limits here, not a sandbox: it can’t start programs, open a network connection or write into a file, but it can still read what the account can read, delete its files and signal its programs. So run the server as its own account, as the package does, and a module from another publisher can’t be chosen, and WittyCouch isn’t available, as its host has no FreeBSD build. See <a href="/docs/module-store/#using-someones-fork">Modules</a>.</p>
+<p><strong>Without a package.</strong> Unpack the <code>.tar.gz</code> and run <code>./install.sh</code> as root, with the same options as on Linux. It starts the service straight away.</p>
+<h2 id="docker">Docker<a class="h-anchor" href="#docker" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="codebox"><pre id="code-7" class="code" data-lang="bash"><code>docker run -d --name wittymediaserver --restart unless-stopped \
+  -p 9797:9797 \
+  -v wms-config:/config \
+  -v /path/to/movies:/media/movies:ro \
+  -v /path/to/discs:/media/discs:ro \
+  ghcr.io/wittywilla/wittymediaserver:alpha</code></pre><button class="icon-btn copy" type="button" data-copy="#code-7" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>Or save this as <code>docker-compose.yml</code>, change the media lines to your own folders, and run <code>docker compose up -d</code>:</p>
+<div class="codebox"><pre id="code-8" class="code" data-lang="yaml"><code>services:
+  wittymediaserver:
+    image: ghcr.io/wittywilla/wittymediaserver:alpha # the newest alpha; :latest is the newest full release
+    container_name: wittymediaserver
+    restart: unless-stopped
+    # Runs as UID 1000. On a NAS, set this to your own account&#39;s UID and GID:
+    # user: &quot;1000:1000&quot;
+    # Nothing it needs writes outside /config and /tmp. Helpers run from /config, so don&#39;t mount it noexec.
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - &quot;9797:9797&quot;
+      # - &quot;9443:9443&quot;                # only if you use Remote Access with HTTPS
+    environment:
+      - WMS_LOG=info
+      - XDG_CACHE_HOME=/config/cache/xdg
+    volumes:
+      - wms-config:/config
+      # Mount your media read-only wherever you like, and add them as library folders in the app.
+      - /path/to/movies:/media/movies:ro
+      - /path/to/discs:/media/discs:ro
+volumes:
+  wms-config:</code></pre><button class="icon-btn copy" type="button" data-copy="#code-8" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<ul><li><strong>Then:</strong> open <code>http://&lt;this computer&gt;:9797/</code>. From another device, setup asks for the code that <code>docker logs wittymediaserver</code> shows.</li><li><strong>Which systems:</strong> <code>amd64</code>, <code>arm64</code> and <code>armv7</code> images.</li><li><strong>Permissions:</strong> the image runs as UID 1000. <code>chown</code> your media, or use <code>--user</code>.</li><li><strong>Hardware transcoding:</strong> pass <code>--device /dev/dri</code> for VAAPI, or use the NVIDIA container runtime. Then tick the encoder under <strong>Settings → Live transcoding</strong>.</li><li><strong>The command line:</strong> <code>docker exec wittymediaserver wittymediaserver doctor</code>.</li><li><strong>To update:</strong> see <a href="#updating">Updating</a>.</li><li><strong>Modules:</strong> the image holds none. A server adds them from the store at run time.</li></ul>
+<h2 id="a-nas">A NAS<a class="h-anchor" href="#a-nas" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Most NAS systems run containers, and that’s the way to do it. There’s no packaged app for each make.</p>
+<div class="table-wrap"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Synology</strong> (Container Manager), <strong>QNAP</strong> (Container Station), <strong>TrueNAS SCALE</strong>, <strong>Unraid</strong></td><td>Create a project or stack from <a href="#docker">the file above</a></td></tr><tr><td>The <code>/config</code> volume</td><td>Keep it on a fast disk, an SSD if you have one, in a shared folder of its own. It holds the database and artwork</td></tr><tr><td>Your media</td><td>Mount each share read-only at a folder under <code>/media</code></td></tr><tr><td>Permissions</td><td>The image runs as UID 1000. Set <code>user:</code> in the file to your NAS account’s UID and GID, which <code>id</code> shows over SSH, and give that account read access to your media and write access to <code>/config</code></td></tr><tr><td>Hardware transcoding</td><td>Add <code>devices: [&quot;/dev/dri:/dev/dri&quot;]</code> on Intel and AMD, and tick the encoder under <strong>Settings → Live transcoding</strong></td></tr><tr><td>An older or 32-bit NAS</td><td><code>armv7</code> and <code>amd64</code> images exist, but no 32-bit x86 one: run the <code>linux-386.tar.gz</code> archive by hand</td></tr></tbody></table></div>
+<p>If your NAS runs Debian underneath, as OpenMediaVault does, the <code>.deb</code> should work too. It hasn’t been tried there.</p>
+<h2 id="what-the-programs-are">What the programs are<a class="h-anchor" href="#what-the-programs-are" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>You only ever need to open the first one.</p>
+<div class="table-wrap"><table><thead><tr><th>Program</th><th>What it does</th></tr></thead><tbody><tr><td><code>WittyMediaServer.exe</code> (Windows), <code>WittyMediaServer.app</code> (Mac), <strong>WittyMediaServer</strong> in the app menu (Linux)</td><td><strong>The app you open.</strong> Puts an icon in the tray or menu bar, starts the server and opens the web app</td></tr><tr><td><code>Uninstall WittyMediaServer.exe</code>, <code>Uninstall WittyMediaServer.app</code></td><td>Removes it, asking first. See <a href="/docs/uninstall/">Uninstalling</a></td></tr><tr><td><code>bin/wittymediaserver</code></td><td>The server itself, and the command line for repairs and support. Try <code>wittymediaserver help</code>, or see the <a href="/docs/reference/#commands">command line reference</a></td></tr><tr><td><code>bin/ffmpeg</code>, <code>bin/ffprobe</code></td><td>FFmpeg: converts video when a device needs it, and reads what’s in a file</td></tr><tr><td><code>modules</code></td><td>Signed modules for offline use, in a package that came with any. Otherwise modules arrive from the store, into the data folder, with their own programs such as <code>wittyplay-game-runner</code></td></tr><tr><td><code>package-info.json</code></td><td>Says how this copy was installed, which decides how it updates</td></tr><tr><td><code>wms</code></td><td>Only in the <code>.zip</code> and <code>.tar.gz</code>, so a copy of 0.5.2-alpha can update to this one. It starts <code>bin/wittymediaserver</code>, and is safe to delete otherwise</td></tr></tbody></table></div>
+<p>On Windows each says what it is in its <strong>Properties</strong>, and in Task Manager’s <strong>Details</strong>. On a Mac the same programs are inside the app, under <code>Contents/MacOS</code> and <code>Contents/Helpers</code>, and <code>modules</code> under <code>Contents/Resources</code>.</p>
+<h2 id="the-tray-app">The tray app<a class="h-anchor" href="#the-tray-app" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>An icon appears in the system tray or menu bar. It turns grey while the server is stopped.</p>
+<div class="table-wrap"><table><thead><tr><th>Menu item</th><th>What it does</th></tr></thead><tbody><tr><td><strong>● Running at</strong> <code>http://localhost:9797</code></td><td>Shows the status. With a service, it says <strong>Running as a background service</strong></td></tr><tr><td><strong>Open WittyMediaServer</strong></td><td>Opens the web app, or the setup wizard the first time</td></tr><tr><td><strong>Stop server</strong>, <strong>Start server</strong>, <strong>Restart server</strong></td><td>Not available when a background service is running it: the service looks after itself</td></tr><tr><td><strong>Open data folder</strong>, <strong>View log</strong></td><td>Open what they say</td></tr><tr><td><strong>Start at login</strong></td><td>Starts the tray app when you sign in, through a Windows Run entry, a macOS LaunchAgent or an XDG autostart file</td></tr><tr><td><strong>About WittyMediaServer</strong></td><td>Shows the version</td></tr><tr><td><strong>Quit (stops the server)</strong></td><td>Stops the server it started, with any FFmpeg jobs, and exits. A background service carries on</td></tr></tbody></table></div>
+<p>The app restarts the server if it crashes. It stops trying after three failures within ten seconds of starting, so a bad configuration doesn’t loop.</p>
+<h2 id="updating">Updating<a class="h-anchor" href="#updating" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Admins see a dot on <strong>Settings</strong> when a newer version is out. <strong>Settings → About</strong>, under <strong>Updates</strong>, shows the installed and the newest version with its release notes. <strong>Update now</strong> installs it:</p>
+<ol><li><strong>Downloading:</strong> the release’s checksum list and its signature come from GitHub, over HTTPS, and only from GitHub.</li><li><strong>Checking:</strong> the checksum list must be signed with the release key built into the server, and the downloaded package must match its checksum. Anything else is refused and nothing changes.</li><li><strong>Installing:</strong> the new files are unpacked next to the program and swapped in. The <code>data</code> folder, <code>wms.json</code> and any other folder the server keeps data in are never written.</li><li><strong>Restarting:</strong> the tray app, systemd or the server itself starts the new version, and the page reloads by itself.</li></ol>
+<p>The server looks for new versions twice a day while <strong>Check for updates automatically</strong> is on, which it is to begin with. <strong>Check now</strong> asks at once. It only fetches GitHub’s list of releases: nothing about you or your library is sent, and nothing is installed until an admin presses <strong>Update now</strong>.</p>
+<p><strong>Update now</strong> needs a copy installed from a release package, in a folder the server can write. Otherwise Settings says why:</p>
+<div class="table-wrap"><table><thead><tr><th>Installed with</th><th>How to update</th></tr></thead><tbody><tr><td>Windows installer, <strong>Just me</strong>, or an unpacked folder on Windows, Linux or FreeBSD</td><td><strong>Update now</strong></td></tr><tr><td>Windows installer, <strong>Everyone on this computer</strong></td><td>Run the new installer, as Windows protects Program Files</td></tr><tr><td><code>.deb</code>, <code>.rpm</code>, FreeBSD <code>.pkg</code></td><td>Install the new package the same way, as your package manager owns these files</td></tr><tr><td><code>install.sh</code></td><td>Unpack the new archive and run <code>sudo ./install.sh</code> again</td></tr><tr><td>macOS</td><td>Run the new <code>.pkg</code></td></tr><tr><td>Docker</td><td><code>docker compose pull</code>, then <code>docker compose up -d</code>. With <code>docker run</code>: <code>docker pull</code>, then remove and recreate the container. Your <code>/config</code> volume stays</td></tr></tbody></table></div>
+<p>A copy of 0.5.2-alpha or older takes the update as well, from a folder it can write. The server moves to <code>bin/</code> at the same time, and a small <code>wms</code> stays where the old server was, so whatever started it still can. Scripts of yours that call <code>wms</code> should change to <code>wittymediaserver</code>. In Docker that name has already gone.</p>
+<h2 id="at-home-and-away">At home and away<a class="h-anchor" href="#at-home-and-away" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>WittyMediaServer runs on your own computer, in your home. <strong>Out of the box it’s available on your home network only:</strong> every device on the same Wi-Fi or cable network can open <code>http://&lt;this computer&#39;s address&gt;:9797</code>. The setup wizard and <strong>Settings → About</strong> show the address.</p>
+<p><strong>Setting up from another device.</strong> Until the first account exists, whoever makes it owns the server. On the computer running it, setup just works. From any other device, your phone included, setup asks for a <strong>setup code</strong>, because someone else on your network could otherwise get there first. Find it in either place:</p>
+<ul><li>on the server’s console when it starts (<code>This server has no accounts yet...</code>, in <code>docker logs</code> or <code>journalctl -u wittymediaserver</code>);</li><li>in <code>setup-code.txt</code> in the server’s data folder, which goes away once setup is done.</li></ul>
+<p>It’s never kept in the log files or shown in the log viewer. If you trust everyone on your network and would rather not use it, set <a href="/docs/config/#security-switches"><code>setupFromHome</code></a>.</p>
+<p>A server nobody can reach from a home network first, such as a rented one, also needs <a href="/docs/config/#security-switches"><code>remoteAccess</code></a> turned on, and HTTPS.</p>
+<p><strong>If other devices can’t connect on Windows.</strong> The installer’s firewall rule covers networks you’ve marked private, not public ones. Set your network to <strong>Private</strong> in Windows’ network settings.</p>
+<p><strong>Away from home.</strong> It works once you turn on <strong>Settings → Remote Access</strong> and follow its steps. Until then the server refuses connections from outside your home, even if your router lets them through. <a href="/docs/remote/">Remote access</a> explains each way in: a private VPN, which is the easiest and safest; forwarding a port with HTTPS; your own reverse proxy; or a rented server. The server refuses unencrypted connections from the internet, so use HTTPS, and strong passwords for every adult profile.</p>
+<h2 id="behind-a-reverse-proxy">Behind a reverse proxy<a class="h-anchor" href="#behind-a-reverse-proxy" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>WittyMediaServer serves plain HTTP, so put Caddy, nginx or Traefik in front for HTTPS. Video segments are a few MB each and long requests are normal, so turn off body-size limits and raise read timeouts. Set <code>WMS_PUBLIC_URL</code> or <a href="/docs/config/#what-you-can-set"><code>publicUrl</code></a> to the outside address, and list the proxy in <code>WMS_TRUSTED_PROXIES</code> or in <strong>Settings → Remote Access</strong>: forwarded headers are believed from nobody else. See <a href="/docs/remote/#a-reverse-proxy-you-already-run">A reverse proxy you already run</a>.</p>
+<div class="codebox"><pre id="code-9" class="code" data-lang="text"><code>media.example.com {
+    reverse_proxy 127.0.0.1:9797
+}</code></pre><button class="icon-btn copy" type="button" data-copy="#code-9" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h2 id="warnings-youll-see">Warnings you’ll see<a class="h-anchor" href="#warnings-youll-see" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The programs in this alpha aren’t code-signed yet, so systems warn about them. Everything works once you get past the warning. Each download’s checksum is in <code>SHA256SUMS.txt</code>, if you want to check it.</p>
+<div class="table-wrap"><table><thead><tr><th>System</th><th>What you see</th><th>What to do</th></tr></thead><tbody><tr><td><strong>Windows</strong></td><td>“Windows protected your PC”, from SmartScreen</td><td>Choose <strong>More info</strong>, then <strong>Run anyway</strong></td></tr><tr><td><strong>Windows,</strong> for everyone</td><td>The administrator prompt says “Unknown publisher”</td><td>Choose <strong>Yes</strong> if you trust the download</td></tr><tr><td><strong>macOS</strong></td><td>The Mac refuses to open the <code>.pkg</code></td><td>Right-click it and choose <strong>Open</strong>, then <strong>Open</strong> again. If it still refuses, choose <strong>Open Anyway</strong> in <strong>System Settings → Privacy &amp; Security</strong></td></tr><tr><td><strong>Linux, FreeBSD</strong></td><td>Nothing, for a file you install by name</td><td>Nothing. The packages carry no signature of their own</td></tr></tbody></table></div>
+<h2 id="for-developers">For developers<a class="h-anchor" href="#for-developers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Kubernetes.</strong> <code>deploy/k8s</code> in the source has a setup: <code>kubectl apply -k deploy/k8s</code>. Edit <code>deployment.yaml</code> for your media volume (NFS, hostPath or CSI) and <code>ingress.yaml</code> for your hostname and TLS. The deployment uses <code>Recreate</code>, as SQLite has one writer, and an in-memory <code>emptyDir</code> for transcoding. The config volume holds the database and artwork. It uses the <code>latest</code> image, which exists once there’s a full release, so set <code>newTag</code> in <code>kustomization.yaml</code> to <code>alpha</code> until then.</p>
+<p><strong>Making the installers,</strong> and everything about signing: <code>docs/PUBLISHING.md</code> and <code>scripts/test/README.md</code> in the source.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/getting-started/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Getting started</strong></a>
+      <a class="card next" href="/docs/first-time-setup/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>First-time setup, step by step</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/INSTALL.md" rel="noopener">docs/INSTALL.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/INSTALL.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#which-file-to-download">Which file to download</a></li><li><a href="#what-has-been-tested">What has been tested</a></li><li><a href="#windows">Windows</a></li><li><a href="#macos">macOS</a></li><li><a href="#linux">Linux</a></li><li><a href="#freebsd">FreeBSD</a></li><li><a href="#docker">Docker</a></li><li><a href="#a-nas">A NAS</a></li><li><a href="#what-the-programs-are">What the programs are</a></li><li><a href="#the-tray-app">The tray app</a></li><li><a href="#updating">Updating</a></li><li><a href="#at-home-and-away">At home and away</a></li><li><a href="#behind-a-reverse-proxy">Behind a reverse proxy</a></li><li><a href="#warnings-youll-see">Warnings you’ll see</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

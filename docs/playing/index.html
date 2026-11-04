@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Watching and listening · WittyMediaServer</title>
+<meta name="description" content="Use this guide to get the most from the player: its controls and keys, tracks and subtitles, and what happens behind the picture. It also covers TV remotes,…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/playing/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Watching and listening">
+<meta property="og:description" content="Use this guide to get the most from the player: its controls and keys, tracks and subtitles, and what happens behind the picture. It also covers TV remotes,…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/playing/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/" aria-current="page">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Watching and listening</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/" aria-current="page">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#watch">Watching and listening</a></p>
+      <h1>Watching and listening</h1>
+      <p class="lead">Use this guide to get the most from the player: its controls and keys, tracks and subtitles, and what happens behind the picture. It also covers TV remotes, controllers and the mini player.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/PLAYING.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#starting-something">Starting something</a></li><li><a href="#the-players-controls">The player’s controls</a></li><li><a href="#keyboard-shortcuts">Keyboard shortcuts</a></li><li><a href="#sound-tracks-and-subtitles">Sound tracks and subtitles</a></li><li><a href="#chapters">Chapters</a></li><li><a href="#skip-intro">Skip intro</a></li><li><a href="#whats-next">What’s next</a></li><li><a href="#resuming-and-what-counts-as-watched">Resuming and what counts as watched</a></li><li><a href="#quality-direct-play-and-converting">Quality, direct play and converting</a></li><li><a href="#viewing-settings">Viewing settings</a></li><li><a href="#the-remote-on-screen">The remote on screen</a></li><li><a href="#the-mini-player">The mini player</a></li><li><a href="#tv-remotes-and-controllers">TV remotes and controllers</a></li><li><a href="#the-activity-button">The activity button</a></li><li><a href="#moving-posters">Moving posters</a></li><li><a href="#if-it-wont-play">If it won’t play</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>This is about the player in a web browser and the desktop app. The apps for phones and TVs have their own player: see <a href="/docs/apps/">Apps and devices</a>.</p>
+<h2 id="starting-something">Starting something<a class="h-anchor" href="#starting-something" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Open a title and press <strong>Play</strong>. If you’ve started it before, the button says <strong>Resume from</strong> and the time, with <strong>Play from start</strong> beside it.</p>
+<figure class="doc-fig"><img src="/docs/images/home-video-page.webp" alt="A home video&#39;s page with a Play button" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>A home video’s page. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<p>Discs have their own buttons. See <a href="/docs/dvd/">DVDs</a> and <a href="/docs/bluray/">Blu-rays</a>. Music, audiobooks and podcasts play in a bar along the bottom instead: see <a href="/docs/music/">Music</a>. Books open in a reader: see <a href="/docs/books/">Books</a>. Live channels have their own player: see <a href="/docs/tv/">Live TV</a>.</p>
+<h2 id="the-players-controls">The player’s controls<a class="h-anchor" href="#the-players-controls" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Move the pointer or press a key and the controls appear. They hide again after 3.5 seconds unless you change that under <a href="#viewing-settings">Viewing settings</a>.</p>
+<figure class="doc-fig"><img src="/docs/images/player.webp" alt="A film playing, with the controls showing along the bottom" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>The player. <a href="https://durian.blender.org/" rel="noopener">Sintel</a>, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>.</em></span></figcaption></figure>
+<p>Click the picture to pause or play. Double-click for full screen.</p>
+<p><strong>Along the top:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody><tr><td>Back arrow</td><td>Goes back to the page you came from, and keeps playing in the <a href="#the-mini-player">mini player</a></td></tr><tr><td>The title line</td><td>The title, then how it’s playing: <strong>Direct play</strong>, <strong>Rewrapped</strong> or <strong>Transcoding</strong></td></tr><tr><td>Info button</td><td>Opens <a href="#how-this-is-playing">How this is playing</a></td></tr><tr><td><strong>Next episode</strong></td><td>Goes straight to the next episode, when there is one</td></tr><tr><td>Mini player button</td><td>Shrinks the player into the corner</td></tr></tbody></table></div>
+<p><strong>Along the bottom:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody><tr><td>The timeline</td><td>Shows where you are. Click to jump. Small marks are chapters</td></tr><tr><td>Play and pause</td><td>Space does this too</td></tr><tr><td>Mute and volume</td><td>Hidden on narrow screens, where the device’s own buttons do this</td></tr><tr><td>Speed, such as <strong>1×</strong></td><td>Slower or faster. Voices keep their pitch</td></tr><tr><td><strong>Scenes</strong></td><td>Appears when there’s more than one <a href="#chapters">chapter</a>, and lists them</td></tr><tr><td><strong>Audio &amp; language</strong></td><td>Appears when there’s more than one <a href="#sound-tracks-and-subtitles">sound track</a></td></tr><tr><td><strong>Subtitles</strong></td><td>Appears when the title has any</td></tr><tr><td><strong>Remote</strong></td><td>Shows a <a href="#the-remote-on-screen">remote on screen</a></td></tr><tr><td>Gear</td><td><a href="#viewing-settings">Viewing settings</a></td></tr><tr><td><strong>?</strong></td><td>Lists every key</td></tr><tr><td>Full screen</td><td>F does this too</td></tr></tbody></table></div>
+<p>The speeds go from 0.5× up to what the server allows, which is 4× unless an administrator has changed it under <a href="/docs/settings/#playback-and-discs">Playback &amp; discs</a>. Above 4×, most browsers mute the sound.</p>
+<h2 id="keyboard-shortcuts">Keyboard shortcuts<a class="h-anchor" href="#keyboard-shortcuts" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press <strong>?</strong> in the player to see these.</p>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>What it does</th></tr></thead><tbody><tr><td>Space or K</td><td>Play or pause</td></tr><tr><td>← and →</td><td>Back 10 seconds, forward 10 seconds</td></tr><tr><td>↑ and ↓</td><td>Volume up or down</td></tr><tr><td>M</td><td>Mute or unmute</td></tr><tr><td>&lt; and &gt;</td><td>Slower or faster</td></tr><tr><td>F</td><td>Full screen</td></tr><tr><td>R</td><td>Show or hide the remote</td></tr><tr><td>I</td><td>How this is playing</td></tr><tr><td>Esc</td><td>Close a window, or shrink the player</td></tr><tr><td>?</td><td>The list of keys</td></tr></tbody></table></div>
+<p>With the timeline selected, Page Up and Page Down move a minute, and Home and End go to the start and the end.</p>
+<p><strong>On a disc,</strong> some keys change:</p>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>What it does</th></tr></thead><tbody><tr><td>Arrow keys and Enter</td><td>Move around the disc’s menu and choose</td></tr><tr><td>M</td><td>The disc’s menu, or its pop-up menu on a Blu-ray</td></tr><tr><td>T</td><td>The title menu</td></tr><tr><td>A and S</td><td>Choose a sound track, choose subtitles</td></tr><tr><td>N and P, or Page Down and Page Up</td><td>Next and previous scene</td></tr><tr><td>1 to 9</td><td>Jump to that scene, or press that menu button</td></tr><tr><td>F1 to F4</td><td>The colour keys, on a Java menu</td></tr></tbody></table></div>
+<p><strong>With music on the full player:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>What it does</th></tr></thead><tbody><tr><td>Space</td><td>Play or pause</td></tr><tr><td>← and →</td><td>Previous and next track</td></tr><tr><td>, and .</td><td>Back and forward 10 seconds</td></tr><tr><td>L, K and Q</td><td>Lyrics, karaoke and the queue</td></tr><tr><td>S and R</td><td>Shuffle and repeat</td></tr><tr><td>M, V and F</td><td>Mute, the visualizer and full screen</td></tr></tbody></table></div>
+<h2 id="sound-tracks-and-subtitles">Sound tracks and subtitles<a class="h-anchor" href="#sound-tracks-and-subtitles" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press <strong>Audio &amp; language</strong> or <strong>Subtitles</strong> to open a screen of large tiles, one for each choice. A tick shows the one in use. Changing a track keeps your place.</p>
+<ul><li><strong>Sound tracks</strong> show the language, and the format and channels.</li><li><strong>Subtitles</strong> have <strong>Off</strong> first. Text subtitles are drawn by the player over the picture.</li><li><strong>Subtitles stored as pictures</strong>, as on many discs, have to be drawn into the video itself, so choosing one means the server converts the video while you watch.</li><li><strong>Styled subtitles</strong> can appear twice. The second tile says <strong>With its styling</strong> and <strong>Drawn into the picture</strong>. It keeps the fonts and placement, and the server has to convert the video to do it.</li></ul>
+<p>If subtitles can’t be loaded, the player says so and carries on playing.</p>
+<h2 id="chapters">Chapters<a class="h-anchor" href="#chapters" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The player calls chapters <strong>scenes</strong>. They show as small marks on the timeline, and <strong>Scenes</strong> lists them all with their start times. On a disc each one has a picture. Choose one to jump there.</p>
+<h2 id="skip-intro">Skip intro<a class="h-anchor" href="#skip-intro" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Skip intro</strong> appears while the intro is playing. Press it to jump to where the intro ends.</p>
+<p>The server works out where the intro is from the file’s chapters. If it can’t, an administrator can set it by hand: open the title’s <strong>Edit</strong>, go to <strong>Skip intro</strong>, and type where it ends or choose <strong>Pick in player</strong>. Setting it on a show covers every episode with no intro of its own. See <a href="/docs/metadata/">Metadata</a>. Discs have their own menus, so they don’t offer this.</p>
+<h2 id="whats-next">What’s next<a class="h-anchor" href="#whats-next" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>In the last 30 seconds, a card offers what to watch next. At the end of an episode it counts down from 8 seconds, then plays the next episode. <strong>Dismiss</strong> stops it. After a film or the last episode, it suggests something else instead, and doesn’t start by itself.</p>
+<h2 id="resuming-and-what-counts-as-watched">Resuming and what counts as watched<a class="h-anchor" href="#resuming-and-what-counts-as-watched" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Your place is saved as you watch, about every 10 seconds, and when you leave. It belongs to your profile, so you can stop on one device and carry on from another.</p>
+<ul><li><strong>Under a minute in:</strong> it starts from the beginning next time.</li><li><strong>Past that:</strong> you can resume. It also appears in <strong>Jump back in</strong> on the home page.</li><li><strong>More than 92% through:</strong> it counts as watched and gets a tick. Next time it starts from the beginning.</li></ul>
+<p>Library pages have a filter for <strong>Watched</strong> and <strong>Not watched yet</strong>.</p>
+<h2 id="quality-direct-play-and-converting">Quality, direct play and converting<a class="h-anchor" href="#quality-direct-play-and-converting" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Many video files can’t play on every device. Each time you press play, your device says what it can handle, and the server picks the simplest way to get it there:</p>
+<div class="table-wrap"><table><thead><tr><th>What the player shows</th><th>What it means</th><th>Work for the server</th></tr></thead><tbody><tr><td><strong>Direct play</strong></td><td>The file is sent as it is. It’s the full quality, and jumping around is instant</td><td>None: your device does the work</td></tr><tr><td><strong>Rewrapped</strong></td><td>The picture and sound are fine, but the file’s outer format isn’t, so they’re moved into one your device can open</td><td>Very little</td></tr><tr><td><strong>Transcoding</strong></td><td>The picture or sound has to be converted while you watch. This is the only one that takes real work</td><td>A lot</td></tr></tbody></table></div>
+<p>There’s no quality menu in the player. Quality comes from what the file is, what your device can play and the limits set by an administrator:</p>
+<ul><li><strong>At home,</strong> under <a href="/docs/settings/#live-transcoding">Live transcoding</a>.</li><li><strong>Away from home,</strong> under <a href="/docs/remote/#limits-for-viewers-away-from-home">Limits for viewers away from home</a>.</li></ul>
+<p>Occasionally a browser says it can play a file and then can’t. The player notices and asks the server to convert it, once, without you doing anything.</p>
+<h3 id="how-this-is-playing">How this is playing<a class="h-anchor" href="#how-this-is-playing" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Press the info button, or I, to see this. It says what the file is, what’s happening to its picture, sound and subtitles, how much work that is for the server, and why it isn’t simpler. Use it first when a film stutters or won’t start.</p>
+<p>Two choices can appear here:</p>
+<ul><li><strong>Show it in 2D</strong>, for a 3D film stored with both eyes in one frame.</li><li><strong>A list of video streams</strong>, for a file holding more than one, such as other camera angles.</li></ul>
+<p>See <a href="/docs/supported-formats/">Supported formats</a> for what plays and how.</p>
+<h2 id="viewing-settings">Viewing settings<a class="h-anchor" href="#viewing-settings" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The gear in the player. <strong>Apply to</strong> chooses <strong>This video</strong> or <strong>Everything</strong>. These are saved on this device, not on your profile.</p>
+<ul><li><strong>Seek bar</strong> and <strong>Chapter marks</strong> show or hide those.</li><li><strong>Remote</strong> and <strong>Remote style</strong> are for the <a href="#the-remote-on-screen">remote on screen</a>.</li><li><strong>Hide controls after</strong> is 2, 3.5 or 6 seconds, or <strong>Never</strong>.</li><li><strong>Picture</strong> is <strong>Fit</strong>, with black bars if needed, or <strong>Fill screen</strong>, which zooms and crops.</li><li><strong>3D video</strong> is for a film stored <strong>Side by side</strong> or <strong>Over-under</strong>. <strong>Show 3D as</strong> gives one eye’s view, or red and cyan for glasses.</li></ul>
+<p>On discs there are also <strong>Forced captions</strong>, <strong>Disc restrictions</strong> and <strong>Subtitle size</strong>.</p>
+<h2 id="the-remote-on-screen">The remote on screen<a class="h-anchor" href="#the-remote-on-screen" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Remote</strong>, or R, shows a remote you can use with the mouse or by touch. You can drag it by its header, and it remembers where you put it. <strong>In control bar</strong> under Viewing settings shows its buttons in a strip instead. Keys that only make sense on a disc are greyed out for ordinary videos.</p>
+<h2 id="the-mini-player">The mini player<a class="h-anchor" href="#the-mini-player" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The back arrow or Esc shrinks a video into the corner while you carry on browsing. Esc leaves full screen first, if you’re in it.</p>
+<p>The mini player has back 10 seconds, play and pause, next episode, <strong>Full player</strong> and <strong>Stop</strong>. Double-click it or click its title to bring back the full player.</p>
+<p>Music has a bar of its own along the bottom, which can fold away to a small picture. See <a href="/docs/music/">Music</a>.</p>
+<h2 id="tv-remotes-and-controllers">TV remotes and controllers<a class="h-anchor" href="#tv-remotes-and-controllers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Everything works with arrow keys and OK alone, so a TV remote or a game controller can reach every control.</p>
+<ul><li><strong>Arrows</strong> move to the nearest control in that direction. Coming back to a row lands where you left it.</li><li><strong>OK</strong> presses what’s selected.</li><li><strong>Back</strong> goes back a page, or closes what’s open.</li></ul>
+<p><strong>In the player,</strong> the arrows belong to the picture: left and right jump 10 seconds, and up and down change the volume. Press <strong>OK</strong> to reach the controls. It goes first to anything asking for an answer, such as <strong>Skip intro</strong>, then to the controls. To give the arrows back to the picture, move up or down past the last control.</p>
+<p><strong>On a TV across the room,</strong> turn on <strong>Big screen mode</strong> under <a href="/docs/settings/#appearance">Appearance</a> for larger text and a stronger outline around what’s selected. On a TV browser with no easy way to reach Settings, add <code>?tv=1</code> to the server’s address. <code>?tv=0</code> turns it off again. For games on a sofa, see <a href="/docs/apps/#big-screens">Couch mode</a>.</p>
+<p><strong>Game controllers</strong> connect by themselves. Nintendo layouts have A and B swapped, so the right-hand button still confirms.</p>
+<div class="table-wrap"><table><thead><tr><th>Button</th><th>In the app</th><th>Also in the player</th></tr></thead><tbody><tr><td>D-pad or left stick</td><td>Move</td><td></td></tr><tr><td>A or Cross</td><td>OK</td><td></td></tr><tr><td>B or Circle</td><td>Back</td><td></td></tr><tr><td>X or Square</td><td></td><td>Play or pause</td></tr><tr><td>Y or Triangle</td><td></td><td>Mute, or a disc’s menu</td></tr><tr><td>Bumpers</td><td></td><td>Previous and next scene on a disc</td></tr><tr><td>Triggers</td><td></td><td>Rewind and fast-forward on a disc</td></tr><tr><td>View, Share or Select</td><td></td><td>A disc’s title menu</td></tr><tr><td>Menu, Options or Start</td><td></td><td>A disc’s menu</td></tr></tbody></table></div>
+<p>These have been run with simulated key presses and no real remote or controller. While a game is playing, the controller belongs to the game: see <a href="/docs/games/">Games</a>.</p>
+<h2 id="the-activity-button">The activity button<a class="h-anchor" href="#the-activity-button" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The round button in the top bar, just left of your name, shows the server’s background work, such as library scans. A ring around it shows progress and a number shows how many tasks there are. An exclamation mark means something had a problem.</p>
+<p>Press it for two tabs: <strong>Now</strong> and <strong>History</strong>. Where a task allows it, you can <strong>Pause</strong>, <strong>Resume</strong> or <strong>Cancel</strong> it.</p>
+<p>Only administrators see it unless an administrator allows others, who then get a read-only view. To hide it for yourself, or change who sees it, go to <a href="/docs/settings/#activity">Activity</a>. See <a href="/docs/tasks/">Background tasks</a>.</p>
+<h2 id="moving-posters">Moving posters<a class="h-anchor" href="#moving-posters" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Film and show posters lean toward your pointer as it crosses them, with a soft light moving over them. With a remote they settle in gently as you reach them.</p>
+<p><strong>To turn it off:</strong> go to <strong>Settings → Appearance → Motion and big screens</strong> and turn off <strong>Moving posters</strong>. The choice follows you to your other devices.</p>
+<p>It’s off by itself on a device set to reduce motion or to save data, and on a very modest one, and that section says why. There’s no tilt on touch screens.</p>
+<h2 id="if-it-wont-play">If it won’t play<a class="h-anchor" href="#if-it-wont-play" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>What you see</th><th>What to do</th></tr></thead><tbody><tr><td>“Playback failed” and a reason</td><td>Press <strong>Back</strong> and try again. If it keeps happening, the reason is the thing to look up in <a href="/docs/troubleshooting/">Troubleshooting</a></td></tr><tr><td>“The stream has ended on the server”</td><td>The server restarted. Start playing again</td></tr><tr><td>It stops and starts</td><td>Open <a href="#how-this-is-playing">How this is playing</a>. If it says <strong>Transcoding</strong>, the server may not be keeping up: see <a href="/docs/transcoding/">Transcoding</a></td></tr><tr><td>It’s fine at home and stutters away</td><td>Lower the <a href="/docs/remote/#limits-for-viewers-away-from-home">limits for viewers away from home</a></td></tr></tbody></table></div>
+<p>More: <a href="/docs/troubleshooting/">Troubleshooting</a>.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/troubleshooting/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Troubleshooting</strong></a>
+      <a class="card next" href="/docs/music/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Music, audiobooks and podcasts</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/PLAYING.md" rel="noopener">docs/PLAYING.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/PLAYING.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#starting-something">Starting something</a></li><li><a href="#the-players-controls">The player’s controls</a></li><li><a href="#keyboard-shortcuts">Keyboard shortcuts</a></li><li><a href="#sound-tracks-and-subtitles">Sound tracks and subtitles</a></li><li><a href="#chapters">Chapters</a></li><li><a href="#skip-intro">Skip intro</a></li><li><a href="#whats-next">What’s next</a></li><li><a href="#resuming-and-what-counts-as-watched">Resuming and what counts as watched</a></li><li><a href="#quality-direct-play-and-converting">Quality, direct play and converting</a></li><li><a href="#viewing-settings">Viewing settings</a></li><li><a href="#the-remote-on-screen">The remote on screen</a></li><li><a href="#the-mini-player">The mini player</a></li><li><a href="#tv-remotes-and-controllers">TV remotes and controllers</a></li><li><a href="#the-activity-button">The activity button</a></li><li><a href="#moving-posters">Moving posters</a></li><li><a href="#if-it-wont-play">If it won’t play</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

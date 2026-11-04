@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>WittyMediaServer news</title>
+  <subtitle>Articles and releases from the WittyMediaServer project.</subtitle>
+  <link href="https://wittymediaserver.com/news/feed.xml" rel="self"/>
+  <link href="https://wittymediaserver.com/news/"/>
+  <id>https://wittymediaserver.com/news/</id>
+  <updated>2026-11-02T20:59:49.000Z</updated>
+  <author><name>WittyWilla</name></author>
+  <entry>
+    <title>WittyMediaServer 0.6.2-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.2-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.2-alpha/</id>
+    <updated>2026-11-02T20:59:49.000Z</updated>
+    <summary>A fix for error 2613 when installing over an earlier version, and every Windows installer now tested that way before it&#39;s published.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaServer 0.6.1-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.1-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.1-alpha/</id>
+    <updated>2026-11-02T18:58:08.000Z</updated>
+    <summary>DVD and Blu-ray pictures and menu buttons line up again in Firefox, including in the mini player.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaClient 0.2.3</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaClient/v0.2.3/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaClient/v0.2.3/</id>
+    <updated>2026-11-02T08:47:53.000Z</updated>
+    <summary>The apps for TVs, phones and computers now have their own project, starting with desktop installers for every system and an Android app for testing.</summary>
+  </entry>
+  <entry>
+    <title>WittyReader 0.1.1</title>
+    <link href="https://wittymediaserver.com/news/release/WittyReader/v0.1.1/"/>
+    <id>https://wittymediaserver.com/news/release/WittyReader/v0.1.1/</id>
+    <updated>2026-11-02T08:37:29.000Z</updated>
+    <summary>Read and annotate books, PDFs and comics with no server and nothing uploaded. Its first release has installers for Windows, macOS and Linux.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaServer 0.6.0-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.0-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.0-alpha/</id>
+    <updated>2026-11-02T08:29:21.000Z</updated>
+    <summary>Every module moves out of the server into a project of its own, with a store to find them in. Real installers, help inside the app, and what to know before you update.</summary>
+  </entry>
+  <entry>
+    <title>Windows installer upgrades work again</title>
+    <link href="https://wittymediaserver.com/news/windows-installer-update/"/>
+    <id>https://wittymediaserver.com/news/windows-installer-update/</id>
+    <updated>2026-11-02T00:00:00.000Z</updated>
+    <summary>A fix for error 2613 when installing over an earlier version, and every Windows installer now tested that way before it&#39;s published.</summary>
+  </entry>
+  <entry>
+    <title>Better disc playback in Firefox</title>
+    <link href="https://wittymediaserver.com/news/firefox-disc-playback/"/>
+    <id>https://wittymediaserver.com/news/firefox-disc-playback/</id>
+    <updated>2026-11-02T00:00:00.000Z</updated>
+    <summary>DVD and Blu-ray pictures and menu buttons line up again in Firefox, including in the mini player.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaClient’s first release of its own</title>
+    <link href="https://wittymediaserver.com/news/wittymediaclient-first-release/"/>
+    <id>https://wittymediaserver.com/news/wittymediaclient-first-release/</id>
+    <updated>2026-11-02T00:00:00.000Z</updated>
+    <summary>The apps for TVs, phones and computers now have their own project, starting with desktop installers for every system and an Android app for testing.</summary>
+  </entry>
+  <entry>
+    <title>WittyReader, for books on your own device</title>
+    <link href="https://wittymediaserver.com/news/wittyreader-first-release/"/>
+    <id>https://wittymediaserver.com/news/wittyreader-first-release/</id>
+    <updated>2026-11-02T00:00:00.000Z</updated>
+    <summary>Read and annotate books, PDFs and comics with no server and nothing uploaded. Its first release has installers for Windows, macOS and Linux.</summary>
+  </entry>
+  <entry>
+    <title>Modules of their own, with a signed store</title>
+    <link href="https://wittymediaserver.com/news/modules-and-the-store/"/>
+    <id>https://wittymediaserver.com/news/modules-and-the-store/</id>
+    <updated>2026-11-02T00:00:00.000Z</updated>
+    <summary>Every module moves out of the server into a project of its own, with a store to find them in. Real installers, help inside the app, and what to know before you update.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaServer 0.5.2-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.5.2-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.5.2-alpha/</id>
+    <updated>2026-11-01T04:01:13.000Z</updated>
+    <summary>Console games streamed from your server, channels made from your library, live TV, photos, remote access, and the fixes from a full code and design audit.</summary>
+  </entry>
+  <entry>
+    <title>Games, live TV and a full audit</title>
+    <link href="https://wittymediaserver.com/news/games-live-tv-and-an-audit/"/>
+    <id>https://wittymediaserver.com/news/games-live-tv-and-an-audit/</id>
+    <updated>2026-11-01T00:00:00.000Z</updated>
+    <summary>Console games streamed from your server, channels made from your library, live TV, photos, remote access, and the fixes from a full code and design audit.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaServer 0.4.0-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.4.0-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.4.0-alpha/</id>
+    <updated>2026-10-30T14:30:08.000Z</updated>
+    <summary>Libraries for music, audiobooks, books, comics, podcasts and anime, profiles for children, and updates that install themselves.</summary>
+  </entry>
+  <entry>
+    <title>Music, books, podcasts and one-click updates</title>
+    <link href="https://wittymediaserver.com/news/music-books-and-updates/"/>
+    <id>https://wittymediaserver.com/news/music-books-and-updates/</id>
+    <updated>2026-10-30T00:00:00.000Z</updated>
+    <summary>Libraries for music, audiobooks, books, comics, podcasts and anime, profiles for children, and updates that install themselves.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaServer 0.2.0-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.2.0-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.2.0-alpha/</id>
+    <updated>2026-10-29T19:44:00.000Z</updated>
+    <summary>The first release on GitHub, with a DVD engine of its own, a library for TV shows, themes and downloads for ten kinds of computer.</summary>
+  </entry>
+  <entry>
+    <title>DVD menus that work, and TV shows</title>
+    <link href="https://wittymediaserver.com/news/dvd-menus-and-tv-shows/"/>
+    <id>https://wittymediaserver.com/news/dvd-menus-and-tv-shows/</id>
+    <updated>2026-10-29T00:00:00.000Z</updated>
+    <summary>The first release on GitHub, with a DVD engine of its own, a library for TV shows, themes and downloads for ten kinds of computer.</summary>
+  </entry>
+</feed>

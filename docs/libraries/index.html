@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Libraries · WittyMediaServer</title>
+<meta name="description" content="This guide helps you add your media, lay out and name your files so they&#39;re recognised, and decide who sees what. Libraries are managed under Settings →…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/libraries/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Libraries">
+<meta property="og:description" content="This guide helps you add your media, lay out and name your files so they&#39;re recognised, and decide who sees what. Libraries are managed under Settings →…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/libraries/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/" aria-current="page">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Libraries</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/" aria-current="page">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#libraries">Libraries</a></p>
+      <h1>Libraries</h1>
+      <p class="lead">This guide helps you add your media, lay out and name your files so they’re recognised, and decide who sees what. Libraries are managed under <strong>Settings → Libraries</strong>, by an administrator.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/LIBRARIES.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#add-a-library">Add a library</a></li><li><a href="#kinds-of-library">Kinds of library</a></li><li><a href="#how-to-lay-out-and-name-your-files">How to lay out and name your files</a></li><li><a href="#scanning">Scanning</a></li><li><a href="#what-happens-to-new-changed-and-deleted-files">What happens to new, changed and deleted files</a></li><li><a href="#library-settings">Library settings</a></li><li><a href="#read-only-libraries">Read-only libraries</a></li><li><a href="#network-shares">Network shares</a></li><li><a href="#hiding-things-and-who-sees-what">Hiding things, and who sees what</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<h2 id="add-a-library">Add a library<a class="h-anchor" href="#add-a-library" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A library is one or more folders of one kind of media. Your files stay where they are, and nothing is copied.</p>
+<figure class="doc-fig"><img src="/docs/images/folder-browser.webp" alt="Choosing a folder on the server, in the page" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Choosing a folder. The folders are from a test server.</em></span></figcaption></figure>
+<ol><li>Go to <strong>Settings → Libraries → Add library</strong>.</li><li>Choose the kind of media. If a kind needs a module this server doesn’t have, it’s listed under <strong>Add a module to use these</strong>, with a button to add it. Adding a module downloads it.</li><li>If you already have a library of that kind, choose whether these folders go in it or make a separate one with its own name, such as “Kids’ movies” beside “Movies”.</li><li>Choose the folder:<ul><li>On the computer running the server, <strong>Choose folder…</strong> opens your computer’s own folder window.</li><li><strong>Browse folders</strong> on that computer, or <strong>Browse folder…</strong> on any other device, shows the server’s drives in the page. Press <strong>Use this folder</strong>, or tick several.</li><li>Or type the folder’s full path.</li></ul></li><li>Press the button that adds it, such as <strong>Add Movies</strong>.</li></ol>
+<p>Scanning starts right away. The folder has to be one the server can read, which isn’t always the same as one you can read. If you’re told <em>folder not found</em>, see <a href="/docs/troubleshooting/#libraries-and-scanning">Troubleshooting</a>.</p>
+<p><strong>Folders of the same kind</strong>, near the top of the Libraries page, sets which choice comes first in step 3: <strong>Combine into one library</strong> or <strong>Keep separate, with own names</strong>. You can always choose differently when adding.</p>
+<h2 id="kinds-of-library">Kinds of library<a class="h-anchor" href="#kinds-of-library" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/home-videos.webp" alt="A Home Videos library" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Home videos. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/discs.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: A shelf of disc images</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em>A shelf of discs. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></p></div>
+<figure class="doc-fig"><img src="/images/shots/movies.webp" data-shot="movies" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A Movies library: a wall of posters, with sorting and filters" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>A Movies library. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Kind</th><th>What goes in it</th><th>Folder</th></tr></thead><tbody><tr><td><strong>Movies</strong></td><td>Film files. Disc images of films can go here too</td><td>Needed</td></tr><tr><td><strong>TV shows</strong></td><td>One folder per show, with season folders inside. Disc images of a series too</td><td>Needed</td></tr><tr><td><strong>DVDs, Blu-rays &amp; CDs</strong></td><td>Only disc images and disc folders, sorted as films, series or audio CDs</td><td>Needed</td></tr><tr><td><strong>Anime</strong></td><td>Series with information from AniList. Also collects anime found in your TV shows</td><td>Optional: with none, it shows the anime in your TV libraries</td></tr><tr><td><strong>Home videos</strong></td><td>Your own recordings. Nothing is looked up online</td><td>Needed</td></tr><tr><td><strong>Music videos &amp; concerts</strong></td><td>Music videos and live recordings, by artist</td><td>Needed</td></tr><tr><td><strong>Creator videos</strong></td><td>An archive of creators’ videos, by channel</td><td>Needed</td></tr><tr><td><strong>Vertical videos</strong></td><td>Short videos in a feed, with a For You page worked out on this server</td><td>Needed</td></tr><tr><td><strong>Music</strong></td><td>Albums by artist. Tags and covers are read from the files</td><td>Needed</td></tr><tr><td><strong>Audiobooks</strong></td><td>One folder per book</td><td>Needed</td></tr><tr><td><strong>Podcasts</strong></td><td>Shows you follow by feed, plus episode files you have</td><td>Optional, for downloads</td></tr><tr><td><strong>Internet radio</strong></td><td>Stations from a free directory, or by address</td><td>None</td></tr><tr><td><strong>Books &amp; comics</strong></td><td>EPUB, PDF, comics and manga</td><td>Needed</td></tr><tr><td><strong>Photos</strong></td><td>Pictures and clips, RAW files too, with a timeline, albums and a map</td><td>Needed</td></tr><tr><td><strong>Games</strong></td><td>Your own game files, by console</td><td>Needed</td></tr><tr><td><strong>Commercials</strong></td><td>Your own ads and bumpers for TV channels</td><td>Needed</td></tr></tbody></table></div>
+<p>An administrator can give a kind brought by a module a name of this server’s own, with <strong>Rename</strong> under <strong>Settings → Modules</strong>. <a href="/docs/media-types/">What each media type supports</a> goes into what each kind can do.</p>
+<h2 id="how-to-lay-out-and-name-your-files">How to lay out and name your files<a class="h-anchor" href="#how-to-lay-out-and-name-your-files" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Your files are never renamed or moved for you. These layouts get the best results. The file types each kind accepts are in <a href="/docs/supported-formats/">Supported formats</a>.</p>
+<p><strong>In every kind that has files,</strong> folders whose names start with a dot are skipped.</p>
+<p><strong>In film and TV libraries,</strong> so are folders named <code>extras</code>, video files whose names start with <code>sample</code>, and video files under 5 MB. To keep a trailer or featurette with its film, use <strong>It’s a bonus feature</strong> in its <strong>Edit</strong> dialog: see <a href="/docs/metadata/">Metadata</a>.</p>
+<h3 id="movies">Movies<a class="h-anchor" href="#movies" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Put the year in brackets after the title. Each film can have its own folder, or they can share one:</p>
+<div class="codebox"><pre id="code-1" class="code"><code>Movies/
+  The Long Harbour (2001)/The Long Harbour (2001).mkv
+  Paper Lanterns (2014).mp4</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>If a film keeps matching the wrong title, put its id in the name, and it wins over any search: <code>The Long Harbour (2001) [tmdbid-123].mkv</code>. Other forms work too, such as <code>{imdb-tt0000123}</code>. A second copy of a film, such as a DVD and a 4K file, can be joined to it with <strong>This is another version of…</strong> in its <strong>Edit</strong> dialog.</p>
+<h3 id="tv-shows">TV shows<a class="h-anchor" href="#tv-shows" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>One folder per show. Season folders are optional, and these all work: <code>S02E01</code>, <code>s2.e1</code>, <code>2x01</code>, several episodes in a file (<code>S01E01E02</code>, <code>S01E01-E02</code>), and <code>05 - Title.mkv</code> inside a season folder.</p>
+<div class="codebox"><pre id="code-2" class="code"><code>TV Shows/
+  Night Ferry/
+    tvshow.nfo, poster.jpg, fanart.jpg        (optional)
+    Season 02/
+      Night Ferry - S02E01 - The Crossing.mkv
+      Night Ferry - S02E15-E16 - Two Parter.mkv
+    Specials/</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>A file that can’t be numbered still appears under its show, as <em>Other videos</em>. More in <a href="/docs/tv/">TV shows</a>.</p>
+<h3 id="anime">Anime<a class="h-anchor" href="#anime" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Lay it out as TV shows. Absolute episode numbers, as many releases use, are understood. Anime can live in an Anime library, in TV libraries, or both: <strong>Settings → Metadata agents → Where anime from TV libraries appears</strong> decides where it shows.</p>
+<h3 id="disc-images">Disc images<a class="h-anchor" href="#disc-images" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Use <code>.iso</code> or <code>.img</code> files, or folders holding <code>VIDEO_TS</code> or <code>BDMV</code>. They can go in Movies or TV shows, or in a <strong>DVDs, Blu-rays &amp; CDs</strong> library of their own. You can mark each as a film or a series on its page.</p>
+<p>Playing a disc takes a disc module. Encrypted discs are detected and refused. See <a href="/docs/dvd/">DVDs</a> and <a href="/docs/bluray/">Blu-rays</a>.</p>
+<h3 id="home-videos">Home videos<a class="h-anchor" href="#home-videos" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Any layout. Nothing is looked up, and small files are kept, however short.</p>
+<h3 id="music">Music<a class="h-anchor" href="#music" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Any layout works if the files are tagged. Without tags, folders are used:</p>
+<div class="codebox"><pre id="code-3" class="code"><code>Music/
+  Some Artist/An Album/01 First Song.mp3
+  Some Artist - An Album/01 First Song.mp3</code></pre><button class="icon-btn copy" type="button" data-copy="#code-3" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>Covers and CD images are covered in <a href="/docs/music/">Music</a>, and lyrics in <a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a>.</p>
+<h3 id="audiobooks">Audiobooks<a class="h-anchor" href="#audiobooks" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Author, then book. Each file is a chapter, or one file can be a whole book:</p>
+<div class="codebox"><pre id="code-4" class="code"><code>Audiobooks/
+  Jane Author/A Short Book/01 Chapter 1.m4b
+  Jane Author/Another Book.m4b</code></pre><button class="icon-btn copy" type="button" data-copy="#code-4" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h3 id="podcasts">Podcasts<a class="h-anchor" href="#podcasts" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Open the library and press <strong>Follow a podcast</strong>, to search or paste a feed address. A folder is only needed for episodes you already have and episodes you keep. New episodes are looked for every 2 hours. See <a href="/docs/music/#podcasts">Music, audiobooks and podcasts</a>.</p>
+<h3 id="internet-radio">Internet radio<a class="h-anchor" href="#internet-radio" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>There are no files. Open the library and press <strong>Add stations</strong>. See <a href="/docs/collections/#internet-radio">Internet radio</a>.</p>
+<h3 id="books-and-comics">Books and comics<a class="h-anchor" href="#books-and-comics" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Any layout. A comic named like <code>Harbour Tales 145 (2023).cbz</code> or <code>Harbour Tales v03.cbz</code> is grouped into its series by number. If a folder holds one book in two formats under the same name, it’s listed once. See <a href="/docs/books/">Books, PDFs and comics</a>.</p>
+<h3 id="photos">Photos<a class="h-anchor" href="#photos" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Any layout, and everything below the folder is picked up. Your files are never changed. Uploads are saved in an <code>Uploads</code> folder inside the library’s first folder. See <a href="/docs/photos/">Photos</a>.</p>
+<h3 id="vertical-videos-and-creator-videos">Vertical videos and creator videos<a class="h-anchor" href="#vertical-videos-and-creator-videos" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>One folder per creator or channel. In creator videos, subfolders become playlists. Sidecar files beside a video can add its title, date and more. Nothing is downloaded or looked up. See <a href="/docs/shorts/">Vertical videos</a> and <a href="/docs/creator-videos/">Creator videos</a>.</p>
+<h3 id="music-videos-and-concerts">Music videos and concerts<a class="h-anchor" href="#music-videos-and-concerts" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Name files <code>Artist - Title.mp4</code>, or keep a folder per artist. Recordings of 20 minutes or more appear under <strong>Concerts</strong>, with their chapters as the setlist. See <a href="/docs/creator-videos/">Creator videos and music videos</a>.</p>
+<h3 id="games">Games<a class="h-anchor" href="#games" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Choose the console when you add the library, or <strong>Many consoles in one folder</strong>, which sorts by folder and file type. Nothing is bundled or downloaded, so these are your own files.</p>
+<div class="codebox"><pre id="code-5" class="code"><code>Games/
+  Super Console/
+    A Made-up Game.zip
+    Two Disc Game.m3u
+    BIOS/</code></pre><button class="icon-btn copy" type="button" data-copy="#code-5" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<ul><li>Zipped games work, and a <code>.cue</code> or <code>.m3u</code> keeps a multi-file game together.</li><li>Some consoles need a BIOS file from a console you own. Put them in a folder named <code>BIOS</code> inside that console’s games folder. It’s never listed as a game.</li><li>Each console needs a core, the program that plays its games. Install one under <strong>Settings → Consoles &amp; cores</strong>.</li><li>Encrypted game files are detected and refused.</li><li>Anything the scan can’t be sure of is listed under <strong>Needs a look</strong> on the library’s page.</li></ul>
+<p>See <a href="/docs/games/">Games</a>.</p>
+<h3 id="commercials">Commercials<a class="h-anchor" href="#commercials" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Any layout, and short files are kept. These stay out of Home and search, and play on the <a href="/docs/channels/">TV channels</a> you choose them for.</p>
+<h2 id="scanning">Scanning<a class="h-anchor" href="#scanning" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A scan looks through a library’s folders for new, changed and missing files, then looks up what it found. A scan runs:</p>
+<ul><li>when you add a library or save changes to one;</li><li>every 6 hours for every library, while the server is running;</li><li>when you press <strong>Scan now</strong> under <strong>Settings → Libraries</strong>, or <strong>Scan</strong> on a library’s page;</li><li>when a module that a library was waiting for arrives.</li></ul>
+<p>The server doesn’t watch your folders for changes as they happen, so a file you add waits for the next scan. Press <strong>Scan now</strong> if you don’t want to wait. Photos and vertical videos uploaded through the app appear at once.</p>
+<p>One library scans at a time and the others wait their turn, to go easy on a small machine. Files it has already seen and that haven’t changed take almost no time.</p>
+<p>The activity button at the top of the screen shows each scan’s progress and any folder it had trouble with, and can pause or stop it. A scan you stop picks up where it left off next time. See <a href="/docs/tasks/">Background tasks</a>.</p>
+<h2 id="what-happens-to-new-changed-and-deleted-files">What happens to new, changed and deleted files<a class="h-anchor" href="#what-happens-to-new-changed-and-deleted-files" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>What you did</th><th>What happens at the next scan</th></tr></thead><tbody><tr><td>Added a file</td><td>It’s added and looked up</td></tr><tr><td>Replaced or changed a file</td><td>It’s read again</td></tr><tr><td>Deleted a file</td><td>It leaves the lists</td></tr><tr><td>Put a deleted file back in the same place</td><td>It returns, with its progress</td></tr><tr><td>Moved or renamed a file</td><td>The old one leaves the lists and the new one is added as a new title</td></tr><tr><td>A whole folder is empty or can’t be reached</td><td>Nothing is removed, and the activity button says so</td></tr></tbody></table></div>
+<p>That last row is on purpose. A drive that’s unplugged or a share that’s offline looks like an empty folder, and that’s not the same as you having deleted everything.</p>
+<p><strong>Moved a whole drive?</strong> Don’t scan and hope. Use <strong>Settings → Repair → Moved a drive?</strong>, which keeps watch progress, matches and your edits. See <a href="/docs/repair/#moved-a-drive">Repair</a>.</p>
+<p>Unless you’ve turned it off, the server saves NFO files and artwork beside your media: see <a href="/docs/metadata/#what-is-saved-next-to-your-media">What’s saved next to your media</a>. To stop that everywhere, turn off <strong>Settings → Metadata agents → Save information and artwork next to your media</strong>. For one library, make it <a href="#read-only-libraries">read-only</a>.</p>
+<h2 id="library-settings">Library settings<a class="h-anchor" href="#library-settings" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Each library has a card under <strong>Settings → Libraries</strong>:</p>
+<figure class="doc-fig"><img src="/docs/images/settings-libraries.webp" alt="The Libraries page in Settings, with one row for each library" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Settings, Libraries.</em></span></figcaption></figure>
+<ul><li><strong>Scan now</strong> looks through its folders again.</li><li><strong>Edit</strong> changes its name, its kind and its folders, and for games, its console. <strong>Save and scan</strong> starts a scan.</li><li>The bin removes the library. Your files stay where they are, and the server forgets them.</li></ul>
+<p>For a <strong>Commercials</strong> library, the card also has <strong>Show in the main menus and on Home</strong>.</p>
+<p>Converting files ahead of time is set per library under <strong>Settings → Library transcoding</strong>. See <a href="/docs/library-transcoding/">Library transcoding</a>.</p>
+<h2 id="read-only-libraries">Read-only libraries<a class="h-anchor" href="#read-only-libraries" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Under <strong>Settings → Library transcoding</strong>, choose the library and turn on <strong>This library is read-only</strong>. The server then won’t convert its files, save artwork and details beside them, take uploads into it or keep podcast episodes in its folder. <strong>Upload</strong> goes from its page, and asking anyway says why. Previews and dry runs still work.</p>
+<p>For a guarantee against anything else on the machine, mount the folder read-only as well, such as <code>:ro</code> in Docker.</p>
+<h2 id="network-shares">Network shares<a class="h-anchor" href="#network-shares" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A library can live on a NAS or another computer. How you add it depends on where you’re sitting, because reaching a share makes the server sign in there with its own account, which on Windows is the machine’s. A stolen session in a browser shouldn’t be able to do that, so a path like <code>\\nas\media</code> is refused from another device. The message starts <em>That path is on another machine</em>.</p>
+<p>You have three ways to add one:</p>
+<ol><li><strong>On the server itself.</strong> Open the server’s own address, <code>http://localhost:9797</code>, on the computer running it, and add the share there.</li><li><strong>As a mapped drive or a mount.</strong> Give it a drive letter on Windows, or mount it on Linux, macOS or FreeBSD, then use that path. With Docker, pass it in with <code>-v</code>.</li><li><strong>By allowing it.</strong> Set <code>allowNetworkPaths</code> in the server’s config file, then restart. Only do this if you’re happy with what’s described above:</li></ol>
+<div class="codebox"><pre id="code-6" class="code" data-lang="json"><code>{ &quot;allowNetworkPaths&quot;: true }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-6" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>It can also be set with <code>-allow-network-paths</code> or <code>WMS_ALLOW_NETWORK_PATHS=1</code>. <code>wittymediaserver config path</code> shows where the file is, and <a href="/docs/config/">Config file</a> says more. Libraries already on a share go on working whichever you choose.</p>
+<p><strong>As a Windows service,</strong> the server can’t see mapped drive letters. Use <code>\\server\share</code> on a share that lets the <code>LOCAL SERVICE</code> account in, added on the server itself. See <a href="/docs/install/#windows">Installing</a>.</p>
+<p><strong>Keep the server’s own data folder on a drive inside the computer.</strong> Only the media should be on the share, because the database can slow down or be damaged on a network drive. <strong>Settings → WittyDiagnoser → Storage</strong> checks for this and other trouble: see <a href="/docs/diagnoser/">WittyDiagnoser</a>.</p>
+<h2 id="hiding-things-and-who-sees-what">Hiding things, and who sees what<a class="h-anchor" href="#hiding-things-and-who-sees-what" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>For one person:</strong> go to <strong>Settings → Profiles</strong>, and press <strong>Limits</strong> beside their name. See <a href="/docs/accounts/#limits">Accounts and profiles</a>.</p>
+<div class="table-wrap"><table><thead><tr><th>In Limits</th><th>What it does</th></tr></thead><tbody><tr><td><strong>What may they watch?</strong></td><td>An age limit, from <em>Little kids</em> to <em>Everything</em></td></tr><tr><td><strong>Also show titles without a rating</strong></td><td>Home videos and unmatched files, which otherwise stay hidden under an age limit</td></tr><tr><td><strong>Libraries</strong></td><td>Only the ticked libraries are allowed. Leave all unticked to allow every library</td></tr><tr><td><strong>Hide genres</strong></td><td>Titles of these genres are hidden</td></tr><tr><td><strong>Exceptions</strong></td><td><strong>Always allow</strong> or <strong>Never allow</strong> a film or show, whatever its rating</td></tr><tr><td><strong>Live TV</strong></td><td>Whether they get it, and which kinds of channel</td></tr></tbody></table></div>
+<p>What someone can’t see is hidden everywhere, in lists, search and counts alike, and asking for it directly gets “not found”. Age limits depend on ratings, which can be missing or wrong, so they’re a help and not a guarantee.</p>
+<p><strong>For everyone:</strong> there’s no switch to hide a library from every person, except that a Commercials library stays out of menus unless you turn on <strong>Show in the main menus and on Home</strong>. To keep a library from most people, limit each of them to the others. <strong>Categories</strong> on a film or TV library’s page lets an administrator rename, hide, reorder and merge that library’s categories for everyone.</p>
+<p><strong>For yourself:</strong> <strong>Customize home</strong>, at the foot of the Home page, rearranges or hides its sections, and follows your account to every device. See <a href="/docs/metadata/#categories-studios-and-browsing">Metadata</a> for shelves, filters and saved views.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/collections/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Collections, radio and Your year</strong></a>
+      <a class="card next" href="/docs/media-types/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>What each media type supports</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/LIBRARIES.md" rel="noopener">docs/LIBRARIES.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/LIBRARIES.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#add-a-library">Add a library</a></li><li><a href="#kinds-of-library">Kinds of library</a></li><li><a href="#how-to-lay-out-and-name-your-files">How to lay out and name your files</a></li><li><a href="#scanning">Scanning</a></li><li><a href="#what-happens-to-new-changed-and-deleted-files">What happens to new, changed and deleted files</a></li><li><a href="#library-settings">Library settings</a></li><li><a href="#read-only-libraries">Read-only libraries</a></li><li><a href="#network-shares">Network shares</a></li><li><a href="#hiding-things-and-who-sees-what">Hiding things, and who sees what</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

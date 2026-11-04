@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>The metadata folder · WittyMediaServer</title>
+<meta name="description" content="Look inside the folder of plain text files the server can write for your titles, fix what&#39;s wrong with any text editor, and know what&#39;s safe to change. You…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/metadata-folder/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="The metadata folder">
+<meta property="og:description" content="Look inside the folder of plain text files the server can write for your titles, fix what&#39;s wrong with any text editor, and know what&#39;s safe to change. You…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/metadata-folder/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/" aria-current="page">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Libraries</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/" aria-current="page">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#libraries">Libraries</a></p>
+      <h1>The metadata folder</h1>
+      <p class="lead">Look inside the folder of plain text files the server can write for your titles, fix what’s wrong with any text editor, and know what’s safe to change. You don’t need to know any programming, and nothing you do in this folder can break your server or your media.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-01">1 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/METADATA-FOLDER.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#where-it-is">Where it is</a></li><li><a href="#fixing-something-step-by-step">Fixing something, step by step</a></li><li><a href="#whats-in-the-folder">What’s in the folder</a></li><li><a href="#whats-safe-to-edit-or-delete">What’s safe to edit or delete</a></li><li><a href="#what-a-file-looks-like">What a file looks like</a></li><li><a href="#examples">Examples</a></li><li><a href="#when-it-says-something-is-wrong">When it says something is wrong</a></li><li><a href="#taking-it-back">Taking it back</a></li><li><a href="#what-can-go-in-a-file">What can go in a file</a></li><li><a href="#files-beside-your-media">Files beside your media</a></li><li><a href="#how-its-kept-safe">How it’s kept safe</a></li><li><a href="#on-the-command-line">On the command line</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>It’s best for lots of small fixes at once, for fixing things when the server won’t start, and for anyone who’d rather work in a text editor. For one or two titles, the <strong>Edit</strong> button is usually quicker: see <a href="/docs/fixing-metadata/">Fixing wrong details</a>.</p>
+<h2 id="where-it-is">Where it is<a class="h-anchor" href="#where-it-is" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>It’s the <code>metadata</code> folder inside the <a href="/docs/config/#folders-the-server-uses">data folder</a>. <strong>Settings → Repair</strong>, on the <strong>Metadata files</strong> tab, shows the exact path under <strong>Where it is on the server</strong>.</p>
+<p>It’s empty until you export it. The server doesn’t read it until you apply it. Your titles are in the server’s database, and these files are only a copy to edit.</p>
+<p>There are two other things that sound similar. Artwork the server has saved is somewhere else (the <code>metadataDir</code> setting), and files beside your media are <a href="#files-beside-your-media">different again</a>.</p>
+<h2 id="fixing-something-step-by-step">Fixing something, step by step<a class="h-anchor" href="#fixing-something-step-by-step" aria-hidden="true" tabindex="-1">#</a></h2>
+<ol><li>Open <strong>Settings → Repair</strong>, on the <strong>Metadata files</strong> tab, and press <strong>Export the files</strong>. You can leave the page while it runs. Only an administrator can do this.</li><li>Open the file for the title in Notepad, TextEdit or any text editor. Change what’s wrong, and save it.</li><li>Press <strong>Check what would change</strong>. It lists each change with what’s there now beside what’s coming, and the file and line of anything that’s wrong. Nothing has changed yet.</li><li>Press <strong>Apply to 1 title</strong>. The button says how many.</li></ol>
+<p>What you change this way is locked, so no scan or lookup changes it back. Press <strong>Undo all of it</strong> if you change your mind.</p>
+<h2 id="whats-in-the-folder">What’s in the folder<a class="h-anchor" href="#whats-in-the-folder" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="codebox"><pre id="code-1" class="code"><code>metadata/
+  README.txt
+  .exported.json
+  Movies/
+    My Film (2001) [item-123].json
+    My Film (2001) [item-123]-poster.jpg
+  Shows/
+    A Show [show-22]/
+      show.json
+      poster.jpg
+      S01E01 Pilot [item-311].json</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="table-wrap"><table><thead><tr><th>What</th><th>What it is</th></tr></thead><tbody><tr><td><code>README.txt</code></td><td>A short version of this guide. The server ignores it</td></tr><tr><td><code>.exported.json</code></td><td>A hidden record of what the server last wrote or applied. It’s how the server knows which files you’ve changed</td></tr><tr><td><code>Movies/</code>, <code>Shows/</code></td><td>One folder for each library, with the library’s name. If two names can’t be told apart, one gets <code>[library-5]</code> added</td></tr><tr><td><code>My Film (2001) [item-123].json</code></td><td>One film, disc, episode, home video, music video, book or game</td></tr><tr><td><code>A Show [show-22]/</code></td><td>One show’s folder</td></tr><tr><td><code>show.json</code></td><td>The show itself</td></tr><tr><td><code>S01E01 Pilot [item-311].json</code></td><td>One episode</td></tr><tr><td><code>...-poster.jpg</code>, <code>poster.jpg</code></td><td>Only if you put one there. See <a href="#a-wrong-poster">A wrong poster</a></td></tr></tbody></table></div>
+<p>The number in square brackets is how the server knows which title a file is for. Everything else in the name is only there to help you find it, so you can rename a file as long as the brackets stay. A file stays where it is if you rename the title, so its name may be out of date. That does no harm.</p>
+<p>Films, shows, episodes, discs, home videos, music videos, books and games get files. Music, audiobooks, podcasts, photos and radio don’t, because these fields don’t describe them.</p>
+<p>You can also put a hand-written <code>.nfo</code> here, if its name has the number in square brackets. It’s read the same way, and its pictures have to be web addresses.</p>
+<h2 id="whats-safe-to-edit-or-delete">What’s safe to edit or delete<a class="h-anchor" href="#whats-safe-to-edit-or-delete" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Anything in this folder is safe. Here’s what happens with each.</p>
+<div class="table-wrap"><table><thead><tr><th>If you</th><th>What happens</th></tr></thead><tbody><tr><td><strong>Edit a title’s file</strong></td><td>Nothing, until you check and apply. Then what you changed is locked</td></tr><tr><td><strong>Delete one line from a file</strong></td><td>That thing stays as it is. A file can be cut down to the one thing it changes</td></tr><tr><td><strong>Empty a value</strong> (<code>&quot;&quot;</code> or <code>[]</code>)</td><td>That thing is cleared when you apply, except a title, which can’t be empty</td></tr><tr><td><strong>Delete a title’s file</strong></td><td>Nothing happens to the title. <strong>Export again</strong> writes a new file</td></tr><tr><td><strong>Delete the whole folder</strong></td><td>Nothing happens to your titles, and anything you’ve applied stays. Export again to start over. This is the way out of any muddle</td></tr><tr><td><strong>Rename a file</strong></td><td>Fine, as long as the part in square brackets stays</td></tr><tr><td><strong>Delete <code>README.txt</code></strong></td><td>The next export writes it again</td></tr><tr><td><strong>Delete <code>.exported.json</code></strong></td><td>The server can’t tell which files you changed, so an old file can count as an edit, and every difference from the server is listed when you check. Read the list before you apply. Deleting the whole folder is cleaner</td></tr><tr><td><strong>Leave other files here</strong></td><td>They’re ignored, with a note. Backup files your editor leaves, such as <code>.bak</code>, <code>.tmp</code> and <code>~</code> files, get no note at all</td></tr></tbody></table></div>
+<p>Leave the first four lines of a file alone (<code>wittyMetadata</code>, <code>target</code>, <code>id</code> and <code>path</code>). They say what the file is for, and the server uses them to catch mix-ups.</p>
+<p><strong>The rest of the data folder is different.</strong> Don’t edit <code>wms.db</code>, which is the server’s database, or the folders beside this one. Use <a href="/docs/repair/">Repair</a> instead, and make a <a href="/docs/backup/">backup</a> before anything risky. A backup includes this folder too.</p>
+<h2 id="what-a-file-looks-like">What a file looks like<a class="h-anchor" href="#what-a-file-looks-like" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="codebox"><pre id="code-2" class="code" data-lang="json"><code>{
+  &quot;wittyMetadata&quot;: 1,
+  &quot;target&quot;: &quot;item&quot;,
+  &quot;id&quot;: 123,
+  &quot;path&quot;: &quot;D:\\Media\\Movies\\My Film (2001).mkv&quot;,
+  &quot;title&quot;: &quot;My Film&quot;,
+  &quot;sortTitle&quot;: &quot;My Film&quot;,
+  &quot;year&quot;: 2001,
+  &quot;director&quot;: &quot;&quot;,
+  &quot;edition&quot;: [],
+  &quot;tagline&quot;: &quot;&quot;,
+  &quot;overview&quot;: &quot;A lighthouse keeper finds a boat.&quot;,
+  &quot;genres&quot;: [&quot;Drama&quot;, &quot;Mystery&quot;],
+  &quot;tags&quot;: [],
+  &quot;contentRating&quot;: &quot;PG&quot;,
+  &quot;rating&quot;: 7.5,
+  &quot;studios&quot;: [&quot;Lantern Works&quot;],
+  &quot;poster&quot;: &quot;https://example.com/my-film.jpg&quot;,
+  &quot;locked&quot;: []
+}</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>The rules are few. Text goes in <code>&quot;quotes&quot;</code>. A number has none. A list goes in <code>[square brackets]</code>. Every line but the last has a comma at its end.</p>
+<h2 id="examples">Examples<a class="h-anchor" href="#examples" aria-hidden="true" tabindex="-1">#</a></h2>
+<h3 id="a-wrong-title-and-year">A wrong title and year<a class="h-anchor" href="#a-wrong-title-and-year" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Before:</p>
+<div class="codebox"><pre id="code-3" class="code" data-lang="json"><code>  &quot;title&quot;: &quot;Harbour Ligts&quot;,
+  &quot;sortTitle&quot;: &quot;Harbour Ligts&quot;,
+  &quot;year&quot;: 1998,</code></pre><button class="icon-btn copy" type="button" data-copy="#code-3" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>After:</p>
+<div class="codebox"><pre id="code-4" class="code" data-lang="json"><code>  &quot;title&quot;: &quot;Harbour Lights&quot;,
+  &quot;sortTitle&quot;: &quot;Harbour Lights&quot;,
+  &quot;year&quot;: 2004,</code></pre><button class="icon-btn copy" type="button" data-copy="#code-4" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h3 id="a-wrong-poster">A wrong poster<a class="h-anchor" href="#a-wrong-poster" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Either put a picture beside the file, or give a web address.</p>
+<p><strong>A picture beside the file.</strong> If the file is <code>My Film (2001) [item-123].json</code>, call the picture <code>My Film (2001) [item-123]-poster.jpg</code>. Use <code>-backdrop</code>, <code>-banner</code> or <code>-logo</code> for those. Beside a <code>show.json</code>, it’s just <code>poster.jpg</code>, <code>backdrop.jpg</code>, <code>banner.jpg</code> or <code>logo.jpg</code>. A picture there comes before a web address in the file. When you apply it, it’s copied into the server’s own artwork.</p>
+<p><strong>A web address</strong>, in the file:</p>
+<div class="codebox"><pre id="code-5" class="code" data-lang="json"><code>  &quot;poster&quot;: &quot;https://example.com/my-poster.jpg&quot;,</code></pre><button class="icon-btn copy" type="button" data-copy="#code-5" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><strong>Or the plain name of a picture</strong> in the same folder, whatever it’s called:</p>
+<div class="codebox"><pre id="code-6" class="code" data-lang="json"><code>  &quot;poster&quot;: &quot;cover.png&quot;,</code></pre><button class="icon-btn copy" type="button" data-copy="#code-6" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>Pictures have to be JPEG, PNG, WebP or GIF, up to 20 MB. If a title has a picture only the server can find, such as a frame from the video, the file has no <code>poster</code> line, and you can add one.</p>
+<h3 id="wrong-genres">Wrong genres<a class="h-anchor" href="#wrong-genres" aria-hidden="true" tabindex="-1">#</a></h3>
+<div class="codebox"><pre id="code-7" class="code" data-lang="json"><code>  &quot;genres&quot;: [&quot;Drama&quot;, &quot;Mystery&quot;],</code></pre><button class="icon-btn copy" type="button" data-copy="#code-7" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h3 id="a-summary-with-several-lines">A summary with several lines<a class="h-anchor" href="#a-summary-with-several-lines" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>A line break in text is written <code>\n</code>, and a quote inside text is written <code>\&quot;</code>:</p>
+<div class="codebox"><pre id="code-8" class="code" data-lang="json"><code>  &quot;overview&quot;: &quot;First paragraph.\n\nThe \&quot;second\&quot; paragraph.&quot;,</code></pre><button class="icon-btn copy" type="button" data-copy="#code-8" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h3 id="the-wrong-match">The wrong match<a class="h-anchor" href="#the-wrong-match" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>To say which entry on a service a title is, give both lines. The services are <code>tmdb</code>, <code>tvdb</code>, <code>tvmaze</code>, <code>anilist</code>, <code>wikidata</code> and <code>imdb</code>:</p>
+<div class="codebox"><pre id="code-9" class="code" data-lang="json"><code>  &quot;provider&quot;: &quot;tmdb&quot;,
+  &quot;providerId&quot;: &quot;12345&quot;,</code></pre><button class="icon-btn copy" type="button" data-copy="#code-9" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>Nothing is looked up when you apply this. To choose from a list of results with a preview, use <a href="/docs/fixing-metadata/#the-fix-matches-page">Fix matches</a>. Empty both lines to remove a match.</p>
+<h3 id="letting-a-field-follow-its-source-again">Letting a field follow its source again<a class="h-anchor" href="#letting-a-field-follow-its-source-again" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><code>&quot;locked&quot;</code> lists the fields no scan or lookup may change. Anything you change in a file locks itself. To unlock something, take it out of the list.</p>
+<div class="codebox"><pre id="code-10" class="code" data-lang="json"><code>  &quot;locked&quot;: [&quot;title&quot;, &quot;year&quot;]</code></pre><button class="icon-btn copy" type="button" data-copy="#code-10" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h2 id="when-it-says-something-is-wrong">When it says something is wrong<a class="h-anchor" href="#when-it-says-something-is-wrong" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Every message names the file and the line, like this:</p>
+<div class="codebox"><pre id="code-11" class="code"><code>Movies/Quiet Pier (2011) [item-2].json:9: A comma is missing at the end of the line before this one</code></pre><button class="icon-btn copy" type="button" data-copy="#code-11" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>That means line 9 of that file. Look at that line and the one before it. A file with a problem is left out, and the others still apply.</p>
+<div class="table-wrap"><table><thead><tr><th>What it says</th><th>What to do</th></tr></thead><tbody><tr><td><strong>A comma is missing at the end of the line before this one</strong></td><td>Add a comma at the end of the line above</td></tr><tr><td><strong>Something is wrong just before here. Often it’s a comma after the last line</strong></td><td>Take the comma off the last line before the closing <code>}</code></td></tr><tr><td><strong>This line has something that isn’t a value</strong></td><td>Text needs <code>&quot;quotes&quot;</code>. A number doesn’t</td></tr><tr><td><strong>There’s something a text can’t hold as it is</strong></td><td>Write a quote as <code>\&quot;</code>, a backslash as <code>\\</code>, and a new line as <code>\n</code></td></tr><tr><td><strong>The file ends too soon</strong></td><td>The closing <code>}</code> or a <code>&quot;</code> has gone missing from the end</td></tr><tr><td><strong>”year” has to be a year such as 2001</strong></td><td>A number with no quotes, between 1800 and 3000</td></tr><tr><td><strong>”rating” has to be a number from 0 to 10</strong></td><td>The same, from 0 to 10</td></tr><tr><td><strong>”genres” has to be a list in [square brackets]</strong></td><td><code>[&quot;Drama&quot;]</code>, even for only one</td></tr><tr><td><strong>”x” isn’t something this file can set. Did you mean “y”?</strong></td><td>A spelling slip. It’s left out, and the rest of the file is used. Names are case sensitive</td></tr><tr><td><strong>”poster”: only http and https addresses are accepted</strong></td><td>Pictures are only web addresses or file names, and an address can’t have a login in it</td></tr><tr><td><strong>This picture can’t be used</strong></td><td>The file isn’t really a JPEG, PNG, WebP or GIF. Convert it, or use another</td></tr><tr><td><strong>This file was written for one thing, but this number is now another</strong></td><td>The number means another title now, perhaps after a restore. Delete the file and export again</td></tr><tr><td><strong>There’s no title with the number…</strong></td><td>That title has gone from the server. Delete the file</td></tr><tr><td><strong>This file and another describe the same title</strong></td><td>Delete one of them</td></tr><tr><td><strong>This file is saved as UTF-16</strong></td><td>Save it again as UTF-8. In Notepad it’s in the <strong>Save As</strong> window, beside <strong>Encoding</strong></td></tr><tr><td><strong>HTML or hidden characters were taken out</strong></td><td>Only a note. They were removed, and the rest was used</td></tr></tbody></table></div>
+<p><strong>Starting a file over:</strong> delete it, and press <strong>Export again</strong>.</p>
+<p><strong>Starting the whole folder over:</strong> delete it and export again. Anything you’ve applied stays.</p>
+<h2 id="taking-it-back">Taking it back<a class="h-anchor" href="#taking-it-back" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Right after applying, press <strong>Undo all of it</strong>. Later, open <strong>Fix matches</strong>, choose <strong>History</strong>, and undo it there. Everything from one apply is one entry, and it goes back as one. The last 5,000 changes are kept.</p>
+<p>After undoing, press <strong>Export again</strong> to bring the files back into line.</p>
+<p>Some things worth knowing:</p>
+<ul><li><strong>A file you haven’t touched changes nothing.</strong> So if you change a title in the app after exporting, its old file can’t change it back.</li><li><strong>An export never writes over your work.</strong> A file you’ve edited and not applied stays as it is, and the export says how many it kept. It also never deletes anything.</li><li><strong>A file you’ve changed says everything in it.</strong> If you edit a file exported a while ago, everything in it that differs from the server is listed as a change. Read the list: it’s why it’s there. Or delete the file and export again before you edit.</li></ul>
+<h2 id="what-can-go-in-a-file">What can go in a file<a class="h-anchor" href="#what-can-go-in-a-file" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Name</th><th>What it is</th><th>Limit</th></tr></thead><tbody><tr><td><code>title</code></td><td>The name. Can’t be empty</td><td>300 characters</td></tr><tr><td><code>sortTitle</code></td><td>How it sorts. If you change the title and leave this out, it’s worked out for you</td><td>300</td></tr><tr><td><code>year</code></td><td>A number</td><td>1800 to 3000</td></tr><tr><td><code>overview</code></td><td>The summary</td><td>20,000</td></tr><tr><td><code>tagline</code></td><td>One line</td><td>500</td></tr><tr><td><code>genres</code>, <code>tags</code></td><td>Lists</td><td>30 of 60 characters; 50 of 60</td></tr><tr><td><code>contentRating</code></td><td><code>PG</code>, <code>TV-14</code> and so on. Kids and Guest profiles go by this</td><td>20</td></tr><tr><td><code>rating</code></td><td>A score</td><td>0 to 10</td></tr><tr><td><code>studios</code></td><td>A list</td><td>12 of 120</td></tr><tr><td><code>network</code>, <code>status</code></td><td>Shows only</td><td>120; 40</td></tr><tr><td><code>director</code>, <code>edition</code></td><td>Films</td><td>300; a list of 8 of 60</td></tr><tr><td><code>aired</code>, <code>season</code>, <code>episode</code>, <code>episodeEnd</code></td><td>Episodes only</td><td></td></tr><tr><td><code>introStart</code>, <code>introEnd</code></td><td>Where the intro is, in seconds</td><td>Up to 86,400</td></tr><tr><td><code>poster</code>, <code>backdrop</code>, <code>banner</code>, <code>logo</code></td><td>A web address, or the name of a picture beside the file</td><td>20 MB a picture</td></tr><tr><td><code>locked</code></td><td>A list of the names above</td><td></td></tr><tr><td><code>provider</code>, <code>providerId</code></td><td>Which entry on which service</td><td></td></tr></tbody></table></div>
+<p>A field that kind of title doesn’t have, such as <code>network</code> on a film, gets a note and is left out.</p>
+<h2 id="files-beside-your-media">Files beside your media<a class="h-anchor" href="#files-beside-your-media" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>These are separate from the metadata folder. They live next to your films and shows, and other media software can read them too.</p>
+<h3 id="what-the-server-writes-savemetadata">What the server writes: saveMetadata<a class="h-anchor" href="#what-the-server-writes-savemetadata" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The setting is <strong>Save information and artwork next to your media</strong>, under <strong>Settings → Metadata agents</strong>. Its name on the command line and in the API is <code>saveMetadata</code>. It’s on by default.</p>
+<p>With it on, the server writes the files listed in <a href="/docs/metadata/#what-is-saved-next-to-your-media">What is saved next to your media</a>: NFO files, <code>poster.jpg</code>, <code>fanart.jpg</code> and so on. With it off, nothing is written next to your media, your details stay in the server’s database, and the metadata folder still works as usual. Turn it off if your media is read-only or you’d rather the server stayed out of those folders.</p>
+<h3 id="whats-safe-to-do-with-them">What’s safe to do with them<a class="h-anchor" href="#whats-safe-to-do-with-them" aria-hidden="true" tabindex="-1">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>If you</th><th>What happens</th></tr></thead><tbody><tr><td><strong>Edit an NFO the server wrote</strong></td><td>A scan reads your edit. But the file still has the line ``, so the server treats it as its own, and may write over it. Delete that line to make it yours</td></tr><tr><td><strong>Write your own NFO</strong></td><td>A scan reads it, and never writes over it. If you edit that title in the app with saving on, your original is kept as <code>&lt;name&gt;.nfo.bak</code></td></tr><tr><td><strong>Delete an NFO or picture</strong></td><td>With saving on, the server writes a new one at the next scan. With it off, it stays gone. What the server knows stays in its database</td></tr><tr><td><strong>Delete a <code>.nfo.bak</code></strong></td><td>Nothing. It’s only a copy of your old file</td></tr></tbody></table></div>
+<p>Your media files are never changed by any of this.</p>
+<h3 id="what-the-server-reads">What the server reads<a class="h-anchor" href="#what-the-server-reads" aria-hidden="true" tabindex="-1">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>File</th><th>What it is</th><th>Largest it reads</th></tr></thead><tbody><tr><td><code>&lt;name&gt;.nfo</code>, <code>movie.nfo</code>, <code>tvshow.nfo</code></td><td>Standard details, from this server or other software</td><td>1 MB</td></tr><tr><td><code>&lt;file&gt;.metadata.json</code>, <code>&lt;name&gt;.metadata.json</code>, <code>metadata.json</code></td><td>Details in this project’s own simple form</td><td>256 KB</td></tr><tr><td><code>.info.json</code>, <code>&lt;name&gt;.json</code></td><td>What video archivers leave beside a video, in creator libraries</td><td>48 MB</td></tr><tr><td><code>&lt;name&gt;.wittycd.json</code></td><td>Names and release saved for a CD image</td><td>1 MB</td></tr></tbody></table></div>
+<p>A <code>.metadata.json</code> looks like this, and every line is optional:</p>
+<div class="codebox"><pre id="code-12" class="code" data-lang="json"><code>{ &quot;title&quot;: &quot;My Film&quot;, &quot;year&quot;: 2001, &quot;overview&quot;: &quot;A lighthouse keeper finds a boat.&quot;, &quot;genres&quot;: [&quot;Drama&quot;], &quot;poster&quot;: &quot;https://example.com/my-film.jpg&quot; }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-12" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>A file that can’t be read is left out, and the rest of the title still works. To see which:</p>
+<ul><li><strong>Settings → Repair</strong> lists them under <code>nfo-files</code>, with the file and the line.</li><li><strong>Settings → WittyLog</strong>, in the <strong>Library scans</strong> area, names them too.</li></ul>
+<p>Most often it’s a stray <code>&amp;</code>, which has to be written <code>&amp;amp;</code>, or a tag that was never closed.</p>
+<h2 id="how-its-kept-safe">How it’s kept safe<a class="h-anchor" href="#how-its-kept-safe" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>This folder can hold anything, including something you were sent or downloaded. So nothing in it is believed:</p>
+<ul><li><strong>Text is only text.</strong> HTML, scripts, comments, control characters and tricks that reverse how text reads are taken out, and you’re told. The app also shows these fields as text, never as markup.</li><li><strong>A web address has to be one.</strong> Only <code>http</code> and <code>https</code>, with no login in it. Not <code>javascript:</code>, <code>data:</code> or <code>file:</code>.</li><li><strong>A picture has to be one.</strong> It’s judged by what’s in the file and not its name. SVG isn’t accepted, because it can hold scripts.</li><li><strong>Nothing leads out of the folder.</strong> A file name can’t hold a folder or <code>..</code>. Links, shortcuts and junctions in the folder aren’t followed, and nothing is written through them.</li><li><strong>Sizes are limited.</strong> 256 KB for a file, 1 MB for an NFO, 20 MB for a picture, 500,000 files in all, and six folders deep.</li><li><strong>NFOs can’t declare anything.</strong> A <code>DOCTYPE</code> or <code>ENTITY</code> is refused, because that’s how an XML file can be made to read others.</li><li><strong>Only an administrator can apply.</strong> It goes through the same checks as the edit dialog, and every change is recorded in <strong>History</strong>.</li></ul>
+<p>The same cleaning is done to anything read from beside your media: <code>.nfo</code>, <code>.metadata.json</code>, <code>.info.json</code>, <code>.wittycd.json</code>, and the details inside a book or comic. A link beside your media may be an ordinary part of your folders, so it can be followed there, but it must end at an ordinary file within the size limit.</p>
+<h2 id="on-the-command-line">On the command line<a class="h-anchor" href="#on-the-command-line" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>These work on any system, with the server stopped, for instance if it won’t start. Add <code>-data &lt;folder&gt;</code> if yours isn’t the default.</p>
+<div class="codebox"><pre id="code-13" class="code"><code>wittymediaserver metadata export
+wittymediaserver metadata export -library 3
+wittymediaserver metadata check
+wittymediaserver metadata apply
+wittymediaserver metadata apply --apply
+wittymediaserver metadata undo &lt;batch&gt;</code></pre><button class="icon-btn copy" type="button" data-copy="#code-13" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>metadata export</code></td><td>Writes the files. <code>-library</code> takes a library’s number, for only that one</td></tr><tr><td><code>metadata check</code></td><td>Says what’s wrong with them, by file and line. It needs no database</td></tr><tr><td><code>metadata apply</code></td><td>Says what they would change. Nothing changes</td></tr><tr><td><code>metadata apply --apply</code></td><td>Changes it, and tells you the batch</td></tr><tr><td><code>metadata undo &lt;batch&gt;</code></td><td>Takes back everything that apply changed</td></tr></tbody></table></div>
+<p><code>check</code> and <code>apply</code> end with a non-zero exit code if a file has a problem, so they can be used in a script. If a server is running on the same folder, <code>apply --apply</code> and <code>undo</code> refuse and point you to Settings, because the server is the one holding those files.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/fixing-metadata/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Fixing wrong details</strong></a>
+      <a class="card next" href="/docs/dvd/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>DVDs</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/METADATA-FOLDER.md" rel="noopener">docs/METADATA-FOLDER.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/METADATA-FOLDER.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#where-it-is">Where it is</a></li><li><a href="#fixing-something-step-by-step">Fixing something, step by step</a></li><li><a href="#whats-in-the-folder">What’s in the folder</a></li><li><a href="#whats-safe-to-edit-or-delete">What’s safe to edit or delete</a></li><li><a href="#what-a-file-looks-like">What a file looks like</a></li><li><a href="#examples">Examples</a></li><li><a href="#when-it-says-something-is-wrong">When it says something is wrong</a></li><li><a href="#taking-it-back">Taking it back</a></li><li><a href="#what-can-go-in-a-file">What can go in a file</a></li><li><a href="#files-beside-your-media">Files beside your media</a></li><li><a href="#how-its-kept-safe">How it’s kept safe</a></li><li><a href="#on-the-command-line">On the command line</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

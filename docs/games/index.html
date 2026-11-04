@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Games · WittyMediaServer</title>
+<meta name="description" content="Play your own console games in a browser or the app, with whatever controller you have. This guide takes you from a folder of games to playing, and covers…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/games/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Games">
+<meta property="og:description" content="Play your own console games in a browser or the app, with whatever controller you have. This guide takes you from a folder of games to playing, and covers…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/games/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/" aria-current="page">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Games</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/" aria-current="page">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#games">Games</a></p>
+      <h1>Games</h1>
+      <p class="lead">Play your own console games in a browser or the app, with whatever controller you have. This guide takes you from a folder of games to playing, and covers saves, controllers, streaming and what to do when a game won’t start.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/GAMES.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#add-your-games">Add your games</a></li><li><a href="#needs-a-look">Needs a look</a></li><li><a href="#how-titles-and-consoles-are-worked-out">How titles and consoles are worked out</a></li><li><a href="#cores">Cores</a></li><li><a href="#bios-files">BIOS files</a></li><li><a href="#saves-memory-cards-and-save-states">Saves, memory cards and save states</a></li><li><a href="#controllers-touch-and-keyboard">Controllers, touch and keyboard</a></li><li><a href="#the-game-menu-and-game-settings">The game menu and game settings</a></li><li><a href="#couch-mode">Couch mode</a></li><li><a href="#streaming-and-delay">Streaming and delay</a></li><li><a href="#patches-and-uploads">Patches and uploads</a></li><li><a href="#encrypted-games">Encrypted games</a></li><li><a href="#your-own-core">Your own core</a></li><li><a href="#console-icons">Console icons</a></li><li><a href="#if-a-game-wont-start">If a game won’t start</a></li><li><a href="#what-hasnt-been-tried">What hasn’t been tried</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>Games run on your server and stream to the device you’re holding, so that device needs no emulator and no copy of the game. Saves stay on the server and follow your account. Playing on the device itself, with no server, isn’t built.</p>
+<p>No games, BIOS files or cores come with WittyMediaServer. Games are yours to bring. This part of the app is the <strong>WittyPlay</strong> module. If it isn’t on your server, the add-library screen offers to add it: see <a href="/docs/module-store/">Modules</a>.</p>
+<p>To play games installed on a PC rather than on this server, see <a href="/docs/game-rigs/">Game PCs</a>.</p>
+<h2 id="add-your-games">Add your games<a class="h-anchor" href="#add-your-games" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>You need an administrator account for this.</p>
+<figure class="doc-fig"><img src="/docs/images/games.webp" alt="A library of games, by console" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>WittyPlay, with open-licence homebrew. Each is credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<ol><li>Open <strong>Settings → Libraries</strong> and press <strong>Add library</strong>.</li><li>Choose <strong>Games</strong>.</li><li>Under <strong>Console</strong>, pick one console, or leave it on <strong>Many consoles in one folder (sorted by folder and file type)</strong>.</li><li>Press <strong>Choose folder…</strong> and pick your games folder, or type its path.</li><li>Check the <strong>Library name</strong>, then add it.</li></ol>
+<p>Point it at your games folder and leave it. It works in the background and carries on after a restart. A line at the top of the library says how far it has got: checking files, adding games, then finding details and pictures.</p>
+<p>A folder can be laid out however you like. A folder per console helps, but it isn’t needed, as the file itself usually says:</p>
+<div class="codebox"><pre id="code-1" class="code"><code>Games/
+  SNES/
+    A Made-Up Quest (USA).sfc
+    Another Game.zip
+  PS2/
+    Some Game.iso
+    BIOS/
+      scph39001.bin</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>You can have several libraries for one console, or one library for everything.</p>
+<p><strong>Archives work.</strong> <code>.zip</code>, <code>.7z</code>, <code>.rar</code> and <code>.tar</code> count as the game inside them, and so do files compressed with gzip, bzip2, xz or Zstandard, and split sets such as <code>.part1.rar</code> or <code>.7z.001</code>. A game in an archive is unpacked the first time it’s played, into a cache you can size with <strong>Space for unpacked games</strong> under <strong>Settings → Consoles &amp; cores → How games play → Advanced</strong>. The original is left alone.</p>
+<p><strong>Discs work.</strong> A <code>.cue</code>, <code>.gdi</code>, <code>.ccd</code> or <code>.m3u</code> keeps its files together. Discs of one game named <code>Disc 2</code>, <code>(CD2)</code> or <code>disc2of3</code>, or kept in a folder called <code>Disc 2</code>, come together as one game. Change disc from the game menu: <strong>More → Change disc</strong>.</p>
+<p><strong>Your own pictures and details come first.</strong> Put <code>Some Game.png</code>, <code>Some Game-cover.jpg</code>, <code>Some Game-fanart.jpg</code> or <code>Some Game.nfo</code> beside a game. Everything else comes from the sources in <a href="/docs/metadata/#video-games">Metadata</a>.</p>
+<h2 id="needs-a-look">Needs a look<a class="h-anchor" href="#needs-a-look" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A scan only lists what it can prove is a game. Anything else is set aside for you, with the reason, rather than guessed at.</p>
+<figure class="doc-fig"><img src="/docs/images/gameplay-super-tilt-bro.webp" alt="A fighting game running in a browser" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em><a href="https://github.com/sgadrat/super-tilt-bro" rel="noopener">Super Tilt Bro</a>, Sylvain Gadrat, WTFPL.</em></span></figcaption></figure>
+<p>When there’s something to see, a banner appears at the top of the library page, for administrators. Press <strong>Take a look</strong>. The window has four tabs:</p>
+<div class="table-wrap"><table><thead><tr><th>Tab</th><th>What’s in it</th></tr></thead><tbody><tr><td><strong>Needs a look</strong></td><td>Files that might be games: no header where every game has one, a disc with nothing to say which console, or a game for another console in a library set to one</td></tr><tr><td><strong>Can’t play</strong></td><td>Games that are listed but can’t play as they are, such as encrypted files. <strong>Open the game</strong> shows why</td></tr><tr><td><strong>Left out</strong></td><td>What’s been shown not to be a game: BIOS files, updates, extra content, utilities, music, and second copies. You can overrule these</td></tr><tr><td><strong>You said no</strong></td><td>Files you marked as not games. <strong>Take it back</strong> undoes that</td></tr></tbody></table></div>
+<p>On each file you can press:</p>
+<ul><li><strong>It’s a SNES game</strong>, or whichever console it suggests.</li><li><strong>Another console</strong>, to choose from the list.</li><li><strong>Not a game</strong>, so it isn’t asked about again.</li><li><strong>Add all 12 as SNES</strong>, when several files in the list point to one console. This appears above the list.</li></ul>
+<p>Files are never moved or changed. Your answers are kept beside the library, and later scans go by them.</p>
+<h2 id="how-titles-and-consoles-are-worked-out">How titles and consoles are worked out<a class="h-anchor" href="#how-titles-and-consoles-are-worked-out" aria-hidden="true" tabindex="-1">#</a></h2>
+<h3 id="which-console">Which console<a class="h-anchor" href="#which-console" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>A file’s name is only where the question starts. <code>.bin</code> and <code>.iso</code> mean many consoles, and <code>.md</code> is usually a readme. So the scan looks at each file and goes by the strongest evidence it has:</p>
+<ol><li><strong>The file’s own bytes.</strong> Most cartridges and discs have a header that says what they are. This wins over everything else, so a PS2 game in a folder named for the PlayStation is a PS2 game.</li><li><strong>An extension only one console uses</strong>, such as <code>.sfc</code>.</li><li><strong>The folder or the library</strong>, when the file can’t say. A folder named <code>SNES</code>, <code>Super Nintendo</code> or <code>Mega Drive</code> counts.</li><li><strong>You.</strong> Whatever you choose stays.</li></ol>
+<p>To see why a game was sorted the way it was, open it and expand <strong>Fix this game, files and advanced</strong>. <strong>Wrong console</strong> moves it, and <strong>It isn’t a game</strong> takes it off the list.</p>
+<h3 id="files-with-no-header">Files with no header<a class="h-anchor" href="#files-with-no-header" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Some consoles’ cartridges have no header at all: Atari 2600 and 7800, PC Engine, Virtual Boy and WonderSwan. These go by their folder or library, and by whether the file is a size a cartridge could be.</p>
+<p>A NES dump with no header is listed if its size fits a cartridge, and its page says so. Most NES cores can’t play one. Mesen can, by working out the game from its checksum, but Mesen is an optional install. Install it under <strong>Settings → Consoles &amp; cores</strong>, on the NES card, under <strong>Cores and BIOS files</strong>.</p>
+<p>Other consoles rely on their header: Game Boy, Game Boy Advance, Nintendo 64, DS, 3DS, PlayStation, PS2 and PSP. A file for one of them with no header goes on <strong>Needs a look</strong>, because a core wouldn’t be able to start it.</p>
+<h3 id="which-title">Which title<a class="h-anchor" href="#which-title" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>A game takes its name from its file, with tags such as <code>(USA)</code> and <code>[!]</code> set aside. Then, in the background:</p>
+<ul><li>A file whose checksum matches a known game gets that game’s exact name.</li><li>A close match by name brings details, but the file keeps its own name, as it may be a variant.</li><li>A hack that keeps the original game’s header isn’t named after that game.</li></ul>
+<p>A title you type stays, whatever a later scan or source says. <strong>Fix match</strong> and <strong>Lock</strong> are on the game’s page, and <a href="/docs/fixing-metadata/">Fixing metadata</a> explains them.</p>
+<h3 id="versions-of-one-game">Versions of one game<a class="h-anchor" href="#versions-of-one-game" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Regions and revisions of one name on one console share a tile, led by a released version in your preferred region. Each version is still its own game, with its own saves. To play another, open the game and pick it under <strong>Other versions of this game</strong>. An administrator can press <strong>Make it a game of its own</strong> to split one out.</p>
+<p>An archive holding many versions plays the verified one in your first region. Administrators can pick another under <strong>Which version in this archive to play</strong>.</p>
+<p>Set your regions in <strong>Settings → Consoles &amp; cores → Which version comes first</strong>. A game someone has played, or given a title, keeps the version it has, as their saves belong to it.</p>
+<h2 id="cores">Cores<a class="h-anchor" href="#cores" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A core is the free program that plays one console’s games. Each one is someone else’s work, and stays a separate program. It only runs when you play, boxed in by a sandbox.</p>
+<figure class="doc-fig"><img src="/docs/images/gameplay-thwaite.webp" alt="An arcade game running in a browser" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em><a href="https://github.com/pinobatch/thwaite-nes" rel="noopener">Thwaite</a>, Damian Yerrick, GPL-3.0-or-later.</em></span></figcaption></figure>
+<figure class="doc-fig"><img src="/docs/images/settings-consoles.webp" alt="The Consoles and cores page in Settings" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Settings, Consoles &amp; cores.</em></span></figcaption></figure>
+<ol><li>Open <strong>Settings → Consoles &amp; cores</strong>. The consoles you have games for are at the top, each saying whether it’s ready.</li><li>Press the button on a card, such as <strong>Install FCEUmm</strong>. When several consoles need one, <strong>Install all 3 recommended cores</strong> at the top does them together.</li><li>Read the license and press <strong>Install</strong>.</li></ol>
+<p>The core downloads from buildbot.libretro.com, the libretro project’s build server. Downloads are there for Windows and Linux on 64-bit Intel or AMD, Linux on ARM, and macOS. Other systems, such as FreeBSD, have no prebuilt cores: install them with your system’s packages, or put them in the cores folder, which the page names.</p>
+<p>Cores on this list that are already in a RetroArch folder on the same machine are found and used.</p>
+<p>If a game won’t load on the chosen core, the other installed cores for that console are tried. To change a console’s core, use the choice on its card. Administrators can pick a core for one game on that game’s page, which also shows how each core has gone on it.</p>
+<div class="table-wrap"><table><thead><tr><th>Console</th><th>First choice</th><th>Needs a graphics card</th><th>BIOS file</th></tr></thead><tbody><tr><td>NES, Famicom</td><td>FCEUmm</td><td>No</td><td>Only for disk games</td></tr><tr><td>Super Nintendo</td><td>Beetle Supafaust</td><td>No</td><td>Only for <code>.bs</code> files</td></tr><tr><td>Game Boy, Color</td><td>Gambatte</td><td>No</td><td>No</td></tr><tr><td>Game Boy Advance</td><td>mGBA</td><td>No</td><td>Optional</td></tr><tr><td>Mega Drive, Genesis</td><td>BlastEm</td><td>No</td><td>No</td></tr><tr><td>Master System, Game Gear</td><td>Gearsystem</td><td>No</td><td>No</td></tr><tr><td>PlayStation</td><td>PCSX ReARMed</td><td>No</td><td>Optional for most games</td></tr><tr><td>PC Engine</td><td>Beetle PCE Fast</td><td>No</td><td>For CD games</td></tr><tr><td>Atari 2600</td><td>Stella 2014</td><td>No</td><td>No</td></tr><tr><td>Atari 7800</td><td>ProSystem</td><td>No</td><td>Optional</td></tr><tr><td>Lynx</td><td>Handy</td><td>No</td><td>Most games want one</td></tr><tr><td>WonderSwan</td><td>Beetle WonderSwan</td><td>No</td><td>No</td></tr><tr><td>Neo Geo Pocket</td><td>Beetle NeoPop</td><td>No</td><td>No</td></tr><tr><td>Virtual Boy</td><td>Beetle VB</td><td>No</td><td>No</td></tr><tr><td>Nintendo DS</td><td>melonDS</td><td>No</td><td>Optional</td></tr><tr><td>Nintendo 64</td><td>Mupen64Plus-Next</td><td>Yes</td><td>No</td></tr><tr><td>PlayStation 2</td><td>LRPS2</td><td>Yes</td><td>Required</td></tr><tr><td>PSP</td><td>PPSSPP</td><td>Yes</td><td>No</td></tr><tr><td>Dreamcast</td><td>Flycast</td><td>Yes</td><td>Optional</td></tr><tr><td>Nintendo 3DS</td><td>Azahar</td><td>Yes</td><td>No</td></tr></tbody></table></div>
+<p>Each card lists the other cores offered, with their licenses. Non-commercial cores are never offered.</p>
+<h3 id="consoles-that-need-a-graphics-card">Consoles that need a graphics card<a class="h-anchor" href="#consoles-that-need-a-graphics-card" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Those consoles are drawn on the server’s graphics card, and they run on Windows and Linux servers. On macOS and FreeBSD, only the consoles marked “No” above can play. Older consoles need no graphics card anywhere.</p>
+<ul><li><strong>Settings → Consoles &amp; cores → How games play → Advanced</strong> names the card in use, or says why there isn’t one. A card simulated on the CPU doesn’t count, as it’s far too slow.</li><li><strong>Running as a Windows service:</strong> a service has no desktop, and consumer graphics drivers often refuse to draw there. Run the server in a signed-in session to play these consoles.</li><li><strong>In a container:</strong> pass the card in, with <code>--device /dev/dri</code> for Intel and AMD, or <code>--gpus all</code> for NVIDIA.</li><li><strong>Laptops with two cards:</strong> the fast NVIDIA card is chosen by itself. With an AMD card and integrated graphics, Windows may pick the slow one. To fix that, open Windows Settings, System, Display, Graphics, add <code>wittyplay-game-runner.exe</code>, choose Options, then High performance.</li></ul>
+<h2 id="bios-files">BIOS files<a class="h-anchor" href="#bios-files" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A BIOS is firmware copied from a console. Some consoles need one, and some games play better with one. The app never downloads one or says where to find one: it has to be your own, from a console you own.</p>
+<ol><li>Make a folder named <code>BIOS</code> inside a console’s games folder, such as <code>PS2/BIOS</code>. Any capitalisation works, and folders inside it are fine. It’s never listed as games.</li><li>Put your files in it. <strong>Settings → Consoles &amp; cores</strong>, under <strong>Cores and BIOS files</strong> on each card, lists the names it looks for and says which have been found.</li><li>Press Play. The server copies what it needs to its own BIOS folder and leaves yours alone.</li></ol>
+<p>You can also put files straight in the BIOS folder named on that page. A PlayStation 2 BIOS goes in <code>pcsx2/bios</code> inside it.</p>
+<div class="table-wrap"><table><thead><tr><th>Console</th><th>File names</th><th>Used for</th></tr></thead><tbody><tr><td>PlayStation 2</td><td><code>scph39001.bin</code>, or another BIOS image</td><td>LRPS2 needs one, and any region will do. With a whole set, a late first-generation US model is picked</td></tr><tr><td>PlayStation</td><td><code>scph5501.bin</code>, <code>scph5500.bin</code>, <code>scph5502.bin</code></td><td>US, Japanese and European consoles. PCSX ReARMed runs most games without one</td></tr><tr><td>NES</td><td><code>disksys.rom</code></td><td>Famicom Disk System games</td></tr><tr><td>Super Nintendo</td><td><code>BS-X.bin</code></td><td>Satellaview games in <code>.bs</code> files, on Mesen-S</td></tr><tr><td>Game Boy Advance</td><td><code>gba_bios.bin</code></td><td>Better accuracy</td></tr><tr><td>PC Engine</td><td><code>syscard3.pce</code></td><td>CD games</td></tr><tr><td>Atari 7800</td><td><code>7800 BIOS (U).rom</code></td><td>The start-up screen</td></tr><tr><td>Lynx</td><td><code>lynxboot.img</code></td><td>Most games</td></tr><tr><td>Nintendo DS</td><td><code>bios7.bin</code>, <code>bios9.bin</code>, <code>firmware.bin</code></td><td>Accuracy, and the start-up menu, on melonDS</td></tr><tr><td>Dreamcast</td><td><code>dc/dc_boot.bin</code>, <code>dc/dc_flash.bin</code></td><td>Better compatibility, and the console’s settings</td></tr></tbody></table></div>
+<p>PlayStation 2 games fall back to the Play! core when LRPS2 has no BIOS, if Play! is installed. It needs none, and runs fewer games.</p>
+<h2 id="saves-memory-cards-and-save-states">Saves, memory cards and save states<a class="h-anchor" href="#saves-memory-cards-and-save-states" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>All of these belong to your account, so everyone on the server has their own. They follow you to every device.</p>
+<figure class="doc-fig"><img src="/docs/images/gameplay-ucity.webp" alt="A city-building game running in a browser" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em><a href="https://github.com/AntonioND/ucity" rel="noopener">µCity</a>, Antonio Niño Díaz, GPL-3.0 and CC BY-SA 4.0, running on the server and streamed to a browser.</em></span></figcaption></figure>
+<ul><li><strong>Battery saves</strong> are what a game saves by itself, written within 5 seconds of changing.</li><li><strong>Memory cards:</strong> the PlayStation 2 has its own cards for each game and each account. A new card is unformatted, as a new card was on a real console, and the game offers to format it the first time it saves. These have been seen working on Windows. A real PS2 save hasn’t been tried under the Linux sandbox yet.</li><li><strong>Save states</strong> are a snapshot of the whole game, in slots 1 to 99, each with a picture. Open the game menu and press <strong>Save</strong> or <strong>Load</strong>, or use <strong>Quick save</strong> and <strong>Quick load</strong>.</li><li><strong>The automatic save</strong> is written when you leave. <strong>Resume</strong> and <strong>Pick up where you left off</strong> go back to it. <strong>Start over</strong> begins again and keeps the old automatic save, listed as <strong>Before starting over</strong>.</li></ul>
+<p>A state that won’t load leaves the game as it was and says so. <strong>More → Undo load</strong> puts back what you were playing before the last load.</p>
+<p>Under <strong>Settings</strong> in the game menu, <strong>Saves</strong> sets what happens when a game opens: <strong>Offer to resume</strong>, <strong>Always resume</strong> or <strong>Start from the beginning</strong>.</p>
+<p><strong>Moving saves.</strong> On a game’s page, each state has a download button, and <strong>Fix this game, files and advanced</strong> (or <strong>Files and advanced</strong>) has <strong>Download battery save</strong> and <strong>Import a battery save…</strong>. The old battery save is kept beside the new one. A battery save usually works in any version of a core. A save state is only sure to work in the core and version that made it.</p>
+<p>One account can keep 4 GB for one game, and imports and patches can bring an account’s total up to 10 GB. <a href="/docs/backup/">Backups</a> include saves.</p>
+<h2 id="controllers-touch-and-keyboard">Controllers, touch and keyboard<a class="h-anchor" href="#controllers-touch-and-keyboard" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Plug in a controller and press any button on it: browsers only show a controller once it has been pressed. Connecting one gives it the player it had last time on this device, or the next free one. Up to four players can share one device.</p>
+<figure class="doc-fig"><img src="/docs/images/controllers.webp" alt="The controllers page" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Setting up controllers.</em></span></figcaption></figure>
+<p><strong>On plain <code>http://</code>, most browsers hide controllers.</strong> Open the server over https, or at <code>localhost</code> on the same computer. See <a href="/docs/remote/">Remote access</a>. Until then, the keyboard and touch controls work.</p>
+<h3 id="changing-the-buttons">Changing the buttons<a class="h-anchor" href="#changing-the-buttons" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Open <strong>Set up controllers</strong> on a game’s page, or <strong>Controllers</strong> in the game menu. The address <code>/controllers</code> opens the same screen.</p>
+<ul><li><strong>Buttons:</strong> choose a button, then press what you want for it. Each change makes a profile named for the controller. A profile can be limited to one console or one game, and the most exact one wins. <strong>Copy</strong>, <strong>Reset</strong>, <strong>Export</strong> and <strong>Import</strong> are there.</li><li><strong>Players:</strong> which controller, keyboard or touch screen is which player, and what’s plugged into each port, such as a DualShock on PlayStation.</li><li><strong>Background:</strong> a picture of your own behind this screen.</li></ul>
+<p>The same screen has the stick dead zone, <strong>Calibrate sticks</strong>, <strong>Rumble</strong> and <strong>Try the rumble</strong>, and <strong>Turbo</strong>. Profiles follow your account to every device.</p>
+<p>Rumble needs a browser that has the feature, and a controller that can.</p>
+<h3 id="keyboard">Keyboard<a class="h-anchor" href="#keyboard" aria-hidden="true" tabindex="-1">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>Button</th><th>Key</th><th>Button</th></tr></thead><tbody><tr><td>Arrows</td><td>D-pad</td><td><code>Q</code>, <code>W</code></td><td>L, R</td></tr><tr><td><code>Z</code></td><td>B</td><td><code>E</code>, <code>R</code></td><td>L2, R2</td></tr><tr><td><code>X</code></td><td>A</td><td><code>Enter</code></td><td>Start</td></tr><tr><td><code>A</code></td><td>Y</td><td>Right <code>Shift</code></td><td>Select</td></tr><tr><td><code>S</code></td><td>X</td><td><code>I</code>, <code>J</code>, <code>K</code>, <code>L</code></td><td>Stick, on consoles with one</td></tr></tbody></table></div>
+<p><code>Esc</code> opens the game menu. Shortcuts, which you can change under <strong>Settings → Shortcuts</strong> in the game menu:</p>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>What it does</th><th>Key</th><th>What it does</th></tr></thead><tbody><tr><td><code>Space</code></td><td>Fast-forward</td><td><code>B</code></td><td>Slow motion</td></tr><tr><td><code>Backspace</code></td><td>Rewind</td><td><code>P</code></td><td>Pause</td></tr><tr><td><code>F2</code></td><td>Quick save</td><td><code>N</code></td><td>Next frame</td></tr><tr><td><code>F4</code></td><td>Quick load</td><td><code>F8</code></td><td>Screenshot</td></tr><tr><td><code>M</code></td><td>Mute</td><td><code>O</code></td><td>Show numbers</td></tr></tbody></table></div>
+<h3 id="controller-shortcuts">Controller shortcuts<a class="h-anchor" href="#controller-shortcuts" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Press <strong>Start</strong> and <strong>Select</strong> together, or <strong>Guide</strong>, to open the game menu. Hold <strong>Select</strong> and press another button for a shortcut:</p>
+<div class="table-wrap"><table><thead><tr><th>Button</th><th>What it does</th><th>Button</th><th>What it does</th></tr></thead><tbody><tr><td>R</td><td>Fast-forward</td><td>X</td><td>Slow motion</td></tr><tr><td>L</td><td>Rewind</td><td>Y</td><td>Pause</td></tr><tr><td>R2</td><td>Quick save</td><td>Right</td><td>Next frame</td></tr><tr><td>L2</td><td>Quick load</td><td>A</td><td>Screenshot</td></tr><tr><td>B</td><td>Menu</td><td></td><td></td></tr></tbody></table></div>
+<h3 id="touch-controls">Touch controls<a class="h-anchor" href="#touch-controls" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Touch controls show by themselves on a touch screen, and step aside when a controller connects. <strong>Show touch</strong> and <strong>Hide touch</strong> are in the game menu.</p>
+<p>To move them, press <strong>More → Arrange touch controls</strong>. You can move, resize and fade each control, and choose which show. A layout belongs to that device and that way up, so portrait and landscape are separate.</p>
+<p>On the DS and 3DS, a press on the picture is the stylus, with a finger or a mouse. On the Nintendo 64, the on-screen D-pad is the stick.</p>
+<h3 id="tv-remote">TV remote<a class="h-anchor" href="#tv-remote" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The D-pad moves, OK is A, Play/Pause is B, and Back opens the game menu. A remote can’t reach every button, so <strong>More</strong> in the game menu has <strong>Press Start</strong> and <strong>Press Select</strong>. Games that need more want a controller.</p>
+<h2 id="the-game-menu-and-game-settings">The game menu and game settings<a class="h-anchor" href="#the-game-menu-and-game-settings" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press <code>Esc</code>, Start and Select together, or the button in the corner. The game pauses behind it.</p>
+<figure class="doc-fig"><img src="/docs/images/settings-games.webp" alt="The My game settings page" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Settings, My game settings.</em></span></figcaption></figure>
+<p>The tiles include <strong>Save</strong>, <strong>Load</strong>, <strong>Rewind</strong>, <strong>Fast forward</strong>, <strong>Screenshot</strong>, <strong>Controllers</strong>, <strong>Settings</strong>, <strong>More</strong> and <strong>Save and quit</strong>. <strong>Rewind</strong> is off until you turn it on, as it costs the server memory all the time. Fast-forward and slow motion have no sound.</p>
+<p>Games can contain flashing images, and fast-forward can make them flash quickly. <strong>Tube flicker</strong>, under <strong>Picture</strong>, makes the picture flicker. It’s off by default, and stays off when your device asks for reduced motion.</p>
+<p><strong>Settings</strong> holds <strong>Picture</strong>, <strong>Sound</strong>, <strong>Speed and rewind</strong>, <strong>Saves</strong>, <strong>Cheats</strong>, <strong>Shortcuts</strong>, <strong>On-screen numbers</strong>, <strong>Core options</strong>, <strong>Patches</strong> and <strong>Settings file</strong>.</p>
+<p>You can set anything for every game, for one console, or for one game. <strong>Settings → My game settings</strong> is for all your games. On a game’s page, the <strong>More</strong> menu has <strong>Settings for this game</strong>. An administrator can choose <strong>Everyone</strong> to set the starting point for the whole server, and limits under <strong>Settings → Consoles &amp; cores → How games play → Advanced</strong>: <strong>Fastest fast-forward</strong>, <strong>Memory for rewind, per game</strong> and <strong>Run-ahead</strong>.</p>
+<p>If a setting breaks a game, <strong>Start with default settings</strong> in the same <strong>More</strong> menu starts it with no settings of yours, no cheats and no patches.</p>
+<p><strong>Cheats</strong> go by the core. Some cores have none, and a code that does nothing can’t be told from a wrong one. A game can hold 500 codes.</p>
+<h2 id="couch-mode">Couch mode<a class="h-anchor" href="#couch-mode" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Couch mode is the games library alone, full screen and large, made for a TV and a controller. Press <strong>Couch mode</strong> on a games library, or Start on a controller, or open <code>/big</code>.</p>
+<figure class="doc-fig"><img src="/docs/images/gameplay-rhde.webp" alt="A strategy game running in a browser" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em><a href="https://github.com/pinobatch/rhde-nes" rel="noopener">RHDE: Furniture Fight</a>, Damian Yerrick, under a GNU All-Permissive style licence.</em></span></figcaption></figure>
+<p>Along the top are your libraries or <strong>Home</strong>, <strong>Consoles</strong>, <strong>Search</strong> and <strong>Settings</strong>. Search has letters on the screen, so it needs no keyboard. The bar along the bottom shows the buttons for the controller you’re using. In a library:</p>
+<div class="table-wrap"><table><thead><tr><th>Button</th><th>What it does</th></tr></thead><tbody><tr><td>Top face button</td><td>Favourite</td></tr><tr><td>Left face button</td><td>Search</td></tr><tr><td>Select or View</td><td>Change the sort order</td></tr><tr><td>Shoulder buttons</td><td>Move between sections</td></tr><tr><td>Triggers</td><td>Jump along the alphabet, when sorted by title</td></tr></tbody></table></div>
+<p>Press <strong>Leave</strong> at the top, or Back at the top level, to return to the normal app. Couch mode stays on for that tab when you go into a game and back.</p>
+<p>Couch mode has nothing to do with WittyCouch, which plays games on PCs: see <a href="/docs/game-rigs/">Game PCs</a>.</p>
+<h2 id="streaming-and-delay">Streaming and delay<a class="h-anchor" href="#streaming-and-delay" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The player finds the best way to reach your device by itself. Change it in the game menu under <strong>More → Connection</strong>:</p>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/gameplay-dragon-blaster.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: A space shooter running in a browser</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em><a href="https://github.com/haroldo-ok/dragon-blaster" rel="noopener">Dragon Blaster</a>, Haroldo de Oliveira Pinheiro, MIT, with open art from OpenGameArt.</em></p></div>
+<div class="table-wrap"><table><thead><tr><th>Choice</th><th>When you’d want it</th></tr></thead><tbody><tr><td><strong>Automatic (recommended)</strong></td><td>Almost always. It tries each of the others in turn, and moves on if a way doesn’t work</td></tr><tr><td><strong>WebRTC (lowest latency)</strong></td><td>The usual way</td></tr><tr><td><strong>WebRTC, drawn directly</strong></td><td>Direct mode: a press may show up a whole screen refresh sooner on some screens, and the picture can tear</td></tr><tr><td><strong>WebSocket with H.264</strong></td><td>UDP is blocked, or only a reverse proxy can be reached</td></tr><tr><td><strong>WebSocket with JPEG (most compatible)</strong></td><td>Nothing else works, or the server has no video encoder</td></tr></tbody></table></div>
+<p>Changing connection never restarts the game.</p>
+<h3 id="speed-or-steadiness">Speed or steadiness<a class="h-anchor" href="#speed-or-steadiness" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Under <strong>Settings → Speed and rewind</strong> in the game menu:</p>
+<ul><li><strong>Automatic</strong>, the default, is Fastest until frames start arriving unevenly, then Balanced until they settle.</li><li><strong>Fastest</strong> shows every frame the moment it arrives.</li><li><strong>Balanced</strong> lets your browser hold a frame back in a bad moment.</li><li><strong>Steadiest</strong> leaves it to your browser, which smooths out a poor connection and adds delay.</li></ul>
+<h3 id="what-affects-delay">What affects delay<a class="h-anchor" href="#what-affects-delay" aria-hidden="true" tabindex="-1">#</a></h3>
+<ul><li><strong>The network.</strong> A cable beats Wi-Fi, and home beats away. Bitrate follows your connection by itself.</li><li><strong>The console.</strong> A PlayStation 2 game takes most of a frame to run, so a press waits for the one in progress. It’s the slowest here, at about 49 ms from a press to the screen. The other consoles measured 11 to 31 ms.</li><li><strong>The server.</strong> Other work on the machine, and how many games are running. Two at once is the default, set by <strong>Games at once</strong>.</li><li><strong>Picture size.</strong> <strong>Internal resolution</strong> under <strong>How games play → Advanced</strong> sets how sharply graphics-card consoles draw. Automatic is twice native on Nintendo 64, PlayStation, PSP and Dreamcast, and native on PS2 and 3DS. Upscaling a PS2 game can show bands of the wrong colour in some games, which is why it’s native.</li><li><strong>The core’s own reaction.</strong> Games take a frame or two to react to a button, as they did on the real console. <strong>Automatic run-ahead</strong> takes a frame off that on older consoles, on servers with four CPU threads or more. A rare game may show a small glitch, which is what to turn off if one does.</li><li><strong>Your display.</strong> A real screen adds delay of its own, which nothing here can measure or change.</li><li><strong>Sound</strong> runs about 35 to 80 ms behind the picture. <strong>Sound buffer</strong> under <strong>Sound</strong> trades delay for less crackling.</li></ul>
+<p>To see where the time goes, turn on <strong>Settings → On-screen numbers</strong> in the game menu, or press <code>O</code>.</p>
+<p><strong>How far to trust those figures.</strong> The delay figures in this guide come from one machine: an RTX 3070 laptop, with the server and a browser with no window on the same computer. They stop at when the browser expects a frame to reach the screen, so a real display adds its own delay on top. Direct mode hasn’t been measured on a real screen, which is why it isn’t the default.</p>
+<p><strong>Picture quality</strong> under <strong>How games play</strong> is <strong>Automatic</strong>, <strong>Data saver</strong> or <strong>High</strong>.</p>
+<h3 id="playing-away-from-home">Playing away from home<a class="h-anchor" href="#playing-away-from-home" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Most homes need nothing. To reach games from outside your network, or from a container, WebRTC needs UDP: set a <strong>UDP port for WebRTC</strong> and <strong>Public IP addresses</strong> under <strong>How games play → Advanced</strong>, and forward that port. Without it, the WebSocket choices work anywhere the app does, with more delay. See <a href="/docs/remote/">Remote access</a>.</p>
+<h2 id="patches-and-uploads">Patches and uploads<a class="h-anchor" href="#patches-and-uploads" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A patch is a small file that changes a game, such as a translation or a fix.</p>
+<figure class="doc-fig"><img src="/docs/images/gameplay-libbet.webp" alt="A puzzle game running in a browser" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em><a href="https://github.com/pinobatch/libbet" rel="noopener">Libbet and the Magic Floor</a>, Damian Yerrick, zlib.</em></span></figcaption></figure>
+<ol><li>Start the game and open the game menu.</li><li>Press <strong>Settings → Patches → Add a patch…</strong>, and choose an IPS or BPS file.</li><li>It takes effect when the game next starts.</li></ol>
+<p>A patch is applied to a copy each time the game starts, so your file is never changed. Patches are yours alone. Each game can hold 16, of up to 64 MB. They work on games that are a single file, not on discs. A patch that doesn’t fit leaves the game unpatched and playable, with a notice.</p>
+<p><strong>Patches are for adult profiles.</strong> Kids and Guest profiles can’t add them.</p>
+<p><strong>Nobody uploads a game through the app.</strong> A game gets here by being in a library’s folder. A Guest profile can’t upload anything to do with games: no saves, patches or pictures. A Kids profile can bring its own saves and pictures, but not patches.</p>
+<h2 id="encrypted-games">Encrypted games<a class="h-anchor" href="#encrypted-games" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Encrypted game files are detected and refused with a clear message. Nothing here decrypts a file, goes looking for keys or tries a password. The file stays listed, with the reason on its page and on the <strong>Can’t play</strong> tab.</p>
+<p><strong>3DS files.</strong> Most 3DS copies are encrypted, and the cores can’t read those. An encrypted <code>.cia</code> won’t work, and only an unencrypted dump will. The server reads the plain headers of <code>.3ds</code>, <code>.cci</code>, <code>.cxi</code>, <code>.app</code> and <code>.cia</code> files to tell which is which, and it goes by the program’s bytes: <code>NCCH</code> has to be readable where it belongs, and the program’s NoCrypto flag has to be set. A title that shows its name and icon may still be encrypted, because a package keeps those in the open, and a package with a ticket may not be, because tools that take off a package’s encryption often leave the ticket in. Neither counts.</p>
+<p>A <code>.cia</code> that really is unencrypted has its main program copied out, the first time it’s played, and the copy stays until another package is played. Updates and extra content inside a package aren’t applied, and a package that’s only an update or extra content isn’t listed as a game.</p>
+<p>No retail 3DS game has been played here: the only one tried is encrypted, so it was refused. A plain test program, in a <code>.cia</code> made for the purpose, has played from end to end, with and without the marks a decrypted package usually keeps. To see what a file of yours says, run <code>wittyplay-probe cia-info -hash yourgame.cia</code>.</p>
+<p><strong>Password-protected archives</strong> are never opened. A <code>.7z</code> that keeps its names readable and locks only its contents can’t be told from its headers, so it shows in the library and says so when you press Play.</p>
+<h2 id="your-own-core">Your own core<a class="h-anchor" href="#your-own-core" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A custom core is for a console or a version this server doesn’t offer. It’s a program, and it runs on your server whenever someone plays with it, so only add one you trust. It always runs boxed in, in a process of its own. This project hasn’t checked anything you add, and doesn’t offer or support it. Where to get one is your call: go to the people who make it.</p>
+<figure class="doc-fig"><img src="/images/shots/gameplay-datastorm.webp" data-shot="gameplay-datastorm" alt="A shooter running in a browser" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em><a href="https://github.com/haroldo-ok/datastorm" rel="noopener">DataStorm</a>, Haroldo de Oliveira Pinheiro, Apache-2.0.</em></span></figcaption></figure>
+<p>Custom cores are off on every server. Only an administrator with an adult account can reach them, and they need two switches.</p>
+<ol><li><strong>Allow them on the machine.</strong> Start the server with <code>WMS_GAMING_CUSTOM_CORES=1</code>, or <code>-gaming-custom-cores</code>, or put <code>&quot;gamingCustomCores&quot;: true</code> in its <a href="/docs/config/">config file</a>. A web session alone can’t do this.</li><li><strong>Turn them on.</strong> Open <strong>Settings → Consoles &amp; cores → Custom cores</strong>, turn on <strong>Allow custom cores</strong>, and enter your password.</li><li><strong>Add one.</strong> Press <strong>Add a core</strong>, and pick <strong>Upload a file</strong>, <strong>Web address</strong> (<code>https</code> on the public internet only) or <strong>In the cores folder</strong>. If its makers publish a SHA-256, paste it in. Enter your password and press <strong>Test this core</strong>.</li><li><strong>Read what it reports:</strong> its name, version, file types, license and what it needs. That’s what the core claims about itself. Passing shows it’s a libretro core, not that it’s safe.</li><li><strong>Say which consoles it’s for.</strong> Tick <strong>Use by default</strong> to make it what a console plays with. Tick the box that says you understand, and press <strong>Add this core</strong>.</li></ol>
+<p>The core file has to suit your server: <code>.dll</code> on Windows, <code>.so</code> on Linux, <code>.dylib</code> on a Mac. A <code>.zip</code> can hold it too, with the core at the top, an optional <code>.info</code> file, and <code>assets/</code> and <code>system/</code> folders.</p>
+<p>To keep them off whatever else is set, start the server with <code>WMS_GAMING_NO_CUSTOM_CORES=1</code>. On a machine that can’t box a core in, such as FreeBSD, or a Mac without <code>sandbox-exec</code>, they can’t be turned on at all.</p>
+<p><strong>If it fails</strong>, it says why and keeps nothing:</p>
+<div class="table-wrap"><table><thead><tr><th>It says</th><th>What that means</th></tr></thead><tbody><tr><td>Built for something else</td><td>You have the Windows build and a Linux server, say</td></tr><tr><td>Isn’t a program library</td><td>It’s a text file, a saved web page, or an archive that needs unpacking</td></tr><tr><td>Isn’t a libretro core</td><td>It’s a real library, but a different kind of program</td></tr><tr><td>Needs another library</td><td>It depends on something this server doesn’t have</td></tr><tr><td>Crashed, or didn’t finish loading</td><td>The core is broken, or doesn’t suit this server. Your server is fine</td></tr></tbody></table></div>
+<p><strong>Later:</strong> each core’s card has <strong>Replace</strong>, <strong>Add files</strong>, <strong>Consoles and notes</strong> and <strong>Remove</strong>. Versions you’ve replaced are listed under <strong>What it reports</strong>, with <strong>Go back to this</strong>. A core never updates by itself. If its file stops matching the checksum you approved, it won’t run, and its card shows <strong>Test and approve again</strong>: unless you changed the file yourself, remove it and add a copy you trust. Nobody’s saves are touched by any of this.</p>
+<p><strong>A console this server doesn’t have:</strong> press <strong>Add a console</strong> under <strong>Custom consoles</strong>, and give it a name, a short name and its file extensions.</p>
+<h2 id="console-icons">Console icons<a class="h-anchor" href="#console-icons" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Consoles show their short names as text, such as <code>SNES</code> and <code>PS2</code>. Icons are an optional download, and nothing comes with the app.</p>
+<p>To turn them on, open <strong>Settings → Metadata agents → Logos</strong>, read what it says, and press <strong>I understand: download logos</strong>. It’s one agreement, covering consoles, studios and networks.</p>
+<ul><li>Your server tells Wikidata and Wikimedia Commons the name of each console, and nothing else.</li><li>Only files whose own page says they’re free to reuse are taken. <strong>Where each logo came from</strong> lists each one’s source, license and author.</li><li>Logos are still trademarks of their owners, and are shown only to name who made something.</li></ul>
+<p>Some consoles have no logo under a free license, and those stay as text. You can upload your own either way. <strong>Remove them</strong> turns downloads off and deletes the pictures.</p>
+<h2 id="if-a-game-wont-start">If a game won’t start<a class="h-anchor" href="#if-a-game-wont-start" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>What it says</th><th>What to do</th></tr></thead><tbody><tr><td><strong>Nothing to play NES games with yet</strong>, or <strong>This server can’t play NES games yet</strong></td><td>Install a core: see <a href="#cores">Cores</a>. If you aren’t an administrator, ask whoever runs the server</td></tr><tr><td><strong>PS2 games need a BIOS file</strong></td><td>See <a href="#bios-files">BIOS files</a></td></tr><tr><td><strong>This game file is encrypted</strong></td><td>See <a href="#encrypted-games">Encrypted games</a></td></tr><tr><td><strong>This game needs a graphics card</strong></td><td>See <a href="#consoles-that-need-a-graphics-card">Consoles that need a graphics card</a></td></tr><tr><td><strong>This game’s file has gone</strong></td><td>It was moved or deleted. Put it back, or scan the library again</td></tr><tr><td><strong>The server is busy</strong></td><td>Wait for another game to finish, or raise <strong>Games at once</strong></td></tr><tr><td><strong>The game started, but its picture can’t reach this device</strong></td><td>Usually a firewall or a network blocking the connection. Press <strong>Try again</strong>, or choose a WebSocket way under <strong>Connection</strong></td></tr><tr><td><strong>This game keeps stopping</strong></td><td>Press <strong>Start with default settings</strong>. If it still stops, try another core for that console</td></tr><tr><td>The game starts, but the picture stays one colour</td><td>A few games don’t work on a core and give no error. An administrator can choose another core on the game’s page</td></tr></tbody></table></div>
+<p>A game also stops by itself after 30 minutes with no controller changes, and 60 seconds with nobody connected, and it saves first. A dropped connection comes back by itself within that minute, and a game that has gone from the server starts again from its last save.</p>
+<p>For anything else, the server’s log has the core’s own words: see <a href="/docs/logging/">Logging</a>.</p>
+<h2 id="what-hasnt-been-tried">What hasn’t been tried<a class="h-anchor" href="#what-hasnt-been-tried" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Browsers and devices:</strong> Firefox, Safari, phones and TVs haven’t been run with game streaming, and neither has a real controller or TV remote.</li><li><strong>Networks:</strong> no real network has been run. Every delay figure is from one machine, as above.</li><li><strong>3DS:</strong> no retail game, as above.</li><li><strong>macOS and FreeBSD:</strong> games haven’t been run on a real Mac or on FreeBSD. On FreeBSD, a running core has limits rather than a sandbox: it can’t start programs, and with no graphics card can’t open a network connection.</li></ul>
+<h2 id="for-developers">For developers<a class="h-anchor" href="#for-developers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>How this is built is in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/GAMING.md" rel="noopener">Games: design</a>. The routes a client uses are in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/GAMING-API.md" rel="noopener">Games: the API for clients</a>.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/diagnoser/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>WittyDiagnoser</strong></a>
+      <a class="card next" href="/docs/game-rigs/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Game PCs</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/GAMES.md" rel="noopener">docs/GAMES.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/GAMES.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#add-your-games">Add your games</a></li><li><a href="#needs-a-look">Needs a look</a></li><li><a href="#how-titles-and-consoles-are-worked-out">How titles and consoles are worked out</a></li><li><a href="#cores">Cores</a></li><li><a href="#bios-files">BIOS files</a></li><li><a href="#saves-memory-cards-and-save-states">Saves, memory cards and save states</a></li><li><a href="#controllers-touch-and-keyboard">Controllers, touch and keyboard</a></li><li><a href="#the-game-menu-and-game-settings">The game menu and game settings</a></li><li><a href="#couch-mode">Couch mode</a></li><li><a href="#streaming-and-delay">Streaming and delay</a></li><li><a href="#patches-and-uploads">Patches and uploads</a></li><li><a href="#encrypted-games">Encrypted games</a></li><li><a href="#your-own-core">Your own core</a></li><li><a href="#console-icons">Console icons</a></li><li><a href="#if-a-game-wont-start">If a game won’t start</a></li><li><a href="#what-hasnt-been-tried">What hasn’t been tried</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

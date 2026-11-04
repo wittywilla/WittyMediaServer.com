@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Apps and devices · WittyMediaServer</title>
+<meta name="description" content="Use this guide to choose how to reach your server from each device, and to connect an app. It says plainly what has been run on each platform and what hasn&#39;t…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/apps/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Apps and devices">
+<meta property="og:description" content="Use this guide to choose how to reach your server from each device, and to connect an app. It says plainly what has been run on each platform and what hasn&#39;t…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/apps/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/" aria-current="page">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Start here</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/" aria-current="page">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#start">Start here</a></p>
+      <h1>Apps and devices</h1>
+      <p class="lead">Use this guide to choose how to reach your server from each device, and to connect an app. It says plainly what has been run on each platform and what hasn’t been built.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/APPS.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#whats-been-run-platform-by-platform">What’s been run, platform by platform</a></li><li><a href="#a-web-browser">A web browser</a></li><li><a href="#wittymediaclient">WittyMediaClient</a></li><li><a href="#other-apps-from-this-project">Other apps from this project</a></li><li><a href="#big-screens">Big screens</a></li><li><a href="#how-apps-find-your-server">How apps find your server</a></li><li><a href="#typing-the-address">Typing the address</a></li><li><a href="#signing-in">Signing in</a></li><li><a href="#moving-to-another-server">Moving to another server</a></li><li><a href="#removing-an-app">Removing an app</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p><strong>A web browser is the only way that does everything today, on everything.</strong> The apps are early, and most haven’t been tried on real devices.</p>
+<h2 id="whats-been-run-platform-by-platform">What’s been run, platform by platform<a class="h-anchor" href="#whats-been-run-platform-by-platform" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Device</th><th>What you use</th><th>How far it’s been run</th><th>Not built or not seen</th></tr></thead><tbody><tr><td>Any computer, phone or TV with a browser</td><td>The server’s own web app</td><td>Works today, and every test of the server uses it on desktop browsers</td><td>Safari, phone browsers, hardware HEVC and HDR screens haven’t been checked</td></tr><tr><td>Windows 10 or later</td><td>WittyMediaClient desktop app</td><td>Run from source and as a packaged app. Its setup and uninstaller have run under Wine, not on real Windows</td><td>Real game controllers and remotes</td></tr><tr><td>Linux</td><td>WittyMediaClient desktop app</td><td>Installed and opened on virtual screens, in containers and a Fedora virtual machine</td><td>A real desktop</td></tr><tr><td>FreeBSD 15, amd64</td><td>WittyMediaClient desktop app</td><td>Installed and played, with sound, in a virtual machine. It needs FreeBSD’s own Electron</td><td>A real desktop. FreeBSD 14, aarch64 and i386</td></tr><tr><td>Plasma Big Screen</td><td>WittyMediaClient desktop app, which opens as a TV app there</td><td>The real shell in a virtual machine, with real key presses, picture and sound</td><td>A real TV or remote</td></tr><tr><td>Mac</td><td>WittyMediaClient desktop app, and a native Mac app</td><td>Not run. Neither has been opened on a Mac yet</td><td>Everything</td></tr><tr><td>Android phone</td><td>WittyMediaClient for Android</td><td>Emulators only: all of it on Android 16, and connecting and playing on Android 6</td><td>Real phones, sound, Android 7 to 15. See below</td></tr><tr><td>Android on ARM, 32-bit and 64-bit</td><td>The same app</td><td>Built into the same APK, and not run: every emulator here is x86</td><td>Any ARM device, which means most real phones and TVs</td></tr><tr><td>Android on x86</td><td>The same app</td><td>64-bit ran on the emulators. 32-bit is built and not run</td><td>Real devices</td></tr><tr><td>Android tablet</td><td>The same app</td><td>Built and not run</td><td>Everything</td></tr><tr><td>Android TV</td><td>The same app</td><td>An Android 16 emulator at 1080p, with arrow keys and OK only</td><td>Real TVs and remotes. See below</td></tr><tr><td>Google TV, Fire TV</td><td>The same app</td><td>Built and not run. Fire TV needs Fire OS 6 or later</td><td>Everything</td></tr><tr><td>iPhone, iPad</td><td>WittyMediaClient for Apple</td><td>Not run. The code has never been compiled</td><td>Everything</td></tr><tr><td>Apple TV</td><td>WittyMediaClient for Apple</td><td>Not run. The code has never been compiled</td><td>Everything</td></tr></tbody></table></div>
+<p><strong>Not built on the Android and Apple apps:</strong></p>
+<ul><li>Music, audiobooks and podcasts. Android doesn’t offer them yet, and the Apple app lists them with a note that they play in a browser for now.</li><li>TV channels, live TV and the guide.</li><li>Books and comics, disc menus, photos and consoles.</li><li>Playing in the background, and picture in picture, on Android.</li><li>A prompt for a two-factor code when signing in with a password. Those accounts can <a href="#sign-in-with-a-code">sign in with a code</a> instead.</li></ul>
+<p>These apps say plainly when something can’t play yet. For anything on this list, use a browser on that device.</p>
+<p><strong>Games on someone’s own PC:</strong> the apps can open the Game PCs pages, and start the separately installed Moonlight app where it’s there. No part of this has reached a real PC from an app yet. See <a href="/docs/game-rigs/">Game PCs</a>.</p>
+<p><strong>Not started:</strong> LG and Samsung TV apps, Roku, Windows 7 and games consoles.</p>
+<h2 id="a-web-browser">A web browser<a class="h-anchor" href="#a-web-browser" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Open the server’s address, and you have everything: films, TV, music, books, photos, games, discs and live TV.</p>
+<figure class="doc-fig"><img src="/docs/images/phone-music.webp" alt="A Music library at phone width" width="780" height="1688" loading="lazy" decoding="async"><figcaption><span><em>Music at phone width. Credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/phone-film.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: A film&#39;s page at phone width</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em>At phone width. <a href="https://durian.blender.org/" rel="noopener">Sintel</a>, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>.</em></p></div>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/phone-movies.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: A wall of posters at phone width</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em>At phone width. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></p></div>
+<figure class="doc-fig"><img src="/images/shots/phone-guide.webp" data-shot="phone-guide" data-themed="default light cinema contrast evergreen midnight oled paper" alt="The TV guide at phone width, with a film playing" width="780" height="1688" loading="lazy" decoding="async"><figcaption><span><em>WittyTV at phone width. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<figure class="doc-fig"><img src="/docs/images/phone-home.webp" alt="The home page at phone width" width="780" height="1688" loading="lazy" decoding="async"><figcaption><span><em>At phone width. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<ol><li>Find the server’s address. An administrator sees it at <strong>Settings → About → This server</strong>, under <strong>Open it on other devices at home</strong>. It looks like <code>http://192.168.1.20:9797</code>.</li><li>Type it into a browser on any device on your home network, and bookmark it.</li></ol>
+<p>A browser can’t search your network for servers, so you need the address.</p>
+<h2 id="wittymediaclient">WittyMediaClient<a class="h-anchor" href="#wittymediaclient" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The app for putting your server on a device.</p>
+<figure class="doc-fig"><img src="/docs/images/client-home.webp" alt="The desktop app showing the home page" width="1280" height="768" loading="lazy" decoding="async"><figcaption><span><em>WittyMediaClient on a desktop, connected to a test server. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></span></figcaption></figure>
+<h3 id="on-a-computer">On a computer<a class="h-anchor" href="#on-a-computer" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The desktop app is a window around the server’s own web app, so every feature arrives with the server. It adds finding servers on your network, a <a href="#sign-in-with-a-code">sign-in code</a>, and a title bar that follows your theme.</p>
+<p>Get it from the <a href="https://github.com/wittywilla/WittyMediaClient/releases" rel="noopener">WittyMediaClient releases page</a>.</p>
+<div class="table-wrap"><table><thead><tr><th>You have</th><th>Download</th></tr></thead><tbody><tr><td>Windows 10 or later</td><td><code>wittymediaclient-&lt;version&gt;-windows-amd64-setup.exe</code></td></tr><tr><td>A Mac with Apple silicon</td><td><code>wittymediaclient-&lt;version&gt;-macos-arm64.dmg</code></td></tr><tr><td>A Mac with an Intel chip</td><td><code>wittymediaclient-&lt;version&gt;-macos-x64.dmg</code></td></tr><tr><td>Debian, Ubuntu and relatives</td><td><code>wittymediaclient-&lt;version&gt;-linux-amd64.deb</code></td></tr><tr><td>Fedora and relatives</td><td><code>wittymediaclient-&lt;version&gt;-linux-amd64.rpm</code></td></tr><tr><td>Arch and relatives</td><td><code>wittymediaclient-&lt;version&gt;-linux-amd64.pacman</code></td></tr><tr><td>Any other Linux</td><td><code>wittymediaclient-&lt;version&gt;-linux-amd64.AppImage</code></td></tr><tr><td>FreeBSD, amd64</td><td><code>wittymediaclient-&lt;version&gt;-freebsd-amd64.pkg</code></td></tr><tr><td>Plasma Big Screen</td><td>The <code>.deb</code>, <code>.rpm</code> or <code>.pacman</code> for its distribution</td></tr></tbody></table></div>
+<p>The builds aren’t code-signed yet, so Windows and macOS warn about them. On Windows, choose <strong>More info</strong>, then <strong>Run anyway</strong>. On a Mac, use <strong>Open Anyway</strong> in <strong>System Settings → Privacy &amp; Security</strong>.</p>
+<p><strong>Good to know:</strong></p>
+<ul><li><strong>Keys:</strong> Tab moves around the page. F6 moves between the page and the title bar.</li><li><strong>Help</strong> in the title bar has <strong>Open logs folder</strong> and <strong>Copy diagnostic info</strong>.</li><li><strong>A weak computer:</strong> the app uses a good deal of memory. A browser uses less.</li><li><strong>Plasma Big Screen:</strong> in a Bigscreen session it opens as a TV app by itself, across the whole screen, and works with arrows, Enter and Back. Use a package and not an AppImage, because an AppImage doesn’t add itself to the launcher.</li></ul>
+<h3 id="on-android">On Android<a class="h-anchor" href="#on-android" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>One app, about 3 MB, covers phones, tablets and TVs on ARM and x86, from Android 6 up. It isn’t in any store yet, and has to be installed by hand. It’s on the same <a href="https://github.com/wittywilla/WittyMediaClient/releases" rel="noopener">releases page</a>, signed with a test key, so it can’t be updated to a store version later without uninstalling first.</p>
+<p><strong>On a phone or tablet:</strong> copy the <code>.apk</code> over and open it. Android asks you to allow installing from that app.</p>
+<p><strong>On a TV:</strong> in the TV’s settings, turn on Developer options and network debugging. Then, from a computer with Android’s <code>adb</code> tool, use your TV’s address and the name of the file you downloaded:</p>
+<div class="codebox"><pre id="code-1" class="code" data-lang="bash"><code>adb connect 192.168.1.50</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="codebox"><pre id="code-2" class="code" data-lang="bash"><code>adb install app-sideload.apk</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>What it does, as seen on emulators: home, libraries, shows, search, video with resume, sound tracks and subtitles, skip intro and the next-episode countdown. Phones ask for two channels of sound. A metered connection asks for no more than 8 Mb/s.</p>
+<p>Sound hasn’t been listened to, because the emulators have none. Nobody has tried it on a cheap TV stick, so how smooth it is there isn’t known.</p>
+<h3 id="on-apple-devices">On Apple devices<a class="h-anchor" href="#on-apple-devices" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The apps for iPhone, iPad, Apple TV and Mac are written, and have never been compiled. Nothing can be downloaded. Apple only allows building and installing from a Mac, and they aren’t in the App Store.</p>
+<p>On an Apple device today, use a browser. Apple TV has no browser, so there’s no way to use the server on it yet.</p>
+<h2 id="other-apps-from-this-project">Other apps from this project<a class="h-anchor" href="#other-apps-from-this-project" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>WittyMediaPlayer</strong> and <strong>WittyReader</strong> work on their own. <strong>Neither connects to your server.</strong> Use them for files on the computer in front of you.</p>
+<p><strong>WittyMediaPlayer</strong> plays video, audio, DVDs and Blu-rays on your own computer, with real disc menus, from a drive, an image or a folder. It can also make a disc image to add to a server library, and copy audio CDs. It needs no server and no account. It’s for Windows 10 version 1809 or newer, and only Windows for now. Its installer has run under Wine, not on real Windows. Get it from the <a href="https://github.com/wittywilla/WittyMediaPlayer/releases" rel="noopener">WittyMediaPlayer releases page</a>.</p>
+<p><strong>WittyReader</strong> reads and annotates books, PDFs and comics on your own device, using the same readers as the server, and nothing is uploaded. There are installers for Windows, Mac and Linux, and a copy on your own web server can be installed from a phone’s browser. Its Windows installer has run under Wine, not on real Windows, and its Mac installer has not been run on a real Mac yet. Get it from the <a href="https://github.com/wittywilla/WittyReader/releases" rel="noopener">WittyReader releases page</a>.</p>
+<p>To read books that are on your server, open them in a browser: see <a href="/docs/books/">Books</a>.</p>
+<h2 id="big-screens">Big screens<a class="h-anchor" href="#big-screens" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>There are two different things here.</p>
+<div class="doc-pic"><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/big-screen.webp" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Picture: The big-screen view, with large cards for a TV</span><span class="go">See it on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></span></a><p><em>The big-screen view. Openly licensed and public-domain media, credited in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md" rel="noopener">the list</a>.</em></p></div>
+<p><strong>Big screen mode</strong> is for the whole web app on a TV across the room. It makes text larger and the outline around the selected item stronger. Turn it on at <strong>Settings → Appearance → Motion and big screens</strong>. It applies to that device only. On a TV browser with no easy way to reach Settings, add <code>?tv=1</code> to the server’s address.</p>
+<p><strong>Couch mode</strong> is for games on a sofa. It shows only your game libraries, full screen and large, with nothing that needs a mouse. Open it with the <strong>Couch mode</strong> button on a games library, or go to <code>/big</code> on your server, such as <code>http://192.168.1.20:9797/big</code>. See <a href="/docs/games/">Games</a>.</p>
+<p>For moving around with a remote or a controller, see <a href="/docs/playing/#tv-remotes-and-controllers">TV remotes and controllers</a>.</p>
+<h2 id="how-apps-find-your-server">How apps find your server<a class="h-anchor" href="#how-apps-find-your-server" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Apps search your home network, and the servers they find are listed under <strong>On your network</strong>. A TV has the first one already selected, so one press of OK chooses it.</p>
+<ul><li><strong>What the server announces:</strong> its name, a random ID, its version and how to connect. Nothing about accounts or folders. Being found opens nothing: connecting still takes a code or a password.</li><li><strong>To turn this off:</strong> <strong>Settings → Profiles → Signing in → Let apps find this server</strong>. Apps can still connect by typing the address.</li></ul>
+<p><strong>If your server isn’t listed:</strong></p>
+<ul><li>A firewall on the server may be blocking UDP ports 5353 and 9797.</li><li>Your Wi-Fi may keep devices apart. Guest networks and “client isolation” do this.</li><li>The server may be in a container without host networking.</li><li>The server may only accept connections from its own computer.</li></ul>
+<p>In any of these cases, <a href="#typing-the-address">type the address</a>. Searching has found real servers through emulators’ and virtual machines’ networks, but a phone and a server on one real Wi-Fi hasn’t been tried yet. An Android 6 emulator found none.</p>
+<p>A server that has stopped stays on the list for up to 45 seconds. If it says it can’t be reached, it may have gone.</p>
+<h2 id="typing-the-address">Typing the address<a class="h-anchor" href="#typing-the-address" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Choose <strong>Enter an address</strong> and type it. The server shows its address when it starts, and an administrator can find it at <strong>Settings → About</strong>. <code>192.168.1.20</code> is enough: the app adds <code>http://</code> and port 9797 by itself.</p>
+<div class="table-wrap"><table><thead><tr><th>You’re connecting</th><th>Type</th></tr></thead><tbody><tr><td>At home</td><td><code>192.168.1.20</code></td></tr><tr><td>On a different port</td><td><code>192.168.1.20:8080</code></td></tr><tr><td>Through a private network</td><td><code>100.101.102.103</code></td></tr><tr><td>Through HTTPS</td><td><code>https://media.example.com</code></td></tr></tbody></table></div>
+<p>For an address on the internet the app insists on <code>https://</code>, because your password would otherwise travel unencrypted. To set up access away from home, see <a href="/docs/remote/">Remote access</a>.</p>
+<h2 id="signing-in">Signing in<a class="h-anchor" href="#signing-in" aria-hidden="true" tabindex="-1">#</a></h2>
+<h3 id="sign-in-with-a-code">Sign in with a code<a class="h-anchor" href="#sign-in-with-a-code" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The easy way on a TV, with no typing of passwords. There are two ways round.</p>
+<p><strong>The device asks for a code:</strong></p>
+<ol><li>On a phone or computer already signed in, open the menu under your name and choose <strong>Sign in a TV</strong>.</li><li>Under <strong>Your TV asks for a code</strong>, choose who to sign in as, if you’re offered a choice, and press <strong>Get a code</strong>. An adult has to do this.</li><li>Type the 6 digits on the device. On a TV, arrows and OK work the number pad.</li></ol>
+<p>The code works once, for 5 minutes. Anyone who sees it could use it, so get it when you’re ready.</p>
+<p><strong>The device shows a code:</strong></p>
+<ol><li>On the device, choose <strong>Show a code on this screen instead</strong>. It shows a code and a QR code.</li><li>On a phone or computer already signed in, scan the QR code, or open <strong>Sign in a TV</strong> and type the code under <strong>Your TV shows a code</strong>.</li><li>Check the device it names, and press <strong>Sign it in</strong> or <strong>Refuse</strong>.</li></ol>
+<p><strong>Only approve a code if you’re looking at it on your own device right now.</strong> Someone can send you their code and ask you to approve it. Approving signs their device in as you. See <a href="/docs/remote/#letting-other-people-in">Remote access</a>.</p>
+<h3 id="with-a-password">With a password<a class="h-anchor" href="#with-a-password" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Choose <strong>Use a password instead</strong>, pick your profile or type your name, and enter your password. If your account uses two-factor sign-in, use a code instead on the native apps.</p>
+<h3 id="if-the-app-warns-about-the-server">If the app warns about the server<a class="h-anchor" href="#if-the-app-warns-about-the-server" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Apps remember each server’s identity. If a different one answers at the same address, you see <strong>This isn’t the server you used before</strong>, and nothing is sent to it.</p>
+<p>It could be your server after a reinstall, or a look-alike. To check, compare the fingerprint with the one at the bottom of the <strong>Sign in a TV</strong> page on your server. Only choose <strong>This is my server, trust it</strong> if you know why it changed.</p>
+<p>The first connection trusts whatever it’s shown, so comparing the fingerprint is worth doing once. HTTPS protects against this too.</p>
+<h2 id="moving-to-another-server">Moving to another server<a class="h-anchor" href="#moving-to-another-server" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Desktop app:</strong> <strong>Change server</strong> in the title bar. It signs out of the server you’re leaving.</li><li><strong>Android:</strong> <strong>Change server</strong> on the sign-in screen and on your Profile. To come back, you need to sign in again.</li></ul>
+<p><strong>Sign out</strong> on Android ends the sign-in on the server too.</p>
+<h2 id="removing-an-app">Removing an app<a class="h-anchor" href="#removing-an-app" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Windows:</strong> <strong>Settings → Apps → Installed apps</strong>. It asks whether to delete your settings and sign-ins too.</li><li><strong>Mac:</strong> <strong>Uninstall WittyMediaClient.command</strong> on the disk image. This has not been run on a real Mac yet.</li><li><strong>Linux:</strong> your package manager. An AppImage is one file you delete.</li><li><strong>FreeBSD:</strong> run <code>wittymediaclient --uninstall</code>.</li><li><strong>Android:</strong> as for any other app.</li></ul>
+<p>Removing an app never touches your server or your media.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/first-time-setup/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>First-time setup, step by step</strong></a>
+      <a class="card next" href="/docs/accounts/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Accounts and profiles</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/APPS.md" rel="noopener">docs/APPS.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/APPS.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#whats-been-run-platform-by-platform">What’s been run, platform by platform</a></li><li><a href="#a-web-browser">A web browser</a></li><li><a href="#wittymediaclient">WittyMediaClient</a></li><li><a href="#other-apps-from-this-project">Other apps from this project</a></li><li><a href="#big-screens">Big screens</a></li><li><a href="#how-apps-find-your-server">How apps find your server</a></li><li><a href="#typing-the-address">Typing the address</a></li><li><a href="#signing-in">Signing in</a></li><li><a href="#moving-to-another-server">Moving to another server</a></li><li><a href="#removing-an-app">Removing an app</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

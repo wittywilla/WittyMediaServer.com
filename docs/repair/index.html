@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Repair · WittyMediaServer</title>
+<meta name="description" content="Find and fix problems with the server&#39;s own data and install, from Settings → Repair or from the command line when the server won&#39;t start. Both are the same…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/repair/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Repair">
+<meta property="og:description" content="Find and fix problems with the server&#39;s own data and install, from Settings → Repair or from the command line when the server won&#39;t start. Both are the same…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/repair/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.ef1ba3ae28.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/" aria-current="page">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">Running a server</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/" aria-current="page">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#server">Running a server</a></p>
+      <h1>Repair</h1>
+      <p class="lead">Find and fix problems with the server’s own data and install, from <strong>Settings → Repair</strong> or from the command line when the server won’t start. Both are the same code and find the same things.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/REPAIR.md" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#if-the-server-wont-start">If the server won’t start</a></li><li><a href="#repairing-from-settings">Repairing from Settings</a></li><li><a href="#repairing-from-the-command-line">Repairing from the command line</a></li><li><a href="#what-the-words-mean">What the words mean</a></li><li><a href="#what-it-checks-and-fixes">What it checks and fixes</a></li><li><a href="#a-module-is-broken">A module is broken</a></li><li><a href="#moved-a-drive">Moved a drive?</a></li><li><a href="#a-damaged-database">A damaged database</a></li><li><a href="#safety-copies">Safety copies</a></li><li><a href="#starting-again-the-reset-page">Starting again: the Reset page</a></li><li><a href="#with-the-server-running">With the server running</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>It only looks until you press a fix or add <code>--fix</code>, and a safety copy is made first. Your media files are never changed or removed. It’s for administrators.</p>
+<h2 id="if-the-server-wont-start">If the server won’t start<a class="h-anchor" href="#if-the-server-wont-start" aria-hidden="true" tabindex="-1">#</a></h2>
+<ol><li>Open a terminal on the machine the server runs on.</li><li>Run <code>wittymediaserver doctor</code>. It says what’s wrong, and changes nothing. It needs no running server, no open port and no FFmpeg.</li><li>Run <code>wittymediaserver doctor --fix</code>. It fixes what can be fixed, and asks first before anything that changes data.</li><li>Start the server again.</li></ol>
+<p>The usual causes are a damaged database, a mistake in <code>wms.json</code>, FFmpeg missing, or the port being taken. For what only you can do, such as installing FFmpeg, it gives the steps for your system.</p>
+<p>Run it as the same account that runs the server, so it can reach the same files. For a Linux system service, that’s <code>sudo -u wms wittymediaserver doctor</code>.</p>
+<p>Still stuck?</p>
+<ul><li><strong>Bring back a backup:</strong> <code>wittymediaserver backup restore &lt;file&gt;</code>. See <a href="/docs/backup/#from-the-command-line">Backup and restore</a>.</li><li><strong>Get the logs out:</strong> <code>wittymediaserver logs zip</code>. See <a href="/docs/logging/#from-the-command-line">Logs</a>.</li><li><strong>Fix titles by hand:</strong> <code>wittymediaserver metadata check</code>. See <a href="/docs/metadata-folder/#on-the-command-line">The metadata folder</a>.</li><li><strong>Start again:</strong> <code>wittymediaserver reset</code>. See <a href="#starting-again-the-reset-page">the Reset page</a>.</li><li><strong>Forgot a password:</strong> <code>wittymediaserver reset-password &lt;username&gt;</code> gives that account a new one, and nothing else changes. See <a href="/docs/accounts/#if-you-forget-your-password">If you forget your password</a>.</li><li><strong>Lost your phone and your recovery codes:</strong> <code>wittymediaserver reset-2fa &lt;name&gt;</code> turns off that account’s two-factor sign-in.</li></ul>
+<h2 id="repairing-from-settings">Repairing from Settings<a class="h-anchor" href="#repairing-from-settings" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/settings-repair.webp" alt="The Repair page in Settings" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Settings, Repair.</em></span></figcaption></figure>
+<ol><li>Open <strong>Settings → Repair</strong>, on the <strong>Check and fix</strong> tab.</li><li>Press <strong>Check this server</strong>. You can leave the page while it runs.</li><li>Each thing it finds says what it found, what the fix does, and how safe that is.</li><li>Press <strong>Fix everything that’s safe</strong> for what can’t lose anything, or <strong>Fix this</strong> on one finding. Anything that changes data asks for your password, one at a time, and then <strong>Go ahead</strong>.</li><li>It looks again and shows <strong>What was done</strong>, and where the safety copy is.</li></ol>
+<p>If a fix needs the database file to itself, the page says <strong>A restart finishes the repair</strong>. Press <strong>Restart now</strong>, and anyone watching is interrupted. If the server can’t restart itself, stop it and start it again.</p>
+<p>The other tab, <strong>Metadata files</strong>, is the page for <a href="/docs/metadata-folder/">the metadata folder</a>.</p>
+<p>To check a disc, or a drive’s speed and health, use <a href="/docs/diagnoser/">WittyDiagnoser</a>, which only reads.</p>
+<h2 id="repairing-from-the-command-line">Repairing from the command line<a class="h-anchor" href="#repairing-from-the-command-line" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="codebox"><pre id="code-1" class="code"><code>wittymediaserver doctor                         look, and say what&#39;s wrong
+wittymediaserver doctor --fix                   fix what can be fixed, asking first
+wittymediaserver doctor --fix --safe-only       only what can&#39;t lose anything
+wittymediaserver doctor --fix --yes             don&#39;t ask
+wittymediaserver doctor --only data             one area: data, metadata, modules or install
+wittymediaserver doctor --only ffmpeg,port      particular checks
+wittymediaserver doctor list                    every check
+wittymediaserver doctor --json                  a report for a program
+wittymediaserver doctor --try-port              also try the port, on this machine, for a moment
+wittymediaserver doctor -data /path/to/folder   a data folder other than the usual one
+wittymediaserver doctor remap --from &lt;old&gt; --to &lt;new&gt; [--fix]
+wittymediaserver doctor reinstall &lt;module&gt;      the only thing here that goes online
+wittymediaserver doctor reset-password &lt;username&gt;   a new password for someone locked out</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>It finds the folders the way the server does, and <code>wittymediaserver config path</code> shows which. A <code>wms.json</code> with a mistake in it doesn’t stop it: it says what the mistake is.</p>
+<div class="table-wrap"><table><thead><tr><th>Exit code</th><th>Means</th></tr></thead><tbody><tr><td>0</td><td>Nothing needs attention. Notes may still be listed</td></tr><tr><td>1</td><td>Something does</td></tr><tr><td>2</td><td>It couldn’t run</td></tr></tbody></table></div>
+<p>This has not been run on a real Mac or on FreeBSD yet.</p>
+<h2 id="what-the-words-mean">What the words mean<a class="h-anchor" href="#what-the-words-mean" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>How much it matters, in the same words as <a href="/docs/diagnoser/#reading-the-results">WittyDiagnoser</a>: <strong>Problem</strong>, <strong>Warning</strong>, <strong>Note</strong>, <strong>Fine</strong>. <strong>Not checked</strong> means it couldn’t look, which says nothing good or bad.</p>
+<p>How safe the fix is:</p>
+<div class="table-wrap"><table><thead><tr><th>Word</th><th>Means</th></tr></thead><tbody><tr><td><strong>Safe</strong></td><td>Nothing can be lost by it. A safety copy is made anyway</td></tr><tr><td><strong>Backed up first</strong></td><td>It changes data, so it asks first, and a safety copy is made</td></tr><tr><td><strong>You’ll need to do this yourself</strong></td><td>Only a person can, and it gives the steps for this system</td></tr></tbody></table></div>
+<h2 id="what-it-checks-and-fixes">What it checks and fixes<a class="h-anchor" href="#what-it-checks-and-fixes" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The name on each row is what <code>--only</code> takes.</p>
+<p><strong>The database and data folder</strong> (<code>data</code>)</p>
+<div class="table-wrap"><table><thead><tr><th>Check</th><th>Finds</th><th>Its fix</th></tr></thead><tbody><tr><td><code>database</code></td><td>Damage, a file that isn’t a database, indexes out of step</td><td>Rebuilds indexes, or <a href="#a-damaged-database">recovers what can be read</a></td></tr><tr><td><code>database-links</code></td><td>Rows pointing at things that no longer exist</td><td>Removes those rows</td></tr><tr><td><code>database-size</code></td><td>A large journal, or a lot of empty space</td><td>Folds it in, or compacts the file</td></tr><tr><td><code>temp-files</code></td><td>Temporary files left by something that stopped</td><td>Moves them to the safety copy. Old streams and unpacked games are removed, as they’re made again when needed. In a conversion folder you chose, anything that isn’t a stream’s folder is yours, and stays</td></tr><tr><td><code>reset-state</code></td><td>A reset or repair waiting from a while ago, a reset that stopped halfway, copies taking up space</td><td>Takes the request back, or brings the copy back. It never deletes copies: <a href="#starting-again-the-reset-page">the Reset page</a> does that</td></tr><tr><td><code>restore-state</code></td><td>A restore waiting from a while ago, cut off, or failed</td><td>Takes the request back. A restore that was cut off puts everything back at the next start</td></tr><tr><td><code>accounts</code></td><td>Accounts, but no administrator with a password</td><td>You do it, with steps. A new password is never set from here: it takes <a href="/docs/accounts/#on-the-server-itself">the command on the server itself</a>, which works from no other device</td></tr></tbody></table></div>
+<p><strong>Metadata</strong> (<code>metadata</code>)</p>
+<div class="table-wrap"><table><thead><tr><th>Check</th><th>Finds</th><th>Its fix</th></tr></thead><tbody><tr><td><code>library-folders</code></td><td>A library’s folder that can’t be reached or is empty</td><td>Nothing is touched, in case the drive comes back. <a href="#moved-a-drive">If it moved, say where</a></td></tr><tr><td><code>missing-files</code></td><td>Titles whose files have gone, in a folder that’s there</td><td>Hides them, as a scan would. They come back if the files do</td></tr><tr><td><code>artwork-refs</code></td><td>Titles pointing at artwork that has gone</td><td>Clears the reference, so a refresh fetches a new one. If every picture is missing it’s the folder that’s away, and nothing changes</td></tr><tr><td><code>artwork-orphans</code></td><td>Artwork nothing uses</td><td>Moves it to the safety copy. Logos, web-address copies and small copies stay, and so does anything under a day old</td></tr><tr><td><code>matches</code></td><td>A match with no id, an id with no source, or an id that can’t exist</td><td>Forgets the match, so it’s looked up afresh. What you typed and locked stays</td></tr><tr><td><code>duplicates</code></td><td>The same place listed twice, a file in two libraries, two shows with one name</td><td>Merges only what is truly the same place, moving watch progress and episodes. The others are for you to decide</td></tr><tr><td><code>nfo-files</code></td><td>NFO and <code>.metadata.json</code> files that can’t be read, with the file and line</td><td>You fix it. Nothing here writes beside your media. See <a href="/docs/metadata-folder/#files-beside-your-media">the metadata folder</a></td></tr><tr><td><code>metadata-files</code></td><td>Files in the metadata folder with mistakes, by file and line</td><td>You fix it, or delete the file and export again</td></tr></tbody></table></div>
+<p><strong>Modules</strong> (<code>modules</code>)</p>
+<div class="table-wrap"><table><thead><tr><th>Check</th><th>Finds</th><th>Its fix</th></tr></thead><tbody><tr><td><code>module-state</code></td><td>A damaged list of what’s installed</td><td>Moves it aside. Updates install as usual afterwards</td></tr><tr><td><code>module-versions</code></td><td>A version with a failed signature, missing files, or not for this server</td><td><a href="#a-module-is-broken">Takes it out of use</a></td></tr><tr><td><code>module-updates</code></td><td>An update that stopped partway, or installed files nothing uses</td><td>Moves them to the safety copy</td></tr><tr><td><code>module-helpers</code></td><td>Helpers still running with no server</td><td>Ends them. Only programs running from this data folder’s modules</td></tr></tbody></table></div>
+<p><strong>The install</strong> (<code>install</code>)</p>
+<div class="table-wrap"><table><thead><tr><th>Check</th><th>Finds</th><th>Its fix</th></tr></thead><tbody><tr><td><code>config-file</code></td><td>A mistake in <code>wms.json</code>, or a path in it that isn’t there</td><td>You fix it, with steps</td></tr><tr><td><code>ffmpeg</code></td><td>FFmpeg or ffprobe missing or not running</td><td>You install it, with steps for your system</td></tr><tr><td><code>folders</code></td><td>Folders missing, not folders, or that can’t be written</td><td>Makes missing ones. It never changes permissions, and gives the steps</td></tr><tr><td><code>disk-space</code></td><td>Under 5 GB where the server keeps things</td><td>You make room, with suggestions</td></tr><tr><td><code>port</code></td><td>The port taken, and by what if the system says, or a server of another version already on it</td><td>You choose, with steps</td></tr><tr><td><code>firewall</code></td><td>Nothing it can see: a note on what to allow if other devices can’t connect</td><td>You do it, with steps. Firewall settings are never changed</td></tr><tr><td><code>leftover-processes</code></td><td>FFmpeg still converting for a server that stopped</td><td>Ends them. Only an FFmpeg whose command line names a stream’s folder in this server’s conversion folder</td></tr><tr><td><code>layout</code></td><td>A data folder inside the program’s folder, which a reinstall can remove</td><td>You move it, with steps</td></tr></tbody></table></div>
+<h2 id="a-module-is-broken">A module is broken<a class="h-anchor" href="#a-module-is-broken" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Each module is checked on its own: whether it’s whole, whether its signature is good, and whether it’s right for this server.</p>
+<p><strong>In Settings:</strong></p>
+<ol><li>Press <strong>Check this server</strong> under <strong>Settings → Repair</strong>. A broken module is listed under <strong>Modules</strong>.</li><li><strong>Fix this</strong> takes that version out of use and moves its files to the safety copy. The module goes back to the version before it. With none, it’s out of use until you install it again.</li><li><strong>Reinstall it</strong> does that and also downloads the newest compatible version from its publisher. Nothing is downloaded unless you choose this.</li></ol>
+<p>A module whose install failed also says so on its page under <strong>Settings → Modules</strong>, with a way to retry and a link here.</p>
+<p><strong>On the command line:</strong></p>
+<div class="codebox"><pre id="code-2" class="code"><code>wittymediaserver doctor --only modules --fix
+wittymediaserver doctor reinstall wittyplay</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><code>doctor reinstall</code> needs the internet, and refuses while a server is running on that data folder. Use <strong>Settings → Modules</strong> then, or stop the server first.</p>
+<p>Module updates and versions are covered in <a href="/docs/module-store/">Modules and the store</a>.</p>
+<h2 id="moved-a-drive">Moved a drive?<a class="h-anchor" href="#moved-a-drive" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>If a library’s folder is now somewhere else, the server only needs to be told. Watch progress, matches, ratings and your edits all stay, and your files aren’t touched.</p>
+<p><strong>In Settings:</strong> under <strong>Moved a drive?</strong> on the Repair page, type <strong>Where it was</strong> and <strong>Where it is now</strong>, and press <strong>See what would change</strong>. If it looks right, type your password and press <strong>Move it</strong>.</p>
+<p><strong>On the command line:</strong></p>
+<div class="codebox"><pre id="code-3" class="code"><code>wittymediaserver doctor remap --from &quot;D:\Movies&quot; --to &quot;E:\Movies&quot;
+wittymediaserver doctor remap --from &quot;D:\Movies&quot; --to &quot;E:\Movies&quot; --fix</code></pre><button class="icon-btn copy" type="button" data-copy="#code-3" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>The first line says what would change, and the second does it. Either way:</p>
+<ul><li>It looks for the files in the new place first, up to 2,000 spread through the library. Unless at least 60% are there, it says so and stops, because those aren’t the same files.</li><li>Every path that starts with the old place changes, all at once or not at all. A path that only starts with the same letters doesn’t change (<code>D:\Movies2</code> for <code>D:\Movies</code>).</li><li>A move from Windows to Linux or back works: the rest of the path takes the new system’s separators.</li></ul>
+<p>If you’ve already added the new folder and scanned it, the titles are there twice, and it says so instead of changing anything. Take that folder out of the library first.</p>
+<p>Scan the library afterwards to pick up anything new.</p>
+<h2 id="a-damaged-database">A damaged database<a class="h-anchor" href="#a-damaged-database" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A power cut, a failing drive, or a copy taken while the server was running can damage the file. If that’s what the check finds:</p>
+<ol><li>A new database is made by this version of the server, and every row that can still be read is copied into it, table by table. It says how many rows couldn’t be read, and in which tables.</li><li>Rows pointing at something lost are left out, as a delete would have taken them.</li><li>The new file is checked. With the server stopped it takes over at once. From Settings, it takes over at the next start, which <strong>Restart now</strong> does for you.</li><li>The damaged file is kept in the safety copy, as it was.</li></ol>
+<p>If nothing can be read, nothing is replaced. A recent <a href="/docs/backup/#restoring-a-backup">backup</a> may save more than this does, so it’s worth comparing first.</p>
+<h2 id="safety-copies">Safety copies<a class="h-anchor" href="#safety-copies" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Before the first fix of a run, the database is copied to <code>backups/before-repair-&lt;date&gt;-&lt;time&gt;</code> in the data folder. If the copy can’t be made, for lack of space for example, nothing is changed.</p>
+<p>Whatever a fix would remove goes into that folder’s <code>removed</code> folder, with its place in the data folder kept, instead of being deleted. A replaced database goes in <code>replaced</code>. The one exception is converted video and unpacked game files, which can be many gigabytes and are never anyone’s only copy of anything.</p>
+<p>The newest five are kept, and older ones are removed by the next run. Settings lists them under <strong>Safety copies</strong>.</p>
+<p>To undo a repair, stop the server and copy <code>wms.db</code> back from that folder into the data folder.</p>
+<h2 id="starting-again-the-reset-page">Starting again: the Reset page<a class="h-anchor" href="#starting-again-the-reset-page" aria-hidden="true" tabindex="-1">#</a></h2>
+<figure class="doc-fig"><img src="/docs/images/settings-reset.webp" alt="The Reset page in Settings" width="1920" height="1080" loading="lazy" decoding="async"><figcaption><span><em>Settings, Reset.</em></span></figcaption></figure>
+<p><strong>Settings → Reset</strong> puts the server back the way it was first installed. It applies to everyone on this server, so make a <a href="/docs/backup/#making-a-backup">backup</a> first: <strong>Go to Backup</strong> is at the top of the page.</p>
+<p><strong>These go away:</strong></p>
+<ul><li>every account and profile, and every device’s sign-in;</li><li>the list of libraries and everything known about what’s in them, including watch progress, favourites, ratings, playlists, collections and notes;</li><li>all settings and API keys, Remote Access, TV tuners, channels and scheduled recordings;</li><li>game saves and saved states, controller profiles, game cores and custom cores;</li><li>installed module versions, logs, reports, and the cache of posters and converted video;</li><li>recordings kept in the data folder.</li></ul>
+<p><strong>These stay, whichever you choose:</strong> your media files and game files, anything saved beside them such as posters and info files, the program itself and its config file.</p>
+<p>To reset:</p>
+<ol><li>Choose <strong>Keep a copy</strong>, which is recommended, or <strong>Delete everything for good</strong>. A copy goes in a folder inside the data folder, and still takes up disk space. Deleting everything also deletes copies from earlier resets and backups kept on this server.</li><li>Type your password, and <code>RESET</code>.</li><li>Press <strong>Reset this server</strong> or <strong>Delete everything and reset</strong>.</li></ol>
+<p>The server restarts, and first-time setup begins, where you can <a href="/docs/backup/#restoring-during-first-time-setup">restore a backup</a>. If the server can’t restart itself, stop it and start it again. Until then, <strong>Cancel it</strong> takes the reset back.</p>
+<p><strong>Copies from earlier resets</strong> are listed on the same page, with <strong>Bring back</strong> and <strong>Delete</strong>. Bringing one back keeps what’s there now as another copy.</p>
+<p>If you’re locked out or the server won’t start, the command line does the same:</p>
+<div class="codebox"><pre id="code-4" class="code"><code>wittymediaserver reset                back to a new install at the next start, keeping a copy
+wittymediaserver reset -delete -yes   deleting everything, without asking
+wittymediaserver reset -list          the copies kept
+wittymediaserver reset -restore &lt;copy&gt;
+wittymediaserver reset -cancel        take back a reset that&#39;s waiting</code></pre><button class="icon-btn copy" type="button" data-copy="#code-4" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<h2 id="with-the-server-running">With the server running<a class="h-anchor" href="#with-the-server-running" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>In Settings,</strong> the server repairs itself. Anything needing the database file to itself waits for the next start. If anything can’t move then, every file goes back.</li><li><strong>On the command line,</strong> <code>wittymediaserver doctor</code> can look while a server is running, and <code>--fix</code> still works for what’s safe alongside it. It refuses what needs the server stopped, and points you to Settings.</li><li>Helpers, FFmpeg and working files are only called leftovers when no server is running. With one, they’re its own.</li></ul>
+<h2 id="for-developers">For developers<a class="h-anchor" href="#for-developers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The code is <code>internal/diagnose/doctor*.go</code>. A check is a <code>Check</code> with an id, an area, <code>Run</code> and optionally <code>Fix</code>. <code>Run</code> returns <code>Issue</code>s, and has to work with no server, on a database that may be damaged: open it with <code>e.metaDB(...)</code> or <code>e.readDB()</code>, and if a read fails, say <em>not checked</em>, never <em>nothing wrong</em>. <code>Fix</code> moves files with <code>f.Remove</code> and writes through <code>withWrite</code>, in a transaction. Add a test with a fixture for each check.</p>
+<p>The database is read with <code>db.OpenExisting</code>, which doesn’t migrate or create anything. <code>db.RecoverInto</code> is the recovery. The next-start request is <code>reset.AskRepair</code> and <code>reset.ApplyRepair</code>, which <code>cmdServe</code> calls right after <code>reset.Apply</code>. What it knows of modules is in <code>internal/modules/doctor.go</code>, which reads <code>state.json</code> and version folders with no <code>Manager</code>.</p>
+<p>The routes are <code>/api/repair/...</code> (<a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/CLIENT-API.md" rel="noopener">API</a>), and the page is <code>web/src/pages/settings/Repair.tsx</code>, sharing <code>FindingCard</code> with WittyDiagnoser.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/backup/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Backup and restore</strong></a>
+      <a class="card next" href="/docs/transcoding/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Live transcoding</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/REPAIR.md" rel="noopener">docs/REPAIR.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/REPAIR.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#if-the-server-wont-start">If the server won’t start</a></li><li><a href="#repairing-from-settings">Repairing from Settings</a></li><li><a href="#repairing-from-the-command-line">Repairing from the command line</a></li><li><a href="#what-the-words-mean">What the words mean</a></li><li><a href="#what-it-checks-and-fixes">What it checks and fixes</a></li><li><a href="#a-module-is-broken">A module is broken</a></li><li><a href="#moved-a-drive">Moved a drive?</a></li><li><a href="#a-damaged-database">A damaged database</a></li><li><a href="#safety-copies">Safety copies</a></li><li><a href="#starting-again-the-reset-page">Starting again: the Reset page</a></li><li><a href="#with-the-server-running">With the server running</a></li><li><a href="#for-developers">For developers</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
