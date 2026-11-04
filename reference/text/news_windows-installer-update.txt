@@ -1,0 +1,28 @@
+Windows installer upgrades work again — WittyMediaServer
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/web/public/icon-192.png alt='']
+Witty
+Media Server
+Home
+Server
+Client
+Modules
+Gallery
+News
+Links
+GitHub
+← All updates
+RELEASE NOTES · 0.6.2-alpha
+# Windows installer upgrades work again
+A fix for error 2613 when updating an existing installation, with upgrade testing before publication. [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/home.webp alt='WittyMediaServer project screenshot']
+Installing 0.6.1-alpha’s .msi over 0.6.0-alpha stopped with “The error code is 2613” and put the old version back.
+The step that stops a running copy was placed where Windows Installer doesn’t allow it. This only shows when one installer version replaces another.
+Every release’s Windows installer is now tested installing over the one before, for everyone, for one account and as a service, before it is published.
+Read the original changelog ↗
+WittyMediaServer
+Your own media server, for your home.
+Server
+Client
+Modules
+GitHub ↗
+Apache-2.0 Cookie settings
+© 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.

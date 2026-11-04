@@ -1,0 +1,28 @@
+Better disc playback in Firefox — WittyMediaServer
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/web/public/icon-192.png alt='']
+Witty
+Media Server
+Home
+Server
+Client
+Modules
+Gallery
+News
+Links
+GitHub
+← All updates
+RELEASE NOTES · 0.6.1-alpha
+# Better disc playback in Firefox
+DVD and Blu-ray pictures and menu buttons line up again, including in the mini player. [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/dvd-menu.webp alt='WittyMediaServer project screenshot']
+Menus, intros, trailers and films no longer show shifted down or cut off in Firefox. A menu’s buttons line up with its picture again, at any display scaling and in the mini player.
+The picture is now placed in the same rectangle as the buttons, in the disc’s own shape, instead of being left for the browser to fit. The fix is in the server’s web app, so no module needs updating.
+This version also accepts a stream link only exactly as it was given out. A different spelling of the same signature is no longer accepted.
+Read the original changelog ↗
+WittyMediaServer
+Your own media server, for your home.
+Server
+Client
+Modules
+GitHub ↗
+Apache-2.0 Cookie settings
+© 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.

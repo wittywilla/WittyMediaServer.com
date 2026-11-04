@@ -1,0 +1,67 @@
+WittyMediaClient — desktop, mobile and TV
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/web/public/icon-192.png alt='']
+Witty
+Media Server
+Home
+Server
+Client
+Modules
+Gallery
+News
+Links
+GitHub
+DESKTOP · MOBILE · TV
+# WittyMediaClient
+Apps that connect to a WittyMediaServer, for TV boxes, phones, tablets and desktops. You need one if you’d rather not use a browser on that device.
+Most of this is early. The repository’s Platforms notes say how far each one has been run.
+View on GitHub
+Installing and removing
+Desktop, Plasma Bigscreen
+Android phones and tablets, iPhone, iPad
+Android TV, Google TV, Fire TV, Apple TV
+### Platforms and architectures
+One desktop app covers computers; one Android APK covers phones, tablets and TVs; the Apple apps are written but not yet built.
+Desktop (Electron)
+Windows 10+, macOS, Linux, FreeBSD, Plasma Big Screen
+amd64 Windows, Linux, FreeBSD
+arm64 macOS (Apple silicon)
+x64 macOS (Intel)
+Android
+One APK, about 3 MB — phones, tablets, Android TV, Google TV, Fire TV (Fire OS 6+), Android 6 and later
+arm64-v8a 64-bit ARM
+armeabi-v7a 32-bit ARM
+x86_64 64-bit x86
+x86 32-bit x86
+Apple (SwiftUI, AVPlayer)
+iPhone and iPad (iOS), Apple TV (tvOS), Mac — written, never compiled. Nothing to download yet; use a browser on Apple devices today.
+Android has been run on emulators only, and iOS and tvOS have never been built. A web browser remains the way to reach everything today.
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaClient/master/docs/images/client-home.webp alt='WittyMediaClient on a desktop, connected to a test server.']
+Desktop
+WittyMediaClient on a desktop, connected to a test server. From a test server. [img https://raw.githubusercontent.com/wittywilla/WittyMediaClient/master/docs/images/big-screen.webp alt='The big-screen view the app shows on a TV, here in a browser.']
+TV
+The big-screen view the app shows on a TV, here in a browser. From a test server. [img https://raw.githubusercontent.com/wittywilla/WittyMediaClient/master/docs/images/phone-home.webp alt='The server’s pages at phone width, here in a browser.']
+Phone
+The server’s pages at phone width, here in a browser. From a test server.
+## What it does
+Finds your server on the network, or takes its address, and signs in with a code or a password. It checks the server’s identity first.
+Plays your films and shows, with resume, on the native apps. The desktop app is a frameless window around the server’s web interface.
+Works with a remote, a keyboard or a touch screen.
+Plays games on someone’s own PC through the server’s page where it can, with the separately installed Moonlight app as the fallback. No part of that has reached a real PC from these apps yet.
+Native apps say plainly that an item can’t play yet, rather than failing, for anything but video and games on someone’s own PC. Music and books need the desktop app or a browser for now.
+## Where each app lives
+desktop/ — Windows, macOS, Linux, FreeBSD and KDE’s Plasma Bigscreen: a frameless window around the server’s web interface, in Electron.
+android/ — Android TV, Google TV, Fire TV, phones and tablets: Kotlin, Compose, Media3.
+apple/ — Apple TV, iPhone, iPad and Mac: SwiftUI, AVPlayer.
+There is no telemetry. Error reports go to the server you are connected to, and the owner can turn them off.
+Licensed under
+Apache-2.0 . Alpha software — keep backups, including your data folder, before upgrading.
+WittyMediaClient on GitHub
+See the companion server
+WittyMediaServer
+Your own media server, for your home.
+Server
+Client
+Modules
+GitHub ↗
+Apache-2.0 Cookie settings
+© 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.

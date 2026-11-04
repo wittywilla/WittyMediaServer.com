@@ -1,0 +1,10 @@
+# What a build makes: rebuild it with node build.mjs
+/site/
+/site.zip
+# What was fetched from GitHub, kept so the next build is quick
+/cache/
+node_modules/
+# The old site's own pages and scripts, saved locally for reference only.
+# Its words are kept in reference/text/.
+/reference/pages/
+/reference/assets/

@@ -1,0 +1,73 @@
+WittyMediaServer — the server
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/web/public/icon-192.png alt='']
+Witty
+Media Server
+Home
+Server
+Client
+Modules
+Gallery
+News
+Links
+GitHub
+SELF-HOSTED · OPEN SOURCE · YOURS
+# WittyMediaServer
+Self-hosted software that stores and streams your films, shows, discs, music, books and games from your own hardware. It plays DVDs and Blu-rays with their real menus, in any browser on your home network.
+Install it once on a machine you own. Every screen in your home reaches it through a web browser — no app required.
+View on GitHub
+Getting started
+Films & TV
+DVDs & Blu-rays
+Music
+Books & comics
+Games
+Photos
+### Platforms and architectures
+The server installs on the computer that holds your media. amd64 covers most desktops and laptops; arm64 covers Apple silicon and many small boards.
+Windows 10+
+.msi installer
+amd64 most PCs
+arm64 Windows on ARM
+macOS
+.pkg installer
+arm64 Apple silicon
+amd64 Intel
+Linux
+.deb (Debian, Ubuntu), .rpm (Fedora, RHEL), .tar.gz (others)
+amd64 most PCs
+arm64 SBCs, Apple silicon
+armv7 32-bit ARM
+386 32-bit x86
+FreeBSD
+.pkg package
+amd64
+Docker
+ghcr.io/wittywilla/wittymediaserver:alpha — any architecture your host supports
+Some Linux arm64 , armv7 and 386 builds, and FreeBSD, don't include FFmpeg — install it yourself if the server says it's missing. Phones, tablets and TVs need none of these: open the server's address in a browser, or use WittyMediaClient.
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/home.webp alt='WittyMediaServer home screen showing media libraries']
+Home
+Your libraries, on one screen. Wing It! · Blender Studio · CC BY 4.0 [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/dvd-menu.webp alt='A DVD playing with its real menu in WittyMediaServer']
+Disc playback
+DVDs and Blu-rays with their real menus. Sintel · Blender Foundation · CC BY 3.0
+## What it does
+Holds your library of films, shows, discs, music, books and games on hardware you own, and streams them to any browser on your network.
+Plays DVDs and Blu-rays with their real menus — the same navigation a standalone player would show — straight in the browser.
+Runs a signed module catalog, so you can add features from separate repositories without forking the server.
+Serves a web interface every device can reach, so a dedicated app is optional, not required.
+The server is the part you install. WittyMediaClient is the optional companion for devices where a browser isn’t the right fit.
+## Where it runs
+Windows, macOS, Linux, FreeBSD — install it on a machine you own and reach it from any browser on your network.
+Docker — run it as a container alongside your other self-hosted services.
+Modules — extend it with features from separate, signed repositories.
+Licensed under
+Apache-2.0 . Alpha software — keep backups, including your data folder, before upgrading.
+WittyMediaServer on GitHub
+See the companion apps
+WittyMediaServer
+Your own media server, for your home.
+Server
+Client
+Modules
+GitHub ↗
+Apache-2.0 Cookie settings
+© 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.

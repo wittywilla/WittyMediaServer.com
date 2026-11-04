@@ -1,0 +1,32 @@
+News & updates — WittyMediaServer
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/web/public/icon-192.png alt='']
+Witty
+Media Server
+Home
+Server
+Client
+Modules
+Gallery
+News
+Links
+GitHub
+PROJECT UPDATES
+# News & updates
+Release notes from the project changelog.
+FROM GITHUB RELEASES
+## Releases
+Checking GitHub for new releases…
+0.6.2-alpha
+### Windows installer upgrades work again
+A fix for error 2613 when updating an existing installation, with upgrade testing before publication.
+0.6.1-alpha
+### Better disc playback in Firefox
+DVD and Blu-ray pictures and menu buttons line up again, including in the mini player.
+WittyMediaServer
+Your own media server, for your home.
+Server
+Client
+Modules
+GitHub ↗
+Apache-2.0 Cookie settings
+© 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.

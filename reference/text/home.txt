@@ -1,0 +1,82 @@
+WittyMediaServer — Your media, right at home
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/web/public/icon-192.png alt='']
+Witty
+Media Server
+Home
+Server
+Client
+Modules
+Gallery
+News
+Links
+GitHub
+SELF-HOSTED. OPEN SOURCE. YOURS.
+# Your media.
+Right at home.
+Your films, shows, discs, music, books and games,
+on every screen in your home.
+A self-hosted media server that plays DVDs and Blu-rays
+with their real menus, in any browser.
+Explore the project
+View on GitHub
+Windows
+· macOS
+· Linux
+· FreeBSD
+· Docker
+WittyMediaServer · Home
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/home.webp alt='WittyMediaServer home screen featuring Wing It! and media libraries']
+A look inside WittyMediaServer
+Wing It! · Blender Studio · CC BY 4.0
+TWO PARTS, ONE SETUP
+## The server, and the apps that reach it
+WittyMediaServer runs on your own hardware and holds your library. You can use it from any web browser on your network. WittyMediaClient is the optional companion — native apps for the devices where a browser isn’t the right fit.
+The server
+### WittyMediaServer
+Self-hosted software that stores and streams your films, shows, discs, music, books and games. It plays DVDs and Blu-rays with their real menus, in any browser on your home network.
+Install it once on a machine you own. Every screen in your home reaches it through a web browser — no app required.
+About the server
+Browse modules
+Server on GitHub
+The companion apps
+### WittyMediaClient
+Native apps for TV boxes, phones, tablets and desktops that connect to a WittyMediaServer. They’re an app-based way to reach the server where a browser isn’t the right tool.
+Optional, not required. The server’s full interface already runs in any web browser; the apps are for devices where a dedicated app feels better.
+About the client
+About the server
+Client on GitHub
+PROJECT UPDATES
+## What’s new
+All updates
+FROM GITHUB RELEASES
+## Latest releases
+Checking GitHub for new releases…
+0.6.2-alpha
+### Windows installer upgrades work again
+A fix for error 2613 when updating an existing installation, with upgrade testing before publication.
+0.6.1-alpha
+### Better disc playback in Firefox
+DVD and Blu-ray pictures and menu buttons line up again, including in the mini player.
+FROM THE PROJECT
+## A look around
+View gallery
+A test server with openly licensed media. No media comes with WittyMediaServer.
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/movies.webp alt='Your film library']
+01 / Films & TV
+### Your film library
+Open-licence and public-domain media [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/film-page.webp alt='A film’s page']
+02 / Films & TV
+### A film’s page
+Sintel, Blender Foundation, CC BY 3.0 [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/dvd-menu.webp alt='A DVD’s real menu']
+03 / Films & TV
+### A DVD’s real menu
+Sintel, Blender Foundation, CC BY 3.0
+Full image credits and licences ↗
+WittyMediaServer
+Your own media server, for your home.
+Server
+Client
+Modules
+GitHub ↗
+Apache-2.0 Cookie settings
+© 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.

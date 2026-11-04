@@ -1,0 +1,27 @@
+Modules — WittyMediaServer
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/web/public/icon-192.png alt='']
+Witty
+Media Server
+Home
+Server
+Client
+Modules
+Gallery
+News
+Links
+GitHub
+MODULE CATALOG
+# Modules
+The same catalog a WittyMediaServer reads, shown here so you can browse it. Nothing is installed from this page. Each module links to its repository.
+All Discs Games TV Reading Photos Listening System
+Publisher Anyone Platform Any Check now
+Loading the catalog from GitHub…
+Group labels follow the catalog: Discs (discs), Games (games), TV (tv), Reading (reading), Photos (photos), Listening (listening), System (system) .
+WittyMediaServer
+Your own media server, for your home.
+Server
+Client
+Modules
+GitHub ↗
+Apache-2.0 Cookie settings
+© 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.

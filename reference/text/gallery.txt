@@ -1,0 +1,50 @@
+Photo gallery — WittyMediaServer
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/web/public/icon-192.png alt='']
+Witty
+Media Server
+Home
+Server
+Client
+Modules
+Gallery
+News
+Links
+GitHub
+FROM THE PROJECT
+# Photo gallery
+A test server with openly licensed media. No media comes with WittyMediaServer.
+All Overview Films & TV Music & books
+[img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/home.webp alt='A home for your media']
+01 / Overview
+### A home for your media
+Wing It!, Blender Studio, CC BY 4.0 [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/movies.webp alt='Your film library']
+02 / Films & TV
+### Your film library
+Open-licence and public-domain media [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/film-page.webp alt='A film’s page']
+03 / Films & TV
+### A film’s page
+Sintel, Blender Foundation, CC BY 3.0 [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/dvd-menu.webp alt='A DVD’s real menu']
+04 / Films & TV
+### A DVD’s real menu
+Sintel, Blender Foundation, CC BY 3.0 [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/wittytv-guide.webp alt='WittyTV guide']
+05 / Films & TV
+### WittyTV guide
+Caminandes: Llamigos, Pablo Vazquez, Blender Foundation, CC BY 3.0 [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/music-visualizer.webp alt='Music with WittyVisualizer']
+06 / Music & books
+### Music with WittyVisualizer
+Collide, Aryll Fae, CC BY 4.0 [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/reader-comic.webp alt='Comics in the reader']
+07 / Music & books
+### Comics in the reader
+Pepper&Carrot, David Revoy, CC BY 4.0 [img https://raw.githubusercontent.com/wittywilla/WittyMediaServer/master/docs/images/photos.webp alt='Your photo library']
+08 / Overview
+### Your photo library
+Wikimedia Commons; see project image credits
+Full image credits and licences ↗
+WittyMediaServer
+Your own media server, for your home.
+Server
+Client
+Modules
+GitHub ↗
+Apache-2.0 Cookie settings
+© 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.
