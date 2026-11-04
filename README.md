@@ -42,4 +42,4 @@ Nothing needs installing apart from Node.js 20 or newer.
 
 wittymediaserver.com is the website of an independent open-source project. WittyMediaServer isn't associated with, sponsored by or endorsed by the makers of the formats, discs, devices or services it works with. No media comes with it. The screenshots show a test server filled with openly licensed and public-domain media, each credited in [the credits](https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md). Any third-party names here only describe what it works with, and belong to their owners. It's provided “as is”, with no warranty; see [LICENSE](LICENSE). Local law applies to how you use it. This isn't legal advice.
 
-Licensed under Apache-2.0: see [LICENSE](LICENSE).
+Licensed under the Apache License 2.0: see [LICENSE](LICENSE) and [NOTICE](NOTICE). The screenshots it shows keep their own open licences, recorded in `content/licences.json`.

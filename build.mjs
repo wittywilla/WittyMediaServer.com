@@ -13,7 +13,7 @@ import path from 'node:path'
 import http from 'node:http'
 import crypto from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath, pathToFileURL } from 'node:url'
 import { GitHub } from './lib/github.mjs'
 import { gather } from './lib/data.mjs'
 import { ctx, THEME_SCRIPT } from './lib/layout.mjs'
@@ -21,6 +21,7 @@ import * as P from './lib/pages.mjs'
 import { esc, hash, write, isoDate } from './lib/util.mjs'
 import { releaseSummary } from './lib/layout.mjs'
 import { check } from './check.mjs'
+import { licenceProblems } from './lib/licences.mjs'
 
 const root = path.dirname(fileURLToPath(import.meta.url))
 const argv = process.argv.slice(2)
@@ -53,7 +54,10 @@ async function build() {
   }
   if (fs.existsSync(path.join(OUT, 'images', 'icon-192.png'))) fs.copyFileSync(path.join(OUT, 'images', 'icon-192.png'), path.join(OUT, 'favicon.png'))
 
+  // Only openly licensed and public-domain media is ever shown: see content/licences.json.
+  const licence = licenceProblems(root, d.shots, d.site.themes)
   for (const s of d.shots) {
+    if (licence.blocked.has(s.id)) continue
     const buf = await gh.get(s.url)
     if (!buf) { log(`  ! no picture ${s.repo} ${s.id}`); continue }
     write(path.join(OUT, 'images', 'shots', `${s.id}.webp`), buf)
@@ -68,7 +72,7 @@ async function build() {
     for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.webp'))) {
       const id = f.slice(0, -5)
       const base = d.shots.find((s) => s.id === id && s.local)
-      if (!base || base.themeless) continue
+      if (!base || base.themeless || licence.blocked.has(`${t}/${id}`)) continue
       // A themed picture replaces the plain one in place, so it must be the same shape.
       const dim = webpSize(fs.readFileSync(path.join(dir, f)))
       if (base.width && (dim.width * base.height !== dim.height * base.width)) { log(`  ! images/themes/${t}/${f} is ${dim.width}×${dim.height}, not the shape of the plain one (${base.width}×${base.height}), left out`); continue }
@@ -91,7 +95,9 @@ async function build() {
   }
 
   // ---- styles and script, named by their contents so browsers can keep them ----
-  const css = themesCSS(d.themes) + '\n' + fs.readFileSync(path.join(root, 'style', 'site.css'), 'utf8')
+  // site.css first, then each section's own stylesheet.
+  const styles = ['site.css', ...fs.readdirSync(path.join(root, 'style')).filter((f) => f.endsWith('.css') && f !== 'site.css').sort()]
+  const css = themesCSS(d.themes) + '\n' + styles.map((f) => fs.readFileSync(path.join(root, 'style', f), 'utf8')).join('\n')
   const cssMin = css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n+/g, '\n').replace(/^\s+/gm, '')
   const js = fs.readFileSync(path.join(root, 'scripts', 'site.js'), 'utf8')
   ctx.assets.css = `/assets/site.${hash(cssMin)}.css`
@@ -100,12 +106,24 @@ async function build() {
   write(path.join(OUT, ctx.assets.js), js)
   ctx.inlineHash = 'sha256-' + crypto.createHash('sha256').update(THEME_SCRIPT).digest('base64')
 
+  // ---- sections: lib/sections/*.mjs add pages of their own ----
+  // Each may export gather({ d, gh, root, out, log, save }) to fetch what it needs,
+  // and pages(d) returning [{ path, html }] made with lib/layout.mjs's page().
+  const sectionsDir = path.join(root, 'lib', 'sections')
+  const sections = []
+  for (const f of fs.existsSync(sectionsDir) ? fs.readdirSync(sectionsDir).filter((f) => f.endsWith('.mjs')).sort() : []) {
+    const mod = await import(pathToFileURL(path.join(sectionsDir, f)).href)
+    sections.push(mod)
+    if (mod.gather) await mod.gather({ d, gh, root, out: OUT, log, save: (rel, data) => write(path.join(OUT, rel), data) })
+  }
+
   // ---- pages ----
   const pages = [
     P.home(), P.server(), P.client(), P.player(), P.reader(), P.projects(),
     P.modulesPage(), ...d.modules.map(P.modulePage),
     P.newsPage(), ...d.news.map(P.articlePage), ...d.releases.map(P.releasePage),
     P.download(), P.gallery(), P.notFound(),
+    ...sections.flatMap((mod) => mod.pages ? mod.pages(d) : []),
   ]
   for (const p of pages) write(path.join(OUT, p.file || path.join(p.path, 'index.html')), p.html)
 
@@ -120,7 +138,7 @@ async function build() {
   gh.save()
 
   // ---- checks ----
-  const problems = check({ root, out: OUT, d })
+  const problems = [...licence.problems, ...check({ root, out: OUT, d })]
   for (const p of problems) log(`  ${p.level === 'error' ? '✗' : '!'} ${p.message}`)
 
   // ---- the ZIP to upload ----
