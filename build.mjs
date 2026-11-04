@@ -67,7 +67,11 @@ async function build() {
     if (!fs.existsSync(dir)) continue
     for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.webp'))) {
       const id = f.slice(0, -5)
-      if (!d.shots.some((s) => s.id === id && s.local)) continue
+      const base = d.shots.find((s) => s.id === id && s.local)
+      if (!base || base.themeless) continue
+      // A themed picture replaces the plain one in place, so it must be the same shape.
+      const dim = webpSize(fs.readFileSync(path.join(dir, f)))
+      if (base.width && (dim.width * base.height !== dim.height * base.width)) { log(`  ! images/themes/${t}/${f} is ${dim.width}×${dim.height}, not the shape of the plain one (${base.width}×${base.height}), left out`); continue }
       fs.mkdirSync(path.join(OUT, 'images', 'shots', t), { recursive: true })
       fs.copyFileSync(path.join(dir, f), path.join(OUT, 'images', 'shots', t, f))
       ;(themed[t] ||= []).push(id)
@@ -133,7 +137,7 @@ async function build() {
 
   const size = dirSize(OUT)
   log(`Built ${pages.length} pages, ${d.releases.length} releases, ${d.modules.length} modules, ${d.shots.filter((s) => s.local).length} pictures${Object.keys(themed).length ? ` (and ${Object.values(themed).flat().length} in other themes)` : ''}.`)
-  log(`${(size / 1e6).toFixed(1)} MB in site/${fs.existsSync(zip) ? ', and site.zip to upload' : ''}. GitHub: ${gh.fetched} fetched, ${gh.fromCache} unchanged. ${((Date.now() - t0) / 1000).toFixed(1)} s.`)
+  log(`${(size / 1e6).toFixed(1)} MB in ${outArg ? OUT : 'site/'}${fs.existsSync(zip) ? ', and site.zip to upload' : ''}. GitHub: ${gh.fetched} fetched, ${gh.fromCache} unchanged. ${((Date.now() - t0) / 1000).toFixed(1)} s.`)
   const errors = problems.filter((p) => p.level === 'error').length
   if (errors) { log(`${errors} problem${errors === 1 ? '' : 's'} to fix before uploading.`); process.exitCode = 1 }
 }
