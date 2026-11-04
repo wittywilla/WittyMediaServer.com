@@ -8,3 +8,5 @@ node_modules/
 # Its words are kept in reference/text/.
 /reference/pages/
 /reference/assets/
+# What npm run build fetches for Hostinger
+/dist/
