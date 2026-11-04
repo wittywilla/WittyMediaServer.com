@@ -2,11 +2,11 @@
   "name": "wittymediaserver-site",
   "private": true,
   "version": "1.0.0",
-  "description": "wittymediaserver.com. `npm run build` fetches the site GitHub Actions already built into dist/, for Hostinger's web apps. To build it yourself: node build.mjs.",
+  "description": "wittymediaserver.com's source. To build the site: node build.mjs. Hostinger deploys the live branch, which GitHub Actions fills with the built site.",
   "license": "Apache-2.0",
   "engines": { "node": ">=20" },
   "scripts": {
-    "build": "node tools/fetch-live.mjs",
+    "build": "node tools/wrong-branch.mjs",
     "site": "node build.mjs",
     "preview": "node build.mjs --preview"
   }

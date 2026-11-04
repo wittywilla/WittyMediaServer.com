@@ -120,19 +120,21 @@ jobs:
           fi
           git rm -rqf --ignore-unmatch .
           git clean -fdxq
-          # Shaped for Hostinger's web apps: a package.json at the root, and the
-          # finished site in dist/ as the output folder. Nothing is built there.
-          mkdir dist
-          cp -a "$SITE/." dist/
+          # The finished site goes at the top of the branch, index.html and all.
+          # Hostinger's Node.js web app (preset "Other", no output directory)
+          # publishes the whole branch into public_html as it is, so the top of
+          # the branch has to be the site. Its Node.js import also needs a
+          # package.json at the top; nothing is built here.
+          cp -a "$SITE/." .
           cat > package.json <<'JSON'
           {
             "name": "wittymediaserver-site",
             "private": true,
             "version": "1.0.0",
-            "description": "wittymediaserver.com, already built by GitHub Actions from the main branch. The site is in dist/. Don't edit this branch.",
+            "description": "wittymediaserver.com, already built by GitHub Actions from the main branch. Don't edit this branch.",
             "license": "Apache-2.0",
             "scripts": {
-              "build": "node -e \"console.log('Already built: serving dist/')\""
+              "build": "node -e \"console.log('Already built by GitHub Actions: nothing to build.')\""
             }
           }
           JSON

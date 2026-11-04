@@ -162,34 +162,34 @@ Nothing else needs adding on GitHub: the build uses the run's own access to GitH
 
 ### 3. Add it to Hostinger as a web app (recommended)
 
-The `live` branch is shaped for Hostinger's **web apps**: a `package.json` at the top, and the finished site in `dist/`. Hostinger redeploys by itself each time GitHub publishes, including the four-hourly rebuilds.
+What Hostinger does, as its import screen and build log show: it detects this repository as **Other**, offers no output directory or entry file, and publishes **the whole branch** into `public_html`. So the branch it deploys has to be the finished site, top to bottom. That's the `live` branch: the site's files at the top, plus the `package.json` Hostinger's Node.js import asks for. `main` is the source code. If Hostinger is pointed at `main`, its build stops with a message saying so, and the live site stays as it was.
 
-1. In hPanel, choose **Websites**, then **Add website**, then **Web app** (Node.js), then **Import Git repository**, and connect GitHub if asked (**Only select repositories**, **WittyMediaServer.com**).
-2. Choose the repository **WittyMediaServer.com**.
-3. Set these, and leave the rest as they are:
+Hostinger redeploys by itself each time GitHub publishes to `live`, including the four-hourly rebuilds.
 
-   | Setting | Value |
-   |---|---|
-   | Branch | `live` |
-   | Framework preset | Other |
-   | Node.js version | 22 |
-   | Root directory | empty |
-   | Build command | empty (or `npm run build`, which only prints a line) |
-   | Output directory | `dist` |
-   | Entry file | empty |
-   | Environment variables | none |
+**Setting it up the first time:**
 
-4. Click **Deploy** and wait for it to finish.
-5. Connect the domain wittymediaserver.com to this web app, if it was made on a temporary address.
-6. Check that **Auto-deploy** is on.
+1. If wittymediaserver.com is already a website on the hosting plan (from Website Builder, or a plain site), Hostinger asks you to remove it first: its Node.js flow makes a fresh slot for the domain.
+2. In hPanel, choose **Websites**, then **Add Website**, then **Node.js web app**.
+3. Under **Import your Git repository**, click **Connect with GitHub** (or **Continue with GitHub**), and in the GitHub window give Hostinger access to **WittyMediaServer.com**.
+4. Pick **wittywilla/WittyMediaServer.com**.
+5. Hostinger shows what it detected: **Framework** Other, **Branch** main, **Root directory** `./`, **Package manager** npm, **Build command** `npm run build`. Click **Deploy**.
+6. That first build fails on purpose, with a message saying `main` is the source code. That's expected. Go on to the next part to switch it to `live`.
 
-Hostinger writes its own `.htaccess` for web apps, so the site's own one (the not-found page and security headers) may be replaced. Every page still works; a missing page shows Hostinger's not-found page instead of the site's.
+**Pointing it at `live`** (also the fix, if the site shows **403 Forbidden** and `/dist/` or `/build.mjs` open on the site):
+
+1. In hPanel, open the web app for wittymediaserver.com, then **Deployments**.
+2. Click **Redeploy**, or **Deployment settings**. Both open the deployment settings.
+3. Change **Branch** from `main` to **`live`**. Leave everything else as it is.
+4. Click **Save and redeploy**, and wait for **Deployment completed**.
+5. Open https://wittymediaserver.com and press **Ctrl+F5**. If it still shows the old page, clear Hostinger's cache: on the site's dashboard, **Advanced**, then **Cache Manager**, then **Purge all**.
+
+To check it's right, open https://wittymediaserver.com/build.mjs: it should be a not-found page. If it shows code, Hostinger is still deploying `main`.
 
 **Use either the web app or the Git deployment below, not both.**
 
 ### 3b. Or turn on Hostinger's Git deployment
 
-With the web app layout, the site is in `dist/`, so set the deploy directory so that `dist/` ends up as `public_html`, or use the web app above.
+Only if you're not using the web app above. This copies the `live` branch into `public_html` as it is, which works because the site is at the top of the branch.
 
 1. In hPanel, choose **Websites**, then **Manage site** beside wittymediaserver.com.
 2. **Empty `public_html` first.** Open **File manager**, open `public_html`, keep a copy with **Download** if you like, then delete everything inside it. Hostinger copies the site in over whatever's there.
@@ -260,5 +260,6 @@ GitHub sends you an email. Nothing is published from a failed run, so the site s
 | **publish** fails with `Permission denied` or `403` | Open **Settings**, then **Actions**, then **General**. Under **Workflow permissions**, choose **Read and write permissions**, click **Save**, and re-run |
 | **ftp** fails with `Couldn't upload` | Check the three secrets for typos, and the folder (step 4 of [Uploading by FTP instead](#uploading-by-ftp-instead)) |
 | `Nothing changed since the last publish` | Not a problem: the build found nothing new, so nothing was published |
-| The run is green but the site hasn't changed | In hPanel, open **Advanced**, then **Git**. Check the branch is `live` and **Auto-deployment** is on. The **Deployments** list shows what Hostinger did; click a row for its log, or click **Redeploy** to copy the latest build now. Then press **Ctrl+F5** on the site |
+| The run is green but the site hasn't changed | In hPanel, open the web app's **Deployments**. The newest row should show branch `live` and a commit named "Site built from …"; click it for its log. If the branch says `main`, see [Pointing it at `live`](#3-add-it-to-hostinger-as-a-web-app-recommended). **Redeploy** pulls the latest build now. Then press **Ctrl+F5** on the site, and if it's still old, **Advanced**, **Cache Manager**, **Purge all**. (Using the Git deployment of 3b instead? Open **Advanced**, then **Git**, and check the branch is `live` and **Auto-deployment** is on.) |
+| The home page says **403 Forbidden**, and `/dist/` or `/build.mjs` open on the site | Hostinger is deploying `main`, or a `live` from before the site moved to its top. Follow [Pointing it at `live`](#3-add-it-to-hostinger-as-a-web-app-recommended) |
 | A yellow banner on **Actions** says the scheduled workflow was turned off | GitHub pauses timed runs in a repository that hasn't changed for 60 days. Click **Enable workflow**. Writing an article now and then keeps it running |
