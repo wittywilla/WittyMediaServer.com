@@ -409,6 +409,7 @@ transition: transform var(--dur-3) var(--ease-out), opacity var(--dur-2), visibi
 .drawer a[aria-current="page"] { background: var(--accent-soft); color: var(--fg); font-weight: 600; }
 .drawer a .i { color: var(--fg-3); }
 .drawer a[aria-current="page"] .i { color: var(--accent-text); }
+svg.i.gh-mark { color: var(--fg); color: light-dark(#000, #fff); }
 .drawer .sub { margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid var(--border); }
 .drawer .sub a { font-size: var(--text-base); color: var(--fg-2); min-height: 44px; }
 .scrim { position: fixed; inset: var(--topbar-h) 0 0 0; z-index: 53; background: var(--overlay, rgb(0 0 0 / .5)); opacity: 0; visibility: hidden; transition: opacity var(--dur-3), visibility 0s linear var(--dur-3); }
@@ -427,7 +428,7 @@ transition: transform var(--dur-3) var(--ease-out), opacity var(--dur-2), visibi
 @media (min-width: 900px) {
 .nav { display: flex; align-items: center; margin-left: var(--sp-6); }
 .menu-btn, .drawer, .scrim { display: none; }
-.topbar .gh { display: inline-flex; }
+.topbar .gh { display: inline-grid; }
 }
 html:not(.js) .menu-btn, html:not(.js) [data-theme-btn], html:not(.js) .js-only { display: none; }
 @media (max-width: 899px) {
