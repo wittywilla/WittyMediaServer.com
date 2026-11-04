@@ -5,6 +5,7 @@
 //   node build.mjs --offline   build from what was fetched last time
 //   node build.mjs --preview   build, then show it at http://localhost:4173
 //   node build.mjs --serve     show the last build without building
+//   node build.mjs --out D:/somewhere/site-test   build into another folder
 //
 // See UPDATING.md for the whole routine.
 import fs from 'node:fs'
@@ -22,8 +23,11 @@ import { releaseSummary } from './lib/layout.mjs'
 import { check } from './check.mjs'
 
 const root = path.dirname(fileURLToPath(import.meta.url))
-const args = new Set(process.argv.slice(2))
-const OUT = path.join(root, 'site')
+const argv = process.argv.slice(2)
+const args = new Set(argv)
+// --out <folder> builds somewhere else, such as a scratch folder; its name must start with "site".
+const outArg = argv.includes('--out') ? argv[argv.indexOf('--out') + 1] : null
+const OUT = outArg ? path.resolve(outArg) : path.join(root, 'site')
 const PORT = Number(process.env.PORT) || 4173
 const log = (...a) => console.log(...a)
 
@@ -36,7 +40,7 @@ async function build() {
   ctx.built = new Date().toISOString()
 
   // A fresh site/ each time, so nothing old is left to upload.
-  if (path.basename(OUT) !== 'site' || path.dirname(OUT) !== root) throw new Error('refusing to clear an unexpected folder')
+  if (!/^site/.test(path.basename(OUT)) || OUT === root) throw new Error(`refusing to clear ${OUT}: an output folder's name starts with "site"`)
   fs.rmSync(OUT, { recursive: true, force: true })
   fs.mkdirSync(OUT, { recursive: true })
 
@@ -116,7 +120,7 @@ async function build() {
   for (const p of problems) log(`  ${p.level === 'error' ? '✗' : '!'} ${p.message}`)
 
   // ---- the ZIP to upload ----
-  const zip = path.join(root, 'site.zip')
+  const zip = outArg ? OUT + '.zip' : path.join(root, 'site.zip')
   fs.rmSync(zip, { force: true })
   if (!args.has('--no-zip')) {
     // Windows' own tar makes ZIPs; elsewhere, zip does.
