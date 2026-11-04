@@ -44,9 +44,18 @@
 .promise .more a { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
 .promise .more a:hover { text-decoration: underline; }
 .promise .more .i { width: 15px; height: 15px; }
+/* The big ones, such as "never a Pro", run the full width and say it louder. */
+.promise.big {
+  grid-column: 1 / -1; padding: clamp(24px, 4vw, 40px);
+  background: linear-gradient(135deg, var(--accent-soft), transparent 70%), var(--bg-2); border-color: var(--accent-line);
+}
+.promise.big h3 { font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem); letter-spacing: var(--tracking-display); line-height: 1.15; }
+.promise.big p { font-size: var(--text-lg); max-width: 70ch; }
 @media (min-width: 640px) { .promises { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1040px) {
-  .promises { grid-template-columns: repeat(4, 1fr); }
-  /* The last one, remote access, gets the width it deserves. */
-  .promise:last-child { grid-column: span 2; background: linear-gradient(135deg, var(--accent-soft), transparent 70%), var(--bg-2); border-color: var(--accent-line); }
+  .promises { grid-template-columns: repeat(3, 1fr); }
+  .promise.big { grid-template-columns: auto 1fr; column-gap: var(--sp-6); align-items: start; }
+  .promise.big .tile { grid-row: span 3; width: 56px; height: 56px; }
+  .promise.big .tile .i { width: 28px; height: 28px; }
+  .promise.big h3 { margin-top: 0; }
 }
