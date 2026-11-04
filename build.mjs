@@ -99,7 +99,9 @@ async function build() {
   const styles = ['site.css', ...fs.readdirSync(path.join(root, 'style')).filter((f) => f.endsWith('.css') && f !== 'site.css').sort()]
   const css = themesCSS(d.themes) + '\n' + styles.map((f) => fs.readFileSync(path.join(root, 'style', f), 'utf8')).join('\n')
   const cssMin = css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n+/g, '\n').replace(/^\s+/gm, '')
-  const js = fs.readFileSync(path.join(root, 'scripts', 'site.js'), 'utf8')
+  // site.js first, then any other script in scripts/, each kept in its own scope.
+  const scripts = ['site.js', ...fs.readdirSync(path.join(root, 'scripts')).filter((f) => f.endsWith('.js') && f !== 'site.js').sort()]
+  const js = scripts.map((f) => fs.readFileSync(path.join(root, 'scripts', f), 'utf8')).join('\n;\n')
   ctx.assets.css = `/assets/site.${hash(cssMin)}.css`
   ctx.assets.js = `/assets/site.${hash(js)}.js`
   write(path.join(OUT, ctx.assets.css), cssMin)
