@@ -1,5 +1,5 @@
 {
-  "$comment": "Every project under WittyMediaServer, for the projects page. Keep it in step with docs/REPOSITORIES.md in the server's repository. Modules in the catalog are added by themselves; list them here only to say more. kind: app, module, library or planned.",
+  "$comment": "Every project under WittyMediaServer, for the projects page. Keep it in step with docs/REPOSITORIES.md in the server's repository. Modules in the catalog are added by themselves; list them here only to say more. kind: app, module, library or planned. say: uses a sentence from site.json in place of a summary, so an app is described the same way everywhere.",
   "groups": [
     { "id": "app", "title": "Apps", "intro": "What you install." },
     { "id": "module", "title": "Modules", "intro": "Added to a server from its store, each a project of its own." },
@@ -8,17 +8,17 @@
   ],
   "projects": [
     { "name": "WittyMediaServer", "repo": "wittywilla/WittyMediaServer", "kind": "app", "page": "/server/", "icon": "server",
-      "summary": "The server: your films, shows, discs, music, books and games, streamed to every screen in your home." },
+      "say": "lead" },
     { "name": "WittyMediaClient", "repo": "wittywilla/WittyMediaClient", "kind": "app", "page": "/client/", "icon": "devices",
-      "summary": "Apps for desktops, Android, Android TV, iPhone, iPad, Apple TV and Plasma Bigscreen that connect to your server. Early." },
+      "say": "client" },
     { "name": "WittyMediaPlayer", "repo": "wittywilla/WittyMediaPlayer", "kind": "app", "page": "/player/", "icon": "disc",
-      "summary": "A desktop player for discs and files, with real DVD and Blu-ray menus. Windows only for now." },
+      "say": "playerShort" },
     { "name": "WittyReader", "repo": "wittywilla/WittyReader", "kind": "app", "page": "/reader/", "icon": "book",
-      "summary": "A desktop reader for books, PDFs and comics, with notes and a pen. No server needed." },
+      "say": "readerShort" },
     { "name": "WittyModule", "repo": "wittywilla/WittyModule", "kind": "library", "icon": "puzzle",
       "summary": "The manifest format, tools and kit that modules are built with." },
     { "name": "WittyModuleCatalog", "repo": "wittywilla/WittyModuleCatalog", "kind": "library", "page": "/modules/", "icon": "list",
-      "summary": "The signed list of modules and versions that a server's store reads. It holds no module code." },
+      "summary": "The signed list of modules and versions that a server’s store reads. It holds no module code." },
     { "name": "WittyMediaRemoteMedia", "repo": "wittywilla/WittyMediaRemoteMedia", "kind": "planned", "icon": "network",
       "summary": "Connecting libraries on a NAS through a native or Docker app." }
   ]

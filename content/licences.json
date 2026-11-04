@@ -1,0 +1,3741 @@
+{
+ "$comment": "Every work that can be seen in each picture the site can show, and its licence. A picture with no record here is left out of the site. \"<theme>/<id>\" records a themed copy that shows different works from the plain one. Checked against D:/WittyDemoMedia/credits.json (each licence read from its source on the date in \"fetched\") and, for the project’s own drawings, the repositories. See the report of 2026-11-04 for pictures left out on purpose.",
+ "allowed": [
+  "CC0-1.0",
+  "Public domain",
+  "CC-BY-3.0",
+  "CC-BY-4.0",
+  "CC-BY-SA-3.0",
+  "CC-BY-SA-4.0",
+  "MIT",
+  "Apache-2.0",
+  "Zlib",
+  "GPL-2.0-only",
+  "GPL-2.0-or-later",
+  "GPL-3.0-only",
+  "GPL-3.0-or-later",
+  "WTFPL",
+  "FSFAP",
+  "Own work",
+  "CC-BY-2.0",
+  "CC-BY-2.5",
+  "CC-BY-2.5-AR",
+  "CC-BY-3.0-AT",
+  "CC-BY-3.0-BR",
+  "CC-BY-SA-2.0",
+  "CC-BY-SA-2.0-AT",
+  "CC-BY-SA-2.5",
+  "CC-BY-SA-2.5-CA",
+  "CC-BY-SA-3.0-AT",
+  "CC-BY-SA-3.0-DE",
+  "CC-BY-SA-3.0-EE",
+  "CC-BY-SA-3.0-IGO",
+  "CC-BY-SA-3.0-PL",
+  "CC-BY-SA-3.0-RS"
+ ],
+ "pictures": {
+  "home": {
+   "works": [
+    {
+     "title": "Fanart: Wing It!",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "DataStorm",
+     "by": "Haroldo de Oliveira Pinheiro",
+     "licence": "Apache-2.0",
+     "source": "https://github.com/haroldo-ok/datastorm"
+    },
+    {
+     "title": "Earth as Art",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Earth_as_Art.pdf"
+    },
+    {
+     "title": "Alice's Adventures in Wonderland",
+     "by": "Lewis Carroll, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/alices_adventures_1003"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "movies": {
+   "works": [
+    {
+     "title": "Fanart: Big Buck Bunny",
+     "by": "Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Big_Buck_Bunny_4K.webm"
+    },
+    {
+     "title": "Fanart: Charade",
+     "by": "Stanley Donen",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Charade_(1963).webm"
+    },
+    {
+     "title": "Fanart: A Trip to the Moon",
+     "by": "Georges Méliès",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm"
+    },
+    {
+     "title": "Fanart: Carnival of Souls",
+     "by": "Herk Harvey",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Carnival_of_Souls_(1962)_by_Herk_Harvey.webm"
+    },
+    {
+     "title": "Fanart: Cosmos Laundromat",
+     "by": "Blender Institute",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Cosmos_Laundromat_-_First_Cycle_-_Official_Blender_Foundation_release.webm"
+    },
+    {
+     "title": "Poster: Wing It!",
+     "by": "Made for this library from a frame of the film by Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Poster: The Cabinet of Dr. Caligari",
+     "by": "Ledl Bernhard = Rudolf Ledl and Fritz Bernhard Original uploader was БережнойСергей at ru.wikipedia",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Das_Kabinett_des_Doktor_Caligari_1920_Poster.jpg"
+    },
+    {
+     "title": "Poster: The Daily Dweebs",
+     "by": "Made for this library from a frame of the film by Blender Institute",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Daily_Dweebs_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Poster: The General",
+     "by": "Unknown artistUnknown artist",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Buster_Keaton_in_The_General;_poster.jpg"
+    },
+    {
+     "title": "Poster: The Great Train Robbery",
+     "by": "Made for this library from a frame of the film by Edwin S. Porter",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Great_Train_Robbery_1903.webm"
+    },
+    {
+     "title": "Poster: The Kid",
+     "by": "First National",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Kid_(1921)_poster.jpg"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "home-shelves": {
+   "works": [
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "DataStorm",
+     "by": "Haroldo de Oliveira Pinheiro",
+     "licence": "Apache-2.0",
+     "source": "https://github.com/haroldo-ok/datastorm"
+    },
+    {
+     "title": "Earth as Art",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Earth_as_Art.pdf"
+    },
+    {
+     "title": "Alice's Adventures in Wonderland",
+     "by": "Lewis Carroll, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/alices_adventures_1003"
+    },
+    {
+     "title": "Fanart: Safety Last!",
+     "by": "Fred C. Newmeyer and Sam Taylor",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Safety_Last_(1923).webm"
+    },
+    {
+     "title": "Poster: Sintel",
+     "by": "(c) copyright Blender Foundation | durian.blender.org",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Sintel_poster.jpg"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: Chaplin at Mutual",
+     "by": "Made for this library from frames of Chaplin at Mutual, Charlie Chaplin",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Vagabond_(1916).webm"
+    },
+    {
+     "title": "Fanart: The Last Man on Earth",
+     "by": "Ubaldo Ragona and Sidney Salkow",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Last_Man_on_Earth_(1964)_by_Ubaldo_Ragona_and_Sidney_Salkow.webm"
+    },
+    {
+     "title": "Fanart: Sherlock Jr.",
+     "by": "Buster Keaton",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Sherlock_Jr._(1924).webm"
+    },
+    {
+     "title": "Fanart: Princess Iron Fan",
+     "by": "Wan Laiming and Wan Guchan",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Tie_Shan_Gongzhu_-_%E9%90%B5%E6%89%87%E5%85%AC%E4%B8%BB.ogv"
+    },
+    {
+     "title": "Poster: Cosmos Laundromat",
+     "by": "Andy Goralczyk and the Blender Foundation",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:CosmosLaundromatPoster.jpg"
+    },
+    {
+     "title": "Poster: Princess Iron Fan",
+     "by": "Made for this library from a frame of the film by Wan Laiming and Wan Guchan",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Tie_Shan_Gongzhu_-_%E9%90%B5%E6%89%87%E5%85%AC%E4%B8%BB.ogv"
+    },
+    {
+     "title": "Poster: Spring",
+     "by": "Blender Foundation",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring2019AlphaPosterBlender.jpg"
+    },
+    {
+     "title": "Poster: Hero",
+     "by": "Made for this library from a frame of the film by Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:HERO_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Sintel (Durian Open Movie), original box-set NTSC DVD",
+     "by": "Blender Foundation",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/sintel-dvd"
+    },
+    {
+     "title": "Big Buck Bunny, Blu-ray Disc released by Imagion AG",
+     "by": "Blender Foundation; disc by Imagion AG",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/peachopenmoviebd"
+    },
+    {
+     "title": "Poster: Big Buck Bunny",
+     "by": "(c) copyright Blender Foundation | peach.blender.org",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Big_buck_bunny_poster_big.jpg"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "tv-shows": {
+   "works": [
+    {
+     "title": "Poster, fanart and episode pictures: Apollo Mission Films",
+     "by": "Made for this library from frames of Apollo Mission Films, NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Flight_of_Apollo_7_(1968).webm"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: Caminandes",
+     "by": "Made for this library from frames of Caminandes, Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes-_Llama_Drama_-_Short_Movie.ogv"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: ESOcast",
+     "by": "Made for this library from frames of ESOcast, European Southern Observatory",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:ESOcast_218.webm"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: Chaplin at Mutual",
+     "by": "Made for this library from frames of Chaplin at Mutual, Charlie Chaplin",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Vagabond_(1916).webm"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: The Big Picture",
+     "by": "Made for this library from frames of The Big Picture, US Army Signal Corps",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:US_Army_The_Big_Picture_Army_Language_School-1951.ogv"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: Why We Fight",
+     "by": "Made for this library from frames of Why We Fight, Frank Capra, US War Department",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Why_We_Fight.1.Prelude_to_War.webm"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: This Week at NASA",
+     "by": "Made for this library from frames of This Week at NASA, NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:A_Budget_for_a_New_Era_of_Space_Exploration_on_This_Week_@NASA_%E2%80%93_February_14,_2020.webm"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: The Lucy Show",
+     "by": "Made for this library from frames of The Lucy Show, Desilu Productions",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Lucy_Show_-_Lucy_The_Babysitter.ogv"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: The Lone Ranger",
+     "by": "Made for this library from frames of The Lone Ranger, George W. Trendle",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Lone_Ranger_S1_E1_-_Enter_The_Lone_Ranger.ogv"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: The Beverly Hillbillies",
+     "by": "Made for this library from frames of The Beverly Hillbillies, Paul Henning",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Beverly_Hillbillies_Episode_05_Jed_Buys_Stock.ogv"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "dvd-menu": {
+   "works": [
+    {
+     "title": "Sintel (Durian Open Movie), original box-set NTSC DVD",
+     "by": "Blender Foundation",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/sintel-dvd"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "bluray-menu": {
+   "works": [
+    {
+     "title": "Sita Sings the Blues, Blu-ray image",
+     "by": "Nina Paley",
+     "licence": "CC0-1.0",
+     "source": "https://archive.org/details/SitaSingsTheBlues_201812"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-guide": {
+   "works": [
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-classic": {
+   "works": [
+    {
+     "title": "Singularity (2024)",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:SINGULARITY_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-albums": {
+   "works": [
+    {
+     "title": "Ritorno a casa in un pomeriggio estivo",
+     "by": "1984",
+     "licence": "CC-BY-2.5",
+     "source": "https://archive.org/details/USR-012"
+    },
+    {
+     "title": "Yes, And...",
+     "by": "Advances in Obsolete Technology",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/AIOT_YesAnd"
+    },
+    {
+     "title": "spacesuite radio",
+     "by": "airnino",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/rfa003"
+    },
+    {
+     "title": "Five Structures And A Cold Void",
+     "by": "Miquel Parera and Alozeau",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://archive.org/details/Five_Structures_And_A_Cold_Void"
+    },
+    {
+     "title": "Chillin' In Tonight's Sky",
+     "by": "Artificial.Music",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/SRS02607"
+    },
+    {
+     "title": "Collide",
+     "by": "Aryll Fae",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/SRS08807"
+    },
+    {
+     "title": "Heart and Soul",
+     "by": "Ash Electric",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/SRS16313"
+    },
+    {
+     "title": "Geo-Sync Deluxe",
+     "by": "BLUnderwood",
+     "licence": "CC-BY-3.0",
+     "source": "https://archive.org/details/BLUnderwood_Geo_Sync_Deluxe"
+    },
+    {
+     "title": "Out Of It",
+     "by": "Brad Sucks",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://archive.org/details/Out_Of_It-3406"
+    },
+    {
+     "title": "Short Circuits",
+     "by": "Brevyn",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/brevyn-short-circuits-2020"
+    },
+    {
+     "title": "Hiding Place",
+     "by": "CellarDoor",
+     "licence": "CC-BY-2.5",
+     "source": "https://archive.org/details/USR-017"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-visualizer": {
+   "works": [
+    {
+     "title": "Collide",
+     "by": "Aryll Fae",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/SRS08807"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-lyrics": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "“Take Me Out to the Ball Game”, words of 1908 (shown as lyrics)",
+     "by": "Jack Norworth",
+     "licence": "Public domain",
+     "source": "https://en.wikipedia.org/wiki/Take_Me_Out_to_the_Ball_Game"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "books": {
+   "works": [
+    {
+     "title": "The Adventures of Huckleberry Finn",
+     "by": "Mark Twain",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/mark-twain/the-adventures-of-huckleberry-finn"
+    },
+    {
+     "title": "The Adventures of Sherlock Holmes",
+     "by": "Arthur Conan Doyle",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/arthur-conan-doyle/the-adventures-of-sherlock-holmes"
+    },
+    {
+     "title": "The Adventures of Tom Sawyer",
+     "by": "Mark Twain",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/mark-twain/the-adventures-of-tom-sawyer"
+    },
+    {
+     "title": "Alice’s Adventures in Wonderland",
+     "by": "Lewis Carroll",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/lewis-carroll/alices-adventures-in-wonderland/john-tenniel"
+    },
+    {
+     "title": "Anna Karenina",
+     "by": "Leo Tolstoy",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/leo-tolstoy/anna-karenina/constance-garnett"
+    },
+    {
+     "title": "Anne of Green Gables",
+     "by": "L. M. Montgomery",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/l-m-montgomery/anne-of-green-gables"
+    },
+    {
+     "title": "The Art of Illustration",
+     "by": "C. H. Spurgeon",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/c-h-spurgeon/the-art-of-illustration"
+    },
+    {
+     "title": "The Art of War",
+     "by": "Sun Tzu",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/sun-tzu/the-art-of-war/lionel-giles"
+    },
+    {
+     "title": "As I Lay Dying",
+     "by": "William Faulkner",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/william-faulkner/as-i-lay-dying"
+    },
+    {
+     "title": "At the Mountains of Madness",
+     "by": "H. P. Lovecraft",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/h-p-lovecraft/at-the-mountains-of-madness"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "reader-epub": {
+   "works": [
+    {
+     "title": "Alice’s Adventures in Wonderland",
+     "by": "Lewis Carroll",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/lewis-carroll/alices-adventures-in-wonderland/john-tenniel"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "photos": {
+   "works": [
+    {
+     "title": "031 Humpback whale lobtailing Photo by Giles Laurent",
+     "by": "Giles Laurent",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:031_Humpback_whale_lobtailing_Photo_by_Giles_Laurent.jpg"
+    },
+    {
+     "title": "026b Humpback whale jump and splash Photo by Giles Laurent",
+     "by": "Giles Laurent",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:026b_Humpback_whale_jump_and_splash_Photo_by_Giles_Laurent.jpg"
+    },
+    {
+     "title": "024 Aerial view of Jakobshavn Glacier at Disko Bay (Greenland) Photo by Giles Laurent",
+     "by": "Giles Laurent",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:024_Aerial_view_of_Jakobshavn_Glacier_at_Disko_Bay_(Greenland)_Photo_by_Giles_Laurent.jpg"
+    },
+    {
+     "title": "023 African wolf in the Serengeti National Park Photo by Giles Laurent",
+     "by": "Giles Laurent",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:023_African_wolf_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg"
+    },
+    {
+     "title": "(Toulouse) Enyo gorgon MHNT CUT 2010 0 527 - Maripasoula, Guyane France - female ventral",
+     "by": "Didier Descouens",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:(Toulouse)_Enyo_gorgon_MHNT_CUT_2010_0_527_-_Maripasoula,_Guyane_France_-_female_ventral.jpg"
+    },
+    {
+     "title": "(Toulouse) Enyo gorgon MHNT CUT 2010 0 527 - Maripasoula, Guyane France - female dorsal",
+     "by": "Didier Descouens",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:(Toulouse)_Enyo_gorgon_MHNT_CUT_2010_0_527_-_Maripasoula,_Guyane_France_-_female_dorsal.jpg"
+    },
+    {
+     "title": "'One of the wards in the hospital at Scutari'. Wellcome M0007724 - restoration, cropped",
+     "by": "William Simpson (artist, 1823–1899) E. Walker (lithographer, lifespan unknown, working for Day & Son) Publishers: Paul and Dominic Colnaghi, London; Goupil & Cie, Paris; Otto Wiegel, Leipzig. Restorat",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:%27One_of_the_wards_in_the_hospital_at_Scutari%27._Wellcome_M0007724_-_restoration,_cropped.jpg"
+    },
+    {
+     "title": "Dülmen, Kirchspiel, Bauerschaft Börnste -- 2021 -- 4406 (bw)",
+     "by": "Dietmar Rabich",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Kirchspiel,_Bauerschaft_B%C3%B6rnste_--_2021_--_4406_(bw).jpg"
+    },
+    {
+     "title": "Dülmen, Hausdülmen, Zaun einer Wiese -- 2021 -- 5073-7",
+     "by": "Dietmar Rabich",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Hausd%C3%BClmen,_Zaun_einer_Wiese_--_2021_--_5073-7.jpg"
+    },
+    {
+     "title": "Dülmen, Hausdülmen, Sonnenaufgang -- 2015 -- 4952",
+     "by": "Dietmar Rabich",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Hausd%C3%BClmen,_Sonnenaufgang_--_2015_--_4952.jpg"
+    },
+    {
+     "title": "Dülmen, Hausdülmen, eisbedeckte Pflanze -- 2021 -- 5015",
+     "by": "Dietmar Rabich",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Hausd%C3%BClmen,_eisbedeckte_Pflanze_--_2021_--_5015.jpg"
+    },
+    {
+     "title": "CH.ZG.Zug Landsgemeindeplatz Restaurant Platzmühle 16x9+R 8192x4608",
+     "by": "NOTE: This image is a panorama consisting of multiple frames that were merged or stitched in software. As a result, this image necessarily underwent some form of digital manipulation. These manipulati",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:CH.ZG.Zug_Landsgemeindeplatz_Restaurant_Platzm%C3%BChle_16x9%2BR_8192x4608.jpg"
+    },
+    {
+     "title": "CAPTAIN BADR (ship, 1978). Sète cf01",
+     "by": "Christian Ferrer",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:CAPTAIN_BADR_(ship,_1978)._S%C3%A8te_cf01.jpg"
+    },
+    {
+     "title": "Alfred Stieglitz - The Steerage - Google Art Project, from Getty",
+     "by": "Alfred Stieglitz",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Alfred_Stieglitz_-_The_Steerage_-_Google_Art_Project,_from_Getty.jpg"
+    },
+    {
+     "title": "ABOU KARIM IV (ship, 1978), Sète 01",
+     "by": "Christian Ferrer",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:ABOU_KARIM_IV_(ship,_1978),_S%C3%A8te_01.jpg"
+    },
+    {
+     "title": "Mosasaurus ichthyosaurus",
+     "by": "Heinrich Harder (1858–1935)",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Mosasaurus_ichthyosaurus.jpg"
+    },
+    {
+     "title": "Crane de Saurolophus",
+     "by": "Didier Descouens",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Crane_de_Saurolophus.jpg"
+    },
+    {
+     "title": "Barracudasauroides panxianensis MHNT Chine",
+     "by": "Didier Descouens",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Barracudasauroides_panxianensis_MHNT_Chine.jpg"
+    },
+    {
+     "title": "Bothe-Napa Valley State Park (01811)",
+     "by": "Rhododendrites",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Bothe-Napa_Valley_State_Park_(01811).jpg"
+    },
+    {
+     "title": "Birks of Aberfeldy (55085667062)",
+     "by": "Eric Kilby from Somerville, MA, USA",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Birks_of_Aberfeldy_(55085667062).jpg"
+    },
+    {
+     "title": "Baumsilhouetten am Uetliberg mit Novembernebel und Sonnenstrahlen",
+     "by": "Kuhnmi",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Baumsilhouetten_am_Uetliberg_mit_Novembernebel_und_Sonnenstrahlen.jpg"
+    },
+    {
+     "title": "Casal de turistas caminha em uma duna, enquanto o dia morre nos Lençóis Maranhenses (edited)",
+     "by": "Original: Julio Cesar Goncalves Corrêa Derivative work: Aristeas",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Casal_de_turistas_caminha_em_uma_duna,_enquanto_o_dia_morre_nos_Len%C3%A7%C3%B3is_Maranhenses_(edited).jpg"
+    },
+    {
+     "title": "Bridge of Remembrance during the sunset, Christchurch, New Zealand",
+     "by": "Michal Klajban",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Bridge_of_Remembrance_during_the_sunset,_Christchurch,_New_Zealand.jpg"
+    },
+    {
+     "title": "Euclid’s view of the Horsehead Nebula ESA25170866",
+     "by": "ESA/Euclid/Euclid Consortium/NASA image processing by J.-C. Cuillandre (CEA Paris-Saclay) G. Anselmi",
+     "licence": "CC-BY-SA-3.0-IGO",
+     "source": "https://commons.wikimedia.org/wiki/File:Euclid%E2%80%99s_view_of_the_Horsehead_Nebula_ESA25170866.jpg"
+    },
+    {
+     "title": "Cellarius ptolemaic system",
+     "by": "Jan van Loon",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Cellarius_ptolemaic_system.jpg"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "reader-comic": {
+   "works": [
+    {
+     "title": "Pepper&Carrot, episode 12: Autumn Clearout",
+     "by": "David Revoy",
+     "licence": "CC-BY-4.0",
+     "source": "https://www.peppercarrot.com/en/webcomic/ep12_Autumn-Clearout.html"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "gameplay-ucity": {
+   "works": [
+    {
+     "title": "µCity (code)",
+     "by": "Antonio Niño Díaz",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/AntonioND/ucity"
+    },
+    {
+     "title": "µCity (graphics and music)",
+     "by": "Antonio Niño Díaz",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://github.com/AntonioND/ucity"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "gameplay-super-tilt-bro": {
+   "works": [
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "module-store": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-appearance": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-about": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-activity": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-backup": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-channels": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-consoles": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-couch": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-diagnoser": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-games": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-legal": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-libraries": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-library-transcoding": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-logs": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-metadata": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-modules": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-playback": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-remote": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-repair": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-reset": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-security": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-sharing": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-transcoding": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-users": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "settings-wittyrigs": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-01-welcome": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-02-account": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-04-modules-chosen": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-05-modules-installing": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-06-modules-ready": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-07-media": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-08-media-movies": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-09-media-added": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-10-games": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-11-discs": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-12-details": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-14-logos": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-15-music": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-16-listings": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-17-look": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "setup-18-done": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "controllers": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "couch-page": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "dvd-tray": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "folder-browser": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "help-setup-guide": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "help": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "gameplay-datastorm": {
+   "works": [
+    {
+     "title": "DataStorm",
+     "by": "Haroldo de Oliveira Pinheiro",
+     "licence": "Apache-2.0",
+     "source": "https://github.com/haroldo-ok/datastorm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "gameplay-libbet": {
+   "works": [
+    {
+     "title": "Libbet and the Magic Floor",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/libbet"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "gameplay-rhde": {
+   "works": [
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "gameplay-thwaite": {
+   "works": [
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "home-video-page": {
+   "works": [
+    {
+     "title": "Alaska by drone",
+     "by": "OpenEarth",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Nature_drone_video_of_Alaska_%E2%80%93_Where_The_Snow_is_Never_White.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "home-videos": {
+   "works": [
+    {
+     "title": "Alaska by drone",
+     "by": "OpenEarth",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Nature_drone_video_of_Alaska_%E2%80%93_Where_The_Snow_is_Never_White.webm"
+    },
+    {
+     "title": "Midnight city time-lapse",
+     "by": "netLike",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Time_Lapse_4K_Midnight_City.webm"
+    },
+    {
+     "title": "Nature of Australia on 16mm",
+     "by": "ssimple",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Kodak_16mm_film_(nature_documentary)_-_Nature_of_Australia.webm"
+    },
+    {
+     "title": "Pileated woodpecker at the feeder",
+     "by": "5shot",
+     "licence": "CC0-1.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Pileated_Woodpecker_eating_suet.ogv"
+    },
+    {
+     "title": "Sunrise time-lapse",
+     "by": "idioterna",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Another_Sunrise_Time_Lapse_in_4K.webm"
+    },
+    {
+     "title": "Sunset time-lapse",
+     "by": "https://www.youtube.com/user/93galas",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Time_Lapse_Sunset_4K_4096x2304.webm"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "bluray-item": {
+   "works": [
+    {
+     "title": "Sita Sings the Blues, Blu-ray image",
+     "by": "Nina Paley",
+     "licence": "CC0-1.0",
+     "source": "https://archive.org/details/SitaSingsTheBlues_201812"
+    },
+    {
+     "title": "Poster: Sita Sings the Blues",
+     "by": "Nina Paley",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Sita_STB_Poster.jpg"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "cd-player": {
+   "works": [
+    {
+     "title": "Jazz Sampler",
+     "by": "Kevin MacLeod",
+     "licence": "CC-BY-3.0",
+     "source": "https://archive.org/details/Jazz_Sampler-9619"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "client-home": {
+   "works": [
+    {
+     "title": "Fanart: Wing It!",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "WittyMediaClient and WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaClient"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "activity": {
+   "works": [
+    {
+     "title": "Fanart: Wing It!",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "DataStorm",
+     "by": "Haroldo de Oliveira Pinheiro",
+     "licence": "Apache-2.0",
+     "source": "https://github.com/haroldo-ok/datastorm"
+    },
+    {
+     "title": "Earth as Art",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Earth_as_Art.pdf"
+    },
+    {
+     "title": "Alice's Adventures in Wonderland",
+     "by": "Lewis Carroll, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/alices_adventures_1003"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "fix-matches": {
+   "works": [
+    {
+     "title": "Poster: A Trip to the Moon",
+     "by": "Made for this library from a frame of the film by Georges Méliès",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: Apollo Mission Films",
+     "by": "Made for this library from frames of Apollo Mission Films, NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Flight_of_Apollo_7_(1968).webm"
+    },
+    {
+     "title": "Poster: Battleship Potemkin",
+     "by": "Not mentioned on poster",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Vintage_Potemkin.jpg"
+    },
+    {
+     "title": "Poster: Big Buck Bunny",
+     "by": "(c) copyright Blender Foundation | peach.blender.org",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Big_buck_bunny_poster_big.jpg"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: Bonanza",
+     "by": "Made for this library from frames of Bonanza, David Dortort",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Bonanza_S2_E6.ogv"
+    },
+    {
+     "title": "Poster, fanart and episode pictures: Caminandes",
+     "by": "Made for this library from frames of Caminandes, Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes-_Llama_Drama_-_Short_Movie.ogv"
+    },
+    {
+     "title": "Poster: Carnival of Souls",
+     "by": "Illustration by F. Germain. Published by Herts-Lion International Corp.",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Carnival_of_Souls_(1962_one-sheet_poster).jpg"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "creators": {
+   "works": [
+    {
+     "title": "Interview with Ton Roosendaal introducing Project Gooseberry",
+     "by": "Blender Studio",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Interview_with_Ton_Roosendaal_introducing_Project_Gooseberry.ogv"
+    },
+    {
+     "title": "Copying is not theft",
+     "by": "Nina Paley",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Copying_is_not_theft.ogv"
+    },
+    {
+     "title": "ESOcast 253 Light",
+     "by": "European Southern Observatory",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:ESOcast_253_Light.webm"
+    },
+    {
+     "title": "Moonlight (Clair de Lune) zNpsy6lBPBw",
+     "by": "NASA Goddard",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Moonlight_(Clair_de_Lune)_zNpsy6lBPBw.webm"
+    },
+    {
+     "title": "Seder-Masochism (2018) by Nina Paley (audio muted)",
+     "by": "Nina Paley",
+     "licence": "CC0-1.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Seder-Masochism_(2018)_by_Nina_Paley_(audio_muted).webm"
+    },
+    {
+     "title": "Scanning the Moon!... lab - -bcon23 lightning talk",
+     "by": "Blender Studio",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Scanning_the_Moon!..._lab_-_-bcon23_lightning_talk.webm"
+    },
+    {
+     "title": "ESOcast 255",
+     "by": "European Southern Observatory",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:ESOcast_255.webm"
+    },
+    {
+     "title": "Fermi's 14-Year Time-Lapse of the Gamma-Ray Sky (SVS14399 Fermi 14Year Fireplace 4k)",
+     "by": "NASA Goddard",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Fermi%27s_14-Year_Time-Lapse_of_the_Gamma-Ray_Sky_(SVS14399_Fermi_14Year_Fireplace_4k).webm"
+    },
+    {
+     "title": "Agent 327 - A feature film in progress",
+     "by": "Blender Studio",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Agent_327_-_A_feature_film_in_progress.webm"
+    },
+    {
+     "title": "Very Large Telescope Video Compilation",
+     "by": "European Southern Observatory",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Very_Large_Telescope_Video_Compilation.webm"
+    },
+    {
+     "title": "Making of Elephants Dream tiny bitrate",
+     "by": "Blender Studio",
+     "licence": "CC-BY-2.5",
+     "source": "https://commons.wikimedia.org/wiki/File:Making_of_Elephants_Dream_tiny_bitrate.ogv"
+    },
+    {
+     "title": "NASA’s Incredible Discovery Machine- The Story of the Hubble Space Telescope (SVS14193)",
+     "by": "NASA Goddard",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_Incredible_Discovery_Machine-_The_Story_of_the_Hubble_Space_Telescope_(SVS14193).webm"
+    },
+    {
+     "title": "The artists of the Gooseberry Project",
+     "by": "Blender Studio",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:The_artists_of_the_Gooseberry_Project.ogv"
+    },
+    {
+     "title": "Kathy Sullivan- American Pioneers and the Hubble Space Telescope (SVS14785)",
+     "by": "NASA Goddard",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Kathy_Sullivan-_American_Pioneers_and_the_Hubble_Space_Telescope_(SVS14785).webm"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "anime": {
+   "works": [
+    {
+     "title": "Early Japanese Animation",
+     "by": "Jun'ichi Kouchi",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Kouichi_Jun%27ichi_-_Namakura_Gatana_(1917)_-_4-minute_restored_version.webm"
+    },
+    {
+     "title": "Morevna",
+     "by": "Morevna Project (Konstantin Dmitriev)",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Morevna_Episode_3.0.2_(English).webm"
+    },
+    {
+     "title": "Pepper and Carrot Motion Comic",
+     "by": "Morevna Project, from David Revoy",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Morevna_Project_-_Pepper%26Carrot_(animated_comic)_-_Episode_6_-_The_Potion_Contest.webm"
+    },
+    {
+     "title": "Sol Levante",
+     "by": "Production I.G",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Sol_Levante.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "audiobook-page": {
+   "works": [
+    {
+     "title": "The Wonderful Wizard of Oz",
+     "by": "L. Frank Baum, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/wizard_of_oz"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "audiobooks": {
+   "works": [
+    {
+     "title": "Romeo and Juliet",
+     "by": "William Shakespeare, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/romeo_and_juliet_librivox"
+    },
+    {
+     "title": "Treasure Island",
+     "by": "Robert Louis Stevenson, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/treasure_island_ap_librivox"
+    },
+    {
+     "title": "Anne of Green Gables",
+     "by": "Lucy Maud Montgomery, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/anne_greengables_librivox"
+    },
+    {
+     "title": "Alice's Adventures in Wonderland",
+     "by": "Lewis Carroll, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/alices_adventures_1003"
+    },
+    {
+     "title": "Dracula",
+     "by": "Bram Stoker, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/dracula_librivox"
+    },
+    {
+     "title": "The Adventures of Pinocchio",
+     "by": "Carlo Collodi, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/adventures_pinocchio_librivox"
+    },
+    {
+     "title": "A Tale of Two Cities",
+     "by": "Charles Dickens, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/tale_two_cities_librivox"
+    },
+    {
+     "title": "Jane Eyre",
+     "by": "Charlotte Bronte, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/jane_eyre_librivox"
+    },
+    {
+     "title": "Robinson Crusoe",
+     "by": "Daniel Defoe, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/robinson_crusoe_librivox"
+    },
+    {
+     "title": "The Secret Garden",
+     "by": "Frances Hodgson Burnett, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/secret_garden_librivox"
+    },
+    {
+     "title": "The Time Machine",
+     "by": "H. G. Wells, read by LibriVox volunteers",
+     "licence": "Public domain",
+     "source": "https://archive.org/details/timemachine_sjm_librivox"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-album": {
+   "works": [
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-full": {
+   "works": [
+    {
+     "title": "Collide",
+     "by": "Aryll Fae",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/SRS08807"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-home": {
+   "works": [
+    {
+     "title": "Harmony",
+     "by": "Gurdonark and Lee Rosevere",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/Gurdonark_LeeRosevere_Harmony"
+    },
+    {
+     "title": "Collide",
+     "by": "Aryll Fae",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/SRS08807"
+    },
+    {
+     "title": "2.5 beats",
+     "by": "monophonic",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/rfa007"
+    },
+    {
+     "title": "Ritorno a casa in un pomeriggio estivo",
+     "by": "1984",
+     "licence": "CC-BY-2.5",
+     "source": "https://archive.org/details/USR-012"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-karaoke": {
+   "works": [
+    {
+     "title": "“Take Me Out to the Ball Game”, words of 1908 (shown as lyrics)",
+     "by": "Jack Norworth",
+     "licence": "Public domain",
+     "source": "https://en.wikipedia.org/wiki/Take_Me_Out_to_the_Ball_Game"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-videos": {
+   "works": [
+    {
+     "title": "Someofw - About life",
+     "by": "Someofw",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Someofw_-_About_life_(music_video).webm"
+    },
+    {
+     "title": "Tora - Eat The Sun",
+     "by": "Tora",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Tora_-_Eat_The_Sun_(Official_Music_Video).webm"
+    },
+    {
+     "title": "MYA Symphony Orchestra - Symphonie Fantastique I, Reveries and Passions",
+     "by": "MYA Symphony Orchestra",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:MYA_Symphony_Orchestra-_Symphonie_Fanstastique_I_Reveries,_Passions.webm"
+    },
+    {
+     "title": "Razrfish - Mocassins",
+     "by": "Razrfish",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Razrfish_-_Mocassins_(Official_Music_video).webm"
+    },
+    {
+     "title": "Protheus - Poločas",
+     "by": "Protheus",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Protheus_-_Polo%C4%8Das_(Official_Music_Video).webm"
+    },
+    {
+     "title": "MYA Symphony Orchestra - Symphonie Fantastique II, A Ball",
+     "by": "MYA Symphony Orchestra",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:MYA_Symphony_Orchestra-_Symphonie_Fantastique_II_Un_Ball.webm"
+    },
+    {
+     "title": "EMAA - Zburătorul",
+     "by": "EMAA",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:EMAA_%E2%80%93_Zbur%C4%83torul_(Official_Music_Video).webm"
+    },
+    {
+     "title": "MYA Symphony Orchestra - Symphonie Fantastique III, In the Fields",
+     "by": "MYA Symphony Orchestra",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:MYA_Symphony_Orchestra-_Symphonie_Fantastique_III_Scene_aux_champs.webm"
+    },
+    {
+     "title": "Symptoms - Symptoms",
+     "by": "Symptoms",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Symptoms_(Official_Music_Video).webm"
+    },
+    {
+     "title": "Alexandre Dubach - Caprice No. 21",
+     "by": "Alexandre Dubach",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Alexandre_Dubach_Caprice_No_21.ogv"
+    },
+    {
+     "title": "MYA Symphony Orchestra - Symphonie Fantastique IV, March to the Scaffold",
+     "by": "MYA Symphony Orchestra",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:MYA_Symphony_Orchestra-_Symphonie_Fantastique_IV_Marche_au_supplice.webm"
+    },
+    {
+     "title": "Cinnamon Chasers - Lights",
+     "by": "Cinnamon Chasers",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Cinnamon_Chasers_-_Lights_(Official_Music_Video).webm"
+    },
+    {
+     "title": "Tes Elations - Autumn",
+     "by": "Tes Elations",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Tes_Elations_-_Autumn_(Official_Music_Video).webm"
+    },
+    {
+     "title": "Nikolay Madoyan - Six concertos of Paganini (live)",
+     "by": "Nikolay Madoyan",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:February_20_2014_six_concertos_of_Niccolo_Paganini_by_Nikolay_Madoyan_Conductor_Karen_Durgaryan_camera_record_from_hall_National_Academic_Theater_Symphonic_Orchestra.ogv"
+    },
+    {
+     "title": "All In - Tu",
+     "by": "All In",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:All_In_-_T%C3%BA_(Official_Music_Video)_2014.webm"
+    },
+    {
+     "title": "Alcest - Les voyages de l'ame",
+     "by": "Alcest",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Alcest_-_Les_voyages_de_l%27%C3%A2me_(Official_Music_Video).webm"
+    },
+    {
+     "title": "FONTANO - Revolution",
+     "by": "FONTANO",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:FONTANO_Revolution_(Official_Music_Video).webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-visualizer-2": {
+   "works": [
+    {
+     "title": "Collide",
+     "by": "Aryll Fae",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/SRS08807"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "music-visualizer-3": {
+   "works": [
+    {
+     "title": "Collide",
+     "by": "Aryll Fae",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/SRS08807"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "phone-guide": {
+   "works": [
+    {
+     "title": "Charade (1963)",
+     "by": "Stanley Donen",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Charade_(1963).webm"
+    },
+    {
+     "title": "Fanart: Charade",
+     "by": "Stanley Donen",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Charade_(1963).webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "phone-home": {
+   "works": [
+    {
+     "title": "Fanart: Wing It!",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface, at phone width",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaClient"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "phone-music": {
+   "works": [
+    {
+     "title": "Harmony",
+     "by": "Gurdonark and Lee Rosevere",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/Gurdonark_LeeRosevere_Harmony"
+    },
+    {
+     "title": "Ritorno a casa in un pomeriggio estivo",
+     "by": "1984",
+     "licence": "CC-BY-2.5",
+     "source": "https://archive.org/details/USR-012"
+    },
+    {
+     "title": "Yes, And...",
+     "by": "Advances in Obsolete Technology",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/AIOT_YesAnd"
+    },
+    {
+     "title": "spacesuite radio",
+     "by": "airnino",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/rfa003"
+    },
+    {
+     "title": "Five Structures And A Cold Void",
+     "by": "Miquel Parera and Alozeau",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://archive.org/details/Five_Structures_And_A_Cold_Void"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "photos-viewer": {
+   "works": [
+    {
+     "title": "031 Humpback whale lobtailing Photo by Giles Laurent",
+     "by": "Giles Laurent",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:031_Humpback_whale_lobtailing_Photo_by_Giles_Laurent.jpg"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "player": {
+   "works": [
+    {
+     "title": "Sintel (2010)",
+     "by": "Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Sintel_movie_4K.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "podcasts": {
+   "works": [
+    {
+     "title": "Small Steps, Giant Leaps",
+     "by": "NASA APPEL Knowledge Services",
+     "licence": "Public domain",
+     "source": "https://www.nasa.gov/feeds/podcasts/small-steps-giant-leaps"
+    },
+    {
+     "title": "NASAs Curious Universe",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://www.nasa.gov/feeds/podcasts/curious-universe"
+    },
+    {
+     "title": "Houston We Have a Podcast",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://www.nasa.gov/feeds/podcasts/houston-we-have-a-podcast"
+    },
+    {
+     "title": "Civilizations: Civilizations 38: What is history? And were we doing Critical Race Theory all along?",
+     "by": "Justin Podur",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://archive.org/details/civilizations38"
+    },
+    {
+     "title": "Hacker Public Radio: hpr4540 :: Arthur C. Clarke: Other Novels, Part 1",
+     "by": "Hacker Public Radio volunteers",
+     "licence": "CC-BY-SA-4.0",
+     "source": "https://archive.org/details/hpr4540"
+    },
+    {
+     "title": "Open Source with Christopher Lydon: 160818 OS PODCAST Apocalypse 3 ST",
+     "by": "Open Source Media",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://archive.org/details/160818OSPODCASTApocalypse3ST"
+    },
+    {
+     "title": "Going Linux: Going Linux #454 · Listener Feedback",
+     "by": "Larry Bushey",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/glp454"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "reader-library": {
+   "works": [
+    {
+     "title": "Pepper&Carrot, episode 1: Potion of Flight",
+     "by": "David Revoy",
+     "licence": "CC-BY-4.0",
+     "source": "https://www.peppercarrot.com/en/webcomic/ep01_Potion-of-Flight.html"
+    },
+    {
+     "title": "Pepper&Carrot, episode 6: The Potion Contest",
+     "by": "David Revoy",
+     "licence": "CC-BY-4.0",
+     "source": "https://www.peppercarrot.com/en/webcomic/ep06_The-Potion-Contest.html"
+    },
+    {
+     "title": "Robur the Conqueror",
+     "by": "Jules Verne",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/jules-verne/robur-the-conqueror/sampson-low-marston-searle-rivington"
+    },
+    {
+     "title": "Moby Dick",
+     "by": "Herman Melville",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/herman-melville/moby-dick"
+    },
+    {
+     "title": "Frankenstein",
+     "by": "Mary Shelley",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/mary-shelley/frankenstein"
+    },
+    {
+     "title": "Pride and Prejudice",
+     "by": "Jane Austen",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/jane-austen/pride-and-prejudice"
+    },
+    {
+     "title": "Alice’s Adventures in Wonderland",
+     "by": "Lewis Carroll",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/lewis-carroll/alices-adventures-in-wonderland/john-tenniel"
+    },
+    {
+     "title": "WittyReader’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyReader"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "reader-pdf": {
+   "works": [
+    {
+     "title": "Earth as Art",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Earth_as_Art.pdf"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "shorts": {
+   "works": [
+    {
+     "title": "The Kid (1921)",
+     "by": "Charlie Chaplin",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Kid_(1921)_by_Charlie_Chaplin.webm"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "stats": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "store-module": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "store-sources": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "theme-cinema-home": {
+   "works": [
+    {
+     "title": "Fanart: Wing It!",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "DataStorm",
+     "by": "Haroldo de Oliveira Pinheiro",
+     "licence": "Apache-2.0",
+     "source": "https://github.com/haroldo-ok/datastorm"
+    },
+    {
+     "title": "Earth as Art",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Earth_as_Art.pdf"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "theme-light-home": {
+   "works": [
+    {
+     "title": "Fanart: Wing It!",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "DataStorm",
+     "by": "Haroldo de Oliveira Pinheiro",
+     "licence": "Apache-2.0",
+     "source": "https://github.com/haroldo-ok/datastorm"
+    },
+    {
+     "title": "Earth as Art",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Earth_as_Art.pdf"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "theme-midnight-home": {
+   "works": [
+    {
+     "title": "Fanart: Wing It!",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "DataStorm",
+     "by": "Haroldo de Oliveira Pinheiro",
+     "licence": "Apache-2.0",
+     "source": "https://github.com/haroldo-ok/datastorm"
+    },
+    {
+     "title": "Earth as Art",
+     "by": "NASA",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Earth_as_Art.pdf"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "tv-show-page": {
+   "works": [
+    {
+     "title": "Poster, fanart and episode pictures: ESOcast",
+     "by": "Made for this library from frames of ESOcast, European Southern Observatory",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:ESOcast_218.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-bigpicture": {
+   "works": [
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-listings": {
+   "works": [
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-miniguide": {
+   "works": [
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-satellite": {
+   "works": [
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-teletext": {
+   "works": [
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-watching": {
+   "works": [
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-modern": {
+   "works": [
+    {
+     "title": "Singularity (2024)",
+     "by": "Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:SINGULARITY_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-new-channel": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "wittytv-recordings": {
+   "works": [
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "theme-paper-movies": {
+   "works": [
+    {
+     "title": "Fanart: Big Buck Bunny",
+     "by": "Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Big_Buck_Bunny_4K.webm"
+    },
+    {
+     "title": "Fanart: Charade",
+     "by": "Stanley Donen",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Charade_(1963).webm"
+    },
+    {
+     "title": "Fanart: A Trip to the Moon",
+     "by": "Georges Méliès",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm"
+    },
+    {
+     "title": "Fanart: Carnival of Souls",
+     "by": "Herk Harvey",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Carnival_of_Souls_(1962)_by_Herk_Harvey.webm"
+    },
+    {
+     "title": "Fanart: Cosmos Laundromat",
+     "by": "Blender Institute",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Cosmos_Laundromat_-_First_Cycle_-_Official_Blender_Foundation_release.webm"
+    },
+    {
+     "title": "Poster: Wing It!",
+     "by": "Made for this library from a frame of the film by Blender Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Poster: The Cabinet of Dr. Caligari",
+     "by": "Ledl Bernhard = Rudolf Ledl and Fritz Bernhard Original uploader was БережнойСергей at ru.wikipedia",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Das_Kabinett_des_Doktor_Caligari_1920_Poster.jpg"
+    },
+    {
+     "title": "Poster: The Daily Dweebs",
+     "by": "Made for this library from a frame of the film by Blender Institute",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Daily_Dweebs_-_Blender_Open_Movie-full_movie.webm"
+    },
+    {
+     "title": "Poster: The General",
+     "by": "Unknown artistUnknown artist",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Buster_Keaton_in_The_General;_poster.jpg"
+    },
+    {
+     "title": "Poster: The Great Train Robbery",
+     "by": "Made for this library from a frame of the film by Edwin S. Porter",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Great_Train_Robbery_1903.webm"
+    },
+    {
+     "title": "Poster: The Kid",
+     "by": "First National",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Kid_(1921)_poster.jpg"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "reader-book": {
+   "works": [
+    {
+     "title": "Alice’s Adventures in Wonderland",
+     "by": "Lewis Carroll",
+     "licence": "CC0-1.0",
+     "source": "https://standardebooks.org/ebooks/lewis-carroll/alices-adventures-in-wonderland/john-tenniel"
+    },
+    {
+     "title": "WittyReader’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyReader"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "default/wittytv-guide": {
+   "works": [
+    {
+     "title": "Spring (2019)",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "Fanart: Spring",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "light/wittytv-guide": {
+   "works": [
+    {
+     "title": "Spring (2019)",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "Fanart: Spring",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "midnight/wittytv-guide": {
+   "works": [
+    {
+     "title": "Spring (2019)",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "Fanart: Spring",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "oled/wittytv-guide": {
+   "works": [
+    {
+     "title": "Spring (2019)",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "Fanart: Spring",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "paper/wittytv-guide": {
+   "works": [
+    {
+     "title": "Spring (2019)",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "Fanart: Spring",
+     "by": "Blender Animation Studio",
+     "licence": "CC-BY-4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "evergreen/wittytv-guide": {
+   "works": [
+    {
+     "title": "Sintel (2010)",
+     "by": "Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Sintel_movie_4K.webm"
+    },
+    {
+     "title": "Fanart: Sintel",
+     "by": "Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Sintel_movie_4K.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "contrast/wittytv-guide": {
+   "works": [
+    {
+     "title": "Poster, fanart and episode pictures: ComiColor Cartoons",
+     "by": "Made for this library from frames of ComiColor Cartoons, Ub Iwerks",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:The_Valiant_Tailor_(1934).webm"
+    },
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "cinema/wittytv-guide": {
+   "works": [
+    {
+     "title": "Caminandes: Llamigos",
+     "by": "Pablo Vazquez, Blender Foundation",
+     "licence": "CC-BY-3.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "cinema/games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "SNES Example 00",
+     "by": "Doug Fraker",
+     "licence": "MIT",
+     "source": "https://github.com/nesdoug/SNES_00"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "contrast/games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "SNES Example 00",
+     "by": "Doug Fraker",
+     "licence": "MIT",
+     "source": "https://github.com/nesdoug/SNES_00"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "default/games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "SNES Example 00",
+     "by": "Doug Fraker",
+     "licence": "MIT",
+     "source": "https://github.com/nesdoug/SNES_00"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "evergreen/games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "SNES Example 00",
+     "by": "Doug Fraker",
+     "licence": "MIT",
+     "source": "https://github.com/nesdoug/SNES_00"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "light/games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "SNES Example 00",
+     "by": "Doug Fraker",
+     "licence": "MIT",
+     "source": "https://github.com/nesdoug/SNES_00"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "midnight/games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "SNES Example 00",
+     "by": "Doug Fraker",
+     "licence": "MIT",
+     "source": "https://github.com/nesdoug/SNES_00"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "oled/games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "SNES Example 00",
+     "by": "Doug Fraker",
+     "licence": "MIT",
+     "source": "https://github.com/nesdoug/SNES_00"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "paper/games": {
+   "works": [
+    {
+     "title": "240p Test Suite (SNES)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "Thwaite",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/thwaite-nes"
+    },
+    {
+     "title": "RHDE: Furniture Fight",
+     "by": "Damian Yerrick",
+     "licence": "FSFAP",
+     "source": "https://github.com/pinobatch/rhde-nes"
+    },
+    {
+     "title": "Super Tilt Bro",
+     "by": "Sylvain Gadrat",
+     "licence": "WTFPL",
+     "source": "https://github.com/sgadrat/super-tilt-bro"
+    },
+    {
+     "title": "Concentration Room",
+     "by": "Damian Yerrick",
+     "licence": "GPL-3.0-or-later",
+     "source": "https://github.com/pinobatch/croom-nes"
+    },
+    {
+     "title": "robotfindskitten",
+     "by": "Damian Yerrick",
+     "licence": "Zlib",
+     "source": "https://github.com/pinobatch/rfk-nes"
+    },
+    {
+     "title": "240p Test Suite (PC Engine)",
+     "by": "Artemio Urbina",
+     "licence": "GPL-2.0-only",
+     "source": "https://github.com/ArtemioUrbina/240pTestSuite"
+    },
+    {
+     "title": "SNES Example 00",
+     "by": "Doug Fraker",
+     "licence": "MIT",
+     "source": "https://github.com/nesdoug/SNES_00"
+    },
+    {
+     "title": "Plain covers drawn for the test library (a title on a colour)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittybluray": {
+   "works": [
+    {
+     "title": "wittybluray module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittycd": {
+   "works": [
+    {
+     "title": "wittycd module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittycomics": {
+   "works": [
+    {
+     "title": "wittycomics module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittycouch": {
+   "works": [
+    {
+     "title": "wittycouch module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittycouchhost": {
+   "works": [
+    {
+     "title": "wittycouchhost module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittydisc": {
+   "works": [
+    {
+     "title": "wittydisc module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittydvd": {
+   "works": [
+    {
+     "title": "wittydvd module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittyebook": {
+   "works": [
+    {
+     "title": "wittyebook module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittyink": {
+   "works": [
+    {
+     "title": "wittyink module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittyintegratedfilebrowser": {
+   "works": [
+    {
+     "title": "wittyintegratedfilebrowser module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittymodule": {
+   "works": [
+    {
+     "title": "wittymodule module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittypdf": {
+   "works": [
+    {
+     "title": "wittypdf module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittyphotos": {
+   "works": [
+    {
+     "title": "wittyphotos module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittyplay": {
+   "works": [
+    {
+     "title": "wittyplay module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittyrigs": {
+   "works": [
+    {
+     "title": "wittyrigs module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittystats": {
+   "works": [
+    {
+     "title": "wittystats module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittytuner": {
+   "works": [
+    {
+     "title": "wittytuner module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "icons/wittyvisualizer": {
+   "works": [
+    {
+     "title": "wittyvisualizer module icon, drawn by scripts/make-icons.mjs",
+     "by": "WittyModuleCatalog",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyModuleCatalog/blob/main/scripts/make-icons.mjs"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "logo": {
+   "works": [
+    {
+     "title": "WittyMediaServer logo (web/public/icon.svg and its PNGs)",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/web/public/icon.svg"
+    }
+   ],
+   "checked": "2026-11-04"
+  }
+ }
+}

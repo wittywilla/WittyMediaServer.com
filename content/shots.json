@@ -1,76 +1,218 @@
 {
   "$comment": "The screenshots the site shows, fetched from each repository's docs/images. 'credit' is Markdown; leave it out to use the line from that repository's docs/images/CREDITS.md. A picture in images/themes/<theme>/ replaces this one when a visitor picks that theme.",
-  "groups": ["Films and TV", "Discs", "Live TV", "Music", "Books", "Photos", "Games", "Your server", "Apps"],
+  "groups": [
+    "Films and TV",
+    "Discs",
+    "Live TV",
+    "Music",
+    "Books",
+    "Photos",
+    "Games",
+    "Your server",
+    "Apps"
+  ],
   "shots": [
-    { "id": "home", "repo": "wittywilla/WittyMediaServer", "group": "Films and TV", "title": "Home",
+    {
+      "id": "home",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Films and TV",
+      "title": "Home",
       "alt": "The home page, with a large picture from a film and a row of libraries",
-      "credit": "[Wing It!](https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm), Blender Studio, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)" },
-    { "id": "movies", "repo": "wittywilla/WittyMediaServer", "group": "Films and TV", "title": "Your film library",
-      "alt": "A wall of film posters", "credit": "Open-licence and public-domain media" },
-    { "id": "film-page", "repo": "wittywilla/WittyMediaServer", "group": "Films and TV", "title": "A film’s page",
-      "alt": "A film’s page, with its poster, plot and cast",
-      "credit": "[Sintel](https://durian.blender.org/), Blender Foundation, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)" },
-    { "id": "tv-shows", "repo": "wittywilla/WittyMediaServer", "group": "Films and TV", "title": "TV shows",
-      "alt": "A library of TV shows", "credit": "Open-licence and public-domain media" },
-    { "id": "dvd-menu", "repo": "wittywilla/WittyMediaServer", "group": "Discs", "title": "A DVD’s real menu, in a browser", "themeless": true,
+      "credit": "[Wing It!](https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm), Blender Studio, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    },
+    {
+      "id": "movies",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Films and TV",
+      "title": "Your film library",
+      "alt": "A wall of film posters",
+      "credit": "Openly licensed and public-domain media, [each work credited](/credits/#pic-movies)"
+    },
+    {
+      "id": "tv-show-page",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Films and TV",
+      "title": "A show’s page",
+      "alt": "A TV show’s page, with its picture, plot, seasons and episodes",
+      "credit": "Openly licensed and public-domain media, [each work credited](/credits/#pic-tv-show-page)"
+    },
+    {
+      "id": "tv-shows",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Films and TV",
+      "title": "TV shows",
+      "alt": "A library of TV shows",
+      "credit": "Openly licensed and public-domain media, [each work credited](/credits/#pic-tv-shows)"
+    },
+    {
+      "id": "dvd-menu",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Discs",
+      "title": "A DVD’s real menu, in a browser",
+      "themeless": true,
       "alt": "A DVD’s own menu, playing in a browser",
-      "credit": "[Sintel](https://durian.blender.org/), Blender Foundation, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), from its original DVD" },
-    { "id": "bluray-menu", "repo": "wittywilla/WittyMediaServer", "group": "Discs", "title": "Blu-rays too", "themeless": true,
+      "credit": "[Sintel](https://durian.blender.org/), Blender Foundation, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), from its original DVD"
+    },
+    {
+      "id": "bluray-menu",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Discs",
+      "title": "Blu-rays too",
+      "themeless": true,
       "alt": "A Blu-ray playing in a browser",
-      "credit": "[Sita Sings the Blues](https://archive.org/details/SitaSingsTheBlues_201812), Nina Paley, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)" },
-    { "id": "discs", "repo": "wittywilla/WittyMediaServer", "group": "Discs", "title": "A shelf of discs",
-      "alt": "A library of disc images with their covers", "credit": "Open-licence and public-domain media" },
-    { "id": "wittytv-guide", "repo": "wittywilla/WittyMediaServer", "group": "Live TV", "title": "WittyTV: channels made from your library",
+      "credit": "[Sita Sings the Blues](https://archive.org/details/SitaSingsTheBlues_201812), Nina Paley, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)"
+    },
+    {
+      "id": "wittytv-guide",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Live TV",
+      "title": "WittyTV: channels made from your library",
       "alt": "A TV guide with a film playing in the preview",
-      "credit": "[Caminandes: Llamigos](https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm), Pablo Vazquez, Blender Foundation, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)" },
-    { "id": "wittytv-classic", "repo": "wittywilla/WittyMediaServer", "group": "Live TV", "title": "Guide looks of its own to choose from", "themeless": true,
+      "credit": "[Caminandes: Llamigos](https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm), Pablo Vazquez, Blender Foundation, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)"
+    },
+    {
+      "id": "wittytv-classic",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Live TV",
+      "title": "Guide looks of its own to choose from",
+      "themeless": true,
       "alt": "The TV guide in its Classic look",
-      "credit": "[Singularity](https://commons.wikimedia.org/wiki/File:SINGULARITY_-_Blender_Open_Movie-full_movie.webm), Blender Studio, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)" },
-    { "id": "music-albums", "repo": "wittywilla/WittyMediaServer", "group": "Music", "title": "Albums",
-      "alt": "A grid of album covers", "credit": "Albums from Creative Commons netlabels" },
-    { "id": "music-visualizer", "repo": "wittywilla/WittyMediaServer", "group": "Music", "title": "Music, with WittyVisualizer", "themeless": true,
+      "credit": "[Singularity](https://commons.wikimedia.org/wiki/File:SINGULARITY_-_Blender_Open_Movie-full_movie.webm), Blender Studio, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    },
+    {
+      "id": "music-albums",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Music",
+      "title": "Albums",
+      "alt": "A grid of album covers",
+      "credit": "Albums from Creative Commons netlabels, [each work credited](/credits/#pic-music-albums)"
+    },
+    {
+      "id": "music-visualizer",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Music",
+      "title": "Music, with WittyVisualizer",
+      "themeless": true,
       "alt": "A light show behind the music player",
-      "credit": "[Collide](https://archive.org/details/SRS08807), Aryll Fae, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)" },
-    { "id": "music-lyrics", "repo": "wittywilla/WittyMediaServer", "group": "Music", "title": "Lyrics and karaoke", "themeless": true,
-      "alt": "Lyrics beside the player", "credit": "“Take Me Out to the Ball Game”, 1908, public domain" },
-    { "id": "books", "repo": "wittywilla/WittyMediaServer", "group": "Books", "title": "A shelf of books",
+      "credit": "[Collide](https://archive.org/details/SRS08807), Aryll Fae, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    },
+    {
+      "id": "music-lyrics",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Music",
+      "title": "Lyrics and karaoke",
+      "themeless": true,
+      "alt": "Lyrics beside the player",
+      "credit": "“Take Me Out to the Ball Game”, 1908, public domain"
+    },
+    {
+      "id": "books",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Books",
+      "title": "A shelf of books",
       "alt": "A library of book covers",
-      "credit": "Covers and text from [Standard Ebooks](https://standardebooks.org/), [CC0](https://creativecommons.org/publicdomain/zero/1.0/)" },
-    { "id": "reader-epub", "repo": "wittywilla/WittyMediaServer", "group": "Books", "title": "A book open in the reader", "themeless": true,
+      "credit": "Covers and text from [Standard Ebooks](https://standardebooks.org/), [CC0](https://creativecommons.org/publicdomain/zero/1.0/)"
+    },
+    {
+      "id": "reader-epub",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Books",
+      "title": "A book open in the reader",
+      "themeless": true,
       "alt": "A book open in the reader",
-      "credit": "[Standard Ebooks](https://standardebooks.org/), [CC0](https://creativecommons.org/publicdomain/zero/1.0/)" },
-    { "id": "reader-comic", "repo": "wittywilla/WittyMediaServer", "group": "Books", "title": "Comics and manga", "themeless": true,
+      "credit": "[Standard Ebooks](https://standardebooks.org/), [CC0](https://creativecommons.org/publicdomain/zero/1.0/)"
+    },
+    {
+      "id": "reader-comic",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Books",
+      "title": "Comics and manga",
+      "themeless": true,
       "alt": "A comic open in the reader",
-      "credit": "[Pepper&Carrot](https://www.peppercarrot.com/), David Revoy, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)" },
-    { "id": "photos", "repo": "wittywilla/WittyMediaServer", "group": "Photos", "title": "Your photo timeline",
-      "alt": "A timeline of photos", "credit": "From [Wikimedia Commons](https://commons.wikimedia.org/), each credited in the list" },
-    { "id": "photos-map", "repo": "wittywilla/WittyMediaServer", "group": "Photos", "title": "An offline map of where they were taken",
-      "alt": "Photos placed on a map", "credit": "From [Wikimedia Commons](https://commons.wikimedia.org/), each credited in the list" },
-    { "id": "games", "repo": "wittywilla/WittyMediaServer", "group": "Games", "title": "Your games, on many consoles",
-      "alt": "A library of games", "credit": "Open-licence homebrew, each credited in the list" },
-    { "id": "gameplay-ucity", "repo": "wittywilla/WittyMediaServer", "group": "Games", "title": "Played in a browser", "themeless": true,
-      "alt": "A city-building game running in a browser",
-      "credit": "[µCity](https://github.com/AntonioND/ucity), Antonio Niño Díaz, GPL-3.0-or-later and CC BY-SA 4.0" },
-    { "id": "gameplay-super-tilt-bro", "repo": "wittywilla/WittyMediaServer", "group": "Games", "title": "With a gamepad, keyboard or touch", "themeless": true,
-      "alt": "A fighting game running in a browser",
-      "credit": "[Super Tilt Bro](https://github.com/sgadrat/super-tilt-bro), Sylvain Gadrat, WTFPL" },
-    { "id": "module-store", "repo": "wittywilla/WittyMediaServer", "group": "Your server", "title": "The module store",
-      "alt": "The module store, listing modules to add", "credit": "From a local test catalog" },
-    { "id": "settings-appearance", "repo": "wittywilla/WittyMediaServer", "group": "Your server", "title": "Themes and looks",
-      "alt": "The appearance settings, with themes to choose from" },
-    { "id": "setup-01-welcome", "repo": "wittywilla/WittyMediaServer", "group": "Your server", "title": "First-time setup",
-      "alt": "The first step of setting up a new server" },
-    { "id": "client-home", "repo": "wittywilla/WittyMediaClient", "group": "Apps", "title": "WittyMediaClient on a desktop",
-      "alt": "WittyMediaClient on a desktop, connected to a test server", "credit": "Open-licence and public-domain media" },
-    { "id": "big-screen", "repo": "wittywilla/WittyMediaClient", "group": "Apps", "title": "The big-screen view, for TVs",
-      "alt": "The big-screen view shown on a TV", "credit": "Open-licence and public-domain media" },
-    { "id": "phone-home", "repo": "wittywilla/WittyMediaClient", "group": "Apps", "title": "At phone width",
-      "alt": "The server’s pages at phone width", "credit": "Open-licence and public-domain media" },
-    { "id": "reader-library", "repo": "wittywilla/WittyReader", "group": "Apps", "title": "WittyReader’s library", "themeless": true,
+      "credit": "[Pepper&Carrot](https://www.peppercarrot.com/), David Revoy, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    },
+    {
+      "id": "photos",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Photos",
+      "title": "Your photo timeline",
+      "alt": "A timeline of photos",
+      "credit": "Openly licensed and public-domain media, [each work credited](/credits/#pic-photos)"
+    },
+    {
+      "id": "gameplay-datastorm",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Games",
+      "title": "With a gamepad, keyboard or touch",
+      "themeless": true,
+      "alt": "The title screen of an arcade game, with “Press start” in red over green lanes",
+      "credit": "[DataStorm](https://github.com/haroldo-ok/datastorm), Haroldo de Oliveira Pinheiro, Apache-2.0"
+    },
+    {
+      "id": "module-store",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Your server",
+      "title": "The module store",
+      "alt": "The module store, listing modules to add",
+      "credit": "The server’s own pages, with no media in view"
+    },
+    {
+      "id": "settings-appearance",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Your server",
+      "title": "Themes and looks",
+      "alt": "The appearance settings, with themes to choose from",
+      "credit": "The server’s own pages, with no media in view"
+    },
+    {
+      "id": "setup-01-welcome",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Your server",
+      "title": "First-time setup",
+      "alt": "The first step of setting up a new server",
+      "credit": "The server’s own pages, with no media in view"
+    },
+    {
+      "id": "client-home",
+      "repo": "wittywilla/WittyMediaClient",
+      "group": "Apps",
+      "title": "WittyMediaClient on a desktop",
+      "alt": "WittyMediaClient on a desktop, connected to a test server",
+      "credit": "Openly licensed and public-domain media, [each work credited](/credits/#pic-client-home)"
+    },
+    {
+      "id": "phone-guide",
+      "repo": "wittywilla/WittyMediaServer",
+      "group": "Apps",
+      "title": "The TV guide at phone width",
+      "alt": "The WittyTV guide on a phone-sized screen",
+      "credit": "Openly licensed and public-domain media, [each work credited](/credits/#pic-phone-guide)"
+    },
+    {
+      "id": "phone-home",
+      "repo": "wittywilla/WittyMediaClient",
+      "group": "Apps",
+      "title": "The server at phone width, in a browser",
+      "alt": "The server’s pages at phone width",
+      "credit": "Openly licensed and public-domain media, [each work credited](/credits/#pic-phone-home)"
+    },
+    {
+      "id": "reader-library",
+      "repo": "wittywilla/WittyReader",
+      "group": "Apps",
+      "title": "WittyReader’s library",
+      "themeless": true,
       "alt": "A library of books, PDFs and comics in WittyReader",
-      "credit": "Covers and text from [Standard Ebooks](https://standardebooks.org/), [CC0](https://creativecommons.org/publicdomain/zero/1.0/); Earth as Art, NASA, public domain; [Pepper&Carrot](https://www.peppercarrot.com/), David Revoy, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)" },
-    { "id": "reader-book", "repo": "wittywilla/WittyReader", "group": "Apps", "title": "A book open in WittyReader", "themeless": true,
+      "credit": "Covers and text from [Standard Ebooks](https://standardebooks.org/), [CC0](https://creativecommons.org/publicdomain/zero/1.0/); Earth as Art, NASA, public domain; [Pepper&Carrot](https://www.peppercarrot.com/), David Revoy, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    },
+    {
+      "id": "reader-book",
+      "repo": "wittywilla/WittyReader",
+      "group": "Apps",
+      "title": "A book open in WittyReader",
+      "themeless": true,
       "alt": "A book open in WittyReader",
-      "credit": "Text and cover from [Standard Ebooks](https://standardebooks.org/), [CC0](https://creativecommons.org/publicdomain/zero/1.0/)" }
+      "credit": "Text and cover from [Standard Ebooks](https://standardebooks.org/), [CC0](https://creativecommons.org/publicdomain/zero/1.0/)"
+    }
   ]
 }

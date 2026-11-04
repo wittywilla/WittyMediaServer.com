@@ -238,6 +238,8 @@ function dirSize(dir) {
 const HTACCESS = `# wittymediaserver.com, for Hostinger (Apache or LiteSpeed). Made by build.mjs.
 ErrorDocument 404 /404.html
 Options -Indexes
+# Never serve a .git folder, should a deployment leave one behind.
+RedirectMatch 404 /\\.git
 DirectoryIndex index.html
 
 <IfModule mod_mime.c>

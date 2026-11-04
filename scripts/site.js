@@ -21,66 +21,154 @@
   const autoTheme = () => (light.matches ? 'light' : 'default')
   const current = () => store.get(KEY) || autoTheme()
 
+  const calm = matchMedia('(prefers-reduced-motion: reduce)')
+  const shotSrc = (img, theme) => (img.dataset.themed || '').split(' ').includes(theme)
+    ? `/images/shots/${theme}/${img.dataset.shot}.webp` : `/images/shots/${img.dataset.shot}.webp`
+  const onScreen = (el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.bottom > 0 && r.top < innerHeight }
+
+  // A picture on screen changes only once its new version is loaded and decoded:
+  // a copy of the old one sits on top and fades away, so a frame never goes blank.
+  const fadeShot = async (img, src) => {
+    img.dataset.want = src
+    const stale = () => img.dataset.want !== src
+    if (!img.complete || !img.naturalWidth || !onScreen(img)) { img.src = src; return }
+    const next = new Image()
+    next.src = src
+    try { await next.decode() } catch { return }
+    if (stale()) return
+    if (calm.matches || !onScreen(img)) { img.src = src; return }
+    const ghost = img.cloneNode()
+    for (const a of ['data-shot', 'data-themed', 'data-want', 'fetchpriority', 'loading']) ghost.removeAttribute(a)
+    ghost.alt = ''; ghost.setAttribute('aria-hidden', 'true'); ghost.classList.add('shot-ghost')
+    Object.assign(ghost.style, { left: `${img.offsetLeft}px`, top: `${img.offsetTop}px`, width: `${img.offsetWidth}px`, height: `${img.offsetHeight}px` })
+    try { await ghost.decode() } catch {}
+    if (stale()) return
+    img.after(ghost)
+    img.src = src
+    try { await img.decode() } catch {}
+    requestAnimationFrame(() => ghost.classList.add('out'))
+    const done = () => ghost.remove()
+    ghost.addEventListener('transitionend', done, { once: true }); setTimeout(done, 800)
+  }
+
   // Screenshots taken in the chosen theme replace the house ones where they exist.
-  const swapShots = (theme) => {
+  const swapShots = (theme, instant) => {
     for (const img of $$('img[data-shot]')) {
-      const has = (img.dataset.themed || '').split(' ').includes(theme)
-      const src = has ? `/images/shots/${theme}/${img.dataset.shot}.webp` : `/images/shots/${img.dataset.shot}.webp`
-      if (img.getAttribute('src') !== src) img.setAttribute('src', src)
+      const src = shotSrc(img, theme)
+      const link = img.closest('a.zoom'); if (link) link.href = src
+      if ((img.dataset.want || img.getAttribute('src')) === src) continue
+      if (instant) { img.dataset.want = src; img.setAttribute('src', src) } else fadeShot(img, src)
     }
   }
 
-  const applyTheme = (theme) => {
+  // Things that change without focus moving are read out from here.
+  const live = document.createElement('div')
+  live.className = 'sr-only'; live.setAttribute('aria-live', 'polite')
+  document.body.append(live)
+  let liveTimer
+  const announce = (text) => { clearTimeout(liveTimer); live.textContent = ''; liveTimer = setTimeout(() => { live.textContent = text }, 120) }
+
+  // Tab and Shift+Tab go round the given controls and no further.
+  const visible = (el) => !el.disabled && !el.hidden && el.getClientRects().length > 0
+  const trapTab = (e, controls) => {
+    const list = controls.filter(visible)
+    if (e.key !== 'Tab' || !list.length) return
+    const i = list.indexOf(document.activeElement)
+    const next = e.shiftKey ? (i <= 0 ? list.length - 1 : i - 1) : (i === list.length - 1 || i < 0 ? 0 : i + 1)
+    e.preventDefault(); list[next].focus()
+  }
+
+  const themeName = (theme) => $(`.swatch[data-theme="${theme}"] .nm`)?.textContent.trim() || theme
+
+  const setTheme = (theme) => {
     root.dataset.theme = theme
+    // The browser's own bar takes the page's colour.
     const meta = $('meta[name="theme-color"]')
     if (meta) meta.content = getComputedStyle(root).getPropertyValue('--bg').trim() || meta.content
-    for (const b of $$('.swatch')) b.setAttribute('aria-checked', String(b.dataset.theme === theme))
+    // A radio group: the chosen theme is the one stop for Tab, arrows move between them.
+    for (const b of $$('.swatch')) { const on = b.dataset.theme === theme; b.setAttribute('aria-checked', String(on)); b.tabIndex = on ? 0 : -1 }
     const auto = $('.themes-pop .auto')
-    if (auto) auto.disabled = !store.get(KEY)
-    swapShots(theme)
+    if (auto) {
+      const following = !store.get(KEY)
+      auto.setAttribute('aria-pressed', String(following))
+      const now = $('.auto-now', auto); if (now) now.textContent = ` (${themeName(autoTheme())})`
+    }
   }
-  applyTheme(current())
+  // Colours cross-fade over 200 ms where the browser can do it cheaply, all at once
+  // otherwise, and at once for anyone who asks for less motion. Pictures follow as they load.
+  const applyTheme = (theme, instant) => {
+    if (theme === root.dataset.theme) { setTheme(theme); return swapShots(theme, instant) }
+    if (!instant && !calm.matches && document.startViewTransition) document.startViewTransition(() => setTheme(theme))
+    else setTheme(theme)
+    swapShots(theme, instant)
+  }
+  applyTheme(current(), true)
   light.addEventListener?.('change', () => { if (!store.get(KEY)) applyTheme(autoTheme()) })
 
   const pop = $('#themes')
   const themeBtn = $('[data-theme-btn]')
-  const closePop = () => { pop?.removeAttribute('open'); themeBtn?.setAttribute('aria-expanded', 'false') }
+  const isOpen = () => !!pop?.hasAttribute('open')
+  const closePop = (refocus) => {
+    if (!isOpen()) return
+    pop.removeAttribute('open'); themeBtn?.setAttribute('aria-expanded', 'false')
+    if (refocus) themeBtn?.focus()
+  }
+  const choose = (theme) => {
+    store.set(KEY, theme); applyTheme(theme)
+    announce(`${themeName(theme)} theme`)
+  }
   themeBtn?.addEventListener('click', (e) => {
     e.stopPropagation()
-    const open = !pop.hasAttribute('open')
-    if (open) { pop.setAttribute('open', ''); themeBtn.setAttribute('aria-expanded', 'true'); ($('.swatch[aria-checked="true"]', pop) || $('.swatch', pop))?.focus() } else closePop()
+    if (isOpen()) return closePop()
+    setMenu(false)
+    pop.setAttribute('open', ''); themeBtn.setAttribute('aria-expanded', 'true')
+    ;($('.swatch[aria-checked="true"]', pop) || $('.swatch', pop))?.focus()
   })
   pop?.addEventListener('click', (e) => {
     e.stopPropagation()
     const sw = e.target.closest('.swatch')
-    if (sw) { store.set(KEY, sw.dataset.theme); applyTheme(sw.dataset.theme) }
-    if (e.target.closest('.auto')) { store.set(KEY, null); applyTheme(autoTheme()) }
+    if (sw) choose(sw.dataset.theme)
+    if (e.target.closest('.auto')) { store.set(KEY, null); applyTheme(autoTheme()); announce(`Matching your device: ${themeName(autoTheme())} theme`) }
   })
   pop?.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { e.stopPropagation(); return closePop(true) }
+    trapTab(e, [...$$('.swatch[tabindex="0"]', pop), ...$$('button:not(.swatch)', pop)])
     const list = $$('.swatch', pop)
     const i = list.indexOf(document.activeElement)
     if (i < 0) return
     const step = { ArrowRight: 1, ArrowDown: 2, ArrowLeft: -1, ArrowUp: -2 }[e.key]
-    if (step) { e.preventDefault(); list[(i + step + list.length) % list.length].focus() }
+    const to = e.key === 'Home' ? list[0] : e.key === 'End' ? list[list.length - 1] : step ? list[(i + step + list.length) % list.length] : null
+    if (to) { e.preventDefault(); choose(to.dataset.theme); to.focus() }
   })
-  document.addEventListener('click', closePop)
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && pop?.hasAttribute('open')) { closePop(); themeBtn?.focus() } })
+  // A click outside closes it. Focus goes back to the button unless the click put it somewhere else.
+  document.addEventListener('click', () => {
+    if (!isOpen()) return
+    const a = document.activeElement
+    closePop(!a || a === document.body || pop.contains(a))
+  })
+  // Focus that leaves the picker some other way (a click elsewhere, a screen reader's own keys) closes it.
+  pop?.addEventListener('focusout', (e) => { if (e.relatedTarget && !pop.contains(e.relatedTarget) && e.relatedTarget !== themeBtn) closePop() })
   // Footer links can open the picker too.
   for (const a of $$('[data-open-themes]')) a.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); scrollTo({ top: 0 }); themeBtn?.click() })
 
   // ---------- the phone menu ----------
   const menuBtn = $('.menu-btn'), drawer = $('#drawer'), scrim = $('.scrim')
-  const setMenu = (open) => {
-    if (!drawer) return
+  function setMenu(open) {
+    if (!drawer || drawer.classList.contains('open') === open) return
     drawer.classList.toggle('open', open); scrim?.classList.toggle('open', open)
     menuBtn.setAttribute('aria-expanded', String(open))
     menuBtn.innerHTML = open ? menuBtn.dataset.close : menuBtn.dataset.open
     drawer.inert = !open
   }
   if (drawer) { drawer.inert = true; menuBtn.dataset.open = menuBtn.innerHTML }
-  menuBtn?.addEventListener('click', () => setMenu(!drawer.classList.contains('open')))
+  menuBtn?.addEventListener('click', () => { closePop(); setMenu(!drawer.classList.contains('open')) })
   scrim?.addEventListener('click', () => setMenu(false))
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer?.classList.contains('open')) { setMenu(false); menuBtn.focus() } })
+  document.addEventListener('keydown', (e) => {
+    if (!drawer?.classList.contains('open')) return
+    if (e.key === 'Escape') { setMenu(false); menuBtn.focus() }
+    // While the menu is open, Tab goes round its links and the button that closes it.
+    trapTab(e, [menuBtn, ...$$('a', drawer)])
+  })
   matchMedia('(min-width: 900px)').addEventListener?.('change', (m) => { if (m.matches) setMenu(false) })
 
   // ---------- copy buttons ----------
@@ -91,7 +179,7 @@
       if (!text) return
       try {
         await navigator.clipboard.writeText(text.trim())
-        const was = b.innerHTML; b.innerHTML = b.dataset.done; b.setAttribute('aria-label', 'Copied')
+        const was = b.innerHTML; b.innerHTML = b.dataset.done; b.setAttribute('aria-label', 'Copied'); announce('Copied')
         setTimeout(() => { b.innerHTML = was; b.setAttribute('aria-label', 'Copy') }, 1600)
       } catch {}
     })
@@ -108,7 +196,8 @@
     const param = box.dataset.param || 'show'
     let value = new URLSearchParams(location.search).get(param) || 'all'
     if (!chips.some((c) => c.dataset.value === value)) value = 'all'
-    const run = () => {
+    let said
+    const run = (say) => {
       const q = (input?.value || '').trim().toLowerCase()
       let shown = 0
       for (const it of items) {
@@ -121,15 +210,17 @@
       if (count) count.textContent = shown === 1 ? '1 shown' : `${shown} shown`
       // Groups whose items are all hidden hide too.
       for (const g of $$('[data-group]', list)) g.hidden = !$$('[data-tags]', g).some((x) => !x.hidden)
+      // Say how many are left, once typing pauses.
+      if (say) { clearTimeout(said); said = setTimeout(() => announce(shown ? (shown === 1 ? '1 shown' : `${shown} shown`) : (empty?.textContent.trim() || 'Nothing matches')), say) }
     }
     for (const c of chips) c.addEventListener('click', () => {
       value = c.dataset.value
       const u = new URL(location.href)
       value === 'all' ? u.searchParams.delete(param) : u.searchParams.set(param, value)
       history.replaceState(null, '', u)
-      run()
+      run(1)
     })
-    input?.addEventListener('input', run)
+    input?.addEventListener('input', () => run(600))
     box.hidden = false
     run()
   }
@@ -169,11 +260,13 @@
     }
     tabs.setAttribute('role', 'tablist')
     links.forEach((a, i) => {
-      a.setAttribute('role', 'tab'); panels[i]?.setAttribute('role', 'tabpanel')
+      a.setAttribute('role', 'tab'); a.id ||= `tab-${a.hash.slice(1)}`
+      if (panels[i]) { panels[i].setAttribute('role', 'tabpanel'); panels[i].setAttribute('aria-labelledby', a.id); a.setAttribute('aria-controls', panels[i].id) }
       a.addEventListener('click', (e) => { e.preventDefault(); show(a.hash.slice(1)); history.replaceState(null, '', a.hash) })
       a.addEventListener('keydown', (e) => {
         const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key]
-        if (d) { e.preventDefault(); show(links[(i + d + links.length) % links.length].hash.slice(1), true) }
+        const to = e.key === 'Home' ? 0 : e.key === 'End' ? links.length - 1 : d ? (i + d + links.length) % links.length : -1
+        if (to >= 0) { e.preventDefault(); show(links[to].hash.slice(1), true) }
       })
     })
     const start = location.hash.slice(1)
@@ -183,8 +276,8 @@
   // ---------- the picture viewer ----------
   const viewer = $('#viewer')
   if (viewer && viewer.showModal) {
-    const zooms = $$('button.zoom')
-    let at = 0
+    const zooms = $$('.zoom')
+    let at = 0, opener = null
     const show = (i) => {
       at = (i + zooms.length) % zooms.length
       const b = zooms[at], img = $('img', b)
@@ -192,17 +285,23 @@
       $('img', viewer).alt = img.alt
       $('figcaption', viewer).innerHTML = b.closest('figure')?.querySelector('.cap')?.innerHTML || ''
     }
-    zooms.forEach((b, i) => b.addEventListener('click', () => { show(i); viewer.showModal() }))
+    // Without a script each picture is a link to the larger file; with one it opens here.
+    zooms.forEach((b, i) => b.addEventListener('click', (e) => {
+      if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+      e.preventDefault(); opener = b; show(i); viewer.showModal()
+    }))
+    viewer.addEventListener('close', () => { opener?.focus(); opener = null })
     $('.prev', viewer)?.addEventListener('click', () => show(at - 1))
     $('.next', viewer)?.addEventListener('click', () => show(at + 1))
     $('.close', viewer)?.addEventListener('click', () => viewer.close())
     viewer.addEventListener('click', (e) => { if (e.target === viewer || e.target.matches('figure')) viewer.close() })
     viewer.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') show(at + 1)
-      if (e.key === 'ArrowLeft') show(at - 1)
+      if (zooms.length < 2) return
+      const to = { ArrowRight: at + 1, ArrowLeft: at - 1, Home: 0, End: zooms.length - 1 }[e.key]
+      if (to != null) { e.preventDefault(); show(to) }
     })
     if (zooms.length < 2) $$('.nav-btn', viewer).forEach((b) => (b.hidden = true))
-  } else for (const b of $$('button.zoom')) b.disabled = true
+  }
 
   // ---------- anything newer on GitHub? ----------
   // The pages were made when the site was last built. This asks GitHub, at most

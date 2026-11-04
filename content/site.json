@@ -9,18 +9,25 @@
 
   "say": {
     "tagline": "Your media, right at home.",
-    "description": "Your films, shows, discs, music, books and games, on every screen in your home. A self-hosted media server that plays DVDs and Blu-rays with their real menus, in any browser.",
+    "lead": "Your films, shows, discs, music, books and games, on every screen in your home.",
+    "what": "A self-hosted media server that plays DVDs and Blu-rays with their real menus, in any browser.",
     "server": "Self-hosted software that keeps your films, shows, discs, music, books and games on a computer you own, and streams them to every screen in your home. It plays DVDs and Blu-rays with their real menus, in any browser.",
-    "serverWhere": "Install it once, on the computer that holds your media. Every other screen reaches it through a web browser, so no app is needed.",
-    "client": "Apps for TV boxes, phones, tablets and desktops that connect to your WittyMediaServer, for the devices where a browser isn't the right fit.",
-    "clientOptional": "Optional. The server's whole interface already runs in any web browser.",
+    "serverWhere": "Install it on the computer that holds your media. Every other screen reaches it through a web browser, with no app needed.",
+    "serverModules": "Discs, games, photos, books and TV tuners are modules you add from the server’s store. The server works without any of them.",
+    "serverTested": "Linux gets the most testing. The Windows installer has been tested under Wine, not on real Windows. The FreeBSD package has run in virtual machines, not on real hardware. The Mac installer has never been run.",
+    "client": "Apps for TV boxes, phones, tablets and desktops that connect to your WittyMediaServer, for the devices where a browser isn’t the right fit.",
+    "clientOptional": "Optional. The server’s whole interface already runs in any web browser.",
+    "clientTested": "Android has been run on emulators only, the Mac app has never been launched, and the iPhone, iPad and Apple TV apps have been written but never built.",
     "player": "A desktop player for discs and files, with real DVD and Blu-ray menus. It plays straight from a drive, a disc image or a folder, with no server and no account.",
+    "playerShort": "A desktop player for discs and files, with real DVD and Blu-ray menus. Windows only for now.",
     "reader": "Read and annotate books, PDFs and comics on your own device, with no server and nothing uploaded.",
-    "modules": "Modules add what your server can do, such as DVD menus, streamed games or live TV. Each is a project of its own, signed, and added from Settings → Modules while the server keeps running.",
+    "readerShort": "A reader for books, PDFs and comics, with notes and a pen, on your own device.",
+    "standalone": "Neither needs a server, and neither connects to one: they’re for files on the computer in front of you.",
+    "modules": "Modules add what your server can do, such as DVD menus, streamed games or live TV. Most are projects of their own, signed, and added from Settings → Modules while the server keeps running.",
     "alpha": "Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade.",
     "noMedia": "No media comes with WittyMediaServer.",
     "shotsNote": "Pictures from a test server filled with openly licensed and public-domain media.",
-    "encrypted": "Copy-protected discs and encrypted broadcasts are refused with a plain message. Nothing here unlocks them.",
+    "encrypted": "Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.",
     "privacy": "This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser.",
     "licence": "Apache-2.0",
     "platforms": ["Windows", "macOS", "Linux", "FreeBSD", "Docker"]
@@ -31,19 +38,20 @@
     "client": "wittywilla/WittyMediaClient",
     "player": "wittywilla/WittyMediaPlayer",
     "reader": "wittywilla/WittyReader",
-    "catalog": "wittywilla/WittyModuleCatalog"
+    "catalog": "wittywilla/WittyModuleCatalog",
+    "website": "wittywilla/wittymediaserver.com"
   },
 
   "catalog": "https://github.com/wittywilla/WittyModuleCatalog/releases/download/catalog/catalog.json",
   "catalogLive": "https://raw.githubusercontent.com/wittywilla/WittyModuleCatalog/main/catalog.json",
 
   "docs": {
-    "gettingStarted": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/GETTING_STARTED.md",
-    "install": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/INSTALL.md",
-    "docker": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/INSTALL.md#docker",
-    "modules": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/MODULE-STORE.md",
-    "apps": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/APPS.md",
-    "credits": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md",
+    "gettingStarted": "/docs/getting-started/",
+    "install": "/docs/install/",
+    "docker": "/docs/install/#docker",
+    "modules": "/docs/module-store/",
+    "apps": "/docs/apps/",
+    "credits": "/credits/",
     "changelog": "https://github.com/wittywilla/WittyMediaServer/blob/master/CHANGELOG.md",
     "security": "https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md",
     "contributing": "https://github.com/wittywilla/WittyMediaServer/blob/master/CONTRIBUTING.md",
@@ -58,6 +66,7 @@
     { "href": "/server/", "label": "Server" },
     { "href": "/client/", "label": "Apps" },
     { "href": "/modules/", "label": "Modules" },
+    { "href": "/docs/", "label": "Docs" },
     { "href": "/news/", "label": "News" },
     { "href": "/gallery/", "label": "Gallery" }
   ]

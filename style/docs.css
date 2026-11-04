@@ -1,0 +1,169 @@
+/* ---------- docs: the hub at /docs/ and each guide ----------
+   Phones get the list of guides and the table of contents as two menus above
+   the guide. Wider screens keep the guides on the left, then the table of
+   contents on the right, both sticky. */
+
+/* the hub */
+.docs-jump { border-bottom: 1px solid var(--border); background: var(--bg-2); }
+.docs-jump .wrap { display: flex; gap: var(--sp-2); padding-block: var(--sp-4); overflow-x: auto; scrollbar-width: none; }
+.docs-jump .wrap::-webkit-scrollbar { display: none; }
+.docs-jump .chip { flex: none; text-decoration: none; white-space: nowrap; }
+.docs-jump .chip .i { color: var(--fg-3); }
+.docs-jump .chip:hover .i { color: var(--accent-text); }
+.docs-hub { padding-block: clamp(40px, 6vw, 72px) var(--section); }
+.docs-group + .docs-group { margin-top: clamp(48px, 7vw, 80px); }
+.docs-group-head { display: flex; align-items: flex-start; gap: var(--sp-4); margin-bottom: var(--sp-6); max-width: 720px; }
+.docs-group-head .tile { flex: none; }
+.docs-group-head h2 { font-size: var(--text-2xl); letter-spacing: var(--tracking-heading); }
+.docs-group-head p { color: var(--fg-2); }
+.doc-card { padding: var(--sp-5) var(--sp-6); gap: var(--sp-2); }
+.doc-card h3 { font-size: var(--text-lg); color: var(--fg); }
+.doc-card p { font-size: var(--text-md); }
+.doc-card:hover h3 { color: var(--accent-text); }
+.doc-card .go { padding-top: var(--sp-2); font-size: var(--text-sm); }
+.doc-card .go .muted { font-weight: 500; }
+.docs-foot { margin-top: clamp(48px, 7vw, 80px); padding-top: var(--sp-6); border-top: 1px solid var(--border); font-size: var(--text-sm); max-width: 72ch; }
+.docs-foot a { color: var(--fg-2); }
+
+/* a guide */
+.docs-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); padding-block: var(--sp-6) var(--section); }
+.docs-side, .doc-toc { display: none; }
+.doc { min-width: 0; }
+
+/* the two menus on phones */
+.docs-menu, .doc-toc-small { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--bg-2); }
+.doc-toc-small { margin-bottom: var(--sp-8); }
+.docs-menu { margin-bottom: var(--sp-8); }
+.docs-menu summary, .doc-toc-small summary {
+  display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; cursor: pointer; list-style: none;
+  font-weight: 600; font-size: var(--text-md); color: var(--fg); border-radius: inherit;
+}
+.docs-menu summary::-webkit-details-marker, .doc-toc-small summary::-webkit-details-marker { display: none; }
+.docs-menu summary::after, .doc-toc-small summary::after {
+  content: ""; flex: none; width: 8px; height: 8px; margin-left: 4px; margin-top: -4px;
+  border-right: 2px solid var(--fg-3); border-bottom: 2px solid var(--fg-3); rotate: 45deg; transition: rotate var(--dur-2), margin var(--dur-2);
+}
+.docs-menu[open] summary::after, .doc-toc-small[open] summary::after { rotate: 225deg; margin-top: 4px; }
+.docs-menu summary .i, .doc-toc-small summary .i { color: var(--fg-3); }
+.docs-menu summary:hover, .doc-toc-small summary:hover { background: var(--hover); }
+.docs-menu .here { margin-left: auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--fg-3); font-weight: 500; font-size: var(--text-sm); }
+.docs-menu > nav { max-height: min(70vh, 560px); overflow-y: auto; overscroll-behavior: contain; padding: var(--sp-2) var(--sp-2) var(--sp-4); border-top: 1px solid var(--border); }
+.doc-toc-small > nav { padding: var(--sp-2) var(--sp-4) var(--sp-4); border-top: 1px solid var(--border); }
+
+/* the list of guides */
+.docs-all { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 10px; color: var(--fg-2); font-size: var(--text-sm); font-weight: 600; text-decoration: none; border-radius: var(--r-sm); }
+.docs-all:hover { color: var(--fg); background: var(--hover); }
+.docs-all .i { width: 16px; height: 16px; }
+.docs-nav-group { margin-top: var(--sp-4); }
+.docs-nav-group h2 { padding: 0 10px; margin-bottom: 4px; font-size: var(--text-2xs); font-weight: 650; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--fg-3); }
+.docs-nav-group ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 1px; }
+.docs-nav-group a {
+  position: relative; display: flex; align-items: center; min-height: 40px; padding: 6px 10px; border-radius: var(--r-sm);
+  color: var(--fg-2); font-size: var(--text-md); line-height: 1.35; text-decoration: none; transition: background var(--dur-1), color var(--dur-1);
+}
+.docs-nav-group a:hover { background: var(--hover); color: var(--fg); }
+.docs-nav-group a[aria-current="page"] { background: var(--accent-soft); color: var(--accent-text); font-weight: 600; }
+.docs-nav-group a[aria-current="page"]::before { content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; border-radius: 3px; background: var(--accent); }
+
+/* the guide's head */
+.doc-head { padding-bottom: var(--sp-6); margin-bottom: var(--sp-6); border-bottom: 1px solid var(--border); }
+.doc-head .eyebrow { flex-wrap: wrap; }
+.doc-head .eyebrow a { color: inherit; text-decoration: none; }
+.doc-head .eyebrow a:hover { color: var(--fg); text-decoration: underline; }
+.doc-head .eyebrow span { color: var(--border-strong); }
+.doc-head h1 { margin-top: var(--sp-3); font-size: var(--page-title); letter-spacing: var(--tracking-display); line-height: 1.1; }
+.doc-head .lead { margin-top: var(--sp-4); max-width: 62ch; font-size: var(--text-lg); color: var(--fg-2); line-height: 1.6; }
+.doc-head .lead code { padding: .1em .35em; border-radius: var(--r-xs); background: var(--bg-3); border: 1px solid var(--border); font-size: .85em; color: var(--fg); overflow-wrap: anywhere; }
+.doc-head .lead strong { color: var(--fg); font-weight: 600; }
+.doc-head .meta { margin-top: var(--sp-5); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; color: var(--fg-3); font-size: var(--text-sm); }
+.doc-head .meta a { display: inline-flex; align-items: center; gap: 6px; color: var(--fg-2); font-weight: 500; text-decoration: none; }
+.doc-head .meta a:hover { color: var(--accent-text); text-decoration: underline; }
+.doc-head .meta .i { width: 16px; height: 16px; }
+
+/* tables of contents */
+.doc-toc ol, .doc-toc-small ol { margin: 0; padding: 0; list-style: none; display: grid; }
+.doc-toc-small a { display: block; padding: 7px 0; color: var(--fg-2); font-size: var(--text-md); text-decoration: none; }
+.doc-toc-small a:hover { color: var(--accent-text); }
+.doc-toc h2 { margin-bottom: var(--sp-3); font-size: var(--text-2xs); font-weight: 650; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--fg-3); }
+.doc-toc ol { border-left: 1px solid var(--border); }
+.doc-toc a { display: block; margin-left: -1px; padding: 5px 0 5px 14px; border-left: 2px solid transparent; color: var(--fg-3); font-size: var(--text-sm); line-height: 1.4; text-decoration: none; }
+.doc-toc a:hover { color: var(--fg); border-left-color: var(--border-strong); }
+.doc-toc code, .doc-toc-small code { font-size: .9em; }
+
+/* the guide itself */
+.doc-body { max-width: 72ch; font-size: var(--text-base); line-height: 1.7; }
+@media (min-width: 600px) { .doc-body { font-size: var(--text-lg); } }
+.doc-body > h2 { padding-top: var(--sp-6); margin-top: var(--sp-10); border-top: 1px solid var(--border); }
+.doc-body > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.doc-body h2, .doc-body h3, .doc-body h4 { position: relative; color: var(--fg); }
+.h-anchor { margin-left: .35em; color: var(--fg-3); font-weight: 500; text-decoration: none; opacity: 0; transition: opacity var(--dur-2); }
+.doc-body :is(h2, h3, h4):hover .h-anchor { opacity: 1; }
+.h-anchor:hover { color: var(--accent-text); }
+.doc-body li > ul, .doc-body li > ol { margin-top: .5em; }
+.doc-body :not(pre) > code { overflow-wrap: anywhere; }
+.doc-body .table-wrap { max-width: 100%; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.doc-body .table-wrap table { font-size: var(--text-md); line-height: 1.55; }
+.doc-body th, .doc-body td { min-width: 7.5rem; }
+.doc-body td code { white-space: nowrap; overflow-wrap: normal; }
+.doc-body td strong { color: var(--fg); }
+.doc-body .codebox { background: var(--bg-2); }
+.doc-body .codebox pre { margin: 0; padding: 14px 56px 14px 16px; border: 0; border-radius: inherit; background: none; font-size: var(--text-sm); line-height: 1.6; }
+.doc-body li > .codebox { margin-block: .6em; }
+.doc-body blockquote p { color: var(--fg); }
+.doc-body blockquote { margin-inline: 0; background: var(--bg-2); padding: 12px 16px 12px 18px; border-radius: 0 var(--r-md) var(--r-md) 0; }
+
+/* pictures, and links to the ones that can't be shown here */
+.doc-fig { margin: 1.6em 0 0; }
+.doc-fig img { width: 100%; border-radius: var(--r-md); border: 1px solid var(--border); background: var(--bg-3); }
+.doc-fig figcaption { display: grid; gap: 2px; margin-top: var(--sp-2); font-size: var(--text-sm); line-height: 1.5; color: var(--fg-2); }
+.doc-fig figcaption .credit { font-size: var(--text-xs); color: var(--fg-3); }
+.doc-fig figcaption .credit a { color: inherit; }
+.doc-pic > p { margin-top: var(--sp-2); font-size: var(--text-sm); color: var(--fg-3); }
+.doc-pic-inline { display: inline-flex; align-items: center; gap: 6px; }
+.doc-pic-inline .go { display: none; }
+.doc-pic a {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; padding: 12px 16px; border-radius: var(--r-md);
+  border: 1px dashed var(--border-strong); background: var(--bg-2); color: var(--fg-2); font-size: var(--text-md); line-height: 1.45; text-decoration: none;
+  transition: border-color var(--dur-2), background var(--dur-2);
+}
+.doc-pic a > .i { color: var(--fg-3); }
+.doc-pic a > span:first-of-type { flex: 1 1 14rem; }
+.doc-pic .go { display: inline-flex; align-items: center; gap: 6px; color: var(--accent-text); font-weight: 600; font-size: var(--text-sm); white-space: nowrap; }
+.doc-pic .go .i { width: 15px; height: 15px; }
+.doc-pic a:hover { border-color: var(--accent-line); background: var(--accent-soft); }
+
+/* previous and next */
+.doc-pager { display: grid; gap: var(--sp-3); margin-top: var(--sp-12); }
+.doc-pager .card { padding: var(--sp-4) var(--sp-5); gap: 4px; text-decoration: none; }
+.doc-pager .label { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-2xs); font-weight: 650; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--fg-3); }
+.doc-pager .label .i { width: 14px; height: 14px; }
+.doc-pager strong { color: var(--fg); font-size: var(--text-lg); font-weight: 600; line-height: 1.35; }
+.doc-pager .card:hover strong { color: var(--accent-text); }
+.doc-pager .next { text-align: right; align-items: flex-end; }
+.doc-foot { margin-top: var(--sp-6); font-size: var(--text-sm); }
+.doc-foot a { color: var(--fg-2); }
+@media (min-width: 600px) { .doc-pager { grid-template-columns: 1fr 1fr; } }
+
+/* wider screens: the guides on the left */
+@media (min-width: 900px) {
+  .docs-layout { grid-template-columns: 220px minmax(0, 1fr); gap: var(--sp-10); padding-top: var(--sp-10); }
+  .docs-side {
+    display: block; position: sticky; top: calc(var(--topbar-h) + 24px); align-self: start;
+    max-height: calc(100dvh - var(--topbar-h) - 48px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin;
+    margin-left: -10px; padding-bottom: var(--sp-6);
+  }
+  .docs-menu { display: none; }
+}
+/* and the table of contents on the right */
+@media (min-width: 1200px) {
+  .docs-layout.has-toc { grid-template-columns: 220px minmax(0, 1fr) 210px; }
+  .doc-toc {
+    display: block; position: sticky; top: calc(var(--topbar-h) + 24px); align-self: start;
+    max-height: calc(100dvh - var(--topbar-h) - 48px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin;
+  }
+  .doc-toc-small { display: none; }
+}
+@media print {
+  .docs-side, .doc-toc, .docs-menu, .doc-toc-small, .doc-pager, .h-anchor { display: none !important; }
+  .docs-layout { display: block; }
+}

@@ -1,0 +1,23 @@
+/* The picture credits page (lib/sections/credits.mjs).
+   Only what that page adds; heads, sections and prose come from site.css. */
+
+.credit-intro p + p { margin-top: var(--sp-3); color: var(--fg-2); font-size: var(--text-md); }
+.credit-intro a { overflow-wrap: anywhere; }
+
+.credit-list { display: grid; gap: var(--sp-4); grid-template-columns: 1fr; }
+.credit-list > * { min-width: 0; }
+@media (min-width: 900px) {
+  .credit-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.credit-pic { display: grid; gap: var(--sp-2); align-content: start; padding: var(--sp-4) var(--sp-5); border-radius: var(--r-md); background: var(--bg-2); border: 1px solid var(--border); scroll-margin-top: calc(var(--topbar-h) + 16px); }
+.credit-pic h3 { font-size: var(--text-lg); overflow-wrap: anywhere; }
+.credit-pic .file { font-size: var(--text-xs); color: var(--fg-3); overflow-wrap: anywhere; }
+.credit-pic .theme-note { margin-top: var(--sp-2); font-size: var(--text-sm); font-weight: 600; color: var(--fg-2); }
+
+.credit-works { margin: 0; padding: 0; list-style: none; display: grid; }
+.credit-works li { display: grid; gap: 2px; padding-block: var(--sp-2); border-top: 1px solid var(--border); font-size: var(--text-md); }
+.credit-works .t { color: var(--fg); font-weight: 600; overflow-wrap: anywhere; }
+.credit-works .by { color: var(--fg-2); overflow-wrap: anywhere; }
+.credit-works .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--text-sm); color: var(--fg-3); }
+.credit-works .meta a { color: inherit; }

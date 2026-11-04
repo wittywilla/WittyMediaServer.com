@@ -1,0 +1,197 @@
+# Builds the site and publishes it, so new articles, releases and modules go
+# live by themselves. UPDATING.md, "Publishing by itself", explains the setup.
+#
+#   build    runs node build.mjs and its checks, and keeps site.zip with the run
+#   publish  puts the built site on the "live" branch, which Hostinger deploys
+#   ftp      uploads it to Hostinger too, only when the HOSTINGER_FTP_* secrets exist
+#
+# There's no pull_request trigger, so nobody else's changes run with this
+# repository's token or secrets.
+name: Build and publish
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Every four hours, so new releases and modules appear without a push.
+    - cron: '23 */4 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+# One run at a time, so two runs never push to "live" at once.
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+
+      # What was fetched from GitHub last time, so a build asks only "has this changed?"
+      # and still works when GitHub doesn't answer.
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: cache
+          key: site-cache-${{ github.run_id }}
+          restore-keys: site-cache-
+
+      - name: Build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -o pipefail
+          node build.mjs 2>&1 | tee "$RUNNER_TEMP/build.log"
+
+      - name: Check
+        run: |
+          log="$RUNNER_TEMP/build.log"
+          if grep -q '✗' "$log"; then
+            echo "::error::The build found problems (lines starting with ✗):"
+            grep '✗' "$log"
+            exit 1
+          fi
+          # A site without releases or modules means GitHub didn't answer: don't publish it.
+          if grep -Eq 'no releases were found|no modules were found' "$log"; then
+            echo "::error::GitHub didn't answer, so the site would be missing releases or modules. Run it again later."
+            exit 1
+          fi
+          test -f site/index.html && test -f site/.htaccess && test -f site.zip
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          path: site.zip
+          archive: false
+          retention-days: 14
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    if: github.ref == 'refs/heads/main' && !github.event.repository.fork
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: site.zip
+          path: ${{ runner.temp }}/download
+          skip-decompress: true
+
+      - name: Unpack
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          unzip -q "$RUNNER_TEMP/download/site.zip" -d "$RUNNER_TEMP/site"
+          test -f "$RUNNER_TEMP/site/index.html" && test -f "$RUNNER_TEMP/site/.htaccess"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: live
+          fetch-depth: 1
+
+      # "live" holds only the built site. Each change is a new commit on top of
+      # the last, never a rewrite, so Hostinger's pull always fast-forwards.
+      - name: Commit to live
+        id: commit
+        working-directory: live
+        env:
+          SITE: ${{ runner.temp }}/site
+          SOURCE: ${{ github.sha }}
+        run: |
+          if git fetch -q --depth=1 origin live 2>/dev/null; then
+            git checkout -q -B live FETCH_HEAD
+          else
+            echo "No live branch yet: starting one."
+            git checkout -q --orphan live
+          fi
+          git rm -rqf --ignore-unmatch .
+          git clean -fdxq
+          cp -a "$SITE/." .
+          git add -A
+
+          # Every build stamps its time in data-built="…"; a change to only that isn't worth deploying.
+          strip() { sed -E 's/ data-built="[^"]*"//'; }
+          changed=false
+          if ! git rev-parse -q --verify HEAD >/dev/null; then
+            changed=true
+          else
+            while IFS= read -r -d '' f; do
+              if ! cmp -s <(git show "HEAD:$f" 2>/dev/null | strip) <(strip 2>/dev/null < "$f"); then changed=true; break; fi
+            done < <(git diff --cached --name-only -z HEAD)
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          if [ "$changed" != true ]; then
+            echo "Nothing changed since the last publish."
+            exit 0
+          fi
+
+          git -c user.name='github-actions[bot]' -c user.email='41898099+github-actions[bot]@users.noreply.github.com' \
+            commit -q -m "Site built from ${SOURCE:0:7}"
+          git push -q origin live
+          echo "Published $(git rev-parse --short HEAD) to live."
+
+  ftp:
+    needs: [build, publish]
+    if: needs.publish.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions: {}
+    env:
+      HAS_FTP: ${{ secrets.HOSTINGER_FTP_SERVER != '' && secrets.HOSTINGER_FTP_USER != '' && secrets.HOSTINGER_FTP_PASSWORD != '' }}
+    steps:
+      - name: FTP isn't set up
+        if: env.HAS_FTP != 'true'
+        run: echo "No HOSTINGER_FTP_* secrets, so nothing to upload by FTP."
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        if: env.HAS_FTP == 'true'
+        with:
+          name: site.zip
+          path: ${{ runner.temp }}/download
+          skip-decompress: true
+
+      - name: Upload to Hostinger
+        if: env.HAS_FTP == 'true'
+        env:
+          SERVER: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          FTP_USER: ${{ secrets.HOSTINGER_FTP_USER }}
+          LFTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          FOLDER: ${{ vars.HOSTINGER_FTP_FOLDER || 'public_html' }}
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y lftp >/dev/null
+          mkdir -p "$RUNNER_TEMP/site"
+          unzip -q "$RUNNER_TEMP/download/site.zip" -d "$RUNNER_TEMP/site"
+          # A bare address means SFTP on Hostinger's SSH port, which keeps the password
+          # private. Write ftp://… only if SFTP isn't available: plain FTP sends it unencrypted.
+          case "$SERVER" in
+            *://*) url="$SERVER" ;;
+            *) url="sftp://$SERVER:65002" ;;
+          esac
+          # Old files stay, as with the ZIP: every page is replaced and nothing links to the rest.
+          if ! lftp -u "$FTP_USER" --env-password "$url" <<EOF
+          set cmd:fail-exit yes
+          set net:max-retries 3
+          set net:timeout 30
+          set sftp:auto-confirm yes
+          cd "$FOLDER"
+          mirror --reverse --no-perms --parallel=4 "$RUNNER_TEMP/site" .
+          EOF
+          then
+            echo "::error::Couldn't upload to ${url%%://*}://…/$FOLDER. Check the HOSTINGER_FTP_* secrets, and the HOSTINGER_FTP_FOLDER variable if the site's folder isn't $FOLDER."
+            exit 1
+          fi
+          echo "Uploaded to $FOLDER."
