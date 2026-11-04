@@ -1,0 +1,9 @@
+/* The name in the top bar, while scripts/brand.js types other names into it. */
+.topbar .brand > span { display: inline-block; white-space: nowrap; text-align: left; }
+.brand .caret {
+  display: inline-block; width: 2px; height: 1.05em; margin-left: 2px; vertical-align: -.17em;
+  border-radius: 1px; background: var(--accent-text);
+  animation: brand-caret 1s steps(1) infinite;
+}
+@keyframes brand-caret { 50% { opacity: 0; } }
+.brand .brand-measure { position: absolute; visibility: hidden; pointer-events: none; white-space: nowrap; }
