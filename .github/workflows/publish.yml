@@ -120,7 +120,22 @@ jobs:
           fi
           git rm -rqf --ignore-unmatch .
           git clean -fdxq
-          cp -a "$SITE/." .
+          # Shaped for Hostinger's web apps: a package.json at the root, and the
+          # finished site in dist/ as the output folder. Nothing is built there.
+          mkdir dist
+          cp -a "$SITE/." dist/
+          cat > package.json <<'JSON'
+          {
+            "name": "wittymediaserver-site",
+            "private": true,
+            "version": "1.0.0",
+            "description": "wittymediaserver.com, already built by GitHub Actions from the main branch. The site is in dist/. Don't edit this branch.",
+            "license": "Apache-2.0",
+            "scripts": {
+              "build": "node -e \"console.log('Already built: serving dist/')\""
+            }
+          }
+          JSON
           git add -A
 
           # Every build stamps its time in data-built="…"; a change to only that isn't worth deploying.
