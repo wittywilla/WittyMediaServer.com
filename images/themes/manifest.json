@@ -6,13 +6,15 @@
       "module-store",
       "setup-01-welcome",
       "tv-shows",
+      "tv-show-page",
       "music-albums",
       "photos",
       "books",
       "games",
       "wittytv-guide",
       "settings-appearance",
-      "phone-home"
+      "phone-home",
+      "phone-guide"
     ],
     "light": [
       "home",
@@ -20,13 +22,15 @@
       "module-store",
       "setup-01-welcome",
       "tv-shows",
+      "tv-show-page",
       "music-albums",
       "photos",
       "books",
       "games",
       "wittytv-guide",
       "settings-appearance",
-      "phone-home"
+      "phone-home",
+      "phone-guide"
     ],
     "cinema": [
       "home",
@@ -34,13 +38,15 @@
       "module-store",
       "setup-01-welcome",
       "tv-shows",
+      "tv-show-page",
       "music-albums",
       "photos",
       "books",
       "games",
       "wittytv-guide",
       "settings-appearance",
-      "phone-home"
+      "phone-home",
+      "phone-guide"
     ],
     "contrast": [
       "home",
@@ -48,13 +54,15 @@
       "module-store",
       "setup-01-welcome",
       "tv-shows",
+      "tv-show-page",
       "music-albums",
       "photos",
       "books",
       "games",
       "wittytv-guide",
       "settings-appearance",
-      "phone-home"
+      "phone-home",
+      "phone-guide"
     ],
     "evergreen": [
       "home",
@@ -62,13 +70,15 @@
       "module-store",
       "setup-01-welcome",
       "tv-shows",
+      "tv-show-page",
       "music-albums",
       "photos",
       "books",
       "games",
       "wittytv-guide",
       "settings-appearance",
-      "phone-home"
+      "phone-home",
+      "phone-guide"
     ],
     "midnight": [
       "home",
@@ -76,13 +86,15 @@
       "module-store",
       "setup-01-welcome",
       "tv-shows",
+      "tv-show-page",
       "music-albums",
       "photos",
       "books",
       "games",
       "wittytv-guide",
       "settings-appearance",
-      "phone-home"
+      "phone-home",
+      "phone-guide"
     ],
     "oled": [
       "home",
@@ -90,13 +102,15 @@
       "module-store",
       "setup-01-welcome",
       "tv-shows",
+      "tv-show-page",
       "music-albums",
       "photos",
       "books",
       "games",
       "wittytv-guide",
       "settings-appearance",
-      "phone-home"
+      "phone-home",
+      "phone-guide"
     ],
     "paper": [
       "home",
@@ -104,13 +118,15 @@
       "module-store",
       "setup-01-welcome",
       "tv-shows",
+      "tv-show-page",
       "music-albums",
       "photos",
       "books",
       "games",
       "wittytv-guide",
       "settings-appearance",
-      "phone-home"
+      "phone-home",
+      "phone-guide"
     ]
   }
 }

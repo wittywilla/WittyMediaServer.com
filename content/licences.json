@@ -3008,6 +3008,29 @@
    ],
    "checked": "2026-11-04"
   },
+  "cinema/phone-guide": {
+   "works": [
+    {
+     "title": "Detour (1945)",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "Fanart: Detour",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
   "cinema/games": {
    "works": [
     {
@@ -3063,6 +3086,29 @@
      "by": "WittyMediaServer project",
      "licence": "Own work",
      "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "contrast/phone-guide": {
+   "works": [
+    {
+     "title": "Detour (1945)",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "Fanart: Detour",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
     },
     {
      "title": "WittyMediaServer’s own interface",
@@ -3138,6 +3184,29 @@
    ],
    "checked": "2026-11-04"
   },
+  "default/phone-guide": {
+   "works": [
+    {
+     "title": "Detour (1945)",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "Fanart: Detour",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
   "default/games": {
    "works": [
     {
@@ -3193,6 +3262,29 @@
      "by": "WittyMediaServer project",
      "licence": "Own work",
      "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "evergreen/phone-guide": {
+   "works": [
+    {
+     "title": "Detour (1945)",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "Fanart: Detour",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
     },
     {
      "title": "WittyMediaServer’s own interface",
@@ -3268,6 +3360,29 @@
    ],
    "checked": "2026-11-04"
   },
+  "light/phone-guide": {
+   "works": [
+    {
+     "title": "Detour (1945)",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "Fanart: Detour",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
   "light/games": {
    "works": [
     {
@@ -3323,6 +3438,29 @@
      "by": "WittyMediaServer project",
      "licence": "Own work",
      "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "midnight/phone-guide": {
+   "works": [
+    {
+     "title": "Detour (1945)",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "Fanart: Detour",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
     },
     {
      "title": "WittyMediaServer’s own interface",
@@ -3398,6 +3536,29 @@
    ],
    "checked": "2026-11-04"
   },
+  "oled/phone-guide": {
+   "works": [
+    {
+     "title": "Detour (1945)",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "Fanart: Detour",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
   "oled/games": {
    "works": [
     {
@@ -3453,6 +3614,29 @@
      "by": "WittyMediaServer project",
      "licence": "Own work",
      "source": "https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer project",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-04"
+  },
+  "paper/phone-guide": {
+   "works": [
+    {
+     "title": "Detour (1945)",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
+    },
+    {
+     "title": "Fanart: Detour",
+     "by": "Edgar G. Ulmer",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Detour_(1945)_by_Edgar_G._Ulmer.webm"
     },
     {
      "title": "WittyMediaServer’s own interface",
