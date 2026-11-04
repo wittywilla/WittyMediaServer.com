@@ -2,43 +2,84 @@
   "$comment": "The home page's 'no catch' strip and section. 'short' scrolls under the top bar; 'title' and 'text' are the section's cards; 'big' makes a card run the full width. Petty is fine. Naming another project isn't: say what this one does, and let people compare. The build refuses to publish other media servers' names.",
   "eyebrow": "The small print",
   "title": "No catch. We checked. Twice.",
-  "intro": "Some media projects hide the catch in the small print, on the pricing page, or in paragraph four of a cheerful blog post. We put ours on the home page. There isn’t one.",
+  "intro": "Some media projects hide the catch in the small print, on the pricing page, in paragraph four of a cheerful blog post, or somewhere in a long social media thread. We put ours on the home page. There isn’t one.",
   "promises": [
-    { "icon": "heart", "big": true,
+    {
+      "icon": "heart",
+      "big": true,
       "short": "There will never be a WittyMediaServer Pro",
       "title": "There will never be a WittyMediaServer Pro",
-      "text": "No Pro. No Plus. No Premium, Ultimate or Founders’ Edition. Nobody here is quietly switching features off in the free version so a paid one looks better. If the server can do it, you can do it, today and every day after." },
-    { "icon": "lock",
+      "text": "No Pro. No Plus. No Premium, Ultimate or Founders’ Edition. Nobody here is quietly switching features off in the free version so a paid one looks better. If the server can do it, you can do it, today and every day after."
+    },
+    {
+      "icon": "check",
+      "big": true,
+      "short": "Our own work. The commit history has receipts",
+      "title": "Our own work, with receipts",
+      "text": "Every line of WittyMediaServer’s own code was written for WittyMediaServer, and its whole history is public: every change, with its date, its author and what came before it. When you know how to build something better, you don’t need to borrow anyone’s homework. And when anyone wonders, the answer is a link, not a social media post.",
+      "link": {
+        "href": "https://github.com/wittywilla/WittyMediaServer/commits/master",
+        "label": "Every change, from the first commit"
+      }
+    },
+    {
+      "icon": "lock",
       "short": "Nothing behind a paywall. Shocking, we know",
       "title": "Nothing behind a paywall",
-      "text": "Every feature is in the download, for everyone. No “unlock this for a small monthly fee”, no greyed-out buttons, and no subscription lurking behind a “coming soon”. Your media, your server, your features. Wild concept." },
-    { "icon": "download",
+      "text": "Every feature is in the download, for everyone. No “unlock this for a small monthly fee”, no greyed-out buttons, and no subscription lurking behind a “coming soon”. Your media, your server, your features. Wild concept."
+    },
+    {
+      "icon": "download",
       "short": "No waitlist. No “exclusive” beta. No velvet rope",
       "title": "No waitlist, no velvet rope",
-      "text": "It’s an alpha, and anyone can download it right now. No invite codes, no sign-up form, no queue, and no being made to feel special for the privilege of testing someone’s software for free." },
-    { "icon": "users",
+      "text": "It’s an alpha, and anyone can download it right now. No invite codes, no sign-up form, no queue, and no being made to feel special for the privilege of testing someone’s software for free."
+    },
+    {
+      "icon": "users",
       "short": "Open source since the first commit, not since it got awkward",
       "title": "Open since the first commit",
       "text": "Public under Apache-2.0 from day one. Not “open source soon”. Not “source available”. Not “open once we’ve worked out how to charge for it”. All of it, from the first line.",
-      "link": { "href": "https://github.com/wittywilla/WittyMediaServer", "label": "Read every line" } },
-    { "icon": "list",
+      "link": {
+        "href": "https://github.com/wittywilla/WittyMediaServer",
+        "label": "Read every line"
+      }
+    },
+    {
+      "icon": "list",
       "short": "Every tool it’s built with, named and credited",
       "title": "Built in the open, tools included",
       "text": "Every library and tool it’s made with is listed, with its licence and the people who wrote it. Standing on the shoulders of giants is fine. Pretending the shoulders are yours isn’t.",
-      "link": { "href": "https://github.com/wittywilla/WittyMediaServer/blob/master/THIRD_PARTY_LICENSES.md", "label": "Every third-party licence" } },
-    { "icon": "shield",
+      "link": {
+        "href": "https://github.com/wittywilla/WittyMediaServer/blob/master/THIRD_PARTY_LICENSES.md",
+        "label": "Every third-party licence"
+      }
+    },
+    {
+      "icon": "shield",
       "short": "Licences and credits, actually done. It isn’t hard",
       "title": "Licences and credits, actually done",
       "text": "Every screenshot shows only openly licensed or public-domain media, and every work in it is credited with its licence. It turns out a media server can look great without borrowing anyone’s film posters. Who knew.",
-      "link": { "href": "/credits/", "label": "Every picture’s credits" } },
-    { "icon": "sparkle",
+      "link": {
+        "href": "/credits/",
+        "label": "Every picture’s credits"
+      }
+    },
+    {
+      "icon": "sparkle",
       "short": "No borrowed logos, no imaginary friends in Hollywood",
       "title": "No borrowed fame",
-      "text": "No studio logos, no streaming-service artwork, and no winking hints at partnerships with media giants who’ve never heard of us. We aren’t “trusted by” anyone we haven’t met. Just a media server, made by people who use one." },
-    { "icon": "network", "big": true,
+      "text": "No studio logos, no streaming-service artwork, and no winking hints at partnerships with media giants who’ve never heard of us. We aren’t “trusted by” anyone we haven’t met. We spend our evenings writing code, not threads. Just a media server, made by people who use one."
+    },
+    {
+      "icon": "network",
+      "big": true,
       "short": "Remote access free, every feature, forever",
       "title": "Remote access is free. All of it. Forever.",
       "text": "Watching away from home costs nothing, for every feature, and always will. No subscription to stream your own films to your own phone, no remote add-on, and nothing that works on your Wi-Fi only until you pay. It’s your server. You already paid for the electricity.",
-      "link": { "href": "/docs/remote/", "label": "Setting up remote access" } }
+      "link": {
+        "href": "/docs/remote/",
+        "label": "Setting up remote access"
+      }
+    }
   ]
 }

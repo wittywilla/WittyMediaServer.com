@@ -220,7 +220,7 @@ html:not(.js) .menu-btn, html:not(.js) [data-theme-btn], html:not(.js) .js-only 
 .hero .eyebrow { justify-content: center; }
 .hero h1 { font-size: var(--display); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); font-weight: 750; }
 .hero h1 span { display: block; }
-.hero h1 .accent { background: linear-gradient(100deg, var(--accent-text), color-mix(in srgb, var(--accent-text) 55%, var(--fg))); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .06em; }
+.hero h1 .accent { background: linear-gradient(100deg, var(--accent-text), color-mix(in srgb, var(--accent-text) 55%, var(--fg))); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .06em .2em; margin: 0 -.06em -.14em; } /* room for descenders such as the g, which background-clip: text would otherwise cut off */
 .hero .lead { margin: var(--sp-6) auto 0; max-width: 34ch; font-size: clamp(1.0625rem, .95rem + .6vw, 1.3125rem); color: var(--fg); line-height: 1.5; }
 .hero .sub { margin: var(--sp-3) auto 0; max-width: 46ch; color: var(--fg-2); }
 .hero .btn-row { justify-content: center; margin-top: var(--sp-8); }
@@ -250,7 +250,6 @@ html:not(.js) .menu-btn, html:not(.js) [data-theme-btn], html:not(.js) .js-only 
 .hero .stage::after { content: ""; display: block; height: 1px; background: var(--border); }
 @media (max-width: 599px) {
   .window .chrome span { margin-right: 0; }
-  .hero .window img { aspect-ratio: 4 / 3.4; object-position: left top; }
 }
 
 /* ---------- page heads for inner pages ---------- */
