@@ -92,6 +92,18 @@
   <url><loc>https://wittymediaserver.com/docs/config/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/reference/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/uninstall/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-asustor/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-linux/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-qnap/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-synology/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-truenas/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-ugreen/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-unraid/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/ffmpeg-benchmark/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/hardware/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/macos/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/performance/</loc></url>
   <url><loc>https://wittymediaserver.com/start/</loc></url>
   <url><loc>https://wittymediaserver.com/legal/</loc></url>
 </urlset>

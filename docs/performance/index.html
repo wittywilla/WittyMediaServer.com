@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Performance · WittyMediaServer</title>
+<meta name="description" content="How heavy the server is on the machine it runs on, measured the same way for each release so that one can be compared with the next. This page is for people…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/performance/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Performance">
+<meta property="og:description" content="How heavy the server is on the machine it runs on, measured the same way for each release so that one can be compared with the next. This page is for people…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/performance/">
+<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.cbe42179be.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
+<script src="/assets/site.cbc4657ed9.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/" aria-current="page">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <div class="tools">
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
+  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
+</div>
+<div class="scrim"></div>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Theme</h2>
+  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/performance/" aria-current="page">Performance</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">More guides</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/performance/" aria-current="page">Performance</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#more">More guides</a></p>
+      <h1>Performance</h1>
+      <p class="lead">How heavy the server is on the machine it runs on, measured the same way for each release so that one can be compared with the next. This page is for people working on the server: running it doesn’t need any of this.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-05">5 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/PERFORMANCE.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#what-is-measured">What is measured</a></li><li><a href="#running-the-benchmark">Running the benchmark</a></li><li><a href="#reading-the-numbers">Reading the numbers</a></li><li><a href="#other-benchmarks">Other benchmarks</a></li><li><a href="#results">Results</a></li><li><a href="#what-was-found-and-where-it-went">What was found, and where it went</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<h2 id="what-is-measured">What is measured<a class="h-anchor" href="#what-is-measured" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><code>scripts/perf</code> starts a server on a new, empty data folder and measures, in this order:</p>
+<ol><li><strong>Start-up</strong>, five times: from starting the program until <code>GET /api/health</code> answers, on a new data folder (the database is made) and again on the same one.</li><li><strong>Idle, with no libraries</strong>, after first-time setup: processor use over two minutes, memory (what the system counts, what Go’s heap holds live, and everything Go holds), goroutines, garbage collections, and on Linux how often the server’s threads woke. It also asks Go to hand back all the memory it can at once, to show how much was only waiting to go back.</li><li><strong>A scan of each library</strong> given with <code>-lib</code>, one at a time: how long it took, the server’s processor time and allocations, and its highest memory. FFmpeg’s own time isn’t in the processor column, since FFmpeg is a program of its own.</li><li><strong>The same scans again</strong>, with nothing changed, as the six-hourly scan does.</li><li><strong>Idle again</strong>, after the scans.</li><li><strong>The API</strong>: each route asked 30 times in turn, one at a time, with how much it sent, allocated, and how many database statements it ran per request.</li><li><strong>Every database statement</strong> the server ran during all of that, with how often and for how long, and SQLite’s plan for each (<code>EXPLAIN QUERY PLAN</code>), marking the ones that read a whole table or sort without an index.</li></ol>
+<p>For runs to compare, the benchmark turns off what would reach the internet (update checks, TVmaze, Wikidata, MusicBrainz), and turns off <code>saveMetadata</code> so nothing is written into the media folders. The media is only read.</p>
+<h2 id="running-the-benchmark">Running the benchmark<a class="h-anchor" href="#running-the-benchmark" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The server it measures is built with the <code>wmsprofile</code> tag, which adds a profiling port. Only that build has it, and it listens only on this machine, at the address in <code>WMS_PPROF</code>. Release builds have none of this in them. The port serves Go’s <code>pprof</code> profiles, <code>/debug/wms</code> (the process as the system sees it, and Go’s own counters) and <code>/debug/wms/sql</code> (every statement run).</p>
+<p>On Windows, from the repository:</p>
+<div class="codebox"><pre id="code-1" class="code" data-lang="bash"><code>go build -tags wmsprofile -o .build/wms-prof.exe ./cmd/wittymediaserver</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="codebox"><pre id="code-2" class="code" data-lang="bash"><code>go run ./scripts/perf -exe .build/wms-prof.exe -ffmpeg &lt;ffmpeg.exe&gt; -ffprobe &lt;ffprobe.exe&gt; -lib &quot;movies=D:\WittyDemoMedia\Movies&quot; -lib &quot;music=D:\WittyDemoMedia\Music&quot; -out &lt;folder&gt;</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>On Linux (or WSL), the same with the Linux build: <code>GOOS=linux go build -tags wmsprofile -o wms-prof ./cmd/wittymediaserver</code> and <code>GOOS=linux go build -o perf ./scripts/perf</code>, then <code>./perf -exe ./wms-prof -lib &quot;movies=/mnt/d/WittyDemoMedia/Movies&quot; … -out &lt;folder&gt;</code>. Idle wake-ups are only counted on Linux.</p>
+<ul><li><code>-lib type=folder</code> adds a library of that type (repeat it). Types that need a module (books, photos, discs, games) are refused without the module, and the report says so.</li><li><code>-port</code> is the server’s port, and the profiling port is the one above it. The benchmark refuses a port that’s in use, so it never measures someone else’s server.</li><li><code>-starts</code>, <code>-settle</code>, <code>-idle</code> and <code>-repeat</code> change how many start-ups, how long it waits before an idle reading, how long the reading is, and how often each route is asked.</li><li><code>-report</code> with <code>-out</code> of an earlier run prints its report again, with the plans made again: after adding an index, say.</li></ul>
+<p>The report is printed, and <code>results.json</code>, goroutine lists, heap profiles and the server’s log are left in the <code>-out</code> folder.</p>
+<p>The numbers below were measured on the demo media: openly licensed films, TV, music, podcasts and more, credited item by item, kept outside the repository (<code>D:\WittyDemoMedia</code> on the owner’s machine). A run only reads it.</p>
+<h2 id="reading-the-numbers">Reading the numbers<a class="h-anchor" href="#reading-the-numbers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Many things run on a development machine at once, and times move with them: the same start-up took 2 s and 18 s on one busy afternoon. So:</p>
+<ul><li><strong>Trust counts over times.</strong> Allocations, objects, statements per request, goroutines, wake-ups, query plans and bytes sent don’t change with a busy machine. They are what a change should be judged on first.</li><li><strong>Report times with their spread.</strong> Start-up is given as the median of five, with the fastest and slowest. Route times are the median (p50) and the 95th percentile of 30.</li><li><strong>Compare runs on the same machine</strong>, as close together as possible, with the same media and flags.</li></ul>
+<p>What the columns mean:</p>
+<ul><li><strong>CPU %</strong> is of one processor: 100 % is one processor fully busy.</li><li><strong>RSS</strong> is the memory the system counts against the server. <strong>RSS after returning memory</strong> is the same after Go has handed back all it can; the difference is memory Go would have given back by itself, over the next few minutes.</li><li><strong>Go heap live</strong> is what the server’s data actually takes. <strong>Go total</strong> is everything the Go runtime holds from the system, including what it keeps ready to reuse.</li><li><strong>Wake-ups a minute</strong> is how many times the server’s threads were switched in while idle (Linux counts every thread’s context switches). An idle server should wake as little as possible, so that the processor can stay in its low-power states.</li><li><strong>Statements</strong> is database statements per request. Every signed-in request costs two (its session and its account), so a route at 2 or 3 does almost nothing else.</li></ul>
+<h2 id="other-benchmarks">Other benchmarks<a class="h-anchor" href="#other-benchmarks" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Smaller ones live beside the code, for <code>go test -bench</code>:</p>
+<div class="table-wrap"><table><thead><tr><th>Benchmark</th><th>What</th></tr></thead><tbody><tr><td><code>internal/library</code>: <code>BenchmarkStore</code>, <code>BenchmarkHomeQueries</code></td><td>Listing queries on a large library</td></tr><tr><td><code>internal/library</code>: <code>BenchmarkHasDjVu</code> (with #146)</td><td>Whether DjVuLibre is installed, which is kept for a minute</td></tr><tr><td><code>internal/db</code>: <code>BenchmarkQueryThroughLoggedDriver</code></td><td>What the statement logging costs</td></tr><tr><td><code>internal/server</code>: <code>BenchmarkRequestLogged</code></td><td>What request logging costs</td></tr><tr><td><code>internal/logging</code>, <code>internal/metrics</code>, <code>internal/sysinfo</code>, <code>internal/tasks</code></td><td>The log, the statistics, readings of the machine, and progress with nobody watching</td></tr></tbody></table></div>
+<p>FFmpeg’s own benchmark, for transcoding, is separate: <a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a> (#81).</p>
+<h2 id="results">Results<a class="h-anchor" href="#results" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>All on one laptop: an Intel Core i7-12700H (14 cores, 20 threads) with 64 GB of memory, Windows 11, and Ubuntu in WSL on the same machine. The demo media was read from <code>D:</code> (on Linux through WSL’s <code>/mnt/d</code>, which is much slower to look through than a Linux disk). The machine was running a dozen other builds and tests the whole time, at 100 % of its processors much of it, so <strong>every time below is slower and more spread out than on a quiet machine</strong>: compare the counts.</p>
+<h3 id="070-alpha-before-the-work-in-89">0.7.0-alpha, before the work in #89<a class="h-anchor" href="#070-alpha-before-the-work-in-89" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The server as it was at the start of 0.7.0-alpha (0.6.2-alpha), 4 November 2026.</p>
+<p><strong>Windows</strong>, with 11 libraries of the demo media (books and photos need modules, so they weren’t scanned):</p>
+<div class="table-wrap"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Start-up</td><td>median 3.4 s (2.1 to 18.9) on a new data folder, 4.0 s (1.6 to 9.6) again: the machine was at its busiest</td></tr><tr><td>Idle, no libraries</td><td>0.05 % of one core, RSS 34 MB, Go heap 3.5 MB live, 27 goroutines</td></tr><tr><td>Idle, after the scans</td><td>0.00 % of one core, RSS 46 to 48 MB, Go heap 4.1 MB live, 27 goroutines</td></tr><tr><td>Scanning, peak RSS</td><td>49 MB</td></tr><tr><td>First scan of music, 521 files</td><td>174 to 236 s, 5.6 to 6.3 s of the server’s processor time (the rest is FFmpeg reading each file)</td></tr><tr><td><code>GET /api/media-types</code></td><td><strong>p50 14.4 s, p95 145 s</strong>: DjVuLibre looked for on PATH every time</td></tr><tr><td><code>GET /api/settings</code></td><td><strong>102 statements</strong> a request</td></tr><tr><td><code>GET /api/home</code></td><td>33 statements, 1.2 MB allocated a request</td></tr><tr><td>A poster asked <code>?w=300</code></td><td><strong>the whole picture: 1.6 MB</strong> for one demo poster, 503 KB for another</td></tr></tbody></table></div>
+<p><strong>Linux</strong> (WSL), with 7 libraries (films, TV, music, podcasts, home videos, music videos and commercials: 764 files):</p>
+<div class="table-wrap"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Start-up</td><td>median 212 ms (202 to 251) on a new data folder, 139 ms (113 to 253) again</td></tr><tr><td>Idle, no libraries</td><td>0.010 % of one core, RSS 43 MB (41.5 MB once Go has given back what it can), 27 goroutines</td></tr><tr><td>Idle, after the scans</td><td>0.007 % of one core, RSS 45 MB (42.8 MB), 27 goroutines</td></tr><tr><td>Scans with nothing changed</td><td>0.3 to 43 s a library, under 1.2 s of processor each: looking through folders on <code>/mnt/d</code></td></tr><tr><td><code>GET /api/settings</code></td><td>102 statements, 138 KB allocated a request</td></tr><tr><td><code>GET /api/home</code></td><td>23 statements, 1,032 KB allocated a request</td></tr><tr><td><code>GET /api/media-types</code></td><td>1.4 ms: looking through PATH is quick on Linux</td></tr></tbody></table></div>
+<p><strong>Query plans:</strong> the statements a request makes on <code>items</code>, <code>progress</code> and the photo, game and creator tables use an index. What reads a whole table:</p>
+<ul><li><strong>Once at start-up:</strong> upkeep such as filling in rating ages and the games’ queue (two of these read all of <code>items</code>), clearing expired sessions, and marking interrupted jobs.</li><li><strong>Small tables, on requests:</strong> <code>libraries</code> (a row for each library), <code>collections</code> and <code>listings</code>.</li><li><strong><code>shows</code>, in Browse’s queries:</strong> they ask for <code>(? = 0 OR s.library_id = ?)</code>, which stops SQLite using the index on <code>library_id</code>, so every show in every library is looked at. That costs little at a few thousand shows; it’s the first thing to look at if Browse slows down on a large TV library.</li></ul>
+<p>The sorts without an index are of the few rows already found (a page of a list, a library’s genres). No index was missing for the demo media.</p>
+<h3 id="070-alpha-after">0.7.0-alpha, after<a class="h-anchor" href="#070-alpha-after" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The same, with #146, #199, #214, #218 and #273 merged locally. Linux, back to back with the run above:</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>Goroutines while idle</td><td>27</td><td>25</td></tr><tr><td>Wake-ups a minute while idle (the server’s own, two runs of each, 3 minutes each)</td><td>89 to 144</td><td>85 to 141: no change that can be told from the noise. The two disc sweeps woke at the same moments as the HLS sweep, which still runs</td></tr><tr><td><code>GET /api/settings</code></td><td>102 statements, 138 KB allocated</td><td>3 statements, 20 KB</td></tr><tr><td><code>GET /api/home</code></td><td>23 statements, 1,032 KB</td><td>19 statements, 914 KB</td></tr><tr><td>A poster asked <code>?w=300</code> (item 226)</td><td>1,660,855 bytes, 1 open of the media drive</td><td>25,255 bytes, 1 open of the media drive</td></tr><tr><td>Its time, five requests</td><td>74 ms to 2.8 s</td><td>18 to 34 ms</td></tr><tr><td><code>GET /api/media-types</code> on Windows</td><td>2 to 12 s per lookup of DjVuLibre</td><td>about 100 ns after the first (<code>BenchmarkHasDjVu</code>)</td></tr><tr><td>Idle CPU and memory</td><td>0.010 %, RSS 43 MB</td><td>0.028 %, RSS 40 MB: the same, within what the busy machine moves them</td></tr><tr><td>Start-up again</td><td>median 139 ms</td><td>median 124 ms: the same, within the noise</td></tr></tbody></table></div>
+<p>Totals of statements over a whole run don’t compare between runs: the benchmark looks at a scan’s progress every quarter of a second, so a scan that takes longer on a busy machine adds statements of its own.</p>
+<h2 id="what-was-found-and-where-it-went">What was found, and where it went<a class="h-anchor" href="#what-was-found-and-where-it-went" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>What</th><th>Where it went</th></tr></thead><tbody><tr><td>The formats page and DjVu books looked for DjVuLibre on PATH every time: seconds on Windows</td><td>#118, PR #146</td></tr><tr><td>Posters asked for smaller came whole for everything but games; then, checking a poster was inside a library looked at the media drive 37 times</td><td>#178, PR #199 (posters, backdrops up to 1920, show and season art, remote art, video frames at least 480)</td></tr><tr><td>Settings took a statement for each of a hundred settings</td><td>#200, PR #214</td></tr><tr><td>DVD and Blu-ray sessions were swept every minute from start-up, with no disc open</td><td>#215, PR #218</td></tr><tr><td>Home read progress once for each library</td><td>#252, PR #273</td></tr><tr><td>A minimum hardware guide, from these figures and FFmpeg’s</td><td>#113, PR #269</td></tr><tr><td>Start-up ran FFmpeg twice, one after the other, before the database opened</td><td>#164, PR #226 (by #81’s work)</td></tr><tr><td><code>internal/hls</code> sweeps every 30 s from start-up, and its live sweep every 5 s once a live stream has been watched; <code>GameMeta</code> wakes every 5 minutes with no games</td><td>Noted in #215, for the chats changing <code>hls.go</code> and for later</td></tr><tr><td>Go’s memory settings (<code>GOGC</code>, <code>GOMEMLIMIT</code>)</td><td>Left as they are: the server’s own heap is about 4 MB live while idle and its RSS peaked at 49 MB while scanning, and only 1 to 3 MB is ever waiting to go back to the system. The memory that matters is FFmpeg’s (hundreds of MB a conversion, see <a href="/docs/ffmpeg-benchmark/#figures">Measuring FFmpeg</a>), which these settings don’t touch</td></tr><tr><td>Missing indexes</td><td>None found for the demo media; the benchmark’s plan list is there to catch one in a later release. Browse’s <code>(? = 0 OR …)</code> on shows is noted above, not changed</td></tr><tr><td>Scans with nothing changed, on a slow drive</td><td>Up to 43 s a library on <code>/mnt/d</code> with under a second of processor: the time is in looking through the folders, as each unchanged file is passed over without reading it. Not changed</td></tr><tr><td>Not measured yet</td><td>Libraries that need a module (books, comics, photos, discs, games), and how long module helpers take to start: the benchmark doesn’t install modules. Next time, with <code>WMS_TEST_CATALOG</code></td></tr></tbody></table></div>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/macos/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Working on a Mac</strong></a>
+      
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/PERFORMANCE.md" rel="noopener">docs/PERFORMANCE.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/PERFORMANCE.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#what-is-measured">What is measured</a></li><li><a href="#running-the-benchmark">Running the benchmark</a></li><li><a href="#reading-the-numbers">Reading the numbers</a></li><li><a href="#other-benchmarks">Other benchmarks</a></li><li><a href="#results">Results</a></li><li><a href="#what-was-found-and-where-it-went">What was found, and where it went</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.6.2-alpha/">WittyMediaServer 0.6.2-alpha</a>, 2 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
+      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

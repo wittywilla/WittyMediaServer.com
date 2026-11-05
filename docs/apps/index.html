@@ -97,6 +97,10 @@
       <h2>Running a server</h2>
       <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
     </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/performance/">Performance</a></li></ul>
+    </div>
   </nav>
   <article class="doc">
     <details class="docs-menu">
@@ -135,6 +139,10 @@
       <h2>Running a server</h2>
       <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
     </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/performance/">Performance</a></li></ul>
+    </div>
       </nav>
     </details>
     <header class="doc-head">
@@ -142,7 +150,7 @@
       <h1>Apps and devices</h1>
       <p class="lead">Use this guide to choose how to reach your server from each device, and to connect an app. It says plainly what has been run on each platform and what hasn’t been built.</p>
       <div class="meta">
-        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <span>Changed <time datetime="2026-11-05">5 November 2026</time></span>
         <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/APPS.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
       </div>
     </header>
@@ -204,11 +212,11 @@
 <p>Apps search your home network, and the servers they find are listed under <strong>On your network</strong>. A TV has the first one already selected, so one press of OK chooses it.</p>
 <ul><li><strong>What the server announces:</strong> its name, a random ID, its version and how to connect. Nothing about accounts or folders. Being found opens nothing: connecting still takes a code or a password.</li><li><strong>To turn this off:</strong> <strong>Settings → Profiles → Signing in → Let apps find this server</strong>. Apps can still connect by typing the address.</li></ul>
 <p><strong>If your server isn’t listed:</strong></p>
-<ul><li>A firewall on the server may be blocking UDP ports 5353 and 9797.</li><li>Your Wi-Fi may keep devices apart. Guest networks and “client isolation” do this.</li><li>The server may be in a container without host networking.</li><li>The server may only accept connections from its own computer.</li></ul>
+<ul><li>A firewall on the server may be blocking UDP ports 5353 and 9797.</li><li>On a Mac, the server may not be allowed on the local network. Turn on <strong>WittyMediaServer</strong> in <strong>System Settings → Privacy &amp; Security → Local Network</strong>. The server notices within a minute.</li><li>Your Wi-Fi may keep devices apart. Guest networks and “client isolation” do this.</li><li>The server may be in a container without host networking.</li><li>The server may only accept connections from its own computer.</li></ul>
 <p>In any of these cases, <a href="#typing-the-address">type the address</a>. Searching has found real servers through emulators’ and virtual machines’ networks, but a phone and a server on one real Wi-Fi hasn’t been tried yet. An Android 6 emulator found none.</p>
 <p>A server that has stopped stays on the list for up to 45 seconds. If it says it can’t be reached, it may have gone.</p>
 <h2 id="typing-the-address">Typing the address<a class="h-anchor" href="#typing-the-address" aria-hidden="true" tabindex="-1">#</a></h2>
-<p>Choose <strong>Enter an address</strong> and type it. The server shows its address when it starts, and an administrator can find it at <strong>Settings → About</strong>. <code>192.168.1.20</code> is enough: the app adds <code>http://</code> and port 9797 by itself.</p>
+<p>Choose <strong>Enter an address</strong> and type it. The server shows its address when it starts, and an administrator can find it at <strong>Settings → About</strong>. <code>192.168.1.20</code> is enough: the app adds <code>http://</code> and port 9797 by itself. If the port was changed in <strong>Settings → Network</strong>, add it: <code>192.168.1.20:8096</code>.</p>
 <div class="table-wrap"><table><thead><tr><th>You’re connecting</th><th>Type</th></tr></thead><tbody><tr><td>At home</td><td><code>192.168.1.20</code></td></tr><tr><td>On a different port</td><td><code>192.168.1.20:8080</code></td></tr><tr><td>Through a private network</td><td><code>100.101.102.103</code></td></tr><tr><td>Through HTTPS</td><td><code>https://media.example.com</code></td></tr></tbody></table></div>
 <p>For an address on the internet the app insists on <code>https://</code>, because your password would otherwise travel unencrypted. To set up access away from home, see <a href="/docs/remote/">Remote access</a>.</p>
 <h2 id="signing-in">Signing in<a class="h-anchor" href="#signing-in" aria-hidden="true" tabindex="-1">#</a></h2>
