@@ -34,6 +34,7 @@
   <url><loc>https://wittymediaserver.com/news/games-live-tv-and-an-audit/</loc></url>
   <url><loc>https://wittymediaserver.com/news/music-books-and-updates/</loc></url>
   <url><loc>https://wittymediaserver.com/news/dvd-menus-and-tv-shows/</loc></url>
+  <url><loc>https://wittymediaserver.com/news/release/WittyMediaClient/v0.4.0/</loc></url>
   <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.2-alpha/</loc></url>
   <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.1-alpha/</loc></url>
   <url><loc>https://wittymediaserver.com/news/release/WittyMediaClient/v0.2.3/</loc></url>
@@ -101,6 +102,7 @@
   <url><loc>https://wittymediaserver.com/docs/docker-ugreen/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/docker-unraid/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/ffmpeg-benchmark/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/gaming-stream/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/hardware/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/macos/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/performance/</loc></url>
