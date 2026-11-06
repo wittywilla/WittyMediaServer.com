@@ -5,8 +5,29 @@
   <link href="https://wittymediaserver.com/news/feed.xml" rel="self"/>
   <link href="https://wittymediaserver.com/news/"/>
   <id>https://wittymediaserver.com/news/</id>
-  <updated>2026-11-05T21:54:26.000Z</updated>
+  <updated>2026-11-06T00:45:40.000Z</updated>
   <author><name>WittyWilla</name></author>
+  <entry>
+    <title>WittyMediaServer 0.7.1-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.7.1-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.7.1-alpha/</id>
+    <updated>2026-11-06T00:45:40.000Z</updated>
+    <summary>Modules made for earlier 0.x servers (such as 0.6.x) now install and run on this server when their module API fits.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaClient 0.4.1</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaClient/v0.4.1/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaClient/v0.4.1/</id>
+    <updated>2026-11-06T00:08:29.000Z</updated>
+    <summary>Downloads for WittyMediaClient, with its notes on GitHub.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaServer 0.7.0-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.7.0-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.7.0-alpha/</id>
+    <updated>2026-11-05T23:05:42.000Z</updated>
+    <summary>Layouts follow you, per console and shape of device. PUT /consoles/{console}/controls keeps a layout for a phone upright or sideways, a tablet upright or sideways, a computer or a TV, and saved.layouts gives them all…</summary>
+  </entry>
   <entry>
     <title>WittyMediaClient 0.4.0</title>
     <link href="https://wittymediaserver.com/news/release/WittyMediaClient/v0.4.0/"/>
