@@ -8,7 +8,7 @@ How it gets there:
 2. GitHub builds the site, runs its checks, and puts the finished site on the `live` branch. A build that fails its checks publishes nothing, so the site stays as it was.
 3. Hostinger sees the new `live` and deploys it to wittymediaserver.com by itself.
 
-GitHub also rebuilds every four hours, so new releases and modules appear without anyone doing anything.
+GitHub also rebuilds every hour, so new releases and modules appear without anyone doing anything.
 
 - [Make a change](#make-a-change)
 - [Write a news article](#write-a-news-article)
@@ -65,7 +65,7 @@ New repositories go in `content/projects.json`, which feeds the projects page. M
 
 ## What updates by itself
 
-Every build fetches these from GitHub, and GitHub builds every four hours, so they need nothing from you:
+Every build fetches these from GitHub, and GitHub builds every hour, so they need nothing from you:
 
 | What | Where it comes from |
 |---|---|
@@ -79,7 +79,7 @@ The news and module pages also check GitHub when someone opens them, and show a 
 
 ## Rebuild now, without changing anything
 
-Say a release just came out and you don't want to wait for the four-hourly build:
+Say a release just came out and you don't want to wait for the hourly build:
 
 1. Open https://github.com/wittywilla/wittymediaserver.com and click the **Actions** tab.
 2. Click **Build and publish** on the left.
@@ -135,7 +135,7 @@ You don't need this day to day. It's here for when something needs setting up ag
 | `main` | The site's source: this file, the articles, the words, the code. Everything you change goes here |
 | `live` | The finished site, rebuilt by GitHub from `main`. **Don't edit it**: every build replaces it |
 
-`.github/workflows/publish.yml` does the building. It runs on every change to `main`, every four hours, and when you click **Run workflow**. Each run also keeps the built site for two weeks, as `site.zip` under **Artifacts** at the bottom of the run's page.
+`.github/workflows/publish.yml` does the building. It runs on every change to `main`, every hour, and when you click **Run workflow**. Each run also keeps the built site for two weeks, as `site.zip` under **Artifacts** at the bottom of the run's page.
 
 Nothing else needs adding on GitHub: the build uses the run's own access to GitHub. It needs **Read and write permissions** under **Settings**, **Actions**, **General**, **Workflow permissions**, to put the site on `live`.
 

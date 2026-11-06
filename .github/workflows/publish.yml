@@ -13,8 +13,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # Every four hours, so new releases and modules appear without a push.
-    - cron: '23 */4 * * *'
+    # Every hour, so new releases and modules appear without a push.
+    - cron: '23 * * * *'
   workflow_dispatch:
 
 permissions: {}
