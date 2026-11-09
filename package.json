@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "wittymediaserver.com's source. To build the site: node build.mjs. Hostinger deploys the live branch, which GitHub Actions fills with the built site.",
-  "license": "Apache-2.0",
+  "license": "AGPL-3.0-or-later",
   "engines": { "node": ">=20" },
   "scripts": {
     "build": "node tools/wrong-branch.mjs",
