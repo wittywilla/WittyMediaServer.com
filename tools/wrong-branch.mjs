@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 WittyWilla and contributors
 // `npm run build` on main. Hostinger's Node.js web app runs this only when it's
 // been pointed at main, which holds the site's source, not the site. Hostinger
 // publishes the whole branch into public_html, so building main would put the

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 WittyWilla and contributors
 // The name in the top bar, now and then, types itself into the kind of name
 // people give their own servers ("Dave’sMediaServer"), then back again.
 // WittyMediaServer stays up far longer than any joke name. Nothing moves for

@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later */
+/* Copyright (C) 2026 WittyWilla and contributors */
 /* The name in the top bar, while scripts/brand.js types other names into it. */
 .topbar .brand > span { display: inline-block; white-space: nowrap; text-align: left; }
 .brand .caret {

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 WittyWilla and contributors
 // wittymediaserver.com: the few things that need a script. Every page works
 // without it; this adds the theme picker, the phone menu, filters, the picture
 // viewer, copy buttons, and a check for anything newer on GitHub.
