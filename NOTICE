@@ -18,6 +18,10 @@ content/licences.json and credited in
 https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md.
 Those works keep their own licences; the AGPL doesn't apply to them.
 
+The site's font is Inter 4.1 (fonts/), Copyright (c) 2016 The Inter Project
+Authors (https://github.com/rsms/inter), under the SIL Open Font License 1.1:
+see fonts/Inter-OFL.txt. It is served from the site itself.
+
 The GitHub mark, which links to the project on GitHub, is GitHub's own
 "mark-github" icon from Octicons (https://github.com/primer/octicons),
 Copyright (c) 2026 GitHub Inc., under the MIT License

@@ -5,6 +5,10 @@
    theme files (written to themes.css by the build), and the type, spacing,
    shapes and motion follow its tokens. Phones first; wider screens add to it. */
 
+/* Inter 4.1 (SIL Open Font License, fonts/Inter-OFL.txt), served from here so every screen
+   shows the same letters as the brand pictures (docs/BRAND.md) whatever fonts it has. */
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("/fonts/InterVariable.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: italic; font-weight: 100 900; font-display: swap; src: url("/fonts/InterVariable-Italic.woff2") format("woff2"); }
 /* ---------- tokens worked out from the theme, as in the server ---------- */
 :root {
   --border-strong: color-mix(in srgb, var(--fg) 20%, transparent);
@@ -79,7 +83,7 @@ code, kbd, pre { font-family: var(--font-mono); font-size: .9em; }
   border-bottom: 1px solid var(--border);
 }
 .topbar .wrap { height: 100%; display: flex; align-items: center; gap: var(--sp-4); }
-.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 1.0625rem; letter-spacing: -.02em; white-space: nowrap; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 1.0625rem; letter-spacing: -.02em; white-space: nowrap; font-optical-sizing: none; /* Inter's text cut at any size, as the brand pictures draw it */ }
 .brand img { width: 34px; height: 34px; border-radius: 9px; }
 .brand b { color: var(--brand-accent, var(--accent-text)); font-weight: inherit; }
 .nav { display: none; }

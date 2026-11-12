@@ -64,13 +64,16 @@ async function build() {
   fs.mkdirSync(OUT, { recursive: true })
 
   // ---- pictures ----
-  const serverBranch = d.repos[d.site.repos.server]?.branch || 'master'
-  for (const [from, to] of [['web/public/icon.svg', 'icon.svg'], ['web/public/icon-192.png', 'icon-192.png'], ['web/public/icon-512.png', 'icon-512.png']]) {
-    const buf = await gh.get(gh.raw(d.site.repos.server, serverBranch, from))
-    if (buf) write(path.join(OUT, 'images', to), buf)
-    else log(`  ! missing ${from}`)
+  // The family's icons, social picture and backgrounds, drawn by WittyMediaServer's genicon
+  // into images/brand (scripts/sync-brand.sh), so the site shows the same marks as the apps.
+  const brandDir = path.join(root, 'images', 'brand')
+  for (const f of fs.readdirSync(brandDir)) write(path.join(OUT, 'images', 'brand', f), fs.readFileSync(path.join(brandDir, f)))
+  for (const [from, to] of [['icon.svg', 'images/icon.svg'], ['icon-192.png', 'images/icon-192.png'], ['icon-512.png', 'images/icon-512.png'], ['favicon.ico', 'favicon.ico'], ['apple-touch-icon.png', 'apple-touch-icon.png'], ['icon-192.png', 'favicon.png']]) {
+    fs.copyFileSync(path.join(brandDir, from), path.join(OUT, to))
   }
-  if (fs.existsSync(path.join(OUT, 'images', 'icon-192.png'))) fs.copyFileSync(path.join(OUT, 'images', 'icon-192.png'), path.join(OUT, 'favicon.png'))
+
+  // Inter, the site's font, served from the site itself (the security policy allows fonts from 'self' only).
+  for (const f of fs.readdirSync(path.join(root, 'fonts'))) write(path.join(OUT, 'fonts', f), fs.readFileSync(path.join(root, 'fonts', f)))
 
   // Only openly licensed and public-domain media is ever shown: see content/licences.json.
   const licence = licenceProblems(root, d.shots, d.site.themes)
@@ -152,7 +155,7 @@ async function build() {
   const listed = pages.filter((p) => !p.file)
   write(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${listed.map((p) => `  <url><loc>${esc(d.site.url + p.path)}</loc></url>`).join('\n')}\n</urlset>\n`)
   write(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${d.site.url}/sitemap.xml\n`)
-  write(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: d.site.name, short_name: 'WittyMediaServer', start_url: '/', display: 'browser', background_color: '#0f1115', theme_color: '#0f1115', icons: [{ src: '/images/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/images/icon-512.png', sizes: '512x512', type: 'image/png' }] }, null, 1))
+  write(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: d.site.name, short_name: 'WittyMediaServer', start_url: '/', display: 'browser', background_color: '#0f1115', theme_color: '#0f1115', icons: [{ src: '/images/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/images/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/images/brand/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }] }, null, 1))
   write(path.join(OUT, '.htaccess'), HTACCESS)
 
   gh.save()

@@ -72,6 +72,8 @@ Every build fetches these from GitHub, and GitHub builds every hour, so they nee
 | Releases, their notes and download files | The GitHub releases of WittyMediaServer, WittyMediaClient, WittyMediaPlayer and WittyReader |
 | What's in each server version | The server's `CHANGELOG.md` |
 | Modules: names, icons, descriptions, versions | The signed catalog in WittyModuleCatalog |
+| The logo, favicon, social picture and hero backgrounds (`images/brand`) | WittyMediaServer's genicon: run `scripts/sync-brand.sh` (its `docs/BRAND.md`) |
+| The font, Inter (`fonts/`) | [rsms/inter](https://github.com/rsms/inter) releases, SIL Open Font License: replace the `.woff2` files and `Inter-OFL.txt` together |
 | Screenshots and their credits | `docs/images/` in each repository, and its `CREDITS.md` |
 | Colours and themes | The server's `themes/` folder |
 
