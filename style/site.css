@@ -231,6 +231,14 @@ html:not(.js) .menu-btn, html:not(.js) [data-theme-btn], html:not(.js) .js-only 
 .hero .eyebrow { justify-content: center; }
 .hero h1 { font-size: var(--display); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); font-weight: 750; }
 .hero h1 span { display: block; }
+.hero h1 .accent > span { display: inline; }
+/* The headline's typed line (scripts/hero.js): its cursor, and the copy that measures it. */
+.hero h1 .type-caret {
+  display: inline-block; width: .06em; height: .9em; margin-left: .04em; vertical-align: -.08em;
+  border-radius: 1px; background: var(--accent-text); animation: hero-caret .9s steps(1) infinite;
+}
+@keyframes hero-caret { 50% { opacity: 0; } }
+.hero-measure { position: absolute; left: -9999px; top: 0; visibility: hidden; pointer-events: none; display: block; font: inherit; font-size: var(--display); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); font-weight: 750; }
 .hero h1 .accent { background: linear-gradient(100deg, var(--accent-text), color-mix(in srgb, var(--accent-text) 55%, var(--fg))); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .06em .2em; margin: 0 -.06em -.14em; } /* room for descenders such as the g, which background-clip: text would otherwise cut off */
 .hero .lead { margin: var(--sp-6) auto 0; max-width: 34ch; font-size: clamp(1.0625rem, .95rem + .6vw, 1.3125rem); color: var(--fg); line-height: 1.5; }
 .hero .sub { margin: var(--sp-3) auto 0; max-width: 46ch; color: var(--fg-2); }
