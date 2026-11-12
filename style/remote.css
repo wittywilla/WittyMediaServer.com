@@ -1,0 +1,58 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later */
+/* Copyright (C) 2026 WittyWilla and contributors */
+/* Peer-to-peer remote access: the home page's section and /remote/. */
+
+.p2p-home { padding-top: var(--sp-8); }
+.p2p-panel {
+  display: grid; gap: var(--sp-8); padding: var(--sp-6);
+  border: 1px solid var(--accent-line); border-radius: var(--r-lg);
+  background: radial-gradient(120% 140% at 0% 0%, var(--accent-soft), transparent 60%), var(--bg-2);
+}
+@media (min-width: 960px) { .p2p-panel { grid-template-columns: 1.1fr 1fr; padding: var(--sp-10); align-items: start; } }
+.p2p-intro { display: grid; gap: var(--sp-4); align-content: start; }
+.p2p-intro h2 { font-size: clamp(1.6rem, 1.1rem + 2vw, 2.5rem); letter-spacing: var(--tracking-display); line-height: 1.12; }
+.p2p-lead { color: var(--fg-2); font-size: var(--text-lg); }
+.p2p-lead strong { color: var(--fg); }
+.p2p-intro ul.ticks { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; color: var(--fg-2); }
+.p2p-intro ul.ticks li { display: flex; gap: 10px; }
+.p2p-intro ul.ticks .i { color: var(--ok); margin-top: 3px; flex: none; }
+.p2p-path { display: grid; gap: var(--sp-4); align-content: start; }
+.p2p-note { margin-top: var(--sp-4); font-size: var(--text-md); }
+
+/* The layers, best first: a numbered path with a line joining the steps. */
+.p2p-layers { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); counter-reset: none; }
+.p2p-layers li {
+  position: relative; display: grid; grid-template-columns: auto auto 1fr; gap: var(--sp-3); align-items: start;
+  padding: var(--sp-4); background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-md);
+}
+.p2p-layers li + li::before {
+  content: ""; position: absolute; left: calc(var(--sp-4) + 11px); top: calc(-1 * var(--sp-3) - 1px);
+  width: 2px; height: var(--sp-3); background: var(--accent-line);
+}
+.p2p-layers h3 { font-size: var(--text-lg); }
+.p2p-layers p { color: var(--fg-2); font-size: var(--text-md); margin-top: 2px; }
+.p2p-layers .tile { width: 36px; height: 36px; }
+.p2p-layers .tile .i { width: 18px; height: 18px; }
+.p2p-step {
+  display: inline-grid; place-items: center; width: 24px; height: 24px; margin-top: 6px; border-radius: 50%;
+  background: var(--accent); color: var(--accent-fg, #fff); font-size: var(--text-sm); font-weight: 700;
+}
+.p2p-layers li:last-child .p2p-step { background: var(--bg-3); color: var(--fg-2); border: 1px solid var(--border-strong); }
+@media (max-width: 420px) {
+  .p2p-layers li { grid-template-columns: auto 1fr; }
+  .p2p-layers .tile { display: none; }
+}
+
+.p2p-tried { font-size: var(--text-sm); color: var(--fg-3); border-top: 1px solid var(--border); padding-top: var(--sp-3); margin-top: auto; }
+.p2p-steps { margin: 0; padding-left: 1.4em; display: grid; gap: var(--sp-3); color: var(--fg-2); font-size: var(--text-lg); max-width: 72ch; }
+.p2p-steps strong { color: var(--fg); }
+.p2p-notyet { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); }
+.p2p-notyet li { display: flex; gap: 10px; color: var(--fg-2); }
+.p2p-notyet .i { color: var(--warn); margin-top: 3px; flex: none; }
+#compare th[scope="row"], #who th[scope="row"] { color: var(--fg); font-weight: 600; white-space: normal; min-width: 11em; }
+
+/* The apps page's feature matrix. */
+.feature-matrix table { min-width: 760px; }
+.feature-matrix th[scope="row"] { color: var(--fg); font-weight: 600; min-width: 13em; }
+.feature-matrix td.yes { color: color-mix(in srgb, var(--ok) 75%, var(--fg)); font-weight: 600; }
+.feature-matrix td.no { color: var(--fg-3); }
