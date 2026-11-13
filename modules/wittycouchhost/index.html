@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>WittyCouch Host · WittyMediaServer</title>
-<meta name="description" content="The separate GPL-3.0 program that carries WittyCouch&#39;s game streams, built on Moonlight&#39;s code.">
+<meta name="description" content="The separate AGPL-3.0 program (with GPL-3.0 Moonlight parts) that carries WittyCouch&#39;s game streams, built on Moonlight&#39;s code.">
 <link rel="canonical" href="https://wittymediaserver.com/modules/wittycouchhost/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="WittyMediaServer">
 <meta property="og:title" content="WittyCouch Host">
-<meta property="og:description" content="The separate GPL-3.0 program that carries WittyCouch&#39;s game streams, built on Moonlight&#39;s code.">
+<meta property="og:description" content="The separate AGPL-3.0 program (with GPL-3.0 Moonlight parts) that carries WittyCouch&#39;s game streams, built on Moonlight&#39;s code.">
 <meta property="og:url" content="https://wittymediaserver.com/modules/wittycouchhost/">
 <meta property="og:image" content="https://wittymediaserver.com/images/modules/wittycouchhost.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -72,7 +72,7 @@
         <h1>WittyCouch Host</h1>
       </div>
     </div>
-    <p class="lead">The separate GPL-3.0 program that carries WittyCouch&#39;s game streams, built on Moonlight&#39;s code.</p>
+    <p class="lead">The separate AGPL-3.0 program (with GPL-3.0 Moonlight parts) that carries WittyCouch&#39;s game streams, built on Moonlight&#39;s code.</p>
     <div class="btn-row"><a class="btn primary" href="https://github.com/wittywilla/WittyCouchHost" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Repository</a><a class="btn ghost" href="https://github.com/wittywilla/WittyCouchHost/releases" rel="noopener">Releases<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div>
   </div>
 </header>
@@ -80,14 +80,17 @@
   <div class="wrap layout-side">
     <div class="stack">
       <div class="prose"><p>A small program that is started for each game stream. It connects to a PC running Sunshine and passes on whole video frames and audio packets, without decoding them.</p>
-<p>It is a separate program under the GPL-3.0, built on Moonlight’s streaming core. WittyMediaServer and its browser client are Apache-2.0 and don’t contain or link any of it: they only exchange messages with it. Each release carries the full source beside its programs.</p>
+<p>It is a separate program under the AGPL-3.0-or-later, with Moonlight-derived parts under the GPL-3.0, built on Moonlight’s streaming core. WittyMediaServer and its browser client are AGPL-3.0-or-later and don’t contain or link any of it: they only exchange messages with it. Each release carries the full source beside its programs.</p>
 <p>Windows and Linux x64 have taken real streams from a real Sunshine. Linux arm64 has only been run under emulation, and macOS hasn’t been tried by hand. A stream is treated as if it might be hostile, so the program runs with tight limits. It isn’t an official Moonlight or Sunshine project, and no games come with it.</p></div>
       
       
-      
+      <div class="prose"><h2>Versions</h2></div>
+      <div class="table-wrap"><table><thead><tr><th>Version</th><th>Released</th><th>Works with server</th></tr></thead><tbody>
+        <tr><td><code>0.3.0</code></td><td>13 Nov 2026</td><td>0.8.0-alpha to 0.8.x</td></tr><tr><td><code>0.2.0</code></td><td>2 Nov 2026</td><td>0.6.0-alpha to 0.6.x</td></tr>
+      </tbody></table></div>
       <div class="notice info mt-4"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg><p>To add it, go to <strong>Settings → Modules → Browse the store</strong> on your server.</p></div>
     </div>
-    <aside><dl class="facts"><div><dt>Version</dt><dd><span class="pill mono">0.2.0</span> <span class="muted">2 November 2026</span></dd></div><div><dt>Works with</dt><dd>Server 0.6.0-alpha to 0.6.x</dd></div><div><dt>Group</dt><dd>Games</dd></div><div><dt>Publisher</dt><dd><a href="https://github.com/wittywilla" rel="noopener">WittyWilla</a></dd></div><div><dt>Licence</dt><dd>GPL-3.0</dd></div><div><dt>How it runs</dt><dd>A separate program</dd></div><div><dt>Used by</dt><dd><a href="/modules/wittycouch/">WittyCouch</a></dd></div><div><dt>Systems</dt><dd>macOS amd64, macOS arm64, Linux amd64, Linux arm64, Windows amd64</dd></div></dl></aside>
+    <aside><dl class="facts"><div><dt>Version</dt><dd><span class="pill mono">0.3.0</span> <span class="muted">13 November 2026</span></dd></div><div><dt>Works with</dt><dd>Server 0.8.0-alpha to 0.8.x</dd></div><div><dt>Group</dt><dd>Games</dd></div><div><dt>Publisher</dt><dd><a href="https://github.com/wittywilla" rel="noopener">WittyWilla</a></dd></div><div><dt>Licence</dt><dd>AGPL-3.0-or-later</dd></div><div><dt>How it runs</dt><dd>A separate program</dd></div><div><dt>Used by</dt><dd><a href="/modules/wittycouch/">WittyCouch</a></dd></div><div><dt>Systems</dt><dd>macOS amd64, macOS arm64, Linux amd64, Linux arm64, Windows amd64</dd></div></dl></aside>
   </div>
 </section>
 </main>
