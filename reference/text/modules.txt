@@ -23,5 +23,5 @@ Server
 Client
 Modules
 GitHub ↗
-Apache-2.0 Cookie settings
+AGPL-3.0-or-later Cookie settings
 © 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.
