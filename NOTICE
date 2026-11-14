@@ -4,19 +4,20 @@ https://github.com/wittywilla/wittymediaserver.com
 
 This product includes software developed by WittyWilla as part of the
 WittyMediaServer project ("WittyMediaServer, developed by WittyWilla").
+https://github.com/wittywilla/WittyMediaServer
 
-Under the Apache License, Version 2.0 (Section 4(d)), any redistribution of
-this software or derivative works must reproduce the attribution notices in
-this NOTICE file - in a NOTICE file, in documentation, or in an "About"
-display of the derivative work.
+This software is licensed under the GNU Affero General Public License v3.0
+or (at your option) any later version: see LICENSE. If you redistribute it or
+build on it, please keep the attribution notices in this NOTICE file - in a
+NOTICE file, in documentation, or in an "About" display.
 
 The built site includes, fetched from WittyMediaServer's repositories at build
-time: its logo and themes (Apache-2.0), module icons from WittyModuleCatalog
-(Apache-2.0), and screenshots of a test server. Those screenshots show only
-openly licensed or public-domain works, each recorded with its licence in
+time: its logo and themes and module icons from WittyModuleCatalog (both
+AGPL-3.0-or-later), and screenshots of a test server. Those screenshots show
+only openly licensed or public-domain works, each recorded with its licence in
 content/licences.json and credited in
 https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md.
-Those works keep their own licences; the Apache License doesn't apply to them.
+Those works keep their own licences; the AGPL doesn't apply to them.
 
 The GitHub mark, which links to the project on GitHub, is GitHub's own
 "mark-github" icon from Octicons (https://github.com/primer/octicons),

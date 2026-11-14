@@ -132,7 +132,7 @@ jobs:
             "private": true,
             "version": "1.0.0",
             "description": "wittymediaserver.com, already built by GitHub Actions from the main branch. Don't edit this branch.",
-            "license": "Apache-2.0",
+            "license": "AGPL-3.0-or-later",
             "scripts": {
               "build": "node -e \"console.log('Already built by GitHub Actions: nothing to build.')\""
             }

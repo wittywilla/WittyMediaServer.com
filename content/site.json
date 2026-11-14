@@ -29,7 +29,7 @@
     "shotsNote": "Pictures from a test server filled with openly licensed and public-domain media.",
     "encrypted": "Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.",
     "privacy": "This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser.",
-    "licence": "Apache-2.0",
+    "licence": "AGPL-3.0-or-later",
     "platforms": ["Windows", "macOS", "Linux", "FreeBSD", "Docker"]
   },
 

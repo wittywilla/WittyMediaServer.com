@@ -38,7 +38,7 @@
       "icon": "users",
       "short": "Open source since the first commit, not since it got awkward",
       "title": "Open since the first commit",
-      "text": "Public under Apache-2.0 from day one. Not “open source soon”. Not “source available”. Not “open once we’ve worked out how to charge for it”. All of it, from the first line.",
+      "text": "Public under AGPL-3.0-or-later. Not “open source soon”. Not “source available”. Not “open once we’ve worked out how to charge for it”. All of it, from the first line.",
       "link": {
         "href": "https://github.com/wittywilla/WittyMediaServer",
         "label": "Read every line"
