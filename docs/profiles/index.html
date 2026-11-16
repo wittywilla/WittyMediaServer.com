@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Profiles and parental controls · WittyMediaServer</title>
+<meta name="description" content="This guide is for a household sharing one server: a TV everyone uses, a tablet that changes hands, children who should see less and for less time. It covers…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/profiles/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Profiles and parental controls">
+<meta property="og:description" content="This guide is for a household sharing one server: a TV everyone uses, a tablet that changes hands, children who should see less and for less time. It covers…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/profiles/">
+<meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.4d756e5e80.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b})()</script>
+<script src="/assets/site.f959e89d8f.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/try/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg>Try it</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a></nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></a>
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+    </div>
+  </div>
+</header>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Colours</h2>
+  <p>The server’s own 15 themes, for this site. <a href="/try/">Try each one with every layout</a>.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default" data-pv="default"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Witty</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light" data-pv="light"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Light</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight" data-pv="midnight"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Midnight</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled" data-pv="oled"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>True black</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen" data-pv="evergreen"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Evergreen</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema" data-pv="cinema"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cinema</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper" data-pv="paper"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Paper</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast" data-pv="contrast"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>High contrast</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroday" data-pv="aeroday"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Day</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroaurora" data-pv="aeroaurora"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Aurora</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeromeadow" data-pv="aeromeadow"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Meadow</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aerosunset" data-pv="aerosunset"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Sunset</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cable" data-pv="cable"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cable blue</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="satellite" data-pv="satellite"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Satellite</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="teletext" data-pv="teletext"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Teletext</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/gaming-stream/">Games: the stream</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/modules-api5/">A module that owns its feature</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/profiles/" aria-current="page">Profiles and parental controls</a></li><li><a href="/docs/remote-protocol/">Remote Protocol</a></li><li><a href="/docs/sdui/">Server-driven screens</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/syncplay/">Watch parties</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">More guides</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/gaming-stream/">Games: the stream</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/modules-api5/">A module that owns its feature</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/profiles/" aria-current="page">Profiles and parental controls</a></li><li><a href="/docs/remote-protocol/">Remote Protocol</a></li><li><a href="/docs/sdui/">Server-driven screens</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/syncplay/">Watch parties</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#more">More guides</a></p>
+      <h1>Profiles and parental controls</h1>
+      <p class="lead">This guide is for a household sharing one server: a TV everyone uses, a tablet that changes hands, children who should see less and for less time. It covers switching profiles on a shared screen, each profile’s picture, what a profile may see and do, screen time, and what a parent can look back on. Making profiles, passwords and signing in are in <a href="/docs/accounts/">Accounts and profiles</a>.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-12">12 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/PROFILES.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#how-profiles-work">How profiles work</a></li><li><a href="#switching-profile">Switching profile</a></li><li><a href="#a-picture-for-each-profile">A picture for each profile</a></li><li><a href="#what-a-profile-sees">What a profile sees</a></li><li><a href="#what-a-profile-can-do">What a profile can do</a></li><li><a href="#limits-everywhere-else">Limits everywhere else</a></li><li><a href="#screen-time">Screen time</a></li><li><a href="#asking-a-parent-for-more-time">Asking a parent for more time</a></li><li><a href="#what-a-parent-can-see">What a parent can see</a></li><li><a href="#what-a-kids-or-guest-profile-is-shown">What a Kids or Guest profile is shown</a></li><li><a href="#what-limits-cant-do">What limits can’t do</a></li><li><a href="#for-app-makers">For app makers</a></li><li><a href="#why-it-is-built-this-way">Why it is built this way</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<h2 id="how-profiles-work">How profiles work<a class="h-anchor" href="#how-profiles-work" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A profile is an account. Each person on your server has one, with its own watch progress, history, lists, likes, recommendations, game saves, name and picture. The people on one server are one household: there’s nothing else to set up to group them.</p>
+<p>Limits are set by whoever manages a profile. An administrator manages everyone. An adult manages Kids profiles, unless the administrator keeps that to themselves, and unless that adult has limits of their own. See <a href="/docs/accounts/#who-manages-whom">Who manages whom</a>.</p>
+<p><strong>Every limit is applied by the server.</strong> An app only shows what the server gives it, so a limit holds in the web app, the TV and phone apps, and for anything else that talks to the server.</p>
+<p><strong>A change takes hold while the profile is signed in.</strong> What it may see changes with the next list it opens. The web app reads the profile’s switches and time rules again when its page comes back into view, and every few minutes while it’s in use, so its menus follow without signing out: with Live TV turned off the TV guide leaves the menu, and with games off so do the game settings.</p>
+<h2 id="switching-profile">Switching profile<a class="h-anchor" href="#switching-profile" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>On a device that’s signed in, open the menu under your name and choose <strong>Switch profile</strong>. <em>Who’s watching?</em> lists everyone. Press a profile:</p>
+<ul><li><strong>With a password or PIN:</strong> type it, and press <strong>Switch</strong>. An account with two-factor sign-in asks for its code as well.</li><li><strong>With none:</strong> it switches with a tap. This works on your home network only, as signing in with a tap does.</li></ul>
+<p>The device is then signed in to that profile and no longer to the one before. To go back, the first profile’s password is needed again, so a child handed the remote can’t return to a parent’s profile.</p>
+<p>Wrong tries are counted as they are at the sign-in screen: after a few, the server makes you wait, and says how long.</p>
+<p>Where the server doesn’t show its profiles to a device (the <strong>Classic</strong> sign-in screen, or away from home unless you allowed it), <strong>Switch profile</strong> signs out, and you sign in again. Adults see the list anywhere.</p>
+<h2 id="a-picture-for-each-profile">A picture for each profile<a class="h-anchor" href="#a-picture-for-each-profile" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Each profile shows its initial on a colour, or a picture chosen from a small set.</p>
+<ul><li><strong>Yours:</strong> <strong>Settings → Profiles → Your account → Change your picture</strong>.</li><li><strong>Someone else’s:</strong> <strong>Name and picture</strong> beside them, if you manage them.</li></ul>
+<p>Kids and Guest profiles keep the name and picture they were given, unless you turn on <strong>Change their own name and picture</strong> under <strong>Limits → What they can do</strong>. Their username and password always stay with whoever manages them. Pictures are drawn by the apps: nothing is uploaded.</p>
+<h2 id="what-a-profile-sees">What a profile sees<a class="h-anchor" href="#what-a-profile-sees" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Press <strong>Limits</strong> beside someone under <strong>Settings → Profiles</strong>, and stay on <strong>What they see</strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>Limit</th><th>What it does</th></tr></thead><tbody><tr><td><strong>What may they watch?</strong></td><td>One age limit for everything, from <em>Little kids</em> to <em>Everything</em></td></tr><tr><td><strong>Also show titles without a rating</strong></td><td>Home videos and unmatched files, which otherwise stay hidden under an age limit</td></tr><tr><td><strong>A different age for some kinds</strong></td><td>A limit of its own for films and videos, TV shows, games, music and audio, or books. Each shows what it allows in each country’s ratings</td></tr><tr><td><strong>Libraries</strong></td><td>Only the ticked libraries. Leave all unticked for every library</td></tr><tr><td><strong>Hide genres</strong></td><td>Titles of these genres are hidden</td></tr><tr><td><strong>Show only these genres</strong></td><td>When any is ticked, only titles with one of them</td></tr><tr><td><strong>Collections</strong></td><td><strong>Always allow</strong> or <strong>Never allow</strong> everything in a collection, whatever its rating</td></tr><tr><td><strong>Hide videos with these tags</strong></td><td>For video libraries whose videos have tags</td></tr><tr><td><strong>Exceptions</strong></td><td><strong>Always allow</strong> or <strong>Never allow</strong> one film or show</td></tr></tbody></table></div>
+<p><strong>Never allow wins.</strong> Then <strong>Always allow</strong>. Then everything else has to pass: the library, the genres, the tags and the age.</p>
+<h3 id="ratings">Ratings<a class="h-anchor" href="#ratings" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>A limit is kept as an age, because every country’s ratings can be turned into one. A title’s rating is read when it’s added, whichever board gave it:</p>
+<div class="table-wrap"><table><thead><tr><th>Kind</th><th>Ratings understood</th></tr></thead><tbody><tr><td>Films</td><td>MPA (G, PG, PG-13, R, NC-17), BBFC (U, PG, 12A, 12, 15, 18), FSK (0, 6, 12, 16, 18), Kijkwijzer (AL, 6, 9, 12, 14, 16, 18), and others written as an age, such as <code>16+</code> or <code>NL:12</code></td></tr><tr><td>TV</td><td>TV-Y, TV-G, TV-Y7, TV-PG, TV-14, TV-MA, and the film ratings above</td></tr><tr><td>Games</td><td>ESRB (E, E10+, T, M, AO), PEGI (3, 7, 12, 16, 18), USK, CERO, ACB, GRAC, ClassInd. Where boards disagree, the strictest counts</td></tr><tr><td>Music</td><td><em>Explicit</em> counts as 17 and <em>Clean</em> as for everyone, for a song whose rating says so. Explicit podcast episodes are rated TV-MA</td></tr><tr><td>Books</td><td>Any of the above, or a plain age</td></tr></tbody></table></div>
+<p>A collection made from a rule can’t be used as a limit, because it has no list of titles: it holds whatever matches today. Add titles to a collection by hand to use it.</p>
+<h3 id="hidden-means-hidden-everywhere">Hidden means hidden everywhere<a class="h-anchor" href="#hidden-means-hidden-everywhere" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>A title outside someone’s limits doesn’t show in lists, search, Home, <em>Continue watching</em>, recommendations, collections, counts or <em>Your year</em>, even if they watched it before the limit was set. A library’s count of titles, as that profile is told it, is of what the profile may see. Asking for it by its address answers “not found”, as do its pictures, its file and its details. A share link they made to it stops working.</p>
+<h2 id="what-a-profile-can-do">What a profile can do<a class="h-anchor" href="#what-a-profile-can-do" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Under <strong>Limits → What they can do</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th>Switch</th><th>When it’s off</th></tr></thead><tbody><tr><td><strong>Games</strong></td><td>No games, here or on a game PC, and game libraries aren’t listed</td></tr><tr><td><strong>Recording Live TV</strong></td><td>No recordings or recording rules</td></tr><tr><td><strong>Downloads</strong></td><td>No saving a copy of a photo or video</td></tr><tr><td><strong>Share links</strong></td><td>No new links, and the ones they made stop working. Only adult accounts can make links at all</td></tr><tr><td><strong>Comments</strong></td><td>No comments shown, and none written. Kids and Guest profiles can read comments when this is on, and never write them</td></tr><tr><td><strong>Watch parties</strong></td><td>No starting a watch party and no joining one, whatever the server’s own setting for who may start one says. A seat they had in one goes the moment this is turned off</td></tr><tr><td><strong>Playing on other devices</strong></td><td>No list of devices, no <strong>Play on…</strong>, no steering any device, their own included. Their own devices can still be played on and steered by whoever is allowed to, such as a parent</td></tr><tr><td><strong>Use away from home</strong></td><td>The profile works on your home network only. Anywhere else it’s signed out, and can’t sign in</td></tr><tr><td><strong>Change their own name and picture</strong></td><td>Their name and picture are for whoever manages them</td></tr><tr><td><strong>Live TV</strong></td><td>No Live TV, or only your own channels, or only tuner and internet channels</td></tr></tbody></table></div>
+<p>Installing modules, changing settings and managing libraries are always for administrators, so there’s no switch for them. Signing in a TV is always for adults.</p>
+<p>An adult with any limit at all, these included, can’t manage Kids profiles. Otherwise they could make a profile with no limits and use that.</p>
+<p><strong>Share links</strong> and <strong>Comments</strong> say nothing about watch parties. Inviting someone to a watch party isn’t a share link: it reaches only people with an account here, and gives them nothing their own limits don’t. Watch parties have no chat.</p>
+<h2 id="limits-everywhere-else">Limits everywhere else<a class="h-anchor" href="#limits-everywhere-else" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The same limits hold in every part of the server, because every part asks the same question in the same place. What that means where features meet:</p>
+<p><strong>The apps’ screens.</strong> The TV and phone apps draw screens the server sends them (<a href="/docs/sdui/">SDUI.md</a>). A screen sent to a profile holds only titles that profile may see, by every kind of limit. What it has been kept from isn’t offered either: with games off there’s no games library and nothing of WittyPlay; with Live TV off, no channels and nothing of WittyTV; with recordings, watch parties or playing on other devices off, no button for them. When screen time is over, screens are sent without <strong>Play</strong> and <strong>Resume</strong>, and the player’s own screen is refused the way playing is.</p>
+<p><strong>Playing on another device.</strong> Two sets of limits apply to every request, and both must allow it:</p>
+<ul><li><em>The device’s profile decides what plays on it</em>, whoever asks. Nobody can put on a Kids profile’s TV what that profile may not see, an administrator included. When that profile’s screen time is over, nobody can start anything there. Pausing, stopping and the volume still work.</li><li><em>The person asking is held to their own limits.</em> They can’t ask any device for a title they may not see, and when their own screen time is over they can start nothing anywhere, though they can still pause and stop.</li></ul>
+<p>What plays on a device counts as the screen time of the profile that device is signed in as, whoever started it. A device playing something you may not see shows you only that it’s playing.</p>
+<p><strong>Watch parties.</strong> Each person’s limits are asked for everything in a party’s queue. Someone who may not see what’s playing can’t join. If the party moves on to something a member may not see, or their limits change during it, they keep their place, see no title and can’t control anything. When a member’s screen time runs out, they sit out: the party doesn’t wait for them, and they’re back the moment a parent gives more time. Nobody starts or joins a party when their time is up.</p>
+<p><strong>Games in a standalone emulator.</strong> The time counts as screen time while the game runs, and the game is ended when the time is up or games are turned off for the profile.</p>
+<p><strong>Switching profile and signing out.</strong> A device that switches profile, or signs out, stops being the profile before at once: it’s no longer listed as that profile’s device, it gives up its seat in a watch party, and a game it was running in an emulator is ended. It then appears as the new profile’s device, with the new profile’s limits. The same happens when a device is signed out from <strong>Sign-in &amp; security</strong>, when a password changes, and when a profile is removed.</p>
+<p><strong>Signing in a TV.</strong> An adult signs a TV in as themselves, and the TV then has their limits. An adult with no limits can sign it in as a Kids profile they manage. An adult with limits can’t, and a Kids or Guest profile signs in no device. Signing a device in as an administrator asks for that administrator’s password again.</p>
+<h2 id="screen-time">Screen time<a class="h-anchor" href="#screen-time" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Under <strong>Limits → Screen time</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th>Setting</th><th>What it does</th></tr></thead><tbody><tr><td><strong>School days</strong></td><td>How long they may play each day, Monday to Friday</td></tr><tr><td><strong>Weekends</strong></td><td>The same for Saturday and Sunday</td></tr><tr><td><strong>Not before</strong></td><td>The earliest time of day. Left empty with a bedtime set, the day starts at 6:00</td></tr><tr><td><strong>Bedtime on school nights</strong></td><td>When playing stops on Sunday to Thursday evenings</td></tr><tr><td><strong>Bedtime on Fridays and Saturdays</strong></td><td>The same for the other two</td></tr></tbody></table></div>
+<p><strong>How time is counted.</strong> The server counts, by its own clock, while the profile is playing something: video, music, radio, Live TV, discs and games. It goes by the requests that playing makes, not by what an app says, so it can’t be reset from a device. Two devices playing at once on one profile count once. A pause of more than a minute and a half stops the count. Clearing their own watch history gives no time back. The day is the server’s day, and starts at midnight.</p>
+<p><strong>When it runs out.</strong> Whatever is playing stops, and the profile is told why and when it can watch again. A few minutes before, a line at the foot of the page says how long is left. Browsing still works, and their place in what they were watching is kept.</p>
+<p>The server doesn’t know school holidays. Change the settings when they start.</p>
+<h2 id="asking-a-parent-for-more-time">Asking a parent for more time<a class="h-anchor" href="#asking-a-parent-for-more-time" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>When time is up, the notice has <strong>Ask a parent</strong>. A parent chooses 15 minutes, 30 minutes or an hour, and types either:</p>
+<ul><li><strong>the parents’ PIN</strong>, which an administrator sets under <strong>Settings → Profiles → Parents’ PIN</strong>. It’s 4 to 12 digits, and all it can do is give time, so it can be short. It’s kept scrambled, as passwords are; or</li><li><strong>their own username and password</strong>, if they manage that profile.</li></ul>
+<p>The extra time is for today. It adds to the day’s allowance, and for that long from now, bedtime doesn’t apply.</p>
+<p>Wrong PINs are counted for the profile and for the device. After five, the server makes everyone wait before another try, the right PIN included, and the wait grows.</p>
+<p>A parent can also give time from their own device: <strong>Settings → Profiles</strong>, <strong>Report</strong> beside the profile, then a button under <strong>Today</strong>.</p>
+<h2 id="what-a-parent-can-see">What a parent can see<a class="h-anchor" href="#what-a-parent-can-see" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Report</strong> beside a profile you manage shows the last two weeks:</p>
+<ul><li><strong>Today:</strong> how much time is used, and buttons to give more.</li><li><strong>What they watched:</strong> each day’s titles and for how long, and the day’s screen time.</li><li><strong>What was refused, and extra time:</strong> a hidden title they asked for by its address, playing when time was up, something that’s turned off, and each time more time was given and by whom.</li></ul>
+<p>With a remote or a keyboard, the arrows step through the days and the list of what was refused, and read on through one that is longer than the window.</p>
+<p>This is kept only for profiles with limits, and for 400 days. The profile can’t see or clear it. <strong>Clear</strong> forgets it, except today’s screen time. An adult nobody has limited has no such record: their history is their own, and nobody else can read it.</p>
+<h2 id="what-a-kids-or-guest-profile-is-shown">What a Kids or Guest profile is shown<a class="h-anchor" href="#what-a-kids-or-guest-profile-is-shown" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Nothing that’s for whoever runs the server. Its Settings has its own name and picture, its devices, how the app looks, and Help, About and Legal; the pages for share links and the activity button aren’t listed, because it can’t use them. <strong>Sign in a TV</strong> isn’t in its menu. Where a library has nothing it may see, the page says so in plain words and suggests asking a grown-up, and never mentions folders, scans or Settings. A title outside its limits opened by its address says it isn’t available, the same words as for a title that’s gone.</p>
+<h2 id="what-limits-cant-do">What limits can’t do<a class="h-anchor" href="#what-limits-cant-do" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>Ratings can be missing or wrong.</strong> They come from your files and from outside services. Limits are a help, not a guarantee.</li><li><strong>Music is rarely rated.</strong> Song files seldom say whether they’re explicit, and the server doesn’t read that from a file’s tags yet. Under an age limit, unrated music is hidden unless you allow unrated titles, for everything or for <strong>Music and audio</strong> alone.</li><li><strong>Podcasts, radio stations and Live TV programmes</strong> have no ratings of their own. Limit them by library, or with the Live TV switches.</li><li><strong>Downloads.</strong> The switch stops the routes that hand over a file as a download. A file that an app plays directly is sent the same way whether the app plays it or keeps it, so an app that keeps files for watching offline has to honour the switch itself (<code>features.downloads</code> in <code>GET /me/limits</code>).</li><li><strong>A game played in the browser</strong> runs on the device once it has loaded. The web app checks the time each minute and puts the notice over the game, and the server refuses to start another, but it can’t reach into a game already running on a device that has gone offline.</li><li><strong>Reading</strong> isn’t counted as screen time, except a book that’s opened as a whole file.</li><li><strong>A collection used as a limit</strong> is looked up again every 15 seconds. A title added to a hidden collection can be opened by its address for that long. Lists follow at once. A watch party that is already going asks again about every half minute.</li><li><strong>A game in a standalone emulator</strong> is looked at every 20 seconds, so it can run that long past the end of screen time.</li><li><strong>A device that is already playing</strong> when its profile’s limits change isn’t sent a stop. Its next request for more of the video is refused, which ends it within seconds.</li></ul>
+<h2 id="for-app-makers">For app makers<a class="h-anchor" href="#for-app-makers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Everything is under <code>/api/v1</code>. <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/CLIENT-API.md#sign-in-and-accounts" rel="noopener">CLIENT-API.md</a> lists each route, and <code>features</code> in <code>/capabilities</code> has <code>profiles</code>, <code>profile-switching</code>, <code>profile-avatars</code>, <code>parental-controls</code> and <code>screen-time</code>.</p>
+<div class="table-wrap"><table><thead><tr><th>Route</th><th>For</th></tr></thead><tbody><tr><td><code>GET /profiles/household</code></td><td>The profiles to offer for switching</td></tr><tr><td><code>POST /profiles/switch</code></td><td>Switch: <code>{name, password, code, device}</code>, as <code>/login</code>. A new <code>token</code>; the old one ends</td></tr><tr><td><code>GET /me/limits</code></td><td>What this profile may do, for hiding what’s off, and its time rules. <code>features</code> includes <code>syncplay</code> and <code>remoteControl</code></td></tr><tr><td><code>GET /me/screen-time</code></td><td>Time left now. Ask once a minute while playing, and at <code>until</code></td></tr><tr><td><code>POST /me/screen-time/extra</code></td><td>Ask a parent: <code>{minutes, pin}</code> or <code>{minutes, name, password}</code></td></tr><tr><td><code>GET /parental/ratings</code></td><td>Rating systems, kinds, features and avatars, for a settings page</td></tr><tr><td><code>PUT /users/{id}/access</code></td><td>Save limits. What isn’t sent stays as it was, so an older app doesn’t clear a newer limit</td></tr><tr><td><code>GET /users/{id}/activity</code></td><td>The report</td></tr><tr><td><code>POST /users/{id}/screen-time/extra</code></td><td>Give time from a parent’s device</td></tr><tr><td><code>GET</code>, <code>PUT /parental/pin</code></td><td>Whether the parents’ PIN is set, and setting it. Administrators</td></tr></tbody></table></div>
+<p><strong>What an app has to handle:</strong></p>
+<ul><li><strong>403 with <code>&quot;code&quot;: &quot;screen-time&quot;</code></strong> from anything that plays: stop, and show <code>error</code>. <code>screenTime</code> in the answer says why and until when. Every answer to a profile with time rules, from a route that plays, also has <code>X-WMS-Screen-Time-Left</code> in seconds.</li><li><strong>403 with <code>&quot;code&quot;: &quot;feature-off&quot;</code></strong> and <code>feature</code>: that part is turned off for this profile. Use <code>/me/limits</code> to not offer it in the first place.</li><li><strong>A stream that ends early.</strong> When time runs out, the server stops sending. Ask <code>/me/screen-time</code> before treating it as a network fault.</li><li><strong>401 away from home</strong> for a profile kept to the home network.</li></ul>
+<p>Limits in <code>access</code> beyond the older ones: <code>kinds</code> (<code>{&quot;game&quot;: {&quot;maxAge&quot;: 12, &quot;allowUnrated&quot;: false}}</code>, for <code>film</code>, <code>tv</code>, <code>game</code>, <code>music</code>, <code>book</code>), <code>onlyGenres</code>, <code>blockTags</code>, <code>allowCollections</code>, <code>blockCollections</code>, <code>off</code> (any of <code>games</code>, <code>recordings</code>, <code>downloads</code>, <code>sharing</code>, <code>comments</code>, <code>syncplay</code>, <code>remoteControl</code>, <code>remote</code>, <code>editProfile</code>, and <code>editLayout</code>: rearranging server-driven pages for themselves, see <a href="/docs/sdui/#personalisation">SDUI.md</a>), and <code>time</code> (<code>schoolDayMinutes</code>, <code>weekendMinutes</code>, <code>from</code>, <code>schoolNightUntil</code>, <code>weekendUntil</code>, with times as <code>&quot;20:30&quot;</code>).</p>
+<h2 id="why-it-is-built-this-way">Why it is built this way<a class="h-anchor" href="#why-it-is-built-this-way" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Profiles are accounts, not something inside an account.</strong> The server already gave each person an account with their own progress, history, lists and saves, and every route already decides what to show by the account asking. Profiles under one shared sign-in would have needed all of that a second time, keyed by a profile inside the account, in every one of those routes, with a second set of rules for who may read whose. So a household is the accounts on a server, and what a shared screen needs is added on top: the list of them, and a way to change from one to another that is signing in as the other and signing out of the first in one step. Sign-ins, the list of signed-in devices, the log, and every “own data” rule keep meaning what they meant.</p>
+<p><strong>One place for each kind of limit.</strong> Which titles an account sees is <code>library.Access</code>, which each list applies in its SQL and each single title checks in Go, as before; the newer limits were added to it, not beside it. What an account may do, and when it may play, is decided once, before any handler runs, from the route being called (<code>classify</code> in <code>internal/server/parental.go</code>). A handler can’t forget a check it doesn’t make.</p>
+<p><strong>Tests that walk the routes.</strong> <code>TestLimitedProfilesNeverSeeHiddenTitles</code> makes a library where everything hidden has one made-up word in its name, genre, studio and file, gives a profile each kind of limit and a past with those titles, and calls every route a signed-in account can reach, with every hidden title’s number and with the word searched for. The word must never come back. It takes its routes from the list every route has to be in, so a new route is walked without anyone remembering. <code>TestEveryRouteIsClassed</code> fails on a route nobody has classed as playing something, part of a feature, or neither.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/performance/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Performance</strong></a>
+      <a class="card next" href="/docs/remote-protocol/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Remote Protocol</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/PROFILES.md" rel="noopener">docs/PROFILES.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/PROFILES.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#how-profiles-work">How profiles work</a></li><li><a href="#switching-profile">Switching profile</a></li><li><a href="#a-picture-for-each-profile">A picture for each profile</a></li><li><a href="#what-a-profile-sees">What a profile sees</a></li><li><a href="#what-a-profile-can-do">What a profile can do</a></li><li><a href="#limits-everywhere-else">Limits everywhere else</a></li><li><a href="#screen-time">Screen time</a></li><li><a href="#asking-a-parent-for-more-time">Asking a parent for more time</a></li><li><a href="#what-a-parent-can-see">What a parent can see</a></li><li><a href="#what-a-kids-or-guest-profile-is-shown">What a Kids or Guest profile is shown</a></li><li><a href="#what-limits-cant-do">What limits can’t do</a></li><li><a href="#for-app-makers">For app makers</a></li><li><a href="#why-it-is-built-this-way">Why it is built this way</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/try/">Try the looks</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your choice of colours is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the colours</a>.</span></p>
+      <p>WittyMediaServer, its modules and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">GNU Affero General Public License v3.0 (or later)</a>, and the apps under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GNU General Public License v3.0 (or later)</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Main"><a href="/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Home</a><a href="/server/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>Server</a><a href="/try/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>Try it</a><a href="/docs/" aria-current="page"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg></span>Docs</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer"><span class="ic"><svg class="i when-shut" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg><svg class="i when-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>More</button></nav>
+<div class="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="More pages">
+  <h2>Pages</h2>
+  <nav aria-label="More pages"><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a></nav>
+  <h2>Learn and take part</h2>
+  <nav aria-label="Learn and take part"><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
+</div>
+</body>
+</html>

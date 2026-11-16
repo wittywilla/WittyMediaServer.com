@@ -26,34 +26,24 @@
   <url><loc>https://wittymediaserver.com/modules/wittytuner/</loc></url>
   <url><loc>https://wittymediaserver.com/modules/wittyvisualizer/</loc></url>
   <url><loc>https://wittymediaserver.com/news/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/windows-installer-update/</loc></url>
+  <url><loc>https://wittymediaserver.com/news/your-server-from-anywhere/</loc></url>
   <url><loc>https://wittymediaserver.com/news/firefox-disc-playback/</loc></url>
+  <url><loc>https://wittymediaserver.com/news/modules-and-the-store/</loc></url>
+  <url><loc>https://wittymediaserver.com/news/windows-installer-update/</loc></url>
   <url><loc>https://wittymediaserver.com/news/wittymediaclient-first-release/</loc></url>
   <url><loc>https://wittymediaserver.com/news/wittyreader-first-release/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/modules-and-the-store/</loc></url>
   <url><loc>https://wittymediaserver.com/news/games-live-tv-and-an-audit/</loc></url>
   <url><loc>https://wittymediaserver.com/news/music-books-and-updates/</loc></url>
   <url><loc>https://wittymediaserver.com/news/dvd-menus-and-tv-shows/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.7.2-alpha/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.7.1-alpha/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaClient/v0.4.1/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.7.0-alpha/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaClient/v0.4.0/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.2-alpha/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.1-alpha/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaClient/v0.2.3/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyReader/v0.1.1/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.6.0-alpha/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.5.2-alpha/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.4.0-alpha/</loc></url>
-  <url><loc>https://wittymediaserver.com/news/release/WittyMediaServer/v0.2.0-alpha/</loc></url>
   <url><loc>https://wittymediaserver.com/download/</loc></url>
   <url><loc>https://wittymediaserver.com/gallery/</loc></url>
+  <url><loc>https://wittymediaserver.com/try/</loc></url>
   <url><loc>https://wittymediaserver.com/faq/</loc></url>
   <url><loc>https://wittymediaserver.com/support/</loc></url>
   <url><loc>https://wittymediaserver.com/privacy/</loc></url>
   <url><loc>https://wittymediaserver.com/roadmap/</loc></url>
   <url><loc>https://wittymediaserver.com/credits/</loc></url>
+  <url><loc>https://wittymediaserver.com/credits/looks/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/getting-started/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/install/</loc></url>
@@ -97,6 +87,7 @@
   <url><loc>https://wittymediaserver.com/docs/config/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/reference/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/uninstall/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/brand/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/docker/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/docker-asustor/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/docker-linux/</loc></url>
@@ -109,7 +100,16 @@
   <url><loc>https://wittymediaserver.com/docs/gaming-stream/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/hardware/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/macos/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/modules-api5/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/p2p/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/pages/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/performance/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/profiles/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/remote-protocol/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/sdui/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/sdui-modules/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/syncplay/</loc></url>
+  <url><loc>https://wittymediaserver.com/remote/</loc></url>
   <url><loc>https://wittymediaserver.com/start/</loc></url>
   <url><loc>https://wittymediaserver.com/legal/</loc></url>
 </urlset>

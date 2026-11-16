@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Remote access · WittyMediaServer</title>
+<meta name="description" content="Reach your WittyMediaServer from anywhere with peer-to-peer connections: no port forwarding, no rented server and no account, encrypted to your server’s key and open only to devices you approved.">
+<link rel="canonical" href="https://wittymediaserver.com/remote/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Remote access">
+<meta property="og:description" content="Reach your WittyMediaServer from anywhere with peer-to-peer connections: no port forwarding, no rented server and no account, encrypted to your server’s key and open only to devices you approved.">
+<meta property="og:url" content="https://wittymediaserver.com/remote/">
+<meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.4d756e5e80.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b})()</script>
+<script src="/assets/site.f959e89d8f.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/try/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg>Try it</a><a href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a></nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></a>
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+    </div>
+  </div>
+</header>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Colours</h2>
+  <p>The server’s own 15 themes, for this site. <a href="/try/">Try each one with every layout</a>.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default" data-pv="default"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Witty</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light" data-pv="light"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Light</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight" data-pv="midnight"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Midnight</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled" data-pv="oled"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>True black</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen" data-pv="evergreen"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Evergreen</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema" data-pv="cinema"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cinema</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper" data-pv="paper"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Paper</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast" data-pv="contrast"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>High contrast</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroday" data-pv="aeroday"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Day</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroaurora" data-pv="aeroaurora"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Aurora</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeromeadow" data-pv="aeromeadow"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Meadow</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aerosunset" data-pv="aerosunset"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Sunset</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cable" data-pv="cable"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cable blue</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="satellite" data-pv="satellite"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Satellite</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="teletext" data-pv="teletext"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Teletext</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<header class="page-head">
+  <div class="wrap">
+    
+    <p class="eyebrow">Remote access</p>
+    <h1>Your server, from anywhere</h1>
+    <p class="lead">The app on your phone, TV or laptop finds its own way to your server and connects to it directly. Nothing is set up on your router, nothing is rented, and there’s no account with anyone. It’s built into the server and the apps, and it’s off until you turn it on.</p>
+    <div class="meta"><span class="pill mono">0.8.0-alpha</span><span>Server and apps</span></div>
+    <div class="btn-row"><a class="btn primary" href="/docs/remote/#turning-it-on">Turn it on<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn" href="/docs/remote/#peer-to-peer-connections"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>The guide</a><a class="btn ghost" href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/P2P.md" rel="noopener">The design, for developers<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div>
+  </div>
+</header>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">How it works</p>
+    <h2>Layers, best first</h2>
+    <p>The app tries each way in turn and uses the best that works. It keeps looking: a relayed connection is swapped for a direct one as soon as one can be made, without stopping what’s playing, and moving to another network starts the search again.</p>
+  </div>
+  
+</div>
+    <ol class="p2p-layers">
+      <li><span class="p2p-step" aria-hidden="true">1</span><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span><div><h3>At home</h3><p>On your own Wi-Fi or cable, the app talks to the server as it always has. Peer to peer isn’t involved.</p></div></li>
+      <li><span class="p2p-step" aria-hidden="true">2</span><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg></span><div><h3>Straight there</h3><p>Over IPv6 where your connection has it, with your router asked to let it through.</p></div></li>
+      <li><span class="p2p-step" aria-hidden="true">3</span><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><div><h3>A port your router opens</h3><p>If your router offers it (UPnP, NAT-PMP or PCP), the server asks for one port, renews it, and removes it when you turn this off.</p></div></li>
+      <li><span class="p2p-step" aria-hidden="true">4</span><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg></span><div><h3>Hole punching</h3><p>Your device and your server connect to each other at the same moment, so both routers let it through. Works with most home and mobile networks.</p></div></li>
+      <li><span class="p2p-step" aria-hidden="true">5</span><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg></span><div><h3>A community relay, last</h3><p>Another WittyMediaServer whose owner chose to help other servers carries the connection, slowly, when nothing else works. It can’t read it.</p></div></li>
+    </ol>
+    <p class="mt-6 muted">Apps find your server through the public IPFS network’s address book, by its <strong>connection ID</strong>: a long name starting <code>12D3KooW</code>, the public half of your server’s key. They also remember where it was last time and try that first.</p>
+  </div>
+</section>
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Safety</p>
+    <h2>Only your devices, and only encrypted</h2>
+    <p>This is a way into your home, so it’s built to keep strangers out even when they know where you are.</p>
+  </div>
+  
+</div>
+    <div class="grid three">
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><h3>Encrypted to your server’s key</h3><p>Whatever path it takes, the connection is encrypted and authenticated from end to end to a key only your server holds. A relay can refuse to help; it can’t read, change or pretend to be your server.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg></span><h3>Only devices you approved</h3><p>Your server keeps a list of devices that may connect. Anything else is cut off before a byte is read, and strangers never see a sign-in page to attack.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg></span><h3>Still a password</h3><p>Being on the list signs nobody in. A paired device reaches the sign-in page, with the same passwords, two-factor codes and lockouts as anyone from outside.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 2l4 4 4-4"/></svg></span><h3>Always “away”</h3><p>A peer-to-peer connection always counts as away from home, however it arrives: the limits for viewers away from home apply, and password-free profiles don’t.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h3>Nothing until you turn it on</h3><p>Off, there’s no connection, nobody is contacted and the router is asked for nothing. Turning it off closes everything and removes the port.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg></span><h3>Written down</h3><p>Turning it on, each device added or removed, each invite and each refusal go in the server’s log. Removing a device cuts it off at once.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="apps">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">The apps</p>
+    <h2>Which apps connect this way</h2>
+    <p>Each app pairs itself while it’s at home and signed in. Later, when it can’t find the server at home, it connects peer to peer by itself, still signed in.</p>
+  </div>
+  
+</div>
+    <div class="grid two">
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><h3>Desktop app</h3><p>macOS, Windows and Linux. The title bar says how it’s connected: direct, or through a relay.</p><p class="p2p-tried">Tried on a Mac against a real server, on one network. Not yet on Windows or Linux; not in the FreeBSD package yet.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg></span><h3>iPhone and iPad</h3><p><strong>You → From away</strong> says how the server is being reached, and the app carries on where it was when it comes back to the screen.</p><p class="p2p-tried">Tried in the iPhone simulator against a real server; the iPad hasn’t been tried. Never on a real device yet.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 2l4 4 4-4"/></svg></span><h3>Apple TV</h3><p>The same, and a TV that has never been home joins with a code it shows.</p><p class="p2p-tried">Tried in the simulator, including joining by a code. Never on a real Apple TV yet.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg></span><h3>Android</h3><p>Phones, tablets and TVs. <strong>You → From away</strong>, invite links, and <strong>Join from away</strong> for a device that has never been home.</p><p class="p2p-tried">Seen on a phone emulator: reconnected from away and played a film through the connection. Tablets, TVs, invite links and joining by a code not tried yet.</p></div>
+    </div>
+    <div class="notice info mt-8"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><p><strong>A web browser away from home needs the app.</strong> A web page can’t make the connections this needs. At home, any browser works as before; away, use the app, or one of the <a href="/docs/remote/#which-way-should-i-choose">other ways in</a>.</p></div>
+  </div>
+</section>
+<section class="section tint" id="join">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Adding a device</p>
+    <h2>At home, by a link, or by a code</h2>
+    
+  </div>
+  
+</div>
+    <div class="grid three">
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span><h3>At home</h3><p>Open the app on each phone, TV and laptop while it’s on your home network and signed in. Within a minute it adds itself to <strong>Devices that may connect</strong>.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span><h3>By a link</h3><p>For a device that isn’t at home: <strong>Invite a device that isn’t at home</strong> makes a link that works once, for fifteen minutes. Send it the way you’d send a password.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 2l4 4 4-4"/></svg></span><h3>By a code a TV shows</h3><p>A TV that has never been home chooses <strong>Join from away</strong> and shows eight letters and digits. Type them into your server’s Remote Access page with your password, and it finds its way and signs in.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Choosing</p>
+    <h2>How it compares</h2>
+    <p>The same idea as a private network: only devices you approved can connect, and everything is encrypted between the device and your server.</p>
+  </div>
+  
+</div>
+    <div class="table-wrap"><table>
+  <caption class="sr-only">Peer-to-peer connections compared with Tailscale or NetBird and with forwarding a port</caption>
+  <thead><tr><th scope="col"></th><th scope="col">Tailscale or NetBird</th><th scope="col">Peer to peer</th><th scope="col">Forwarding a port</th></tr></thead>
+  <tbody><tr><th scope="row">Who can reach the sign-in page</th><td>Devices on your private network</td><td>Devices on your server’s own list</td><td><strong>Anyone on the internet</strong></td></tr>
+  <tr><th scope="row">Set up on the router</th><td>Nothing</td><td>Nothing</td><td>A forwarded port</td></tr>
+  <tr><th scope="row">An account with a company</th><td>Yes</td><td>No</td><td>No</td></tr>
+  <tr><th scope="row">Who helps devices find each other</th><td>That company’s servers</td><td>Volunteers’ computers on a public network</td><td>Nobody: you give out an address</td></tr>
+  <tr><th scope="row">How proven</th><td>Used by millions, audited</td><td><strong>New in this release, never audited</strong></td><td>As old as the internet, and attacked constantly</td></tr>
+  <tr><th scope="row">Works from a web browser</th><td>Yes</td><td><strong>No: it needs the app</strong></td><td>Yes</td></tr>
+  <tr><th scope="row">Works with every router</th><td>Nearly</td><td>With most. Not when both ends have a strict router and nobody offers a relay</td><td>If your provider gives you a real address</td></tr></tbody>
+</table></div>
+    <p class="mt-6">Our view: if you’re happy to make an account, Tailscale is still the better choice, because it has been tested by far more people than this has. If you aren’t, this is much safer than forwarding a port, because strangers never see a sign-in page to attack.</p>
+  </div>
+</section>
+<section class="section tint" id="who">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Privacy</p>
+    <h2>Who it contacts, and what they see</h2>
+    <p>With it on, your server becomes one of many computers on a public network, which is how apps find it. The honest list:</p>
+  </div>
+  
+</div>
+    <div class="table-wrap"><table>
+  <caption class="sr-only">Who peer-to-peer connections contact, and what each learns</caption>
+  <thead><tr><th scope="col">Who</th><th scope="col">Why</th><th scope="col">What they learn</th></tr></thead>
+  <tbody><tr><th scope="row">Starting points of the public IPFS network (bootstrap.libp2p.io)</th><td>The way into the network apps find your server on</td><td>Your server’s connection ID, your home’s internet address, and that it runs WittyMediaServer</td></tr>
+  <tr><th scope="row">Other people’s computers that keep that network’s address book</th><td>Keeping your server findable, and looking it up</td><td>The same. One asked where your server is also sees the address of whoever asked</td></tr>
+  <tr><th scope="row">Computers that dial back</th><td>Checking whether your server can be reached from outside</td><td>The addresses they were asked to try</td></tr>
+  <tr><th scope="row">Relays</th><td>Introducing a device to your server; a community relay can carry the connection</td><td>Both internet addresses, when, and how much is sent. <strong>Never what is sent</strong>: it’s encrypted</td></tr>
+  <tr><th scope="row">Your own router</th><td>Opening a port, if you leave that on</td><td>A request on your home network. Nothing leaves your home for it</td></tr></tbody>
+</table></div>
+    <p class="mt-6"><strong>Nobody on that network ever sees</strong> your media, your file names, your passwords, your accounts, or what you watch. Anyone who has your connection ID can look up your home’s internet address, but can’t connect with it: the server gives the ID only to signed-in accounts, and you can make a new one.</p>
+  </div>
+</section>
+<section class="section" id="on">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Turning it on</p>
+    <h2>Four steps</h2>
+    
+  </div>
+  
+</div>
+    <ol class="p2p-steps">
+      <li><strong>Lock down your accounts first.</strong> A paired device still needs a password, so make it a good one, with two-factor sign-in.</li>
+      <li>On the server, open <strong>Settings → Remote Access → Peer-to-peer connections</strong>. It lists everyone who’ll be contacted. Tick the box and choose <strong>Turn on peer-to-peer connections</strong>.</li>
+      <li>Open the app on each device while it’s at home and signed in. It pairs itself within a minute. Use a link or a code for devices that aren’t at home.</li>
+      <li>Test it: turn off Wi-Fi on your phone and open the app on mobile data. It should connect within about half a minute the first time.</li>
+    </ol>
+    <p class="mt-6 muted">It works with <strong>Home network only</strong> still chosen, which keeps every other way in closed. <strong>Help other servers</strong> lets a server that can be reached from outside be a community relay for up to 16 others, 2 GiB each at most, and it sees none of what they send. With it on, the server uses about 60 to 75 MB more memory; off, next to nothing.</p>
+    <div class="btn-row mt-6"><a class="btn primary" href="/docs/remote/#peer-to-peer-connections">Read the whole guide<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+<section class="section tint" id="not-yet">
+  <div class="wrap narrow">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Honestly</p>
+    <h2>What hasn’t been tried yet</h2>
+    
+  </div>
+  
+</div>
+    <ul class="p2p-notyet">
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>Not tried across two real home routers. Hole punching is tested through a simulated firewall, and the whole path on the public network from one machine.</span></li>
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>Never on a real Apple TV, iPhone or iPad, or a real Android device: in simulators and emulators only.</span></li>
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>No independent security audit, of this or of the libraries it’s built on.</span></li>
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>Community relays need owners to offer them, and none do yet. Without one, two strict routers can’t be joined.</span></li>
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>A TV joining by a code has only met its server on one machine.</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/try/">Try the looks</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your choice of colours is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the colours</a>.</span></p>
+      <p>WittyMediaServer, its modules and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">GNU Affero General Public License v3.0 (or later)</a>, and the apps under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GNU General Public License v3.0 (or later)</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Main"><a href="/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Home</a><a href="/server/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>Server</a><a href="/try/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>Try it</a><a href="/docs/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg></span>Docs</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer"><span class="ic"><svg class="i when-shut" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg><svg class="i when-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>More</button></nav>
+<div class="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="More pages">
+  <h2>Pages</h2>
+  <nav aria-label="More pages"><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a></nav>
+  <h2>Learn and take part</h2>
+  <nav aria-label="Learn and take part"><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
+</div>
+</body>
+</html>

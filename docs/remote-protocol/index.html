@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Remote Protocol · WittyMediaServer</title>
+<meta name="description" content="How one WittyMedia client plays on, and steers, another: a phone choosing what the TV plays, a tablet pausing the browser in the next room, a film handed from…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/remote-protocol/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Remote Protocol">
+<meta property="og:description" content="How one WittyMedia client plays on, and steers, another: a phone choosing what the TV plays, a tablet pausing the browser in the next room, a film handed from…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/remote-protocol/">
+<meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.4d756e5e80.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b})()</script>
+<script src="/assets/site.f959e89d8f.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/try/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg>Try it</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a></nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></a>
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+    </div>
+  </div>
+</header>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Colours</h2>
+  <p>The server’s own 15 themes, for this site. <a href="/try/">Try each one with every layout</a>.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default" data-pv="default"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Witty</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light" data-pv="light"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Light</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight" data-pv="midnight"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Midnight</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled" data-pv="oled"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>True black</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen" data-pv="evergreen"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Evergreen</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema" data-pv="cinema"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cinema</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper" data-pv="paper"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Paper</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast" data-pv="contrast"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>High contrast</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroday" data-pv="aeroday"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Day</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroaurora" data-pv="aeroaurora"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Aurora</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeromeadow" data-pv="aeromeadow"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Meadow</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aerosunset" data-pv="aerosunset"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Sunset</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cable" data-pv="cable"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cable blue</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="satellite" data-pv="satellite"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Satellite</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="teletext" data-pv="teletext"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Teletext</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/gaming-stream/">Games: the stream</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/modules-api5/">A module that owns its feature</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/profiles/">Profiles and parental controls</a></li><li><a href="/docs/remote-protocol/" aria-current="page">Remote Protocol</a></li><li><a href="/docs/sdui/">Server-driven screens</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/syncplay/">Watch parties</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">More guides</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/install/">Installing and updating</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/gaming-stream/">Games: the stream</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/modules-api5/">A module that owns its feature</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/profiles/">Profiles and parental controls</a></li><li><a href="/docs/remote-protocol/" aria-current="page">Remote Protocol</a></li><li><a href="/docs/sdui/">Server-driven screens</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/syncplay/">Watch parties</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#more">More guides</a></p>
+      <h1>Remote Protocol</h1>
+      <p class="lead">How one WittyMedia client plays on, and steers, another: a phone choosing what the TV plays, a tablet pausing the browser in the next room, a film handed from one screen to the next. This page is the whole wire format. A client written from it alone, in any language, works with every other.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-11">11 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/REMOTE-PROTOCOL.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#the-idea">The idea</a></li><li><a href="#transport">Transport</a></li><li><a href="#versions-and-unknown-things">Versions and unknown things</a></li><li><a href="#being-a-device">Being a device</a></li><li><a href="#being-a-controller">Being a controller</a></li><li><a href="#commands">Commands</a></li><li><a href="#state">State</a></li><li><a href="#life-of-a-device-and-of-a-command">Life of a device and of a command</a></li><li><a href="#who-may-control-what">Who may control what</a></li><li><a href="#parental-controls">Parental controls</a></li><li><a href="#limits">Limits</a></li><li><a href="#errors">Errors</a></li><li><a href="#settings">Settings</a></li><li><a href="#a-device-in-forty-lines">A device in forty lines</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>For watching the same thing at the same moment on several screens, see <a href="/docs/syncplay/">Watch parties</a>. For signing in and playing, see the <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/CLIENT-API.md" rel="noopener">Client API</a>.</p>
+<h2 id="the-idea">The idea<a class="h-anchor" href="#the-idea" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Everything goes through the server. No client ever connects to another, so it works the same at home and across the internet, and the server decides every time who may do what.</p>
+<p>A client can take either part, or both at once:</p>
+<ul><li>A <strong>device</strong> is a client that can be controlled. It announces itself, keeps one channel open to the server to receive commands, and reports what it is playing.</li><li>A <strong>controller</strong> is a client that lists devices, watches their state and sends them commands.</li></ul>
+<p>The server keeps devices in memory only. Nothing about them is written to disk, and a restart forgets them: each device notices its channel has closed and announces itself again.</p>
+<h2 id="transport">Transport<a class="h-anchor" href="#transport" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Ordinary requests to the server’s API under <code>/api/v1</code>, signed in the way every other request is (<code>Authorization: Bearer &lt;token&gt;</code>), with JSON bodies. The two streams are server-sent events (<code>text/event-stream</code>), the same as <a href="/docs/tasks/#the-api"><code>/system/tasks/stream</code></a>: each event is an <code>event:</code> line, a <code>data:</code> line holding one JSON object, and a blank line. The server writes a comment line (<code>: still here</code>) every 25 seconds so that proxies keep the stream open; a client that has heard nothing for 60 seconds should take the stream to be dead and open it again.</p>
+<p>A stream token (<code>st_…</code>) is for fetching media and is refused here. The device routes need a real sign-in, because a device belongs to its sign-in.</p>
+<p>Away from home, use HTTPS as for everything else. Nothing in this protocol carries media: a device told to play something fetches it itself through <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/CLIENT-API.md#playing-something" rel="noopener"><code>POST /items/{id}/playback</code></a>, so the server’s limits on quality away from home apply to it as they always do.</p>
+<h2 id="versions-and-unknown-things">Versions and unknown things<a class="h-anchor" href="#versions-and-unknown-things" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Every message carries <code>v</code>, the protocol version. This is version <code>1</code>. <code>GET /remote-control</code> says which versions a server speaks:</p>
+<div class="codebox"><pre id="code-1" class="code" data-lang="json"><code>{ &quot;enabled&quot;: true, &quot;v&quot;: 1, &quot;minV&quot;: 1, &quot;controlOthers&quot;: false,
+  &quot;kinds&quot;: [&quot;web&quot;, &quot;tv&quot;, &quot;phone&quot;, &quot;tablet&quot;, &quot;desktop&quot;, &quot;other&quot;],
+  &quot;features&quot;: [&quot;seek&quot;, &quot;volume&quot;, &quot;queue&quot;, &quot;audio&quot;, &quot;subtitles&quot;, &quot;navigate&quot;, &quot;rate&quot;],
+  &quot;mediaKinds&quot;: [&quot;video&quot;, &quot;audio&quot;, &quot;dvd-iso&quot;, &quot;dvd-folder&quot;, &quot;bluray-iso&quot;, &quot;bluray-folder&quot;, &quot;cd-image&quot;, &quot;book&quot;, &quot;radio&quot;, &quot;game&quot;, &quot;photo&quot;],
+  &quot;navigateKeys&quot;: [&quot;up&quot;, &quot;down&quot;, &quot;left&quot;, &quot;right&quot;, &quot;select&quot;, &quot;back&quot;, &quot;home&quot;, &quot;menu&quot;, &quot;playpause&quot;],
+  &quot;limits&quot;: { &quot;devicesPerAccount&quot;: 16, &quot;watchersPerAccount&quot;: 8, &quot;commandQueue&quot;: 16, &quot;stateBytes&quot;: 32768, &quot;commandBytes&quot;: 8192,
+              &quot;stateEveryMs&quot;: 500, &quot;commandEveryMs&quot;: 200, &quot;heartbeatSec&quot;: 30, &quot;idleSec&quot;: 75, &quot;reconnectSec&quot;: 30,
+              &quot;ackTimeoutMs&quot;: 8000, &quot;queueItems&quot;: 200 } }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-1" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>The rules that let old and new clients work together:</p>
+<ul><li><strong>Ignore what you don’t know.</strong> A field you’ve never heard of, an event name you’ve never heard of, a feature name in a list: skip it. Within a version, messages only ever gain fields.</li><li><strong>A device announces the version it speaks.</strong> A server that speaks a lower one answers with its own, and the device uses that from then on. A device older than <code>minV</code> is refused with code <code>version</code>, and should say it needs updating.</li><li><strong>Capabilities are negotiated, not assumed.</strong> A device lists what it can do. The server answers with the part of that list it knows, and never sends the device a command needing a feature outside it: the controller is told <code>unsupported</code> instead. A controller reads each device’s <code>capabilities</code> and offers only what’s there.</li><li><strong>A device that receives a command type it doesn’t know</strong> answers it with <code>ok: false</code> and an <code>error</code>. It never ignores a command: every command gets an answer.</li></ul>
+<p>A server that has this at all lists <code>remote-protocol</code> in the <code>features</code> of <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/CLIENT-API.md#start-here" rel="noopener"><code>GET /capabilities</code></a>.</p>
+<h2 id="being-a-device">Being a device<a class="h-anchor" href="#being-a-device" aria-hidden="true" tabindex="-1">#</a></h2>
+<h3 id="1-announce">1. Announce<a class="h-anchor" href="#1-announce" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><code>POST /remote-control/devices</code></p>
+<div class="codebox"><pre id="code-2" class="code" data-lang="json"><code>{ &quot;v&quot;: 1, &quot;name&quot;: &quot;Living room TV&quot;, &quot;kind&quot;: &quot;tv&quot;,
+  &quot;capabilities&quot;: { &quot;mediaKinds&quot;: [&quot;video&quot;, &quot;audio&quot;], &quot;features&quot;: [&quot;seek&quot;, &quot;volume&quot;, &quot;queue&quot;, &quot;audio&quot;, &quot;subtitles&quot;, &quot;navigate&quot;] } }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-2" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody><tr><td><code>v</code></td><td>The protocol version this client speaks</td></tr><tr><td><code>name</code></td><td>What people call it, up to 60 characters. Left out, the server names it after the app or browser</td></tr><tr><td><code>kind</code></td><td><code>web</code>, <code>tv</code>, <code>phone</code>, <code>tablet</code>, <code>desktop</code> or <code>other</code>. Anything else becomes <code>other</code></td></tr><tr><td><code>capabilities.mediaKinds</code></td><td>The kinds of item it plays: the <code>kind</code> of an item in the library</td></tr><tr><td><code>capabilities.features</code></td><td>What else it can do: see <a href="#commands">commands</a> for which command needs which</td></tr><tr><td><code>deviceId</code></td><td>Only when coming back: the id it had before</td></tr></tbody></table></div>
+<p>The answer is what was agreed:</p>
+<div class="codebox"><pre id="code-3" class="code" data-lang="json"><code>{ &quot;v&quot;: 1, &quot;minV&quot;: 1, &quot;deviceId&quot;: &quot;5b0c9d1e7a3f4c2288aa41d0&quot;, &quot;name&quot;: &quot;Living room TV&quot;, &quot;kind&quot;: &quot;tv&quot;,
+  &quot;capabilities&quot;: { &quot;mediaKinds&quot;: [&quot;video&quot;, &quot;audio&quot;], &quot;features&quot;: [&quot;seek&quot;, &quot;volume&quot;, &quot;queue&quot;, &quot;audio&quot;, &quot;subtitles&quot;, &quot;navigate&quot;] },
+  &quot;heartbeatSec&quot;: 30, &quot;openWithinSec&quot;: 30, &quot;serverTimeMs&quot;: 1794000000000 }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-3" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>Keep <code>deviceId</code>. The device now has <code>openWithinSec</code> seconds to open its channel, or it is forgotten.</p>
+<p>Announcing again with the same <code>deviceId</code>, from the same sign-in, updates the name and capabilities and keeps the id. An id that isn’t this sign-in’s, or that the server has forgotten, simply gets a new device with a new id: use whatever id comes back.</p>
+<h3 id="2-open-the-channel">2. Open the channel<a class="h-anchor" href="#2-open-the-channel" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><code>GET /remote-control/devices/{deviceId}/channel</code> is the device’s live channel. The first event is always <code>hello</code>:</p>
+<div class="codebox"><pre id="code-4" class="code"><code>event: hello
+data: {&quot;v&quot;:1,&quot;deviceId&quot;:&quot;5b0c9d1e7a3f4c2288aa41d0&quot;,&quot;capabilities&quot;:{&quot;mediaKinds&quot;:[&quot;video&quot;,&quot;audio&quot;],&quot;features&quot;:[&quot;seek&quot;,&quot;volume&quot;,&quot;queue&quot;,&quot;audio&quot;,&quot;subtitles&quot;,&quot;navigate&quot;]},&quot;heartbeatSec&quot;:30,&quot;serverTimeMs&quot;:1794000000000}</code></pre><button class="icon-btn copy" type="button" data-copy="#code-4" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>From then on the device is <strong>online</strong> and controllers can see it. Each thing it is asked to do arrives as a <code>command</code>:</p>
+<div class="codebox"><pre id="code-5" class="code"><code>event: command
+data: {&quot;v&quot;:1,&quot;id&quot;:&quot;c41f0a9e2b7d4e118c35a0f2&quot;,&quot;type&quot;:&quot;seek&quot;,&quot;bySec&quot;:-10,&quot;sender&quot;:{&quot;userName&quot;:&quot;Sam&quot;},&quot;sentAt&quot;:1794000004200}</code></pre><button class="icon-btn copy" type="button" data-copy="#code-5" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>When the server ends the channel on purpose it says why first:</p>
+<div class="codebox"><pre id="code-6" class="code"><code>event: bye
+data: {&quot;reason&quot;:&quot;replaced&quot;}</code></pre><button class="icon-btn copy" type="button" data-copy="#code-6" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="table-wrap"><table><thead><tr><th><code>reason</code></th><th>What happened</th><th>What to do</th></tr></thead><tbody><tr><td><code>replaced</code></td><td>The same device opened another channel</td><td>Nothing: the newer channel is the one</td></tr><tr><td><code>removed</code></td><td>The device said goodbye</td><td>Nothing</td></tr><tr><td><code>idle</code></td><td>No state was reported for <code>idleSec</code></td><td>Announce again</td></tr><tr><td><code>signed-out</code></td><td>The sign-in ended, or remote control was turned off</td><td>Stop</td></tr><tr><td><code>server-stopping</code></td><td>The server is shutting down or restarting</td><td>Try again after a few seconds, announcing again</td></tr></tbody></table></div>
+<p>One device has one channel. Opening a second for the same <code>deviceId</code> ends the first.</p>
+<h3 id="3-answer-every-command">3. Answer every command<a class="h-anchor" href="#3-answer-every-command" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><code>POST /remote-control/devices/{deviceId}/ack</code></p>
+<div class="codebox"><pre id="code-7" class="code" data-lang="json"><code>{ &quot;id&quot;: &quot;c41f0a9e2b7d4e118c35a0f2&quot;, &quot;ok&quot;: true }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-7" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>or, when it can’t:</p>
+<div class="codebox"><pre id="code-8" class="code" data-lang="json"><code>{ &quot;id&quot;: &quot;c41f0a9e2b7d4e118c35a0f2&quot;, &quot;ok&quot;: false, &quot;error&quot;: &quot;Nothing is playing.&quot; }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-8" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><code>error</code> is shown to the person holding the controller, so write it for them: a short sentence, up to 200 characters. Answer when the command has been <strong>accepted</strong>, not when it has finished: for <code>play</code>, when the player has been told to open the item, not when the first frame shows. The state reports say how it’s going after that. An answer must arrive within <code>ackTimeoutMs</code> (8 seconds), or the controller is told the device didn’t answer.</p>
+<p>A <code>404</code> with code <code>no-command</code> means the command is no longer waiting: it timed out, or the channel was reopened meanwhile. Carry on.</p>
+<h3 id="4-report-state">4. Report state<a class="h-anchor" href="#4-report-state" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><code>POST /remote-control/devices/{deviceId}/state</code> with a <a href="#state">state</a>. Send one:</p>
+<ul><li>whenever something changes that a controller would show: play, pause, a seek, another item, another track, the volume;</li><li>every 5 seconds or so while playing, so controllers stay close;</li><li>at least every <code>heartbeatSec</code> (30 seconds) whatever happens, playing or not. <strong>This is the heartbeat.</strong> A device whose channel is open but which has reported nothing for <code>idleSec</code> (75 seconds) is taken to have gone.</li></ul>
+<p>Reports closer together than <code>stateEveryMs</code> are refused with <code>429</code> after a short burst. Nothing is lost by that: send the latest state a moment later.</p>
+<h3 id="5-coming-back-and-leaving">5. Coming back, and leaving<a class="h-anchor" href="#5-coming-back-and-leaving" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>If the channel drops, the device is <strong>offline</strong> at once: commands to it fail straight away with code <code>offline</code>. It stays listed, greyed, for <code>reconnectSec</code> (30 seconds). Opening the channel again within that time, with the same <code>deviceId</code>, brings it back as the same device. After that, announce again (sending the old <code>deviceId</code> does no harm).</p>
+<p><code>DELETE /remote-control/devices/{deviceId}</code> when the app closes, or the person turns this off.</p>
+<h2 id="being-a-controller">Being a controller<a class="h-anchor" href="#being-a-controller" aria-hidden="true" tabindex="-1">#</a></h2>
+<h3 id="list-devices">List devices<a class="h-anchor" href="#list-devices" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><code>GET /remote-control/devices</code></p>
+<div class="codebox"><pre id="code-9" class="code" data-lang="json"><code>{ &quot;serverTimeMs&quot;: 1794000010000,
+  &quot;devices&quot;: [
+    { &quot;id&quot;: &quot;5b0c9d1e7a3f4c2288aa41d0&quot;, &quot;name&quot;: &quot;Living room TV&quot;, &quot;kind&quot;: &quot;tv&quot;, &quot;userId&quot;: 2, &quot;userName&quot;: &quot;Sam&quot;,
+      &quot;v&quot;: 1, &quot;capabilities&quot;: { &quot;mediaKinds&quot;: [&quot;video&quot;, &quot;audio&quot;], &quot;features&quot;: [&quot;seek&quot;, &quot;volume&quot;, &quot;queue&quot;] },
+      &quot;online&quot;: true, &quot;mine&quot;: true, &quot;thisSession&quot;: false,
+      &quot;state&quot;: { &quot;v&quot;: 1, &quot;status&quot;: &quot;playing&quot;, &quot;itemId&quot;: 812, &quot;positionSec&quot;: 1312.4, &quot;durationSec&quot;: 5400, &quot;rate&quot;: 1, &quot;volume&quot;: 0.6, &quot;muted&quot;: false,
+                 &quot;audio&quot;: &quot;1&quot;, &quot;subtitle&quot;: &quot;off&quot;, &quot;audioTracks&quot;: [{ &quot;id&quot;: &quot;1&quot;, &quot;label&quot;: &quot;English · 5.1&quot;, &quot;lang&quot;: &quot;en&quot; }] },
+      &quot;stateAt&quot;: 1794000008200, &quot;title&quot;: &quot;Puddle Day&quot;, &quot;itemKind&quot;: &quot;video&quot; } ] }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-9" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody><tr><td><code>online</code></td><td>Its channel is open. Commands only reach a device that is online</td></tr><tr><td><code>mine</code></td><td>It is signed in as your account</td></tr><tr><td><code>thisSession</code></td><td>It was announced by the very sign-in asking: this is how an app finds itself in the list, to leave itself out</td></tr><tr><td><code>state</code>, <code>stateAt</code></td><td>What it last reported, and when, in the server’s milliseconds</td></tr><tr><td><code>title</code>, <code>itemKind</code></td><td>What it is playing, when you may see that</td></tr><tr><td><code>hidden</code></td><td>It is playing something your account may not see. <code>state</code> then holds only <code>status</code>, <code>volume</code>, <code>muted</code> and <code>screen</code></td></tr></tbody></table></div>
+<p>Where a playing device is <strong>now</strong>: <code>positionSec + (serverNow - stateAt) / 1000 × rate</code>, where <code>serverNow</code> is your clock corrected by the difference between <code>serverTimeMs</code> and your clock when the answer arrived. Half a second out is fine for a progress bar.</p>
+<h3 id="watch-them-live">Watch them live<a class="h-anchor" href="#watch-them-live" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><code>GET /remote-control/events</code> is a stream for controllers:</p>
+<div class="table-wrap"><table><thead><tr><th>Event</th><th>Data</th><th>Meaning</th></tr></thead><tbody><tr><td><code>snapshot</code></td><td><code>{ &quot;devices&quot;: [...], &quot;serverTimeMs&quot;: ... }</code></td><td>Everything you may control, as in the list. Sent first, and again every 25 seconds: replace what you had</td></tr><tr><td><code>device</code></td><td>one device</td><td>It appeared, or something about it changed</td></tr><tr><td><code>gone</code></td><td><code>{ &quot;id&quot;: &quot;...&quot; }</code></td><td>It left, or you may no longer control it</td></tr></tbody></table></div>
+<p>A last event, <code>bye</code> with <code>{ &quot;reason&quot;: ... }</code>, says why the server is ending the stream: <code>signed-out</code> (the sign-in ended), <code>feature-off</code> (remote control was turned off, for the server or for this profile) or <code>server-stopping</code>. After <code>signed-out</code> or <code>feature-off</code>, don’t reconnect.</p>
+<p>Each <code>device</code> event is whole, never a difference. The server sends at most a few a second, and a controller that reads slowly gets fewer of them, each the latest: it never falls behind into a backlog. Keep this stream open only while a list of devices or a remote is on screen.</p>
+<h3 id="send-a-command">Send a command<a class="h-anchor" href="#send-a-command" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><code>POST /remote-control/devices/{deviceId}/commands</code> with a <a href="#commands">command</a>. The request waits for the device’s answer, so allow it ten seconds:</p>
+<div class="codebox"><pre id="code-10" class="code" data-lang="json"><code>{ &quot;ok&quot;: true }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-10" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><code>200</code> means the device said it has done it. Anything else is an <a href="#errors">error</a> with a <code>code</code>, and nothing happened on the device.</p>
+<h2 id="commands">Commands<a class="h-anchor" href="#commands" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A command is one JSON object with <code>v</code> and <code>type</code>. The server adds <code>id</code>, <code>sender</code> and <code>sentAt</code> on the way to the device, and ignores those if a controller sends them.</p>
+<div class="table-wrap"><table><thead><tr><th><code>type</code></th><th>Fields</th><th>Needs</th><th>What the device does</th></tr></thead><tbody><tr><td><code>play</code></td><td><code>itemId</code>, or <code>queue</code> with <code>queueIndex</code>; optional <code>positionSec</code>, <code>audio</code>, <code>subtitle</code></td><td>the item’s kind in <code>mediaKinds</code>; <code>queue</code> for a queue of more than one</td><td>Opens the item and plays it from <code>positionSec</code> (from the account’s own resume point when left out)</td></tr><tr><td><code>pause</code></td><td></td><td></td><td>Pauses</td></tr><tr><td><code>resume</code></td><td></td><td></td><td>Plays again from where it paused</td></tr><tr><td><code>stop</code></td><td></td><td></td><td>Stops and leaves the player</td></tr><tr><td><code>seek</code></td><td><code>positionSec</code> (from the start), or <code>bySec</code> (from here, negative to go back)</td><td><code>seek</code></td><td>Moves there</td></tr><tr><td><code>next</code>, <code>previous</code></td><td></td><td><code>queue</code></td><td>Moves along its queue</td></tr><tr><td><code>volume</code></td><td><code>level</code>, from 0 to 1</td><td><code>volume</code></td><td>Sets its volume</td></tr><tr><td><code>mute</code></td><td><code>muted</code></td><td><code>volume</code></td><td>Mutes or unmutes</td></tr><tr><td><code>audio</code></td><td><code>audio</code>: a track id</td><td><code>audio</code></td><td>Switches sound track</td></tr><tr><td><code>subtitle</code></td><td><code>subtitle</code>: a track id, or <code>&quot;off&quot;</code></td><td><code>subtitles</code></td><td>Switches subtitles</td></tr><tr><td><code>rate</code></td><td><code>rate</code>, from 0.25 to 4</td><td><code>rate</code></td><td>Sets the playback speed</td></tr><tr><td><code>navigate</code></td><td><code>key</code>: <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>, <code>select</code>, <code>back</code>, <code>home</code>, <code>menu</code> or <code>playpause</code></td><td><code>navigate</code></td><td>Presses that key in its interface, as a TV remote would</td></tr><tr><td><code>cast</code></td><td><code>from</code>: another device’s id</td><td>as <code>play</code></td><td>Controllers only: see <a href="#cast">below</a></td></tr></tbody></table></div>
+<p>Examples, as a controller sends them:</p>
+<div class="codebox"><pre id="code-11" class="code" data-lang="json"><code>{ &quot;v&quot;: 1, &quot;type&quot;: &quot;play&quot;, &quot;itemId&quot;: 812, &quot;positionSec&quot;: 0 }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;play&quot;, &quot;queue&quot;: [812, 813, 814], &quot;queueIndex&quot;: 0, &quot;audio&quot;: &quot;2&quot;, &quot;subtitle&quot;: &quot;off&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;pause&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;resume&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;stop&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;seek&quot;, &quot;positionSec&quot;: 754.5 }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;seek&quot;, &quot;bySec&quot;: -10 }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;next&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;previous&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;volume&quot;, &quot;level&quot;: 0.4 }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;mute&quot;, &quot;muted&quot;: true }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;audio&quot;, &quot;audio&quot;: &quot;2&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;subtitle&quot;, &quot;subtitle&quot;: &quot;off&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;rate&quot;, &quot;rate&quot;: 1.25 }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;navigate&quot;, &quot;key&quot;: &quot;select&quot; }
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;cast&quot;, &quot;from&quot;: &quot;9e2d7c11aa0b4f6e83c1d5a7&quot; }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-11" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>And as the device receives one:</p>
+<div class="codebox"><pre id="code-12" class="code" data-lang="json"><code>{ &quot;v&quot;: 1, &quot;id&quot;: &quot;c41f0a9e2b7d4e118c35a0f2&quot;, &quot;type&quot;: &quot;play&quot;, &quot;itemId&quot;: 812, &quot;positionSec&quot;: 0,
+  &quot;sender&quot;: { &quot;userName&quot;: &quot;Sam&quot; }, &quot;sentAt&quot;: 1794000004200 }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-12" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><strong>Queues.</strong> With <code>queue</code>, <code>queueIndex</code> says which entry plays first, and <code>itemId</code>, if given too, must be that entry. A queue holds up to 200 items. The device keeps the queue and reports it in its state; <code>next</code> and <code>previous</code> move along it.</p>
+<p><strong>Track ids</strong> are the ids the device lists in its own state (<code>audioTracks</code>, <code>subtitleTracks</code>), as text. So that a controller can choose a track before anything is playing, a device that plays through <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/CLIENT-API.md#playing-something" rel="noopener"><code>POST /items/{id}/playback</code></a> uses the <code>index</code> of that answer’s <code>audio</code> and <code>subtitles</code> entries, written as text (<code>&quot;1&quot;</code>), and <code>&quot;off&quot;</code> for no subtitles.</p>
+<p><strong><code>play</code> is checked by the server</strong> before the device hears of it: see <a href="#who-may-control-what">who may control what</a>. A device may trust that an item it is told to play is one its own account may see. It still plays it through the ordinary playback routes, which check again.</p>
+<h3 id="cast">Cast<a class="h-anchor" href="#cast" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>Casting hands over what one device is playing to another, at the same place. A controller sends <code>cast</code> to the device that should take over, naming the device to take over from:</p>
+<div class="codebox"><pre id="code-13" class="code"><code>POST /remote-control/devices/{target}/commands
+{ &quot;v&quot;: 1, &quot;type&quot;: &quot;cast&quot;, &quot;from&quot;: &quot;&lt;source device id&gt;&quot; }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-13" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p>The server reads the source’s last state and works out where it has got to since. It sends the target a <code>play</code> for the same item (and queue, if the target has <code>queue</code>), at that position, with the same sound track and subtitles. When the target has accepted, the server sends the source a <code>stop</code>. The answer says how that went:</p>
+<div class="codebox"><pre id="code-14" class="code" data-lang="json"><code>{ &quot;ok&quot;: true, &quot;sourceStopped&quot;: true }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-14" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<p><code>sourceStopped: false</code> means the new device is playing and the old one didn’t stop when asked. The devices never see <code>cast</code>: one gets a <code>play</code>, the other a <code>stop</code>.</p>
+<p>A client that wants to hand over <strong>its own</strong> playback sends <code>cast</code> with its own <code>deviceId</code> as <code>from</code>. A client that isn’t announced as a device sends an ordinary <code>play</code> with <code>positionSec</code>, and stops itself when that succeeds.</p>
+<h2 id="state">State<a class="h-anchor" href="#state" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>What a device reports, and what controllers are shown:</p>
+<div class="codebox"><pre id="code-15" class="code" data-lang="json"><code>{ &quot;v&quot;: 1, &quot;status&quot;: &quot;playing&quot;, &quot;itemId&quot;: 812, &quot;positionSec&quot;: 1312.4, &quot;durationSec&quot;: 5400, &quot;rate&quot;: 1,
+  &quot;volume&quot;: 0.6, &quot;muted&quot;: false, &quot;audio&quot;: &quot;1&quot;, &quot;subtitle&quot;: &quot;off&quot;,
+  &quot;audioTracks&quot;: [{ &quot;id&quot;: &quot;1&quot;, &quot;label&quot;: &quot;English · 5.1&quot;, &quot;lang&quot;: &quot;en&quot; }, { &quot;id&quot;: &quot;2&quot;, &quot;label&quot;: &quot;Commentary&quot;, &quot;lang&quot;: &quot;en&quot; }],
+  &quot;subtitleTracks&quot;: [{ &quot;id&quot;: &quot;3&quot;, &quot;label&quot;: &quot;English&quot;, &quot;lang&quot;: &quot;en&quot; }],
+  &quot;queue&quot;: [812, 813, 814], &quot;queueIndex&quot;: 0, &quot;screen&quot;: &quot;player&quot; }</code></pre><button class="icon-btn copy" type="button" data-copy="#code-15" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody><tr><td><code>status</code></td><td><code>idle</code> (nothing open), <code>playing</code>, <code>paused</code> or <code>buffering</code></td></tr><tr><td><code>itemId</code></td><td>What is open. Leave it out when idle</td></tr><tr><td><code>positionSec</code>, <code>durationSec</code></td><td>Where it is and how long the item is, in seconds</td></tr><tr><td><code>rate</code></td><td>Playback speed: 1 is normal</td></tr><tr><td><code>volume</code>, <code>muted</code></td><td>0 to 1. Leave <code>volume</code> out if the device has no volume of its own</td></tr><tr><td><code>audio</code>, <code>subtitle</code></td><td>The ids of the tracks in use. <code>&quot;off&quot;</code> for no subtitles</td></tr><tr><td><code>audioTracks</code>, <code>subtitleTracks</code></td><td>What can be chosen: <code>id</code>, and <code>label</code> and <code>lang</code> for showing. Up to 64 each</td></tr><tr><td><code>queue</code>, <code>queueIndex</code></td><td>Its queue, if it has one</td></tr><tr><td><code>screen</code></td><td>Where the device is in its own interface, in a word (<code>home</code>, <code>player</code>): for a remote that shows it</td></tr></tbody></table></div>
+<p>An idle device sends <code>{ &quot;v&quot;: 1, &quot;status&quot;: &quot;idle&quot; }</code>, with <code>volume</code> and <code>screen</code> if it likes. That is also the heartbeat.</p>
+<p>The server tidies what it’s sent rather than refusing it: a status it doesn’t know becomes <code>idle</code>, numbers that aren’t finite become 0, long text is cut, long lists are cut. A report over <code>stateBytes</code> (32 KB) is refused.</p>
+<h2 id="life-of-a-device-and-of-a-command">Life of a device and of a command<a class="h-anchor" href="#life-of-a-device-and-of-a-command" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A device:</p>
+<div class="table-wrap"><table><thead><tr><th>State</th><th>How it gets there</th><th>What controllers see</th></tr></thead><tbody><tr><td>Announced</td><td><code>POST /remote-control/devices</code></td><td>Listed, <code>online: false</code></td></tr><tr><td>Online</td><td>Its channel opens</td><td><code>online: true</code>. Commands are delivered</td></tr><tr><td>Offline</td><td>Its channel closes, for any reason</td><td><code>online: false</code> at once. Commands fail with <code>offline</code></td></tr><tr><td>Gone</td><td>It says goodbye; or 30 seconds pass announced or offline with no channel; or 75 seconds pass online with no state report; or its sign-in ends</td><td>A <code>gone</code> event</td></tr></tbody></table></div>
+<p>A command:</p>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>What happens</th></tr></thead><tbody><tr><td>Checked</td><td>Size, shape, values in range, the caller’s rate. Then whether the caller may control this device, whether the device is online, whether it has the feature, and for <code>play</code> whose limits allow the items. A failure here answers at once, and the device never hears of it</td></tr><tr><td>Queued</td><td>Placed on the device’s channel. Up to 16 can wait. One more is refused at once with <code>busy</code>: <strong>a command is never dropped silently</strong></td></tr><tr><td>Delivered</td><td>Written to the device as a <code>command</code> event</td></tr><tr><td>Answered</td><td>The device posts its <code>ack</code>. The controller’s request returns <code>200</code>, or <code>refused</code> with the device’s reason</td></tr><tr><td>Timed out</td><td>No answer within 8 seconds: the controller is told <code>timeout</code>. The device may still act on it; its state reports say what really happened</td></tr><tr><td>Failed</td><td>The channel closed or was reopened first: every command still waiting fails at once with <code>offline</code></td></tr></tbody></table></div>
+<p>State updates are different on purpose. They are <strong>latest-wins</strong>: a controller that can’t keep up is sent fewer of them, each complete, and nothing waits on it.</p>
+<h2 id="who-may-control-what">Who may control what<a class="h-anchor" href="#who-may-control-what" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>A device belongs to the sign-in that announced it.</strong> Only that sign-in opens its channel, reports its state, answers its commands or removes it. Any other sign-in, even of the same account, even an administrator’s, gets <code>404</code> for those.</li><li><strong>An account controls its own devices</strong>: every device signed in as that account.</li><li><strong>Other accounts’ devices are off limits by default</strong>, to see or to control, for administrators too. An administrator can allow particular accounts to control devices signed in as <em>any</em> account: in the web app under <strong>Settings → Sharing &amp; photos → Play on other devices</strong>, or with <code>PUT /remote-control/accounts/{id}</code>. This is for households: a parent’s phone steering the TV that is signed in as a Kids profile.</li><li><strong>Limits are never widened.</strong> A <code>play</code> (or <code>cast</code>) is refused unless every item named is one the <strong>caller</strong> may see <em>and</em> one the <strong>device’s own account</strong> may see. A Kids profile allowed to control the living room TV can’t put on a film it couldn’t open itself: to it the item doesn’t exist (<code>404</code>, code <code>no-item</code>). A parent can’t make a Kids profile’s tablet play what that profile is limited from: <code>403</code>, code <code>not-allowed-there</code>. Queues are checked item by item, and one refusal refuses the whole command.</li><li><strong>What a device is playing is shown only to those who may see it.</strong> A controller whose account may not see the item gets <code>hidden: true</code> and a state with no item, position, tracks or queue. Entries in a queue that the controller may not see are sent as <code>0</code>.</li><li><strong>A sign-in that ends takes its device with it, at once.</strong> Signing out, switching to another profile on that device, being signed out from another device or by an administrator, a new password, the account being removed: the channel gets <code>bye</code> with <code>reason: &quot;signed-out&quot;</code>, the device leaves every controller’s list, and a controller’s own stream from that sign-in gets <code>bye</code> too. An app that switches profile announces itself again with its new sign-in, and is then a new device of the new profile.</li><li><strong>A change to who may control what shows at once.</strong> When an administrator gives or takes away an account’s leave to control other accounts’ devices, or anyone’s limits change, open event streams are sent a fresh <code>snapshot</code> straight away.</li><li><strong>Everything is looked at again as it runs</strong> as well: a stream checks its sign-in and the server’s switch every 25 seconds, which catches a sign-in that simply ran out.</li><li><strong>A stream token is refused</strong>, since it is for media and not for acting as a person.</li></ul>
+<h2 id="parental-controls">Parental controls<a class="h-anchor" href="#parental-controls" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Profiles can have limits (<a href="/docs/profiles/">PROFILES.md</a>). Here is what they mean for remote control. The rule throughout: <strong>the limits of the account a device is signed in as decide what plays on it, and the limits of the caller decide what the caller may ask for.</strong> Both are checked on the server for every command; neither side’s app is trusted with it.</p>
+<ul><li><strong>Every kind of limit on titles counts</strong>, on both sides: libraries, an age for each kind of media, genres hidden or the only ones allowed, tags, collections, single titles, and games turned off. It’s the same check the item routes make.</li><li><strong>Screen time.</strong> <code>play</code>, <code>cast</code>, <code>resume</code>, <code>next</code> and <code>previous</code> start something, so they’re refused when time is up: <code>403</code> with code <code>screen-time</code> when it’s the caller’s time, and <code>screen-time-there</code> when it’s the time of the profile the device is signed in as. That holds for every caller, an administrator included. <code>pause</code>, <code>stop</code>, <code>seek</code>, volume, tracks and <code>navigate</code> are never refused for time. What a device plays is fetched by the device with its own sign-in, so it counts as its own profile’s screen time whoever started it, and stops when that time runs out.</li><li><strong>The “Playing on other devices” switch</strong> (<code>remoteControl</code> in a profile’s limits). With it off, the controller’s routes (<code>GET /remote-control/devices</code>, <code>GET /remote-control/events</code>, <code>POST …/commands</code>) answer <code>403</code> with <code>code: &quot;feature-off&quot;</code> and <code>feature: &quot;remoteControl&quot;</code>, for the profile’s own devices too. The device’s routes are not affected: the profile’s devices announce themselves, report and obey as before, so a parent with leave can still play on and pause a child’s TV. <code>GET /remote-control</code> stays open and says <code>canControl: false</code>; an app hides its remote and its <strong>Play on…</strong> then, and still announces itself.</li><li><strong>What a device is playing</strong> is hidden from a controller who may not see it by any of those limits (<code>hidden: true</code>).</li><li><strong>Turning the switch off</strong> while a controller’s stream is open ends it at once with <code>bye</code>, <code>reason: &quot;feature-off&quot;</code>.</li></ul>
+<h2 id="limits">Limits<a class="h-anchor" href="#limits" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Chosen so that a small server stays small. <code>GET /remote-control</code> reports them, so a client needn’t copy the numbers.</p>
+<div class="table-wrap"><table><thead><tr><th>What</th><th>Limit</th><th>When it’s reached</th></tr></thead><tbody><tr><td>Devices announced by one account</td><td>16</td><td><code>429</code>, code <code>too-many</code></td></tr><tr><td>Devices in all</td><td>128</td><td><code>429</code>, code <code>too-many</code></td></tr><tr><td>Controllers watching <code>events</code>, one account</td><td>8</td><td><code>429</code>, code <code>too-many</code></td></tr><tr><td>Controllers watching, in all</td><td>64</td><td><code>429</code>, code <code>too-many</code></td></tr><tr><td>Open streams of both kinds, one account</td><td>16</td><td><code>429</code>, code <code>too-many</code></td></tr><tr><td>Commands waiting for one device</td><td>16</td><td><code>503</code>, code <code>busy</code>, at once</td></tr><tr><td>A command or an announcement</td><td>8 KB</td><td><code>413</code></td></tr><tr><td>A state report</td><td>32 KB</td><td><code>413</code></td></tr><tr><td>State reports from one device</td><td>one every 500 ms, after a burst of 6</td><td><code>429</code>, code <code>rate</code></td></tr><tr><td>Commands from one account</td><td>one every 200 ms, after a burst of 20</td><td><code>429</code>, code <code>rate</code></td></tr><tr><td>A queue</td><td>200 items</td><td><code>400</code>, code <code>bad-command</code></td></tr><tr><td>Waiting for a device to answer</td><td>8 seconds</td><td><code>504</code>, code <code>timeout</code></td></tr><tr><td>A device with no channel</td><td>30 seconds</td><td>Forgotten</td></tr><tr><td>An online device reporting nothing</td><td>75 seconds</td><td><code>bye</code> with <code>idle</code>, and forgotten</td></tr><tr><td>Keep-alive on streams</td><td>every 25 seconds</td><td></td></tr></tbody></table></div>
+<p>Each open channel costs the server one connection, one small queue and a timer. A device that isn’t being controlled costs nothing more than its heartbeat.</p>
+<h2 id="errors">Errors<a class="h-anchor" href="#errors" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Every refusal is <code>{ &quot;error&quot;: &quot;&lt;a sentence fit to show&gt;&quot;, &quot;code&quot;: &quot;&lt;for programs&gt;&quot; }</code>.</p>
+<div class="table-wrap"><table><thead><tr><th>Status</th><th><code>code</code></th><th>Meaning</th></tr></thead><tbody><tr><td>400</td><td><code>bad-command</code></td><td>Unknown <code>type</code>, a missing field, a value out of range</td></tr><tr><td>400</td><td><code>version</code></td><td>This app speaks a protocol older than the server accepts</td></tr><tr><td>403</td><td><code>disabled</code></td><td>Remote control is turned off on this server</td></tr><tr><td>403</td><td><code>no-session</code></td><td>A device route was called with something that isn’t a sign-in</td></tr><tr><td>403</td><td><code>not-allowed-there</code></td><td>The account that device is signed in as may not play that</td></tr><tr><td>403</td><td><code>screen-time</code></td><td>The caller’s screen time is over: nothing can be started. The answer has <code>screenTime</code>, as from a playback route</td></tr><tr><td>403</td><td><code>screen-time-there</code></td><td>Screen time is over for the profile the device is signed in as</td></tr><tr><td>403</td><td><code>feature-off</code></td><td>Playing on other devices is turned off for this profile (<code>feature: &quot;remoteControl&quot;</code>)</td></tr><tr><td>404</td><td><code>no-device</code></td><td>No such device, or not one you may control, or (on device routes) not yours</td></tr><tr><td>404</td><td><code>no-item</code></td><td>No such item, or not one you may see</td></tr><tr><td>404</td><td><code>no-command</code></td><td>The command being answered is no longer waiting</td></tr><tr><td>409</td><td><code>offline</code></td><td>The device isn’t connected</td></tr><tr><td>409</td><td><code>unsupported</code></td><td>The device never said it can do that, or doesn’t play that kind of thing</td></tr><tr><td>409</td><td><code>refused</code></td><td>The device answered <code>ok: false</code>; <code>error</code> is its reason</td></tr><tr><td>409</td><td><code>nothing-playing</code></td><td><code>cast</code> from a device that is idle</td></tr><tr><td>413</td><td></td><td>The message is too long</td></tr><tr><td>429</td><td><code>rate</code>, <code>too-many</code></td><td>Slow down (<code>Retry-After</code> says how long), or too many devices or streams</td></tr><tr><td>503</td><td><code>busy</code></td><td>Too many commands are already waiting for that device</td></tr><tr><td>504</td><td><code>timeout</code></td><td>The device didn’t answer in time</td></tr></tbody></table></div>
+<h2 id="settings">Settings<a class="h-anchor" href="#settings" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Setting</th><th>What it does</th><th>Default</th></tr></thead><tbody><tr><td><code>remoteControl</code></td><td>The owner’s switch for all of this. Off: every route here answers <code>403</code> with code <code>disabled</code>, open channels end, and <code>GET /remote-control</code> says <code>enabled: false</code></td><td>On</td></tr><tr><td>Control of other accounts’ devices</td><td>Per account, set by an administrator with <code>PUT /remote-control/accounts/{id}</code> <code>{ &quot;controlOthers&quot;: true }</code>. <code>GET /remote-control/accounts</code> lists every account with its setting</td><td>Off for everyone</td></tr></tbody></table></div>
+<h2 id="a-device-in-forty-lines">A device in forty lines<a class="h-anchor" href="#a-device-in-forty-lines" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The whole of a device, in JavaScript, for a player object with <code>play</code>, <code>pause</code> and so on:</p>
+<div class="codebox"><pre id="code-16" class="code" data-lang="js"><code>const api = (path, method = &#39;GET&#39;, body) =&gt; fetch(server + &#39;/api/v1&#39; + path, {
+  method, headers: { Authorization: &#39;Bearer &#39; + token, &#39;Content-Type&#39;: &#39;application/json&#39; },
+  body: body &amp;&amp; JSON.stringify(body) })
+
+const caps = { mediaKinds: [&#39;video&#39;], features: [&#39;seek&#39;, &#39;volume&#39;] }
+let id = null
+
+async function run() {
+  const a = await (await api(&#39;/remote-control/devices&#39;, &#39;POST&#39;, { v: 1, name: &#39;Den&#39;, kind: &#39;tv&#39;, capabilities: caps, deviceId: id })).json()
+  id = a.deviceId
+  const beat = setInterval(report, 25000)
+  try {
+    const res = await api(`/remote-control/devices/${id}/channel`)
+    const reader = res.body.pipeThrough(new TextDecoderStream()).getReader()
+    for (let buf = &#39;&#39;; ;) {
+      const { value, done } = await reader.read()
+      if (done) break
+      buf += value
+      for (let end; (end = buf.indexOf(&#39;\n\n&#39;)) &gt;= 0; buf = buf.slice(end + 2)) {
+        const frame = buf.slice(0, end)
+        const event = /^event: (.*)$/m.exec(frame)?.[1], data = /^data: (.*)$/m.exec(frame)?.[1]
+        if (event === &#39;command&#39;) obey(JSON.parse(data))
+        if (event === &#39;bye&#39; &amp;&amp; JSON.parse(data).reason === &#39;signed-out&#39;) return
+      }
+    }
+  } finally { clearInterval(beat) }
+  setTimeout(run, 3000) // the channel dropped: come back as the same device
+}
+
+async function obey(cmd) {
+  let ok = true, error
+  try {
+    if (cmd.type === &#39;play&#39;) await player.open(cmd.itemId, cmd.positionSec)
+    else if (cmd.type === &#39;pause&#39;) player.pause()
+    else if (cmd.type === &#39;resume&#39;) player.resume()
+    else if (cmd.type === &#39;stop&#39;) player.close()
+    else if (cmd.type === &#39;seek&#39;) player.seek(cmd.positionSec ?? player.position + cmd.bySec)
+    else if (cmd.type === &#39;volume&#39;) player.volume = cmd.level
+    else if (cmd.type === &#39;mute&#39;) player.muted = cmd.muted
+    else throw new Error(&#39;This device can’t do that.&#39;)
+  } catch (e) { ok = false; error = e.message }
+  await api(`/remote-control/devices/${id}/ack`, &#39;POST&#39;, { id: cmd.id, ok, error })
+  report()
+}
+
+const report = () =&gt; api(`/remote-control/devices/${id}/state`, &#39;POST&#39;, player.item
+  ? { v: 1, status: player.paused ? &#39;paused&#39; : &#39;playing&#39;, itemId: player.item, positionSec: player.position, durationSec: player.duration, rate: 1, volume: player.volume, muted: player.muted }
+  : { v: 1, status: &#39;idle&#39; })</code></pre><button class="icon-btn copy" type="button" data-copy="#code-16" data-done='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' aria-label="Copy" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/profiles/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Profiles and parental controls</strong></a>
+      <a class="card next" href="/docs/sdui/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Server-driven screens</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/REMOTE-PROTOCOL.md" rel="noopener">docs/REMOTE-PROTOCOL.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/REMOTE-PROTOCOL.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#the-idea">The idea</a></li><li><a href="#transport">Transport</a></li><li><a href="#versions-and-unknown-things">Versions and unknown things</a></li><li><a href="#being-a-device">Being a device</a></li><li><a href="#being-a-controller">Being a controller</a></li><li><a href="#commands">Commands</a></li><li><a href="#state">State</a></li><li><a href="#life-of-a-device-and-of-a-command">Life of a device and of a command</a></li><li><a href="#who-may-control-what">Who may control what</a></li><li><a href="#parental-controls">Parental controls</a></li><li><a href="#limits">Limits</a></li><li><a href="#errors">Errors</a></li><li><a href="#settings">Settings</a></li><li><a href="#a-device-in-forty-lines">A device in forty lines</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/try/">Try the looks</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your choice of colours is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the colours</a>.</span></p>
+      <p>WittyMediaServer, its modules and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">GNU Affero General Public License v3.0 (or later)</a>, and the apps under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GNU General Public License v3.0 (or later)</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Main"><a href="/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Home</a><a href="/server/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>Server</a><a href="/try/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>Try it</a><a href="/docs/" aria-current="page"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg></span>Docs</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer"><span class="ic"><svg class="i when-shut" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg><svg class="i when-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>More</button></nav>
+<div class="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="More pages">
+  <h2>Pages</h2>
+  <nav aria-label="More pages"><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a></nav>
+  <h2>Learn and take part</h2>
+  <nav aria-label="Learn and take part"><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
+</div>
+</body>
+</html>

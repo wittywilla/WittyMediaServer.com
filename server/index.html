@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j87RAiyyTyWtUZ3hD105jTIM/DgYdZ4bpr3l1CDsjHk='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>The server · WittyMediaServer</title>
 <meta name="description" content="Self-hosted software that keeps your films, shows, discs, music, books and games on a computer you own, and streams them to every screen in your home. It plays DVDs and Blu-rays with their real menus, in any browser.">
@@ -13,50 +13,52 @@
 <meta property="og:title" content="The server">
 <meta property="og:description" content="Self-hosted software that keeps your films, shows, discs, music, books and games on a computer you own, and streams them to every screen in your home. It plays DVDs and Blu-rays with their real menus, in any browser.">
 <meta property="og:url" content="https://wittymediaserver.com/server/">
-<meta property="og:image" content="https://wittymediaserver.com/images/shots/home.webp">
+<meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f1115">
 <meta name="color-scheme" content="dark light">
+<link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
-<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
-<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
-<link rel="stylesheet" href="/assets/site.cbe42179be.css">
-<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b;if(!window.MutationObserver)return;var o=new MutationObserver(function(r){for(var i=0;i<r.length;i++)for(var n=r[i].addedNodes,j=0;j<n.length;j++){var e=n[j];if(e.tagName==='IMG'&&e.dataset.shot&&(' '+(e.dataset.themed||'')+' ').indexOf(' '+t+' ')>-1)e.src='/images/shots/'+t+'/'+e.dataset.shot+'.webp'}});o.observe(d,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',function(){o.disconnect()})})()</script>
-<script src="/assets/site.cbc4657ed9.js" defer></script>
+<link rel="stylesheet" href="/assets/site.4d756e5e80.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b})()</script>
+<script src="/assets/site.f959e89d8f.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
-    <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/server/" aria-current="page">Server</a><a href="/client/">Apps</a><a href="/modules/">Modules</a><a href="/docs/">Docs</a><a href="/news/">News</a><a href="/gallery/">Gallery</a></nav>
+    <nav class="nav" aria-label="Main"><a href="/server/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/try/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg>Try it</a><a href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a></nav>
     <div class="tools">
-      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
       <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
       <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></a>
-      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu" data-close='<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>'><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
     </div>
   </div>
 </header>
-<div class="drawer" id="drawer">
-  <nav aria-label="Main"><a href="/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="/server/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a></nav>
-  <nav class="sub" aria-label="More"><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
-</div>
-<div class="scrim"></div>
 <div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
-  <h2 id="themes-title">Theme</h2>
-  <p>The server's own themes. Pictures change to match where there's one in that theme.</p>
+  <h2 id="themes-title">Colours</h2>
+  <p>The server’s own 15 themes, for this site. <a href="/try/">Try each one with every layout</a>.</p>
   <div class="swatches" role="radiogroup" aria-label="Themes">
-    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/default/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Witty<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
-    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/light/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Light<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
-    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/cinema/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Cinema<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
-    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/contrast/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">High contrast<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
-    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/evergreen/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Evergreen<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
-    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/midnight/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Midnight<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
-    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/oled/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">True black<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
-    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper"><span class="pv"><i></i><u></u><b></b><img src="/images/shots/paper/home.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></span><span class="nm">Paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default" data-pv="default"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Witty</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light" data-pv="light"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Light</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight" data-pv="midnight"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Midnight</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled" data-pv="oled"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>True black</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen" data-pv="evergreen"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Evergreen</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema" data-pv="cinema"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cinema</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper" data-pv="paper"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Paper</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast" data-pv="contrast"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>High contrast</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroday" data-pv="aeroday"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Day</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroaurora" data-pv="aeroaurora"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Aurora</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeromeadow" data-pv="aeromeadow"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Meadow</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aerosunset" data-pv="aerosunset"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Sunset</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cable" data-pv="cable"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cable blue</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="satellite" data-pv="satellite"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Satellite</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="teletext" data-pv="teletext"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Teletext</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
   </div>
   <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
 </div>
@@ -68,7 +70,7 @@
     <p class="eyebrow">The server</p>
     <h1>WittyMediaServer</h1>
     <p class="lead">Self-hosted software that keeps your films, shows, discs, music, books and games on a computer you own, and streams them to every screen in your home. It plays DVDs and Blu-rays with their real menus, in any browser.</p>
-    <div class="meta"><span class="pill mono">0.7.2-alpha</span><span>Released 6 November 2026</span><span>Apache-2.0</span></div>
+    
     <div class="btn-row"><a class="btn primary" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a><a class="btn" href="/docs/getting-started/">Getting started guide<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></div>
   </div>
 </header>
@@ -76,8 +78,8 @@
   <div class="wrap">
     <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer · Home</span></div>
-  <img src="/images/shots/home.webp" data-shot="home" data-themed="default light cinema contrast evergreen midnight oled paper" alt="The home page, with a large picture from a film and a row of libraries" width="1920" height="1080" fetchpriority="high" decoding="async">
-  <figcaption><span>Your libraries, on one screen</span><span class="credit"><a href="https://commons.wikimedia.org/wiki/File:WING_IT!_-_Blender_Open_Movie-full_movie.webm" rel="noopener">Wing It!</a>, Blender Studio, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span></figcaption>
+  <img src="/images/shots/home.webp" alt="Home in WittyMediaServer: a large picture from Wing It!, the libraries as tiles, and rows of films and shows" width="1440" height="900" fetchpriority="high" decoding="async">
+  <figcaption><span>Your libraries, on one screen</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-home">each work credited</a></span></figcaption>
 </figure>
     <p class="mt-6 lede">Install it on the computer that holds your media. Every other screen reaches it through a web browser, with no app needed. Discs, games, photos, books and TV tuners are modules you add from the server’s store. The server works without any of them.</p>
   </div>
@@ -89,11 +91,11 @@
         <p class="eyebrow">Films and TV</p>
         <h2>Your films and shows, looked after</h2>
         <p>Posters, plots, cast and ratings arrive with no API key, and you can add free keys or your own sources for more. Everything you watch picks up where you left off, on any screen.</p>
-        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Continue watching, skip intro and instant seeking</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Collections, including smart ones that fill themselves</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Details from files beside your media, or looked up for you</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Converts video only when a device needs it</span></li></ul>
+        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Continue watching and instant seeking</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Skip intros, recaps, credits and adverts, found from chapter names or a file beside the video</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Collections, including smart ones that fill themselves</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Converts video only when a device needs it</span></li></ul>
       </div>
       <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer</span></div>
-  <img src="/images/shots/tv-show-page.webp" data-shot="tv-show-page" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A TV show’s page, with its picture, plot, seasons and episodes" width="1920" height="1080" loading="lazy" decoding="async">
+  <img src="/images/shots/tv-show-page.webp" alt="A TV show’s page, with its picture, plot, seasons and episodes" width="1440" height="900" loading="lazy" decoding="async">
   <figcaption><span>A show’s page</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-tv-show-page">each work credited</a></span></figcaption>
 </figure>
     </div>
@@ -102,38 +104,38 @@
         <p class="eyebrow">Discs</p>
         <h2>DVDs and Blu-rays, with their real menus</h2>
         <p>With the WittyDVD and WittyBluray modules, disc images and folders play like a disc player: the intro, the animated menu, scene selection, extras, and the disc’s own audio and subtitles. No mounting, no ripping to files first. Blu-rays have been tested on custom-made discs, so retail discs may show problems not seen yet.</p>
-        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>DVD images and VIDEO_TS folders, with menus, chapters and angles</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Blu-ray images and BDMV folders, including 4K and HDR</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Audio CD images, played gapless in an on-screen CD player</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Copy-protected discs are refused with a plain message. Nothing unlocks them</span></li></ul>
+        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>DVD images and VIDEO_TS folders, with menus, chapters and angles</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Blu-ray images and BDMV folders, including 4K and HDR</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Audio CD images, played gapless in an on-screen CD player</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Play movie plays the film the disc modules rank first, with Why this title and how sure they are</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Copy-protected discs are refused with a plain message. Nothing unlocks them</span></li></ul>
       </div>
       <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer</span></div>
-  <img src="/images/shots/dvd-menu.webp" data-shot="dvd-menu" alt="A DVD’s own menu, playing in a browser" width="1920" height="1080" loading="lazy" decoding="async">
-  <figcaption><span>A DVD’s real menu, in a browser</span><span class="credit"><a href="https://durian.blender.org/" rel="noopener">Sintel</a>, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>, from its original DVD</span></figcaption>
+  <img src="/images/shots/dvd-menu.webp" alt="Sintel’s DVD menu, playing in the browser, with Play, Extras and Subtitles" width="1440" height="900" loading="lazy" decoding="async">
+  <figcaption><span>A DVD’s own menu</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-dvd-menu">each work credited</a></span></figcaption>
 </figure>
     </div>
     <div class="split" id="tv">
       <div class="text">
         <p class="eyebrow">Live TV and channels</p>
         <h2>Channels made from your own library</h2>
-        <p>WittyTV turns your libraries into channels in one press, with a guide that looks like real TV, and needs no extra hardware. Add the WittyTuner module for live TV and recording from network tuners and IPTV playlists. IPTV has been tested with local streams; tuners and capture cards haven’t been tried on real hardware yet.</p>
-        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Guide looks of its own: modern, classic, teletext and more</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Network tuners, IPTV playlists and capture cards</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Recording from tuner channels, with a list of what’s been recorded</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Encrypted channels are refused, never decrypted</span></li></ul>
+        <p>WittyTV turns your libraries into channels in one press, with a guide that looks like real TV, and needs no extra hardware. Add the WittyTuner module for live TV and recording from network tuners, IPTV playlists and Xtream Codes-style providers. The guide pages through channels on the server, 25 to 100 at a time or all of them scrolling, finds a channel by name or number, and stays quick with ten thousand. IPTV has been tested with local streams and Xtream with a stand-in panel; tuners and capture cards haven’t been tried on real hardware yet.</p>
+        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Sets: all channels, favourites, one source or group, or your own, renamed, reordered and shared</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Watch from the start, on channels whose source keeps an archive</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A health check of every channel, and backups tried by themselves when a channel won’t open</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Series recordings by title on any channel: new episodes only, keep the newest few, start early or end late</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Encrypted channels are refused, never decrypted</span></li></ul>
       </div>
       <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer</span></div>
-  <img src="/images/shots/wittytv-guide.webp" data-shot="wittytv-guide" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A TV guide with a film playing in the preview" width="1920" height="1080" loading="lazy" decoding="async">
-  <figcaption><span>WittyTV: channels made from your library</span><span class="credit"><a href="https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm" rel="noopener">Caminandes: Llamigos</a>, Pablo Vazquez, Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a></span></figcaption>
+  <img src="/images/shots/wittytv-guide.webp" alt="A TV guide of channels made from the library, with what’s on now playing at the top" width="1440" height="900" loading="lazy" decoding="async">
+  <figcaption><span>WittyTV’s guide</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-wittytv-guide">each work credited</a></span></figcaption>
 </figure>
     </div>
     <div class="split flip" id="music">
       <div class="text">
         <p class="eyebrow">Music and audiobooks</p>
         <h2>Everything you listen to</h2>
-        <p>Albums and artists, internet radio, podcasts you follow, and audiobooks that remember your place. Sing along with lyrics and karaoke, or watch WittyVisualizer’s light shows.</p>
-        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Albums, artists and playlists</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Lyrics and karaoke</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Podcasts, downloaded for you</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Audiobooks that remember your place</span></li></ul>
+        <p>Albums and artists, internet radio, podcasts you follow, and audiobooks that remember your place. Sing along with lyrics and karaoke, or watch WittyVisualizer’s light shows. Opening karaoke on a song makes a version with the singer turned down by itself, and a properly separated one when Demucs, Spleeter or audio-separator is installed on the server.</p>
+        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Albums, artists and playlists</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Lyrics, and karaoke with a Vocals slider</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Podcasts, downloaded for you</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Audiobooks that remember your place</span></li></ul>
       </div>
       <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer</span></div>
-  <img src="/images/shots/music-visualizer.webp" data-shot="music-visualizer" alt="A light show behind the music player" width="1920" height="1080" loading="lazy" decoding="async">
-  <figcaption><span>Music, with WittyVisualizer</span><span class="credit"><a href="https://archive.org/details/SRS08807" rel="noopener">Collide</a>, Aryll Fae, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span></figcaption>
+  <img src="/images/shots/music.webp" alt="The music library: albums and artists" width="1440" height="900" loading="lazy" decoding="async">
+  <figcaption><span>Music</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-music">each work credited</a></span></figcaption>
 </figure>
     </div>
     <div class="split" id="books">
@@ -145,8 +147,8 @@
       </div>
       <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer</span></div>
-  <img src="/images/shots/reader-comic.webp" data-shot="reader-comic" alt="A comic open in the reader" width="1920" height="1080" loading="lazy" decoding="async">
-  <figcaption><span>Comics and manga</span><span class="credit"><a href="https://www.peppercarrot.com/" rel="noopener">Pepper&amp;Carrot</a>, David Revoy, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span></figcaption>
+  <img src="/images/shots/reader-comic.webp" alt="A page of Pepper&amp;Carrot in the comic reader" width="1440" height="900" loading="lazy" decoding="async">
+  <figcaption><span>Reading a comic</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-reader-comic">each work credited</a></span></figcaption>
 </figure>
     </div>
     <div class="split flip" id="photos">
@@ -158,21 +160,21 @@
       </div>
       <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer</span></div>
-  <img src="/images/shots/photos.webp" data-shot="photos" data-themed="default light cinema contrast evergreen midnight oled paper" alt="A timeline of photos" width="1920" height="1080" loading="lazy" decoding="async">
-  <figcaption><span>Your photo timeline</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-photos">each work credited</a></span></figcaption>
+  <img src="/images/shots/photos.webp" alt="A timeline of photos, grouped by month" width="1440" height="900" loading="lazy" decoding="async">
+  <figcaption><span>Photos</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-photos">each work credited</a></span></figcaption>
 </figure>
     </div>
     <div class="split" id="games">
       <div class="text">
         <p class="eyebrow">Games</p>
         <h2>Your own games, played in a browser</h2>
-        <p>WittyPlay runs your game files on the server and streams them to the page, so a phone or a TV can play them with a gamepad, keyboard or touch. WittyCouch plays games on a PC of your own that runs Sunshine. Neither has been tried with a real controller or a real gaming PC yet.</p>
-        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Games run on the server and stream to any screen</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Gamepads, keyboards and touch controls</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Games on your own PC through WittyCouch</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You bring the games. None come with it</span></li></ul>
+        <p>WittyPlay runs your game files on the server and streams them to the page, so a phone or a TV can play them with a gamepad, keyboard or touch. GameCube, Wii, Wii U, PlayStation 3 and Xbox games are recognised from their own files, and play in standalone emulators in Docker, in Linux’s sandbox, or on a Mac’s or Windows PC’s own desktop, with every emulator’s settings in the web interface. The Switch and Switch 2 play only in Ryujinx or Lichii, which you install and add yourself. WittyCouch plays games on a PC of your own that runs Sunshine. None of this has been tried with a real controller or a real gaming PC yet, and the standalone emulators haven’t played a game on a desktop or a real Docker host yet.</p>
+        <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Games run on the server and stream to any screen</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Standalone emulators with their settings in Settings, controllers set up for up to four players</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Settings → What this server plays says which consoles are ready</span></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You bring the games, and any keys or firmware. None come with it, and nothing is decrypted</span></li></ul>
       </div>
       <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>WittyMediaServer</span></div>
-  <img src="/images/shots/gameplay-datastorm.webp" data-shot="gameplay-datastorm" alt="The title screen of an arcade game, with “Press start” in red over green lanes" width="1920" height="1080" loading="lazy" decoding="async">
-  <figcaption><span>With a gamepad, keyboard or touch</span><span class="credit"><a href="https://github.com/haroldo-ok/datastorm" rel="noopener">DataStorm</a>, Haroldo de Oliveira Pinheiro, Apache-2.0</span></figcaption>
+  <img src="/images/shots/games.webp" alt="WittyPlay’s games, each on a little console, grouped by system" width="1440" height="900" loading="lazy" decoding="async">
+  <figcaption><span>Games</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-games">each work credited</a></span></figcaption>
 </figure>
     </div>
   </div>
@@ -183,13 +185,44 @@
   <div class="stack">
     <p class="eyebrow">Everyone at home</p>
     <h2>One server, everyone’s own place</h2>
-    <p>Each person gets their own progress, lists and settings.</p>
+    <p>Each person gets their own progress, lists and settings, and the screens at home work together.</p>
   </div>
   
 </div>
     <div class="grid three">
-      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg></span><h3>Who’s watching?</h3><p>Profiles with their own progress, favourites and game saves, each a tile to choose at home.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg></span><h3>Kids profiles</h3><p>Kids see only titles up to the age you choose. Titles with no rating stay hidden until you say otherwise.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg></span><h3>Every screen</h3><p>Phones, tablets, laptops and TVs with a web browser. The apps add more.</p></div>
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg></span><h3>Who’s watching?</h3><p>Profiles with their own progress, favourites, game saves and picture. Switch profile on a shared screen without signing out, with that profile’s password or PIN.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg></span><h3>Parental controls</h3><p>An age for films, TV, games, music and books in your country’s ratings, collections and tags to allow or hide, and switches for games, recording, downloads and more. Ratings can be missing or wrong, so it’s a help, not a guarantee.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><h3>Screen time</h3><p>A daily allowance for school days and weekends, bedtimes, and “ask a parent” for more with a parents’ PIN. The server counts the time and stops what’s playing.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span><h3>Watch parties</h3><p>Start one from a title’s page and share its six-letter code. Everyone’s player stays in step, wherever they are, and nobody sees what their limits don’t allow.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg></span><h3>Play on another screen</h3><p>Send what’s playing to another signed-in device and carry on at the same place, or steer it from your phone: pause, seek, volume, tracks and a TV’s arrow keys.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg></span><h3>Sign in with your phone</h3><p>A TV shows a QR code and a PIN that changes every 30 seconds. Approve it from a phone that’s signed in, with no password typed on the TV.</p></div>
     </div>
+  </div>
+</section>
+<section class="section" id="more">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Also new in 0.8.0-alpha</p>
+    <h2>From anywhere, on any machine</h2>
+    
+  </div>
+  
+</div>
+    <div class="grid three">
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg></span><h3><a href="/remote/">From anywhere, peer to peer</a></h3><p>Turn on peer-to-peer connections and the apps reach your server from anywhere, with no port forwarding, no rented server and no account. Encrypted to your server’s key, and only for devices you approved.</p><span class="go">How it works<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h3>Small machines</h3><p>On a Raspberry Pi 3, an old Celeron or a container with little memory, the server keeps to about a quarter of the memory, reads and makes fewer pictures at once, and lets scans give way to what’s playing.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg></span><h3>Karaoke that sets itself up</h3><p>Open karaoke on a song and a version with the singer turned down is ready in seconds, with a properly separated one behind it when Demucs, Spleeter or audio-separator is installed. Nothing to configure.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="pages">
+  <div class="wrap">
+    <div class="section-head">
+  <div class="stack">
+    <p class="eyebrow">Make it yours</p>
+    <h2>Pages arranged on the server, drawn by every app</h2>
+    <p>Home, your libraries, a title’s page, Search and Live TV are described by the server and drawn by each app, so a page arranged on the server looks the same in a browser, the desktop app and the Android and Apple apps.</p>
+  </div>
+  
+</div>
+    <div class="grid three">
+      <div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h3>Customise this page</h3><p>At the foot of a page: reorder, hide and pin its rows, and choose spacing, card sizes and the tab it opens on. It follows your profile to every device, with Undo and Reset.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg></span><h3>Pages and the menu</h3><p>Settings → Pages &amp; menu lets an administrator build pages and the menu for everyone from ready-made pieces, try a draft in a phone, tablet, desktop or TV preview, then publish, with history to go back to.</p></div><div class="card"><span class="tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></span><h3>Layouts and colours</h3><p>Five layouts (Sidebar, Top tabs, TV rows, Compact list and Streaming style), set for each kind of device and chosen per device by each profile. The server’s themes reach every page, with a module’s own accent and a profile’s own colours, refused when text would be hard to read.</p></div>
+    </div>
+    <p class="mt-6 muted">Settings stays each app’s own, in the same place and style as before. A profile can be kept from rearranging pages.</p>
   </div>
 </section>
 <section class="section" id="modules">
@@ -199,61 +232,24 @@
         <p class="eyebrow">Modules</p>
         <h2>Start small, add what you want</h2>
         <p>Modules add what your server can do, such as DVD menus, streamed games or live TV. Most are projects of their own, signed, and added from Settings → Modules while the server keeps running.</p>
+        <p>A module built for module API 4 carries its own pages, rows for Home, menu entries, settings and colours, as data the server checks before it uses them. Every app that draws the server’s pages draws the module’s too, with nothing of the module built into the app.</p>
         <ul class="ticks">
           <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Signed, and checked before they run</span></li>
-          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Added and updated without a restart</span></li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Added and updated without a restart, from a store you can search and filter by kind</span></li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Installing past a rule (an unfinished version, one from a file, one unsigned) is your choice to make, with the warning, your password again, and an Overridden label you can take back</span></li>
           <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Removing one leaves your media and history as they are</span></li>
         </ul>
         <div class="btn-row"><a class="btn primary" href="/modules/">Browse modules<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
       <figure class="window">
   <div class="chrome" aria-hidden="true"><i><b></b><b></b><b></b></i><span>Settings · Modules</span></div>
-  <img src="/images/shots/module-store.webp" data-shot="module-store" data-themed="default light cinema contrast evergreen midnight oled paper" alt="The module store, listing modules to add" width="1920" height="1080" loading="lazy" decoding="async">
-  <figcaption><span>The module store</span><span class="credit">The server’s own pages, with no media in view</span></figcaption>
+  <img src="/images/shots/module-store.webp" alt="Settings, Modules: the modules installed and the ones to add" width="1440" height="900" loading="lazy" decoding="async">
+  <figcaption><span>The module store</span><span class="credit">Openly licensed and public-domain media, <a href="/credits/#pic-module-store">each work credited</a></span></figcaption>
 </figure>
     </div>
   </div>
 </section>
-<section class="section tint" id="platforms">
-  <div class="wrap">
-    <div class="section-head">
-  <div class="stack">
-    <p class="eyebrow">Where it runs</p>
-    <h2>Platforms and architectures</h2>
-    <p>These are the files in 0.7.2-alpha. amd64 is most PCs; arm64 is Apple silicon and many small boards. Linux gets the most testing. The Windows installer has been tested under Wine, not on real Windows. The FreeBSD package has run in virtual machines, not on real hardware. The Mac installer has never been run.</p>
-  </div>
-  
-</div>
-    <div class="platforms">
-      <div class="card platform">
-        <h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Windows</h3>
-        <p class="kinds">.msi, .zip</p>
-        <div class="archs"><span class="pill muted mono">amd64</span><span class="pill muted mono">arm64</span></div>
-      </div>
-      <div class="card platform">
-        <h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M2.5 19h19"/></svg>macOS</h3>
-        <p class="kinds">.pkg, .tar.gz</p>
-        <div class="archs"><span class="pill muted mono">amd64</span><span class="pill muted mono">arm64</span></div>
-      </div>
-      <div class="card platform">
-        <h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12.5 15H17"/></svg>Linux</h3>
-        <p class="kinds">.deb, .rpm, .tar.gz</p>
-        <div class="archs"><span class="pill muted mono">amd64</span><span class="pill muted mono">arm64</span><span class="pill muted mono">armv7</span><span class="pill muted mono">386</span></div>
-      </div>
-      <div class="card platform">
-        <h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>FreeBSD</h3>
-        <p class="kinds">.pkg, .tar.gz</p>
-        <div class="archs"><span class="pill muted mono">amd64</span><span class="pill muted mono">arm64</span></div>
-      </div>
-      <div class="card platform">
-        <h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="8" width="18" height="11" rx="1.5"/><path d="M7 8v11M11 8v11M15 8v11M6 8l2-3h8l2 3"/></svg>Docker</h3>
-        <p class="kinds"><code>ghcr.io/wittywilla/wittymediaserver:alpha</code></p>
-        <div class="archs"><span class="pill muted">Any architecture your host supports</span></div>
-      </div>
-    </div>
-    <p class="mt-6 muted">FFmpeg comes with every download except FreeBSD on arm64, which needs <code>pkg install ffmpeg</code>. Phones, tablets and TVs need none of these: open the server’s address in a browser, or use <a href="/client/">WittyMediaClient</a>.</p>
-  </div>
-</section>
+
 <section class="section">
   <div class="wrap narrow">
     <div class="notice"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them. <a href="/legal/">Legal notes</a>.</p></div>
@@ -278,7 +274,7 @@
       <div class="about">
         <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
         <p>Your media, right at home. Self-hosted, open source and yours.</p>
-        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.7.2-alpha/">WittyMediaServer 0.7.2-alpha</a>, 6 November 2026.</p>
+        
         <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
       </div>
       <div>
@@ -295,6 +291,7 @@
         <h2>Learn</h2>
         <ul>
           <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/try/">Try the looks</a></li>
           <li><a href="/docs/">Docs and guides</a></li>
           <li><a href="/faq/">Questions and answers</a></li>
           <li><a href="/download/">Download</a></li>
@@ -325,10 +322,18 @@
     </div>
     <div class="base">
       <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
-      <p>This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the theme</a>.</span></p>
-      <p>WittyMediaServer and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+      <p>This site has no cookies, trackers or analytics. Your choice of colours is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the colours</a>.</span></p>
+      <p>WittyMediaServer, its modules and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">GNU Affero General Public License v3.0 (or later)</a>, and the apps under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GNU General Public License v3.0 (or later)</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
     </div>
   </div>
 </footer>
+<nav class="tabbar" aria-label="Main"><a href="/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Home</a><a href="/server/" aria-current="page"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>Server</a><a href="/try/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>Try it</a><a href="/docs/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg></span>Docs</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer"><span class="ic"><svg class="i when-shut" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg><svg class="i when-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>More</button></nav>
+<div class="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="More pages">
+  <h2>Pages</h2>
+  <nav aria-label="More pages"><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a></nav>
+  <h2>Learn and take part</h2>
+  <nav aria-label="Learn and take part"><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
+</div>
 </body>
 </html>
