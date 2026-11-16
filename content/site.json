@@ -30,7 +30,7 @@
     "noMedia": "No media comes with WittyMediaServer.",
     "shotsNote": "Pictures from a test server filled with openly licensed and public-domain media.",
     "encrypted": "Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.",
-    "privacy": "This site has no cookies, trackers or analytics. Your theme choice is kept in your own browser.",
+    "privacy": "This site has no cookies, trackers or analytics. Your choice of colours is kept in your own browser.",
     "licence": "AGPL-3.0-or-later",
     "appsLicence": "GPL-3.0-or-later",
     "licences": "The server, its modules, WittyModule, the module catalog and this website are under the GNU Affero General Public License v3.0 (or later). WittyMediaClient, WittyReader and WittyMediaPlayer are under the GNU General Public License v3.0 (or later).",
@@ -63,16 +63,13 @@
     "issues": "https://github.com/wittywilla/WittyMediaServer/issues"
   },
 
-  "themes": ["default", "light", "cinema", "contrast", "evergreen", "midnight", "oled", "paper"],
-
   "nav": [
-    { "href": "/", "label": "Home" },
     { "href": "/server/", "label": "Server" },
     { "href": "/client/", "label": "Apps" },
     { "href": "/remote/", "label": "Remote" },
     { "href": "/modules/", "label": "Modules" },
+    { "href": "/try/", "label": "Try it" },
     { "href": "/docs/", "label": "Docs" },
-    { "href": "/news/", "label": "News" },
-    { "href": "/gallery/", "label": "Gallery" }
+    { "href": "/news/", "label": "News" }
   ]
 }
