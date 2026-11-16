@@ -179,7 +179,8 @@
         ownBtn.hidden = st.theme === x.theme
         $('span', ownBtn).textContent = `Use ${x.name}’s own colours: ${names.get(x.theme) || x.theme}`
         // The page itself wears the colours being tried, until another page is opened, unless kept.
-        applyTheme(st.theme)
+        // The first time it's at once: a cross-fade as the page opens reads as a flash.
+        applyTheme(st.theme, !say)
         keepBtn.hidden = st.theme === (store.get(KEY) || siteTheme)
         const u = new URL(location.href)
         u.searchParams.set('look', st.exp); u.searchParams.set('on', st.form)
@@ -379,6 +380,8 @@
             `<svg class="i arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`
           list?.prepend(el)
         }
+        // The home page leaves its release list out until there's something in it.
+        if (fresh.length) box.hidden = false
         if (note) note.textContent = fresh.length ? `${fresh.length === 1 ? 'One release' : fresh.length + ' releases'} came out on GitHub since this page was made.` : 'Checked GitHub just now. Nothing newer.'
       })
       .catch(() => { if (note) note.textContent = '' })

@@ -46,12 +46,23 @@
   <url><loc>https://wittymediaserver.com/credits/looks/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/getting-started/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/hardware/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/install/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/first-time-setup/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/apps/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/accounts/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/profiles/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/troubleshooting/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-linux/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-synology/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-qnap/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-unraid/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-truenas/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-asustor/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/docker-ugreen/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/playing/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/syncplay/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/music/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/lyrics-karaoke/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/books/</loc></url>
@@ -87,28 +98,17 @@
   <url><loc>https://wittymediaserver.com/docs/config/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/reference/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/uninstall/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/brand/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/docker/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/docker-asustor/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/docker-linux/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/docker-qnap/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/docker-synology/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/docker-truenas/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/docker-ugreen/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/docker-unraid/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/ffmpeg-benchmark/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/gaming-stream/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/hardware/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/macos/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/modules-api5/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/p2p/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/pages/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/performance/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/profiles/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/remote-protocol/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/sdui/</loc></url>
   <url><loc>https://wittymediaserver.com/docs/sdui-modules/</loc></url>
-  <url><loc>https://wittymediaserver.com/docs/syncplay/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/modules-api5/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/remote-protocol/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/p2p/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/gaming-stream/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/performance/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/ffmpeg-benchmark/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/macos/</loc></url>
+  <url><loc>https://wittymediaserver.com/docs/brand/</loc></url>
   <url><loc>https://wittymediaserver.com/remote/</loc></url>
   <url><loc>https://wittymediaserver.com/start/</loc></url>
   <url><loc>https://wittymediaserver.com/legal/</loc></url>
