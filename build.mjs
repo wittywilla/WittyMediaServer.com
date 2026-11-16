@@ -91,17 +91,22 @@ async function build() {
     Object.assign(s, webpSize(buf), { local: true })
   }
   // The Try it page's pictures: each layout's Home in every theme, on a computer and a phone.
+  // They are kept for a week like every picture, so their addresses carry one hash of them all: a retake is new addresses.
   let lookCount = 0
+  const lookHash = crypto.createHash('sha256')
   for (const [form, byExp] of Object.entries(d.looks)) {
     for (const [exp, themes] of Object.entries(byExp)) {
       if (licence.blocked.has(`looks/${form}/${exp}`)) { byExp[exp] = []; continue }
       for (const t of themes) {
         const rel = path.join('images', 'looks', form, exp, `${t}.webp`)
-        write(path.join(OUT, rel), fs.readFileSync(path.join(root, rel)))
+        const buf = fs.readFileSync(path.join(root, rel))
+        write(path.join(OUT, rel), buf)
+        lookHash.update(rel).update(buf)
         lookCount++
       }
     }
   }
+  ctx.assets.looksV = '?v=' + lookHash.digest('hex').slice(0, 10)
 
   // Module icons, checked against the catalog's checksums.
   for (const m of d.modules) {
