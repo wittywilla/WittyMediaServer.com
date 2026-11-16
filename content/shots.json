@@ -73,6 +73,60 @@
       "alt": "The music library: albums and artists"
     },
     {
+      "id": "karaoke-veil",
+      "group": "Music",
+      "title": "Karaoke over Northern Veil",
+      "alt": "Karaoke on Take Me Out to the Ball Game: the line being sung fills word by word over WittyVisualizer’s Northern Veil, with Voice and Music sliders, Key and word timing below"
+    },
+    {
+      "id": "karaoke-molten",
+      "group": "Music",
+      "title": "Karaoke over Molten Glass",
+      "alt": "Karaoke with WittyVisualizer’s Molten Glass behind the words, the next line waiting underneath"
+    },
+    {
+      "id": "karaoke-warp",
+      "group": "Music",
+      "title": "Karaoke with the singer turned off",
+      "alt": "Karaoke over Warp Field with Voice off: the Voice slider at 0% and the music at 100%"
+    },
+    {
+      "id": "viz-bars",
+      "group": "Music",
+      "title": "Visualizer: Bars",
+      "alt": "The full player with WittyVisualizer’s Bars rising behind the song’s name and controls"
+    },
+    {
+      "id": "viz-waves",
+      "group": "Music",
+      "title": "Visualizer: Waves",
+      "alt": "The full player with WittyVisualizer’s Waves rolling along the bottom of the screen"
+    },
+    {
+      "id": "viz-drift",
+      "group": "Music",
+      "title": "Visualizer: Drift",
+      "alt": "The full player with WittyVisualizer’s Drift: soft lights floating behind the controls"
+    },
+    {
+      "id": "viz-warp",
+      "group": "Music",
+      "title": "Visualizer: Warp Field",
+      "alt": "The full player with WittyVisualizer’s Warp Field: streaks of light rushing out from the middle"
+    },
+    {
+      "id": "viz-molten",
+      "group": "Music",
+      "title": "Visualizer: Molten Glass",
+      "alt": "The full player with WittyVisualizer’s Molten Glass: flowing bands of blue, grey and cream"
+    },
+    {
+      "id": "viz-veil",
+      "group": "Music",
+      "title": "Visualizer: Northern Veil",
+      "alt": "The full player with WittyVisualizer’s Northern Veil: green curtains of light and falling stars"
+    },
+    {
       "id": "books",
       "group": "Books",
       "title": "Books",
@@ -143,6 +197,12 @@
       "group": "On a phone",
       "title": "Live TV on a phone",
       "alt": "WittyTV on a phone: the channel playing at the top, and the guide under it"
+    },
+    {
+      "id": "phone-karaoke",
+      "group": "On a phone",
+      "title": "Karaoke on a phone",
+      "alt": "Karaoke on a phone: the song’s name, Follow along or Read, the words over a visualizer, and the play and Voice controls below"
     }
   ]
 }

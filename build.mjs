@@ -149,7 +149,7 @@ async function build() {
     P.home(), P.server(), P.client(), P.player(), P.reader(), P.projects(),
     P.modulesPage(), ...d.modules.map(P.modulePage),
     P.newsPage(), ...d.news.map(P.articlePage), ...d.releases.map(P.releasePage),
-    P.download(), P.gallery(), P.tryPage(), P.notFound(),
+    P.download(), P.gallery(), P.tryPage(), P.karaokePage(), P.notFound(),
     ...sections.flatMap((mod) => mod.pages ? mod.pages(d) : []),
   ]
   for (const p of pages) write(path.join(OUT, p.file || path.join(p.path, 'index.html')), p.html)

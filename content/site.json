@@ -68,6 +68,7 @@
     { "href": "/client/", "label": "Apps" },
     { "href": "/remote/", "label": "Remote" },
     { "href": "/modules/", "label": "Modules" },
+    { "href": "/karaoke/", "label": "Karaoke" },
     { "href": "/try/", "label": "Try it" },
     { "href": "/docs/", "label": "Docs" },
     { "href": "/news/", "label": "News" }

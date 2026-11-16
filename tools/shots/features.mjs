@@ -20,8 +20,9 @@ const SIZES = {
   phone: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36' },
 }
 let token = ''
-async function context(form) {
-  const ctx = await browser.newContext({ ...SIZES[form], reducedMotion: 'reduce' })
+// Motion is reduced so pictures settle, except for the scenes that show moving light (the visualizers).
+async function context(form, motion = false) {
+  const ctx = await browser.newContext({ ...SIZES[form], reducedMotion: motion ? 'no-preference' : 'reduce' })
   const page = await ctx.newPage()
   page.setDefaultTimeout(90000)
   await page.goto(SERVER + '/help', { waitUntil: 'domcontentloaded' })
@@ -107,10 +108,68 @@ const phone = {
   async phoneMovies(s) { const l = await s.lib('Movies'); await s.go(`/library/${l.id}`, 5000); await s.shot('phone-movies') },
   async phoneFilm(s) { const it = (await s.items('Movies')).find((i) => /Sintel/.test(i.title)); await s.go(`/item/${it.id}`, 4000); await s.shot('phone-film') },
 }
-for (const [form, scenes] of [['desktop', desktop], ['phone', phone]]) {
+// The full player on a song with timed words (Take Me Out to the Ball Game, 1908, public domain), playing.
+async function player(s, at = 42) {
+  const l = await s.lib('Music')
+  const song = (await s.items('Music', '&search=' + encodeURIComponent('Take Me Out'))).find((i) => /Take Me Out/.test(i.title))
+  await s.go(`/album/${l.id}?album=${encodeURIComponent(song.album)}&artist=${encodeURIComponent(song.albumArtist || song.artist || '')}`, 3500)
+  await s.page.getByRole('button', { name: /^Play$/ }).first().click(); await wait(5000)
+  await s.page.getByRole('button', { name: /Show the full player/ }).first().click(); await wait(2000)
+  await s.page.evaluate((t) => { const a = document.querySelector('audio'); if (a) a.currentTime = t }, at)
+}
+// Clicks the last visible button whose words or label match: karaoke's controls sit above the full player's.
+const button = (s, rx) => s.page.evaluate(([src, flags]) => {
+  const re = new RegExp(src, flags)
+  const seen = (e) => { const r = e.getBoundingClientRect(); const c = getComputedStyle(e); return r.width > 0 && r.height > 0 && c.visibility !== 'hidden' && c.display !== 'none' }
+  const all = [...document.querySelectorAll('button,[role=button],[role=radio],[role=tab],[role=option]')].filter((b) => seen(b) && (re.test(b.textContent.trim()) || re.test(b.getAttribute('aria-label') || '')))
+  const b = all[all.length - 1]
+  if (b) b.click()
+  return !!b
+}, [rx.source, rx.flags])
+// A visualizer style by name: one of the first three, one chosen before, or from More.
+async function style(s, name) {
+  if (!(await button(s, new RegExp(`^${name}$`)))) {
+    await button(s, /More visualizer styles/); await wait(1000)
+    await s.page.evaluate((n) => [...document.querySelectorAll('button,[role=option],[role=menuitem],[role=radio]')].find((b) => b.textContent.trim() === n)?.click(), name)
+  }
+  await wait(1000); await button(s, /^Turn on$/); await wait(8000)
+}
+const moving = {
+  async visualizers(s) {
+    await player(s, 30)
+    await button(s, /^Visualizer$/); await wait(1500)
+    for (const [name, id] of [['Bars', 'viz-bars'], ['Waves', 'viz-waves'], ['Drift', 'viz-drift'], ['Warp Field', 'viz-warp'], ['Molten Glass', 'viz-molten'], ['Northern Veil', 'viz-veil']]) {
+      await style(s, name); await s.shot(id)
+    }
+    await s.page.keyboard.press('Escape'); await wait(800)
+  },
+  // Karaoke over three styles: each is chosen in the full player, then karaoke opens with it behind the words.
+  async karaoke(s) {
+    await player(s, 40)
+    await button(s, /^Visualizer$/); await wait(1500)
+    for (const [name, id, at, voiceOff] of [['Northern Veil', 'karaoke-veil', 40], ['Molten Glass', 'karaoke-molten', 50], ['Warp Field', 'karaoke-warp', 58, true]]) {
+      await style(s, name)
+      await s.page.evaluate((t) => { const a = document.querySelector('audio'); if (a) a.currentTime = t }, at)
+      await button(s, /^Karaoke/); await wait(6000)
+      await button(s, /^Visualizer$/); await wait(5000)
+      if (voiceOff) { await button(s, /^Voice off$/); await wait(1500) }
+      await s.shot(id)
+      if (voiceOff) await button(s, /^Reset$/)
+      await button(s, /^Leave karaoke/); await wait(1500)
+    }
+  },
+}
+const movingPhone = {
+  async phoneKaraoke(s) {
+    await player(s, 42)
+    await button(s, /^Karaoke/); await wait(6000)
+    await button(s, /^Visualizer$/); await wait(6000); await s.shot('phone-karaoke')
+  },
+}
+for (const [form, scenes, motion] of [['desktop', desktop], ['phone', phone], ['desktop', moving, true], ['phone', movingPhone, true]]) {
   const run = Object.entries(scenes).filter(([k]) => !only || only.includes(k))
   if (!run.length) continue
-  const s = await context(form)
+  const s = await context(form, motion)
   for (const [name, fn] of run) { try { await fn(s) } catch (e) { console.log('FAILED', name, e.message.split('\n')[0]) } }
   await s.ctx.close()
 }

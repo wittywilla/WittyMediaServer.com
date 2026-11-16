@@ -36546,6 +36546,176 @@
     }
    ],
    "checked": "2026-11-15"
+  },
+  "shots/viz-bars": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/viz-waves": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/viz-drift": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/viz-warp": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/viz-molten": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/viz-veil": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/karaoke-veil": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/karaoke-molten": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/karaoke-warp": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
+  },
+  "shots/phone-karaoke": {
+   "works": [
+    {
+     "title": "Take Me Out to the Ball Game (Edward Meeker)",
+     "by": "Edward Meeker",
+     "licence": "Public domain",
+     "source": "https://commons.wikimedia.org/wiki/File:Take_me_out_to_the_ball_game-Master-mbrsrs-mbrsjukebox-ucsb_col_3917_01_t3917_02-ucsb_col_3917_01_t3917_02.wav"
+    },
+    {
+     "title": "WittyMediaServer’s own interface",
+     "by": "WittyMediaServer contributors",
+     "licence": "Own work",
+     "source": "https://github.com/wittywilla/WittyMediaServer"
+    }
+   ],
+   "checked": "2026-11-16"
   }
  }
 }
