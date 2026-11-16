@@ -253,7 +253,9 @@ html:not(.js) .tabbar { grid-template-columns: repeat(4, 1fr); }
   content: ""; position: absolute; z-index: -1; right: -25%; bottom: -30%; width: min(900px, 140vw); aspect-ratio: 1;
   background: radial-gradient(closest-side, rgb(var(--accent-rgb) / .12), transparent 70%); pointer-events: none;
 }
-.hero-grid { display: grid; gap: clamp(28px, 5vw, 56px); align-items: start; }
+/* The headline and the words under it read as one block, so the gap between them is
+   smaller than the one beside the picture. */
+.hero-grid { display: grid; gap: clamp(28px, 5vw, 56px); row-gap: clamp(16px, 2.5vw, 32px); align-items: start; }
 .hero-head, .hero-copy { display: grid; justify-items: start; min-width: 0; }
 .hero-copy .lead { margin-top: 0; }
 /* The headline takes the whole width, so its typed line is measured against the room it really has. */
@@ -277,6 +279,7 @@ html:not(.js) .tabbar { grid-template-columns: repeat(4, 1fr); }
 .hero .version:hover { border-color: var(--border-strong); color: var(--fg); }
 .hero .version .pill { height: 24px; }
 .hero .version .i { flex: none; }
+@media (max-width: 1039px) { .hero-pic { margin-top: clamp(12px, 3vw, 24px); } }
 @media (max-width: 479px) {
   .btn-row > .btn { flex: 1 1 auto; }
   .hero .btn-row, .cta .btn-row, .notfound .btn-row { flex-direction: column; align-items: stretch; width: 100%; }
@@ -332,7 +335,13 @@ html:not(.js) .tabbar { grid-template-columns: repeat(4, 1fr); }
 /* ---------- grids and cards ---------- */
 .grid { display: grid; gap: var(--sp-4); grid-template-columns: 1fr; }
 @media (min-width: 600px) { .grid.two, .grid.three, .grid.four { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .grid.three { grid-template-columns: repeat(3, 1fr); } .grid.four { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 960px) { .grid.three { grid-template-columns: repeat(3, 1fr); } }
+/* While three-across and four-across grids are still two across, an odd card out at the
+   end takes the whole row instead of sitting alone in half of it. */
+@media (min-width: 600px) and (max-width: 959px) { .grid.three > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (min-width: 600px) and (max-width: 1139px) { .grid.four > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
+/* Four across only once each card has room for a comfortable line of text. */
+@media (min-width: 1140px) { .grid.four { grid-template-columns: repeat(4, 1fr); } }
 @media (min-width: 600px) { .grid.gap-lg { gap: var(--sp-6); } }
 
 .card {
@@ -405,6 +414,9 @@ a.card:hover .go .i, .card.link:hover .go .i { translate: 3px 0; }
 .split .text { display: grid; gap: var(--sp-4); justify-items: start; }
 .split .text h2, .split .text h3 { font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.375rem); letter-spacing: var(--tracking-display); line-height: 1.12; font-weight: 700; }
 .split .text .eyebrow { margin: 0; }
+/* A block that can't wrap, such as a folder listing, takes the column's width and scrolls,
+   instead of pushing the column (and a phone's page) wider. */
+.split .text > .prose, .split .text > pre, .split .text > .codebox { justify-self: stretch; }
 .split .text p { color: var(--fg-2); font-size: var(--text-lg); }
 ul.ticks { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; color: var(--fg-2); }
 ul.ticks li { display: flex; gap: 10px; }
@@ -424,6 +436,14 @@ ul.ticks .i { color: var(--ok); margin-top: 4px; }
 .shots { display: grid; gap: var(--sp-5); grid-template-columns: 1fr; }
 @media (min-width: 600px) { .shots { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .shots.three { grid-template-columns: repeat(3, 1fr); } }
+/* The gallery mixes computer and phone pictures. On a wide screen phones go four to a row
+   in taller frames, so they're big enough to see and the last one isn't left on its own. */
+@media (min-width: 1000px) {
+  .shots.three.mixed { grid-template-columns: repeat(12, 1fr); }
+  .shots.three.mixed > * { grid-column: span 4; }
+  .shots.three.mixed > .portrait { grid-column: span 3; }
+  .shots.three.mixed > .portrait img { aspect-ratio: 4 / 5; }
+}
 .shot .cap { display: grid; gap: 2px; padding: 14px 16px 16px; }
 .shot .cap .n { font-size: var(--text-2xs); font-weight: 700; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--fg-3); }
 .shot .cap strong { font-size: var(--text-base); font-weight: 650; }
@@ -458,6 +478,10 @@ ul.ticks .i { color: var(--ok); margin-top: 4px; }
 }
 .news-cards .card { padding: 0; overflow: hidden; }
 .news-cards .card img { aspect-ratio: 16 / 9; object-fit: cover; object-position: top; width: 100%; border-bottom: 1px solid var(--border); background: var(--bg-3); }
+/* An article with no picture of its own gets the family's orbit and logo, the same size as a
+   picture, so two cards side by side still line up. */
+.news-cards .card .art { position: relative; aspect-ratio: 16 / 9; border-bottom: 1px solid var(--border); background: #13161b url(/images/brand/hero-dark.svg) center / cover no-repeat; }
+.news-cards .card .art img { position: absolute; left: 74%; top: 56%; width: clamp(56px, 16%, 104px); height: auto; aspect-ratio: 1; transform: translate(-50%, -50%); border: 0; background: none; filter: drop-shadow(0 10px 30px rgb(var(--accent-rgb) / .45)); }
 .news-cards .card .body { display: grid; gap: var(--sp-2); padding: var(--sp-5) var(--sp-6) var(--sp-6); }
 .news-cards .card .when { display: flex; gap: 8px; align-items: center; font-size: var(--text-sm); color: var(--fg-3); }
 .live-note { margin-top: var(--sp-4); font-size: var(--text-sm); color: var(--fg-3); min-height: 1.6em; }

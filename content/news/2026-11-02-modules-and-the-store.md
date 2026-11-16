@@ -17,13 +17,13 @@ image: module-store
 
 ## The store
 
-It's in Settings, Modules. Search by name or description, browse by category, and filter by what's installed, what has updates, publisher and system. Each module has a page with what it does, screenshots, what's new, what it asks to be allowed to do, and which servers it fits. A failed install says what happened and what to try, with that module's own log beside it. The [module store guide](https://github.com/wittywilla/WittyMediaServer/blob/v0.6.0-alpha/docs/MODULE-STORE.md) has the details.
+It's in Settings, Modules. Search by name or description, browse by category, and filter by what's installed, what has updates, publisher and system. Each module has a page with what it does, screenshots, what's new, what it asks to be allowed to do, and which servers it fits. A failed install says what happened and what to try, with that module's own log beside it. The [module store guide](https://github.com/wittywilla/WittyMediaServer/blob/master/docs/MODULE-STORE.md) has the details.
 
 You can add a store someone else runs, after a plain warning that nobody here has reviewed it. Its key is pinned, so a change is refused, and everything from it is labelled. On a Mac and on FreeBSD a module is held to limits rather than a full sandbox, and Settings says so. The Mac sandbox hasn't been run on a real Mac yet.
 
 ## Before you update
 
-Most of these come from a security review. [Config file and folders](https://github.com/wittywilla/WittyMediaServer/blob/v0.6.0-alpha/docs/CONFIG.md) explains each setting named here.
+Most of these come from a security review. [Config file and folders](https://github.com/wittywilla/WittyMediaServer/blob/master/docs/CONFIG.md) explains each setting named here.
 
 - **Modules from before this release can't run.** The store offers the current version of each.
 - **Scripts that run `wms` need the new name, `wittymediaserver`.** `wms.json`, your `WMS_` settings and your data folders haven't moved.

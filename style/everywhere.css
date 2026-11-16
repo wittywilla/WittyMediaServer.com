@@ -39,6 +39,8 @@
 .where-text span { color: var(--fg-2); font-size: var(--text-sm); line-height: 1.4; }
 .where-card .pill { grid-column: 2; justify-self: start; }
 @media (min-width: 600px) { .where-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Two across, an odd one out at the end takes the whole row instead of half of it. */
+@media (min-width: 600px) and (max-width: 999px) { .where-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
 /* Wide: tiles like the app's library tiles, icon on top, the label at the foot. */
 @media (min-width: 1000px) {
   .where-grid { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); grid-auto-flow: column; }
