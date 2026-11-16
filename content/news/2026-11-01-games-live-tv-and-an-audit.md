@@ -16,7 +16,7 @@ image: games
 
 **More to keep.** WittyPhotos, with a timeline, albums and a map that needs nothing online. Libraries for vertical videos, creators' videos, music videos and concerts. Internet radio, with a directory of stations to search. Audio CD images in WittyCD, with WittyVisualizer's light shows.
 
-**Reach it from outside your home,** if you choose. Settings, Remote Access has guided steps, HTTPS and two-factor sign-in. It's all off until you turn it on, and until then the server refuses connections from outside your home. Read the [remote access guide](https://github.com/wittywilla/WittyMediaServer/blob/v0.5.2-alpha/docs/REMOTE.md) first.
+**Reach it from outside your home,** if you choose. Settings, Remote Access has guided steps, HTTPS and two-factor sign-in. It's all off until you turn it on, and until then the server refuses connections from outside your home. Read the [remote access guide](https://github.com/wittywilla/WittyMediaServer/blob/master/docs/REMOTE.md) first.
 
 **A full audit.** Every part of the server was gone over for security, crashes, lost saves, phone layouts and error messages, and what was found is fixed. Settings, Reset starts again from a new install, keeping a copy you can bring back. Your media files aren't touched.
 
