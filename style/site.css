@@ -8,8 +8,10 @@
 
 /* Inter 4.1 (SIL Open Font License, fonts/Inter-OFL.txt), served from here so every screen
    shows the same letters as the brand pictures whatever fonts it has. */
-@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("/fonts/InterVariable.woff2") format("woff2"); }
-@font-face { font-family: "Inter"; font-style: italic; font-weight: 100 900; font-display: swap; src: url("/fonts/InterVariable-Italic.woff2") format("woff2"); }
+/* fallback, not swap: when Inter is already cached, as it is from the second page on, text is
+   drawn in it straight away instead of in another font first, so the menu doesn't shift. */
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: fallback; src: url("/fonts/InterVariable.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: italic; font-weight: 100 900; font-display: fallback; src: url("/fonts/InterVariable-Italic.woff2") format("woff2"); }
 
 /* ---------- tokens: the server's, with the few a website adds ---------- */
 :root {
@@ -127,15 +129,23 @@ svg.i.gh-mark { color: var(--fg); color: light-dark(#000, #fff); }
   .brand img { width: 28px; height: 28px; border-radius: 8px; }
   .topbar .tools { gap: 6px; }
 }
-/* The full menu once the name, eight links and the tools fit side by side; the tab bar until then. */
+/* The full menu once the name, eight links (each with its picture) and the tools fit side by
+   side; the tab bar until then. The name's space is fixed here rather than measured by
+   scripts/brand.js, so it's right from the first paint and the menu never shifts as a page
+   opens. 9.6em holds the widest name brand.js may show, with its cursor. */
 @media (min-width: 1140px) {
-  .nav { display: flex; align-items: center; gap: 2px; margin-left: var(--sp-4); }
+  .nav { display: flex; align-items: center; gap: 0; margin-left: var(--sp-2); }
+  .nav a { gap: 6px; padding: 0 9px; font-size: var(--text-sm); }
+  .nav a .i { width: 16px; height: 16px; }
+  .topbar .brand > span:not(.brand-measure) { width: 9.6em; }
   .topbar .gh { display: inline-grid; }
   body { padding-bottom: 0; }
 }
-/* The links' icons only once there's room for them; one rule overrides the other, so no width falls between. */
-@media (min-width: 1140px) { .nav a .i { display: none; } .nav a { padding: 0 11px; } }
-@media (min-width: 1340px) { .nav a .i { display: block; } .nav a { padding: 0 10px; } }
+/* Until there's room for its word, Download is its picture alone, as on a phone. */
+@media (1140px <= width < 1240px) {
+  .topbar .gh-dl span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .topbar .gh-dl { width: 40px; padding: 0; }
+}
 
 /* ---------- phones: the app's floating tab bar, and the sheet behind More ---------- */
 .tabbar {
