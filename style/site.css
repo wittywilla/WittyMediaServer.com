@@ -379,13 +379,13 @@ a.card:hover .go .i, .card.link:hover .go .i { translate: 3px 0; }
 
 /* A shelf: a row that scrolls sideways and peeks at the next card, as the app's rows do. */
 .shelf {
-  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 68%); gap: var(--sp-3);
+  display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: var(--sp-3); /* a fixed width each: minmax(0, …) let fourteen cards squeeze into the row instead of scrolling */
   overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
   margin-inline: calc(-1 * var(--gutter)); padding: 4px var(--gutter) var(--sp-4); scrollbar-width: thin;
 }
 .shelf > * { scroll-snap-align: start; min-width: 0; }
-@media (min-width: 600px) { .shelf { grid-auto-columns: minmax(0, 36%); } }
-@media (min-width: 1000px) { .shelf { grid-auto-columns: minmax(0, calc((100% - 5 * var(--sp-3)) / 5.4)); } }
+@media (min-width: 600px) { .shelf { grid-auto-columns: 30%; } }
+@media (min-width: 1000px) { .shelf { grid-auto-columns: calc((100% - 5 * var(--sp-3)) / 5.4); } }
 @media (min-width: 1300px) { .shelf { margin-inline: 0; padding-inline: 0; scroll-padding-inline: 0; } }
 
 /* A look: the server on a phone in one experience, its name and what it's like. */
