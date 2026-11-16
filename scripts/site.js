@@ -163,7 +163,7 @@
         for (const b of $$('.layouts [data-exp]', tryBox)) b.disabled = !any(b.dataset.exp)
         stage.dataset.form = st.form
         const { w, h } = data.size[st.form]
-        const src = `/images/looks/${st.form}/${st.exp}/${st.theme}.webp`
+        const src = `/images/looks/${st.form}/${st.exp}/${st.theme}.webp${data.v || ''}`
         want = src
         screen.classList.add('loading')
         const next = new Image(); next.src = src

@@ -15651,12 +15651,6 @@
      "source": "https://commons.wikimedia.org/wiki/File:Sprite_Fright_-_Blender_Open_Movie-full_movie.webm"
     },
     {
-     "title": "Sunrise time-lapse",
-     "by": "idioterna",
-     "licence": "CC-BY-3.0",
-     "source": "https://commons.wikimedia.org/wiki/File:Another_Sunrise_Time_Lapse_in_4K.webm"
-    },
-    {
      "title": "Tears of Steel (2012)",
      "by": "Blender Foundation",
      "licence": "CC-BY-3.0",
@@ -15735,7 +15729,7 @@
      "source": "https://github.com/wittywilla/WittyMediaServer"
     }
    ],
-   "checked": "2026-11-15"
+   "checked": "2026-11-16"
   },
   "looks/desktop/dashboard": {
    "works": [
@@ -31681,12 +31675,6 @@
      "source": "https://commons.wikimedia.org/wiki/File:Sprite_Fright_-_Blender_Open_Movie-full_movie.webm"
     },
     {
-     "title": "Sunrise time-lapse",
-     "by": "idioterna",
-     "licence": "CC-BY-3.0",
-     "source": "https://commons.wikimedia.org/wiki/File:Another_Sunrise_Time_Lapse_in_4K.webm"
-    },
-    {
      "title": "Tears of Steel (2012)",
      "by": "Blender Foundation",
      "licence": "CC-BY-3.0",
@@ -31765,7 +31753,7 @@
      "source": "https://github.com/wittywilla/WittyMediaServer"
     }
    ],
-   "checked": "2026-11-15"
+   "checked": "2026-11-16"
   },
   "looks/phone/dashboard": {
    "works": [

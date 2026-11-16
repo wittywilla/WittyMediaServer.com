@@ -71,6 +71,12 @@ async function build() {
   for (const [from, to] of [['icon.svg', 'images/icon.svg'], ['icon-192.png', 'images/icon-192.png'], ['icon-512.png', 'images/icon-512.png'], ['favicon.ico', 'favicon.ico'], ['apple-touch-icon.png', 'apple-touch-icon.png'], ['icon-192.png', 'favicon.png']]) {
     fs.copyFileSync(path.join(brandDir, from), path.join(OUT, to))
   }
+  // Pictures are kept for a week (.htaccess), so the logo's address carries its contents: a new logo is a
+  // new address, and no browser keeps showing the old one.
+  const v = (f) => '?v=' + hash(fs.readFileSync(path.join(brandDir, f)))
+  ctx.assets.logo = '/images/icon.svg' + v('icon.svg')
+  ctx.assets.brandLogo = '/images/brand/icon.svg' + v('icon.svg')
+  ctx.assets.touchIcon = '/apple-touch-icon.png' + v('apple-touch-icon.png')
 
   // Inter, the site's font, served from the site itself (the security policy allows fonts from 'self' only).
   for (const f of fs.readdirSync(path.join(root, 'fonts'))) write(path.join(OUT, 'fonts', f), fs.readFileSync(path.join(root, 'fonts', f)))
@@ -85,17 +91,22 @@ async function build() {
     Object.assign(s, webpSize(buf), { local: true })
   }
   // The Try it page's pictures: each layout's Home in every theme, on a computer and a phone.
+  // They are kept for a week like every picture, so their addresses carry one hash of them all: a retake is new addresses.
   let lookCount = 0
+  const lookHash = crypto.createHash('sha256')
   for (const [form, byExp] of Object.entries(d.looks)) {
     for (const [exp, themes] of Object.entries(byExp)) {
       if (licence.blocked.has(`looks/${form}/${exp}`)) { byExp[exp] = []; continue }
       for (const t of themes) {
         const rel = path.join('images', 'looks', form, exp, `${t}.webp`)
-        write(path.join(OUT, rel), fs.readFileSync(path.join(root, rel)))
+        const buf = fs.readFileSync(path.join(root, rel))
+        write(path.join(OUT, rel), buf)
+        lookHash.update(rel).update(buf)
         lookCount++
       }
     }
   }
+  ctx.assets.looksV = '?v=' + lookHash.digest('hex').slice(0, 10)
 
   // Module icons, checked against the catalog's checksums.
   for (const m of d.modules) {
