@@ -132,7 +132,7 @@
     // While the sheet is open, Tab goes round its links and the button that closes it.
     trapTab(e, [...$$('a', drawer), menuBtn])
   })
-  matchMedia('(min-width: 1000px)').addEventListener?.('change', (m) => { if (m.matches) setMenu(false) })
+  matchMedia('(min-width: 1140px)').addEventListener?.('change', (m) => { if (m.matches) setMenu(false) })
 
   // ---------- Try it: a screen, a layout and colours, and Home in them ----------
   const tryBox = $('[data-try]')
@@ -446,18 +446,31 @@
   }
   const show = (p, n, typing) => { box.innerHTML = html(p, n, typing) }
 
-  // Only names that fit in about the space of the real one, so the menu beside it never jumps.
-  // Measured on an invisible copy, so the real name never flickers.
-  const ghost = box.cloneNode(false)
-  ghost.setAttribute('aria-hidden', 'true')
-  ghost.className = 'brand-measure'
-  box.after(ghost)
-  const measure = (p) => { ghost.innerHTML = html(p, text(p).length, false); return ghost.getBoundingClientRect().width }
-  const home = measure(HOME)
-  const fits = NAMES.filter((p) => measure(p) <= home * 1.12)
-  ghost.remove()
-  box.style.minWidth = `${Math.ceil(home)}px`
-  if (!fits.length) return
+  // Only names about the size of the real one are used, and the name gets one fixed width: the
+  // widest of them with the cursor after it. Whatever is showing, the menu beside it never moves.
+  // Measured on an invisible copy, so the real name never flickers, and again once the font has
+  // loaded and whenever the window's size changes, since both change how wide a name is.
+  let fits = []
+  const fit = () => {
+    const ghost = document.createElement('span')
+    ghost.setAttribute('aria-hidden', 'true')
+    ghost.className = 'brand-measure'
+    box.after(ghost)
+    const measure = (p, caret) => { ghost.innerHTML = html(p, text(p).length, caret); return ghost.getBoundingClientRect().width }
+    const home = measure(HOME, false)
+    fits = NAMES.filter((p) => measure(p, false) <= home * 1.12)
+    const widest = Math.max(home, ...[HOME, ...fits].map((p) => measure(p, true)))
+    const homeOnly = measure(HOME, true)
+    ghost.remove()
+    box.style.width = `${Math.ceil(widest)}px`
+    // On a very narrow screen with no room for the wider space, it stays WittyMediaServer.
+    const bar = box.closest('.wrap')
+    if (bar && bar.scrollWidth > bar.clientWidth + 1) { fits = []; box.style.width = `${Math.ceil(homeOnly)}px` }
+  }
+  fit()
+  document.fonts?.ready.then(fit)
+  let pending = 0
+  addEventListener('resize', () => { cancelAnimationFrame(pending); pending = requestAnimationFrame(fit) })
 
   // Waits while the tab is hidden, or while someone's pointing at or focused on the name.
   const link = box.closest('a')
@@ -483,12 +496,14 @@
     await sleep(HOLD_HOME_FIRST)
     for (;;) {
       await ready()
+      if (!fits.length) { await sleep(HOLD_HOME); continue }
       let i
       do i = Math.floor(Math.random() * fits.length); while (fits.length > 1 && i === last)
       last = i
-      await morph(HOME, fits[i])
+      const name = fits[i] // the list can change while it's showing, if the window is resized
+      await morph(HOME, name)
       await sleep(HOLD_JOKE)
-      await morph(fits[i], HOME)
+      await morph(name, HOME)
       show(HOME, text(HOME).length, false)
       await sleep(HOLD_HOME)
     }
