@@ -4,11 +4,20 @@ The website of [WittyMediaServer](https://github.com/wittywilla/WittyMediaServer
 
 It's a folder of plain files, built from this repository and from GitHub by one command, and uploaded to any web host. No database, no server program, no cookies and no trackers.
 
-```bash
-node build.mjs --preview
-```
+## Building and checking
 
-builds the site into `site/` and shows it at http://localhost:4173. **[UPDATING.md](UPDATING.md)** has the whole routine: writing news, changing words, and how GitHub and Hostinger publish each change by themselves.
+You need Node.js 20 or newer, and nothing else: there are no packages to install.
+
+| Command | What it does |
+|---|---|
+| `node build.mjs --preview` (`npm run preview`) | Builds the site into `site/` and shows it at http://localhost:4173 |
+| `node build.mjs` (`npm run site`) | Builds `site/` and `site.zip` without showing them |
+| `node build.mjs --offline` | Builds from what was fetched from GitHub last time |
+| `node check.mjs` | Checks the last build's links, pictures and words. Every build runs these checks too, and fails on a problem |
+
+`npm run build` fails on purpose: it's the web host's build command, and only the `live` branch, which holds the built site, may be published.
+
+**Publishing** happens only from `main`: `.github/workflows/publish.yml` builds it on every push there and every hour, and puts the result on `live`. Work for the next release goes to its own branch, such as `v0.8.0-alpha`, and nothing is published from it. **[UPDATING.md](UPDATING.md)** has the whole routine: writing news, changing words, taking the pictures, and how the publishing is set up.
 
 ## What's here
 
@@ -28,9 +37,7 @@ builds the site into `site/` and shows it at http://localhost:4173. **[UPDATING.
 | `tools/shots/` | The scripts that take, credit and compress those pictures |
 | `build.mjs` | Builds `site/` and `site.zip` |
 | `check.mjs` | Checks links, pictures and words. Every build runs it |
-| `reference/text/` | The words of the old site, kept for reference |
-
-Nothing needs installing apart from Node.js 20 or newer.
+| `content/licences.json` | The licence and credit of every work in the screenshots. A picture without one is left out of the build |
 
 ## How it's built
 
@@ -40,8 +47,10 @@ Nothing needs installing apart from Node.js 20 or newer.
 - **Small and private.** No outside fonts, scripts or trackers. A strict Content Security Policy allows the page to talk only to itself and, to check for newer releases, GitHub.
 - **Old addresses kept.** Pages are folders with an `index.html`, so every address of the old site still works on any host.
 
+## Licence
+
+Licensed under the GNU Affero General Public License v3.0 (or later): see [LICENSE](LICENSE) and [NOTICE](NOTICE). The screenshots it shows keep their own open licences, recorded in `content/licences.json`.
+
 ## Legal
 
 wittymediaserver.com is the website of an independent open-source project. WittyMediaServer isn't associated with, sponsored by or endorsed by the makers of the formats, discs, devices or services it works with. No media comes with it. The screenshots show a test server filled with openly licensed and public-domain media, each credited in [the credits](https://github.com/wittywilla/WittyMediaServer/blob/master/docs/images/CREDITS.md). Any third-party names here only describe what it works with, and belong to their owners. It's provided “as is”, with no warranty; see [LICENSE](LICENSE). Local law applies to how you use it. This isn't legal advice.
-
-Licensed under the GNU Affero General Public License v3.0 (or later): see [LICENSE](LICENSE) and [NOTICE](NOTICE). The screenshots it shows keep their own open licences, recorded in `content/licences.json`.
