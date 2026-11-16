@@ -71,6 +71,12 @@ async function build() {
   for (const [from, to] of [['icon.svg', 'images/icon.svg'], ['icon-192.png', 'images/icon-192.png'], ['icon-512.png', 'images/icon-512.png'], ['favicon.ico', 'favicon.ico'], ['apple-touch-icon.png', 'apple-touch-icon.png'], ['icon-192.png', 'favicon.png']]) {
     fs.copyFileSync(path.join(brandDir, from), path.join(OUT, to))
   }
+  // Pictures are kept for a week (.htaccess), so the logo's address carries its contents: a new logo is a
+  // new address, and no browser keeps showing the old one.
+  const v = (f) => '?v=' + hash(fs.readFileSync(path.join(brandDir, f)))
+  ctx.assets.logo = '/images/icon.svg' + v('icon.svg')
+  ctx.assets.brandLogo = '/images/brand/icon.svg' + v('icon.svg')
+  ctx.assets.touchIcon = '/apple-touch-icon.png' + v('apple-touch-icon.png')
 
   // Inter, the site's font, served from the site itself (the security policy allows fonts from 'self' only).
   for (const f of fs.readdirSync(path.join(root, 'fonts'))) write(path.join(OUT, 'fonts', f), fs.readFileSync(path.join(root, 'fonts', f)))
