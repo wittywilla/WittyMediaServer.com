@@ -160,7 +160,7 @@
       <h1>Backup and restore</h1>
       <p class="lead">Keep a copy of your server’s data and metadata in one ZIP file, and bring it back after a reset, a failed drive or a move to another machine. Your media files are never in a backup: they stay where they are.</p>
       <div class="meta">
-        <span>Changed <time datetime="2026-11-02">2 November 2026</time></span>
+        <span>Changed <time datetime="2026-11-16">16 November 2026</time></span>
         <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/BACKUP.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
       </div>
     </header>
@@ -180,7 +180,7 @@
 <p>Some parts need others, because their numbers refer to each other. Watch history and game saves need the library and the accounts, channels need the library, and recordings need channels. The page ticks those for you.</p>
 <h2 id="what-isnt-in-a-backup">What isn’t in a backup<a class="h-anchor" href="#what-isnt-in-a-backup" aria-hidden="true" tabindex="-1">#</a></h2>
 <p>These are never in a backup, whatever you tick:</p>
-<ul><li><strong>Your media files.</strong></li><li><strong>Programs:</strong> modules and their helpers, game cores and BIOS files. A backup can never put a program on your machine. After a restore, install modules again under <strong>Settings → Modules</strong>, and add cores and BIOS files again under <strong>Settings → Consoles &amp; cores</strong>. Which modules were on and how they update does come back.</li><li><strong>Sign-ins.</strong> Everyone signs in again after a restore.</li><li><strong>Game PC pairings and custom cores.</strong> Pair and add them again.</li><li><strong>HTTPS certificates.</strong></li><li><strong>Logs, reports and measurements:</strong> crash reports, statistics history and the list of finished background work.</li></ul>
+<ul><li><strong>Your media files.</strong></li><li><strong>Programs:</strong> modules and their helpers, game cores and BIOS files. A backup can never put a program on your machine. After a restore, install modules again under <strong>Settings → Modules</strong>, and add cores and BIOS files again under <strong>Settings → Games &amp; emulators → Consoles &amp; cores</strong>. Which modules were on and how they update does come back.</li><li><strong>Sign-ins.</strong> Everyone signs in again after a restore.</li><li><strong>Game PC pairings and custom cores.</strong> Pair and add them again.</li><li><strong>HTTPS certificates.</strong></li><li><strong>Logs, reports and measurements:</strong> crash reports, statistics history and the list of finished background work.</li></ul>
 <h2 id="the-password">The password<a class="h-anchor" href="#the-password" aria-hidden="true" tabindex="-1">#</a></h2>
 <p><strong>With a password,</strong> which is the page’s default, everything inside the ZIP is encrypted with AES-256, using a key made from your password. File names can’t be read either, and nobody can change the backup without the password. All your secrets come along: API keys, two-factor sign-in, share links and this server’s identity.</p>
 <p><strong>If you lose the password, nobody can open the backup.</strong></p>
@@ -257,7 +257,7 @@ wittymediaserver backup help</code></pre><button class="icon-btn copy" type="but
       <div class="about">
         <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
         <p>Your media, right at home. Self-hosted, open source and yours.</p>
-        
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.8.0-alpha/">WittyMediaServer 0.8.0-alpha</a>, 16 November 2026.</p>
         <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
       </div>
       <div>

@@ -5,8 +5,15 @@
   <link href="https://wittymediaserver.com/news/feed.xml" rel="self"/>
   <link href="https://wittymediaserver.com/news/"/>
   <id>https://wittymediaserver.com/news/</id>
-  <updated>2026-11-16T15:13:17.000Z</updated>
+  <updated>2026-11-16T19:09:19.000Z</updated>
   <author><name>WittyWilla</name></author>
+  <entry>
+    <title>WittyMediaServer 0.8.0-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.8.0-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.8.0-alpha/</id>
+    <updated>2026-11-16T19:09:19.000Z</updated>
+    <summary>Design 2. The old design is gone, with no fallback. Fourteen looks (experiences: Lumen, Rail, Stage, Aero, Classic, Classic Cable, Classic Satellite, Compact, Paper, Marquee, Crossbar, Big picture, Dashboard, Retro),…</summary>
+  </entry>
   <entry>
     <title>WittyMediaPlayer 0.1.3</title>
     <link href="https://wittymediaserver.com/news/release/WittyMediaPlayer/v0.1.3/"/>

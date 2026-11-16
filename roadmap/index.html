@@ -70,7 +70,7 @@
     <p class="eyebrow">Roadmap</p>
     <h1>Where it’s going</h1>
     <p class="lead">What’s being finished now, what’s still to build, and what hasn’t met the real world yet. Taken from the project’s own roadmap each time this site is made.</p>
-    <div class="meta"><span>Made 16 November 2026</span></div>
+    <div class="meta"><span class="pill mono">0.8.0-alpha</span><span>The newest release</span><span>Made 16 November 2026</span></div>
     <div class="btn-row"><a class="btn" href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/ROADMAP.md" rel="noopener">The roadmap on GitHub<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><a class="btn ghost" href="https://github.com/wittywilla/WittyMediaServer/discussions/categories/ideas" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Suggest a feature</a></div>
   </div>
 </header>
@@ -83,7 +83,7 @@
     <div class="rm-body">
       <p class="eyebrow plain">Still to build · 0 items</p>
       <h2>Now: 0.8.0-alpha</h2>
-      <p class="rm-intro">0.7.0-alpha was published on 2026-11-05, then 0.7.1-alpha and 0.7.2-alpha as fixes. 0.8.0-alpha moves the server to AGPL-3.0-or-later and adds server-driven screens, the theme engine, secure pairing with a QR code and a PIN, canvas, karaoke stems, skip markers, where to watch, and module identity for WittyPlay’s Docker backend (API revision 14); the <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/CHANGELOG.md" rel="noopener">CHANGELOG</a> lists it all, and the <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/plans/releases/0.8.0-alpha-next-major.md" rel="noopener">next-major plan</a> what’s still to come. Features wait as ideas in <a href="https://github.com/wittywilla/WittyMediaServer/discussions/categories/ideas" rel="noopener">Discussions</a> until work on them starts.</p><p class="rm-intro">The plans and designs for what comes after, each with what’s done, in progress or planned, are in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/plans/README.md" rel="noopener">Plans</a>.</p>
+      <p class="rm-intro">0.8.0-alpha is the next release. It brings a new interface on every app (a top bar or side menu, fourteen layouts and fifteen themes, all drawn from screens the server describes), a new first-time setup, Module API 5 (each module its own project, with its own database and updates), From away (joining a server by a code, peer to peer, from every app) and WittyMediaClient on every platform. The server moves to AGPL-3.0-or-later. The <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/CHANGELOG.md" rel="noopener">CHANGELOG</a> lists it all, and the <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/plans/releases/0.8.0-alpha-next-major.md" rel="noopener">next-major plan</a> what’s still to come. Features wait as ideas in <a href="https://github.com/wittywilla/WittyMediaServer/discussions/categories/ideas" rel="noopener">Discussions</a> until work on them starts.</p><p class="rm-intro">The plans and designs for what comes after, each with what’s done, in progress or planned, are in <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/plans/README.md" rel="noopener">Plans</a>.</p>
       
       
     </div>
@@ -91,20 +91,16 @@
   <li class="rm-step" id="to-build">
     <div class="rm-mark" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
     <div class="rm-body">
-      <p class="eyebrow plain">Still to build · 26 items</p>
+      <p class="eyebrow plain">Still to build · 24 items</p>
       <h2>Still to build</h2>
       
       
       <div class="rm-group">
-        <h3>The server and its libraries <span class="pill muted">7</span></h3>
+        <h3>The server and its libraries <span class="pill muted">6</span></h3>
         
         <ul class="rm-items">
       <li class="rm-item">
-        <div class="what"><strong>Watch together:</strong> a shared, synchronised player across profiles and devices</div>
-        <div class="st"><span class="rm-state todo">Not started</span><span class="rm-note">Best built with real networks to test across</span></div>
-      </li>
-      <li class="rm-item">
-        <div class="what"><strong>WittyRelay:</strong> a hosted way in from away, planned as a free service</div>
+        <div class="what"><strong>WittyRelay:</strong> a hosted relay for From away, planned as a free service</div>
         <div class="st"><span class="rm-state todo">Not built</span><span class="rm-note">It’s shown greyed out in <strong>Settings → Remote Access</strong></span></div>
       </li>
       <li class="rm-item">
@@ -124,8 +120,8 @@
         <div class="st"><span class="rm-state todo">Not written: <a href="https://github.com/wittywilla/WittyMediaServer/issues/113" rel="noopener">#113</a></span></div>
       </li>
       <li class="rm-item">
-        <div class="what"><strong>Sandbox on FreeBSD and macOS:</strong> a module’s helper runs with none there, only a small environment and a soft memory limit</div>
-        <div class="st"><span class="rm-state todo">Not built</span></div>
+        <div class="what"><strong>A real sandbox on FreeBSD:</strong> a module’s helper has limits there, not a sandbox</div>
+        <div class="st"><span class="rm-state todo">Not built</span><span class="rm-note">macOS uses Apple’s own sandbox</span></div>
       </li>
     </ul>
       </div><div class="rm-group">
@@ -154,20 +150,16 @@
       </li>
     </ul>
       </div><div class="rm-group">
-        <h3>Apps <span class="pill muted">9</span></h3>
+        <h3>Apps <span class="pill muted">8</span></h3>
         
         <ul class="rm-items">
       <li class="rm-item">
-        <div class="what"><strong>WittyMediaClient, native apps:</strong> music, books, disc menus, channels and photos</div>
-        <div class="st"><span class="rm-state todo">Not started on Android and Apple</span><span class="rm-note">The desktop app has them through the web app</span></div>
+        <div class="what"><strong>WittyMediaClient, native apps:</strong> anything an app says it can’t play yet</div>
+        <div class="st"><span class="rm-state part">The pages come from the server, so most arrive with it. The desktop app has everything through the web app</span></div>
       </li>
       <li class="rm-item">
-        <div class="what"><strong>WittyMediaClient, Apple apps</strong></div>
-        <div class="st"><span class="rm-state todo">Written, and never compiled</span><span class="rm-note">They need a Mac</span></div>
-      </li>
-      <li class="rm-item">
-        <div class="what"><strong>WittyMediaClient, theme picker on native apps</strong></div>
-        <div class="st"><span class="rm-state part">They use the server’s theme colours only</span></div>
+        <div class="what"><strong>WittyMediaClient, iPhone and iPad on real devices</strong></div>
+        <div class="st"><span class="rm-state part">Run in Apple’s simulator only</span></div>
       </li>
       <li class="rm-item">
         <div class="what"><strong>WittyMediaClient, other TVs:</strong> webOS, Tizen, Roku</div>
@@ -211,8 +203,8 @@
         <div class="st"><span class="rm-state todo">Not bought: see <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/PUBLISHING.md#signing-the-programs-so-nothing-warns-people" rel="noopener">Publishing a release</a></span></div>
       </li>
       <li class="rm-item">
-        <div class="what"><strong>The server for Arch, Flatpak and Snap</strong></div>
-        <div class="st"><span class="rm-state todo">Not started</span><span class="rm-note">The archive and <code>install.sh</code> work on other distributions</span></div>
+        <div class="what"><strong>The server for Arch, and in Flathub and the Snap Store</strong></div>
+        <div class="st"><span class="rm-state todo">Not started</span><span class="rm-note">The AppImage, Flatpak and snap are on the Releases page, and haven’t been run</span></div>
       </li>
     </ul>
       </div><div class="rm-group">
@@ -220,8 +212,8 @@
         
         <ul class="rm-items">
       <li class="rm-item">
-        <div class="what"><strong>New screenshots</strong> for the README at 1920x1080</div>
-        <div class="st"><span class="rm-state todo">Not retaken</span></div>
+        <div class="what"><strong>Pictures of WittyTV’s looks</strong> in the guides</div>
+        <div class="st"><span class="rm-state doing">Waiting for the WittyTV changes in progress</span></div>
       </li>
     </ul>
       </div>
@@ -230,7 +222,7 @@
   <li class="rm-step" id="real-world">
     <div class="rm-mark" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></div>
     <div class="rm-body">
-      <p class="eyebrow plain">Waiting on hardware · 13 items</p>
+      <p class="eyebrow plain">Waiting on hardware · 12 items</p>
       <h2>What hasn’t met the real world</h2>
       <p class="rm-intro">These are written and tested as far as this machine allows, and haven’t been tried for real.</p>
       <ul class="rm-items">
@@ -239,16 +231,16 @@
         <div class="st"><span class="rm-wait"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><span><span class="sr-only">Waiting for: </span>A code-signing certificate: <a href="https://github.com/wittywilla/WittyMediaServer/issues/65" rel="noopener">#65</a></span></span></div>
       </li>
       <li class="rm-item">
-        <div class="what"><strong>A real Mac:</strong> anything at all, and iOS and tvOS</div>
-        <div class="st"><span class="rm-wait"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><span><span class="sr-only">Waiting for: </span>A Mac</span></span></div>
+        <div class="what"><strong>A real Mac, with a person at it:</strong> the <code>.pkg</code>, the menu-bar app and the uninstaller app</div>
+        <div class="st"><span class="rm-wait"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><span><span class="sr-only">Waiting for: </span>Someone to install it. The server, its tests and WittyPlay have run on one</span></span></div>
       </li>
       <li class="rm-item">
         <div class="what"><strong>FreeBSD hardware or arm64:</strong> the amd64 package has run in virtual machines, and modules have only been built for it</div>
         <div class="st"><span class="rm-wait"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><span><span class="sr-only">Waiting for: </span>A machine</span></span></div>
       </li>
       <li class="rm-item">
-        <div class="what"><strong>Real TVs, TV remotes, phones and game controllers</strong></div>
-        <div class="st"><span class="rm-wait"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><span><span class="sr-only">Waiting for: </span>The owner’s devices. Android has only run on emulators</span></span></div>
+        <div class="what"><strong>Real iPhones, iPads and game controllers</strong></div>
+        <div class="st"><span class="rm-wait"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><span><span class="sr-only">Waiting for: </span>The owner’s devices. Android phones, tablets and TVs and an Apple TV have run</span></span></div>
       </li>
       <li class="rm-item">
         <div class="what"><strong>Safari, Firefox and old TV browsers</strong> for games and the visualizer</div>
@@ -282,10 +274,6 @@
         <div class="what"><strong>WittyMediaPlayer’s release build</strong> on GitHub’s Windows machines</div>
         <div class="st"><span class="rm-wait"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><span><span class="sr-only">Waiting for: </span>A fix: <a href="https://github.com/wittywilla/WittyMediaPlayer/issues/1" rel="noopener">WittyMediaPlayer#1</a></span></span></div>
       </li>
-      <li class="rm-item">
-        <div class="what"><strong>The complete Docker image</strong></div>
-        <div class="st"><span class="rm-wait"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><span><span class="sr-only">Waiting for: </span>Module tags on GitHub</span></span></div>
-      </li>
     </ul>
       
     </div>
@@ -295,7 +283,7 @@
     <div class="rm-body">
       <p class="eyebrow plain">Then</p>
       <h2>Beta</h2>
-      <p class="rm-intro">Once all 26 of those are at least partly built. What has already landed is in the <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/CHANGELOG.md" rel="noopener">changelog</a> and on the <a href="/news/">news</a> page.</p>
+      <p class="rm-intro">Once all 24 of those are at least partly built. What has already landed is in the <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/CHANGELOG.md" rel="noopener">changelog</a> and on the <a href="/news/">news</a> page.</p>
     </div>
   </li>
 </ol>
@@ -308,7 +296,7 @@
       <div class="about">
         <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
         <p>Your media, right at home. Self-hosted, open source and yours.</p>
-        
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.8.0-alpha/">WittyMediaServer 0.8.0-alpha</a>, 16 November 2026.</p>
         <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
       </div>
       <div>

@@ -288,7 +288,7 @@
 <h2 id="games-in-a-standalone-emulator">Games in a standalone emulator<a class="h-anchor" href="#games-in-a-standalone-emulator" aria-hidden="true" tabindex="-1">#</a></h2>
 <p>A game started with <code>POST /modules/wittyplay/games/{id}/play/emulator</code> is not a session of this protocol, though it borrows its WebRTC half. WittyPlay relays RTP that an FFmpeg beside the emulator made, so there is no WebSocket mode, no <code>timing</code> channel, no seats, no rewind and no stats message; the hello is checked the same way, the answer is the same <code>Connected</code>, and the first <code>events</code> message is the same stream description. Its bitrate follows what the browser reports losing, in a few large steps. See <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/GAMING-API.md#playing-with-a-standalone-emulator" rel="noopener">the API</a>.</p>
 <h2 id="where-it-lives">Where it lives<a class="h-anchor" href="#where-it-lives" aria-hidden="true" tabindex="-1">#</a></h2>
-<ul><li>WittyPlay: <code>stream/connect.go</code> (the hello, the stream and seats), <code>stream/viewer.go</code> (both transports), <code>stream/wsv2.go</code> (the WebSocket), <code>stream/feedback.go</code> (rate), <code>stream/haptics.go</code> (rumble, lights, motion), <code>libretro/libretro.go</code> and <code>libretro/sensor_*.go</code> (the sensor and LED interfaces, several fingers), <code>host/</code> (pacing, and carrying them to the core), <code>web/transport.ts</code>, <code>web/arrival.ts</code> and <code>web/refresh.ts</code> (the browser’s side), <code>cmd/wittyplay-probe</code> (measuring, with <code>-v2</code>, and <code>-impair</code> on TCP as well as UDP).</li><li>WittyMediaServer: <code>internal/server/api_games.go</code> (the two routes, and which devices count as away), <code>internal/play/stream</code> (the module’s interface, generated).</li></ul>
+<ul><li>WittyPlay: <code>stream/connect.go</code> (the hello, the stream and seats), <code>stream/viewer.go</code> (both transports), <code>stream/wsv2.go</code> (the WebSocket), <code>stream/feedback.go</code> (rate), <code>stream/haptics.go</code> (rumble, lights, motion), <code>libretro/libretro.go</code> and <code>libretro/sensor_*.go</code> (the sensor and LED interfaces, several fingers), <code>host/</code> (pacing, and carrying them to the core), <code>web/transport.ts</code>, <code>web/arrival.ts</code> and <code>web/refresh.ts</code> (the browser’s side), <code>cmd/wittyplay-probe</code> (measuring, with <code>-v2</code>, and <code>-impair</code> on TCP as well as UDP).</li><li>WittyMediaServer: <code>internal/server/module_routes.go</code> passes the stream’s routes on to WittyPlay (sign-in, the session’s owner, a WebSocket from this site only) and tells it which devices count as away (<code>X-Witty-Away</code>).</li></ul>
 <hr>
 <p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
     </div>
@@ -310,7 +310,7 @@
       <div class="about">
         <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
         <p>Your media, right at home. Self-hosted, open source and yours.</p>
-        
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.8.0-alpha/">WittyMediaServer 0.8.0-alpha</a>, 16 November 2026.</p>
         <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
       </div>
       <div>
