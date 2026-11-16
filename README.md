@@ -14,16 +14,18 @@ builds the site into `site/` and shows it at http://localhost:4173. **[UPDATING.
 
 | Folder or file | What it is |
 |---|---|
-| `content/site.json` | Sentences every page shares, links, and the themes on offer |
+| `content/site.json` | Sentences every page shares, and links |
+| `content/look.json` | The server's layouts (experiences) and colour themes, copied by `tools/sync-look.mjs` |
 | `content/news/` | News articles, one Markdown file each |
 | `content/projects.json` | The projects page |
 | `content/shots.json` | Which screenshots the site shows, and their captions |
 | `lib/pages.mjs` | Every page |
 | `lib/layout.mjs` | The frame around every page, and the pieces pages share |
-| `lib/data.mjs`, `lib/github.mjs` | Gathering releases, the module catalog, themes and pictures from GitHub |
-| `style/site.css` | The look, built on the server's own design and themes |
-| `scripts/site.js` | The theme picker, phone menu, filters, picture viewer and the check for newer releases |
-| `images/themes/` | Screenshots taken in each of the server's themes |
+| `lib/data.mjs`, `lib/github.mjs` | Gathering releases, the module catalog and the guides from GitHub, and the site's own pictures |
+| `style/site.css` | The look, in the server's own design language: its tokens, themes, pill tabs, tab bar, tiles and shelves |
+| `scripts/site.js` | The colour picker, the phone's More sheet, the Try it page, filters, picture viewer and the check for newer releases |
+| `images/shots/`, `images/looks/` | Screenshots of the server, and Home in every layout and theme for the Try it page |
+| `tools/shots/` | The scripts that take, credit and compress those pictures |
 | `build.mjs` | Builds `site/` and `site.zip` |
 | `check.mjs` | Checks links, pictures and words. Every build runs it |
 | `reference/text/` | The words of the old site, kept for reference |
@@ -32,8 +34,8 @@ Nothing needs installing apart from Node.js 20 or newer.
 
 ## How it's built
 
-- **Content from GitHub.** Releases and their files, the server's changelog, the signed module catalog, screenshots and their credits, and the server's themes are fetched on each build and kept in `cache/`, so a build also works offline. Module icons are checked against the catalog's checksums.
-- **The server's look.** Colours come from the server's `themes/*/theme.json`; type, spacing, shapes and motion follow its design tokens. Visitors can pick any of the server's themes, and screenshots follow where there's one in that theme.
+- **Content from GitHub.** Releases and their files, the server's changelog, the signed module catalog and the guides are fetched on each build and kept in `cache/`, so a build also works offline. Module icons are checked against the catalog's checksums.
+- **The server's look.** Colours come from the server's themes, and type, spacing, shapes and motion from its design tokens; the frame borrows the app's own parts (pill tabs, a floating tab bar on phones, icon tiles, shelves). Visitors can wear any of the server's themes, and the Try it page shows Home in every layout and theme.
 - **Phones first.** Every page is laid out for a phone and grows from there, works with a keyboard, and reads without JavaScript.
 - **Small and private.** No outside fonts, scripts or trackers. A strict Content Security Policy allows the page to talk only to itself and, to check for newer releases, GitHub.
 - **Old addresses kept.** Pages are folders with an `index.html`, so every address of the old site still works on any host.

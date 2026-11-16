@@ -8,3 +8,4 @@ node_modules/
 # Its words are kept in reference/text/.
 /reference/pages/
 /reference/assets/
+__pycache__/
