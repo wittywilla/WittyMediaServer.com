@@ -132,7 +132,7 @@
     // While the sheet is open, Tab goes round its links and the button that closes it.
     trapTab(e, [...$$('a', drawer), menuBtn])
   })
-  matchMedia('(min-width: 1000px)').addEventListener?.('change', (m) => { if (m.matches) setMenu(false) })
+  matchMedia('(min-width: 1140px)').addEventListener?.('change', (m) => { if (m.matches) setMenu(false) })
 
   // ---------- Try it: a screen, a layout and colours, and Home in them ----------
   const tryBox = $('[data-try]')
