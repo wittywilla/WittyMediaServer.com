@@ -92,7 +92,7 @@ code, kbd, pre { font-family: var(--font-mono); font-size: .9em; }
   border-bottom: 1px solid var(--border);
 }
 .topbar .wrap { height: 100%; display: flex; align-items: center; gap: var(--sp-3); }
-.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 1.0625rem; letter-spacing: -.02em; white-space: nowrap; font-optical-sizing: none; min-width: 0; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 1.0625rem; letter-spacing: -.02em; white-space: nowrap; font-optical-sizing: none; flex-shrink: 0; }
 .brand img { width: 34px; height: 34px; border-radius: 10px; }
 .brand b { color: var(--brand-accent, var(--accent-text)); font-weight: inherit; }
 .brand-measure { position: absolute; visibility: hidden; pointer-events: none; white-space: nowrap; }
@@ -127,12 +127,15 @@ svg.i.gh-mark { color: var(--fg); color: light-dark(#000, #fff); }
   .brand img { width: 28px; height: 28px; border-radius: 8px; }
   .topbar .tools { gap: 6px; }
 }
-@media (min-width: 1000px) {
+/* The full menu once the name, eight links and the tools fit side by side; the tab bar until then. */
+@media (min-width: 1140px) {
   .nav { display: flex; align-items: center; gap: 2px; margin-left: var(--sp-4); }
   .topbar .gh { display: inline-grid; }
   body { padding-bottom: 0; }
 }
-@media (min-width: 1000px) and (max-width: 1199px) { .nav a .i { display: none; } .nav a { padding: 0 12px; } }
+/* The links' icons only once there's room for them; one rule overrides the other, so no width falls between. */
+@media (min-width: 1140px) { .nav a .i { display: none; } .nav a { padding: 0 11px; } }
+@media (min-width: 1340px) { .nav a .i { display: block; } .nav a { padding: 0 10px; } }
 
 /* ---------- phones: the app's floating tab bar, and the sheet behind More ---------- */
 .tabbar {
@@ -178,7 +181,7 @@ html:not(.js) .tabbar { grid-template-columns: repeat(4, 1fr); }
 .drawer a[aria-current="page"] { background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent-line); }
 .scrim { position: fixed; inset: 0; z-index: 48; background: var(--overlay, rgb(0 0 0 / .5)); opacity: 0; visibility: hidden; transition: opacity var(--dur-3), visibility 0s linear var(--dur-3); }
 .scrim.open { opacity: 1; visibility: visible; transition: opacity var(--dur-3); }
-@media (min-width: 1000px) { .tabbar, .drawer, .scrim { display: none; } }
+@media (min-width: 1140px) { .tabbar, .drawer, .scrim { display: none; } }
 
 /* ---------- buttons, pills, labels ---------- */
 .btn {
@@ -662,7 +665,7 @@ details.more-files .files { margin-top: 8px; }
   padding: var(--sp-4); border-radius: var(--r-xl);
   background: var(--bg-2); border: 1px solid var(--border-strong); box-shadow: var(--e-3);
 }
-@media (min-width: 1000px) { .themes-pop { max-height: calc(100dvh - var(--topbar-h) - 12px); } }
+@media (min-width: 1140px) { .themes-pop { max-height: calc(100dvh - var(--topbar-h) - 12px); } }
 .themes-pop:not([open]) { display: none; }
 .themes-pop h2 { font-size: var(--text-md); margin-bottom: 2px; }
 .themes-pop p { font-size: var(--text-xs); color: var(--fg-3); margin-bottom: var(--sp-3); }
