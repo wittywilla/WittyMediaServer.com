@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 WittyWilla and contributors
 // wittymediaserver.com: the few things that need a script. Every page works
 // without it; this adds the theme picker, the phone menu, filters, the picture
 // viewer, copy buttons, and a check for anything newer on GitHub.
@@ -22,44 +24,6 @@
   const current = () => store.get(KEY) || autoTheme()
 
   const calm = matchMedia('(prefers-reduced-motion: reduce)')
-  const shotSrc = (img, theme) => (img.dataset.themed || '').split(' ').includes(theme)
-    ? `/images/shots/${theme}/${img.dataset.shot}.webp` : `/images/shots/${img.dataset.shot}.webp`
-  const onScreen = (el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.bottom > 0 && r.top < innerHeight }
-
-  // A picture on screen changes only once its new version is loaded and decoded:
-  // a copy of the old one sits on top and fades away, so a frame never goes blank.
-  const fadeShot = async (img, src) => {
-    img.dataset.want = src
-    const stale = () => img.dataset.want !== src
-    if (!img.complete || !img.naturalWidth || !onScreen(img)) { img.src = src; return }
-    const next = new Image()
-    next.src = src
-    try { await next.decode() } catch { return }
-    if (stale()) return
-    if (calm.matches || !onScreen(img)) { img.src = src; return }
-    const ghost = img.cloneNode()
-    for (const a of ['data-shot', 'data-themed', 'data-want', 'fetchpriority', 'loading']) ghost.removeAttribute(a)
-    ghost.alt = ''; ghost.setAttribute('aria-hidden', 'true'); ghost.classList.add('shot-ghost')
-    Object.assign(ghost.style, { left: `${img.offsetLeft}px`, top: `${img.offsetTop}px`, width: `${img.offsetWidth}px`, height: `${img.offsetHeight}px` })
-    try { await ghost.decode() } catch {}
-    if (stale()) return
-    img.after(ghost)
-    img.src = src
-    try { await img.decode() } catch {}
-    requestAnimationFrame(() => ghost.classList.add('out'))
-    const done = () => ghost.remove()
-    ghost.addEventListener('transitionend', done, { once: true }); setTimeout(done, 800)
-  }
-
-  // Screenshots taken in the chosen theme replace the house ones where they exist.
-  const swapShots = (theme, instant) => {
-    for (const img of $$('img[data-shot]')) {
-      const src = shotSrc(img, theme)
-      const link = img.closest('a.zoom'); if (link) link.href = src
-      if ((img.dataset.want || img.getAttribute('src')) === src) continue
-      if (instant) { img.dataset.want = src; img.setAttribute('src', src) } else fadeShot(img, src)
-    }
-  }
 
   // Things that change without focus moving are read out from here.
   const live = document.createElement('div')
@@ -95,12 +59,11 @@
     }
   }
   // Colours cross-fade over 200 ms where the browser can do it cheaply, all at once
-  // otherwise, and at once for anyone who asks for less motion. Pictures follow as they load.
+  // otherwise, and at once for anyone who asks for less motion.
   const applyTheme = (theme, instant) => {
-    if (theme === root.dataset.theme) { setTheme(theme); return swapShots(theme, instant) }
+    if (theme === root.dataset.theme) return setTheme(theme)
     if (!instant && !calm.matches && document.startViewTransition) document.startViewTransition(() => setTheme(theme))
     else setTheme(theme)
-    swapShots(theme, instant)
   }
   applyTheme(current(), true)
   light.addEventListener?.('change', () => { if (!store.get(KEY)) applyTheme(autoTheme()) })
@@ -151,25 +114,103 @@
   // Footer links can open the picker too.
   for (const a of $$('[data-open-themes]')) a.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); scrollTo({ top: 0 }); themeBtn?.click() })
 
-  // ---------- the phone menu ----------
-  const menuBtn = $('.menu-btn'), drawer = $('#drawer'), scrim = $('.scrim')
+  // ---------- the phone's More sheet ----------
+  const menuBtn = $('.tabbar .menu-btn'), drawer = $('#drawer'), scrim = $('.scrim')
   function setMenu(open) {
-    if (!drawer || drawer.classList.contains('open') === open) return
+    if (!drawer || !menuBtn || drawer.classList.contains('open') === open) return
     drawer.classList.toggle('open', open); scrim?.classList.toggle('open', open)
     menuBtn.setAttribute('aria-expanded', String(open))
-    menuBtn.innerHTML = open ? menuBtn.dataset.close : menuBtn.dataset.open
     drawer.inert = !open
+    if (open) $('a', drawer)?.focus()
   }
-  if (drawer) { drawer.inert = true; menuBtn.dataset.open = menuBtn.innerHTML }
+  if (drawer) drawer.inert = true
   menuBtn?.addEventListener('click', () => { closePop(); setMenu(!drawer.classList.contains('open')) })
   scrim?.addEventListener('click', () => setMenu(false))
   document.addEventListener('keydown', (e) => {
     if (!drawer?.classList.contains('open')) return
     if (e.key === 'Escape') { setMenu(false); menuBtn.focus() }
-    // While the menu is open, Tab goes round its links and the button that closes it.
-    trapTab(e, [menuBtn, ...$$('a', drawer)])
+    // While the sheet is open, Tab goes round its links and the button that closes it.
+    trapTab(e, [...$$('a', drawer), menuBtn])
   })
-  matchMedia('(min-width: 900px)').addEventListener?.('change', (m) => { if (m.matches) setMenu(false) })
+  matchMedia('(min-width: 1000px)').addEventListener?.('change', (m) => { if (m.matches) setMenu(false) })
+
+  // ---------- Try it: a screen, a layout and colours, and Home in them ----------
+  const tryBox = $('[data-try]')
+  if (tryBox) {
+    let data
+    try { data = JSON.parse(tryBox.dataset.try) } catch { data = null }
+    if (data) {
+      const q = new URLSearchParams(location.search)
+      const exps = new Map(data.exps.map((x) => [x.id, x]))
+      const names = new Map(data.themes.map((t) => [t.id, t.name]))
+      const has = (form, exp, theme) => (data.have?.[form]?.[exp] || []).includes(theme)
+      const st = { form: q.get('on') === 'phone' ? 'phone' : 'desktop', exp: exps.has(q.get('look')) ? q.get('look') : data.exps[0].id, theme: null, own: true }
+      if (names.has(q.get('colours'))) { st.theme = q.get('colours'); st.own = false } else st.theme = exps.get(st.exp).theme
+      const stage = $('.try-stage', tryBox), screen = $('.try-screen', tryBox), img = $('img', screen)
+      const ownBtn = $('[data-try-own]', tryBox), keepBtn = $('[data-try-keep]', tryBox)
+      const siteTheme = current()
+      let want = ''
+      const pick = (group, attr, value) => { for (const b of $$(`${group} [${attr}]`, tryBox)) { const on = b.getAttribute(attr) === value; b.setAttribute('aria-checked', String(on)); b.tabIndex = on ? 0 : -1 } }
+      const show = (say) => {
+        // A layout with no pictures on this screen gives way to the first that has some, and a pair with
+        // no picture to the layout's own colours, or else the first colours it has.
+        const any = (exp) => (data.have?.[st.form]?.[exp] || []).length > 0
+        if (!any(st.exp)) st.exp = data.exps.find((e) => any(e.id))?.id || st.exp
+        if (!has(st.form, st.exp, st.theme)) { st.theme = has(st.form, st.exp, exps.get(st.exp).theme) ? exps.get(st.exp).theme : (data.have?.[st.form]?.[st.exp] || [st.theme])[0]; st.own = st.theme === exps.get(st.exp).theme }
+        const x = exps.get(st.exp), tname = names.get(st.theme) || st.theme
+        pick('.seg', 'data-form', st.form); pick('.layouts', 'data-exp', st.exp); pick('.colours', 'data-theme', st.theme)
+        for (const b of $$('.colours [data-theme]', tryBox)) b.disabled = !has(st.form, st.exp, b.dataset.theme)
+        for (const b of $$('.layouts [data-exp]', tryBox)) b.disabled = !any(b.dataset.exp)
+        stage.dataset.form = st.form
+        const { w, h } = data.size[st.form]
+        const src = `/images/looks/${st.form}/${st.exp}/${st.theme}.webp`
+        want = src
+        screen.classList.add('loading')
+        const next = new Image(); next.src = src
+        const swap = () => {
+          if (want !== src) return
+          img.width = w; img.height = h; img.src = src
+          img.alt = `Home in the ${x.name} layout, with ${tname} colours, on ${st.form === 'phone' ? 'a phone' : 'a computer'}`
+          screen.classList.remove('loading')
+        }
+        ;(next.decode ? next.decode() : Promise.resolve()).then(swap, swap)
+        $('[data-try-title]', tryBox).textContent = `${x.name}, in ${tname}`
+        $('[data-try-desc]', tryBox).textContent = x.description || ''
+        ownBtn.hidden = st.theme === x.theme
+        $('span', ownBtn).textContent = `Use ${x.name}’s own colours: ${names.get(x.theme) || x.theme}`
+        // The page itself wears the colours being tried, until another page is opened, unless kept.
+        applyTheme(st.theme)
+        keepBtn.hidden = st.theme === (store.get(KEY) || siteTheme)
+        const u = new URL(location.href)
+        u.searchParams.set('look', st.exp); u.searchParams.set('on', st.form)
+        st.own ? u.searchParams.delete('colours') : u.searchParams.set('colours', st.theme)
+        history.replaceState(null, '', u)
+        if (say) announce(`${x.name}, ${tname}, on ${st.form === 'phone' ? 'a phone' : 'a computer'}`)
+      }
+      // Each group is a radio group: one Tab stop, and the arrows move and choose.
+      const group = (sel, attr, set) => {
+        const box = $(sel, tryBox)
+        box.addEventListener('click', (e) => { const b = e.target.closest(`[${attr}]`); if (b && !b.disabled) { set(b.getAttribute(attr)); show(true) } })
+        box.addEventListener('keydown', (e) => {
+          const list = $$(`[${attr}]`, box).filter((b) => !b.disabled)
+          const i = list.indexOf(document.activeElement)
+          const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key]
+          if (i < 0 || !d) return
+          e.preventDefault()
+          const to = list[(i + d + list.length) % list.length]
+          set(to.getAttribute(attr)); show(true); to.focus(); to.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+        })
+      }
+      group('.seg', 'data-form', (v) => { st.form = v })
+      group('.layouts', 'data-exp', (v) => { st.exp = v; if (st.own) st.theme = exps.get(v).theme })
+      group('.colours', 'data-theme', (v) => { st.theme = v; st.own = v === exps.get(st.exp).theme })
+      ownBtn.addEventListener('click', () => { st.theme = exps.get(st.exp).theme; st.own = true; show(true) })
+      keepBtn.addEventListener('click', () => { store.set(KEY, st.theme); setTheme(st.theme); keepBtn.hidden = true; announce(`${names.get(st.theme)} kept for this site`) })
+      show(false)
+      const chosen = $('.layouts [aria-checked="true"]', tryBox)
+      if (chosen) chosen.parentElement.scrollLeft = chosen.offsetLeft - chosen.parentElement.clientWidth / 2 + chosen.clientWidth / 2
+    }
+  }
 
   // ---------- copy buttons ----------
   for (const b of $$('[data-copy]')) {

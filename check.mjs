@@ -1,4 +1,22 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: AGPL-3.0-or-later
+//
+// WittyMediaServer.com - The website of WittyMediaServer and every project under it.
+// Copyright (C) 2026 WittyWilla and contributors
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program. If not, see <https://www.gnu.org/licenses/>.
+
 // Checks the built site and the words we write, so pages stay consistent:
 //   node check.mjs        check site/ as it was last built
 // build.mjs runs the same checks at the end of every build.
@@ -66,7 +84,10 @@ export function check({ root, out, d }) {
     if (Buffer.byteLength(html) > 200_000) warn(`${where} is ${Math.round(Buffer.byteLength(html) / 1000)} KB; pages should stay under 200 KB`)
     if (/\sstyle="/.test(html)) err(`${where} has a style attribute, which the page’s security policy blocks`)
   }
-  if (d && d.releases.length === 0) warn('no releases were found: is GitHub reachable?')
+  // GitHub not answering stops a publish (the workflow looks for these words); repositories that
+  // answered with no releases yet are fine, and the pages say "no release yet".
+  if (d && d.releasesUnanswered?.length) warn(`no releases were found: is GitHub reachable? It didn't answer for ${d.releasesUnanswered.join(', ')}`)
+  else if (d && d.releases.length === 0) warn('nothing released yet on GitHub: the download pages say so')
   if (d && d.modules.length === 0) warn('no modules were found: is the catalog reachable?')
   return problems
 }

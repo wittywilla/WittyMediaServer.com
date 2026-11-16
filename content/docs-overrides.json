@@ -1,9 +1,3 @@
 {
-  "$comment": "Wording the website says differently from a guide on GitHub, by guide (the file name without .md). Each 'find' is replaced by its 'replace' in the site's copy only. The build warns when a 'find' is no longer in the guide, so remove an entry once GitHub says the same thing.",
-  "REMOTE": [
-    {
-      "find": "It's a possible future paid service, and nothing on your server uses it.",
-      "replace": "It isn't built yet. When it is, it will be free, like every other part of remote access, and nothing on your server uses it until then."
-    }
-  ]
+  "$comment": "Wording the website says differently from a guide on GitHub, by guide (the file name without .md). Each 'find' is replaced by its 'replace' in the site's copy only. The build warns when a 'find' is no longer in the guide, so remove an entry once GitHub says the same thing."
 }

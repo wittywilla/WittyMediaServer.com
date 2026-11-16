@@ -55,9 +55,11 @@ Keep to the server's way of writing: plain and short, "you" and "your", sentence
 
 ## Add or change a screenshot
 
-Screenshots come from each repository's `docs/images/`. To show another one, add a line to `content/shots.json` with its file name (without `.webp`), its repository, a title, a description for people who can't see it, and its group. Its credit comes from that repository's `CREDITS.md`, or you can write one.
+The site's screenshots are its own, in `images/shots/`, and the Try it page's are in `images/looks/<computer or phone>/<layout>/<theme>.webp`. All of them come from a test server filled only with the openly licensed media in WittyDemoMedia: **[tools/shots/README.md](tools/shots/README.md)** is the whole routine for taking them again for a new release, recording their credits and compressing them.
 
-**In other themes:** a picture saved as `images/themes/<theme>/<name>.webp`, such as `images/themes/paper/home.webp`, replaces the usual one when a visitor picks that theme. Any picture without one stays as it is.
+To show another screenshot, put it in `images/shots/<name>.webp` and add a line to `content/shots.json` with its name, a title, a description for people who can't see it, and its group. The build leaves it out until `content/licences.json` has a record of every work in it (`shots/<name>`); `tools/shots/credits.py` writes one.
+
+**Layouts and colours:** the server's experiences and themes are copied into `content/look.json` by `node tools/sync-look.mjs <a WittyMediaServer checkout>`. Run it from the same branch the pictures were taken from, so the colours match them.
 
 ## Add a project
 
@@ -72,8 +74,10 @@ Every build fetches these from GitHub, and GitHub builds every hour, so they nee
 | Releases, their notes and download files | The GitHub releases of WittyMediaServer, WittyMediaClient, WittyMediaPlayer and WittyReader |
 | What's in each server version | The server's `CHANGELOG.md` |
 | Modules: names, icons, descriptions, versions | The signed catalog in WittyModuleCatalog |
-| Screenshots and their credits | `docs/images/` in each repository, and its `CREDITS.md` |
-| Colours and themes | The server's `themes/` folder |
+| The logo, favicon, social picture and hero backgrounds (`images/brand`) | WittyMediaServer's genicon: run `scripts/sync-brand.sh` (its `docs/BRAND.md`) |
+| The font, Inter (`fonts/`) | [rsms/inter](https://github.com/rsms/inter) releases, SIL Open Font License: replace the `.woff2` files and `Inter-OFL.txt` together |
+| Screenshots and their credits | Taken by `tools/shots/` (see its README), recorded in `content/licences.json` |
+| Layouts and colours | The server's `pkg/sdui/experiences/` and `themes/`, copied into `content/look.json` by `tools/sync-look.mjs` |
 
 The news and module pages also check GitHub when someone opens them, and show a release that's come out since the last build. Its own page arrives with the next build.
 

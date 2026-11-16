@@ -1,0 +1,72 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later */
+/* Copyright (C) 2026 WittyWilla and contributors */
+/* The Try it page: pick a screen, a layout and colours, and see Home in them. Phones first: the
+   choices scroll sideways above the picture, so both stay in view; wider screens put them in a
+   column beside it. */
+
+.try { display: grid; gap: var(--sp-6); }
+.try-controls { display: grid; gap: var(--sp-3); min-width: 0; align-content: start; }
+.try-h { font-size: var(--text-2xs); font-weight: 700; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--fg-3); margin-top: var(--sp-2); }
+
+/* Computer or phone: the app's segmented pill. */
+.seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: var(--r-full); background: var(--bg-2); border: 1px solid var(--border); width: max-content; max-width: 100%; }
+.seg button { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: var(--r-full); font-size: var(--text-md); font-weight: 650; color: var(--fg-2); cursor: pointer; }
+.seg button .i { width: 18px; height: 18px; }
+.seg button:hover { color: var(--fg); }
+.seg button[aria-checked="true"] { background: var(--fg); color: var(--bg); }
+.seg button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+/* The choices: a row that scrolls on a phone, a list beside the picture on a computer. */
+.try-opts {
+  display: grid; grid-auto-flow: column; grid-auto-columns: max-content; gap: 8px; overflow-x: auto; overscroll-behavior-x: contain;
+  margin-inline: calc(-1 * var(--gutter)); padding: 2px var(--gutter) 6px; scroll-padding-inline: var(--gutter); scrollbar-width: none;
+}
+.try-opts::-webkit-scrollbar { display: none; }
+.try-opt {
+  all: unset; box-sizing: border-box; display: grid; gap: 2px; align-content: center; min-height: 52px; padding: 8px 14px; border-radius: var(--r-lg);
+  background: var(--bg-2); border: 1px solid var(--border); color: var(--fg); cursor: pointer; text-align: left;
+  transition: background var(--dur-2), border-color var(--dur-2);
+}
+.try-opt:hover { background: var(--bg-3); border-color: var(--border-strong); }
+.try-opt:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.try-opt:disabled { opacity: .4; cursor: not-allowed; }
+.try-opt[aria-checked="true"] { border-color: var(--fg); box-shadow: inset 0 0 0 1px var(--fg); background: var(--bg-3); }
+.try-opt .nm { font-weight: 650; font-size: var(--text-md); line-height: 1.25; white-space: nowrap; }
+.try-opt .tg { font-size: var(--text-xs); color: var(--fg-3); white-space: nowrap; }
+.try-opt.sw { grid-template-columns: 40px auto; align-items: center; column-gap: 10px; padding: 6px 14px 6px 6px; }
+.try-opt.sw .pv { height: 40px; width: 40px; border-radius: var(--r-sm); }
+.try-opt.sw .pv i { left: 6px; right: 12px; top: 9px; height: 5px; }
+.try-opt.sw .pv u { left: 6px; right: 18px; top: 19px; height: 4px; }
+.try-opt.sw .pv b { right: 5px; bottom: 5px; width: 14px; height: 8px; }
+.try-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.try-actions:not(:has(:not([hidden]))) { display: none; }
+html:not(.js) .try-controls { display: none; }
+
+/* The picture, in a computer's or a phone's shape. */
+.try-stage { margin: 0; display: grid; gap: var(--sp-4); justify-items: center; min-width: 0; }
+.try-screen { position: relative; width: 100%; border-radius: var(--r-lg); overflow: hidden; background: var(--bg-3); border: 1px solid var(--border-strong); box-shadow: var(--e-stage); }
+.try-screen img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: opacity var(--dur-3); }
+.try-screen.loading img { opacity: .55; }
+.try-screen.loading::after { content: ""; position: absolute; top: 12px; right: 12px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--fg-3); border-top-color: transparent; animation: try-spin .8s linear infinite; }
+@keyframes try-spin { to { transform: rotate(1turn); } }
+.try-stage[data-form="phone"] .try-screen { width: min(100%, 340px); border-radius: 30px; border: 6px solid #0a0b0e; background: #0a0b0e; }
+.try-stage[data-form="phone"] .try-screen img { aspect-ratio: 520 / 1125; border-radius: 24px; }
+.try-stage figcaption { display: grid; gap: 4px; justify-self: stretch; max-width: 70ch; }
+.try-stage figcaption strong { font-size: var(--text-lg); }
+.try-stage figcaption span { color: var(--fg-2); font-size: var(--text-md); }
+.try-stage figcaption .credit { font-size: var(--text-xs); color: var(--fg-3); }
+.try-stage figcaption .credit a { color: inherit; }
+
+@media (min-width: 1000px) {
+  .try { grid-template-columns: 340px minmax(0, 1fr); align-items: start; gap: var(--sp-10); }
+  .try-opts { grid-auto-flow: row; grid-auto-columns: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: visible; margin: 0; padding: 0; }
+  .try-opt .nm, .try-opt .tg { white-space: normal; }
+  .try-stage { position: sticky; top: calc(var(--topbar-h) + 24px); }
+}
+
+/* All of them at a glance. */
+.look-grid { display: grid; gap: var(--sp-6) var(--sp-4); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.look-grid .tag { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (min-width: 700px) { .look-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1040px) { .look-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .try-screen.loading::after { animation: none; } }

@@ -1,4 +1,22 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: AGPL-3.0-or-later
+//
+// WittyMediaServer.com - The website of WittyMediaServer and every project under it.
+// Copyright (C) 2026 WittyWilla and contributors
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program. If not, see <https://www.gnu.org/licenses/>.
+
 // Builds wittymediaserver.com into site/, ready to upload.
 //
 //   node build.mjs             fetch the latest from GitHub and build
@@ -46,42 +64,38 @@ async function build() {
   fs.mkdirSync(OUT, { recursive: true })
 
   // ---- pictures ----
-  const serverBranch = d.repos[d.site.repos.server]?.branch || 'master'
-  for (const [from, to] of [['web/public/icon.svg', 'icon.svg'], ['web/public/icon-192.png', 'icon-192.png'], ['web/public/icon-512.png', 'icon-512.png']]) {
-    const buf = await gh.get(gh.raw(d.site.repos.server, serverBranch, from))
-    if (buf) write(path.join(OUT, 'images', to), buf)
-    else log(`  ! missing ${from}`)
+  // The family's icons, social picture and backgrounds, drawn by WittyMediaServer's genicon
+  // into images/brand (scripts/sync-brand.sh), so the site shows the same marks as the apps.
+  const brandDir = path.join(root, 'images', 'brand')
+  for (const f of fs.readdirSync(brandDir)) write(path.join(OUT, 'images', 'brand', f), fs.readFileSync(path.join(brandDir, f)))
+  for (const [from, to] of [['icon.svg', 'images/icon.svg'], ['icon-192.png', 'images/icon-192.png'], ['icon-512.png', 'images/icon-512.png'], ['favicon.ico', 'favicon.ico'], ['apple-touch-icon.png', 'apple-touch-icon.png'], ['icon-192.png', 'favicon.png']]) {
+    fs.copyFileSync(path.join(brandDir, from), path.join(OUT, to))
   }
-  if (fs.existsSync(path.join(OUT, 'images', 'icon-192.png'))) fs.copyFileSync(path.join(OUT, 'images', 'icon-192.png'), path.join(OUT, 'favicon.png'))
+
+  // Inter, the site's font, served from the site itself (the security policy allows fonts from 'self' only).
+  for (const f of fs.readdirSync(path.join(root, 'fonts'))) write(path.join(OUT, 'fonts', f), fs.readFileSync(path.join(root, 'fonts', f)))
 
   // Only openly licensed and public-domain media is ever shown: see content/licences.json.
-  const licence = licenceProblems(root, d.shots, d.site.themes)
+  const licence = licenceProblems(root, d.shots, d.looks)
   for (const s of d.shots) {
-    if (licence.blocked.has(s.id)) continue
-    const buf = await gh.get(s.url)
-    if (!buf) { log(`  ! no picture ${s.repo} ${s.id}`); continue }
+    if (licence.blocked.has(`shots/${s.id}`)) continue
+    if (!fs.existsSync(s.file)) { log(`  ! no picture images/shots/${s.id}.webp`); continue }
+    const buf = fs.readFileSync(s.file)
     write(path.join(OUT, 'images', 'shots', `${s.id}.webp`), buf)
     Object.assign(s, webpSize(buf), { local: true })
   }
-  // Pictures in each theme, from images/themes/<theme>/<id>.webp in this repository.
-  const themed = {}
-  const themesDir = path.join(root, 'images', 'themes')
-  for (const t of d.site.themes) {
-    const dir = path.join(themesDir, t)
-    if (!fs.existsSync(dir)) continue
-    for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.webp'))) {
-      const id = f.slice(0, -5)
-      const base = d.shots.find((s) => s.id === id && s.local)
-      if (!base || base.themeless || licence.blocked.has(`${t}/${id}`)) continue
-      // A themed picture replaces the plain one in place, so it must be the same shape.
-      const dim = webpSize(fs.readFileSync(path.join(dir, f)))
-      if (base.width && (dim.width * base.height !== dim.height * base.width)) { log(`  ! images/themes/${t}/${f} is ${dim.width}×${dim.height}, not the shape of the plain one (${base.width}×${base.height}), left out`); continue }
-      fs.mkdirSync(path.join(OUT, 'images', 'shots', t), { recursive: true })
-      fs.copyFileSync(path.join(dir, f), path.join(OUT, 'images', 'shots', t, f))
-      ;(themed[t] ||= []).push(id)
+  // The Try it page's pictures: each layout's Home in every theme, on a computer and a phone.
+  let lookCount = 0
+  for (const [form, byExp] of Object.entries(d.looks)) {
+    for (const [exp, themes] of Object.entries(byExp)) {
+      if (licence.blocked.has(`looks/${form}/${exp}`)) { byExp[exp] = []; continue }
+      for (const t of themes) {
+        const rel = path.join('images', 'looks', form, exp, `${t}.webp`)
+        write(path.join(OUT, rel), fs.readFileSync(path.join(root, rel)))
+        lookCount++
+      }
     }
   }
-  d.themed = themed
 
   // Module icons, checked against the catalog's checksums.
   for (const m of d.modules) {
@@ -124,7 +138,7 @@ async function build() {
     P.home(), P.server(), P.client(), P.player(), P.reader(), P.projects(),
     P.modulesPage(), ...d.modules.map(P.modulePage),
     P.newsPage(), ...d.news.map(P.articlePage), ...d.releases.map(P.releasePage),
-    P.download(), P.gallery(), P.notFound(),
+    P.download(), P.gallery(), P.tryPage(), P.notFound(),
     ...sections.flatMap((mod) => mod.pages ? mod.pages(d) : []),
   ]
   for (const p of pages) write(path.join(OUT, p.file || path.join(p.path, 'index.html')), p.html)
@@ -134,7 +148,7 @@ async function build() {
   const listed = pages.filter((p) => !p.file)
   write(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${listed.map((p) => `  <url><loc>${esc(d.site.url + p.path)}</loc></url>`).join('\n')}\n</urlset>\n`)
   write(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${d.site.url}/sitemap.xml\n`)
-  write(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: d.site.name, short_name: 'WittyMediaServer', start_url: '/', display: 'browser', background_color: '#0f1115', theme_color: '#0f1115', icons: [{ src: '/images/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/images/icon-512.png', sizes: '512x512', type: 'image/png' }] }, null, 1))
+  write(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: d.site.name, short_name: 'WittyMediaServer', start_url: '/', display: 'browser', background_color: '#0f1115', theme_color: '#0f1115', icons: [{ src: '/images/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/images/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/images/brand/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }] }, null, 1))
   write(path.join(OUT, '.htaccess'), HTACCESS)
 
   gh.save()
@@ -156,7 +170,7 @@ async function build() {
   }
 
   const size = dirSize(OUT)
-  log(`Built ${pages.length} pages, ${d.releases.length} releases, ${d.modules.length} modules, ${d.shots.filter((s) => s.local).length} pictures${Object.keys(themed).length ? ` (and ${Object.values(themed).flat().length} in other themes)` : ''}.`)
+  log(`Built ${pages.length} pages, ${d.releases.length} releases, ${d.modules.length} modules, ${d.shots.filter((s) => s.local).length} pictures and ${lookCount} looks.`)
   log(`${(size / 1e6).toFixed(1)} MB in ${outArg ? OUT : 'site/'}${fs.existsSync(zip) ? ', and site.zip to upload' : ''}. GitHub: ${gh.fetched} fetched, ${gh.fromCache} unchanged. ${((Date.now() - t0) / 1000).toFixed(1)} s.`)
   const errors = problems.filter((p) => p.level === 'error').length
   if (errors) { log(`${errors} problem${errors === 1 ? '' : 's'} to fix before uploading.`); process.exitCode = 1 }
@@ -173,20 +187,22 @@ const VARS = {
 }
 const rgb = (hex) => { const h = String(hex).replace('#', ''); return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16)).join(' ') }
 
-/** The server's themes as CSS: the house theme for :root, each one for [data-theme]. */
+/** The server's themes as CSS: the house theme for :root, each one for [data-theme], and the
+ *  colours each theme's preview chips use, wherever they are, as [data-pv]. */
 function themesCSS(themes) {
-  const out = ['/* Generated from WittyMediaServer\'s themes/<id>/theme.json. */']
+  const out = ['/* Generated from WittyMediaServer’s themes/<id>/theme.json, by way of content/look.json. */']
   for (const t of themes) {
     const light = t.scheme === 'light'
     const lines = Object.entries(VARS).filter(([k]) => t.colors[k]).map(([k, v]) => `  ${v}: ${t.colors[k]};`)
     lines.push(`  --bg-rgb: ${rgb(t.colors.bg)};`, `  --accent-rgb: ${rgb(t.colors.accent)};`, `  --radius: ${t.radius ?? 10}px;`, `  color-scheme: ${t.scheme || 'dark'};`)
+    lines.push(`  --backdrop: ${t.backdrop || 'none'};`)
     lines.push(light
       ? '  --shadow: 0 12px 32px rgb(20 25 40 / .14);\n  --card-shadow: 0 10px 24px rgb(20 25 40 / .12);\n  --glow: rgb(var(--accent-rgb) / .16);'
       : '  --shadow: 0 10px 30px rgb(0 0 0 / .45);\n  --card-shadow: 0 10px 24px rgb(0 0 0 / .5);\n  --glow: rgb(var(--accent-rgb) / .22);')
     const sel = t.id === 'default' ? `:root, :root[data-theme="default"]` : `:root[data-theme="${t.id}"]`
     out.push(`${sel} {\n${lines.join('\n')}\n}`)
     const c = t.colors
-    out.push(`.swatch[data-theme="${t.id}"] .pv { background: ${c.bg}; } .swatch[data-theme="${t.id}"] .pv i { background: ${c.fg}; } .swatch[data-theme="${t.id}"] .pv u { background: ${c.fg2}; } .swatch[data-theme="${t.id}"] .pv b { background: ${c.accent}; }`)
+    out.push(`[data-pv="${t.id}"] { --pv-bg: ${c.bg}; --pv-fg: ${c.fg}; --pv-fg2: ${c.fg2}; --pv-accent: ${c.accent};${t.backdrop ? ` --pv-backdrop: ${t.backdrop};` : ''} }`)
   }
   return out.join('\n')
 }

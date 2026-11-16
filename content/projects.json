@@ -1,25 +1,27 @@
 {
-  "$comment": "Every project under WittyMediaServer, for the projects page. Keep it in step with docs/REPOSITORIES.md in the server's repository. Modules in the catalog are added by themselves; list them here only to say more. kind: app, module, library or planned. say: uses a sentence from site.json in place of a summary, so an app is described the same way everywhere.",
+  "$comment": "Every project under WittyMediaServer, for the projects page. Keep it in step with docs/REPOSITORIES.md in the server's repository. Modules in the catalog are added by themselves; list them here only to say more. kind: app, module, library or planned. licence: the project's licence, shown on its card (a module in the catalog shows its latest version's). status: a line under the summary, for where a project stands. say: uses a sentence from site.json in place of a summary, so an app is described the same way everywhere.",
   "groups": [
     { "id": "app", "title": "Apps", "intro": "What you install." },
     { "id": "module", "title": "Modules", "intro": "Added to a server from its store, each a project of its own." },
     { "id": "library", "title": "Behind the scenes", "intro": "Parts the apps and modules are built from." },
-    { "id": "planned", "title": "Not started yet", "intro": "Named in the roadmap, with nothing built." }
+    { "id": "planned", "title": "Designed, not built", "intro": "Decided and designed, with no program yet. Each repository says why, and what it would take." }
   ],
   "projects": [
     { "name": "WittyMediaServer", "repo": "wittywilla/WittyMediaServer", "kind": "app", "page": "/server/", "icon": "server",
-      "say": "lead" },
+      "say": "lead", "licence": "AGPL-3.0-or-later" },
     { "name": "WittyMediaClient", "repo": "wittywilla/WittyMediaClient", "kind": "app", "page": "/client/", "icon": "devices",
-      "say": "client" },
+      "say": "client", "licence": "GPL-3.0-or-later" },
     { "name": "WittyMediaPlayer", "repo": "wittywilla/WittyMediaPlayer", "kind": "app", "page": "/player/", "icon": "disc",
-      "say": "playerShort" },
+      "say": "playerShort", "licence": "GPL-3.0-or-later" },
     { "name": "WittyReader", "repo": "wittywilla/WittyReader", "kind": "app", "page": "/reader/", "icon": "book",
-      "say": "readerShort" },
+      "say": "readerShort", "licence": "GPL-3.0-or-later" },
     { "name": "WittyModule", "repo": "wittywilla/WittyModule", "kind": "library", "icon": "puzzle",
-      "summary": "The manifest format, tools and kit that modules are built with." },
+      "summary": "The manifest format, tools and kit that modules are built with, including the SDUI kit that writes and checks the sdui.json every module carries from module API 4: in Go (sdui/) and for web bundles in TypeScript (kit/sdui/).", "licence": "AGPL-3.0-or-later" },
     { "name": "WittyModuleCatalog", "repo": "wittywilla/WittyModuleCatalog", "kind": "library", "page": "/modules/", "icon": "list",
-      "summary": "The signed list of modules and versions that a server’s store reads. It holds no module code." },
+      "summary": "The signed list of modules and versions that a server’s store reads. It holds no module code.", "licence": "AGPL-3.0-or-later" },
     { "name": "WittyMediaRemoteMedia", "repo": "wittywilla/WittyMediaRemoteMedia", "kind": "planned", "icon": "network",
-      "summary": "Connecting libraries on a NAS through a native or Docker app." }
+      "summary": "A small program for a NAS, natively or in Docker, that would give a server read-only access to the media folders there.",
+      "status": "Not built, on purpose: the server first has to read media through a seam of its own rather than by local path. The repository holds the decision and the design. Until then, mount the NAS share on the server’s computer, or run the server on the NAS.",
+      "licence": "AGPL-3.0-or-later" }
   ]
 }
