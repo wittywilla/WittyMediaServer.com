@@ -38,7 +38,7 @@
       "icon": "users",
       "short": "Open source since the first commit, not since it got awkward",
       "title": "Open since the first commit",
-      "text": "Public under AGPL-3.0-or-later from day one. Not “open source soon”. Not “source available”. Not “open once we’ve worked out how to charge for it”. All of it, from the first line.",
+      "text": "Open source from the very first commit. Not “open source soon”. Not “source available”. Not “open once we’ve worked out how to charge for it”. It started under permissive licences (MIT, then Apache-2.0), and for 0.8.0-alpha it moved to copyleft, so it stays open for good: the server and its modules under AGPL-3.0-or-later, and the apps under GPL-3.0-or-later. All of it, from the first line.",
       "link": {
         "href": "https://github.com/wittywilla/WittyMediaServer",
         "label": "Read every line"
