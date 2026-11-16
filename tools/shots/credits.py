@@ -78,6 +78,11 @@ for key, base in pairs:
     found = {}
     for e in credits:
         if names(e) & lines: found[e['title'] + '|' + e['source']] = e
+        # A guide names an episode inside a longer line ("Channel 102, …: Show, S1 E1 · Episode, 1:38 PM to …"):
+        # it counts when one line has both the show and the episode's own title.
+        elif e['kind'] in ('tv', 'anime') and ': ' in e['title']:
+            show, ep = (norm(x) for x in e['title'].split(': ', 1))
+            if len(ep) >= 4 and any(show in l and ep in l for l in lines): found[e['title'] + '|' + e['source']] = e
     src = base + '.src'
     for u in (open(src, encoding='utf-8').read().split() if os.path.exists(src) else []):
         m = re.search(r'/api/(items|shows)/(\d+)/', u)
