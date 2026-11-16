@@ -48,6 +48,9 @@
   .where-card .tile { margin-bottom: var(--sp-2); }
   .where-card .pill { margin-top: auto; }
 }
+.where-note { display: flex; align-items: flex-start; gap: var(--sp-2); margin-top: var(--sp-4); color: var(--fg-2); font-size: var(--text-sm); line-height: 1.5; }
+.where-note > svg { flex: none; width: 18px; height: 18px; margin-top: 2px; color: var(--fg-3); }
+.where-note a { color: inherit; }
 .where-nas { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2); margin-top: var(--sp-6); }
 .where-nas-label { font-size: var(--text-2xs); font-weight: 700; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--fg-3); margin-right: var(--sp-2); }
 .where-nas .chip { text-decoration: none; }
