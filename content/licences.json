@@ -4166,22 +4166,58 @@
   "shots/music": {
    "works": [
     {
-     "title": "2.5 beats",
-     "by": "monophonic",
-     "licence": "CC-BY-4.0",
-     "source": "https://archive.org/details/rfa007"
+     "title": "Accumulation",
+     "by": "Lezet",
+     "licence": "CC-BY-3.0",
+     "source": "https://archive.org/details/bof066"
     },
     {
-     "title": "die comoedia von der zeit",
-     "by": "Seetyca",
-     "licence": "CC-BY-2.5",
-     "source": "https://archive.org/details/Seetyca_Suite"
+     "title": "Across the Ocean",
+     "by": "Jiri Blazek and Brian Ruskin",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/AcrossTheOcean_BlazekRuskin"
+    },
+    {
+     "title": "Classical Sampler",
+     "by": "Kevin MacLeod",
+     "licence": "CC-BY-3.0",
+     "source": "https://archive.org/details/Classical_Sampler-9615"
+    },
+    {
+     "title": "Everything at Once",
+     "by": "Mental Health Consumer",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/Everything_at_Once"
     },
     {
      "title": "Experiments at the Edge of Time",
      "by": "Softspace",
      "licence": "CC-BY-2.5",
      "source": "https://archive.org/details/mt007"
+    },
+    {
+     "title": "Five Structures And A Cold Void",
+     "by": "Miquel Parera and Alozeau",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://archive.org/details/Five_Structures_And_A_Cold_Void"
+    },
+    {
+     "title": "Jazz Sampler",
+     "by": "Kevin MacLeod",
+     "licence": "CC-BY-3.0",
+     "source": "https://archive.org/details/Jazz_Sampler-9619"
+    },
+    {
+     "title": "Music For Podcasts 5",
+     "by": "Lee Rosevere",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/leerosevere_musicforpodcasts_5"
+    },
+    {
+     "title": "Music For Podcasts 6",
+     "by": "Lee Rosevere",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/leerosevere_musicforpodcasts_6"
     },
     {
      "title": "Music for Spaceports",
@@ -4214,28 +4250,28 @@
      "source": "https://archive.org/details/USR-007"
     },
     {
-     "title": "Smoke and Mirrors",
-     "by": "MonoCulture",
-     "licence": "CC-BY-2.5",
-     "source": "https://archive.org/details/USR-002"
-    },
-    {
      "title": "spacesuite radio",
      "by": "airnino",
      "licence": "CC-BY-4.0",
      "source": "https://archive.org/details/rfa003"
     },
     {
-     "title": "The Animal Economy",
-     "by": "MonoCulture",
-     "licence": "CC-BY-2.5",
-     "source": "https://archive.org/details/USR-019"
+     "title": "TEFE049",
+     "by": "Miquel Parera Jaques",
+     "licence": "CC-BY-4.0",
+     "source": "https://archive.org/details/TEFE049"
     },
     {
-     "title": "Words and Music About Generative",
-     "by": "Thomas Park with Joshua Shaffer",
-     "licence": "CC-BY-4.0",
-     "source": "https://archive.org/details/WordsAndMusicAboutGenerative"
+     "title": "The Four Seasons",
+     "by": "Memphis",
+     "licence": "CC-BY-SA-3.0",
+     "source": "https://archive.org/details/JOAT022"
+    },
+    {
+     "title": "The Jade Furnace I",
+     "by": "K.M. Krebs",
+     "licence": "CC-BY-2.5",
+     "source": "https://archive.org/details/Jade_Furnace_I"
     },
     {
      "title": "WittyMediaServer’s own interface",

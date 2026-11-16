@@ -20,6 +20,12 @@ What you need: Node.js 20 or newer, Python 3 with Pillow, and a Playwright insta
    WMS_PASSWORD=... node prep.mjs http://127.0.0.1:19490
    ```
 
+   Then narrow the Music library to albums with real cover art. `music-library.mjs` leaves out the albums whose only picture is a waveform or nothing at all (the Mutopia MIDI, the tracker collection, the music-video singles and a few more), and the ones whose tags split them into several albums. Every album the pictures show then has its own cover:
+
+   ```bash
+   WMS_PASSWORD=... node music-library.mjs
+   ```
+
 3. **Sync the look.** From this repository, copy the release's themes and experiences into `content/look.json`:
 
    ```bash
