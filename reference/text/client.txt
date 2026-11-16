@@ -54,7 +54,7 @@ android/ — Android TV, Google TV, Fire TV, phones and tablets: Kotlin, Compose
 apple/ — Apple TV, iPhone, iPad and Mac: SwiftUI, AVPlayer.
 There is no telemetry. Error reports go to the server you are connected to, and the owner can turn them off.
 Licensed under
-Apache-2.0 . Alpha software — keep backups, including your data folder, before upgrading.
+AGPL-3.0-or-later . Alpha software — keep backups, including your data folder, before upgrading.
 WittyMediaClient on GitHub
 See the companion server
 WittyMediaServer
@@ -63,5 +63,5 @@ Server
 Client
 Modules
 GitHub ↗
-Apache-2.0 Cookie settings
+AGPL-3.0-or-later Cookie settings
 © 2026 WittyMediaServer · Alpha software. Keep backups, including your data folder before upgrading.
