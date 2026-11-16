@@ -18,6 +18,10 @@
 .free-text { display: grid; gap: var(--sp-3); min-width: 0; }
 .free-text h2 { font-size: clamp(1.375rem, 1.05rem + 1.5vw, 2.125rem); font-weight: 750; letter-spacing: var(--tracking-display); line-height: 1.12; }
 .free-text p { color: var(--fg-2); font-size: var(--text-lg); max-width: 60ch; }
+.free-list { list-style: none; margin: var(--sp-1) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.free-list li { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px 0 10px; border-radius: var(--r-full); background: var(--bg-3); border: 1px solid var(--accent-line); font-size: var(--text-sm); font-weight: 650; }
+.free-list .i { color: var(--ok); width: 18px; height: 18px; }
+.free-sass { font-size: var(--text-md) !important; color: var(--fg-3) !important; font-style: italic; }
 @media (min-width: 760px) { .free-band { grid-template-columns: auto minmax(0, 1fr); } }
 
 /* Where can I use it: the systems the server runs on, the screens that reach it, and the NAS guides. */
