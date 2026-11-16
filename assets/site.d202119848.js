@@ -446,26 +446,26 @@
   }
   const show = (p, n, typing) => { box.innerHTML = html(p, n, typing) }
 
-  // Only names about the size of the real one are used, and the name gets one fixed width: the
-  // widest of them with the cursor after it. Whatever is showing, the menu beside it never moves.
+  // Only names about the size of the real one are used, and only those that fit the room they
+  // have, cursor included. Beside the menu that room is fixed by the stylesheet (style/site.css),
+  // so nothing here ever changes the name's size and the menu never moves. On smaller screens
+  // the buttons are held to the right edge, so the room is the space before them.
   // Measured on an invisible copy, so the real name never flickers, and again once the font has
   // loaded and whenever the window's size changes, since both change how wide a name is.
   let fits = []
+  const bar = box.closest('.wrap')
   const fit = () => {
+    const nav = bar?.querySelector('.nav'), tools = bar?.querySelector('.tools')
+    const room = nav?.offsetWidth || !tools ? box.clientWidth
+      : tools.getBoundingClientRect().left - box.getBoundingClientRect().left - 12
     const ghost = document.createElement('span')
     ghost.setAttribute('aria-hidden', 'true')
     ghost.className = 'brand-measure'
     box.after(ghost)
     const measure = (p, caret) => { ghost.innerHTML = html(p, text(p).length, caret); return ghost.getBoundingClientRect().width }
     const home = measure(HOME, false)
-    fits = NAMES.filter((p) => measure(p, false) <= home * 1.12)
-    const widest = Math.max(home, ...[HOME, ...fits].map((p) => measure(p, true)))
-    const homeOnly = measure(HOME, true)
+    fits = NAMES.filter((p) => measure(p, false) <= home * 1.12 && measure(p, true) <= room + 0.5)
     ghost.remove()
-    box.style.width = `${Math.ceil(widest)}px`
-    // On a very narrow screen with no room for the wider space, it stays WittyMediaServer.
-    const bar = box.closest('.wrap')
-    if (bar && bar.scrollWidth > bar.clientWidth + 1) { fits = []; box.style.width = `${Math.ceil(homeOnly)}px` }
   }
   fit()
   document.fonts?.ready.then(fit)

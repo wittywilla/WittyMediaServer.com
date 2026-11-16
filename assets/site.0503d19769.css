@@ -598,8 +598,8 @@ color-scheme: dark;
 --glow: rgb(var(--accent-rgb) / .22);
 }
 [data-pv="teletext"] { --pv-bg: #000000; --pv-fg: #ffffff; --pv-fg2: #00ffff; --pv-accent: #ffff00; }
-@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("/fonts/InterVariable.woff2") format("woff2"); }
-@font-face { font-family: "Inter"; font-style: italic; font-weight: 100 900; font-display: swap; src: url("/fonts/InterVariable-Italic.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: fallback; src: url("/fonts/InterVariable.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: italic; font-weight: 100 900; font-display: fallback; src: url("/fonts/InterVariable-Italic.woff2") format("woff2"); }
 :root {
 --border-strong: color-mix(in srgb, var(--fg) 20%, transparent);
 --hover: color-mix(in srgb, var(--fg) 7%, transparent);
@@ -705,12 +705,17 @@ svg.i.gh-mark { color: var(--fg); color: light-dark(#000, #fff); }
 .topbar .tools { gap: 6px; }
 }
 @media (min-width: 1140px) {
-.nav { display: flex; align-items: center; gap: 2px; margin-left: var(--sp-4); }
+.nav { display: flex; align-items: center; gap: 0; margin-left: var(--sp-2); }
+.nav a { gap: 6px; padding: 0 9px; font-size: var(--text-sm); }
+.nav a .i { width: 16px; height: 16px; }
+.topbar .brand > span:not(.brand-measure) { width: 9.6em; }
 .topbar .gh { display: inline-grid; }
 body { padding-bottom: 0; }
 }
-@media (min-width: 1140px) { .nav a .i { display: none; } .nav a { padding: 0 11px; } }
-@media (min-width: 1340px) { .nav a .i { display: block; } .nav a { padding: 0 10px; } }
+@media (1140px <= width < 1240px) {
+.topbar .gh-dl span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.topbar .gh-dl { width: 40px; padding: 0; }
+}
 .tabbar {
 position: fixed; z-index: 50; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px));
 height: var(--tabbar-h); max-width: 520px; margin-inline: auto;
