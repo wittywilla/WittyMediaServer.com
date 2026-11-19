@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Live TV: tuners, IPTV and the guide · WittyMediaServer</title>
+<meta name="description" content="Live TV comes from the WittyTuner module: network tuner boxes, IPTV playlists (M3U and M3U8), single streams, SAT&gt;IP, TV cards and capture devices. This page…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/live-tv/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="Live TV: tuners, IPTV and the guide">
+<meta property="og:description" content="Live TV comes from the WittyTuner module: network tuner boxes, IPTV playlists (M3U and M3U8), single streams, SAT&gt;IP, TV cards and capture devices. This page…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/live-tv/">
+<meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/images/icon.svg?v=9cf5c423a5" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7208149007">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.0503d19769.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b})()</script>
+<script src="/assets/site.d202119848.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/karaoke/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>Karaoke</a><a href="/try/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg>Try it</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a></nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></a>
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+    </div>
+  </div>
+</header>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Colours</h2>
+  <p>The server’s own 15 themes, for this site. <a href="/try/">Try each one with every layout</a>.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default" data-pv="default"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Witty</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light" data-pv="light"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Light</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight" data-pv="midnight"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Midnight</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled" data-pv="oled"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>True black</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen" data-pv="evergreen"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Evergreen</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema" data-pv="cinema"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cinema</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper" data-pv="paper"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Paper</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast" data-pv="contrast"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>High contrast</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroday" data-pv="aeroday"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Day</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroaurora" data-pv="aeroaurora"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Aurora</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeromeadow" data-pv="aeromeadow"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Meadow</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aerosunset" data-pv="aerosunset"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Sunset</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cable" data-pv="cable"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cable blue</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="satellite" data-pv="satellite"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Satellite</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="teletext" data-pv="teletext"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Teletext</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/install/">Installing WittyMediaServer</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/profiles/">Profiles and parental controls</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Docker and NAS</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/syncplay/">Watch parties</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos, music videos and concerts</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling WittyMediaServer</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>For developers</h2>
+      <ul><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/sdui/">Server-Driven UI (SDUI)</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/modules-api5/">Module API 5: a module owns its whole feature</a></li><li><a href="/docs/remote-protocol/">Remote Protocol</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/gaming-stream/">Games: one stream for every device</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/" aria-current="page">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">More guides</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/install/">Installing WittyMediaServer</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/profiles/">Profiles and parental controls</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Docker and NAS</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/syncplay/">Watch parties</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos, music videos and concerts</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling WittyMediaServer</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>For developers</h2>
+      <ul><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/sdui/">Server-Driven UI (SDUI)</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/modules-api5/">Module API 5: a module owns its whole feature</a></li><li><a href="/docs/remote-protocol/">Remote Protocol</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/gaming-stream/">Games: one stream for every device</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/" aria-current="page">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#more">More guides</a></p>
+      <h1>Live TV: tuners, IPTV and the guide</h1>
+      <p class="lead">Live TV comes from the <strong>WittyTuner</strong> module: network tuner boxes, IPTV playlists (M3U and M3U8), single streams, SAT&gt;IP, TV cards and capture devices. This page is how it works in practice: getting channels in, keeping a big playlist tidy, getting the guide right, and what happens when a stream misbehaves. Channels made from your own library (WittyTV), the guide’s look and the player are in <a href="/docs/channels/">Channels and live TV</a>.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-19">19 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/LIVE-TV.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#try-it-with-no-tuner-the-demo-tuner">Try it with no tuner: the demo tuner</a></li><li><a href="#adding-a-playlist">Adding a playlist</a></li><li><a href="#big-playlists">Big playlists</a></li><li><a href="#when-a-playlist-changes">When a playlist changes</a></li><li><a href="#what-a-playlist-can-say-about-a-channel">What a playlist can say about a channel</a></li><li><a href="#guide-data">Guide data</a></li><li><a href="#matching-channels-to-the-guide">Matching channels to the guide</a></li><li><a href="#network-tuner-boxes">Network tuner boxes</a></li><li><a href="#how-a-channel-plays">How a channel plays</a></li><li><a href="#recording">Recording</a></li><li><a href="#when-something-goes-wrong">When something goes wrong</a></li><li><a href="#what-it-costs">What it costs</a></li><li><a href="#for-developers-and-testers">For developers and testers</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>No channel lists or stream addresses come with the server. <strong>Encrypted and DRM-protected channels are never decrypted</strong>: they’re shown as encrypted, with the reason, and refused everywhere (see <a href="/docs/channels/#encrypted-channels">Encrypted channels</a>).</p>
+<h2 id="try-it-with-no-tuner-the-demo-tuner">Try it with no tuner: the demo tuner<a class="h-anchor" href="#try-it-with-no-tuner-the-demo-tuner" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Try a demo tuner</strong> in first-time setup’s Live TV step, or <strong>Add a demo tuner</strong> in <strong>Settings → Live TV &amp; tuners</strong>, adds a pretend tuner that runs on the server itself. It needs no hardware and no internet:</p>
+<ul><li><strong>Channels made as you watch:</strong> Demo News (colour bars), Demo Pattern, Demo Life and Demo Colours, each with its name, a clock and a steady tone, made by the server’s FFmpeg. Give it a <strong>Folder of clips</strong> and up to six videos from that folder become channels of their own, played in a loop.</li><li><strong>Demo Protected</strong> is marked as copy protected, the way a real tuner marks one, so you can see how an encrypted channel looks. Nothing is protected or decrypted: it simply never plays.</li><li><strong>Its own guide</strong>, from yesterday to three days ahead, so the guide, WittyTV, <strong>Record</strong> and the player’s <strong>Live</strong> button all work.</li><li><strong>It behaves like a real tuner box.</strong> It answers the same discovery and lineup questions a network tuner does, on this computer only, so everything after adding it is the real network tuner’s code: a channel scan, tuning, “all tuners in use”.</li><li><strong>For testing error handling,</strong> its settings (open the tuner under <strong>Settings → Live TV &amp; tuners</strong>) choose how many <strong>Tuners</strong> it has (1 to 8), <strong>Slow tuning</strong> (wait up to 30 seconds before a channel starts), and <strong>Lose the signal every</strong> so many minutes.</li></ul>
+<p>Everything about it says <strong>Demo</strong>. Remove it like any other tuner. It answers on port 47601 of this computer only (<code>127.0.0.1</code>); change <strong>Port</strong> if another program uses that.</p>
+<h2 id="adding-a-playlist">Adding a playlist<a class="h-anchor" href="#adding-a-playlist" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Settings → Live TV &amp; tuners → Add live TV → A playlist from a TV provider.</strong> Paste its address (<code>http://</code> or <code>https://</code>) or the path of a file on the server, press <strong>Check it</strong> to see what it holds without saving anything, then <strong>Add and read its channels</strong>. A gzipped playlist is fine.</p>
+<p>Where a playlist comes from decides what it may reach: one at home (a file, a private address, a <code>.local</code> name) may name devices on your network; one from the internet stays on the internet. See <a href="/docs/channels/#live-tv-playlists">Live TV playlists</a>.</p>
+<h2 id="big-playlists">Big playlists<a class="h-anchor" href="#big-playlists" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>A provider’s playlist can hold thousands of channels. A tuner’s <strong>Channels</strong> page narrows them:</p>
+<ul><li><strong>Find a channel</strong> searches names, numbers and groups.</li><li><strong>Group</strong>, <strong>Country</strong> and <strong>Language</strong> lists appear when the playlist uses <code>group-title</code>, <code>tvg-country</code> and <code>tvg-language</code>.</li><li><strong>Which channels</strong>: shown, hidden, <strong>with no guide</strong>, or <strong>missing from the playlist</strong>.</li><li>With a filter on, <strong>Show these</strong> and <strong>Hide these</strong> change every channel it picks at once: hide everything, then show the one group you watch. Without a filter they’re <strong>Show all</strong> and <strong>Hide all</strong>.</li><li>Tick channels for the bar: <strong>Renumber</strong> from a number upward, <strong>Make into one</strong>, <strong>Check health</strong>.</li></ul>
+<p>Favourites, sets and the guide’s own filters are the viewer’s, in the guide.</p>
+<p>A 5,000-channel playlist is read and saved in under a second on a desktop computer; the list shows 500 at a time.</p>
+<h2 id="when-a-playlist-changes">When a playlist changes<a class="h-anchor" href="#when-a-playlist-changes" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>WittyTuner reads a playlist again when you press <strong>Read the list</strong>, and keeps what you chose for each channel: its number, name, logo, guide match, whether it’s shown, and so the favourites, recordings and sets that name it.</p>
+<ul><li><strong>A changed address keeps the channel.</strong> Many providers put a login token in each address that changes from day to day. A channel without a <code>tvg-id</code> is known by its address, so a new token looks like a new channel. When exactly one channel of the same name and group disappeared and one appeared, it’s the same channel: it keeps its place and everything chosen for it.</li><li><strong>A channel that disappears is kept for a week</strong>, hidden from the guide and marked <strong>Missing from the playlist</strong> on the Channels page, so a playlist that drops it for a day loses nothing. Back within the week, it’s as it was. After a week it goes.</li></ul>
+<h2 id="what-a-playlist-can-say-about-a-channel">What a playlist can say about a channel<a class="h-anchor" href="#what-a-playlist-can-say-about-a-channel" aria-hidden="true" tabindex="-1">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>In the playlist</th><th>What it does</th></tr></thead><tbody><tr><td><code>tvg-id</code></td><td>The channel’s id in the guide</td></tr><tr><td><code>tvg-name</code></td><td>Its name, when the line has none after the comma</td></tr><tr><td><code>tvg-logo</code></td><td>Its logo (web addresses only), fetched and kept by the server</td></tr><tr><td><code>tvg-chno</code></td><td>Its number</td></tr><tr><td><code>group-title</code>, <code>#EXTGRP</code></td><td>Its group</td></tr><tr><td><code>tvg-language</code>, <code>tvg-country</code></td><td>Shown under its name, and filters on the Channels page</td></tr><tr><td><code>tvg-shift</code></td><td>Hours its guide is moved by (<code>1</code> for a “+1” channel, <code>-2.5</code> too); on <code>#EXTM3U</code> it applies to every channel</td></tr><tr><td><code>catchup</code>, <code>catchup-days</code>, <code>catchup-source</code>, <code>timeshift</code></td><td>How far back its source keeps what it showed: see catch-up in <a href="/docs/channels/#watching-a-channel">Channels and live TV</a></td></tr><tr><td><code>url-tvg</code>, <code>x-tvg-url</code> on <code>#EXTM3U</code></td><td>The guide’s address, added under <strong>Guide data</strong> for you</td></tr><tr><td><code>#EXTVLCOPT:http-user-agent=…</code>, <code>#EXTVLCOPT:http-referrer=…</code></td><td>The user agent and referrer the channel’s stream wants</td></tr><tr><td>`address\</td><td>User-Agent=…&amp;Referer=…`</td><td>The same, after the address</td></tr><tr><td><code>#EXTHTTP:{&quot;User-Agent&quot;: …}</code>, <code>#KODIPROP:…stream_headers=…</code></td><td>The same</td></tr><tr><td>The same channel listed twice (the same <code>tvg-id</code> and name, another address)</td><td>One channel, with the second address as its fallback</td></tr><tr><td><code>#KODIPROP</code> licence lines, DRM, Widevine, PlayReady, FairPlay or ClearKey</td><td>The channel is marked encrypted and never opened</td></tr></tbody></table></div>
+<p>A user agent set on the tuner itself is for fetching the playlist; one the playlist names for a channel wins for that channel.</p>
+<h2 id="guide-data">Guide data<a class="h-anchor" href="#guide-data" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Guides come from:</p>
+<ul><li><strong>XMLTV</strong>, by address or file, under <strong>Guide data</strong>, plain or gzipped. A playlist’s own <code>url-tvg</code> and a provider account’s guide are added for you. Each is read when added and then twice a day. Its row says how many listings it gave, for how many channels, and how far ahead they go; a warning appears when one hasn’t been read for two days, or its listings run out within 12 hours.</li><li><strong>Broadcasts</strong> themselves (DVB EIT, ATSC PSIP), while a channel is on.</li><li><strong>The demo tuner’s</strong> own guide.</li></ul>
+<p>No guide service account or key is built in. Free and open sources work as XMLTV addresses: point <strong>Guide data</strong> at an XMLTV file you’re allowed to use, such as one you make yourself with an open-source guide grabber, and respect that source’s terms and how often it allows downloads. Guide data is cached by the server and only the coming two weeks are kept.</p>
+<p><strong>Logos</strong> come from the playlist (<code>tvg-logo</code>), the provider, or the logo you choose for a channel. The server fetches each once and keeps it, so viewers’ devices never contact the logo’s site.</p>
+<h2 id="matching-channels-to-the-guide">Matching channels to the guide<a class="h-anchor" href="#matching-channels-to-the-guide" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Each channel’s listings come from one guide entry. WittyTuner matches them by itself, forgivingly:</p>
+<ol><li><strong>By guide id</strong>, also when the guide writes it in another case or with a suffix (<code>BBCOne.uk@HD</code> finds <code>bbcone.uk</code>).</li><li><strong>By name</strong>, without a playlist’s country tags and quality words: <code>UK: BBC One HD</code>, <code>[UK] BBC One FHD</code> and <code>BBC One</code> are the same name. Names in any alphabet work.</li><li><strong>By call sign</strong>, and by <strong>number</strong> among a guide channel’s names.</li><li><strong>By a similar name</strong>, scored by how alike the words are. Numbers must agree, so Channel 4 is never taken for Channel 5.</li></ol>
+<p>Each match has a <strong>confidence score</strong>. A match is made by itself when it’s at least 80% sure and nothing else comes close. The rest wait for you on <strong>Settings → Live TV &amp; tuners → Match channels to the guide</strong>:</p>
+<ul><li>Channels with <strong>no guide</strong> and <strong>unsure</strong> matches, each with its likeliest guide entries and their scores: <strong>one press</strong> takes one.</li><li><strong>Search the guide</strong> beside each, for when the right one isn’t suggested. <strong>No guide</strong> clears a match.</li><li><strong>Match what is sure</strong> runs the automatic matching again, and <strong>Show every channel</strong> lists the matched ones too.</li></ul>
+<p><strong>A match you choose is remembered</strong> by the channel’s name, so if the playlist is removed and added again, or a channel comes back, it gets the same guide. A guide id you type on a tuner’s Channels page counts as chosen too. Matching runs after every guide read and every playlist read.</p>
+<p>On a television, <strong>Match channels to the guide</strong> says to use a desktop app or web browser; what’s chosen there applies on the TV. Watching the guide and changing channels stay fully usable on a TV.</p>
+<h2 id="network-tuner-boxes">Network tuner boxes<a class="h-anchor" href="#network-tuner-boxes" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Search for tuners</strong> finds boxes on your network by their discovery protocol (and SSDP for those that emulate one), including boxes that answer on another port. A box that doesn’t answer a search is added by its address: <strong>Add live TV → A tuner box on your network</strong>, then type <code>192.168.1.50</code> (or <code>192.168.1.50:8080</code>). <strong>Check it</strong> says the model and how many tuners it has, or which way it failed: nothing answered, or something answered that isn’t a tuner. <strong>Scan for channels</strong> shows its progress. Channels the box marks as protected are shown as encrypted.</p>
+<p>While watching, a box that’s busy says <strong>all of this device’s tuners are in use</strong>, one that can’t tune says the signal may be too weak, and one that no longer has a channel says to scan again.</p>
+<h2 id="how-a-channel-plays">How a channel plays<a class="h-anchor" href="#how-a-channel-plays" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li><strong>One upstream stream per channel.</strong> However many people watch a channel, the server opens it once, converts it once and serves every viewer from that, so a provider’s “streams at once” limit counts channels, not viewers. A tuner’s <strong>Streams at once</strong> setting caps how many channels it opens.</li><li><strong>HLS and MPEG-TS</strong> both work. HLS is read through a small gate on this computer, which checks every playlist for encryption keys before FFmpeg sees it. Redirects are followed, but never back to your home network for a playlist from the internet.</li><li><strong>Fallbacks.</strong> When a channel won’t open, its other addresses from the playlist are tried, then its backups (the same channel from another tuner or playlist, see Duplicates in <a href="/docs/channels/#tuners-and-iptv">Channels and live TV</a>).</li><li><strong>When a stream drops while people watch</strong>, the server tries again at once, then after 1, 2, 4 and 8 seconds, before telling viewers it stopped. Encrypted is final.</li><li><strong>Remux or convert.</strong> With <strong>Pass H.264 through</strong> on (live TV’s options), H.264 that needs no work passes through unconverted; otherwise it’s converted to the height set there. Interlaced broadcasts are deinterlaced.</li><li><strong>Sound and subtitles.</strong> The first sound track plays. Sound that this server’s FFmpeg can’t decode (AC-4 on some ATSC 3.0 stations) plays without sound, with a notice. Choosing another sound or subtitle track on live TV isn’t offered yet.</li></ul>
+<h2 id="recording">Recording<a class="h-anchor" href="#recording" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Any tuner or IPTV channel that isn’t encrypted or marked <strong>can’t record</strong> can be recorded, once or every airing, from the guide or a programme’s details (see <a href="/docs/channels/#recordings">Recordings</a>).</p>
+<ul><li><strong>A stream that drops mid-recording is opened again</strong> and added to the same file, trying every few seconds (up to every 30 seconds) until the programme’s end. The finished recording says how many times the stream dropped, so you know a moment may be missing.</li><li>HLS channels are recorded with their picture and sound; their subtitles and data tracks are left out, as they can’t go in the recording’s file.</li><li>When no tuner is free, a live viewer on that tuner is stopped so the recording can start.</li></ul>
+<h2 id="when-something-goes-wrong">When something goes wrong<a class="h-anchor" href="#when-something-goes-wrong" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Errors are said in words, with what to try:</p>
+<div class="table-wrap"><table><thead><tr><th>You see</th><th>What it means</th></tr></thead><tbody><tr><td><strong>The stream refused this server (403)</strong></td><td>The link may have expired (read the playlist again), or the provider wants a particular user agent or referrer (set it on the tuner, or in the playlist)</td></tr><tr><td><strong>The stream isn’t there any more (404)</strong></td><td>The playlist is out of date, or the channel is off the air</td></tr><tr><td><strong>The channel’s playlist names video that isn’t there</strong></td><td>Its HLS variants are all missing: off the air, or an old address</td></tr><tr><td><strong>The provider’s server had a problem</strong></td><td>Their side; try again shortly</td></tr><tr><td><strong>The stream could not be reached</strong></td><td>No connection to that address</td></tr><tr><td><strong>All of this device’s tuners are in use</strong></td><td>Every tuner, or the provider’s stream limit, is taken</td></tr><tr><td><strong>Encrypted: can’t be played here</strong></td><td>The broadcaster protects it. It’s never decrypted, and nothing is wrong with your setup</td></tr><tr><td><strong>The guide’s address could not be reached</strong></td><td>On a guide source: check its address</td></tr></tbody></table></div>
+<p>The full detail of every failure is in the server’s log, never shown on a page, as an address can hold a login.</p>
+<h2 id="what-it-costs">What it costs<a class="h-anchor" href="#what-it-costs" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li>Reading a 5,000-channel playlist: under a second. Matching 3,000 channels against a 40,000-channel guide: a fraction of a second. A 13 MB XMLTV guide: about 5 seconds, a little memory, streamed rather than loaded whole.</li><li>Watching: one FFmpeg per channel being watched, shared by its viewers. With <strong>Pass H.264 through</strong>, H.264 channels cost almost nothing.</li><li>The demo tuner: one small FFmpeg (640×360) per demo channel being watched or recorded, and nothing when none is.</li><li>Recording: a raw stream is written straight to disk; others are copied by FFmpeg without converting.</li></ul>
+<h2 id="for-developers-and-testers">For developers and testers<a class="h-anchor" href="#for-developers-and-testers" aria-hidden="true" tabindex="-1">#</a></h2>
+<ul><li>The demo tuner is WittyTuner’s <code>demo</code> driver (<code>demo.go</code>): an HTTP lineup (<code>/discover.json</code>, <code>/lineup.json</code>, <code>/lineup_status.json</code>, <code>/lineup.post</code>, <code>/auto/v&lt;number&gt;</code>), a discovery answer on <code>127.0.0.1:65001</code> naming its port, and <code>/guide.xml</code>. Its tests run against a real FFmpeg: <code>WMS_FFMPEG=&lt;ffmpeg&gt; go test . -run Demo</code>.</li><li>Matching is WittyTuner’s <code>match</code> package. The server lists the guide’s channels to it (host API <code>GET /tv/guide/ids</code>: id, name, other names, icon, source, and how far ahead its listings go).</li><li>A <code>tvg-shift</code> channel’s programmes are kept under <code>&lt;guide id&gt;@&lt;minutes&gt;</code>, so every part of the server that reads a channel’s guide sees them moved.</li><li>Testing with a big playlist: WittyTuner’s tests make playlists of thousands of channels; for a test server, any generated M3U and XMLTV of made-up channels whose addresses lead nowhere, or to the demo tuner, will do. Don’t test with pirated IPTV lists.</li></ul>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/data-folder/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>The data folder</strong></a>
+      <a class="card next" href="/docs/setup-flow/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>First-time setup: the flow</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/LIVE-TV.md" rel="noopener">docs/LIVE-TV.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/LIVE-TV.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#try-it-with-no-tuner-the-demo-tuner">Try it with no tuner: the demo tuner</a></li><li><a href="#adding-a-playlist">Adding a playlist</a></li><li><a href="#big-playlists">Big playlists</a></li><li><a href="#when-a-playlist-changes">When a playlist changes</a></li><li><a href="#what-a-playlist-can-say-about-a-channel">What a playlist can say about a channel</a></li><li><a href="#guide-data">Guide data</a></li><li><a href="#matching-channels-to-the-guide">Matching channels to the guide</a></li><li><a href="#network-tuner-boxes">Network tuner boxes</a></li><li><a href="#how-a-channel-plays">How a channel plays</a></li><li><a href="#recording">Recording</a></li><li><a href="#when-something-goes-wrong">When something goes wrong</a></li><li><a href="#what-it-costs">What it costs</a></li><li><a href="#for-developers-and-testers">For developers and testers</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.8.0-alpha/">WittyMediaServer 0.8.0-alpha</a>, 16 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/try/">Try the looks</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your choice of colours is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the colours</a>.</span></p>
+      <p>WittyMediaServer, its modules and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">GNU Affero General Public License v3.0 (or later)</a>, and the apps under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GNU General Public License v3.0 (or later)</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Main"><a href="/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Home</a><a href="/server/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>Server</a><a href="/try/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>Try it</a><a href="/docs/" aria-current="page"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg></span>Docs</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer"><span class="ic"><svg class="i when-shut" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg><svg class="i when-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>More</button></nav>
+<div class="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="More pages">
+  <h2>Pages</h2>
+  <nav aria-label="More pages"><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/karaoke/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>Karaoke</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a></nav>
+  <h2>Learn and take part</h2>
+  <nav aria-label="Learn and take part"><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>First-time setup: the flow · WittyMediaServer</title>
+<meta name="description" content="This page says what first-time setup asks, in what order, and why. It is the plan the setup pages (web/src/pages/setup/, SetupWizard.tsx, setup/plan.ts) and…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/setup-flow/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="First-time setup: the flow">
+<meta property="og:description" content="This page says what first-time setup asks, in what order, and why. It is the plan the setup pages (web/src/pages/setup/, SetupWizard.tsx, setup/plan.ts) and…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/setup-flow/">
+<meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/images/icon.svg?v=9cf5c423a5" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7208149007">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.0503d19769.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b})()</script>
+<script src="/assets/site.d202119848.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/karaoke/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>Karaoke</a><a href="/try/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg>Try it</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a></nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></a>
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+    </div>
+  </div>
+</header>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Colours</h2>
+  <p>The server’s own 15 themes, for this site. <a href="/try/">Try each one with every layout</a>.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default" data-pv="default"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Witty</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light" data-pv="light"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Light</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight" data-pv="midnight"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Midnight</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled" data-pv="oled"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>True black</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen" data-pv="evergreen"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Evergreen</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema" data-pv="cinema"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cinema</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper" data-pv="paper"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Paper</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast" data-pv="contrast"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>High contrast</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroday" data-pv="aeroday"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Day</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroaurora" data-pv="aeroaurora"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Aurora</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeromeadow" data-pv="aeromeadow"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Meadow</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aerosunset" data-pv="aerosunset"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Sunset</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cable" data-pv="cable"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cable blue</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="satellite" data-pv="satellite"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Satellite</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="teletext" data-pv="teletext"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Teletext</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/install/">Installing WittyMediaServer</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/profiles/">Profiles and parental controls</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Docker and NAS</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/syncplay/">Watch parties</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos, music videos and concerts</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling WittyMediaServer</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>For developers</h2>
+      <ul><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/sdui/">Server-Driven UI (SDUI)</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/modules-api5/">Module API 5: a module owns its whole feature</a></li><li><a href="/docs/remote-protocol/">Remote Protocol</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/gaming-stream/">Games: one stream for every device</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/" aria-current="page">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">More guides</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/install/">Installing WittyMediaServer</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/profiles/">Profiles and parental controls</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Docker and NAS</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/syncplay/">Watch parties</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos, music videos and concerts</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling WittyMediaServer</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>For developers</h2>
+      <ul><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/sdui/">Server-Driven UI (SDUI)</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/modules-api5/">Module API 5: a module owns its whole feature</a></li><li><a href="/docs/remote-protocol/">Remote Protocol</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/gaming-stream/">Games: one stream for every device</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/" aria-current="page">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#more">More guides</a></p>
+      <h1>First-time setup: the flow</h1>
+      <p class="lead">This page says what first-time setup asks, in what order, and why. It is the plan the setup pages (<code>web/src/pages/setup/</code>, <code>SetupWizard.tsx</code>, <code>setup/plan.ts</code>) and the server’s setup routes follow. <a href="/docs/first-time-setup/">FIRST-TIME-SETUP.md</a> is the guide for people setting up a server; this page is for whoever changes setup.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-19">19 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/SETUP-FLOW.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#the-rules">The rules</a></li><li><a href="#the-steps">The steps</a></li><li><a href="#wittytv-after-setup">WittyTV after setup</a></li><li><a href="#what-setup-remembers">What setup remembers</a></li><li><a href="#what-this-fixed-081-alpha-before-this-change">What this fixed (0.8.1-alpha before this change)</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<h2 id="the-rules">The rules<a class="h-anchor" href="#the-rules" aria-hidden="true" tabindex="-1">#</a></h2>
+<ol><li><strong>Language and time zone come first</strong>, before anything else, and are asked once.</li><li>Then the <strong>account</strong>, then <strong>where data is kept</strong> (a desktop install only), then the <strong>server’s name</strong>.</li><li>Then <strong>modules and libraries</strong>: choose and install modules, add libraries, then <strong>each installed module’s own setup</strong> (Live TV and its demo tuner, Games, Discs, and any later module that brings a step).</li><li>Then <strong>looks and themes</strong>, after the modules are set up, so the choices are about things the person now has. <strong>WittyTV’s look is offered only when WittyTuner is installed.</strong></li><li>Then <strong>people</strong>, then <strong>away from home</strong> (remote access in plain words, with a connection test), then <strong>optional extras</strong> (posters and details, logos, lyrics, the karaoke voice separator, streaming lists), then <strong>Ready</strong>.</li><li>Every step that can be skipped says where the same choice is later: “You can change this later in Settings → …”, <strong>once</strong> per page.</li><li>Plain words. No “port”, “P2P”, “NFO”, “metadata agent” or “API key” without saying what it is in the same sentence. Progress is always shown.</li><li>TV mode: a part that a remote does badly (typing long codes, choosing a file, colouring letters) says <strong>”Leave TV mode to change this”</strong> on a computer in TV mode, or <strong>”Use the WittyMediaClient app on a Windows or Mac computer, or a web browser”</strong> on a TV, from the same table as the rest of the app (<code>pkg/sdui/data/tvlevels.json</code>, docs/TV-MODE.md). Setup never strands someone: those parts can always be skipped.</li></ol>
+<h2 id="the-steps">The steps<a class="h-anchor" href="#the-steps" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Twelve numbered steps. A step can have several pages (“Step 4 of 12 · This server · part 2 of 3”). The count never changes under someone: a step with nothing to do on this server is still counted, drawn dimmed with a reason, and passed over.</p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Step</th><th>Pages</th><th>Who sees it</th><th>Skippable</th></tr></thead><tbody><tr><td>1</td><td>Language</td><td>Language and time zone</td><td>everyone</td><td>has a default; Continue</td></tr><tr><td>2</td><td>Welcome</td><td>Set up new, or restore a backup</td><td>everyone</td><td>–</td></tr><tr><td>3</td><td>Your account</td><td>Account; two-step sign-in (when ticked)</td><td>everyone</td><td>two-step page yes</td></tr><tr><td>4</td><td>This server</td><td>Where data is kept (desktop installs only); Name; Home network</td><td>everyone</td><td>Name and Home network yes</td></tr><tr><td>5</td><td>Modules</td><td>Choose and install; when there are new versions</td><td>when the module list can be read</td><td>yes</td></tr><tr><td>6</td><td>Libraries</td><td>Where your media is</td><td>everyone</td><td>yes</td></tr><tr><td>7</td><td>Set up your modules</td><td>one page per installed module with a step (Live TV, Games, Discs, …)</td><td>when such a module is installed</td><td>each page</td></tr><tr><td>8</td><td>Looks</td><td>Layout; Colours; WittyTV (only with WittyTuner)</td><td>everyone</td><td>yes</td></tr><tr><td>9</td><td>People</td><td>Profiles; rules</td><td>everyone</td><td>yes</td></tr><tr><td>10</td><td>Away from home</td><td>Reach it away from home; pair an app</td><td>everyone</td><td>yes</td></tr><tr><td>11</td><td>Extras</td><td>Posters and details; Logos; Lyrics and artists; Karaoke voices; Streaming lists</td><td>pages by what’s on the server</td><td>every page, and “Skip the extras”</td></tr><tr><td>12</td><td>Ready</td><td>What’s set up, and what’s next</td><td>everyone</td><td>–</td></tr></tbody></table></div>
+<h3 id="1-language">1. Language<a class="h-anchor" href="#1-language" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”Language and time zone”.</em> Asked before Welcome, in this browser, and saved when the account is made (as today). Decides: the language for disc menus and sound tracks, the server’s time zone.</p>
+<ul><li>Counted as step 1, so the header no longer says “Welcome” over it.</li><li><strong>Not asked again</strong> on the Name page. Today Settings has no place for either, which is why Name asked again: this work adds <em>Language and time zone</em> to <em>Settings → Server</em>, and that is the “later” place.</li></ul>
+<h3 id="2-welcome">2. Welcome<a class="h-anchor" href="#2-welcome" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”Let’s set up your server”</em>: <strong>Set up a new server</strong> or <strong>Restore from a backup</strong> (as today). The list of what the server does stays.</p>
+<h3 id="3-your-account">3. Your account<a class="h-anchor" href="#3-your-account" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”Create your account”</em>, and the two-step page when ticked (as today). Not skippable. On a service, Docker or another device, the setup code panel (as today).</p>
+<h3 id="4-this-server">4. This server<a class="h-anchor" href="#4-this-server" aria-hidden="true" tabindex="-1">#</a></h3>
+<ul><li><strong>Where data is kept</strong> (only when the server says <code>ask</code>: a desktop install with no data folder chosen). As #473 made it. Not skippable, but “Keep it here” with the current folder is the default. “Somewhere else” on a TV: <em>use a computer</em> note (typing a folder path with a remote).</li><li><strong>Name</strong>: <em>”Name your server”</em>, the name editor with its colours and mark. Colouring letters and uploading a mark are <code>desktopOnly</code> parts on a TV; the name itself can be typed. Later: <em>Settings → Appearance → Name and logo</em>.</li><li><strong>Home network</strong>: <em>”Finding this server at home”</em>: “Find this server automatically” (apps on your home network find it by name), and <em>”The number at the end of its address”</em> (the port), with the address shown in full (<code>http://192.168.1.20:9797</code>). Later: <em>Settings → Network</em>. The <em>Encrypted connections</em> line moves to step 10, and no link leaves setup from here.</li></ul>
+<h3 id="5-modules">5. Modules<a class="h-anchor" href="#5-modules" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”What do you want on this server?”</em>, as today: Recommended first, then by kind, the gaming-PC ones folded away; then <em>”When a module has a new version”</em>. Installing shows each module’s progress. Later: <em>Settings → Modules</em>.</p>
+<h3 id="6-libraries">6. Libraries<a class="h-anchor" href="#6-libraries" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”Where is your media?”</em>, as today, with one question moved here from Details:</p>
+<ul><li><strong>Before the first folder is added</strong>: <em>”Save posters and details beside your files?”</em> (<code>saveMetadata</code>). Adding a library starts a scan at once, and today the question comes two steps later, after files may already have been written into the media folders. The default stays on; the words say plainly that the videos and music themselves are never changed.</li></ul>
+<p>Later: <em>Settings → Libraries</em>.</p>
+<h3 id="7-set-up-your-modules">7. Set up your modules<a class="h-anchor" href="#7-set-up-your-modules" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>One page for each installed module that brings a first-run step (<code>integration.json</code> <code>web.setup</code>), in the order the module list shows them. Today: <strong>Live TV</strong> (WittyTuner), <strong>Games</strong> (WittyPlay), <strong>Discs</strong> (WittyDVD/WittyBluray, the server’s own page). A module added later just adds a page.</p>
+<ul><li><strong>Live TV</strong>: WittyTuner’s own page: find tuners, add a playlist or a single stream, and <em>”No tuner or playlist yet? Try a demo tuner”</em> (WittyTuner 0.4.4). Later: the module’s own <code>later</code> (<em>Settings → Live TV &amp; tuners</em>); the server no longer keeps its own different wording for it.</li><li><strong>Games</strong>: WittyPlay’s own page. <strong>Discs</strong>: as today.</li><li>Moving on (Continue or Skip) records the step, so Home doesn’t say “Finish setting up” afterwards (#434).</li><li>With no such module, the step is dimmed: <em>”Nothing to set up: no module here needs it.”</em></li><li>Before the Modules step has been passed, the dimmed line says <em>”After you choose modules”</em>, never “Module not added” (today it says that from the very first page).</li></ul>
+<h3 id="8-looks">8. Looks<a class="h-anchor" href="#8-looks" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>After the modules, so every choice is about something the person has.</p>
+<ul><li><strong>Layout</strong>: <em>”How should it be laid out?”</em> the fourteen looks, previewed as this device shows them (the lead stops saying “as a phone shows it” on a computer). On a phone the preview comes first and the cards below, so the page isn’t sixteen cards long before anything else. Later: <em>Settings → Appearance</em>.</li><li><strong>Colours</strong>: <em>”Choose colours”</em>, as today, without “Let people import their own themes” (a rule: it moves to People). <em>Import a theme…</em> opens a file picker: <code>desktopOnly</code> on a TV.</li><li><strong>WittyTV</strong> (only when WittyTuner is installed): <em>”How should the TV guide look?”</em>, the guide’s layout and colours (<code>tvTheme</code>), starting from what the chosen look brings (“Follow the look”). People can still pick their own in the guide. Later: <em>Settings → Appearance → WittyTV</em>.</li><li>The <em>TV mode on this device</em> switch leaves this step: it is about one device, not the server. It moves to Ready (“Use this screen as a TV”).</li></ul>
+<h3 id="9-people">9. People<a class="h-anchor" href="#9-people" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”Who else watches?”</em>: add profiles and kids profiles, then <em>”Rules”</em>: a look or theme required of everyone, of kids, or of one person (now after the looks it refers to), and <em>”Let people add their own themes”</em> (moved from Colours). Later: <em>Settings → Profiles</em>.</p>
+<h3 id="10-away-from-home">10. Away from home<a class="h-anchor" href="#10-away-from-home" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”Watch away from home”</em>, done here rather than a list of links out of setup.</p>
+<ul><li>One switch: <em>”Let my devices reach this server away from home”</em> (peer-to-peer, #477): <em>”Your phone or laptop connects straight to this server, with nothing to change on your router. If a direct connection can’t be made, a relay passes it along, encrypted.”</em> Off by default; the status words come from the server (the same ones Settings uses).</li><li><strong>Test the connection</strong> (#477’s test) answers in a sentence.</li><li><em>Encrypted connections</em>: the server’s own words (moved here from the Name page).</li><li><em>Pair an app</em>: the code and QR code shown in place, not a link away.</li><li>Later: <em>Settings → Remote Access</em>.</li></ul>
+<h3 id="11-extras">11. Extras<a class="h-anchor" href="#11-extras" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”A few extras, all optional”</em>. First page has <em>Skip the extras</em> (straight to Ready). Each page skippable.</p>
+<ul><li><strong>Posters and details</strong>: the free sources, optional TMDB and TheTVDB keys (<em>”a free code that lets your server ask them”</em>), and, when a library already has details beside its files, the #467 convert panel (<em>”Details already in your folders”</em>), with <em>Leave them as they are</em> the default. Pasting keys: <code>desktopOnly</code> on a TV. Later: <em>Settings → Metadata agents</em>.</li><li><strong>Logos</strong>: as today. Later: <em>Settings → Metadata agents → Logos</em>.</li><li><strong>Lyrics and artists</strong> (music can be added): as today.</li><li><strong>Karaoke voices</strong> (music can be added): <em>”Separate voices for karaoke”</em>: the one-press Demucs install (#436, and the DirectML work), saying the download size, that it uses the graphics card when it can, and that karaoke works without it (songs use the quick version). Installing goes on in the background; Continue isn’t held. Later: <em>Settings → Metadata agents → Demucs for karaoke</em> (where the row is today).</li><li><strong>Streaming lists</strong> (movies or shows can be added): as today, reusing a TMDB key given on the first page.</li></ul>
+<h3 id="12-ready">12. Ready<a class="h-anchor" href="#12-ready" aria-hidden="true" tabindex="-1">#</a></h3>
+<p><em>”You’re all set”</em>: what the server says is set up now (as today, plus Live TV, looks, people and away from home), with where each is changed. Then only what’s still useful:</p>
+<ul><li><em>Watch on every screen at home</em>: the address, as today, without a second port editor.</li><li><em>Use this screen as a TV</em> (the TV mode switch, this device only).</li><li><em>Add live TV</em> only when WittyTuner isn’t installed; <em>TV channels from your libraries</em> as today.</li><li><em>Add a Kids profile</em> only when People added none.</li><li><strong>Start watching</strong> / <strong>Open Settings</strong>.</li></ul>
+<h2 id="wittytv-after-setup">WittyTV after setup<a class="h-anchor" href="#wittytv-after-setup" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>WittyTV’s look belongs to WittyTuner:</p>
+<ul><li>While WittyTuner isn’t installed, setup has no WittyTV page, and <em>Settings → Appearance</em> has no WittyTV section or WittyTV module colours. (The guide itself stays: channels made from libraries need no module.)</li><li><strong>Whenever WittyTuner is freshly installed</strong> (not an update), during setup or later from the store, its WittyTV look is offered:<ul><li>in setup, as the WittyTV page of step 8;</li><li>after setup, as a pending module step <code>wittytuner.wittytv-look</code>: the server adds it to the module’s steps on a fresh install, so every app shows <em>”Finish setting up WittyTuner: choose how the TV guide looks”</em> on Home until it is done or skipped; the web store also opens the same picker right after the install finishes (“WittyTuner is ready. How should the TV guide look?” with <strong>Use this</strong> and <strong>Later</strong>).</li><li>Removing WittyTuner forgets that the step was done, so installing it again asks again.</li></ul></li></ul>
+<h2 id="what-setup-remembers">What setup remembers<a class="h-anchor" href="#what-setup-remembers" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The server keeps where setup was left (<code>GET/PUT /api/setup/state</code>). Its step names become: <code>language</code>, <code>welcome</code>, <code>account</code>, <code>server</code>, <code>modules</code>, <code>libraries</code>, <code>modulesetup</code>, <code>looks</code>, <code>people</code>, <code>remote</code>, <code>extras</code>, <code>ready</code>. The old names (<code>name</code>, <code>look</code>, <code>theme</code>, <code>details</code>, <code>livetv</code>, <code>games</code>, <code>discs</code>) are still accepted and mapped, so a setup left half-way on 0.8.0 carries on. No app reads the names.</p>
+<h2 id="what-this-fixed-081-alpha-before-this-change">What this fixed (0.8.1-alpha before this change)<a class="h-anchor" href="#what-this-fixed-081-alpha-before-this-change" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Found on a fresh data folder with the open setup PRs merged (#466, #474, #475, #477; #467’s Details change read from its branch), desktop and service-style, desktop and phone width:</p>
+<ol><li>The language page says “Step 1 of 14 · Welcome”.</li><li>From the first page, Live TV, Games and Discs say “Module not added”, before modules were offered.</li><li>Language and time zone are asked twice (before Welcome, and again on Name and address), and after setup no page in Settings changes either.</li><li>Look and Theme come before Modules, and the WittyTV look is offered with no WittyTuner installed.</li><li>The Look page says it draws “as a phone shows it” on a computer; on a phone it is sixteen cards before the preview, WittyTV and TV mode.</li><li>TV mode (one device) sits in the Look step (the whole server).</li><li>Adding a library starts scanning with <code>saveMetadata</code> on, two steps before the question that decides it.</li><li>Name and address mixes the name, a second language/time zone, discovery, encrypted connections (with a link out of setup) and the port; Ready offers the port again.</li><li>Remote access and apps is only links out of setup.</li><li>“You can change this later” appears twice on every skippable page; a module’s own page shows two “Skip for now” buttons.</li><li>With the released WittyTuner, Live TV says “Live TV couldn’t be loaded” (fixed in WittyTuner 0.4.3+, which this release publishes).</li><li>Ready suggests adding live TV after WittyTuner was set up, offers a Kids profile after People, and says “Devices away from home: not allowed, by your choice” when nobody was asked.</li><li>Live TV’s “later” place differs: “Settings, Channels &amp; tuners” in setup, “Settings, Live TV &amp; tuners” in the module.</li><li>The karaoke voice separator isn’t offered in setup.</li><li>On a TV, setup has no TV-level rules: the theme ZIP import opens a file picker, letter colouring and key pasting have no note.</li><li>“Details and artwork” is four pages of unrelated questions in one numbered step, between Libraries and the module steps.</li></ol>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/live-tv/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>Live TV: tuners, IPTV and the guide</strong></a>
+      <a class="card next" href="/docs/translation/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Translation</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/SETUP-FLOW.md" rel="noopener">docs/SETUP-FLOW.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/SETUP-FLOW.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#the-rules">The rules</a></li><li><a href="#the-steps">The steps</a></li><li><a href="#wittytv-after-setup">WittyTV after setup</a></li><li><a href="#what-setup-remembers">What setup remembers</a></li><li><a href="#what-this-fixed-081-alpha-before-this-change">What this fixed (0.8.1-alpha before this change)</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.8.0-alpha/">WittyMediaServer 0.8.0-alpha</a>, 16 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/try/">Try the looks</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your choice of colours is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the colours</a>.</span></p>
+      <p>WittyMediaServer, its modules and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">GNU Affero General Public License v3.0 (or later)</a>, and the apps under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GNU General Public License v3.0 (or later)</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Main"><a href="/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Home</a><a href="/server/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>Server</a><a href="/try/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>Try it</a><a href="/docs/" aria-current="page"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg></span>Docs</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer"><span class="ic"><svg class="i when-shut" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg><svg class="i when-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>More</button></nav>
+<div class="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="More pages">
+  <h2>Pages</h2>
+  <nav aria-label="More pages"><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/karaoke/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>Karaoke</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a></nav>
+  <h2>Learn and take part</h2>
+  <nav aria-label="Learn and take part"><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
+</div>
+</body>
+</html>

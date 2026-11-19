@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en-GB" data-theme="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>The data folder · WittyMediaServer</title>
+<meta name="description" content="WittyMediaServer keeps everything it makes in one folder: your library&#39;s details, accounts, settings, artwork, modules and logs. Your films, music, photos and…">
+<link rel="canonical" href="https://wittymediaserver.com/docs/data-folder/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WittyMediaServer">
+<meta property="og:title" content="The data folder">
+<meta property="og:description" content="WittyMediaServer keeps everything it makes in one folder: your library&#39;s details, accounts, settings, artwork, modules and logs. Your films, music, photos and…">
+<meta property="og:url" content="https://wittymediaserver.com/docs/data-folder/">
+<meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark light">
+<link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/images/icon.svg?v=9cf5c423a5" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7208149007">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="WittyMediaServer news" href="/news/feed.xml">
+<link rel="stylesheet" href="/assets/site.0503d19769.css">
+<script>(function(){var t,d=document.documentElement;try{t=localStorage.getItem('wms-site-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'default';d.dataset.theme=t;d.classList.add('js');var m=document.querySelector('meta[name=theme-color]'),b=getComputedStyle(d).getPropertyValue('--bg').trim();if(m&&b)m.content=b})()</script>
+<script src="/assets/site.d202119848.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+    <nav class="nav" aria-label="Main"><a href="/server/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Server</a><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/karaoke/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>Karaoke</a><a href="/try/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg>Try it</a><a href="/docs/" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>Docs</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a></nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-theme-btn aria-haspopup="dialog" aria-expanded="false" aria-controls="themes" aria-label="Choose a theme" title="Choose a theme"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-4-4-7.2-9-7.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/></svg></button>
+      <a class="icon-btn gh" href="https://github.com/wittywilla/WittyMediaServer" rel="noopener" aria-label="WittyMediaServer on GitHub" title="WittyMediaServer on GitHub"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></a>
+      <a class="btn small primary gh-dl" href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download</span></a>
+    </div>
+  </div>
+</header>
+<div class="themes-pop" id="themes" role="dialog" aria-labelledby="themes-title">
+  <h2 id="themes-title">Colours</h2>
+  <p>The server’s own 15 themes, for this site. <a href="/try/">Try each one with every layout</a>.</p>
+  <div class="swatches" role="radiogroup" aria-label="Themes">
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="default" data-pv="default"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Witty</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="light" data-pv="light"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Light</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="midnight" data-pv="midnight"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Midnight</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="oled" data-pv="oled"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>True black</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="evergreen" data-pv="evergreen"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Evergreen</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cinema" data-pv="cinema"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cinema</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="paper" data-pv="paper"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Paper</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="contrast" data-pv="contrast"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>High contrast</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroday" data-pv="aeroday"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Day</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeroaurora" data-pv="aeroaurora"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Aurora</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aeromeadow" data-pv="aeromeadow"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Meadow</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="aerosunset" data-pv="aerosunset"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Aero Sunset</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="cable" data-pv="cable"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Cable blue</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="satellite" data-pv="satellite"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Satellite</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+    <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="teletext" data-pv="teletext"><span class="pv"><i></i><u></u><b></b></span><span class="nm"><span>Teletext</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button>
+  </div>
+  <button type="button" class="btn small ghost auto" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>Match my device<span class="auto-now"></span></span></button>
+</div>
+<main id="main">
+
+<div class="wrap docs-layout has-toc">
+  <nav class="docs-side" aria-label="Guides">
+    <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+    <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/install/">Installing WittyMediaServer</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/profiles/">Profiles and parental controls</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Docker and NAS</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/syncplay/">Watch parties</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos, music videos and concerts</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling WittyMediaServer</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>For developers</h2>
+      <ul><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/sdui/">Server-Driven UI (SDUI)</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/modules-api5/">Module API 5: a module owns its whole feature</a></li><li><a href="/docs/remote-protocol/">Remote Protocol</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/gaming-stream/">Games: one stream for every device</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/data-folder/" aria-current="page">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+    </div>
+  </nav>
+  <article class="doc">
+    <details class="docs-menu">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Guides</span><span class="here">More guides</span></summary>
+      <nav aria-label="Guides">
+        <a class="docs-all" href="/docs/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All guides</a>
+        <div class="docs-nav-group">
+      <h2>Start here</h2>
+      <ul><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/hardware/">What hardware it needs</a></li><li><a href="/docs/install/">Installing WittyMediaServer</a></li><li><a href="/docs/first-time-setup/">First-time setup, step by step</a></li><li><a href="/docs/apps/">Apps and devices</a></li><li><a href="/docs/accounts/">Accounts and profiles</a></li><li><a href="/docs/profiles/">Profiles and parental controls</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Docker and NAS</h2>
+      <ul><li><a href="/docs/docker/">Docker</a></li><li><a href="/docs/docker-linux/">Docker on a Linux machine</a></li><li><a href="/docs/docker-synology/">Docker on a Synology NAS</a></li><li><a href="/docs/docker-qnap/">Docker on a QNAP NAS</a></li><li><a href="/docs/docker-unraid/">Docker on Unraid</a></li><li><a href="/docs/docker-truenas/">Docker on TrueNAS SCALE</a></li><li><a href="/docs/docker-asustor/">Docker on an Asustor NAS</a></li><li><a href="/docs/docker-ugreen/">Docker on a UGREEN NAS</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Watching and listening</h2>
+      <ul><li><a href="/docs/playing/">Watching and listening</a></li><li><a href="/docs/syncplay/">Watch parties</a></li><li><a href="/docs/music/">Music, audiobooks and podcasts</a></li><li><a href="/docs/lyrics-karaoke/">Lyrics and karaoke</a></li><li><a href="/docs/books/">Books, PDFs and comics</a></li><li><a href="/docs/photos/">Photos</a></li><li><a href="/docs/creator-videos/">Creator videos, music videos and concerts</a></li><li><a href="/docs/shorts/">Vertical videos</a></li><li><a href="/docs/collections/">Collections, radio and Your year</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Libraries</h2>
+      <ul><li><a href="/docs/libraries/">Libraries</a></li><li><a href="/docs/media-types/">What each media type supports</a></li><li><a href="/docs/supported-formats/">Supported formats</a></li><li><a href="/docs/metadata/">Where details come from</a></li><li><a href="/docs/fixing-metadata/">Fixing wrong details</a></li><li><a href="/docs/metadata-folder/">The metadata folder</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Discs</h2>
+      <ul><li><a href="/docs/dvd/">DVDs</a></li><li><a href="/docs/bluray/">Blu-rays</a></li><li><a href="/docs/diagnoser/">WittyDiagnoser</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Games</h2>
+      <ul><li><a href="/docs/games/">Games</a></li><li><a href="/docs/game-rigs/">Game PCs</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>TV</h2>
+      <ul><li><a href="/docs/tv/">TV shows</a></li><li><a href="/docs/channels/">Channels and live TV</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Settings</h2>
+      <ul><li><a href="/docs/settings/">Settings tour</a></li><li><a href="/docs/module-store/">Modules and the store</a></li><li><a href="/docs/themes/">Themes</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>Running a server</h2>
+      <ul><li><a href="/docs/remote/">Remote access</a></li><li><a href="/docs/backup/">Backup and restore</a></li><li><a href="/docs/repair/">Repair</a></li><li><a href="/docs/transcoding/">Live transcoding</a></li><li><a href="/docs/library-transcoding/">Library transcoding</a></li><li><a href="/docs/tdarr/">Using Tdarr</a></li><li><a href="/docs/tasks/">Background tasks</a></li><li><a href="/docs/stats/">Server statistics</a></li><li><a href="/docs/logging/">Logs</a></li><li><a href="/docs/config/">Config file and folders</a></li><li><a href="/docs/reference/">Command line reference</a></li><li><a href="/docs/uninstall/">Uninstalling WittyMediaServer</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>For developers</h2>
+      <ul><li><a href="/docs/pages/">Pages and the menu</a></li><li><a href="/docs/sdui/">Server-Driven UI (SDUI)</a></li><li><a href="/docs/sdui-modules/">Modules in server-driven UI</a></li><li><a href="/docs/modules-api5/">Module API 5: a module owns its whole feature</a></li><li><a href="/docs/remote-protocol/">Remote Protocol</a></li><li><a href="/docs/p2p/">Peer-to-peer connections</a></li><li><a href="/docs/gaming-stream/">Games: one stream for every device</a></li><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/ffmpeg-benchmark/">Measuring FFmpeg</a></li><li><a href="/docs/macos/">Working on a Mac</a></li><li><a href="/docs/brand/">The family&#39;s logo: orbitw</a></li></ul>
+    </div>
+    <div class="docs-nav-group">
+      <h2>More guides</h2>
+      <ul><li><a href="/docs/data-folder/" aria-current="page">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+    </div>
+      </nav>
+    </details>
+    <header class="doc-head">
+      <p class="eyebrow"><a href="/docs/">Docs</a><span aria-hidden="true">/</span><a href="/docs/#more">More guides</a></p>
+      <h1>The data folder</h1>
+      <p class="lead">WittyMediaServer keeps everything it makes in one folder: your library’s details, accounts, settings, artwork, modules and logs. Your films, music, photos and other media are never in it; they stay where they are.</p>
+      <div class="meta">
+        <span>Changed <time datetime="2026-11-18">18 November 2026</time></span>
+        <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/DATA-FOLDER.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
+      </div>
+    </header>
+    <details class="doc-toc-small">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>On this page</summary>
+      <nav aria-label="On this page"><ol><li><a href="#where-it-is">Where it is</a></li><li><a href="#whats-in-it">What’s in it</a></li><li><a href="#moving-it">Moving it</a></li><li><a href="#copying-it-to-another-computer">Copying it to another computer</a></li></ol></nav>
+    </details>
+    <div class="prose doc-body">
+<p>This page says where that folder is, what each part of it is for, and how to move it.</p>
+<h2 id="where-it-is">Where it is<a class="h-anchor" href="#where-it-is" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>On a computer you use (the Windows installer and tray app, the Mac app, a Linux desktop), first-time setup asks where to keep it, on the page after you make your account:</p>
+<div class="table-wrap"><table><thead><tr><th>Choice</th><th>Windows</th><th>macOS</th><th>Linux</th></tr></thead><tbody><tr><td><strong>Documents</strong> (the default)</td><td><code>Documents\WittyMediaServer</code></td><td><code>~/Documents/WittyMediaServer</code></td><td><code>~/Documents/WittyMediaServer</code>, or the Documents folder your desktop names</td></tr><tr><td><strong>The install folder</strong></td><td><code>data</code> beside <code>WittyMediaServer.exe</code></td><td>Not offered: an app can’t change what’s inside it</td><td><code>data</code> beside the program, for a <code>.tar.gz</code> you unpacked</td></tr><tr><td><strong>Somewhere else</strong></td><td>Any folder you type, or choose with <strong>Browse folders</strong></td><td></td><td></td></tr></tbody></table></div>
+<p>The install folder is offered only when the server’s account can write there. A copy installed for everyone, in <code>C:\Program Files</code>, usually can’t, and setup says so. Install for your account only, or choose Documents. A <code>.deb</code>, <code>.rpm</code>, AppImage, Flatpak or Snap never offers it.</p>
+<p><strong>Synced folders.</strong> When a sync program keeps Documents in the cloud (OneDrive’s backup of Documents, iCloud Drive’s Desktop &amp; Documents, Dropbox, Google Drive, Nextcloud and others), setup warns you and offers a folder on the computer instead. The server’s database is open the whole time it runs, and a sync program copying it, or another computer changing it, can damage it. You can still choose the synced folder, but it isn’t a good idea.</p>
+<p>Setup checks each choice before it’s made: that the folder is empty or new, that the server can write there, and that there’s room. Choosing a place moves what the server has made so far (only a few megabytes), while it restarts, and setup carries on.</p>
+<p><strong>Before setup asks, and for older installs,</strong> the folder is the computer’s usual place for an app’s data:</p>
+<div class="table-wrap"><table><thead><tr><th>How it runs</th><th>Data folder</th></tr></thead><tbody><tr><td>Windows, the app with the tray icon</td><td><code>%LOCALAPPDATA%\WittyMediaServer</code></td></tr><tr><td>macOS, the menu-bar app</td><td><code>~/Library/Application Support/WittyMediaServer</code></td></tr><tr><td>Linux or BSD, in your account</td><td><code>~/.local/share/wittymediaserver</code>, or under <code>$XDG_DATA_HOME</code></td></tr></tbody></table></div>
+<p>An install from before 0.8.1-alpha keeps using that folder after the update. Nothing moves unless you move it.</p>
+<p><strong>These stay as they always were,</strong> and setup doesn’t ask: the Windows service (<code>C:\ProgramData\WittyMediaServer</code>), the Linux packages’ service (<code>/var/lib/wittymediaserver</code>), FreeBSD’s (<code>/var/db/wittymediaserver</code>), the Mac’s background service, Docker (<code>/config</code>), and the Snap. Neither does a server started with <code>-data</code>, <code>WMS_DATA_DIR</code> or a <code>dataDir</code> in <a href="/docs/config/">wms.json</a>: the folder you named is the one it uses.</p>
+<h3 id="how-the-server-finds-it">How the server finds it<a class="h-anchor" href="#how-the-server-finds-it" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The choice is kept in a small file, <code>data-location.json</code>, in the folder for your account’s settings:</p>
+<div class="table-wrap"><table><thead><tr><th>System</th><th>The file</th></tr></thead><tbody><tr><td>Windows</td><td><code>%APPDATA%\WittyMediaServer\data-location.json</code></td></tr><tr><td>macOS</td><td><code>~/Library/Application Support/WittyMediaServer/data-location.json</code></td></tr><tr><td>Linux or BSD</td><td><code>~/.config/wittymediaserver/data-location.json</code></td></tr></tbody></table></div>
+<p>It holds the folder’s full path and nothing else of note. The server, the tray or menu-bar app, the installer and the uninstaller all read it. When the server starts, the first of these that’s set decides the folder:</p>
+<ol><li><code>-data</code> on the command line</li><li>the <code>WMS_DATA_DIR</code> environment variable</li><li><code>dataDir</code> in a <a href="/docs/config/">config file</a>, or a <code>data</code> folder beside a portable copy’s <code>wms.json</code></li><li>a container’s <code>/config</code>, or a package’s service folder when run as root</li><li><code>data-location.json</code></li><li>a <code>data</code> folder with a database in it beside the program (the install folder, on a copy carried to another computer without its <code>data-location.json</code>)</li><li>the computer’s usual place, above</li></ol>
+<p><strong>If the folder isn’t there,</strong> for example on a drive that isn’t plugged in, the server doesn’t start, and says so: plug the drive in and start it again. It never makes a new, empty server in its place. To start again with no data instead, delete <code>data-location.json</code>.</p>
+<h2 id="whats-in-it">What’s in it<a class="h-anchor" href="#whats-in-it" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>The server writes a <code>README.txt</code> at the top of the folder that says the same as this, in short.</p>
+<p><strong>Settings and your library.</strong> Back these up; Settings → Backup does it for you (<a href="/docs/backup/">Backups</a>).</p>
+<div class="table-wrap"><table><thead><tr><th>Name</th><th>What it is</th></tr></thead><tbody><tr><td><code>wms.db</code>, <code>wms.db-wal</code>, <code>wms.db-shm</code></td><td>The database: libraries, accounts, watch history and settings. The three go together</td></tr><tr><td><code>settings.ini</code></td><td>The port, as you or Settings → Network set it. A plain file you can change by hand</td></tr><tr><td><code>ui_config.json</code>, <code>ui_config.history</code></td><td>The layout of pages and menus, and earlier ones</td></tr><tr><td><code>certs</code></td><td>HTTPS certificates, for Remote Access</td></tr></tbody></table></div>
+<p><strong>Things you made or added.</strong> Keep these.</p>
+<div class="table-wrap"><table><thead><tr><th>Name</th><th>What it is</th></tr></thead><tbody><tr><td><code>branding</code></td><td>Your server’s logo</td></tr><tr><td><code>themes</code></td><td>Themes you added (<a href="/docs/themes/">Themes</a>)</td></tr><tr><td><code>bumpers</code>, <code>channel-logos</code></td><td>WittyTV’s bumpers and channel logos</td></tr><tr><td><code>lyrics-corrections</code></td><td>Lyrics you corrected</td></tr><tr><td><code>metadata</code></td><td>Text files for fixing titles by hand (<a href="/docs/metadata-folder/">The metadata folder</a>)</td></tr><tr><td><code>recordings</code></td><td>Recorded TV, when it’s kept here</td></tr><tr><td><code>backups</code></td><td>Backups the server made</td></tr></tbody></table></div>
+<p><strong>Modules.</strong> <code>modules</code> holds the modules you added, and what each one keeps for itself.</p>
+<p><strong>Logs and reports.</strong> Safe to delete, but useful when something goes wrong: <code>logs</code>, <code>crash</code> and <code>diagnostics</code> (<a href="/docs/logging/">Logs</a>).</p>
+<p><strong>Safe to delete while the server is stopped.</strong> The server makes these again when it needs them.</p>
+<div class="table-wrap"><table><thead><tr><th>Name</th><th>What it is</th></tr></thead><tbody><tr><td><code>cache</code></td><td>Artwork, subtitles, lyrics and lists downloaded or made. They’re fetched or made again, which takes a while for a big library</td></tr><tr><td><code>transcode</code></td><td>Temporary video for players that need a file converted. Emptied as it goes</td></tr><tr><td><code>separator</code></td><td>Songs split into parts for karaoke, and the separator program. Slow to make again</td></tr></tbody></table></div>
+<p><strong>The server’s own bookkeeping.</strong> Leave these alone: <code>instance.lock</code> and <code>instance.json</code> (the running server), <code>setup-code.txt</code>, <code>update-withdrawn.json</code>, and the <code>*-request.json</code> and <code>*-result.json</code> files of a reset, restore, repair or move that’s waiting or done. <code>before-reset-*</code> folders are copies kept by a reset (<a href="/docs/repair/">Repair</a>).</p>
+<p><a href="/docs/uninstall/#what-goes-and-what-stays">Uninstalling</a> removes only the names on this page, so anything else you keep in the folder stays.</p>
+<h3 id="keeping-big-or-temporary-files-elsewhere">Keeping big or temporary files elsewhere<a class="h-anchor" href="#keeping-big-or-temporary-files-elsewhere" aria-hidden="true" tabindex="-1">#</a></h3>
+<p>The cache and temporary video can live on another drive, a bigger or faster one, while the rest stays put. Set <code>cacheDir</code>, <code>metadataDir</code> (artwork) or <code>transcodeDir</code> in <a href="/docs/config/#folders-the-server-uses">wms.json</a>, or <code>WMS_CACHE_DIR</code>, <code>WMS_METADATA_DIR</code> and <code>WMS_TRANSCODE_DIR</code>. Settings → Data folder lists them under <strong>Kept apart</strong>, and a move leaves them where they are.</p>
+<h2 id="moving-it">Moving it<a class="h-anchor" href="#moving-it" aria-hidden="true" tabindex="-1">#</a></h2>
+<p><strong>Settings → Data folder</strong> shows where the folder is now and how big it is, and moves it:</p>
+<ol><li>Choose <strong>Documents</strong>, <strong>The install folder</strong> or <strong>Somewhere else</strong>. The page checks the place as you choose: room, whether the server can write there, and whether it’s synced.</li><li>Press <strong>Move data here</strong>, and confirm. The server stops what it’s doing (anyone watching is interrupted) and starts again.</li><li>While it starts, it copies everything except temporary video, then checks the copy: every file is there at the same size, and the database and settings are the same byte for byte. The page shows how far it is.</li><li>Only then does it switch: <code>data-location.json</code> names the new folder, and the server opens it.</li><li>The old copy stays, with a <code>MOVED.txt</code> saying where everything went. Once you’re happy, <strong>Delete old copy</strong> removes it. That asks for your password, and deletes only what the move copied: anything else you kept in that folder stays.</li></ol>
+<p>If anything goes wrong before the switch (no room, a file that can’t be read, a copy that doesn’t match), the half-made copy is cleared, nothing changes, and the page says why. If the computer turns off in the middle, the next start finds the move unfinished and does it again from the beginning.</p>
+<p>The page can’t move a folder set by <code>-data</code>, <code>WMS_DATA_DIR</code>, <code>wms.json</code> or a service, and says where it was set instead. To move one of those by hand: stop the server, copy the folder, change the setting, and start it again.</p>
+<p>In first-time setup there’s nothing worth keeping in the old folder yet, so it’s cleared once the copy is checked.</p>
+<h2 id="copying-it-to-another-computer">Copying it to another computer<a class="h-anchor" href="#copying-it-to-another-computer" aria-hidden="true" tabindex="-1">#</a></h2>
+<p>Stop the server and copy the whole folder. On the other computer, start the server with <code>-data</code> and the folder’s path. Setup and Settings → Data folder only move data into an empty folder, so they won’t take over a folder that already holds a server’s data. A copy kept in the install folder needs nothing: a server started from that folder finds its <code>data</code> folder by itself.</p>
+<hr>
+<p>&lt;sub&gt;WittyMediaServer documentation&lt;/sub&gt;</p>
+    </div>
+    <nav class="doc-pager" aria-label="Previous and next guides">
+      <a class="card prev" href="/docs/brand/" rel="prev"><span class="label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><strong>The family&#39;s logo: orbitw</strong></a>
+      <a class="card next" href="/docs/live-tv/" rel="next"><span class="label">Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>Live TV: tuners, IPTV and the guide</strong></a>
+    </nav>
+    <p class="doc-foot muted">Made from <a href="https://github.com/wittywilla/WittyMediaServer/blob/master/docs/DATA-FOLDER.md" rel="noopener">docs/DATA-FOLDER.md</a> in the server’s repository. <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/DATA-FOLDER.md" rel="noopener">Suggest a change</a> or <a href="https://github.com/wittywilla/WittyMediaServer/issues" rel="noopener">tell us what’s unclear</a>.</p>
+  </article>
+  <aside class="doc-toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <nav aria-label="On this page"><ol><li><a href="#where-it-is">Where it is</a></li><li><a href="#whats-in-it">What’s in it</a></li><li><a href="#moving-it">Moving it</a></li><li><a href="#copying-it-to-another-computer">Copying it to another computer</a></li></ol></nav>
+  </aside>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <a class="brand" href="/" aria-label="WittyMediaServer, home"><img src="/images/icon.svg?v=9cf5c423a5" alt="" width="34" height="34"><span>Witty<b>Media</b>Server</span></a>
+        <p>Your media, right at home. Self-hosted, open source and yours.</p>
+        <p class="muted">Latest: <a href="/news/release/WittyMediaServer/v0.8.0-alpha/">WittyMediaServer 0.8.0-alpha</a>, 16 November 2026.</p>
+        <p class="maker">Made by WittyWilla. More projects and links at <a href="https://wittywilla.online/" rel="noopener">wittywilla.online</a></p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/server/">WittyMediaServer</a></li>
+          <li><a href="/client/">WittyMediaClient</a></li>
+          <li><a href="/player/">WittyMediaPlayer</a></li>
+          <li><a href="/reader/">WittyReader</a></li>
+          <li><a href="/modules/">Modules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="/start/">New to media servers?</a></li>
+          <li><a href="/try/">Try the looks</a></li>
+          <li><a href="/docs/">Docs and guides</a></li>
+          <li><a href="/faq/">Questions and answers</a></li>
+          <li><a href="/download/">Download</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/news/">News and releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/projects/">Every project</a></li>
+          <li><a href="/support/">Help and taking part</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener">Source code<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="/news/feed.xml">News feed<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.3"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/legal/">Legal notes</a></li>
+          <li><a href="/credits/">Picture credits</a></li>
+          <li><a href="https://github.com/wittywilla/WittyMediaServer/blob/master/SECURITY.md" rel="noopener">Security<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+          <li><a href="https://wittywilla.online/" rel="noopener">wittywilla.online<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p>Alpha software: it changes quickly and can fail or lose data. Keep backups, including your data folder, before you upgrade. No media comes with WittyMediaServer. Copy-protected discs, encrypted broadcasts and encrypted game files are refused with a plain message. Nothing here unlocks them.</p>
+      <p>This site has no cookies, trackers or analytics. Your choice of colours is kept in your own browser. <a href="/privacy/">How this site handles privacy</a>. <span class="js-only"><a href="#themes" data-open-themes>Change the colours</a>.</span></p>
+      <p>WittyMediaServer, its modules and <a href="https://github.com/wittywilla/wittymediaserver.com" rel="noopener">this website</a> are open source under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">GNU Affero General Public License v3.0 (or later)</a>, and the apps under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GNU General Public License v3.0 (or later)</a>. Every picture shows only openly licensed or public-domain media, <a href="/credits/">each credited</a>.</p>
+    </div>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Main"><a href="/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Home</a><a href="/server/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>Server</a><a href="/try/"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>Try it</a><a href="/docs/" aria-current="page"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg></span>Docs</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer"><span class="ic"><svg class="i when-shut" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg><svg class="i when-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>More</button></nav>
+<div class="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="More pages">
+  <h2>Pages</h2>
+  <nav aria-label="More pages"><a href="/client/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6"/><rect x="17" y="8" width="5" height="12" rx="1"/></svg>Apps</a><a href="/karaoke/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>Karaoke</a><a href="/remote/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>Remote</a><a href="/modules/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4v2.5a1.5 1.5 0 1 0 3 0V3h2a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 1 0 0 3H21v7a2 2 0 0 1-2 2h-4v-2.5a1.5 1.5 0 1 0-3 0V21H5a2 2 0 0 1-2-2v-5h2.5a1.5 1.5 0 1 0 0-3H3V5a2 2 0 0 1 2-2z"/></svg>Modules</a><a href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a><a href="/gallery/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Gallery</a><a href="/download/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a></nav>
+  <h2>Learn and take part</h2>
+  <nav aria-label="Learn and take part"><a href="/start/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>New to media servers?</a><a href="/faq/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Questions and answers</a><a href="/roadmap/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Roadmap</a><a href="/support/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></svg>Help and taking part</a><a href="/projects/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Every project</a><a href="/player/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 1 3-1.8"/></svg>WittyMediaPlayer</a><a href="/reader/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M9 7h6"/></svg>WittyReader</a><a href="https://github.com/wittywilla/WittyMediaServer" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a></nav>
+</div>
+</body>
+</html>
