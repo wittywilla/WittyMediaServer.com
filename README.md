@@ -47,6 +47,8 @@ You need Node.js 20 or newer, and nothing else: there are no packages to install
 - **Small and private.** No outside fonts, scripts or trackers. A strict Content Security Policy allows the page to talk only to itself and, to check for newer releases, GitHub.
 - **Old addresses kept.** Pages are folders with an `index.html`, so every address of the old site still works on any host.
 
+**Working on a Mac?** Start with WittyMediaServer's [MAC-START-HERE.md](https://github.com/wittywilla/WittyMediaServer/blob/v0.8.1-alpha/MAC-START-HERE.md): what to install, what to clone, and every Mac task in order.
+
 ## Licence
 
 Licensed under the GNU Affero General Public License v3.0 (or later): see [LICENSE](LICENSE) and [NOTICE](NOTICE). The screenshots it shows keep their own open licences, recorded in `content/licences.json`.
