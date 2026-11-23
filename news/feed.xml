@@ -5,8 +5,22 @@
   <link href="https://wittymediaserver.com/news/feed.xml" rel="self"/>
   <link href="https://wittymediaserver.com/news/"/>
   <id>https://wittymediaserver.com/news/</id>
-  <updated>2026-11-17T14:23:39.000Z</updated>
+  <updated>2026-11-23T12:00:45.000Z</updated>
   <author><name>WittyWilla</name></author>
+  <entry>
+    <title>WittyMediaClient 0.6.0</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaClient/v0.6.0/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaClient/v0.6.0/</id>
+    <updated>2026-11-23T12:00:45.000Z</updated>
+    <summary>Released 2026-11-23.</summary>
+  </entry>
+  <entry>
+    <title>WittyMediaServer 0.8.1-alpha</title>
+    <link href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.8.1-alpha/"/>
+    <id>https://wittymediaserver.com/news/release/WittyMediaServer/v0.8.1-alpha/</id>
+    <updated>2026-11-23T09:53:16.000Z</updated>
+    <summary>Live TV&#39;s channel banner shows for 3 seconds (#556). Choosing a channel shows its name and what&#39;s on for three seconds instead of seven, then gets out of the way.</summary>
+  </entry>
   <entry>
     <title>WittyMediaClient 0.5.2</title>
     <link href="https://wittymediaserver.com/news/release/WittyMediaClient/v0.5.2/"/>
