@@ -109,7 +109,7 @@
     </div>
     <div class="docs-nav-group">
       <h2>More guides</h2>
-      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/minimum-hardware/">Minimum hardware</a></li><li><a href="/docs/notifications/">Notifications</a></li><li><a href="/docs/settings-menu/">The settings menu</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
     </div>
   </nav>
   <article class="doc">
@@ -159,7 +159,7 @@
     </div>
     <div class="docs-nav-group">
       <h2>More guides</h2>
-      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/minimum-hardware/">Minimum hardware</a></li><li><a href="/docs/notifications/">Notifications</a></li><li><a href="/docs/settings-menu/">The settings menu</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
     </div>
       </nav>
     </details>
@@ -168,7 +168,7 @@
       <h1>Backup and restore</h1>
       <p class="lead">Keep a copy of your server’s data and metadata in one ZIP file, and bring it back after a reset, a failed drive or a move to another machine. Your media files are never in a backup: they stay where they are.</p>
       <div class="meta">
-        <span>Changed <time datetime="2026-11-16">16 November 2026</time></span>
+        <span>Changed <time datetime="2026-11-24">24 November 2026</time></span>
         <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/BACKUP.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
       </div>
     </header>
@@ -193,7 +193,7 @@
 <p><strong>With a password,</strong> which is the page’s default, everything inside the ZIP is encrypted with AES-256, using a key made from your password. File names can’t be read either, and nobody can change the backup without the password. All your secrets come along: API keys, two-factor sign-in, share links and this server’s identity.</p>
 <p><strong>If you lose the password, nobody can open the backup.</strong></p>
 <p><strong>Without a password,</strong> the ZIP can be opened with any program, so a plain archive drops what shouldn’t be left lying around:</p>
-<ul><li>API keys</li><li>two-factor secrets</li><li>share links</li><li>this server’s identity</li><li>logins inside addresses, such as a TV source’s</li></ul>
+<ul><li>API keys</li><li>two-factor secrets</li><li>share links</li><li>this server’s identity</li><li>logins inside addresses, such as a TV source’s</li><li>the notification mail server’s password, and each webhook’s address and secret (that webhook is turned off)</li></ul>
 <p>Account passwords are in it as hashes. A hash can’t be turned back into a password, but it can be guessed at, and titles and file names can be read. Keep a plain archive private.</p>
 <p>Anyone could also have changed a file with no password, so restoring one leaves out a few more things:</p>
 <ul><li>settings that hold web addresses</li><li>libraries set to convert new files by themselves, which you turn on again if you want them</li><li>recordings kept outside the data folder (the files themselves aren’t touched)</li></ul>

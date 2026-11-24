@@ -109,7 +109,7 @@
     </div>
     <div class="docs-nav-group">
       <h2>More guides</h2>
-      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/minimum-hardware/">Minimum hardware</a></li><li><a href="/docs/notifications/">Notifications</a></li><li><a href="/docs/settings-menu/">The settings menu</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
     </div>
   </nav>
   <article class="doc">
@@ -159,7 +159,7 @@
     </div>
     <div class="docs-nav-group">
       <h2>More guides</h2>
-      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
+      <ul><li><a href="/docs/data-folder/">The data folder</a></li><li><a href="/docs/live-tv/">Live TV: tuners, IPTV and the guide</a></li><li><a href="/docs/minimum-hardware/">Minimum hardware</a></li><li><a href="/docs/notifications/">Notifications</a></li><li><a href="/docs/settings-menu/">The settings menu</a></li><li><a href="/docs/setup-flow/">First-time setup: the flow</a></li><li><a href="/docs/translation/">Translation</a></li><li><a href="/docs/tv-mode/">TV mode: what a television offers</a></li><li><a href="/docs/ui-platforms/">One fix, every screen</a></li></ul>
     </div>
       </nav>
     </details>
@@ -168,7 +168,7 @@
       <h1>Modules and the store</h1>
       <p class="lead">Modules are the parts of WittyMediaServer you can add and take away. This guide helps you choose them, keep them up to date, fix them when they fail, and decide how far to trust them.</p>
       <div class="meta">
-        <span>Changed <time datetime="2026-11-16">16 November 2026</time></span>
+        <span>Changed <time datetime="2026-11-24">24 November 2026</time></span>
         <a href="https://github.com/wittywilla/WittyMediaServer/edit/master/docs/MODULE-STORE.md" rel="noopener"><svg class="i gh-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Edit on GitHub</a>
       </div>
     </header>
@@ -247,7 +247,7 @@
 <h3 id="the-sandbox-on-each-system">The sandbox on each system<a class="h-anchor" href="#the-sandbox-on-each-system" aria-hidden="true" tabindex="-1">#</a></h3>
 <p>The server starts each module’s program with these limits:</p>
 <div class="table-wrap"><table><thead><tr><th>Limit</th><th>Linux</th><th>Windows</th><th>macOS</th><th>FreeBSD</th></tr></thead><tbody><tr><td>Small environment and a soft memory limit</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Hard memory limit</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes</td></tr><tr><td>Can’t write to or create files</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Can’t write into a file. <strong>Can still delete and rename them</strong></td></tr><tr><td>No network</td><td>Yes, on 64-bit</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>Can’t start other programs</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Can’t change who may use a file, or reach into another process</td><td>Yes, on 64-bit</td><td>Yes</td><td>Mostly</td><td><strong>No</strong></td></tr><tr><td>Can’t signal your other programs</td><td>Where the system allows</td><td>Yes</td><td>Yes</td><td><strong>No</strong></td></tr><tr><td>Stops when the server stops</td><td>Yes</td><td>Yes</td><td>When its pipe closes</td><td>When its pipe closes</td></tr></tbody></table></div>
-<p>Settings, Modules and the store say what your system does, wherever it’s short of a full sandbox.</p>
+<p>Settings, Module store and the store say what your system does, wherever it’s short of a full sandbox.</p>
 <p><strong>On a Mac</strong> that’s Apple’s own sandbox. It’s checked before it’s relied on, and if an official module’s helper won’t start in it, it starts without it and the page says so. A module from another publisher never starts without it. It was tried on a real Mac (macOS 27) in November 2026. WittyPlay’s helper runs outside it: a Mac can’t start one sandbox inside another, and WittyPlay puts each game in a stricter sandbox of its own, with no network, no other programs and nothing to write but its saves.</p>
 <p><strong>On FreeBSD these are limits, not a sandbox.</strong> FreeBSD can only really box a program in with an administrator’s help. They were tried from inside a helper in a FreeBSD 15.1 virtual machine. If the server runs as root, a helper also goes in a jail, with no network and no sight of other programs, but being root it can change any file, so run it as an ordinary account if you can.</p>
 <p>On Linux some of this depends on the system. The limit on writing needs a kernel with Landlock (5.13 or newer, with it turned on), and emptying a file is only blocked from kernel 6.2. Containers often refuse the separate network and process view, and an official module then runs without those, keeping its other limits. On 32-bit Linux there’s no filter on system calls, so the “64-bit” rows above don’t apply.</p>

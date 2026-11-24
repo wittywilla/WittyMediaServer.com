@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>WittyMediaServer 0.8.3-alpha · WittyMediaServer</title>
-<meta name="description" content="Your own WittyRelay shows its health. Under Your own WittyRelay (in Technical details and other ways in),">
+<meta name="description" content="The film waits while you choose a scene on a phone, a tablet or a TV, and plays on when the scenes close. On a">
 <link rel="canonical" href="https://wittymediaserver.com/news/release/WittyMediaServer/v0.8.3-alpha/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="WittyMediaServer">
 <meta property="og:title" content="WittyMediaServer 0.8.3-alpha">
-<meta property="og:description" content="Your own WittyRelay shows its health. Under Your own WittyRelay (in Technical details and other ways in),">
+<meta property="og:description" content="The film waits while you choose a scene on a phone, a tablet or a TV, and plays on when the scenes close. On a">
 <meta property="og:url" content="https://wittymediaserver.com/news/release/WittyMediaServer/v0.8.3-alpha/">
 <meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -69,7 +69,7 @@
     <a class="crumb" href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All news</a>
     <p class="eyebrow">Release · Alpha</p>
     <h1>WittyMediaServer 0.8.3-alpha</h1>
-    <p class="lead">Your own WittyRelay shows its health. Under Your own WittyRelay (in Technical details and other ways in),</p>
+    <p class="lead">The film waits while you choose a scene on a phone, a tablet or a TV, and plays on when the scenes close. On a</p>
     <div class="meta"><time datetime="2026-11-24">24 November 2026</time><span class="pill ok">Latest</span><a href="https://github.com/wittywilla/WittyMediaServer/releases/tag/v0.8.3-alpha" rel="noopener">On GitHub</a></div>
   </div>
 </header>
@@ -91,6 +91,8 @@
 <h4 id="developer-notes-for-0-8-3-alpha">Developer notes for 0.8.3-alpha</h4>
 <ul><li>New routes <code>POST /api/connect/hello</code> and <code>/api/connect/answer</code> for Enter a code (#608); <code>RelayOffer.Health</code> (#620).</li><li>docs/GAMING-STREAM.md: nothing is sent before a game stream’s hello (#607).</li><li>CI: jobs side by side, caches from master only, known.json checked, flaky tests fixed (#616).</li><li>Updated dependencies from dependabot (#625).</li><li>gorilla/websocket moves to its fixed commit for GO-2026-6278 (a weak random mask key).</li><li><code>scripts/set-tag-rules.sh</code> covers WittyRelay (#626); docs/PUBLISHING.md lists every repository that needs <code>SITE_BUILD_TOKEN</code> (#619).</li></ul></div>
       <div class="prose"><h2>Everything in this version</h2><p>Released 2026-11-24.</p>
+<p><strong>Player (#632)</strong></p>
+<ul><li><strong>The film waits while you choose a scene</strong> on a phone, a tablet or a TV, and plays on when the scenes close. On a computer it keeps playing; <strong>Viewing settings → Pause for scenes → Every screen</strong> makes it wait there too.</li></ul>
 <p><strong>Connecting another device (#605)</strong></p>
 <ul><li><strong>Your own WittyRelay shows its health.</strong> Under <strong>Your own WittyRelay</strong> (in <strong>Technical details and other ways in</strong>), a dot and a line say whether the relay is good, busy, full or starting, and how much of it is in use. It’s renewed with every registration. Older relays don’t say, and no line is shown.</li><li><strong>One way to connect a device, at the top of Settings → Remote Access</strong> (and on the From away page): it says whether devices away from home can connect, then <strong>Show a code</strong> gives a short code and a QR code. Type the code on a device on your home network (<strong>Add a server → Enter a code</strong> in WittyMediaClient), or scan the QR code or paste the link (under <strong>More options</strong>) from away. Whichever is used first ends the other; it works once, for fifteen minutes. The code is checked without being sent: the server that made it proves so first. The rest of the page (peer-to-peer settings, private networks, the router, HTTPS, limits) is folded under <strong>Technical details and other ways in</strong>.</li><li><strong>The QR code for joining from away is drawn again.</strong> The link it held had grown too long for one, so none appeared.</li><li><strong>The code a TV shows for joining from away is no longer offered on the server</strong>: it depended on the public address book finding the server, which too often it didn’t. A TV signs in at home with <strong>Sign in a TV</strong>, as before.</li></ul>
 <p><strong>Games on a phone</strong></p>
