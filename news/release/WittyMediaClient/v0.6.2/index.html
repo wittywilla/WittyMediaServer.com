@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Yu3x/idRQCfYozooGD3sb/YzfuBb2NnqTzDd0DEEY5s='; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; manifest-src 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>WittyMediaClient 0.6.2 · WittyMediaServer</title>
-<meta name="description" content="Downloads for WittyMediaClient, with its notes on GitHub.">
+<meta name="description" content="Released 2026-11-24.">
 <link rel="canonical" href="https://wittymediaserver.com/news/release/WittyMediaClient/v0.6.2/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="WittyMediaServer">
 <meta property="og:title" content="WittyMediaClient 0.6.2">
-<meta property="og:description" content="Downloads for WittyMediaClient, with its notes on GitHub.">
+<meta property="og:description" content="Released 2026-11-24.">
 <meta property="og:url" content="https://wittymediaserver.com/news/release/WittyMediaClient/v0.6.2/">
 <meta property="og:image" content="https://wittymediaserver.com/images/brand/social.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -69,7 +69,7 @@
     <a class="crumb" href="/news/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All news</a>
     <p class="eyebrow">Release</p>
     <h1>WittyMediaClient 0.6.2</h1>
-    <p class="lead">Downloads for WittyMediaClient, with its notes on GitHub.</p>
+    <p class="lead">Released 2026-11-24.</p>
     <div class="meta"><time datetime="2026-11-24">24 November 2026</time><span class="pill ok">Latest</span><a href="https://github.com/wittywilla/WittyMediaClient/releases/tag/v0.6.2" rel="noopener">On GitHub</a></div>
   </div>
 </header>
@@ -78,14 +78,25 @@
     <div class="stack">
       <h2 class="sr-only">Release notes</h2>
       
+      <div class="prose"><p>Released 2026-11-24.</p>
+<p>Made for WittyMediaServer 0.8.4-alpha: the settings menu, notifications, parental PIN, time-shift and search need it.</p>
+<p><strong>Settings, the same everywhere (#111, <a href="https://github.com/wittywilla/WittyMediaServer/issues/612" rel="noopener">WittyMediaServer#612</a>)</strong></p>
+<ul><li><strong>You is the server’s one settings menu</strong> on Android phone and TV, iPhone, iPad and Apple TV, as on the web: the same groups, rows, order and words. New rows everywhere: Video quality, Pages and menu, Network, Data folder and Connect a device. Apple’s rows now match Android’s.</li><li><strong>On a TV, every row is shown.</strong> One the TV can’t change stays in its place, says what is set, and opens the card with that setting’s address and QR code.</li><li><strong>Module settings and Module store sit side by side,</strong> and Look is Layout.</li><li><strong>The desktop app’s own rows</strong> (Servers on this device, From away, This app’s log) are in the server’s Settings.</li><li><strong>Choose colours has no preview</strong>, only the theme cards, like Choose a layout.</li><li><strong>The TV bar shows the server’s logo</strong> beside its name (Android TV and Apple TV).</li></ul>
+<p><strong>Parental controls (<a href="https://github.com/wittywilla/WittyMediaServer/issues/649" rel="noopener">WittyMediaServer#649</a>)</strong></p>
+<ul><li><strong>Leaving a kids’ profile kept on its device takes the parents’ PIN.</strong> On Android, iPhone, iPad and Apple TV, Who’s watching asks for it when switching away from such a profile to one without a password, and when signing out. A wrong PIN says so; the server counts the tries. The desktop app gets the same from the server’s own pages.</li></ul>
+<p><strong>Arabic and Hebrew</strong></p>
+<ul><li><strong>Latin titles keep their order on a phone set to Arabic or Hebrew.</strong> Lines made of parts (a title’s year and running time, artist and album) keep each part’s digits and dashes in place, and a Hebrew title among Latin ones keeps its place too (<a href="https://github.com/wittywilla/WittyMediaServer/issues/498" rel="noopener">WittyMediaServer#498</a>).</li></ul>
+<p><strong>Connect and sign-in screens: one centred card (<a href="https://github.com/wittywilla/WittyMediaServer/issues/624" rel="noopener">WittyMediaServer#624</a>)</strong></p>
+<ul><li><strong>Every connect screen is one card, centred both ways</strong>, with the app’s logo and name, or the server’s once one is chosen, at its top. On the sign-in and security-code screens the server’s name now comes before the heading. It fits a 1280×720 window without scrolling, and the same goes for the desktop app, a TV, Android and Apple.</li></ul>
+<p><strong>Players, TV and games</strong></p>
+<ul><li><strong>A slow first picture is waited for.</strong> Once a game’s connection is through, its first picture gets 45 seconds (a big game, or a server with no graphics card, can take a while) before the app tries another way, instead of giving up after 12.</li><li><strong>The video player on Android TV has a new bar:</strong> the title, the seek bar with the time gone and left, Play and 10 s back and on, then round buttons for Audio, Subtitles, Quality, Speed, Scenes, Info and More that show their names when focused. Watch party, Play on, 3D and Leave are under More. The bar sits well inside a TV’s edge (#78).</li><li><strong>Audio, Subtitles, Quality and Speed menus on every native player</strong> (Android TV, Android phones, Apple TV, iPhone and iPad): fully usable with a remote, Back closes them, and the choice in use is ticked. Tracks are named by language with the track’s own name under it (“English · Commentary with …”, “SDH”, “Forced”) and what kind they are (“AC3 · 5.1”, “Pictures”); one with no language is “Track 2”, never “Unknown” (#78).</li><li><strong>Scenes as a grid of pictures</strong>, with each scene’s name and time, on Android TV, Apple TV and phones. The film pauses while it’s open and plays on when it closes.</li><li><strong>Subtitle size</strong> (small to extra large) on Android TV and phones, kept for every video.</li><li><strong>Film and show names under posters on Android TV</strong> are smaller and take up to two lines, so the whole name can be read (“Bullet Train Explosion”, not “Bullet Train …”).</li></ul></div>
       
       
-      <div class="prose"><h2>Pull requests</h2><ul><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/123" rel="noopener">[0.8.3] Track pickers: a compact list with your languages first; a check for unnamed buttons</a> <span class="muted">#123</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/122" rel="noopener">[0.6.1] Games: wait for a slow first picture once the stream is through</a> <span class="muted">#122</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/119" rel="noopener">[0.8.3] Android TV: poster card titles readable (smaller, up to two lines)</a> <span class="muted">#119</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/124" rel="noopener">[0.8.4] Right to left: each part of a joined line keeps its own direction</a> <span class="muted">#124</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/116" rel="noopener">[0.8.3] Desktop: show an invite as soon as the helper is up</a> <span class="muted">#116</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/129" rel="noopener">[0.8.4] Android search: speak a search</a> <span class="muted">#129</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/117" rel="noopener">[0.8.3] Native players: Audio, Subtitles, Quality, Speed and Scenes menus for a remote; a new Android TV bar</a> <span class="muted">#117</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/125" rel="noopener">[0.8.4] Connect screens: one centred card with a logo and a name, no scrolling</a> <span class="muted">#125</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/127" rel="noopener">[0.8.4] Notifications: the bell on Android phone and TV, iPhone, iPad and Apple TV</a> <span class="muted">#127</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/128" rel="noopener">[0.8.4] Parental controls: the parents&#39; PIN to leave a kids&#39; profile, on Android and Apple</a> <span class="muted">#128</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/114" rel="noopener">[0.8.3] Settings: every app draws the server&#39;s one settings menu, as the Android phone app&#39;s</a> <span class="muted">#114</span></li><li><a href="https://github.com/wittywilla/WittyMediaClient/pull/126" rel="noopener">[0.8.4] WittyTV: start over, skip breaks, rewind past the buffer (server #648)</a> <span class="muted">#126</span></li></ul></div>
       
       <div class="btn-row mt-4">
         
         <a class="btn ghost" href="/news/release/WittyMediaClient/v0.6.1/">Older: 0.6.1<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="https://github.com/wittywilla/WittyMediaClient/compare/v0.6.1...v0.6.2" rel="noopener">Every change<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+        
       </div>
     </div>
     <aside class="stack">
